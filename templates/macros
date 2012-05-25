@@ -1,0 +1,10 @@
+{% macro flash() %}
+  {% for (type,message) in get_flashed_messages(True, ["message", "info"]) %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+
+  {% for (type,message) in get_flashed_messages(True, ["error"]) %}
+    <div class="flash error">{{ message }}</div>
+  {% endfor %}
+{% endmacro %}
+

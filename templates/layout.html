@@ -1,43 +1,13 @@
+{% from "sections" import meta_and_css, nav, javascripts, footer %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <body id="index">
 <div id="wrapper">
-<div id="header">				
-<div id="vertStudios"><a href="/">Vert Studios<img src="http://assets.vertstudios.com/images/vert_logo_header.png" alt="Vert Logo" /></a></div>
-<ul id="main_nav">
-<li>
-    <h5><a href="/about">About</a></h5>
-    <p>We're a small web design company with big ideas in Tyler, Texas.</p>
-</li>
-<li>
-    <h5><a href="/work">Work</a></h5>
-    <p>See what our work has to say. <b>WARNING</b>: <br />It might get loud.</p>
-</li>
-<li>
-    <h5><a href="/services">Services</a></h5>
-    <p>We design web sites that don't suck. We're quite proud of that.</p>
-</li>
-<li>
-    <h5><a href="/blog/">Blog</a></h5>
-    <p>Read our articles on design, code, SEO, and the state of the web.</p>
-</li>
-<li>
-    <h5><a href="/contact">Get A Quote</a></h5>
-    <p>How much will it cost?<br /><br /><strong>Find out now!</strong></p>
-</li>
-</ul>
-</div>
+{{ meta_and_css()|safe }}
+{{ nav()|safe }}
 {% block body %}{% endblock body %}
-<div id="footer">
-</div>
+{{ footer()|safe }}
 </div><!--wrapper-->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
-<script type="text/javascript" src="http://assets.vertstudios.com/js/vertlib.min.js"></script>
-<script type="text/javascript" src="http://assets.vertstudios.com/js/jsCSS.js"></script>
-<script type="text/javascript" src="http://assets.vertstudios.com/js/index_init.js"></script>
-<script type="text/javascript" src="http://assets.vertstudios.com/js/easing.js"></script>  
-<script type="text/javascript" src="http://assets.vertstudios.com/js/slaveshow.min.js"></script>               
-<script type="text/javascript" src="http://assets.vertstudios.com/js/carousel.js"></script>    
-<script type="text/javascript" src="http://assets.vertstudios.com/js/carousel-init.js"></script>
+{{ javascripts()|safe }}
 </body>
 </html>

@@ -1,7 +1,7 @@
 # Vert studios website. Yay!
 
 from flask import Flask, render_template
-from helpers.get_blog_feed import vert_rss_feed
+from helpers import vert_rss_feed
 app = Flask(__name__)
 
 @app.route('/')

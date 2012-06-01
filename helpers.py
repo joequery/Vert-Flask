@@ -1,8 +1,10 @@
-# Get the vert studios blog feed
+# View helpers to be used throughtout the site
+
 from pyquery import PyQuery
 import requests
 import re
 import time
+from flask import render_template
 
 # Get the html for the rss_feed section on the home page.
 # numPosts: An integer representing the number of posts we want to display.
@@ -107,4 +109,5 @@ def vert_rss_feed(numPosts):
     recentStories.append(story)
 
   # Now generate and return the html to place in the template.
-  return generate_html_from_stories_list(recentStories)
+  #return generate_html_from_stories_list(recentStories)
+  return render_template("partials/rss_feed.html", stories=recentStories)

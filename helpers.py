@@ -4,7 +4,7 @@ from pyquery import PyQuery
 import requests
 import re
 import time
-from flask import render_template
+from flask import render_template, request
 
 # Get the html for the rss_feed section on the home page.
 # numPosts: An integer representing the number of posts we want to display.
@@ -82,3 +82,4 @@ def vert_rss_feed(numPosts):
 
   # Now generate and return the html to place in the template.
   return render_template("partials/rss_feed.html", stories=recentStories)
+

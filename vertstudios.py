@@ -1,8 +1,24 @@
 # Vert studios website. Yay!
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, g
 from helpers import vert_rss_feed
 app = Flask(__name__)
+
+# Get a bodyID for CSS purposes
+@app.before_request
+def before_request():
+  def get_body_id():
+    if request.path == '/':
+      g.bodyID = "index"
+    else:
+      g.bodyID = request.path[1:]
+
+  get_body_id()
+
+
+#####################################################################
+# Routes
+#####################################################################
 
 @app.route('/')
 def home():

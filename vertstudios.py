@@ -1,7 +1,7 @@
 # Vert studios website. Yay!
 
 from flask import Flask, render_template, request, g
-from helpers import vert_rss_feed
+from helpers.rss import vert_rss_feed
 app = Flask(__name__)
 
 # Get a bodyID for CSS purposes

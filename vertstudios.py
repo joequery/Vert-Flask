@@ -10,5 +10,9 @@ def home():
   rssFeed = vert_rss_feed(10)
   return render_template("index.html", rssFeed=rssFeed)
 
+@app.route('/work')
+def work():
+  return render_template("work.html")
+
 if __name__ == "__main__":
 	app.run(debug=True)

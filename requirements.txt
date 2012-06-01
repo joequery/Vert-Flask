@@ -1,4 +1,3 @@
 Flask
 PyQuery
 requests
-Flask-Script

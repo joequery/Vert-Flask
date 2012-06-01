@@ -49,34 +49,6 @@ def vert_rss_feed(numPosts):
     rssObj["description"] = description
     rssObj["pubDate"] = date
 
-  # Take the stories list and output html.
-  def generate_html_from_stories_list(stories):
-    html = ""
-    first = True # A flag signaling the first post
-
-    for story in stories:
-
-      link = story["link"]
-      title = story["title"]
-      date = story["pubDate"]
-      comments = story["comments"]
-      desc = story["description"]
-
-      # Add a first class to first item for CSS purposes 
-      if first:
-          html += '<div class="post_snippet first">';
-          first = False
-      else:
-          html += '<div class="post_snippet">';
-
-      html += "<h4><a href=\"%s\">%s</a> - %s</h4>" % (link, title, date)
-      html += "<p>%s</p>" % desc
-      html += "<p class=\"read_more\"><a href=\"%s\">Read More </a>" % link
-      html += "| <a href=\"%s\">View Comments</a></p>" % comments
-      html += '</div>'                                
-
-    return html
-
   ##############################################################################
   # Begin parsing!
   ##############################################################################
@@ -109,5 +81,4 @@ def vert_rss_feed(numPosts):
     recentStories.append(story)
 
   # Now generate and return the html to place in the template.
-  #return generate_html_from_stories_list(recentStories)
   return render_template("partials/rss_feed.html", stories=recentStories)

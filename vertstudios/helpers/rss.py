@@ -4,7 +4,14 @@ from pyquery import PyQuery
 import requests
 import re
 import time
-from flask import render_template, request
+import json
+import os
+import sys
+from jinja2 import Environment, PackageLoader
+
+# Append parent dir to path
+parentDir = os.path.abspath(__file__).rsplit('/', 2)[0]
+import sys; sys.path.append(parentDir)
 
 # Get the html for the rss_feed section on the home page.
 # numPosts: An integer representing the number of posts we want to display.
@@ -45,7 +52,11 @@ def vert_rss_feed(numPosts):
     recentStories.append(story)
 
   # Now generate and return the html to place in the template.
-  return render_template("partials/rss_feed.html", stories=recentStories)
+  # We use Jinja instead of Flask here so we can run this separate
+  # from the app.
+  env = Environment(loader=PackageLoader("vertstudios", "templates"))
+  template = env.get_template("partials/rss_feed.html")
+  return template.render(stories=recentStories)
 
 
 # Helper method for altering RSS feed content for preview purposes.  
@@ -79,3 +90,13 @@ def _alter_rss(rssObj):
   # changes.
   rssObj["description"] = description
   rssObj["pubDate"] = date
+
+# Write feed to file in JSON format
+def cache_feed(cacheDir, numPosts):
+  recentStories = vert_rss_feed(numPosts)
+  feedJSON = json.dumps(recentStories)
+  print(feedJSON)
+  fileName = "feed.json"
+  #f = open(os.path.join(cacheDir, fileName), 'w')
+  #f.write(feedJSON)
+  #f.close()

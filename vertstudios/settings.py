@@ -8,3 +8,4 @@ CACHE_DIR = "/tmp"
 #######################################################
 NUM_BLOG_POSTS = 5
 BLOG_CACHE_FILE = "vert_rss.json"
+FEED_CACHE_TIME = 3600 # 1 hour blog feed cache

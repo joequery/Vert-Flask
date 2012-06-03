@@ -1,7 +1,8 @@
 # Vert studios website. Yay!
 
+from settings import *
 from flask import Flask, render_template, request, g
-from helpers.rss import vert_rss_feed
+from helpers.rss import get_blog_feed
 app = Flask(__name__)
 
 # Get a bodyID for CSS purposes
@@ -23,7 +24,7 @@ def before_request():
 @app.route('/')
 def home():
   # Get HTML for the home page rss feed
-  rssFeed = vert_rss_feed(10)
+  rssFeed = get_blog_feed(CACHE_DIR, BLOG_CACHE_FILE, NUM_BLOG_POSTS)
   return render_template("index.html", rssFeed=rssFeed)
 
 @app.route('/work')

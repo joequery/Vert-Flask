@@ -13,7 +13,25 @@ from jinja2 import Environment, PackageLoader
 parentDir = os.path.abspath(__file__).rsplit('/', 2)[0]
 import sys; sys.path.append(parentDir)
 
-# Get the html for the rss_feed section on the home page.
+# Get the vert blog feed via rss. Attempt to return a cached version
+# of the feed if available.
+# cacheDir: The cached feed's directory
+# cacheFile: The filename of the feed cache
+# numPosts: How many posts we want to retrieve
+def get_blog_feed(cacheDir, cacheFile, numPosts):
+
+  # See if we can get the feed from the file. If not, get the feed manually
+  # and cache it ourselves.
+  try:
+    open(os.path.join(cacheDir, cacheFile))
+    storyList = read_cache(cacheDir, cacheFile)
+  except IOError as e:
+    storyList = cache_feed(cacheDir, cacheFile, numPosts)
+
+  # return the html for the story list
+  return stories_to_html(storyList)
+
+# Return a list of stories from the vert RSS feed
 # numPosts: An integer representing the number of posts we want to display.
 def vert_rss_feed(numPosts):
   ##############################################################################
@@ -47,17 +65,11 @@ def vert_rss_feed(numPosts):
     for attribute in attributes:
       story[attribute] = jQuery(item).children(attribute).html()
 
-    # Apply a series of changes to the rss entry using the alter_css helper
+    # Apply a series of changes to the rss entry using the alter_rss helper
     _alter_rss(story)
     recentStories.append(story)
 
-  # Now generate and return the html to place in the template.
-  # We use Jinja instead of Flask here so we can run this separate
-  # from the app.
-  env = Environment(loader=PackageLoader("vertstudios", "templates"))
-  template = env.get_template("partials/rss_feed.html")
-  return template.render(stories=recentStories)
-
+  return recentStories
 
 # Helper method for altering RSS feed content for preview purposes.  
 def _alter_rss(rssObj):
@@ -91,12 +103,30 @@ def _alter_rss(rssObj):
   rssObj["description"] = description
   rssObj["pubDate"] = date
 
+
+
+# Get the html from a list of stories
+def stories_to_html(recentStories):
+  # We use Jinja instead of Flask here so we can run this separate
+  # from the app.
+  env = Environment(loader=PackageLoader("vertstudios", "templates"))
+  template = env.get_template("partials/rss_feed.html")
+  return template.render(stories=recentStories)
+
+
 # Write feed to file in JSON format
-def cache_feed(cacheDir, numPosts):
+def cache_feed(cacheDir, fileName, numPosts):
   recentStories = vert_rss_feed(numPosts)
   feedJSON = json.dumps(recentStories)
-  print(feedJSON)
-  fileName = "feed.json"
-  #f = open(os.path.join(cacheDir, fileName), 'w')
-  #f.write(feedJSON)
-  #f.close()
+  f = open(os.path.join(cacheDir, fileName), 'w')
+  f.write(feedJSON)
+  f.close()
+  return recentStories
+
+# Read feed file and return a list of stories
+def read_cache(cacheDir, fileName):
+  f = open(os.path.join(cacheDir, fileName))
+  feedJSON = f.read()
+  f.close()
+  recentStories = json.loads(feedJSON)
+  return recentStories 

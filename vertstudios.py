@@ -3,7 +3,9 @@
 from settings import *
 from flask import Flask, render_template, request, g
 from helpers.rss import get_blog_feed
+from blog.blog import blog
 app = Flask(__name__)
+app.register_blueprint(blog)
 
 # Get a bodyID for CSS purposes
 @app.before_request

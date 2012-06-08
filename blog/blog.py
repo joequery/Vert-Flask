@@ -5,6 +5,6 @@ blog = Blueprint('blog', __name__, template_folder='blog_templates')
 
 @blog.route('/blog')
 def blog_home():
-  return render_template("blog_layout.html")
+  return render_template("blog_index.html")
 
 

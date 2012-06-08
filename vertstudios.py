@@ -1,12 +1,12 @@
 # Vert studios website. Yay!
 
 from settings import *
-from flask import Flask, render_template, request, g
+from flask import Flask, render_template, request, g, abort
 from helpers.rss import get_blog_feed
 from blog.blog import blog
 from flaskext.markdown import Markdown
+from jinja2 import TemplateNotFound
 app = Flask(__name__)
-app.register_blueprint(blog)
 Markdown(app)
 
 # Get a bodyID for CSS purposes
@@ -46,6 +46,21 @@ def about():
 @app.route('/contact')
 def contact():
   return render_template("contact.html")
+
+##########################
+# The blog!
+##########################
+@app.route('/blog')
+def blog_index():
+  return render_template("blog_index.html")
+
+@app.route('/blog/<post>')
+def blog_post(post):
+  try:
+    return render_template("blog_posts/%s.html" % post)
+  except TemplateNotFound:
+    abort(404)
+
 
 if __name__ == "__main__":
 	app.run(debug=True)

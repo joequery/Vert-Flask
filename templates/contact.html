@@ -1,0 +1,10 @@
+{% from "sections" import what_now %}
+{% extends "layout.html" %}
+{% block body %}
+  <h1>Contact us</h1>
+<div id="tertiary">
+{{ what_now()|safe}}
+</div><!--END tertiary-->
+
+{% endblock body %}
+

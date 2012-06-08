@@ -24,23 +24,23 @@
   </div>
   <ul id="main_nav">
   <li>
-      <h5><a href="/about">About</a></h5>
+      <h5><a href="{{url_for("about")}}">About</a></h5>
       <p>We're a small web design company with big ideas in Tyler, Texas.</p>
   </li>
   <li>
-      <h5><a href="/work">Work</a></h5>
+      <h5><a href="{{url_for("work")}}">Work</a></h5>
       <p>See what our work has to say. <b>WARNING</b>: <br />It might get loud.</p>
   </li>
   <li>
-      <h5><a href="/services">Services</a></h5>
+      <h5><a href="{{url_for("services")}}">Services</a></h5>
       <p>We design web sites that don't suck. We're quite proud of that.</p>
   </li>
   <li>
-      <h5><a href="/blog/">Blog</a></h5>
+      <h5><a href="{{url_for("blog.blog_home")}}">Blog</a></h5>
       <p>Read our articles on design, code, SEO, and the state of the web.</p>
   </li>
   <li>
-      <h5><a href="/contact">Get A Quote</a></h5>
+      <h5><a href="{{url_for("contact")}}">Get A Quote</a></h5>
       <p>How much will it cost?<br /><br /><strong>Find out now!</strong></p>
   </li>
   </ul>

@@ -4,9 +4,11 @@
 <h1>Your website is your company's first impression.<br/><span>Together, we can make it a lasting one.</span></h1>
 <div id="featured_work">
   <div id="screenshots">
-    {{img("etb_ss1.jpg", "East Texas Beancounter")|safe}}  
-    {{img("javascript.jpg", "JavaScript Article")|safe}}  
-    {{img("scarborough_ss1.jpg")|safe}}  
+    {% autoescape false %}
+      {{img("etb_ss1.jpg", "East Texas Beancounter")}}  
+      {{img("javascript.jpg", "JavaScript Article")}}  
+      {{img("scarborough_ss1.jpg")}}  
+    {% endautoescape %}
   </div>
   <div id="featured_copy">
     <h2>What we're up to</h2>

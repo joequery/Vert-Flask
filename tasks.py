@@ -14,7 +14,7 @@ taskLogFile = open("/tmp/vert_tasks.log", 'a', 0)
 ##################################################
 # Cache the blog rss feed to decrease load time!
 ##################################################
-@sched.interval_schedule(hours=1)
+@sched.interval_schedule(seconds=5)
 def cache_blog_feed():
   rss.cache_feed(CACHE_DIR, BLOG_CACHE_FILE, NUM_BLOG_POSTS)
   taskLogFile.write("Feed cached at %s\n" % nicetime())

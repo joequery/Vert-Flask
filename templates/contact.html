@@ -1,7 +1,19 @@
+{% from "macros" import render_field %}
 {% from "sections" import what_now %}
 {% extends "layout.html" %}
 {% block body %}
-  <h1>Contact us</h1>
+<h1>Contact us</h1>
+  
+<form id="mail" method="post" action="{{url_for("contact")}}">
+<dl>
+  {% autoescape false %}
+  {{ render_field(form.name) }}
+  {{ render_field(form.email) }}
+  {{ render_field(form.phone) }}
+  {{ render_field(form.message) }}
+  {% endautoescape %}
+</dl>
+<p><input type="submit" value="Submit"></p>
 <div id="tertiary">
 {{ what_now()|safe}}
 </div><!--END tertiary-->

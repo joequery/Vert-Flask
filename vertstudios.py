@@ -3,6 +3,7 @@
 from settings import *
 from flask import Flask, render_template, request, g, abort
 from helpers.rss import get_blog_feed
+from helpers.contact import ContactForm
 from flaskext.markdown import Markdown
 from jinja2 import TemplateNotFound
 app = Flask(__name__)
@@ -46,9 +47,10 @@ def services():
 def about():
   return render_template("about.html")
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-  return render_template("contact.html")
+  form = ContactForm(request.form)
+  return render_template("contact.html", form=form)
 
 ##########################
 # The blog!

@@ -1,0 +1,13 @@
+# This is an example Toggl Project File. Uncomment out the following
+# and configure to your project specifications. A client is not mandatory,
+# unless you use the same project names for different clients (which is
+# not uncommon)
+# Toggl CLI Settings. You can specify the following settings:
+# Email
+# Password
+# Client
+# Project.
+#
+# These will overwrite the settings in your ~/.toggl file.
+
+Project: Vert Administration

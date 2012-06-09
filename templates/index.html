@@ -1,11 +1,12 @@
+{% from "macros" import img %}
 {% extends "layout.html" %}
 {% block body %}
 <h1>Your website is your company's first impression.<br/><span>Together, we can make it a lasting one.</span></h1>
 <div id="featured_work">
   <div id="screenshots">
-    <img src="http://assets.vertstudios.com/images/etb_ss1.jpg" alt="East Texas Beancounter" />
-    <img src="http://assets.vertstudios.com/images/javascript.jpg" alt="JavaScript Article" />
-    <img src="http://assets.vertstudios.com/images/scarborough_ss1.jpg" alt="www.texaslandarchitect.com screenshot" />
+    {{img("etb_ss1.jpg", "East Texas Beancounter")|safe}}  
+    {{img("javascript.jpg", "JavaScript Article")|safe}}  
+    {{img("scarborough_ss1.jpg")|safe}}  
   </div>
   <div id="featured_copy">
     <h2>What we're up to</h2>
@@ -31,11 +32,12 @@
 <div class="hr"><hr /></div>
 <div id="aboutus">
   <h2>What We Do</h2>
-  <img src="http://assets.vertstudios.com/images/what_we_do.png" alt="Vert Studios: What we do" />
+  {{img("what_we_do.png", "Vert Studios: What we do")|safe}}
   <p>First impressions mean everything. These days, your website is the number one place people go to find out more about you and your company.</p>
   <p>Your homepage is more than just a virtual business card - it represents who you are and what you stand for.</p>
   <p>Vert Studios will help you develop quality, eye-catching websites that will place your company at the top of any business list and first on customers' minds.</p>
-  <p>With Vert Studios, a handshake to reaching new business is only a <a href="/contact">mouse-click away</a>.</p>
+  <p>With Vert Studios, a handshake to reaching new business is only a 
+  <a href="{{url_for("contact")}}">mouse-click away</a>.</p>
 </div>
 <div class="hr"><hr /></div>
 <div class="tertiary">

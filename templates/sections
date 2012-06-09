@@ -1,3 +1,4 @@
+{% from "macros" import img, js, css %}
 {% macro meta_and_css() %}
 <head>
   <script type="text/javascript">
@@ -7,20 +8,18 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
   <meta name="description" content="Your website is your company's first impression. Together, we can make it a lasting one. Vert Studios is a web design company in Tyler, Texas." />
   <meta name="google-site-verification" content="36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8" />
-  <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
-  <link rel="stylesheet" type="text/css" href="http://assets.vertstudios.com/css/reset.css" />
-  <link rel="stylesheet" type="text/css" href="http://assets.vertstudios.com/css/js.css" />
-  <link rel="stylesheet" type="text/css" href="http://assets.vertstudios.com/css/text.css" />
-  <link rel="stylesheet" type="text/css" href="http://assets.vertstudios.com/css/main.css" />
-  <link rel="stylesheet" type="text/css" href="http://assets.vertstudios.com/css/codestream.css" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
+  {% for file in ["reset", "js", "text", "main", "codestream"] %}
+    {{ css(file) }}
+  {% endfor %}
 </head>
 {% endmacro %}
 
 {% macro nav() %}
 <div id="header">				
   <div id="vertStudios">
-    <a href="/">Vert Studios<img src="http://assets.vertstudios.com/images/vert_logo_header.png" alt="Vert Logo" /></a>
+    <a href="/">Vert Studios{{img("vert_logo_header.png", "Vert Studios")}}</a>
   </div>
   <ul id="main_nav">
   <li>
@@ -49,16 +48,11 @@
 
 {% macro javascripts() %}
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
-<script type="text/javascript" src="http://assets.vertstudios.com/js/vertlib.js"></script>
-<script type="text/javascript" src="http://assets.vertstudios.com/js/jsCSS.js"></script>
-<script type="text/javascript" src="http://assets.vertstudios.com/js/index_init.js"></script>
-<script type="text/javascript" src="http://assets.vertstudios.com/js/easing.js"></script>  
-<script type="text/javascript" src="http://assets.vertstudios.com/js/slaveshow.min.js"></script>               
-<script type="text/javascript" src="http://assets.vertstudios.com/js/carousel.js"></script>    
-<script type="text/javascript" src="http://assets.vertstudios.com/js/carousel-init.js"></script>
-<script type="text/javascript" src="http://assets.vertstudios.com/js/easing.js"></script>
-<script type="text/javascript" src="http://assets.vertstudios.com/js/Scroller.js"></script>
-<script type="text/javascript" src="http://assets.vertstudios.com/js/work_init.js"></script>
+{% for file in 
+  ["vertlib", "jsCSS", "index_init", "easing", "slaveshow.min",
+  "carousel", "carousel-init", "easing", "Scroller", "work_init"] %}
+    {{ js(file) }}
+{% endfor %}
 {% endmacro  %}
 
 {% macro footer() %}

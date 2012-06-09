@@ -3,7 +3,6 @@
 from settings import *
 from flask import Flask, render_template, request, g, abort
 from helpers.rss import get_blog_feed
-from blog.blog import blog
 from flaskext.markdown import Markdown
 from jinja2 import TemplateNotFound
 app = Flask(__name__)
@@ -56,10 +55,7 @@ def blog_index():
 
 @app.route('/blog/<post>')
 def blog_post(post):
-  try:
-    return render_template("blog_posts/%s.html" % post)
-  except TemplateNotFound:
-    abort(404)
+  return render_template("blog_posts/%s.html" % post)
 
 
 if __name__ == "__main__":

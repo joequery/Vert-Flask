@@ -1,3 +1,4 @@
+{% from "macros" import img %}
 {% from "sections" import what_now %}
 {% extends "layout.html" %}
 {% block body %}
@@ -9,7 +10,7 @@
   We take the time to learn the latest technologies as they appear - staying 
   a step ahead of our competition, and allowing you to do the same.
 </p>
-<img src="http://assets.vertstudios.com/images/pointer.png" alt="" class="pointer" />
+{{img("pointer.png", "", "pointer")|safe }}
 </div>
 
 <div class="sub_page_1 clearfix">

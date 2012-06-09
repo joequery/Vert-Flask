@@ -1,0 +1,31 @@
+{% set assets="http://assets.vertstudios.com" %}
+{% macro img(file, alt="", class="") %}
+<img 
+  src="{{assets}}/images/{{file}}" 
+  alt="{{alt}}" 
+  class="{{class}}" 
+  />
+{% endmacro %}
+
+{% macro js(file) %}
+<script 
+  type="text/javascript" 
+  src="{{assets}}/js/{{file}}.js">
+  </script>
+{% endmacro %}
+
+{% macro css(file) %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{{assets}}/css/{{file}}.css" 
+  />
+{% endmacro %}
+
+{% macro blog_img(file, alt="", class="") %}
+<img 
+  src="{{assets}}/blog/images/{{file}}" 
+  alt="{{alt}}"
+  class="{{class}}" 
+  />
+{% endmacro %}

@@ -15,7 +15,7 @@ def before_request():
     if request.path == '/':
       g.bodyID = "index"
     else:
-      g.bodyID = request.path[1:]
+      g.bodyID = request.path[1:].split('/')[0]
 
   get_body_id()
 
@@ -55,7 +55,10 @@ def blog_index():
 
 @app.route('/blog/<post>')
 def blog_post(post):
-  return render_template("blog_posts/%s.html" % post)
+  try:
+    return render_template("blog_posts/%s.html" % post)
+  except TemplateNotFound:
+    return render_template("404.html"), 404
 
 
 if __name__ == "__main__":

@@ -3,3 +3,4 @@ PyQuery
 requests
 apscheduler
 Flask-Markdown
+Flask-WTF

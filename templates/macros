@@ -1,4 +1,4 @@
-{% set assets="http://assets.vertstudios.com" %}
+{% set assets="http://s3.amazonaws.com/assets.vertstudios.com" %}
 {% macro img(file, alt="", class="") %}
 <img 
   src="{{assets}}/images/{{file}}" 

@@ -19,6 +19,10 @@ def before_request():
 
   get_body_id()
 
+@app.errorhandler(404)
+def page_not_found(e):
+      return render_template('404.html'), 404
+
 
 #####################################################################
 # Routes
@@ -49,6 +53,7 @@ def contact():
 ##########################
 # The blog!
 ##########################
+@app.route('/blog/')
 @app.route('/blog')
 def blog_index():
   return render_template("blog_index.html")
@@ -58,7 +63,7 @@ def blog_post(post):
   try:
     return render_template("blog_posts/%s.html" % post)
   except TemplateNotFound:
-    return render_template("404.html"), 404
+    return page_not_found(TemplateNotFound)
 
 
 if __name__ == "__main__":

@@ -5,9 +5,9 @@
 <div id="featured_work">
   <div id="screenshots">
     {% autoescape false %}
-      {{img("etb_ss1.jpg", "East Texas Beancounter")}}  
-      {{img("javascript.jpg", "JavaScript Article")}}  
-      {{img("scarborough_ss1.jpg")}}  
+      {{img(g, "etb_ss1.jpg", "East Texas Beancounter")}}  
+      {{img(g, "javascript.jpg", "JavaScript Article")}}  
+      {{img(g, "scarborough_ss1.jpg")}}  
     {% endautoescape %}
   </div>
   <div id="featured_copy">
@@ -34,7 +34,7 @@
 <div class="hr"><hr /></div>
 <div id="aboutus">
   <h2>What We Do</h2>
-  {{img("what_we_do.png", "Vert Studios: What we do")|safe}}
+  {{img(g, "what_we_do.png", "Vert Studios: What we do")|safe}}
   <p>First impressions mean everything. These days, your website is the number one place people go to find out more about you and your company.</p>
   <p>Your homepage is more than just a virtual business card - it represents who you are and what you stand for.</p>
   <p>Vert Studios will help you develop quality, eye-catching websites that will place your company at the top of any business list and first on customers' minds.</p>

@@ -1,5 +1,5 @@
 {% from "macros" import img, js, css %}
-{% macro meta_and_css() %}
+{% macro meta_and_css(g) %}
 <head>
   <script type="text/javascript">
   //Credit: Doug Neiner - http://dougneiner.com/
@@ -11,15 +11,15 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
   <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
   {% for file in ["reset", "js", "text", "main", "codestream"] %}
-    {{ css(file) }}
+    {{ css(g, file) }}
   {% endfor %}
 </head>
 {% endmacro %}
 
-{% macro nav() %}
+{% macro nav(g) %}
 <div id="header">				
   <div id="vertStudios">
-    <a href="/">Vert Studios{{img("vert_logo_header.png", "Vert Studios")}}</a>
+    <a href="/">Vert Studios{{img(g,"vert_logo_header.png", "Vert Studios")}}</a>
   </div>
   <ul id="main_nav">
   <li>
@@ -46,12 +46,12 @@
 </div>
 {% endmacro %}
 
-{% macro javascripts() %}
+{% macro javascripts(g) %}
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
 {% for file in 
   ["vertlib", "jsCSS", "index_init", "easing", "slaveshow.min",
   "carousel", "carousel-init", "easing", "Scroller", "work_init"] %}
-    {{ js(file) }}
+    {{ js(g, file) }}
 {% endfor %}
 {% endmacro  %}
 

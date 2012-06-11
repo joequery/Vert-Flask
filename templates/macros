@@ -1,30 +1,29 @@
-{% set assets="http://s3.amazonaws.com/assets.vertstudios.com" %}
-{% macro img(file, alt="", class="") %}
+{% macro img(g, file, alt="", class="") %}
 <img 
-  src="{{assets}}/images/{{file}}" 
+  src="{{g.assets}}/images/{{file}}" 
   alt="{{alt}}" 
   class="{{class}}" 
   />
 {% endmacro %}
 
-{% macro js(file) %}
+{% macro js(g, file) %}
 <script 
   type="text/javascript" 
-  src="{{assets}}/js/{{file}}.js">
+  src="{{g.assets}}/js/{{file}}.js">
   </script>
 {% endmacro %}
 
-{% macro css(file) %}
+{% macro css(g, file) %}
 <link 
   rel="stylesheet" 
   type="text/css" 
-  href="{{assets}}/css/{{file}}.css" 
+  href="{{g.assets}}/css/{{file}}.css" 
   />
 {% endmacro %}
 
-{% macro blog_img(file, alt="", class="") %}
+{% macro blog_img(g, file, alt="", class="") %}
 <img 
-  src="{{assets}}/blog/images/{{file}}" 
+  src="{{g.assets}}/blog/images/{{file}}" 
   alt="{{alt}}"
   class="{{class}}" 
   />

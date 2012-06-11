@@ -9,7 +9,6 @@ from jinja2 import TemplateNotFound
 app = Flask(__name__)
 Markdown(app)
 
-# Get a bodyID for CSS purposes
 @app.before_request
 def before_request():
   def get_body_id():
@@ -18,7 +17,21 @@ def before_request():
     else:
       g.bodyID = request.path[1:].split('/')[0]
 
+  # Grant access to the dev/production environment variable
+  def get_env():
+    g.env = FLASK_ENV
+
+  # Determine cloudfront vs s3 content delivery
+  def set_assets_dir():
+    if FLASK_ENV == "production":
+      g.assets = "http://assets.vertstudios.com"
+    else:
+      g.assets = "http://s3.amazonaws.com/assets.vertstudios.com"
+
   get_body_id()
+  get_env()
+  set_assets_dir()
+  
 
 @app.errorhandler(404)
 def page_not_found(e):

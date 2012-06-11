@@ -26,7 +26,7 @@ def before_request():
     if FLASK_ENV == "production":
       g.assets = "http://assets.vertstudios.com"
     else:
-      g.assets = "http://s3.amazonaws.com/assets.vertstudios.com"
+      g.assets = "static"
 
   get_body_id()
   get_env()

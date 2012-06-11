@@ -1,0 +1,1440 @@
+/*----------------------------------------------------------------------
+//File: main.css
+//Purpose: Contains general styles.
+//Client: Us!!!
+//Last Updated: December 16, 2010
+//Author: Justin Edwards (@vertjustin)
+//Edited by: Joseph McCullough (@joe_query)
+//Most likely re-edited by: Justin Edwards
+//Most likely accidentally overridden by: Joseph McCullough
+/*----------------------------------------------------------------------*/
+
+
+/*
+colors:
+    light gray (borders): 919591;
+    super light gray (de-contrasted text): c9c9c9;
+    blue: 1ba0cc;
+    dark gray (background): 1d1d1d;
+    dark blue: 207390;      
+*/
+
+
+/*----------------------------------------------------------------------------
+                            Background, main wrapper
+----------------------------------------------------------------------------*/
+html {
+    background: #1d1d1d url("http://assets.vertstudios.com/images/html.jpg") top center no-repeat;
+    text-shadow: 1px 1px 3px #1b1b1b;
+}
+
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/*----------------------------------------------------------------------------
+                            Header, primary navigation
+----------------------------------------------------------------------------*/
+    
+    #header {
+        height: 120px;
+        border-bottom: 1px solid #919591;
+        position: relative;
+    }
+
+    #vertStudios {      
+        position: absolute;
+        top: 10px;
+        left: 0px;
+        width: 299px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        border-right: 1px solid #919591;
+    }
+
+    #vertStudios a {
+        position: absolute;
+        top: 0px;
+        left: 9px;
+        width: 255px;
+        color: #fff;
+        font-size: 36px;
+    }
+
+        #vertStudios a:hover {
+            text-decoration: none;
+        }
+
+    #vertStudios img{
+        position: absolute;
+        top: 28px;
+        right: 0px;
+    }
+
+    /*-------------------- Begin primary navigation ------------------*/    
+    #main_nav {
+        position: absolute;
+        top: 10px;
+        right: 55px;
+    }
+
+    #main_nav li {
+        width: 100px;
+        height: 90px;
+        padding: 5px 10px;
+        float: left;
+        border-right: 1px solid #919591;
+        font-size: 12px;
+        font: 12px/1.2 MuseoSans, 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+        color: #c9c9c9;
+    }
+    
+    #main_nav li p {
+        -webkit-transition-property: color, background; 
+        -webkit-transition-property: color, background; 
+        -webkit-transition-duration: .2s, .2s; 
+    }
+    
+    #main_nav li:hover p {
+        color: #fff;
+    }
+
+    #main_nav h5 a {
+        color: #207390;
+        text-decoration: underline;
+        padding-bottom: 0;
+        font-size: 13px;
+        -webkit-transition-timing-function: linear, ease-in;
+        -webkit-transition-duration: .2s, .2s; 
+        -webkit-transition-timing-function: linear, ease-in;
+    }
+    
+    #main_nav h5 {
+        margin-bottom: 0;
+    }
+    
+    #main_nav li.active, #main_nav li.nav_hover {
+        color: #fff;
+        position: relative;
+    }
+
+    #main_nav li.active a, #main_nav li:hover a  {
+        color: #1ba0cc;
+    }
+
+    #main_nav li:hover h5 a {
+        color: #1ba0cc;
+    }
+    
+    #main_nav li:hover h5 {
+        color: #1ba0cc;
+    }
+
+
+    #main_nav li h5 a {
+        color: #207390;
+    }
+
+    #main_nav li.active img {
+        position: absolute;
+        bottom: -30px;
+        right: -1px;
+    }
+
+/*----------------------------------------------------------------------------
+                             Footer Styles
+----------------------------------------------------------------------------*/
+
+    #footer p {
+        font-size: 18px;
+        position: relative;
+        top: -20px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #footer span {
+        font-size: 12px;
+        position: relative;
+        top: -2px;
+    }
+    
+    #footer {
+        clear: both;
+    }
+
+/*----------------------------------------------------------------------------
+                             Misc. Global Styles
+----------------------------------------------------------------------------*/
+
+    #content > * {
+        padding: 0 10px;
+    }
+    
+    sup{
+    vertical-align: super;
+    font-size: .75em;
+    }
+    
+    sub{
+    vertical-align: sub;
+    font-size: .75em;
+    }
+    
+    /**Grid*/
+    #grid{
+        
+        /* Vertical grid lines */
+        background: url("http://assets.vertstudios.com/images/grid.png") repeat-y 0 0;
+        
+        /* Dimensions - same width as your grid with gutters */
+        width: 960px;
+        
+        /* Grid (left-aligned)
+        position: absolute;
+        top: 0;
+        left: 0;
+        */
+        
+        /* Grid (centered) */
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -480px;
+        
+    }
+
+/**
+ * Horizontal grid lines, defined by your base line height
+ *
+ * Remember, the CSS properties that define the box model:
+ * visible height = height + borders + margins + padding
+ */
+#grid div.horiz{
+
+    /* 20px line height */
+    height: 19px;
+    border-bottom: 1px dotted #aaa;
+    margin: 0;
+    padding: 0;
+
+}   
+
+.hr{
+    height: 29px;
+    background: transparent url("http://assets.vertstudios.com/images/hr.png") top center no-repeat;
+    border: none;
+    clear: both;
+}
+
+hr {
+    display: none;
+}
+
+
+#tertiary {
+    clear: both;
+}
+
+
+#what_now {
+    border-top: 1px solid #919591;
+    min-height: 190px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+    #what_now h2 {
+        font-size: 60px;
+        padding-bottom: 0;
+    }
+
+
+/*---------------------------------------------------------------------------
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>                 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>> Begin Page Specific Styles! <<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>                 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+/---------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------
+                            404 Styles - 404.php
+----------------------------------------------------------------------------*/
+
+#a404 h1{
+font-size: 60px;
+padding: 0px;
+margin: 0px;
+}
+
+#a404 h2{
+    font-size: 48px;
+    padding: 0px;
+margin: 0px;
+}
+
+#a404 #content{
+    margin-top: 40px;
+}
+
+/*----------------------------------------------------------------------------
+                        Home Page Styles - index.php
+----------------------------------------------------------------------------*/
+
+
+/*---------------------------jQuery Slideshow-------------------------------*/
+#index #featured_work, #index #about, #index #tertiary {
+    margin-bottom: 40px;
+}
+
+#index #featured_work {
+    position: relative;
+    margin-top: 50px;
+    clear: both;
+    height: 452px;
+}
+
+    /* jQuery Slaveshow - Primary slideshow*/
+        #index #screenshots {
+            border: 5px solid #fff;
+            width: 750px;
+            height: 421px;
+            background: #1b1b1b;
+            overflow: hidden;
+            position: absolute;
+            top: 0px;
+            left: 10px;
+        }
+    
+        #index #screenshots img{
+            width: 750px;
+            height: 421px;
+            position: absolute;
+            top: 0px;
+            left: 9999px; /*offset to avoid picture jumble effect*/
+        }
+
+        #index #screenshots img.first{
+            position: absolute;
+            top: 0px; 
+            left: 0px;
+        }
+        
+        /* jQuery Slaveshow - 1st Slave */
+        #index #featured_copy {
+            width: 253px;
+            height: 358px;
+            padding: 24px 20px 0 49px;
+            background: url("http://assets.vertstudios.com/images/recent_work_trans.png") top right no-repeat;
+            position: absolute;
+            top: -100px;
+            right: 0px;
+            z-index: 5 !important;
+            overflow: hidden;
+        }
+        
+            #index #featured_copy ul li {
+            background: url("http://assets.vertstudios.com/images/ul_marker.png") no-repeat 0% 0%;
+            padding: 2px 0px 7px 17px;
+            }
+
+        #index #summaries{
+            height: 270px;
+            width: 253px;
+            overflow: hidden;
+            position: absolute;
+            top: 70px;
+            left: 49px;
+        }
+            
+            #index .case_study{
+                height: 270px;
+                width: 253px;
+                overflow: hidden;
+                position: absolute;
+                top: 0px;
+                left: 9999px; /*offset to avoid text jumble*/
+            }
+            
+                #index .case_study.first{
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                }
+
+/*-----------------------------About Section--------------------------------*/
+
+#aboutus{
+    height: 490px;
+}
+
+    #aboutus p, #aboutus h2 {
+        width: 280px;
+    }
+
+    #aboutus img {
+        float: right;
+    }   
+
+
+/*----------------------From the Blog/What Now Section----------------------*/
+
+#index #what_now, #from_the_blog {
+    width: 418px;   
+    float: left;    
+    min-height: 210px;
+    margin-bottom: 25px;
+}
+
+#index #what_now{
+border-top: none;
+border-right: 1px solid #919591;
+padding: 25px 52px 0px 0px;
+}
+
+
+#from_the_blog {
+    width: 428px;
+    padding: 25px 0px 0px 40px;
+    font-size: 12px;
+    position: relative;
+}
+
+#featured_posts{
+    width: 408px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    top: 60px;
+    left: 40px;
+}
+
+    .post_snippet{
+        width: 190px;
+        float: left;
+        padding-left: 15px;
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 9999px; /*Have offset in case javascript not enabled*/
+        
+    }
+    
+        .post_snippet.first{
+            padding-left: 0px;
+        }
+    
+
+    .post_snippet a {
+        font-size: 13px;
+        font-style: normal;
+        width: 190px;
+    }   
+
+    .post_snippet h4 {
+        font-size: 10px;
+        font-style: italic;
+        border-bottom: 1px solid #1ba0cc;
+        padding-bottom: 2px;
+    }
+    
+        .post_snippet h4 span{
+            background: url("http://assets.vertstudios.com/images/comments.png") top left no-repeat;
+            position: absolute;
+            right: 20px;
+            top: -2px;
+            display: inline-block;
+            height: 20px;
+            padding-top: 5px;
+            width: 21px;
+            text-align: center;
+            font-size: 9px;
+        }
+        
+/*----------------------------------------------------------------------------
+                        About Page Styles - about.php
+----------------------------------------------------------------------------*/      
+
+                
+#work #sub_page_intro {
+    float: left;
+    margin-right: -400px;
+    z-index: 5;
+}
+
+#work #screenshots {
+    float: right;
+}
+
+/*----------------------------------------------------------------------------
+                        Work Page Styles - work.php
+----------------------------------------------------------------------------*/  
+
+#work #content {
+    padding-top: 60px;
+    overflow: hidden;
+}
+
+/*---------------------------Bubble Scroller--------------------------------*/
+.featured_work {
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    background: 0px;
+    height: auto;
+    padding-bottom: 50px !important;
+}
+
+.js #work .featured_work {
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    height: 493px;
+    background: url("http://assets.vertstudios.com/images/work_image_back.jpg") 311px 30px no-repeat;
+}
+    
+    #work .featured_work .screenshot{
+        border: 5px solid #fff;
+        width: 630px;
+        height: auto;
+        background: #1b1b1b; 
+        overflow: hidden;
+        position: relative;
+        top: 30px;
+        right: -310px;
+    }
+    
+    .js #work .featured_work .screenshot{
+        border: 5px solid #fff;
+        width: 630px;
+        height: 421px;
+        background: #1b1b1b; 
+        overflow: hidden;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+    }
+    
+    #work .featured_work .copy{
+        position: absolute;
+        top: 25px;
+        left: 0;
+        width: 280px;            
+    }
+    
+        #work #sub_page_intro h2{
+            color: #fff;
+            margin: 0 0 10px 0;
+            padding: 0;
+            font-size: 35px;
+            max-width: 380px;
+        }
+
+/*---------------------------Work Contact Form--------------------------------*/
+#work form {
+    float: left;
+    width: 532px;
+    padding: 35px 0 55px 115px;
+        position: relative;
+}
+.no_js_hidden {
+		visibility: hidden;
+}
+
+span.no_js_hidden {
+		display: none;
+}
+
+.js .no_js_hidden {
+    visibility: visible;
+}
+
+.js span.no_js_hidden {
+    display: inline;
+}
+.js #work form #frame_wrap{
+    position: absolute;
+        top: 35px;
+        left: 115px;
+    width: 532px;
+        height: 385px;
+        overflow: hidden
+}
+
+.js #frame_wrap .frame{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 532px;
+    height: 385px;
+}
+
+/* Justin -- Need Non JS styles for form to go here */
+
+#work .featured_work .contact_form {
+    background: #202020;
+    overflow: hidden;
+}
+
+#work label {
+    display: inline-block;
+    width: 100px;
+    float: left;
+    clear: both;
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+    
+#work input, #work textarea {
+    background: url("http://assets.vertstudios.com/images/input_bg.jpg") top left no-repeat;
+    width: 318px;
+    border: 1px solid #626262;
+    padding: 3px 10px;
+}
+    
+#work input {
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+#work textarea {
+    height: 155px;
+    overflow: auto;
+    color: #FFFFFF;
+}
+
+#work #submit {
+    width: 33px;
+    height: 41px;
+    border: none;
+    padding: 0;
+    position: relative;
+    float: right;
+    top: 10px;
+    cursor: pointer;
+    background: none;
+    margin-right: 72px;
+}
+
+#work form p {
+    font-size: 11px;
+    font-style: italic;
+    margin-left: 120px;
+    padding-top: 6px;
+    line-height: 1.1em;
+    float: left;
+    text-align: center;
+}
+
+#work form .invalid{
+    border: 1px solid #FF0000;
+}
+
+p.required, span.required{
+    color: #FF0000;
+}
+
+
+#work #sub_page_intro {
+    width: 339px;
+    min-height: 215px;
+}
+
+#work #content .sub_page_1 {
+    width: 940px;
+    padding-top: 20px;
+}
+
+#work #content .sub_page_1 h2 {
+        border: none;
+}
+
+.portfolio_small_thumb {
+    float: left;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+.portfolio_small_thumb h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 0;
+    line-height: 1.2em;
+    padding-bottom: 0;
+}
+
+.portfolio_small_thumb p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
+}
+
+.portfolio_small_thumb.middle {
+    margin: 0 48px 0 49px;
+}
+
+.portfolio_small_thumb img {
+    border: 2px solid #fff;
+    margin-bottom: 5px;
+}
+
+#work #tertiary p {
+    width: 220px;
+    float: left;
+}
+
+
+#videoCopy ol {
+    padding:  0 0 15px 0;
+}
+
+#videoCopy ol li {
+    list-style-type: decimal;
+    padding-left: 20px;
+    list-style-position: inside;
+}
+
+/*---------------------------Work Contact Form--------------------------------*/
+
+#quote_body {
+}
+
+#work form #quote_body p, #work .frame p {
+    float: none;
+    text-align: left;
+    margin-left: 0;
+    font-style: normal;
+    font-size: inherit;
+    max-width: 90%;
+}
+
+#work form #quote_body ul li, #work .frame ul li {
+        padding: 0px 0 10px 17px;
+        margin-left: 25px;
+}
+
+#work .frame label{
+	width: auto;
+	float: none;
+}
+
+#work #quote-details label {
+    width: 100px;
+    float: left;
+}
+
+#work form #quote_body ul li {
+    background: url("http://assets.vertstudios.com/images/ul_marker.png") top left no-repeat;
+}
+#work .frame {
+    position: relative;
+}
+#work .frame input {
+    width: 20px;
+    margin: 0;
+}
+
+#work .frame input {
+    margin: 0;
+}
+#work .frame #quote-details input {
+    margin-bottom: 10px;
+}
+
+#work .frame a.next, #work .frame a.prev {
+    display: none;
+}
+.js #work .frame a.next, .js #work .frame a.prev {
+    display: inline-block;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 25px;
+    color: #fff;
+    text-decoration: none;
+}
+.js #work .frame a.next {
+    right: 60px;
+    background: url("http://assets.vertstudios.com/images/next_button.jpg") top left no-repeat;
+    padding-right: 62px;
+}
+.js #work .frame a.prev {
+    left: 0px;
+    padding-left: 62px;
+    background: url("http://assets.vertstudios.com/images/previous_button.jpg") top left no-repeat;
+}
+#work .frame fieldset {
+    position: relative;
+}
+
+#work .frame button#submit {
+    background: url("http://assets.vertstudios.com/images/next_button.jpg") no-repeat scroll left top transparent;
+    color: #FFFFFF;
+    display: inline-block;
+    float: none;
+    font-size: 15px;
+    font-family: MuseoSans, 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+    font-weight: bold;
+    height: 40px;
+    margin-right: 56px;
+    padding: 9px 54px 20px 13px;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px #1B1B1B;
+    top: 98%;
+    width: auto;
+}
+
+#work .frame fieldset#quote-details input {
+   width: 318px; 
+}
+
+#work form #quote_body p {
+    float: none;
+    max-width: 90%;
+    text-align: left;
+}
+#work .frame p.form-meta {
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 130px;
+}
+/*-------------------------End Work Contact Form------------------------------*/
+
+
+
+
+
+/*----------------------------------------------------------------------------
+                        About Page Styles - about.php
+----------------------------------------------------------------------------*/
+
+#about #content{
+    padding-top: 60px;
+}
+
+#about #content .sub_page_2 {
+    width: 940px;
+}
+
+#about .sub_page_2 h2 {
+    width: 100%;
+}
+
+#about .sub_page_3 div {
+    width: 300px;
+    float: left;
+    clear: none;
+    margin-right: 20px;
+}
+
+/*----------------------------------------------------------------------------
+                     Services Page Styles - services.php
+----------------------------------------------------------------------------*/
+
+#services #content{
+    padding-top: 60px;
+}
+
+/*----------------------------------------------------------------------------
+                                Blog Styles
+----------------------------------------------------------------------------*/
+#blog{
+
+}
+
+#blog h1{
+font-size: 28px;
+}
+
+/*Table Styling for blog*/
+#blog table{
+color: #FFFFFF;
+text-align: center;
+}
+
+#blog td, #blog th { 
+border: 1px solid #ffffff; 
+padding: 5px;}
+
+#blog td{
+text-align: left;
+}
+
+#blogPost ul li {
+        padding: 2px 0 7px 17px;
+        background: url("http://assets.vertstudios.com/images/ul_marker.png") top left no-repeat;
+    }
+
+#blog h1{
+    width: auto;
+}
+#blogNav{
+    float: left;
+    width: 940px;
+    height: 50px;
+    background-color: #000000;
+    border-bottom: 1px solid #919591;
+}
+
+    #blogNav li {
+        height: 90px;
+        padding: 15px 0px 0px 65px;        
+        float: left;
+        font: 16px/1.2 MuseoSans, 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+        color: #c9c9c9;
+    }
+    
+#blogPost{
+    width: 600px;
+    float: left;
+    margin: 10px 0px 10px 0px;
+    /*    border-bottom: 1px solid #1ba0cc; */
+}
+
+    #blogPost h2, #blogPost h3, #blogPost h4 {
+        padding-top: 1.3em;
+    }
+
+    #blogPost h1 {
+        border-bottom: 1px solid #1ba0cc;
+        margin-bottom: 25px;
+        font-size: 32px;
+    }
+    
+    #blogPost h2 {
+        font-size: 26px;
+    }
+    
+    #blogPost h3 {
+        font-style: italic;
+        font-size: 18px;
+    }
+    
+    #blogPost h4 {
+        font-size: 16px;
+        color: #fff;
+        font-style: italic;
+    }
+    
+    #blogPost blockquote {
+        margin: 20px 0 30px 19px;
+        padding: 20px 0 30px 42px;
+        border-left: 1px solid #1ba0cc;
+        font-size: 17px;
+        font-style: italic;
+        position: relative;
+        width: 80%;
+    }
+    
+    .postInfo{
+        margin: 30px 0px 30px 0px;
+        font-size: 12px;
+    }
+    
+    .post{
+        border-top: 1px solid #1ba0cc;
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+    
+        .post:first-child{
+            border: none;
+            margin: 0px;
+            padding: 0px;
+        }
+    
+    #author_bio {
+        padding: 10px;
+        background: #1d1d1d;
+        border: 1px solid #919591;
+        min-height: 140px;
+    }
+    
+    #author_bio img {
+        float: left;
+        margin-right: 15px;
+    }
+
+#blogSidebar{
+    float: right;
+    width: 280px;
+    padding-top: 60px;
+}
+
+#blogSidebar > div{
+    margin-bottom: 20px;    
+}
+
+    #blogSidebar #subscribe{    
+        height: 90px;
+        line-height: 90px;
+        position: relative;
+        border-bottom: 1px solid #1ba0cc;
+        border-top: 1px solid #1ba0cc;
+        padding-bottom: 0;
+        padding-top: 13px;
+    }
+    
+        
+        #blogSidebar #subscribe p {
+            text-align: center;
+            position: relative;
+            left: 3px;
+        }
+        
+        #blogSidebar #subscribe p a{
+        font: 28px/1.2 MuseoSlab, 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+        text-decoration: none;
+        }
+        
+        #blogSidebar #subscribe a img{
+            position: relative;
+            top: -8px;
+            left: 5px;
+        }
+        
+    #blogSidebar #popular{
+       border-bottom: 1px solid #1ba0cc;
+       padding-bottom: 25px;
+    }
+        
+        #blogSidebar #popular h2{
+        padding: 0px;
+        margin-bottom: 10px;
+        }
+        
+        #blogSidebar #popular h3{
+        padding: 0px;
+        margin: 0px;
+        font: 16px/1.2 MuseoSans, 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+        }
+        
+        #blogSidebar #popular p{
+        font-size: 12px;
+        font-style: italic;
+        }
+        
+        #blogSidebar #popular p span{
+        font-style: normal;
+        margin: 0px 3px 0px 3px;
+        }
+        
+        .syntaxhighlighter{
+        text-shadow: 0px 0px 0px #000000;
+        overflow: auto;
+        max-height: 500px;
+        }
+    
+    /* Comment Styles */
+        
+        #blogPost ul li.comment {
+            position: relative;
+            list-style-type: none;
+            list-style-image: none;
+            background: none;
+            padding-left: 0;
+        }
+        
+        li.comment.depth-1 {
+            border: 1px solid #9c9b9c;
+            position: relative;
+            margin-top: 110px;
+            margin-left: 58px;
+        }
+            .says {
+                font-size: 11px;
+                color: #fff;
+            }
+            
+            li.depth-1 > div > img.avatar {
+                padding: 6px 27px 6px 6px;
+                background: url("http://assets.vertstudios.com/images/avatar_large_back.png") top left no-repeat;
+                position: absolute;
+                left: -58px;
+                top: -77px;
+            }
+            
+            .comment-author .fn{
+            margin-right: 5px;
+            }
+            
+            li.depth-1 > div.comment-author {
+                margin: 0 20px;
+                border-bottom: 1px solid #9c9b9c;
+                font-size: 18px;
+                color: #1ba0cc;
+                padding: 10px 0 0 50px;
+            }
+            
+            li.depth-1 > .comment-meta {
+                position: absolute;
+                text-align: left;
+                top: 16px;
+                right: 20px;
+                font-size: 12px;
+                font-style: italic;
+            }
+            
+            li.depth-1 > .comment-content {
+                margin: 0 22px;
+                padding-top: 13px;
+                font-size: 14px;
+            }
+            
+            .reply {
+                margin: 0 0 45px 0;
+                border-bottom: 1px solid #4f4f4f;
+            }
+            
+            li.depth-1 > .reply {
+                margin-left: 22px;
+            }
+                
+                li.depth-1 .reply .comment-reply-link {
+                    font-size: 12px;
+                    color: #4f4f4f;
+                    border: 1px solid #303030;
+                    background: #1d1d1d;
+                    padding: 3px 5px;
+                    text-align: center;
+                    font-style: italic;
+                    position: relative;
+                    top: 11px;
+                }
+            
+            .avatar-40 {
+                padding: 3px;
+                padding-right: 13px;
+                background: url("http://assets.vertstudios.com/images/avatar_small_back.png") top left no-repeat;
+            }
+                        
+            
+            
+        ul.children {
+            margin: 0 0 0 22px;
+        }
+            
+            ul.children > li > .comment-author,
+            ul.children > li > .comment-meta,
+            ul.children > li > .comment-content {
+                margin-left: 67px;
+                position: relative;
+                color: #909090;
+                font-size: 12px;
+            }
+            
+            ul.children > li > .comment-author img {
+                position: absolute;
+                top: 0px;
+                left: -66px;
+            }
+        
+        li.comment.depth-2 > .comment-meta,
+        li.comment.depth-2 > .comment-content,
+        li.comment.depth-3 > .comment-meta,
+        li.comment.depth-3 > .comment-content {
+            padding-right: 22px;
+        }
+        
+        li.comment.depth-2 > .comment-author,
+        li.comment.depth-3 > .comment-author {
+            border-bottom: 1px solid #4f4f4f;
+            margin-right: 22px;
+        }
+        
+        li.comment.depth-2 > .comment-meta,
+        li.comment.depth-3 > .comment-meta {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        #commentform p {
+            margin: 0;
+            width: 220px;
+        }
+        
+        #commentform input {
+            width: 220px;
+            height: 35px;
+            background: #000;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        #commentform #submit{
+        cursor: pointer;
+        }
+        
+        #commentform label {
+            height: 35px;
+            color: #c6c6c6;
+        }
+        
+        #commentform textarea {
+            width: 340px;
+            height: 225px;
+            background: #000;
+            color: #fff;
+        }
+        
+        #commentform #textarea_p {
+            width: 350px;
+            float: right;
+        }
+        
+        #commentform #inputs {
+            float: left;
+            width: 230px;
+            padding-top: 43px;
+        }
+        
+        #commentform #go_p {
+            clear: both;
+            margin-top: 15px;
+            padding-top: 10px;
+        }
+        
+        #comment_inputs {
+            float: right;
+            width: 350px;
+        }
+        
+        #comment_form_wrap {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+            #comment_form_wrap h4 {
+                border-bottom: 1px solid #1ba0cc;
+                margin-bottom: 30px;
+            }
+            
+            #comment_form_wrap input{
+            padding-left: 5px;
+            }
+            
+            #comment_form_wrap textarea {
+            padding: 5px 0px 0px 5px;
+            }
+        
+        #comments h3 {
+            border-bottom: 1px solid #1ba0cc;
+        }
+        
+        
+           /*Reply form*/
+            li.comment #comment_form_wrap
+            {
+                width: 500px;
+                height: 520px;
+                position: relative;
+                left: 3%;
+            }
+            
+                li.comment #comment_form_wrap label[for=author]{
+                position:absolute;
+                top:50px;
+                left: 10px;
+                
+                }
+                
+                li.comment #comment_form_wrap input[name=author]{
+                position:absolute;
+                top:70px;
+                left:10px;
+                }
+                
+                li.comment #comment_form_wrap #cancel-comment-reply-link{
+                position: absolute;
+                top: 95px;
+                right: 55px;
+                }                
+                
+                li.comment #comment_form_wrap label[for=url]{
+                position:absolute;
+                top:130px;
+                right:180px;
+                }
+                
+                li.comment #comment_form_wrap input[name=url]{
+                position:absolute;
+                top:150px;
+                right:10px;
+                }
+                
+                li.comment #comment_form_wrap label[for=email]{
+                position:absolute;
+                top:130px;
+                left:10px;
+                }
+                
+                li.comment #comment_form_wrap input[name=email]{
+                position:absolute;
+                top:150px;
+                left:10px;
+                }
+                
+                li.comment #comment_form_wrap label[for=comment]{
+                position:absolute;
+                bottom:270px;
+                left:10px;
+                }
+                
+                li.comment #comment_form_wrap textarea{
+                position:absolute;
+                bottom:70px;
+                left:10px;
+                width: 475px;
+                height: 200px;
+                }
+                                
+                li.comment #comment_form_wrap #submit{
+                position: absolute;
+                bottom: 0px;
+                left: 10px;
+                }
+                
+                
+                li.comment #comment_form_wrap h4{
+                width: 95%;
+                padding-top: 0px;
+                margin-left: 10px;
+                display: block;
+                }               
+                
+                                                                
+    /* End Comment Styles */
+
+/* sub page styles */
+    
+    #sub_page_intro {
+        background: #000;
+        border: 1px solid #919591;
+        width: 387px;
+        padding: 15px 15px 20px 15px;
+        margin-top: 00px;
+        position: relative;
+        -moz-box-shadow: 3px 3px 10px #000; /* Firefox */
+        -webkit-box-shadow: 3px 3px 10px #000; /* Safari, Chrome */
+        box-shadow: 3px 3px 10px #000; /* CSS3 */
+        float: left;
+    }
+    
+    #sub_page_intro ul li {
+        padding: 2px 0 7px 17px;
+        background: url("http://assets.vertstudios.com/images/ul_marker.png") top left no-repeat;
+    }
+    
+    #sub_page_intro ul {
+        padding: 10px 0 10px 20px;
+    }
+    
+    .sub_page_3 div {
+        clear: both;
+        width: 100%;
+        padding: 20px 0 30px 0;
+    }
+    
+    .sub_page_3 div div {
+        width: 440px;
+        margin-right: 30px;
+        float: left;
+        clear: none;
+    }
+    
+    .sub_page_3 div div p em {
+        font-size: 120%;
+    }
+    
+    .sub_page_3 div div h3 {
+        border-bottom: 1px solid #1ba0cc;
+    }
+    
+    p+h1, p+h2, p+h3,p+h4,p+h5 p+h6 {
+        padding-top: 1em;
+    }
+    
+    #sub_page_intro img.pointer {
+        position: absolute;
+        bottom: -13px;
+        right: -40px;
+    }
+    
+    #sub_page_intro h1 {
+        color: #fff;
+        margin: 0 0 10px 0;
+        padding: 0;
+        font-size: 35px;
+        max-width: 380px;
+    }
+    
+    #content .sub_page_1 , #content .sub_page_2, #content .sub_page_3 {
+        clear: both;
+        width: 460px;
+        float: right;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 40px;
+    }
+    
+    .sub_page_1 h2, .sub_page_2 h2, .sub_page_3 h2 {
+        border-bottom: 1px solid #1ba0cc;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+    
+    #content .sub_page_1 {
+        clear: none;
+        padding-top: 100px;
+        margin-bottom: 30px;
+    }
+    
+    #content .sub_page_2 {
+        float: left;
+        border-bottom: 1px solid #1ba0cc;
+        margin-left: 10px;
+        padding-left: 0;
+    }
+    
+    .sub_page_2 h2 {
+        padding: 0 0 10px 0;
+        position: relative;
+        width: 580px;
+    }
+    
+    #about .sub_page_3 {
+        float: none;
+        width: 100%;
+    }
+    
+    
+/* end sub page styles */
+
+.bio {
+    padding-left: 0px;
+    padding: 10px 0 15px 0;
+    overflow: hidden;
+    float: left;
+    width: 460px;
+    
+}
+
+.bio.justin_edwards {
+    padding-right: 20px;
+}
+
+.bio h3 {
+    font-size: 14px;
+    clear: none;
+}
+
+.bio img {
+    float: left;
+    border: 1px solid #1ba0cc;
+    margin-right: 20px;
+}
+

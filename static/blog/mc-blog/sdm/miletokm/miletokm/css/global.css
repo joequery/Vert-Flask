@@ -1,0 +1,47 @@
+.btest {border: 1px solid #000000}
+
+body{
+background: #000000 URL('../images/contentbg.jpg') 50% 0% repeat-y;
+}
+
+#wrapper{
+margin: 0px auto;
+padding: 1px;
+width: 370px;
+background: #000000 URL('../images/carbg.jpg') no-repeat;
+}
+
+#content{
+margin: 120px auto;
+width: 240px;
+height: 250px;
+}
+
+#content label{
+clear: both;
+margin: 0px 5px 0px 0px;
+width: 40px;
+text-align: right;
+float: left;
+line-height: 25px;
+}
+
+#content input{
+margin: 2px auto;
+float: left;
+width: 150px;
+}
+
+#content input.button{
+float: right;
+margin-right: 40px;
+width: 156px;}
+
+#footer{
+margin: 0px auto;
+width: 380px;
+text-align: center;}
+
+#footer a{
+text-decoration: underline;
+color: #FFFFFF;}

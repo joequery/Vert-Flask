@@ -1,0 +1,109 @@
+/*----------------------------------------------------------------------
+//File: js.css
+//Purpose: Contains styles specific to JavaScript UI Elements
+//Client: Us!!!
+//Last Updated: November 17, 2010
+//Author: Justin Edwards (@vertjustin)
+//Edited by: Joseph McCullough (@joe_query)
+/*----------------------------------------------------------------------*/
+	
+.js .post_snippet{
+	width: 190px;
+	float: left;
+	padding-right: 15px;
+	position: absolute;
+	padding-bottom: 15px;
+}
+	h4 img.post_dismiss {
+	position: absolute;
+	right: 16px;
+	width: auto;
+	top: 2px;
+}
+
+.js #slideshow_nav {
+	width: 750px;
+	background: #000;
+	border-top: 1px solid #919591;
+	height: 25px;
+	position: absolute;
+	bottom: 26px;
+	left: 15px;
+	z-index: 6;
+	text-align: center;
+}
+
+.js #slideshow_nav ul li {
+	display: inline;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 10px;
+	color: #888;
+	cursor: pointer;
+}
+
+.js #slideshow_nav ul li.slideNavActive {
+	color: #1ba0cc;
+}
+
+.js .case_study p {
+	width: 250px;
+}
+
+.js #slideshow_nav a:active, .js #slideshow_nav a:focus {
+	outline: none;
+}
+
+.js .featured_work .copy{
+    display: none;
+}
+
+
+.js #prev {
+	position: absolute;
+	top: 125px;
+	left: 15px;
+	cursor: pointer;
+}
+
+.js #next {
+	position: absolute;
+	top: 125px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.js body.ie6 {
+	padding-top: 120px;
+	background: url("http://assets.vertstudios.com/images/html.jpg") center 120px no-repeat;
+}
+
+.js #ie6 {
+	padding: 20px 0;
+	background: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	height: 80px;
+	border-bottom: 1px solid #1ba0cc;
+}
+
+.js #ie6 p {
+	width: 900px;
+	margin: 0 auto;
+}
+
+.js #main_nav li:hover {
+	cursor: pointer;
+}
+
+.js .jshidden{
+display: none;
+}
+
+.js .codeDisplay{
+display: none;
+}
+

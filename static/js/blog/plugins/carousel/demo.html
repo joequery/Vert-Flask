@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css" /> 
+<title>Click Carousel</title> 
+<script type="text/javascript" src="click-carousel.min.js"></script>
+<script type="text/javascript">
+
+
+$(function(){
+
+	$("#container").clickCarousel({
+		direction: "left",
+		hideSpeed: 500,
+		shiftSpeed: 500,
+		shifting: $(".box")
+	});
+	
+});
+</script> 
+ 
+</head> 
+<body> 
+ 
+<div id="wrapper"> 
+    <div id="container">   	
+		<div class="box" id="box"> 
+		<p>Div 1</p>
+		</div>
+		<div class="box" id="box2"> 
+		<p>Div 2</p>
+		</div> 
+		<div class="box" id="box3"> 
+		<p>Div 3</p>
+		</div> 
+		<div class="box" id="box4"> 
+		<p>Div 4</p>
+		</div> 
+		<div class="box" id="box5"> 
+		<p>Div 5</p>
+		</div>
+    </div><!--End Content--> 
+	<div id="left">
+	Click to move carousel left.
+	</div>
+	<div id="right">
+	Click to move carousel right.
+	</div>
+</div><!--End Wrapper--> 
+	
+</body> 
+</html> 

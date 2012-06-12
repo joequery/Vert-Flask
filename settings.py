@@ -16,3 +16,6 @@ if "FLASK_ENV" in os.environ.keys():
 	FLASK_ENV = os.environ["FLASK_ENV"]
 else:
 	FLASK_ENV = "development"
+
+# Create a random string that we'll use as a secret key
+SECRET_KEY = os.urandom(24)

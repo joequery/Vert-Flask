@@ -5,8 +5,16 @@
 <div id="sub_page_intro">
 <div class="copy">
 <h1>Brass Tacks</h1>        
-<p>Think we're a good fit but don't know if we're in your budget?</p>
-<p>No worries. Just use our quote generator to get a rough estimate of what a new website will run you.</p>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+  {% else %}
+  <p>Think we're a good fit but don't know if we're in your budget?</p>
+  <p>No worries. Just use our quote generator to get a rough estimate of what a new website will run you.</p>
+  {% endif %}
+{% endwith %}
 </div>
 <img src="http://www.vertstudios.com/images/pointer.png" alt="" class="pointer" />
 </div>              

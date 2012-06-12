@@ -1,14 +1,20 @@
 # Vert studios website. Yay!
 
 from settings import *
-from flask import Flask, render_template, request, g, abort
+from flask import (
+ Flask, render_template, request, g, abort, flash, redirect, 
+ render_template, url_for
+)
 from helpers.rss import get_blog_feed
 from helpers.contact import ContactForm
 from flaskext.markdown import Markdown
 from jinja2 import TemplateNotFound
 from formencode.variabledecode import variable_encode
+
+# App configuration
 app = Flask(__name__)
 Markdown(app)
+app.secret_key = SECRET_KEY
 
 @app.before_request
 def before_request():
@@ -71,6 +77,7 @@ def about():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
   form = ContactForm(request.form)
+  print(form)
   if request.method == "POST":
 
     # Use variable_encode to get to a normal dict.
@@ -85,12 +92,11 @@ def contact():
     if isAjax:
       return "thanks"
     else:
-      #flash("Mail sent!")
-      #return redirect(url_for("contact"))
-      return "LOLOLOL"
+      flash("Mail sent!")
+      return render_template("contact.html", form=form)
 
-    print(dataDict)
-    return "thanks"
+    #print(dataDict)
+    #return "thanks"
   else:
     return render_template("contact.html", form=form)
 

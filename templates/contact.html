@@ -2,21 +2,40 @@
 {% from "sections" import what_now %}
 {% extends "layout.html" %}
 {% block body %}
-<h1>Contact us</h1>
-  
-<form id="mail" method="post" action="{{url_for("contact")}}">
-<dl>
-  {% autoescape false %}
-  {{ render_field(form.name) }}
-  {{ render_field(form.email) }}
-  {{ render_field(form.phone) }}
-  {{ render_field(form.message) }}
-  {% endautoescape %}
-</dl>
-<p><input type="submit" value="Submit"></p>
-<div id="tertiary">
-{{ what_now()|safe}}
-</div><!--END tertiary-->
+<div id="sub_page_intro">
+<div class="copy">
+<h1>Brass Tacks</h1>        
+<p>Think we're a good fit but don't know if we're in your budget?</p>
+<p>No worries. Just use our quote generator to get a rough estimate of what a new website will run you.</p>
+</div>
+<img src="http://www.vertstudios.com/images/pointer.png" alt="" class="pointer" />
+</div>              
+<div class="featured_work">
+<div class="screenshot contact_form">
+<form action="lib/php/mailer.php" id="mail" method="post" autocomplete="off"> 
+<div id="frame_wrap">
+<div class="frame">
+<!--<h2>Contact Information</h2>-->
+<fieldset id="quote-details">                                 
+<label for="name">Name: </label> 
+<input type="text" class="required" id="name" name="name" /><br/> 
+<label for="phone">Phone: </label> 
+<input type="text" class="required" id="phone" name="phone" /><br/> 
+<label for="email">Email: </label> 
+<input type="text" class="required" id="email" name="email" /><br/> 
+<label for="message">Message: </label> 
+<textarea class="required" name="message" rows="10" cols="10" id="message"></textarea><br/> 
 
+<button type="submit" id="submit"> 
+Do it!
+</button> 
+<p class="form-meta">All fields are required.<br/>Mail is sent to:<br/><a href="mailto:hi@vertstudios.com">hi@vertstudios.com</a></p>                               
+</fieldset>                             
+</div>
+</div>
+</form> 
+</div>                
+<div class="clearfix"></div>
+</div>             
 {% endblock body %}
 

@@ -14,6 +14,13 @@ def before_request():
   def get_body_id():
     if request.path == '/':
       g.bodyID = "index"
+    
+    # The contact page was styled with a body id of work, and i don't 
+    # feel like taking the time to fix the styles to make it match.
+    elif request.path == '/contact':
+      g.bodyID = "work"
+
+    # Else, just get the first part of the path name as the bodyID.
     else:
       g.bodyID = request.path[1:].split('/')[0]
 

@@ -17,15 +17,12 @@
 <div class="frame">
 <!--<h2>Contact Information</h2>-->
 <fieldset id="quote-details">                                 
-<label for="name">Name: </label> 
-<input type="text" class="required" id="name" name="name" /><br/> 
-<label for="phone">Phone: </label> 
-<input type="text" class="required" id="phone" name="phone" /><br/> 
-<label for="email">Email: </label> 
-<input type="text" class="required" id="email" name="email" /><br/> 
-<label for="message">Message: </label> 
-<textarea class="required" name="message" rows="10" cols="10" id="message"></textarea><br/> 
-
+{% autoescape false %}
+{{ render_field(form.name, class="required") }}
+{{ render_field(form.email, class="required") }}
+{{ render_field(form.phone, class="required") }}
+{{ render_field(form.message, class="required") }}
+{% endautoescape %}
 <button type="submit" id="submit"> 
 Do it!
 </button> 

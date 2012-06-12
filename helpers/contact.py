@@ -1,8 +1,8 @@
 # Contact page
-from wtforms import Form, validators, TextField
+from wtforms import Form, validators, TextField, TextAreaField
 
 class ContactForm(Form):
-  name = TextField("Full Name")
-  email = TextField("Email")
-  phone = TextField("Phone")
-  message = TextField("Message")
+  name = TextField("Name: ")
+  email = TextField("Email: ")
+  phone = TextField("Phone: ")
+  message = TextAreaField("Message: ")

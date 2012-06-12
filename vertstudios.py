@@ -6,6 +6,7 @@ from helpers.rss import get_blog_feed
 from helpers.contact import ContactForm
 from flaskext.markdown import Markdown
 from jinja2 import TemplateNotFound
+from formencode.variabledecode import variable_encode
 app = Flask(__name__)
 Markdown(app)
 
@@ -70,7 +71,28 @@ def about():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
   form = ContactForm(request.form)
-  return render_template("contact.html", form=form)
+  if request.method == "POST":
+
+    # Use variable_encode to get to a normal dict.
+    dataDict = variable_encode(request.form)
+
+    # Flag to determine if this is an AJAX request or a non-js request
+    isAjax = False 
+
+    if "AJAX" in dataDict.keys() and dataDict["AJAX"].lower() == 'true':
+      isAjax = True
+
+    if isAjax:
+      return "thanks"
+    else:
+      #flash("Mail sent!")
+      #return redirect(url_for("contact"))
+      return "LOLOLOL"
+
+    print(dataDict)
+    return "thanks"
+  else:
+    return render_template("contact.html", form=form)
 
 ##########################
 # The blog!

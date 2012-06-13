@@ -77,7 +77,6 @@ def about():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
   form = ContactForm(request.form)
-  print(form)
   if request.method == "POST":
 
     # Use variable_encode to get to a normal dict.

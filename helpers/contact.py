@@ -2,13 +2,6 @@
 from wtforms import Form, TextField, TextAreaField
 import re
 
-# Regex patterns
-Regex = {
-  "mailstrings": "(content\-type|mime\-version|multipart\/mixed|Content\-Transfer\-Encoding|bcc|cc|to|headers):",
-  "phone": r"(1\s*[-\/\.]?)?(\((\d{3})\)|(\d{3}))\s*[-\/\.]?\s*(\d{3})\s*[-\/\.]?\s*(\d{4})\s*(([xX]|[eE][xX][tT])[-.:]?\s*(\d+))*",
-  "name": r"[-a-zA-Z0-9.'\s]+"
-}
-
 class ContactForm(Form):
   name = TextField("Name: ")
   email = TextField("Email: ")
@@ -43,7 +36,7 @@ def validate_msg(msg):
 
 # Pass in a dataDict with the form key/value pairs. Returns a list of error
 # messages for invalid fields, return boolean False if form is valid.
-def invalid_form(dataDict):
+def invalid_fields(dataDict):
   fields = {
     "name": validate_name,
     "phone": validate_phone,

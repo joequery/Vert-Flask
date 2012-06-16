@@ -13,68 +13,12 @@ $(window).load(function()
 	frames.show();
 	var next = frames.children(".next");
 	var prev = frames.children(".prev");
-	
-		frames.carousel({
-			margin: 15,
-			speed: 550,
-			left: next,
-			right: prev
-		});		
-	
-	
 
 	var checks = $(":checkbox");
 	var currentPriceDisplay = $("#current_price");
 	var currentPrice = currentPriceDisplay.text();
 
-	//Easily convert to pretty money and integer
-	function money(str){
-	//Convert to string for processing
-	str = str + '';
-	
-		// If money sign found, convert to int
-		if (str.indexOf("$") !== -1){
-			return parseInt(str.replace(/[$,]/g, ""), 10);
-		}
 
-		// No money sign found, make pretty
-		else{
-			var newstr = "";
-			var strlen = str.length;
-			for (var i=1; i<=strlen; i++){
-				newstr = str[strlen-i] + newstr;	
-				if(i%3 == 0){
-					newstr = "," + newstr;
-				}
-			}
-			return "$" + newstr;
-		}
-	}
-
-	function updatePrice(obj){
-			thisPrice = money($(obj).next().children(".price").text());
-			currentPrice = money(currentPrice);
-
-			if ($(obj).is(":checked")){
-				currentPrice += thisPrice;	
-			}
-			else{
-				currentPrice -= thisPrice;
-			}
-				currentPrice = money(currentPrice);
-				currentPriceDisplay.text(currentPrice);
-	}
-
-	checks.change(function(){
-		updatePrice($(this));
-	});
-
-	// Update all prices on load
-	checks.each(function(){
-		if( $(this).is(":checked") ){
-			updatePrice($(this));
-		}
-	});
 
 	//==============================================================//
 	//                       Form area                              //
@@ -153,12 +97,9 @@ $(window).load(function()
     //When the form fails to validate on server side
     form.onServerInvalid(function()
     {
-        response =
-        "<h2>Check Yourself!</h2>" + 
-        "<p>Our robots on the server think there's something wrong with your data. " +
-        "Would you mind checking it for them?</p>" +
-        "<p>[o_0]</p>" +
-        "Thanks, <br /> -- The Robots." +
+        response = "<h2>Check Yourself!</h2>" + 
+        "<p>Sorry, we're having issues processing your data. Please verify your " + 
+        "information and try again.";
         $(bubbleText).html(response);
     });
     
@@ -166,16 +107,15 @@ $(window).load(function()
     form.onError(function(e)
     {
         response = "<h2>Server Error</h2>" + 
-        "<p>Please try again.</p>";
+        "<p>We're sorry, there was an issue sending your message. " +
+        "Please try again.</p>";
         $(bubbleText).html(response);
-		console.log(e);
     });
     
     //When the form is sending and we're waiting for server response
     form.onSubmit(function()
     {
-			response = "<h2>Sending...</h2>" +
-			"<p>We are now generating a PDF with your quote request details...</p>";
+			response = "<h2>Sending...</h2>";
 			$(bubbleText).html(response);
     });
     
@@ -183,10 +123,8 @@ $(window).load(function()
     form.onSuccess(function()
     {
         response = "<h2>Message Sent!</h2>" + 
-            "<p>Congrats! You're one step closer to working with the most " +
-            "kick-ass web design company in Tyler. Excited? So are we!</p>" +
-            "<p>You'll be hearing from us soon. In the meantime, " +
-            "check your inbox - we've sent you a PDF with your quote request details";
+            "<p>Thanks! Your message has been sent. " + 
+            "We'll be in contact soon.</p>";
         
         //Delay a little bit so the sending animation doesn't look so lame.
         setTimeout(function(){
@@ -200,7 +138,7 @@ $(window).load(function()
 		     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 	 }
 
-		exampleArr = {"name": "John Smith", "phone": "903 555-555",
+		exampleArr = {"name": "John Smith", "phone": "903 555-5555",
 								  "email": "myemail@gmail.com", "message": "No HTML or BB Code"}
 
     //When a form gives focus, display an example.

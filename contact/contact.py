@@ -28,7 +28,7 @@ def send_email(dataDict):
 
   email = MIMEText(bodyStr)
   email['Subject'] = 'Vert Contact Form'
-  email['From'] = "joseph@vertstudios.com"
+  email['From'] = "noreply@vertstudios.com"
   email['To'] = "joseph@vertstudios.com"
 
   message = email.as_string()

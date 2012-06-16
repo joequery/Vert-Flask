@@ -47,10 +47,10 @@
 {% endmacro %}
 
 {% macro javascripts(g) %}
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
 {% for file in 
   ["vertlib", "jsCSS", "index_init", "easing", "slaveshow.min",
-  "carousel", "carousel-init", "easing", "Scroller", "work_init"] %}
+  "carousel", "carousel-init", "easing", "Scroller", "work_init", "contact"] %}
     {{ js(g, file) }}
 {% endfor %}
 {% endmacro  %}

@@ -7,14 +7,16 @@ from flask import (
 )
 from helpers.rss import get_blog_feed
 from contact.contact import contact_page
+from blog.blog import blog
 from flaskext.markdown import Markdown
 from jinja2 import TemplateNotFound
 
 # App configuration
 app = Flask(__name__)
+app.secret_key = SECRET_KEY
 Markdown(app)
 app.register_blueprint(contact_page)
-app.secret_key = SECRET_KEY
+app.register_blueprint(blog)
 
 @app.before_request
 def before_request():
@@ -72,21 +74,6 @@ def services():
 @app.route('/about')
 def about():
   return render_template("about.html")
-
-##########################
-# The blog!
-##########################
-@app.route('/blog/')
-@app.route('/blog')
-def blog_index():
-  return render_template("blog_index.html")
-
-@app.route('/blog/<post>')
-def blog_post(post):
-  try:
-    return render_template("blog_posts/%s.html" % post)
-  except TemplateNotFound:
-    return page_not_found(TemplateNotFound)
 
 
 if __name__ == "__main__":

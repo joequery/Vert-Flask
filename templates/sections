@@ -35,7 +35,7 @@
       <p>We design web sites that don't suck. We're quite proud of that.</p>
   </li>
   <li>
-      <h5><a href="{{url_for("blog_index")}}">Blog</a></h5>
+      <h5><a href="{{url_for("blog.blog_index")}}">Blog</a></h5>
       <p>Read our articles on design, code, SEO, and the state of the web.</p>
   </li>
   <li>

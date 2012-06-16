@@ -24,23 +24,26 @@ def validate_msg(msg):
   message = "Message: No HTML or BB Code"
   html = r"<([a-zA-Z][a-zA-Z0-9]*)\b[^>]*>.*?<\/\1>"
   bbcode = r"\[([a-zA-Z][a-zA-Z0-9]*)\b[^\]]*\].*?\[\/\1\]"
-  match = not (bool(re.search(html, msg)) or bool(re.search(bbcode, msg)))
-  return (match, message)
+  hasHTML = bool(re.search(html, msg))
+  hasBBCode = bool(re.search(bbcode, msg))
+  nonEmpty = len(msg) > 0
+  match = nonEmpty and not (hasHTML or hasBBCode)
+  return (False, message)
 
 # Pass in a dataDict with the form key/value pairs. Returns a list of error
 # messages for invalid fields, return boolean False if form is valid.
 def invalid_fields(dataDict):
-  fields = {
-    "name": validate_name,
-    "phone": validate_phone,
-    "email": validate_email,
-    "message": validate_msg
-  }
+  fields = [
+    ("name", validate_name),
+    ("phone", validate_phone),
+    ("email", validate_email),
+    ("message", validate_msg)
+  ]
 
   # Invalid flag. As we come across invalid fields we append invalid messages.
   invalid = []
 
-  for field, validator in fields.items():
+  for (field, validator) in fields:
     valid = validator(dataDict[field])
     if(not valid[0]):
     	invalid.append(valid[1])

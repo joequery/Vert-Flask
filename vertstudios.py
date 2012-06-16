@@ -37,12 +37,12 @@ def before_request():
   def get_env():
     g.env = FLASK_ENV
 
-  # Determine cloudfront vs s3 content delivery
+  # Determine cloudfront vs local assets delivery
   def set_assets_dir():
     if FLASK_ENV == "production":
       g.assets = "http://assets.vertstudios.com"
     else:
-      g.assets = "static"
+      g.assets = app.static_url_path
 
   get_body_id()
   get_env()

@@ -4,8 +4,13 @@
 from flask import (
  Blueprint, render_template, abort, request, flash   
 )
+from jinja2 import TemplateNotFound
 
 blog = Blueprint('blog', __name__, template_folder="templates")
+
+@blog.errorhandler(404)
+def page_not_found(e):
+      return render_template('404.html'), 404
 
 @blog.route('/blog/')
 @blog.route('/blog')

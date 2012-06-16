@@ -5,6 +5,7 @@ from flask import (
  Blueprint, render_template, abort, request, flash   
 )
 from jinja2 import TemplateNotFound
+from markdown import markdown
 
 blog = Blueprint('blog', __name__, template_folder="./")
 
@@ -19,8 +20,5 @@ def blog_index():
 
 @blog.route('/blog/<post>')
 def blog_post(post):
-  try:
-    return render_template("posts/%s.html" % post)
-  except TemplateNotFound:
-    return page_not_found(TemplateNotFound)
+  return render_template("posts/%s.html" % post)
 

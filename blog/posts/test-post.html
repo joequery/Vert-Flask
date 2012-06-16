@@ -1,12 +1,11 @@
-{% extends "layout.html" %}
-{% block body %}
+{% extends "templates/post.html" %}
+{% block post %}
 {% filter markdown %}
 
 
-This is a test
-=============
+# [This is a test post!]("{{request.url}}")
 
 
 
 {% endfilter %}
-{% endblock body %}
+{% endblock post %}

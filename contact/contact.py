@@ -18,19 +18,27 @@ class ContactForm(Form):
   message = TextAreaField("Message: ")
 
 def send_email(dataDict):
-  msg = MIMEText('Hahahahaha')
-  msg['Subject'] = 'Testing!'
-  msg['From'] = "joseph@vertstudios.com"
-  msg['To'] = "joseph@vertstudios.com"
+  # Append dataDict key/value pairs.
+  bodyStr = ""
+  bodyStr += "Name: %s\n" % dataDict["name"]
+  bodyStr += "Email: %s\n" % dataDict["email"]
+  bodyStr += "Phone: %s\n" % dataDict["phone"]
+  bodyStr += "Message: %s" % dataDict["message"]
 
-  msg = msg.as_string()
+
+  email = MIMEText(bodyStr)
+  email['Subject'] = 'Vert Contact Form'
+  email['From'] = "joseph@vertstudios.com"
+  email['To'] = "joseph@vertstudios.com"
+
+  message = email.as_string()
 
   server = smtplib.SMTP('smtp.gmail.com',587) #port 465 or 587
   server.ehlo()
   server.starttls()
   server.ehlo()
   server.login('joseph@vertstudios.com','qqo2347')
-  server.sendmail('joseph@vertstudios.com','joseph@vertstudios.com',msg)
+  server.sendmail('noreply@vertstudios.com','joseph@vertstudios.com', message)
   server.close()
 
   try:

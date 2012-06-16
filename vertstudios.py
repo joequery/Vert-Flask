@@ -6,14 +6,14 @@ from flask import (
  render_template, url_for
 )
 from helpers.rss import get_blog_feed
-from helpers.contact import ContactForm, invalid_fields
+from contact.contact import contact_page
 from flaskext.markdown import Markdown
 from jinja2 import TemplateNotFound
-from formencode.variabledecode import variable_encode
 
 # App configuration
 app = Flask(__name__)
 Markdown(app)
+app.register_blueprint(contact_page)
 app.secret_key = SECRET_KEY
 
 @app.before_request
@@ -51,7 +51,6 @@ def before_request():
 def page_not_found(e):
       return render_template('404.html'), 404
 
-
 #####################################################################
 # Routes
 #####################################################################
@@ -73,42 +72,6 @@ def services():
 @app.route('/about')
 def about():
   return render_template("about.html")
-
-@app.route('/contact', methods=['GET', 'POST'])
-def contact():
-  form = ContactForm(request.form)
-  if request.method == "POST":
-
-    # There are three differente responses: thanks, invalid, and error
-    response = "thanks"
-
-    # Use variable_encode to get to a normal dict.
-    dataDict = variable_encode(request.form)
-
-    # Flag to determine if this is an AJAX request or a non-js request
-    isAjax = False 
-
-    # Validate the form fields
-    invalid = invalid_fields(dataDict)
-
-    if invalid:
-      response = "invalid"
-
-    if "AJAX" in dataDict.keys() and dataDict["AJAX"].lower() == 'true':
-      isAjax = True
-
-    if isAjax:
-      return response
-    else:
-      if invalid:
-        for invalidMsg in invalid:
-          flash(invalidMsg)
-      return render_template("contact.html", form=form)
-
-    #print(dataDict)
-    #return "thanks"
-  else:
-    return render_template("contact.html", form=form)
 
 ##########################
 # The blog!

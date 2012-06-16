@@ -1,12 +1,5 @@
 # Contact page
-from wtforms import Form, TextField, TextAreaField
 import re
-
-class ContactForm(Form):
-  name = TextField("Name: ")
-  email = TextField("Email: ")
-  phone = TextField("Phone: ")
-  message = TextAreaField("Message: ")
 
 # Form validation. 
 def validate_email(email):
@@ -58,3 +51,4 @@ def invalid_fields(dataDict):
   	return False
   else:
   	return invalid
+

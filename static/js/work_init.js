@@ -31,7 +31,6 @@ $(window).load(function()
     featured = $(".featured_work img"),
     bubble = $("#sub_page_intro"),
     copy = $(".copy"),
-    //------------------------------------------------------------//
     
     //Calculations
     bubbleText = $(copy).eq(0),
@@ -41,10 +40,8 @@ $(window).load(function()
     
     //Boolean blags and empty initializations
     current,
-    sent = false,
-    formActive = false,    
-    videoPlaying = false,
     embed = "";
+        
     
     //------------------------------------------------------------//
     //                    Class instantiations                    //
@@ -58,5 +55,33 @@ $(window).load(function()
         interval: 540,
         distance: 600,
         res: 800
+    });
+
+    //Apply opacity to all but first item on window load.
+    $(featured).slice(1).css('opacity', opacity);    
+    
+    //On index change
+    scroller.onNewIndex(function(distance, index)
+    {
+        //Fade current element to full opacity. Other elements to specified opacity
+        current = $(featured).eq(index).fadeTo(fadeTime, 1);
+        $(featured).not(current).fadeTo(0, opacity);
+        
+        //Move the bubble
+        $(bubble)
+        .stop(true)
+        .animate({'top':distance}, {duration: 800, easing: 'easeOutBack'});
+        
+        //If first, add the cached first html.  
+        if(index === 0)
+        {
+            $(bubbleText).html(firstCopy);
+        }
+        
+        //Add the html associated with the index
+        else
+        {
+            $(bubbleText).html( $(copy).eq(index).html() );
+        }
     });
 });

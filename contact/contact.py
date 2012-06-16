@@ -23,31 +23,31 @@ def contact():
     # There are three differente responses: thanks, invalid, and error
     response = "thanks"
 
-    # Use variable_encode to get to a normal dict.
+    # Use variable_encode to get form entries to a normal dict.
     dataDict = variable_encode(request.form)
 
-    # Flag to determine if this is an AJAX request or a non-js request
-    isAjax = False 
+    # If "AJAX" variable was passed via POST, this was an ajax request.
+    isAjax = "AJAX" in dataDict.keys()
 
-    # Validate the form fields
+    # Get all invalid field entries.
     invalid = validation.invalid_fields(dataDict)
 
+    # If we have any invalid entries at on, we respond with an invalid 
+    # indicator
     if invalid:
       response = "invalid"
 
-    if "AJAX" in dataDict.keys() and dataDict["AJAX"].lower() == 'true':
-      isAjax = True
-
+    # Just return the response if this is AJAX: Do something with the response
+    # with JavaScript instead of rendering the template.
     if isAjax:
       return response
     else:
+    	# Otherwise, if we have any invalid messages, flash them.
       if invalid:
         for invalidMsg in invalid:
           flash(invalidMsg)
+      # Render the page now!
       return render_template("contact.html", form=form)
-
-    #print(dataDict)
-    #return "thanks"
   else:
     return render_template("contact.html", form=form)
 

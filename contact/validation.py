@@ -28,7 +28,7 @@ def validate_msg(msg):
   hasBBCode = bool(re.search(bbcode, msg))
   nonEmpty = len(msg) > 0
   match = nonEmpty and not (hasHTML or hasBBCode)
-  return (False, message)
+  return (match, message)
 
 # Pass in a dataDict with the form key/value pairs. Returns a list of error
 # messages for invalid fields, return boolean False if form is valid.

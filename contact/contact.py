@@ -42,12 +42,14 @@ def contact():
     if isAjax:
       return response
     else:
-    	# Otherwise, if we have any invalid messages, flash them.
-      if invalid:
-        for invalidMsg in invalid:
-          flash(invalidMsg)
-      # Render the page now!
-      return render_template("contact.html", form=form)
+      # Get information based on the response.
+      info = render_template("form_response/%s.html"%response, invalid=invalid)
+
+      # If the response was thanks, clear the form.
+      if response == 'thanks':
+      	form = ContactForm()
+
+      return render_template("contact.html", form=form, info=info)
   else:
     return render_template("contact.html", form=form)
 

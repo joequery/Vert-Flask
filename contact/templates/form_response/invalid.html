@@ -1,0 +1,9 @@
+<h2>Check yourself!</h2>
+<p>Please verify your information is correct. Here are the fields we had 
+trouble processing, along with examples:</p>
+
+<ul>
+  {% for msg in invalid %}
+  <li>{{msg}}</li>
+  {% endfor %}
+</ul>

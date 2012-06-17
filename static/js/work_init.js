@@ -51,9 +51,9 @@ $(window).load(function()
     var scroller = new Scroller(bubble,
     {
         start: 0,
-        end: 500 * featured.size(),
+        end: 500 * featured.size() - 170,
         interval: 540,
-        distance: 600,
+        distance: 610,
         res: 800
     });
 

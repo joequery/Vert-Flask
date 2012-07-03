@@ -6,12 +6,13 @@ from flask import (
 )
 from jinja2 import TemplateNotFound
 from markdown import markdown
+import os
+import imp
 
 blog = Blueprint('blog', __name__, template_folder="./")
 
-@blog.errorhandler(404)
-def page_not_found(e):
-      return render_template('404.html'), 404
+ThisFilePath = os.path.realpath(__file__)
+BLOG_SYS_PATH = os.sep.join(ThisFilePath.split('/')[:-1])
 
 @blog.route('/blog/')
 @blog.route('/blog')
@@ -20,5 +21,17 @@ def blog_index():
 
 @blog.route('/blog/<post>')
 def blog_post(post):
-  return render_template("posts/%s.html" % post)
+  postDir = os.path.join("posts", post)
+  metaPath = os.path.join(BLOG_SYS_PATH, postDir, 'meta')
+  bodyPath = os.path.join(postDir, 'body')
+
+  try:
+    # Use the 'imp' module to import the meta file as module
+    # This way, we can easily define metadata without having to parse!
+    f = open(metaPath, 'r')
+    meta = imp.load_source('data', '', f)
+    f.close()
+    return render_template(bodyPath, meta=meta)
+  except (TemplateNotFound, IOError) as e:
+    return render_template('404.html'), 404
 

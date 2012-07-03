@@ -3,7 +3,10 @@
 {% filter markdown %}
 
 
-# [This is a test post!]("{{request.url}}")
+[{{meta.title}}]("{{request.url}}")
+===================================
+
+{{meta.description}}
 
 
 

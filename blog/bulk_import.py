@@ -41,8 +41,8 @@ for post in posts:
   # we'll use when writing articles: 2012-07-03 Tue 04:37 PM
   pubdate = strftime("%Y-%m-%d %a %H:%M %p", pubdateObj)
 
-  # Get the post content into markdown.
-  markdown = html2text(content)
+  # Get the post content into markdown. Get rid of unicode spaces
+  markdown = html2text(content.replace(u'\xa0', u''))
 
   # posts/some-post/body.html
   bodyfilePath = os.path.join(directory, "body.html")
@@ -55,7 +55,7 @@ for post in posts:
   os.mkdir(directory)
 
   bodyfile = open(bodyfilePath, 'w')
-  metafile = open(bodyfilePath, 'w')
+  metafile = open(metafilePath, 'w')
 
   # Write the body
   bodyfile.write(

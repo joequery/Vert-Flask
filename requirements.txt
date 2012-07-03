@@ -5,3 +5,4 @@ apscheduler
 Flask-Markdown
 Flask-WTF
 formencode
+html2text

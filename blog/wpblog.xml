@@ -2470,7 +2470,7 @@ Table-based code can still be maintainable if you do not attempt to implement pr
 
 Here is an example of a simple table-based form that lets CSS do most of the work(but thanks to using tables the work is easy!).
 
-[code]&lt;table id=”contactForm” cellspacing=”0″ cellpadding=”0″ border=”0″&gt;
+<code>&lt;table id=”contactForm” cellspacing=”0″ cellpadding=”0″ border=”0″&gt;
 
 &lt;tr&gt;
 &lt;td align=”right” valign=”middle”&gt;&lt;label for=”name”&gt;Name:&lt;/label&gt;&lt;/td&gt;
@@ -2497,7 +2497,7 @@ Here is an example of a simple table-based form that lets CSS do most of the wor
 &lt;td&gt;&lt;textarea class=”&quot; id=”details” name=”details” cols=”10″ rows=”6″&gt;&lt;/textarea&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
-&lt;/table&gt;[/code]
+&lt;/table&gt;</code>
 
 Enjoy the simple things in life :)
 <h2>In Conclusion</h2>
@@ -4768,7 +4768,7 @@ If you have any feedback or suggestions, please leave them in the comments below
 We read that each of the previous statements have their own truth table. A truth table is a visual tool that helps us see the logical outcomes of every possible combination of statements. 
 
 For the following example, let p,q, and r be statements.
-[code]p &amp;&amp; [(q || r) &amp;&amp; (r || p)][/code]
+<code>p &amp;&amp; [(q || r) &amp;&amp; (r || p)]</code>
 
 <h3>Number of combinations</h3>
 The total number of possible outcomes is equal to 2^n, where n is equal to the number of statements. In this example we have three statements in the form of p, q, and r. Thus the number of combinations is 2^3, or 8. 
@@ -5372,24 +5372,24 @@ Using our quantifier definitions, let's build this pattern line by line using ou
 <h4>2 or more alphanumeric characters</h4>
 An alphanumeric character is any letter of the alphabet (both lowercase and upper case) or any number between 0 and 9. This can be represented by [a-zA-Z0-9]. Refer to the introduction article if you're unfamiliar with ranges in character classes. 
 
-So we need an alphanumeric character to repeat at least twice. Referring to the quantifier table above, we see that the last row contains the quantifier that suits this need. So, in order to specify at least two alphanumeric characters, the pattern would be [code]/[a-zA-Z0-9]{2,}/[/code]
+So we need an alphanumeric character to repeat at least twice. Referring to the quantifier table above, we see that the last row contains the quantifier that suits this need. So, in order to specify at least two alphanumeric characters, the pattern would be <code>/[a-zA-Z0-9]{2,}/</code>
 
 <h4>followed by the @ symbol</h4>
 Since the @ symbol is not a special character, adding the symbol immediately after our previous pattern will require the @ character to be placed after the alphanumeric characters.
-[code]/[a-zA-Z0-9]{2,}@/[/code]
+<code>/[a-zA-Z0-9]{2,}@/</code>
 
 <h4>followed by 2 or more alphanumeric characters</h4>
 Notice we already defined the  pattern for 2 or more alphanumeric characters. Simply append that to what we have so far. 
-[code]/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}/[/code]
+<code>/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}/</code>
 
 <h4>followed by a period</h4>
 Since a period is a special character, we must escape it. 
-[code]/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\./[/code]
+<code>/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\./</code>
 
 
 <h4>followed by at least 2 alphabetic characters</h4>
 Now we want at least 2 alphabetic characters. This will represent the com, edu, etc. This pattern will be similar to our alphanumeric pattern used earlier, but without the numbers in the character class. After including this pattern, we arrive at our final product. 
-[code]/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/[/code]
+<code>/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</code>
 
 <a href="http://bit.ly/fdgY6i">View our email example</a>
 
@@ -5402,20 +5402,20 @@ Say you wanted to match all the opening and closing tags of some HTML. There are
 
 <h5>What is an HTML tag?</h5>
 HTML tags begin with &lt; and end with &gt;. For example, the line break tag &lt;br /&gt;. Since &gt; denotes the end of the tag, it makes sense to say that everything in between &lt; and &gt; is a character that is not &gt;. Thus, in order to match the contents of an HTML tag, the following pattern is used:
-[code]/&lt;[^&gt;]+&gt;/[/code]
+<code>/&lt;[^&gt;]+&gt;/</code>
 This pattern says: 
 "Match a &lt; followed by one or more of any character that is not a &gt;, followed by &gt;. "
 <a href="http://bit.ly/icEs4I">See Match all HTML Tags Example</a>
 
 
 If you wanted to be a bit more specific and find XHTML non-paired tags (such as &lt;link /&gt; and &lt;img /&gt;) you could modify the pattern to include the slash before the closing tag. 
-[code]/&lt;[^&gt;]+/&gt;/[/code]
+<code>/&lt;[^&gt;]+/&gt;/</code>
 <a href="http://bit.ly/hHTeFU">See Self-closing XHTML tags Example</a>
 
 Using the logic of these examples, you can expand your regular expressions into tools of absolute efficiency. 
 <h2>Anchors</h2>
 Sometimes where you want to begin and end the search for a pattern is as important as the content of the pattern itself. This is especially true concerning validation of user input. Consider our regex for an email that we created earlier:
-[code]/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/[/code]
+<code>/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</code>
 
 If we were processing user input from a form through JS or PHP, the following would match the pattern:
 <ul>
@@ -5433,7 +5433,7 @@ When used at the beginning of the pattern and outside of a character class, the 
 For example, /^a/ matches the first character in the string "about" since the first character in the string "about" is the lowercase letter a. /^c/ does NOT match anywhere in the string "acute" since c is not the first character of the string. 
 
 As another example, say you want to match strings that have only alphanumeric characters, but begin with a letter. The pattern would be
-[code]/^[a-zA-Z][a-zA-Z0-9]*/[/code]
+<code>/^[a-zA-Z][a-zA-Z0-9]*/</code>
 <a href="http://bit.ly/giGDlL">See beginning anchor example</a> Note: ^$ match at line breaks to simulate multiple strings
 
 <h3>End of String Anchor</h3>
@@ -5446,7 +5446,7 @@ For example, /[0-9]$/ matches "h20" since the last character is a number. Howeve
 By placing the ^ at the beginning of the Regex pattern and $ at the end, you're essentially saying that the string being tested against the pattern must not only contain the pattern, it can't contain any more than what the pattern specifies. It has to match the pattern exactly: Nothing more, nothing less. 
 
 As an example, let's examine the following pattern:
-[code]/^[0-9]{3,} +[a-zA-Z .]+$/[/code]
+<code>/^[0-9]{3,} +[a-zA-Z .]+$/</code>
 This pattern reads: A string that begins with at least 3 numbers, followed by 1 or more spaces, ending with 1 or more alphanumeric characters, spaces, or periods. 
 Look familiar? 
 
@@ -5457,11 +5457,11 @@ We see that the regex pattern can be interpreted as a very loose definition for 
 If you are validating user input from a form, you <b>MUST</b> use both anchors. Let's consider our Email example again. Recall how an email address contained anywhere in our test string would trigger a match. Thus, a bot or mischievous developer can embed more than the characters of an email address into the form field. To prevent this, we adjust our regex to include anchors.
 
 Before:
-[code]/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/[/code]
+<code>/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</code>
 <a href="http://bit.ly/eG2tPE">See email validation without anchors</a>
 
 After:
-[code]/^[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}$/[/code]
+<code>/^[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}$/</code>
 <a href="http://bit.ly/fPQszu">See email validation with anchors</a>
 
 Note the differences in the two examples: Before the anchors were in place, every string matched the pattern. However, after the anchors were placed in the pattern, only the top string matched an email address. 
@@ -5471,7 +5471,7 @@ Make sure to mind your anchors, otherwise the usefulness of the rest of your pat
 <h2> Back References </h2>
 Now that we've discussed quantifiers and anchors, let's combine our current knowledge with the concept of back references. Back references allow you to refer to the characters matched earlier in the regex pattern definition. Back references are always defined using parenthesis. For this tutorial, the backslash (\) will be used to call back references. Check the syntax of your development language to see how to call back references.
 
-For example, consider the regex pattern [code]/^([0-9])\s*=\s*\1$/[/code]
+For example, consider the regex pattern <code>/^([0-9])\s*=\s*\1$/</code>
 The pattern reads: Match a string that begins with a single digit, followed by 0 or more spaces, followed by the equals sign, followed by 0 or more spaces, ending with the digit matched at the beginning of the string.
 The following strings match the pattern:
 <ul>
@@ -5488,7 +5488,7 @@ The following strings do not match the pattern:
 
 Note that what we wrapped what we wanted to refer back to in parenthesis. To refer to the matched characters later in the pattern, we use \ and the number that corresponds to the reference. Reference numbers begin with 1, and usually go up to 9.  The first set of parenthesis starting from the left is referred to with a 1. The next set, 2, and so on.
 
-To demonstrate the usage of multiple back references, consider this pattern that describes the <a href="http://en.wikipedia.org/wiki/Commutativity">commutative property</a>. [code]/^([0-9])\+([0-9])=\2\+\1$/[/code]
+To demonstrate the usage of multiple back references, consider this pattern that describes the <a href="http://en.wikipedia.org/wiki/Commutativity">commutative property</a>. <code>/^([0-9])\+([0-9])=\2\+\1$/</code>
 The pattern reads: Match a string that begins with a single digit, followed by a plus sign, followed by a single digit, followed by an equal sign, followed by the second digit matched, followed by a plus sign, ending with the first digit matched.
 
 This pattern will match
@@ -5758,7 +5758,7 @@ Output
 For each value of X, you should output the number of ways to write X as the sum of two squares.
 
 <h2>Provided Input File</h2>
-[code]
+<code>
 20
 1148284322
 1538292481
@@ -5780,7 +5780,7 @@ For each value of X, you should output the number of ways to write X as the sum 
 326122507
 1941554117
 3
-[/code]
+</code>
 
 <h2>Source Code</h2>
 <code>
@@ -5867,7 +5867,7 @@ function isPerfectSquare($int)
 </code>
 <h2>Output</h2>
 This output was declared correct by the Hacker Cup judges. Woohoo!
-[code]
+<code>
 1
 2
 0
@@ -5888,7 +5888,7 @@ This output was declared correct by the Hacker Cup judges. Woohoo!
 0
 1
 0
-[/code]
+</code>
 
 <h2>Your Algorithm</h2>
 If you participated in the Hacker Cup, I'm curious to know how you went about the problem. That's one of the amazing things about programming: So many different ways to think about any given problem. Leave your comments below! ]]></content>
@@ -6048,22 +6048,22 @@ The focal point of this article is providing useful snippets of find and replace
 
 When debugging JavaScript, you may track your variables using console.log(). This RegEx eliminates the calls from the source. 
  
-[code] 
+<code> 
 Find:\s*console.log\([^)]+\);?
 Replace:
-[/code] 
+</code> 
 <h3>2) Make Relative Paths Absolute</h3> 
 
 At times, you might want to take a relative path in an HTML document and make it absolute. This becomes especially useful when you're referencing JS files, images, and other pages from multiple directories.
  
-[code] 
+<code> 
 Find:(src|href)=[&quot;'](\.\.\/)*([a-zA-Z0-9][a-zA-Z0-9\/_.-]+)\.([a-z]+)[&quot;']
 Replace:\1=&quot;http://www.yourdomain.com/\3.\4&quot;
-[/code] 
+</code> 
 
 Example:
  
-[code] 
+<code> 
 &lt;img src=&quot;../../images/image1.jpg&quot; alt=&quot;Image 1&quot;&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;../lib/js/js1.js&quot;&gt;&lt;/script&gt;
 &lt;a href=&quot;index.php&quot;&gt;Home page&lt;/a&gt;
@@ -6072,35 +6072,35 @@ After Find and Replace All:
 &lt;img src=&quot;http://www.yourdomain.com/images/image1.jpg&quot; alt=&quot;Image 1&quot;&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://www.yourdomain.com/lib/js/js1.js&quot;&gt;&lt;/script&gt;
 &lt;a href=&quot;http://www.yourdomain.com/index.php&quot;&gt;Home page&lt;/a&gt;
-[/code] 
+</code> 
 <h3>3) Check for Non-Absolute Paths</h3> 
 
 In the event you want all your paths to be absolute, this can ensure that you've done so correctly.<br /> 
 *Assume absolute paths begin with http. 
  
-[code] 
+<code> 
 Find:(src|href)=['&quot;][^h]
-[/code] 
+</code> 
 <h3>4) Add minified JavaScript File Reference</h3> 
 
 This regex pattern allows you to transform a JavaScript file call with the pattern "filename.js" to "filename.min.js"
  
-[code] 
+<code> 
 Find:&lt;script(.+)src=('|&quot;)([a-zA-Z0-9_.-]+)\.js\2
 Replace:&lt;script\1src=\2\3.min.js\2
-[/code] 
+</code> 
 <h3>A Simple HTML Whitespace Remover</h3> 
 
 This is by no means the most ideal HTML whitespace remover, but it demonstrates how powerful simple RegEx can be when implemented in a text editor.
  
-[code] 
+<code> 
 Find:(&lt;[^&gt;]+&gt;)\s*
 Replace:\1
-[/code] 
+</code> 
 
 Before:
  
-[code] 
+<code> 
 &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt; 
  
@@ -6246,11 +6246,11 @@ alt=&quot;free web stats&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/noscript&gt;
     &lt;/body&gt; 
  
 &lt;/html&gt;
-[/code] 
+</code> 
 
 After:
  
-[code] 
+<code> 
 &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;&lt;head&gt;&lt;script type=&quot;text/javascript&quot;&gt;//Credit: Doug Neiner - http://dougneiner.com/
             document.documentElement.className += &quot; js&quot;
         &lt;/script&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;&lt;meta name=&quot;description&quot; content=&quot;View our web design services, and learn the approach we take in creating the most effective website for your business.&quot; /&gt;&lt;meta name=&quot;google-site-verification&quot; content=&quot;36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8&quot; /&gt;&lt;meta name = &quot;viewport&quot; content = &quot;width=device-width, maximum-scale=1.0, initial-scale = 1, user-scalable = no&quot; /&gt;&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;&lt;title&gt;Services | Vert Studios&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/reset.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/js.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/text.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/main.css&quot; /&gt;&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;apple-touch-icon.png&quot;/&gt;&lt;/head&gt;&lt;body id=&quot;services&quot;&gt;&lt;div id=&quot;wrapper&quot;&gt;&lt;div id=&quot;header&quot;&gt;&lt;div id=&quot;vertStudios&quot;&gt;&lt;a href=&quot;http://www.vertstudios.com/&quot;&gt;Vert Studios&lt;img src=&quot;http://www.vertstudios.com/images/vert_logo_header.png&quot; alt=&quot;Vert Logo&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;ul id=&quot;main_nav&quot;&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/about.php&quot;&gt;About&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;We're a small web design company with big ideas in Tyler, Texas.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/work.php&quot;&gt;Work&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;See what our work has to say. &lt;b&gt;WARNING&lt;/b&gt;: &lt;br /&gt;It might get loud.&lt;/p&gt;&lt;/li&gt;&lt;li class=&quot;active&quot; &gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/services.php&quot;&gt;Services&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;We design web sites that don't suck. We're quite proud of that.&lt;/p&gt;&lt;img src=&quot;images/nav_current.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/blog/&quot;&gt;Blog&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Read our articles on design, code, SEO, and the state of the web.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/contact.php&quot;&gt;Contact&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;You've got ideas. Get in touch, and we'll put them into action.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div id=&quot;content&quot;&gt;&lt;div id=&quot;sub_page_intro&quot;&gt;&lt;h1&gt;Services&lt;/h1&gt;&lt;p&gt;We offer superior quality, functionality, and results for the following:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Web Design&lt;/li&gt;&lt;li&gt;Web Application Development&lt;/li&gt;&lt;li&gt;Mobile Web Design&lt;/li&gt;&lt;li&gt;Mobile Web Apps&lt;/li&gt;&lt;/ul&gt;&lt;img src=&quot;http://www.vertstudios.com/images/pointer.png&quot; alt=&quot;&quot; class=&quot;pointer&quot; /&gt;&lt;/div&gt;&lt;div class=&quot;sub_page_1 clearfix&quot;&gt;&lt;h2&gt;We Take a Strategic Approach&lt;/h2&gt;&lt;p&gt;&lt;em&gt;We identify your needs and provide results based on what's best for you.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;In today's fast-paced world, a lot of focus is put on efficiency and instant-gratification. While we are efficient, we believe in first taking the time to clearly define what approach will best work for you and your company.&lt;/p&gt;&lt;p&gt;We address your current website challenges, identify problems, and deliver solutions that will make your business stand out from the competition.&lt;/p&gt;&lt;h3&gt;To Combine Form &amp;amp;amp; Function&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Great design is one thing.&lt;br/&gt;Elegant programing is another.&lt;br/&gt;Luckily we do both.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;There is nothing worse than losing hundreds of potential customers because of a poorly designed website. Is your layout beautiful, but lacking an engaging user experience? Is your content outstanding, but design amateurish? Our business is solving these problems to grow yours - both aesthetically and technically.&lt;/p&gt;&lt;/div&gt;&lt;div id=&quot;tertiary&quot;&gt;&lt;div id=&quot;what_now&quot;&gt;&lt;h2&gt;What Now?&lt;/h2&gt;&lt;p&gt;To see our capabilities in action, check out &lt;a href=&quot;work.php&quot;&gt;our work&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Interested in keeping up with web design or East Texas? Follow us on Twitter: &lt;a href=&quot;http://www.twitter.com/vertstudios&quot;&gt;@vertstudios&lt;/a&gt;, and subscribe to the &lt;a href=&quot;http://www.vertstudios.com/blog/&quot;&gt;Vert Studios Blog&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;!--END tertiary--&gt;&lt;/div&gt;&lt;!--END content--&gt;&lt;div id=&quot;footer&quot;&gt;&lt;div class=&quot;hr&quot;&gt;&lt;hr /&gt;&lt;/div&gt;&lt;p&gt;903-920-9514 |
@@ -6272,7 +6272,7 @@ alt=&quot;free web stats&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/noscript&gt;&lt;!
     pageTracker._trackPageview();
     } catch(err) {}
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-[/code] 
+</code> 
 
 <h2>A Real Life Scenario</h2>
 Interestingly enough, as I was writing this article, my crappy ISP decided to let my connection drop while I was saving the draft. I had frequently previewed the post, so the post was available in HTML form. Unfortunately, the last draft that was saved was about an hour old. Regular Expressions to the rescue!
@@ -6280,7 +6280,7 @@ Interestingly enough, as I was writing this article, my crappy ISP decided to le
 <h3>The Problem</h3>
 The HTML that Wordpress generates is difficult to read. While I could have copied and pasted the HTML of the preview directly into the Wordpress editor, every character was escaped, and every blank line was wrapped in a paragraph tag. Since this article is relatively advanced, I may need to make some revisions in the future. However, revisions would be a nightmare if I had to deal with this type of text:
 
-[code]
+<code>
 &lt;p&gt;Welcome to the first article in our IDE Friday series. Today, we&amp;#8217;ll be discussing the use of Regular Expressions in your IDE of choice. If you&amp;#8217;re unfamiliar with Regular Expressions, check out our tutorial series, beginning with the &lt;a href=&quot;http://www.vertstudios.com/blog/introduction-to-regular-expressions/&quot;&gt;Introduction to Regular Expressions&lt;/a&gt;. &lt;/p&gt; 
 &lt;h2&gt;Wait, isn&amp;#8217;t RegEx just for Form Validation?&lt;/h2&gt; 
 &lt;p&gt;Many developers new to the world of Regular Expressions think that RegEx&amp;#8217;s sole purpose is for validating user input through a contact form. While of course RegEx is great for user input validation, it is in no way confined to that single task. &lt;/p&gt; 
@@ -6293,35 +6293,35 @@ The HTML that Wordpress generates is difficult to read. While I could have copie
 &lt;h2&gt;Conventions&lt;/h2&gt; 
 &lt;p&gt;In most IDEs/editors, special characters in the &amp;#8220;Find&amp;#8221; field need to be escaped. Characters in the &amp;#8220;Replace&amp;#8221; field do not need to be escaped except for the backslash &amp;#8216;\&amp;#8217;. This is because the backlash is used to refer to &lt;a href=&quot;http://www.vertstudios.com/blog/back-references-quantifiers-and-anchors-in-regex/&quot;&gt;back-references&lt;/a&gt;. Keep in mind the entire text file is the string being tested, so the typical anchors are not needed. &lt;/p&gt; 
 &lt;h2&gt;Find/Find and Replace Snippets&lt;/h2&gt;
-[/code]
+</code>
 
 <h3>Pattern Recognition</h3>
 The first step to solving this problem was to recognize the pattern between the HTML output and what I had been typing in the Wordpress editor. Then I simply needed to make Regular Expressions that represented the patterns. 
 <table>
 <tr><th width="200">Problem</th><th>Regular Expression Solution</th></tr>
 <tr><td>New Lines in the editor came out as paragraph tags</td><td>
-[code]
+<code>
 Find:&lt;/?p&gt;
 Replace: \n
-[/code]
+</code>
 </td></tr>
 <tr><td>code brackets came out as a &lt;pre&gt; tag with different classes</td><td>
-[code]
+<code>
 Find:&lt;(/|)pre[^&gt;]*&gt;
 Replace:[\1code]
-[/code]
+</code>
 </td></tr>
 <tr><td>All my quotations had been escaped to &amp;#8220;, &amp;#8221;, or &amp;quot;</td><td>
-[code]
+<code>
 Find:&amp;(quot|#822[01]);
 Replace:&quot;
-[/code]
+</code>
 </td></tr>
 <tr><td>Some apostrophes had been escaped to &amp;#8216; and &amp;#8217;</td><td>
-[code]
+<code>
 Find:&amp;#821[67];
 Replace:'
-[/code]
+</code>
 </td></tr>
 <tr><td>HTML tags in the code snippets had been escaped. &lt; to &amp;lt;, and &gt; to &amp;gt;</td><td>
 Done using regular find and replace
@@ -6329,7 +6329,7 @@ Done using regular find and replace
 </table>
 
 So in just a few minutes, I was able to recover the text in a usable form. 
-[code]
+<code>
 
 Welcome to the first article in our IDE Friday series. Today, we'll be discussing the use of Regular Expressions in your IDE of choice. If you're unfamiliar with Regular Expressions, check out our tutorial series, beginning with the &lt;a href=&quot;http://www.vertstudios.com/blog/introduction-to-regular-expressions/&quot;&gt;Introduction to Regular Expressions&lt;/a&gt;. 
  
@@ -6361,10 +6361,10 @@ The focal point of this article is providing useful snippets of find and replace
 
 When debugging JavaScript, you may track your variables using console.log(). This RegEx eliminates the calls from the source. 
  
-[code] 
+<code> 
 Find:\s*console.log\([^)]+\);?
 Replace:
-[/code]
+</code>
 
 <h2>Use Your Judgement</h2> 
 Sometimes going through and manually deleting characters may be faster. However, I encourage you to take the time and challenge yourself to use regular expressions in your find and replace operations, solely as an exercise. Like any skill, the more you do it, the better you get. But if you're under a substantial time crunch, there's no shame in editing the old-fashioned way. Enjoy the world of RegEx!
@@ -6782,7 +6782,7 @@ $(&quot;joseph&quot;).hide();
 
 <h2>The Code</h2>
 This .htaccess code redirects http://domainname.com to http://<b>www.</b>domainname.com. Additionally, it forces any call to index.php to the domain root. (This code snippet assumes you're using PHP extensions. If you're using HTML extensions, just replace each instance of PHP with HTML.)
-[code]
+<code>
 #redirect index.php to root
 Options +FollowSymLinks
 DirectoryIndex index.php
@@ -6799,7 +6799,7 @@ RewriteBase /
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
 RewriteRule ^index\.php$ http://www.yourdomain.com/ [R=301,L]
 #END rewrite index.php 
-[/code]
+</code>
 
 <h2>The Concept</h2>
 In my opinion, the most consistent way to normalize URLs is through Apache 301 Redirects. However, the recent advent of the <a href="http://www.seomoz.org/blog/301-redirect-or-relcanonical-which-one-should-you-use">rel=canonical</a> tag has provided an alternative to the development-heavy Apache 301s, but some <a href="http://searchengineland.com/why-i-still-hate-relcanonical-48317">remain skeptical</a> on its effectiveness.  
@@ -7342,7 +7342,7 @@ Thankfully, there are extremely simple ways to open your current <strong>command
 Take this rather long directory for example, which contains this very Wordpress theme.
 <img src="http://www.vertstudios.com/blog/images/command-prompt-switch/command-prompt-switch-0.png" />
 If I wanted to view the files in explorer, I'd have to double click on a pretty long series of files to get to the same directory. The quick alternative is to use
-[code]start %CD%[/code]
+<code>start %CD%</code>
 <img src="http://www.vertstudios.com/blog/images/command-prompt-switch/command-prompt-switch-1.png" />
 The command successfully opens the current directory into a new explorer window. 
 
@@ -7457,13 +7457,13 @@ Now download the most recent copy of <a href="https://github.com/cloudhead/less.
 
 <h2>Configuration</h2>
 The rest of the tutorial <strong>and the code itself</strong> assumes you have the following file structure for your projects:
-[code]
+<code>
 css/
 less/
 images/
 file1.html
 file2.html
-[/code]
+</code>
 
 Most importantly, your less directory and your css directory should be "sibling" directories. 
 <img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-3.png" alt="Less.app for Windows" />
@@ -7487,7 +7487,7 @@ Open your less directory in the command prompt. (See a shortcut <a href="http://
 <img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-8.png" alt="Less.app for Windows" />
 
 Now type the following in the command prompt:
-[code]node less.js[/code]
+<code>node less.js</code>
 
 The module first compiles all .less files in the directory to css, and outputs the css file in the css directory. Next, as long as you leave the command prompt open, the module listens for any more changes to any of the .less files. Once it detects a change, it automatically compiles and updates the css file. To stop the module, use <b>CTRL + c</b>. 
 <img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-9.png" alt="Less.app for Windows" />
@@ -7593,9 +7593,9 @@ function mkcd(){
 Now execute the command <strong>source ~/.bashrc</strong> so your session takes the edited file into account. 
 
 Now simply executing
-[code]
+<code>
 mkcd testFile
-[/code]
+</code>
 
 will create the testFile directory and make that your working directory.
 
@@ -7611,9 +7611,9 @@ Horray for lazy!]]></content>
     <content><![CDATA[If you've edited your ~/.bash_profile to include scripts you'd like executed on start up, you might be surprised when you open up your terminal and those scripts don't execute. By default, ~/.bashrc executes on session start, but ~/.bash_profile doesn't. 
 
 To execute your ~/.bash_profile on startup, simply append this to your ~/.bashrc
-[code]
+<code>
 source ~/.bash_profile
-[/code]
+</code>
 
 <h2>Ta-da! </h2>
 
@@ -7633,9 +7633,9 @@ To execute your ~/.bash_profile on startup, simply append this to your ~/.bashrc
 The snippet adjustment for Ubuntu was easy, just involved remove some quotes and adding sudo. For a detailed explanation on how the command works, check out that article. 
 
 <h2>Remove All Ruby Gems</h2>
-[code]
+<code>
 gem list | cut -d&quot; &quot; -f1 | xargs sudo gem uninstall -aIx
-[/code] ]]></content>
+</code> ]]></content>
     <excerpt><![CDATA[Recently (as in thirty seconds ago) I needed to remove all ruby gems from my system. After searching the interwebs, I came across an <a href="http://geekystuff.net/2009/01/14/remove-all-ruby-gems/">article</a> explaining how to remove all ruby gems on Fedora core linux.
 
 The snippet adjustment for Ubuntu was easy, just involved remove some quotes and adding sudo. For a detailed explanation on how the command works, check out that article. ]]></excerpt>
@@ -7753,7 +7753,7 @@ The example .screenrc source below offers the following features:
 <li>No more annoying startup message!</li>
 <li>Default tabs that aid a rails/WSGI driven workflow</li>
 </ul>
-[code]
+<code>
 # skip the startup message
 startup_message off
 
@@ -7775,7 +7775,7 @@ screen -t Server
 # Select first screen
 select 0
 
-[/code]
+</code>
 
 A screenshot of the implementation:
 <img src="http://www.vertstudios.com/blog/images/screenrc/screenshot.png" alt="Screenshot of my GNU Screen Environment" title="Screenshot of my GNU Screen Environment" />
@@ -7904,33 +7904,33 @@ First and foremost, you will need a UNIX server with root access. That server ne
 
 <h3>Move to your scripts directory</h3>
 cd to the directory where you keep all your custom scripts. In case you don't have one, you can do what I did and make a scripts directory from the home folder.
-[code]
+<code>
 sudo mkdir ~/scripts
 cd ~/scripts
-[/code]
+</code>
 
 <h3>Set up working environment</h3>
 Now that you're in the ~/scripts directory, make another directory and call it daily_mail and cd into it.
-[code]
+<code>
 mkdir daily_mail
 cd daily_mail
-[/code]
+</code>
 (Sidenote: <a href="http://www.vertstudios.com/blog/mkdir-cd-at-same-time/">Learn how to make a directory and cd into it in one line</a>)
 
 Now we want to setup our virtualenv, which allows for local python packages.
-[code]
+<code>
 virtualenv env --python=python2.6 #Put your version here
-[/code]
+</code>
 
 To activate the virtual environment (and grant python access to the libraries we will be installing), execute the following from the ~/daily_mail directory:
-[code]
+<code>
 . env/bin/activate
-[/code]
+</code>
 
 If the environment activation was successful, you will see (env) somewhere in your next terminal line. (To disable the virtual environment at anytime, simply execute the command "deactivate")
 
 We'll now install the <a href="http://wwwsearch.sourceforge.net/mechanize/">Mechanize</a> library. (<b>Note</b>: We activate the virtual environment before installing libraries to make sure that the libraries are installed only to this environment instead of across the whole system). 
-[code]pip install mechanize[/code]
+<code>pip install mechanize</code>
 
 <h2>Coding the Contact Form Filler-Outer</h2>
 Make sure your virtual environment is activated and start python (just type python in the terminal). Create and open <b>contact_form.py</b> in your favorite text editor. Paste the following in.
@@ -7963,29 +7963,29 @@ response = br.submit()
 [/python] 
 
 Test by executing 
-[code]python contact_form.py[/code]
+<code>python contact_form.py</code>
 You should get an email in your inbox just as if a user had filled out the form.
 
 Due to how Cron works, we <a href="http://stackoverflow.com/questions/4150671/python-how-to-set-virtualenv-for-a-crontab">won't be able to directly call the python file</a>, or else the virtual environment won't get activated and our mechanize library won't be available to use. The solution is to create a bash script that activates the virtual environment, executes the python script, and deactivates the environment. 
 
 Create and open <b>send_mail</b> in your favorite text editor.
-[code]
+<code>
 #!/bin/bash
 cd ~/scripts/daily_mail 
 . env/bin/activate
 python contact_form.py
 deactivate
-[/code]
+</code>
 
 To test this script, first deactivate your virtual environment. Next, make sure the file is executable.
-[code]
+<code>
 chmod +x send_mail
-[/code]
+</code>
 
 Now execute
-[code]
+<code>
 ./send_mail
-[/code]
+</code>
 
 If everything goes according to plan, the python script will execute and you'll get another email in your inbox. 
 
@@ -7993,21 +7993,21 @@ If everything goes according to plan, the python script will execute and you'll 
 So our python script and bash helper script work -- great! Now we need to automate the execution of this script so it gets executed at a specified interval. This is where cron comes into play. 
 
 First, open up the crontab file.
-[code]
+<code>
 crontab -e
-[/code]
+</code>
 
 Next, append the following line at the end of the file
-[code]
+<code>
 0 9 * * * ~/scripts/daily_mail/send_mail
-[/code]
+</code>
 
 This schedules the send_mail bash script(which executes the python script) to run at 9AM every day.
 
 Save and exit the text editor -- you're done! You should receive an email from the form every morning at 9AM (server time). To test if the cron file is working, you can change the line we appended to
-[code]
+<code>
 * * * * * ~/scripts/daily_mail/send_mail
-[/code]
+</code>
 
 This executes the script <em>every minute</em>. Just sit by your inbox for a few minutes and see if the email comes. Be sure to change it back ASAP, or your mailbox will get flooded! Also, remember that the crontabs changes do not take effect until you exit your text editor.
 
@@ -8079,14 +8079,14 @@ Use console.log or alert to echo print the value the server sends. If your strin
     <description></description>
     <content><![CDATA[Quick snippet here for you guys!  You're a dev SSHing into various VPS's and you need to know what linux distro you're running. Simply execute
 
-[code]
+<code>
 cat /etc/*release
-[/code]
+</code>
 
 For example, on Media Temple (dv), the following comes up
-[code]
+<code>
 CentOS release 5.5 (Final)
-[/code] ]]></content>
+</code> ]]></content>
     <excerpt><![CDATA[Quick snippet here for you guys!  You're a dev SSHing into various VPS's and you need to know what linux distro you're running. ]]></excerpt>
   </item>
   <item>
@@ -8097,7 +8097,7 @@ CentOS release 5.5 (Final)
     <description></description>
     <content><![CDATA[I've begun my descent into pure Rails. The whole naming convention idiom is hard to remember while I'm just learning, so here's a reference chart for myself and for any other Rails noobs. 
 
-[code]
+<code>
 # Routes
 resources: users
 
@@ -8109,7 +8109,7 @@ class UsersController &lt; ApplicationController
 # Models
 user.rb (model)
 class User &lt; ActiveRecord::Base
-[/code] ]]></content>
+</code> ]]></content>
     <excerpt><![CDATA[I've begun my descent into pure Rails. The whole naming convention idiom is hard to remember while I'm just learning, so here's a reference chart for myself and for any other Rails noobs. ]]></excerpt>
   </item>
   <item>
@@ -8128,16 +8128,16 @@ The main issue with most of the tutorials I've followed is that they require you
 
 <h2>Get the Project Template</h2>
 First, we'll pull a rails project template file that has rspec preconfigured.
-[code]$ git clone git://github.com/joequery/Rails-Template.git[/code]
+<code>$ git clone git://github.com/joequery/Rails-Template.git</code>
 Now rename the app to whatever you want
-[code]$ rails g rename_to YourApp[/code]
+<code>$ rails g rename_to YourApp</code>
 
 Now execute the following
-[code]
+<code>
 $ bundle install
 $ gem install ZenTest
 $ gem install autotest-rails
-[/code]
+</code>
 (You may need to use sudo for your gem install, depends on your setup)
 
 
@@ -8148,9 +8148,9 @@ Now we move on to OS-Specific implementations.
 Credit most of the Ubuntu instructions to <a href="http://ykyuen.wordpress.com/2010/11/15/rails-integrate-autotest-and-rspec-in-linux/">Ykyuen</a>
 
 First, execute
-[code]
+<code>
 $ sudo apt-get install libnotify-bin
-[/code]
+</code>
 
 Now create an autotest configuration file in the home directory (~/.autotest) and paste in the following:
 [ruby]
@@ -8194,16 +8194,16 @@ Everything is now configured. Jump to <a href="#testing">Testing Your Setup</a>
 <h2 id="osx">Mac OS X</h2>
 
 First, execute 
-[code]
+<code>
 $ gem install autotest-growl
-[/code]
+</code>
 
 (You may need to use sudo, based upon your setup).
 
 Edit the ~/.autotest file (create it if it does not exist), and paste the following in
-[code]
+<code>
 require &quot;autotest/growl&quot;
-[/code]
+</code>
 
 Everything is now configured. Jump to <a href="#testing">Testing Your Setup</a>
 
@@ -8211,40 +8211,40 @@ Everything is now configured. Jump to <a href="#testing">Testing Your Setup</a>
 The Ubuntu Nerds and the Apple Fanboys reunite! It's time to test our installations.
 
 First, lets generate a controller to test.
-[code]
+<code>
 $ rails generate controller Pages home contact
-[/code]
+</code>
 
 You'll see a bunch of files created. Let's get rid of some of the unnecessary files rspec made
-[code]
+<code>
 $ rm -rf spec/helpers
 $ rm -rf spec/views
-[/code]
+</code>
 
 Now let's run our test without autotest. We should have 2 success and 0 failures at this point.
-[code]
+<code>
 $ bundle exec rspec spec/
-[/code]
+</code>
 
 Now open two terminal windows or tabs and cd back to your project directory in both of them.
 In one tab, execute 
-[code]$ bundle exec spork[/code]
+<code>$ bundle exec spork</code>
 You may see a bunch of warning messages. It's safe to ignore these for the time being. If everything went well, you should see
-[code]
+<code>
 Preloading Rails environment
 Loading Spork.prefork block...
 Spork is ready and listening on 8989!
-[/code]
+</code>
 
 In the other tab you opened, simply execute
-[code]$ autotest -c[/code]
+<code>$ autotest -c</code>
 
 
 Once again, you may see a bunch of warning messages in the terminal, and these are also safe to ignore for now. More importantly, you should see a pop up notification that shows that the tests passed. You'll also see
-[code]
+<code>
 Finished in 0.xxxx seconds
 2 examples, 0 failures
-[/code]
+</code>
 in the window/tab where you executed autotest.
 
 Now, to see if the autotest is working properly, lets open spec/controllers/pages_controller_spec.rb. The file contains the following:
@@ -8296,7 +8296,7 @@ end
 [/ruby]
 
 We should get a pop up saying that the test failed, and you can find the details in the tab with autotest running.
-[code]
+<code>
 Finished in 0.07293 seconds
 2 examples, 1 failure
 
@@ -8306,7 +8306,7 @@ rspec ./spec/controllers/pages_controller_spec.rb:13 # PagesController GET 'abou
 
 # Waiting since 2011-09-13 14:19:31
 
-[/code]
+</code>
 
 If this shows up along with the pop up, congratulations, you've successufully integrated Spork and Autotest into RSpec!
 
@@ -8314,22 +8314,22 @@ If this shows up along with the pop up, congratulations, you've successufully in
 
 <h2>Do I have to do this EVERY TIME?!?!</h2>
 Nope! For subsequent projects, your procedure should be as follows:
-[code]
+<code>
 $ git clone git@github.com:joequery/Rails-Template.git
 $ cd Rails-Template
 $ rails g rename_to MyApp
 $ bundle install
-[/code]
+</code>
 
 In a separate window/tab
-[code]
+<code>
 $ bundle exec spork
-[/code]
+</code>
 
 In another separate window/tab
-[code]
+<code>
 $ autotest
-[/code]
+</code>
 
 And that's it!
 
@@ -8344,9 +8344,9 @@ Did the tutorial help? Did you find parts of the tutorial unclear? Let us know i
     <guid isPermaLink="false">http://www.vertstudios.com/blog/?p=3734</guid>
     <description></description>
     <content><![CDATA[I often find myself doing the following:
-[code]
+<code>
 vim .
-[/code]
+</code>
 to open up VIM and then explore my files. Because I'm lazy, here's a way to open up VIM in file navigation mode if no files are specified when running VIM.
 
 Append the following to your .bashrc
@@ -8372,14 +8372,14 @@ function vim(){
     <content><![CDATA[As a rails novice, one of the more frustrating things I've encountered with rails is the inability to search for specific method names in its API. This is because a lot of these methods are dynamically generated helpers that you should know by heart once you've mastered the "Rails Way." Unfortunately for me, I'm not at the point of calling myself a Rails guru, so I still need to know what all I have available to me. In my opinion, nothing is more frustrating than not knowing what methods you have at your disposal. 
 
 After doing quite a bit of googling, I was able to find a list of session variables by executing the following in Rails Console:
-[code]
+<code>
 irb(main):001:0&gt; y app.methods.sort
-[/code]
+</code>
 
 <h2>Rails Session Variables List</h2>
 Here is my list of Rails Session Variables. These will vary across different apps based upon what gems you have installed. For example, you'll see methods with "refinery" in the list below, which refers to the <a href="http://refinerycms.com/">RefineryCMS</a> we've adopted here at Vert. I highly recommend you execute the command above for your own app.
 
-[code]
+<code>
 ---
 - :!
 - :!=
@@ -8856,7 +8856,7 @@ Here is my list of Rails Session Variables. These will vary across different app
 - :xhr
 - :xml_http_request
 - :y
-[/code] ]]></content>
+</code> ]]></content>
     <excerpt><![CDATA[As a rails novice, one of the more frustrating things I've encountered with rails is the inability to search for specific method names in its API. This is because a lot of these methods are dynamically generated helpers that you should know by heart once you've mastered the "Rails Way." Unfortunately for me, I'm not at the point of calling myself a Rails guru, so I still need to know what all I have available to me. In my opinion, nothing is more frustrating than not knowing what methods you have at your disposal. ]]></excerpt>
   </item>
   <item>
@@ -8877,30 +8877,30 @@ PyQuery includes many of the jQuery DOM <a href="http://packages.python.org/pyqu
 <strong>This guide uses Python 2.6.</strong> If you don't have <a href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>, grab it now. We'll use it in a minute to install the PyQuery package. 
 Now create a project directory for this tutorial. I'll call it pyquery_tutorial
 
-[code]
+<code>
 $ mkdir pyquery_tutorial
 $ cd pyquery_tutorial
-[/code]
+</code>
 
 Now create the virtual environment with your Python executable version of choice (I have only tested this for 2.6 and 2.7)
 
-[code]
+<code>
 $ virtualenv env --python=python2.6
 Running virtualenv with interpreter /usr/bin/python2.6
 New python executable in env/bin/python2.6
 Also creating executable in env/bin/python
 Installing distribute.................................................................................................................................................................................done.
-[/code]
+</code>
 
 Now activate the virtualenv. (You should see (env) beside your prompt if done correctly)
-[code]$ . env/bin/activate[/code]
+<code>$ . env/bin/activate</code>
 
 Now we install the PyQuery package.
-[code](env) $ pip install pyquery
+<code>(env) $ pip install pyquery
 ...
 Successfully installed lxml pyquery
 Cleaning up...
-[/code]
+</code>
 
 Woohoo, PyQuery is now ready for use!
 
@@ -8931,39 +8931,39 @@ First, create this html file called "index.html" in the project directory.
 </code>
 
 Now fire up Python. (Make sure your virtualenv is still activated!)
-[code]$ python
+<code>$ python
 Python 2.6.6 (r266:84292, Mar 25 2011, 19:36:32) 
 [GCC 4.5.2] on linux2
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt; 
-[/code]
+</code>
 
 First we import PyQuery from the pyquery package. 
-[code]
+<code>
 &gt;&gt;&gt; from pyquery import PyQuery
-[/code]
+</code>
 
 Now let's read in our <i>index.html</i> file and store it to a string.
-[code]
+<code>
 &gt;&gt;&gt; html = open(&quot;index.html&quot;, 'r').read()
-[/code]
+</code>
 
 Now we instantiate a PyQuery object, passing in our html string. To keep things looking familiar, let the instantiating object be named jQuery!
 
-[code]
+<code>
 &gt;&gt;&gt; jQuery = PyQuery(html)
-[/code]
+</code>
 
 Now we can traverse this document using the selectors we've grown to love through CSS and jQuery. It might look strange that we're assigning jQuery to something, but at this point, we use this jQuery variable JUST like we use $ in our JavaScript. For example, let's get the title tag.
 
-[code]
+<code>
 &gt;&gt;&gt; jQuery(&quot;title&quot;).text()
 'PyQuery Test!'
-[/code]
+</code>
 
 jQuery developers that have created their own plugin may already be comfortable using jQuery in place of $ in their JS. Let's mess around with PyQuery some more.
 
-[code]
+<code>
 &gt;&gt;&gt; jQuery(&quot;li&quot;).eq(1).text()
 'DOM Manipulation is EASY!'
 &gt;&gt;&gt; jQuery(&quot;a&quot;) # The 'jQuery Object' we're used to is now a list
@@ -8973,21 +8973,21 @@ jQuery developers that have created their own plugin may already be comfortable 
 ...
 PyQuery
 jQuery
-[/code]
+</code>
 
 Get the HTML of the first li element.
-[code]
+<code>
 &gt;&gt;&gt; jQuery(&quot;ul&quot;).children().eq(0).html()
 u'It makes parsing files a &lt;strong&gt;SNAP&lt;/strong&gt;!'
-[/code]
+</code>
 
 <h3>Remote Files</h3>
 Wanna parse a remote file? No problem!
-[code]
+<code>
 &gt;&gt;&gt; jQuery = PyQuery(url=&quot;http://www.vertstudios.com/&quot;)
 &gt;&gt;&gt; jQuery(&quot;title&quot;).text()
 &quot;Web Design that Doesn't Suck | Vert Studios | Tyler, Texas&quot;
-[/code]
+</code>
 
 <h2>Conclusion</h2>
 Now that we've given you a nice kickstart of PyQuery, your knowledge of jQuery coupled with the <a href="http://packages.python.org/pyquery/api.html">PyQuery API</a> provides sufficient power to parse XML/HTML documents.]]></content>
@@ -9007,7 +9007,7 @@ While searching for how to solve the annoying ruby alert of "Insecure world writ
 Thanks to <a href="http://www.ruby-forum.com/topic/79565">Ruby-Forum.com</a>, I found that inserting "$VERBOSE=nil" into my bundler runtime file helped suppress this annoying message. Please be careful with this, and only do this if you work exclusively on a FAT32 partition.
 
 Find your gem path so we can edit the bundler gem. Execute the following in your shell: (<a href="http://gilesbowkett.blogspot.com/2009/06/find-your-ruby-gems-path.html">credit</a>)
-[code]$ ruby -r rubygems -e &quot;p Gem.path&quot;[/code]
+<code>$ ruby -r rubygems -e &quot;p Gem.path&quot;</code>
 
 Navigate to your gem path and cd into the version of bundler currently being used. Now navigate to <b>lib -&gt; bundler </b> and open <b>runtime.rb</b> in your favorite text editor. Add "$VERBOSE = nil" to line 2.
 
@@ -9040,7 +9040,7 @@ While searching for how to solve the annoying ruby alert of "Insecure world writ
     <content><![CDATA[So I somehow managed to botch my Autotest installation I described in <a href="http://www.vertstudios.com/blog/installing-rspec-autotest-spork-ubuntu-osx/">this tutorial</a>. After spending many hours trying to get it back up and running again, I've decided it's just not worth it. Here's a ghetto bash script for semi-auto testing. You just have to press any key and it'll run the test. 
 
 test.sh
-[code]
+<code>
 #!/bin/bash
 # Our ghetto auto-testish thing. User presses any key to test,
 # Ctrl-C to get out
@@ -9058,7 +9058,7 @@ function do_test(){
 }
 
 do_test
-[/code] ]]></content>
+</code> ]]></content>
     <excerpt><![CDATA[So I somehow managed to botch my Autotest installation I described in <a href="http://www.vertstudios.com/blog/installing-rspec-autotest-spork-ubuntu-osx/">this tutorial</a>. After spending many hours trying to get it back up and running again, I've decided it's just not worth it. Here's a ghetto bash script for semi-auto testing. You just have to press any key and it'll run the test. ]]></excerpt>
   </item>
   <item>
@@ -9074,15 +9074,15 @@ Your workflow can vary greatly depending on the type of project. Sure, all will 
 
 <h2>How to Add Multiple .screenrc Configs</h2>
 Create a directory where you plan on storing your screen configuration files. For this tutorial, I'll use <b>/usr/local/screen</b>
-[code]
+<code>
 $ sudo mkdir /usr/local/screen
 $ cd /usr/local/screen
-[/code]
+</code>
 
 Now create your configuration files and name them based on your workflow, and place them in the /usr/local/screen directory. For example, "rails", "flask", or "javascript". Here's my rails screen config file.
 
 <i>rails</i>
-[code]
+<code>
 # Screen Configuration file for Rails!
 # Skip the startup message
 startup_message off 
@@ -9105,23 +9105,23 @@ screen -t Server
 
 # Select first screen
 select 0
-[/code]
+</code>
 
 Remember to make sure this file is in your /usr/local/screen directory.
 
 Next, we have to tell screen to load these different configuration files. We'll make a simple bash function and append it to our ~/.bashrc
 
-[code]
+<code>
 # Special screens
 # $1 - screen config file name
 function scr(){
     screen -c /usr/local/screen/$1
 }
-[/code]
+</code>
 
 <h2>Calling the Configurations</h2>
 Now if we want to use our rails screen configuration file, we execute 
-[code]$ scr rails[/code]
+<code>$ scr rails</code>
 
 Note that we use "scr" instead of "screen". Executing "screen" by itself will just load the ~/.screenrc file as its configuration.
 
@@ -9139,7 +9139,7 @@ It's important to note that there isn't any configuration file inheritance going
 
 http://www.youtube.com/watch?v=BmF638hV-bw&amp;
 <h2>Nginx/PHP package installation</h2>
-[code]
+<code>
 cd /tmp
 # Add a necessary repository.
 sudo apt-get install python-software-properties
@@ -9149,42 +9149,42 @@ sudo apt-get update
 sudo apt-get install nginx
 sudo apt-get install php5-cli php5-common php5-mysql php5-suhosin php5-gd php5-dev
 sudo apt-get install php5-fpm php5-cgi php-pear php5-memcache php-apc
-[/code]
+</code>
 <h2>Testing Nginx and php-fpm installations</h2>
 Verify php5-fpm can start
 
-[code]
+<code>
     $ sudo service php5-fpm start
-[/code]
+</code>
 
 Create a symbolic link to the default sites-available file to test nginx.
 
-[code]
+<code>
     $ cd /etc/nginx/sites-enabled
     $ sudo ln -s ../sites-available/default default
     $ sudo service nginx start
-[/code]
+</code>
 
 You should now be able to visit myvps.com (or your equivalent) and see "Welcome to Nginx!" If the installation
 was successful, remove the symbolic link and stop our processes.
 
-[code]
+<code>
     $ sudo rm default
     $ sudo service nginx stop
     $ sudo service php5-fpm stop
-[/code]
+</code>
 <h2>Nginx configuration</h2>
 <a href="http://codex.wordpress.org/Nginx">Credit to Wordpress</a> for these configuration files.
 
 Move to nginx directory
 
-[code]
+<code>
     $ cd /etc/nginx
-[/code]
+</code>
 
 Edit the nginx.conf file. Replace the contents with what's below. Note that you must use sudo when editing all these nginx configuration files.
 
-[code]
+<code>
 # Generic startup file.
 user www-data;
 worker_processes  2;
@@ -9232,17 +9232,17 @@ http {
      }
 
 }
-[/code]
+</code>
 
 Move to the sites-available directory.
 
-[code]
+<code>
     $ cd sites-available
-[/code]
+</code>
 
 Create a file named myvps.com and paste in the following:
 
-[code]
+<code>
 # Redirect everything to the main site.
 server {
   server_name myvps.com *.myvps.com;
@@ -9255,19 +9255,19 @@ server {
   include global/restrictions.conf;
   include global/php5-fpm.conf;
 }
-[/code]
+</code>
 
 Create a global directory within the nginx directory.
 
-[code]
+<code>
     $ cd /etc/nginx
     $ sudo mkdir global
     $ cd global
-[/code]
+</code>
 
 Create a file called restrictions.conf within the global directory and paste in the following:
 
-[code]
+<code>
 # Global restrictions configuration file.
 # Designed to be included in any server {} block.
 
@@ -9288,11 +9288,11 @@ location ~ /\. {
   access_log off;
   log_not_found off;
 }
-[/code]
+</code>
 
 Now create a php5-fpm.conf file within the global directory and paste in the following:
 
-[code]
+<code>
 # Pass all .php files onto a php-fpm/php-fcgi server.
 location ~ \.php$ {
   # Zero-day exploit defense.
@@ -9310,82 +9310,82 @@ location ~ \.php$ {
 # fastcgi_intercept_errors on;
   fastcgi_pass php;
 }
-[/code]
+</code>
 <h2>Setting up the site</h2>
 Activate our server configuration via symbolic link in the sites-enabled directory
 
-[code]
+<code>
     $ cd /etc/nginx/sites-enabled
     $ sudo ln -s ../sites-available/myvps.com myvps.com
-[/code]
+</code>
 
 Now navigate to our www directory, where we will store our sites.
 
-[code]
+<code>
     $ cd /var/www
-[/code]
+</code>
 
 Create a web group
 
-[code]
+<code>
     $ sudo groupadd web
-[/code]
+</code>
 
 Add your administrative user to the web group
 
-[code]
+<code>
     $ sudo usermod -a -G web YOURUSER
-[/code]
+</code>
 
 If you're logged in as the administrative user (which you most likely are), log out and log back in. Verify
 the user is a part of the web group
 
-[code]
+<code>
     $ groups
-[/code]
+</code>
 
 Now make the web group the group of the directory
 
-[code]
+<code>
     $ sudo chgrp web /var/www
-[/code]
+</code>
 
 Make the ```/var/www``` directory group writable.
 
-[code]
+<code>
     $ sudo chmod -R 775 /var/www
-[/code]
+</code>
 
 Make all files subsequently created in the /var/www directory belong to the web group
 
-[code]
+<code>
     $ sudo chmod g+s /var/www
-[/code]
+</code>
 
 Now we can create the myvps.com directory
 
-[code]
+<code>
     $ mkdir myvps.com
     $ cd myvps.com
-[/code]
+</code>
 
 Create an index.php file and paste in the following
 
-[code]
+<code>
 &lt;!--?php phpinfo(); ?--&gt;
-[/code]
+</code>
 
 Now start nginx
 
-[code]
+<code>
     $ sudo service nginx start
-[/code]
+</code>
 
 The web page won't display because we haven't started php5-fpm
 
-[code]
+<code>
     $ sudo service php5-fpm start
-[/code]
+</code>
 
 Now we should be able to see our phpinfo in the browser!]]></content>
     <excerpt><![CDATA[In my first screen cast ever, I'll guide you through setting up Nginx with php-fpm on Ubuntu 10.04.]]></excerpt>
@@ -9401,9 +9401,9 @@ Now we should be able to see our phpinfo in the browser!]]></content>
 <h2>The Workaround</h2>
 The workaround is to tell Guard to not look for rb-fsevent, but to instead <a href="http://en.wikipedia.org/wiki/Polling_(computer_science)"> use polling</a>. To do so, append the <strong>--no-vendor</strong> option when starting up your Guard server.
 
-[code]
+<code>
 $ bundle exec guard --no-vendor
-[/code]
+</code>
 
 Polling is a more expensive operation, but hey, at least it works.]]></content>
     <excerpt><![CDATA[How to fix Guard when events seem to not be firing when working on OS X. ]]></excerpt>
@@ -9432,11 +9432,11 @@ Your options:
 <h2>3) Overuse of global .gitignore</h2>
 Using a <a href="http://jqr.github.com/2009/02/03/global-git-ignore.html">global .gitignore</a> is a great way to save yourself time. However, if misused, your global .gitignore can easily become a headache for your collaborators. Let's say you've created a project with<a href="http://flask.pocoo.org/">Python Flask</a>, with SQLite as the database of choice. You decide "Hey, I never want to version .sqlite3 files. Let's just toss that in my global .gitignore!". At first glance, this mentality doesn't seem harmful at all. However, any collaborator that comes along without .sqlite3 listed in their global .gitignore can accidentally bring the generated database file into version control. Here's a small list of file extensions I find safe to place in your global .gitignore.
 
-[code]
+<code>
 *.o
 *.log
 *.DS_Store
-[/code] 
+</code> 
 
 <h2>*Bonus* Lack of Bundler Use in Rails Projects</h2>
 Plain and simple, use <a href="https://github.com/Hack56/Rails-Template/wiki/Configuring-Bundler">properly configured Bundler</a> for your Rails projects. Fewer things are more frustrating than tracking down Gems used throughout a Rails project that are not listed in the Gemfile. Just because a gem is installed on your system does not mean it's installed on mine! Remember to track both the Gemfile AND Gemfile.lock files. ]]></content>
@@ -9461,9 +9461,9 @@ Each escape to the internet from my work was sort of an awkwardly long verbal pa
 
 <h2>The Hosts File: Just Annoying Enough</h2>
 Visiting a fun website when a software problem got difficult became so habitual to me that I'd execute :wq&lt;ENTER&gt;⌘&lt;TAB&gt;⌘tn&lt;ENTER&gt; from VIM without even realizing I was doing so. I didn't even want to see the top story that moment, I just wanted to not feel so bored/stressed/tired. To combat this, I simply place my favorite websites in my host file while I'm at work. When I visit those sites out of compulsion, I find the "Website Not Found" message and the idea of having to edit my host file JUST annoying enough to not do it. Because, again, I don't even want to see these sites. Unless you're cheating and have your hosts file already opened as root, you'll have to execute
-[code]
+<code>
 sudo vim /etc/hosts
-[/code]
+</code>
 which will require a password, and then you'll need to find the entries and comment them out. The whole process will only take about 10 seconds, which is no time at all when you want to actively want to view the sites, but just annoying enough when visiting mindlessly.
 
 <h2>Work Hard, Break Hard</h2>
@@ -9483,19 +9483,19 @@ Make sure you have the latest Nvidia drivers. To do this, Navigate to "Additiona
 
 Now execute the following commands in your terminal in order to get <a href="http://willem.engen.nl/projects/disper/">disper</a>, a nice utility that saves us from the headache of configuring via Nvidia-Settings. 
 
-[code]
+<code>
 $ sudo add-apt-repository ppa:disper-dev/ppa
 $ sudo add-apt-repository ppa:nmellegard/disper-indicator-ppa
 $ sudo apt-get update
 $ sudo apt-get install disper disper-indicator
-[/code]
+</code>
 
 (Credit to  <a href="http://www.joeyconway.com/blog/2011/08/13/ubuntu-how-to-extend-display-with-two-monitors/">Joey Conway</a>)
 
 Verify that disper works by executing the following in your terminal:
-[code]
+<code>
 $ disper -e
-[/code]
+</code>
 
 This should extend your monitors, giving you the desired functionality. This is great, except for currently we'd have to do this every single time we boot up Kubuntu.
 
@@ -9503,40 +9503,40 @@ This should extend your monitors, giving you the desired functionality. This is 
 My first instinct, being slightly familiar with Ubuntu, was to create a startup script in <b>/etc/init.d</b>. This, however, didn't seem to work. Instead of creating a script in the init.d directory, we'll create the script in a Kubuntu-specific directory called Autostart.
 
 First, navigate to the Autostart directory:
-[code]
+<code>
 $ cd ~/.kde/Autostart
-[/code]
+</code>
 
 Now using your favorite text editor, create a script called <b>dual-monitors</b>
 
-[code]
+<code>
 $ vim dual-monitors
-[/code]
+</code>
 
 Paste in the following:
 
-[code]
+<code>
 #!/bin/bash
 /usr/bin/disper -e
-[/code]
+</code>
 
 Save the file and quit the text editor. We now need to make the file executable or it will just be ignored by Kubuntu on startup.
 
-[code]
+<code>
 $ chmod +x dual-monitors
-[/code]
+</code>
 
 To verify the script works, we first need to get out of our current dual screen mode to make sure the script correctly puts us back in. Thus, we use disper to force only the primary display to appear.
 
-[code]
+<code>
 $ disper -s
-[/code]
+</code>
 
 Your 2nd monitor should deactivate. Now, while we're still in the ~/.kde/Autotest directory, execute the following:
 
-[code]
+<code>
 $ ./dual-monitors
-[/code]
+</code>
 
 If this causes the monitors to go back to dual-screen mode, then the script works! T
 
@@ -9620,11 +9620,11 @@ void give_bob_a_job(Person *bob){
 [/c]
 
 We compile the file
-[code]
+<code>
 ~$ gcc bob.c -o bob.o
 bob.c: In function ‘give_bob_a_job’:
 bob.c:18:6: error: request for member ‘job’ in something not a structure or union
-[/code]
+</code>
 
 So we receive the error <b>error: request for member ‘job’ in something not a structure or union</b>. 
 
@@ -9662,22 +9662,22 @@ This reads
 
 Replace line 18 with the correction, and the code should compile with the following output upon execution:
 
-[code]
+<code>
 The job of bob is Sysadmin
-[/code]
+</code>
 
 <h2>Syntax cleanup</h2>
 Dereferencing a pointer to a structure is so common, we have a shorthand for doing so.
 
-[code](*foo).bar[/code]
+<code>(*foo).bar</code>
 
 is equal to
 
-[code]foo-&gt;bar[/code]
+<code>foo-&gt;bar</code>
 
 so 
 
-[code]bob-&gt;job = &quot;Sysadmin&quot;;[/code]
+<code>bob-&gt;job = &quot;Sysadmin&quot;;</code>
 
 would work as well. ]]></content>
     <excerpt><![CDATA[If you're trying to pass a pointer to a structure to a function, you may be getting the compiler error <b>request for member ‘SOME_PROPERTY’ in something not a structure or union</b>. If you  <em>swear</em> you're passing in a pointer to the proper structure, and you're <em>certain</em>, there are no typos for the member name you're trying to access, you may just be experiencing a bit of pointer ambiguity. ]]></excerpt>
@@ -9697,7 +9697,7 @@ Sometimes, however, I get in <b>the zone</b> and forget to checkout a branch bec
 Luckily, recovery is extremely simple. We can fix the repo up to get back in line with branching best practices.
 
 So say we've just committed to master and we're currently on the master branch.
-[code]
+<code>
 $ git log
 commit 9huuh23tnhubazhuxbeeashebcdjis3hl2iidu
 Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
@@ -9716,16 +9716,16 @@ Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
 Date:   Wed Apr 11 12:05:10 2012 -0500
 
         Some upstream master commit
-[/code]
+</code>
 
 The last two commits needed to be on their own branch, say <b>new_feature</b>. Your local master branch needs to be at "Some upstream master commit". Here's how we can accomplish this. 
 
 <h3>Step 1) Create the new_feature branch</h3>
 Since master is currently in the state we want the new_feature branch to be in (since we've just added our new feature commit), we can just branch off of master.
 
-[code]
+<code>
 $ git branch new_feature
-[/code]
+</code>
 
 So new_feature is just a direct copy of master at this point.
 
@@ -9739,34 +9739,34 @@ It's important to note that git reset --hard is NOT a safe operation. You CAN lo
 
 Anyway, to get the master branch back to "Some upstream master commit", we can copy the SHA of the commit from git log to our clipboard and execute
 
-[code]
+<code>
 $ git checkout master
 $ git reset --hard b232udh24xub2394d249ud394ub34bu9348ub9
 HEAD is now at ... Some upstream master commit
-[/code]
+</code>
 
 Also, for convenience, we can use the HEAD alias. In this example, we wanted to reference the commit that was 2 commits behind the latest commit. We could have equally executed
 
-[code]
+<code>
 $ git checkout master
 $ git reset --hard HEAD~2
-[/code] 
+</code> 
 
 The git log should now look like the following:
-[code]
+<code>
 $ git log
 commit b232udh24xub2394d249ud394ub34bu9348ub9
 Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
 Date:   Wed Apr 11 12:05:10 2012 -0500
 
         Some upstream master commit
-[/code]
+</code>
 
 
 <h3>Step 3) Verification</h3>
 We've verified the master branch is where it should be, so now we should checkout the new_feature branch and run a git log. 
 
-[code]
+<code>
 $ git checkout new_feature
 Switched to branch 'new_feature'
 $ git log
@@ -9787,7 +9787,7 @@ Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
 Date:   Wed Apr 11 12:05:10 2012 -0500
 
         Some upstream master commit
-[/code]
+</code>
 
 So we still have our work, but it's on a feature branch, as it should be! We're now free to send a pull request without any bickering from the project owner, or we can merge the new_feature branch later once it's ready for production.  ]]></content>
     <excerpt><![CDATA[So you know you should pretty much <a href="http://scottchacon.com/2011/08/31/github-flow.html">never hack directly on master</a> when working with git. Instead, you should create branches and merge them later.  Beyond best practices for their own sake, some github projects really want you creating pull requests from a certain branch.   
@@ -9833,9 +9833,9 @@ http://www.youtube.com/watch?v=CboUF7gtVSo]]></content>
 
 To get VI keybindings working in your shell, simply execute
 
-[code]
+<code>
 $ set -o vi
-[/code]
+</code>
 
 (If you decide you like vi keybindings in the shell and you want this mode enabled upon shell startup, append the command to your ~/.bash_profile for OS X and ~/.bashrc for linux ((<a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html">Why the difference?</a>))
 
@@ -9843,7 +9843,7 @@ $ set -o vi
 
 The shell will have normal/insert mode as expected. Here are the commands I use frequently:
 
-[code]
+<code>
 i - enter insert mode
 esc - back to normal mode
 
@@ -9873,7 +9873,7 @@ Fx - find the previous occurrence of the character 'x'
 * Numeric modifier keys work as well! *
 5W - move forward five white-space delimited words. 
 
-[/code] ]]></content>
+</code> ]]></content>
     <excerpt><![CDATA[There was once a very sad point in my development career where if I made a typo earlier in one of my bash statements, I would have to hold the left arrow to get my cursor over to the problem area and fix it. Then, one fateful day, I discovered VI keybindings in the shell!
 ]]></excerpt>
   </item>
@@ -9896,16 +9896,16 @@ The quality is just fine for simple screencasts, and it allows you to record aud
 <h2>Installation</h2>
 
 First, we need some Python modules to be installed.
-[code]
+<code>
 $ sudo apt-get install --reinstall gir1.2-gtk-2.0 python-software-properties software-properties-gtk
-[/code]
+</code>
 
 Now we actually grab Kazam as instructed by their site.
-[code]
+<code>
 $ sudo add-apt-repository ppa:kazam-team/stable-series
 $ sudo apt-get update
 $ sudo apt-get install kazam
-[/code]
+</code>
 
 And you're done! You can run kazam via the command line or your distro's menu. 
 
@@ -9925,9 +9925,9 @@ If you happen to have FFMpeg installed, here's a nice 2-pass video/audio <a href
 
 You can download <a href="https://github.com/joequery/md2pdf">md2pdf</a> on Github. Installation instructions can be found in the README. Usage is extremely simple:
 
-[code]
+<code>
 $ md2pdf my-markdown-document.md
-[/code]
+</code>
 
 <h2>How it was made</h2>
 This utility is actually pretty silly. It simply serves as a glue between

@@ -188,7 +188,7 @@ That's all the algorithm is: Spelling out exactly what you want to program.
 Step 4 of Developing Web Applications, implementing the Algorithm, is simply taking the Pseudo-Code made in step three and actually programming it. Step 5, Testing the Data, is making sure the data lines up correctly and returns consistently correct results. Testing the Data also involves making sure the  application executes properly <strong>REGARDLESS OF USER INPUT</strong>. Step 6, Maintaining and Updating the program, is keeping the application current with government standards and user needs. Step 6 is nearly impossible to do if the initial code is illogical, unreadable, and inefficient.
 
 There is a LOT more to web application programming and even web design than just putting yourself in front of your computer and typing away. Without taking the time to establish and analyze the problem, there's no way you will provide the best solution possible to your client. Designing your program with these steps will help eliminate short term frustrations and long term time losses.]]></content>
-    <excerpt:encoded><![CDATA[Specifying the problem requirements means you must clearly state the problem. If you can not clearly state the problem, how can you measure whether your project is a solution to that problem? Most web programmers make their projects and then spend time finding out what problems it can solve. That is completely inefficient. It is much better to zero in on the root problem and create a solution. We should strive for purpose driven programming.]]></excerpt:encoded>
+    <excerpt><![CDATA[Specifying the problem requirements means you must clearly state the problem. If you can not clearly state the problem, how can you measure whether your project is a solution to that problem? Most web programmers make their projects and then spend time finding out what problems it can solve. That is completely inefficient. It is much better to zero in on the root problem and create a solution. We should strive for purpose driven programming.]]></excerpt>
   </item>
   <item>
     <title>C++ Capitalize Each Word (Proper Case)</title>
@@ -393,7 +393,7 @@ We've reached the end of the string, and this is the final result.
 I hope the visual put things in perspective. If you are looking for how to use sentence case in C++, <a href="http://www.mcculloughdesigns.com/blog/c-sentence-case-capitalize-word/345/">visit this post</a>.
 
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/CapEachWord.cpp">Download the Source Code</a>]]></content>
-    <excerpt:encoded><![CDATA[This Post Will Show You How To Capitalize Each Word In C++, Similar To The Way I Am Typing Right Now. This Is Also Known As Proper Case.]]></excerpt:encoded>
+    <excerpt><![CDATA[This Post Will Show You How To Capitalize Each Word In C++, Similar To The Way I Am Typing Right Now. This Is Also Known As Proper Case.]]></excerpt>
   </item>
   <item>
     <title>SEO LOL - Sprinkles Cupcakes</title>
@@ -419,8 +419,8 @@ Buttercup bakeshop,Crumbs,Crumbs bakery,Frosted cupcakery,Karas cupcakes,Sibbys 
 Frosted cupcakery,Cupcakery,Swirlz cupcakes,Swirls cupcakes,Oprah's favorite cupcakes,Oprahs favorite things,
 Oprah's favorite cupcakes,Oprah cupcake,Oprah cake,Oprah red velvet,Barbra streisand cupcake,Barbara streisand cupcake,
 Barbra streisand sprinkles,Barbra oprah cupcake,Barbra oprah sprinkles cupcakes,billys bakery,city bakery,my little cupcake"&gt;]]></content>
-    <excerpt:encoded><![CDATA[I must start off saying that I freaking love <a rel="nofollow" href="http://www.sprinkles.com/">Sprinkes Cupcakes</a>.
-But come on, this is a bit silly. ]]></excerpt:encoded>
+    <excerpt><![CDATA[I must start off saying that I freaking love <a rel="nofollow" href="http://www.sprinkles.com/">Sprinkes Cupcakes</a>.
+But come on, this is a bit silly. ]]></excerpt>
   </item>
   <item>
     <title>IE6 and the Starving Artist</title>
@@ -505,14 +505,14 @@ So it's up to us. Pressure from larger companies will help the process. For exam
 As past technology and present technology drift further apart, we will experience more pain as we stretch ourselves out trying to hold on to both. Eventually we will take the bold step into the future, or we will watch our web standards crumble as we try to accommodate antiquated technology. It's either R.I.P Progress or <a href="http://ripie6.com/">R.I.P IE6</a>
 
 Personally, I'm with <a href="http://www.webdesignerwall.com/general/trash-all-ie-hacks/">Web Designer Wall: Trash IE6 Hacks!!!</a>.]]></content>
-    <excerpt:encoded><![CDATA[<img src="http://www.vertstudios.com/blog/images/mc-blog/opinion/starvingartist/starvingartists.jpg" alt="The Starving Artist" />
+    <excerpt><![CDATA[<img src="http://www.vertstudios.com/blog/images/mc-blog/opinion/starvingartist/starvingartists.jpg" alt="The Starving Artist" />
 
 According to my former Art History professor <a href="http://www.christopher-stewart.com/">Christopher Stewart</a>, there are two reasons why an artist can starve:
 <ol>
   <li>His lack of skill</li>
   <li>His integrity</li>
 </ol>
-The first one makes complete sense. A person who can't draw a straight line shouldn't be paid to be an artist. But why would an artist with skill and integrity starve?]]></excerpt:encoded>
+The first one makes complete sense. A person who can't draw a straight line shouldn't be paid to be an artist. But why would an artist with skill and integrity starve?]]></excerpt>
   </item>
   <item>
     <title>Blogging: Escaping the Mediocrity</title>
@@ -592,7 +592,7 @@ Commenting on blogs of people who have thousands of subscribers may provide a de
 <h2>You're different than everyone else. </h2>
 
 Let your blog reflect that. You don't have to be a guru to present a different perspective on things already discussed by someone else: You just have to be yourself, be creative, be smart, and be social.]]></content>
-    <excerpt:encoded><![CDATA[If you want your blog to be successful, you must differentiate. We all have the same tools on our blogs, so it is how we use those tools that determine our success. Since our blog is our product, we can treat ideas that relate to product differentiation to our blog.]]></excerpt:encoded>
+    <excerpt><![CDATA[If you want your blog to be successful, you must differentiate. We all have the same tools on our blogs, so it is how we use those tools that determine our success. Since our blog is our product, we can treat ideas that relate to product differentiation to our blog.]]></excerpt>
   </item>
   <item>
     <title>Using Relationships to Help Your Blog</title>
@@ -617,9 +617,9 @@ At that moment I realized the other people who were commenting on those big-shot
 Those of you who are struggling with getting your blog exposed know how exciting it is to finally get a (non spammy) comment or pingback. So excited that you might visit the page of the person who left the comment and take the time reciprocate the favor.
 
 So visit a major blog, find an article with a lot of comments, and check out the links of the people who commented. If they have content relevant to your blog, and you like their articles, leave comments on 2-3 of their posts. This will help establish a mutually beneficial relationship that is more likely to create more back links than just leaving a comment on a top 10 blog.]]></content>
-    <excerpt:encoded><![CDATA[<img src="http://www.vertstudios.com/blog/images/mc-blog/blogging/commenting/asleep_at_computer.jpg" alt="Asleep at Computer" />
+    <excerpt><![CDATA[<img src="http://www.vertstudios.com/blog/images/mc-blog/blogging/commenting/asleep_at_computer.jpg" alt="Asleep at Computer" />
 
-If you're like me, you've spent a lot of time making posts and commenting posts, yet you don't have many (if any) subscribers. The problem isn't that you're not posting or commenting enough: You might simply be commenting <strong>the wrong blogs</strong>.]]></excerpt:encoded>
+If you're like me, you've spent a lot of time making posts and commenting posts, yet you don't have many (if any) subscribers. The problem isn't that you're not posting or commenting enough: You might simply be commenting <strong>the wrong blogs</strong>.]]></excerpt>
   </item>
   <item>
     <title>C++ Sentence Case (Capitalize First Word)</title>
@@ -859,9 +859,9 @@ After this point, there  will be no visible changes since this is the last sente
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
 
 This concludes how to manipulate a string to sentence case in C++.]]></content>
-    <excerpt:encoded><![CDATA[when typing up important documents, it is important to use sentence case to invoke a sense of formality. imagine writing an email or heck, an entire blog post, not using a capital letter. it would really hurt your professional decorum.
+    <excerpt><![CDATA[when typing up important documents, it is important to use sentence case to invoke a sense of formality. imagine writing an email or heck, an entire blog post, not using a capital letter. it would really hurt your professional decorum.
 
-So this post will show you how to convert a string to sentence  case using C++. Sentence case is having the first letter of the first word in a sentence capitalized.]]></excerpt:encoded>
+So this post will show you how to convert a string to sentence  case using C++. Sentence case is having the first letter of the first word in a sentence capitalized.]]></excerpt>
   <item>
     <title>Removing punctuation and spaces from a String in C++</title>
     <link>http://www.vertstudios.com/blog/removing-punctuation-spaces-string-c/</link>
@@ -977,9 +977,9 @@ Instead of removing the spaces and punctuation from the string being processed, 
 So after you do this for the entire string, strToConvert will appear to be the original string but with only alpha numeric characters.
 
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/alphanum/alphanumonly.zip">Download the EXE and Source Code</a>]]></content>
-    <excerpt:encoded><![CDATA[There may be times in which you need to do character processing that only deals with the Alphanumeric characters of a string, not the punctuations or blank spaces.
+    <excerpt><![CDATA[There may be times in which you need to do character processing that only deals with the Alphanumeric characters of a string, not the punctuations or blank spaces.
 
-Here is a program that will remove the punctuations and spaces from a string.]]></excerpt:encoded>
+Here is a program that will remove the punctuations and spaces from a string.]]></excerpt>
   </item>
   <item>
     <title>Book Review: Killerjavascript.com</title>
@@ -1040,9 +1040,9 @@ Having your basic examples is a great way to build up understanding of how code 
 This is the most complex a layout gets. Beginning JavaScript doesn't mean you're beginning CSS or web design in general. This video tutorial series just taught a whole bunch of people how to do a whole bunch of stuff without a context to actually apply the things learned.
 <h2>Final Word</h2>
 As you can see, I did not find this video tutorial helpful at all. I would not not recommend it to anybody, and I'm extremely upset that I bought it in the first place. Feel free to donate $20 to get me a new <span style="text-decoration: line-through;">yo-yo</span> JavaScript book.]]></content>
-    <excerpt:encoded><![CDATA[<a href="http://www.killerjavascript.com/videos/"><img style="width: 500px;" src="http://www.vertstudios.com/blog/images/mc-blog/bookcorner/killerjavascript/cd.jpg" alt="Killer Javascript" /></a>
+    <excerpt><![CDATA[<a href="http://www.killerjavascript.com/videos/"><img style="width: 500px;" src="http://www.vertstudios.com/blog/images/mc-blog/bookcorner/killerjavascript/cd.jpg" alt="Killer Javascript" /></a>
 
-An extensive review of www.killerjavascript.com 's video tutorial series on beginning JavaScript]]></excerpt:encoded>
+An extensive review of www.killerjavascript.com 's video tutorial series on beginning JavaScript]]></excerpt>
   </item>
   <item>
     <title>Boolean Logic and MySQL Functions</title>
@@ -1165,7 +1165,7 @@ According to the PHP  Manual, mysql_fetch_array
 So as long as the function has a row to process, $row is assigned an array of strings. Since the value of an Array is not 0 (although the elements of the array could very well be 0, the value of the Array itself is not), the while condition evaluates TRUE. If the function has no more rows to process, $row is assigned FALSE, and the while condition evaluates FALSE, terminating the loop.
 
 Hopefully you better understand the mysql_fetch_array function and the basics of boolean logic.]]></content>
-    <excerpt:encoded><![CDATA[Boolean Logic is an essential part of php when dealing with MySQL. If you do not understand boolean logic, a lot of the mysql functions may not make sense to you.
+    <excerpt><![CDATA[Boolean Logic is an essential part of php when dealing with MySQL. If you do not understand boolean logic, a lot of the mysql functions may not make sense to you.
 
 Take the commonly used <a href="http://php.net/manual/en/function.mysql-fetch-array.php">mysql_fetch_array</a> function. It is commonly used with a while loop in this manner:
 
@@ -1176,7 +1176,7 @@ while($row = mysql_fetch_array($query))
 }
 [/php]
 
-The condition for that while loop might not make sense if you haven't created your own boolean functions.]]></excerpt:encoded>
+The condition for that while loop might not make sense if you haven't created your own boolean functions.]]></excerpt>
   </item>
   <item>
     <title>jQuery Sprite Slideshow</title>
@@ -1204,11 +1204,11 @@ The border that you see in the transition period is the outer div that contains 
 
 <h2>EDIT:</h2>
 My friend Jeremy over at Jc-Designs.net has come up with a much more elegant implementation of this sprite slideshow. Please view <a rel="nofollow" href="http://jc-designs.net/blog/2010/05/jquery-sprite-slideshow-because-i-wanted-to-see-if-i-could-do-it-with-less/">his post on the jQuery Sprite Slideshow.</a>]]></content>
-    <excerpt:encoded><![CDATA[This is my first week messing around with jQuery, and I have already found it to be an extremely powerful tool.
+    <excerpt><![CDATA[This is my first week messing around with jQuery, and I have already found it to be an extremely powerful tool.
 
 A common use for JavaScript/jQuery is the creation of slideshows, so I decided to create my own as well.
 
-This slideshow is modeled off the <a href="http://www.alistapart.com/articles/sprites">CSS Sprite</a> Technique.]]></excerpt:encoded>
+This slideshow is modeled off the <a href="http://www.alistapart.com/articles/sprites">CSS Sprite</a> Technique.]]></excerpt>
   </item>
   <item>
     <title>What Car Dealers Can Teach us About Portfolio Pages</title>
@@ -1250,7 +1250,7 @@ You have to let <em>your</em> prospective clients know what they're missing out 
 In conclusion, don't let the fear that a prospective client won't come back to the site prevent you from letting them easily access your live work. Let them go for a test drive, and you'll be pleased with the results.
 
 My rule of thumb is: If the user can not directly visit a site in your portfolio by clicking on a link or a printscreen thumbnail, it's too complex.]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Free jQuery Cheat Sheet</title>
@@ -1263,8 +1263,8 @@ My rule of thumb is: If the user can not directly visit a site in your portfolio
 <a href="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet1.pdf">Click to download this FREE jQuery Cheat Sheet (PDF)</a>
 
 <a href="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet1.pdf"><img src="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet.jpg" alt="Click to download jQuery Cheat Sheet" title="Click to download jQuery Cheat Sheet" /></a>]]></content>
-    <excerpt:encoded><![CDATA[<a href="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet1.pdf">Click to download this FREE jQuery Cheat Sheet (PDF)</a>
-<a href="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet1.pdf"><img src="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet.jpg" alt="Click to download jQuery Cheat Sheet" title="Click to download jQuery Cheat Sheet" /></a>]]></excerpt:encoded>
+    <excerpt><![CDATA[<a href="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet1.pdf">Click to download this FREE jQuery Cheat Sheet (PDF)</a>
+<a href="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet1.pdf"><img src="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet.jpg" alt="Click to download jQuery Cheat Sheet" title="Click to download jQuery Cheat Sheet" /></a>]]></excerpt>
   </item>
   <item>
     <title>jQuery in Action Review</title>
@@ -1279,7 +1279,7 @@ My rule of thumb is: If the user can not directly visit a site in your portfolio
 Overall I was not very pleased with the book. Very few examples, and the ones provided were mundane and irrelevant to real-world situations. Very sluggish pace and very unsatisfying.
 
 I highly recommend <a href="http://blog.themeforest.net/screencasts/jquery-for-absolute-beginners-video-series/">jQuery for Absolute Beginners</a> as an alternative.]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Convert Miles to Kilometers with JavaScript</title>
@@ -1349,7 +1349,7 @@ Program Language choice: Javascript
 At this point maintenance is currently not needed, but could be easily performed. In the event that standards change, such as the miles to km conversion rate, the program will need very little adjusting in order to function properly.
 
 <a href="http://www.vertstudios.com/blog/images/mc-blog/sdm/miletokmconversion/conversion.html">View the Program</a>]]></content>
-    <excerpt:encoded><![CDATA[Your summer surveying job requires you to study some maps that give distances in kilometers and some that use miles. You and your co-workers prefer to deal in metric measurements. <strong>Write a program that performs the necessary conversion, rounded to 2 decimal places.</strong>]]></excerpt:encoded>
+    <excerpt><![CDATA[Your summer surveying job requires you to study some maps that give distances in kilometers and some that use miles. You and your co-workers prefer to deal in metric measurements. <strong>Write a program that performs the necessary conversion, rounded to 2 decimal places.</strong>]]></excerpt>
   </item>
   <item>
     <title>PHP and Apache Installation Tutorial</title>
@@ -1517,7 +1517,7 @@ If you've followed everything correctly, you should see a screen full of your ph
  Please let me know if there are any errors with this tutorial, or if you have any questions. I want to make sure this is just about perfect so that people don't have to spend days and days trying to configure their first webserver. This whole process turned me off to learning php for a few months because I had already spent so much time failing to set up apache.
 
 I will cover how to install and configure mysql, pear, and phpMyAdmin in an upcoming post.]]></content>
-    <excerpt:encoded><![CDATA[I have lost many hours of sleep because of not being able to set up PHP and Apache. I have missed homework deadlines, fallen asleep in class, accidentally eaten an onion, and much worse. Here is my attempt to help you guys sleep at night with a very quick and easy PHP and Apache installation guide.]]></excerpt:encoded>
+    <excerpt><![CDATA[I have lost many hours of sleep because of not being able to set up PHP and Apache. I have missed homework deadlines, fallen asleep in class, accidentally eaten an onion, and much worse. Here is my attempt to help you guys sleep at night with a very quick and easy PHP and Apache installation guide.]]></excerpt>
   </item>
   <item>
     <title>Make a string lowercase/uppercase in C++</title>
@@ -1591,7 +1591,7 @@ So the for loop turns out
       }
 [/cpp]
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/tolower/lowercase.zip">Download the .exe and Source File</a>]]></content>
-    <excerpt:encoded><![CDATA[C++ Does not have string case manipulation built in to its <a href="http://www.cplusplus.com/reference/string/string/"> standard library</a>. For this  reason, it's necessary to make your own upperCase and lowerCase functions. I'll show you how to do just that.]]></excerpt:encoded>
+    <excerpt><![CDATA[C++ Does not have string case manipulation built in to its <a href="http://www.cplusplus.com/reference/string/string/"> standard library</a>. For this  reason, it's necessary to make your own upperCase and lowerCase functions. I'll show you how to do just that.]]></excerpt>
   </item>
   <item>
     <title>PEAR Installation Tutorial</title>
@@ -1658,7 +1658,7 @@ That concludes the installation of Pear.
 <h2>Warning: require_once(Structures/Graph/Node.php)</h2>
 
 If you've come across this error while installing PEAR, Max has left us <a href="http://www.vertstudios.com/blog/pear-installation-tutorial/comment-page-1/#comment-2229">a potential solution</a> in the comments. Let us know if it works!]]></content>
-    <excerpt:encoded><![CDATA[Step by step tutorial for installing PEAR on a windows system with PLENTY of screen shots to help.]]></excerpt:encoded>
+    <excerpt><![CDATA[Step by step tutorial for installing PEAR on a windows system with PLENTY of screen shots to help.]]></excerpt>
   </item>
   <item>
     <title>MySQL Error 0 Cannot Create Windows Service</title>
@@ -1706,7 +1706,7 @@ into the command prompt. If it fails, that's fine.
 <strong>Step 11)</strong>Check the C:&#92;Program Files directory. If you see a MySQL Folder, Delete it!
 
 At this point, I was able to run the MSI Installer again and <a href="http://www.mcculloughdesigns.com/blog/mysql-installation-tutorial/148/">install MySQL</a> normally.]]></content>
-    <excerpt:encoded><![CDATA[This is the MySQL Error 0, which usually follows a windows notification that mysqld.exe has stopped working. After reading many forum posts, it appears that there is no definite answer as to how to solve the problem. However, I finally came across a method that worked for me, and hopefully it will work for you.]]></excerpt:encoded>
+    <excerpt><![CDATA[This is the MySQL Error 0, which usually follows a windows notification that mysqld.exe has stopped working. After reading many forum posts, it appears that there is no definite answer as to how to solve the problem. However, I finally came across a method that worked for me, and hopefully it will work for you.]]></excerpt>
   </item>
   <item>
     <title>MySQL 5.1 Installation Tutorial</title>
@@ -1788,7 +1788,7 @@ When the prompt "enter password" comes up,enter the password you created during 
 <img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/mysql-configuration-test.jpg" alt="MySQL Configuration Test" />
 
 MySQL is now configured and ready for you to use!]]></content>
-    <excerpt:encoded><![CDATA[A step by step tutorial for installing MySQL and phpMyAdmin on a windows system with PLENTY of screen shots to help guide you.]]></excerpt:encoded>
+    <excerpt><![CDATA[A step by step tutorial for installing MySQL and phpMyAdmin on a windows system with PLENTY of screen shots to help guide you.]]></excerpt>
   </item>
   <item>
     <title>The 5 Principles of Web Marketing</title>
@@ -1896,11 +1896,11 @@ class="statcounter"
 src="http://c.statcounter.com/6420153/0/77636bb2/1/"
 alt="tumblr hit tracking tool" /></a></div></noscript>
 <!-- End of StatCounter Code -->]]></content>
-    <excerpt:encoded><![CDATA[SEO. Pay-Per-Click. Social Media Marketing. We've all heard those terms at one point or another, and nearly every branded corporation in the US is pursuing at least one of those as a web marketing strategy. Why? Some companies pursue web marketing because they see great value in incorporating it into their business model. The remaining companies adopt web marketing strategies because they see their competitors engaging in it and follow suit out of fear. 
+    <excerpt><![CDATA[SEO. Pay-Per-Click. Social Media Marketing. We've all heard those terms at one point or another, and nearly every branded corporation in the US is pursuing at least one of those as a web marketing strategy. Why? Some companies pursue web marketing because they see great value in incorporating it into their business model. The remaining companies adopt web marketing strategies because they see their competitors engaging in it and follow suit out of fear. 
 
 <img src="http://vertstudios.com/blog/images/follow-the-leader.jpg" alt="Follow the leader" />
 
-<h2>Fear not!</h2>]]></excerpt:encoded>
+<h2>Fear not!</h2>]]></excerpt>
   </item>
   <item>
     <title>Introduction to Pointers in C++ Tutorial</title>
@@ -1942,7 +1942,7 @@ q = new float; //Dynamically allocate memory for a float and assign a memory add
 [/cpp]
 
 Once you can audibly describe the process occurring, pointers begin to make a lot more sense.]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>SEO For Google Local/Places</title>
@@ -2025,7 +2025,7 @@ If you are doing SEO for a local company, this <strong>HAS</strong> to be your f
 <h3>5) Keywords in Business Title</h3>
 In the beginning of the SEO work for Sleep Masters, Tyler Mattress Co and Mattresses 2 Go were ranked #1 and #2 for the targeted keyword phrase. The fact that they had the keyword "Mattress"  in their name greatly helped them. We can also conclude that keywords in the business title has a lower influence on the results since Sleep Masters does not contain that keyword, but has better citations.
 ]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Why I Wish iPhone Apps Were More Expensive</title>
@@ -2075,7 +2075,7 @@ There is no real solution: This is just Capitalism in the works. People are natu
 The only way things will change is if people realize that they could buy twenty $.99 cent apps that will each be unused after a week or two, or buy one well developed $10.00 dollar app that they would use over the lifetime of their iPhone.
 
 If the market is only willing to pay garbage, the developers will only be able to put out garbage if they want to break even. Once the market shows that people will be willing to pay more for iPhone apps, developers will be able to put more time and care into the apps.]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>How Does PayPal Backup Funding Work?</title>
@@ -2119,7 +2119,7 @@ The PayPal forums are littered with issues similar to mine, and even some ebay s
 Ignore PayPal's wording. They are unable to view how much money you have in your primary bank account. Thus they will always charge the primary bank account, even if the transaction exceeds the funds available. 
 
 <strong>Have you had any issues with PayPal before? If so, please leave a comment. </strong>]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Should CSS be Trendy?</title>
@@ -2181,7 +2181,7 @@ Implementing today's "hot trends" into CSS3 will either prove to be a waste of m
 
 
 <strong>What's your opinion on implementing design trends into CSS3?</strong>]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Common Problems with jQuery .delay()</title>
@@ -2266,7 +2266,7 @@ Like this
 <img src="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-fadein/image1.jpg" alt="For Loop time-line" />
 <h2>A Working Sequential Fade-In</h2>
 Now that you understand the mechanics of the .delay() method, you might be interested in seeing a working example of a Sequential fade-in effect. If you are, head over to <a href="http://jc-designs.net/blog/2010/06/more-than-one-way-to-skin-a-jquery/">The Web Machine</a> and view <a href="http://jc-designs.net/blog/2010/06/more-than-one-way-to-skin-a-jquery/">Jeremy Carlson's solution</a>.]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Google Hides its Text: Why Can&#039;t We?</title>
@@ -2329,7 +2329,7 @@ If you do a browser-search for the phrase "Search Results", the results will be 
 <h2>Nice Double-standard, Google</h2>
 
 This may very well be old news, but I find myself extremely peeved.]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>5 Essential Tips for Teenage Web Designers</title>
@@ -2410,7 +2410,7 @@ We both know you have the potential to do great things with Web Design. Now chan
 <li><a href="http://www.entrepreneur.com/startingabusiness/youngentrepreneurscolumnistscottgerber/article203254.html">10 Tips for the First-Time Business Owner </a></li>
 <li><a href="http://kidshealth.org/teen/school_jobs/jobs/tips_business.html">5 Tips for Teen Entrepreneurs</a></li>
 </ul>]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Creating Forms: Pure CSS vs Table Based</title>
@@ -2511,7 +2511,7 @@ The issue boils down to the following questions:
 <h3>Further Reading...</h3>
 <a href="http://softwareas.com/tables-the-secret-behind-every-simple-css-form">Tables – The Secret Behind Every Simple CSS Form</a>
 <a href="http://ajaxian.com/archives/css-and-tables-the-war-continues">CSS and Tables; The War Continues</a>]]></content>
-    <excerpt:encoded><![CDATA[While I have always been an advocate for table-less layouts with semantic HTML, designing forms with pure CSS has proven to be a complete pain in the butt. And apparently I'm only one in <a href="http://www.google.com/search?hl=en&q=%22css+form+problem%22">10,000 to say so</a>.]]></excerpt:encoded>
+    <excerpt><![CDATA[While I have always been an advocate for table-less layouts with semantic HTML, designing forms with pure CSS has proven to be a complete pain in the butt. And apparently I'm only one in <a href="http://www.google.com/search?hl=en&q=%22css+form+problem%22">10,000 to say so</a>.]]></excerpt>
   </item>
   <item>
     <title>How to Write an Effective Company Value Proposition</title>
@@ -2568,12 +2568,12 @@ Always respect the fact that your competitors can provide a specific value to cu
 Now you have the tools necessary to write an excellent company value proposition. For further reading, check out <a href="http://www.marketingexperiments.com/improving-website-conversion/value-proposition.html">In Search of a Value Proposition</a>, written flawlessly by MarketingExperiments.com.
 
 Think you have a great company value proposition? Share it in the comments section! ]]></content>
-    <excerpt:encoded><![CDATA[A company's value proposition explicitly states the benefits or values it intends to provide its customers. Are value propositions just corporate jargon that have no place in the real world? No: you must be thinking of 99% of mission statements ;). 
+    <excerpt><![CDATA[A company's value proposition explicitly states the benefits or values it intends to provide its customers. Are value propositions just corporate jargon that have no place in the real world? No: you must be thinking of 99% of mission statements ;). 
 
 <h2>So what's the value of a company value proposition? </h2>
 Most customers will never read your company value proposition directly. They should, however, see it manifested in everything you do. Therefore, a value proposition does not attempt to pitch to the reader; <b>it serves as a guideline for the company</b>. All products offered by a company must fit within the scope of their value proposition. Products that do not fit within the scope of the value proposition risk overstretching the company brand, potentially leading to a loss of identity and trust amongst consumers. 
 
-An effective company value proposition performs the following functions:]]></excerpt:encoded>
+An effective company value proposition performs the following functions:]]></excerpt>
   </item>
   <item>
     <title>The Vert Studios jQuery Plugin Library</title>
@@ -2599,7 +2599,7 @@ An effective company value proposition performs the following functions:]]></exc
 <h3>Logical</h3>
 <a href="http://www.vertstudios.com/blog/equalto-jquery-plugin/">.equalTo()</a> - Determines the equality between jQuery objects
 ]]></content>
-    <excerpt:encoded><![CDATA[We at Vert Studios absolutely love making custom jQuery plugins. Some plugins we create are large and robust, while others are simple and concise. Look through our list of plugins and JavaScript functions, and start incorporating them into your own projects!]]></excerpt:encoded>
+    <excerpt><![CDATA[We at Vert Studios absolutely love making custom jQuery plugins. Some plugins we create are large and robust, while others are simple and concise. Look through our list of plugins and JavaScript functions, and start incorporating them into your own projects!]]></excerpt>
   </item>
   <item>
     <title>.frontpush() jQuery Plugin</title>
@@ -2645,8 +2645,8 @@ $(function(){
 [/html]
 
 <a href="http://www.vertstudios.com/lib/js/blog/plugins/frontpush.zip">Download the ZIP File with Source and Demo</a>]]></content>
-    <excerpt:encoded><![CDATA[<strong>Description</strong>
-Places the matched set of elements at the front of an array.]]></excerpt:encoded>
+    <excerpt><![CDATA[<strong>Description</strong>
+Places the matched set of elements at the front of an array.]]></excerpt>
   </item>
   <item>
     <title>jQuery unshift is not a function – Solution!</title>
@@ -2657,8 +2657,8 @@ Places the matched set of elements at the front of an array.]]></excerpt:encoded
     <content><![CDATA[At times, jQuery can induce some scope issues when it comes to using the JavaScript array prototypes. One example in particular is the unshift() array prototype. In the same context as array.push(), Firebug may throw the error that <strong>unshift is not a function</strong>. Honestly, I can't account for why this happens, but in the event you need to use unshift for a jQuery object, I have created a jQuery plugin called <a href="http://www.vertstudios.com/blog/frontpush-jquery-plugin/">.frontpush()</a> that works around the issue. 
 
 <h3>Bugs? Comments? Leave your feedback in the comments section below</h3>]]></content>
-    <excerpt:encoded><![CDATA[At times, jQuery can induce some scope issues when it comes to using the JavaScript array prototypes. One example in particular is the unshift() array prototype. In the same context as array.push(), Firebug may throw the error that <strong>unshift is not a function</strong>. Honestly, I can't account for why this happens, but in the event you need to use unshift for a jQuery object, I have created a jQuery plugin called <a href="http://www.vertstudios.com/blog/frontpush-jquery-plugin/">.frontpush()</a> that works around the issue. 
-]]></excerpt:encoded>
+    <excerpt><![CDATA[At times, jQuery can induce some scope issues when it comes to using the JavaScript array prototypes. One example in particular is the unshift() array prototype. In the same context as array.push(), Firebug may throw the error that <strong>unshift is not a function</strong>. Honestly, I can't account for why this happens, but in the event you need to use unshift for a jQuery object, I have created a jQuery plugin called <a href="http://www.vertstudios.com/blog/frontpush-jquery-plugin/">.frontpush()</a> that works around the issue. 
+]]></excerpt>
   </item>
   <item>
     <title>.getIndexOf() jQuery Plugin</title>
@@ -2872,8 +2872,8 @@ $(function(){
 <h2>Dependencies</h2>
 (Note: All dependencies are included in the source)
 <a href="http://www.vertstudios.com/blog/equalto-jquery-plugin/">.equalTo()</a> - Tests if two jQuery objects are equal to eachother. ]]></content>
-    <excerpt:encoded><![CDATA[<strong>Description</strong>
-Returns the location of the matched set of elements in a specified array. Returns Boolean false if the matched set is not found in the array. ]]></excerpt:encoded>
+    <excerpt><![CDATA[<strong>Description</strong>
+Returns the location of the matched set of elements in a specified array. Returns Boolean false if the matched set is not found in the array. ]]></excerpt>
   </item>
   <item>
     <title>.equalTo() jQuery Plugin</title>
@@ -2986,8 +2986,8 @@ $(function(){
 </div>
 </div>
 ]]></content>
-    <excerpt:encoded><![CDATA[<strong>Description</strong>
-Evaluates the equality between jQuery objects.]]></excerpt:encoded>
+    <excerpt><![CDATA[<strong>Description</strong>
+Evaluates the equality between jQuery objects.]]></excerpt>
   </item>
   <item>
     <title>jQuery .swap() Plugin</title>
@@ -3115,8 +3115,8 @@ class="statcounter"
 src="http://c.statcounter.com/6420126/0/2834d5e4/1/"
 alt="statistics for vBulletin" /></a></div></noscript>
 <!-- End of StatCounter Code -->]]></content>
-    <excerpt:encoded><![CDATA[<strong>Description</strong>
-Swaps the elements within a jQuery object. ]]></excerpt:encoded>
+    <excerpt><![CDATA[<strong>Description</strong>
+Swaps the elements within a jQuery object. ]]></excerpt>
   </item>
   <item>
     <title>.arrayShift() jQuery Plugin</title>
@@ -3239,8 +3239,8 @@ $(function(){
 </div>
 
 <h4>Bugs? Comments? Leave your feedback below!</h4>]]></content>
-    <excerpt:encoded><![CDATA[<strong>Description</strong>
-Places an element of the jQuery object at a new location in the object-array and shifts all affected indexes of the array.]]></excerpt:encoded>
+    <excerpt><![CDATA[<strong>Description</strong>
+Places an element of the jQuery object at a new location in the object-array and shifts all affected indexes of the array.]]></excerpt>
   </item>
   <item>
     <title>Reciprocal Twitter Follows – The New Reciprocal Links</title>
@@ -3300,7 +3300,7 @@ Now you should never rule anyone out just because they followed you. If you view
 
 <h4>How do you go about getting quality followers?</h4>
 Leave your feedback in the comments section below!]]></content>
-    <excerpt:encoded><![CDATA[I've only been on Twitter for a few weeks, and while I am by no means a <a href="http://socialmediadouchebag.net/">social media guru</a>, I can already tell that a lot of people on Twitter have absolutely no idea what they're doing. Some people feel obligated to Retweet everything they see. Some people feel obligated to follow anyone mentioned in an Retweet. And, as this article will discuss, some people get so excited when someone follows them, they reciprocate the follow - no questions asked. What does this all lead to? Nothing. A whole lot of nothing. ]]></excerpt:encoded>
+    <excerpt><![CDATA[I've only been on Twitter for a few weeks, and while I am by no means a <a href="http://socialmediadouchebag.net/">social media guru</a>, I can already tell that a lot of people on Twitter have absolutely no idea what they're doing. Some people feel obligated to Retweet everything they see. Some people feel obligated to follow anyone mentioned in an Retweet. And, as this article will discuss, some people get so excited when someone follows them, they reciprocate the follow - no questions asked. What does this all lead to? Nothing. A whole lot of nothing. ]]></excerpt>
   </item>
   <item>
     <title>FREE Presentation – Self Promotion for Starving Artists</title>
@@ -3327,7 +3327,7 @@ Justin will provide you with the tools and techniques you need to take your succ
 <strong>Date:</strong> Wednesday October 6th, 2010
 <strong>Time:</strong> 1:00PM - 2:00PM
 <strong>Contact Information:</strong> For more information, please call (903) 920-9514, or email <a href="mailto:hi@vertstudios.com">hi@vertstudios.com</a>]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>New Facebook Picture Chat – Facebook Thinks We’re Idiots</title>
@@ -3392,7 +3392,7 @@ While I whole-heartedly agree that a user should not have to work hard at all to
 
 How do you feel about the new Facebook Chat changes? 
 ]]></content>
-    <excerpt:encoded><![CDATA[Two similar but significant changes over the past week highlight the direction in which Facebook is moving when it comes to User Experience (how the user interacts with a web-based environment). 
+    <excerpt><![CDATA[Two similar but significant changes over the past week highlight the direction in which Facebook is moving when it comes to User Experience (how the user interacts with a web-based environment). 
 
 <h2>Picturfication?</h2>
 Facebook rolled out two separate changes to the extremely important chat interface. While some users simply log on Facebook and examine or comment other's profiles, many people's primary use of Facebook is its chat feature. Facebook chat consists of 3 main sections:
@@ -3402,7 +3402,7 @@ Facebook rolled out two separate changes to the extremely important chat interfa
 <li>The chat box itself</li>
 </ul>
 
-Facebook has "Picturfied" the sidebar friends list and the chat box. Let's examine the changes in further detail. ]]></excerpt:encoded>
+Facebook has "Picturfied" the sidebar friends list and the chat box. Let's examine the changes in further detail. ]]></excerpt>
   </item>
   <item>
     <title>Why You Should Hire Professional Web Designers</title>
@@ -3433,7 +3433,7 @@ Once a customer is unable to render the business image, they will take their bus
 
 <h2>Take care of your business: Hire a professional</h2>
 A <a href="http://www.vertstudios.com/">professional web design company</a> can create a beautiful, functional website that lasts <i>as long as you need it to</i>. You may think you can't afford a professional website. The truth is you can't afford <i>NOT</i> to have a professional website. Settling for a mediocre website only hurts your business in the end. ]]></content>
-    <excerpt:encoded><![CDATA[Due to the availability of information present on the web, many small business owners have decided to undertake the responsibility of creating a website for their business. On the surface, this approach makes sense to most business owners: Why hire professionals for $4,000 when you could read some tutorials yourself or buy a $20 template? While advocating the Do-It-Yourself approach to your business website seems like an efficient way to minimize cost and maximize revenue, <strong>poorly designed websites actually cost your company much more than professionally designed websites</strong>. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Due to the availability of information present on the web, many small business owners have decided to undertake the responsibility of creating a website for their business. On the surface, this approach makes sense to most business owners: Why hire professionals for $4,000 when you could read some tutorials yourself or buy a $20 template? While advocating the Do-It-Yourself approach to your business website seems like an efficient way to minimize cost and maximize revenue, <strong>poorly designed websites actually cost your company much more than professionally designed websites</strong>. ]]></excerpt>
   </item>
   <item>
     <title>What a Website&#039;s Price Says About its Design</title>
@@ -3469,7 +3469,7 @@ A popular template distribution website is <a href="http://themeforest.net/">The
 
 If you're going to spend money on a website at all, make sure that you do not compromise on quality. In order to protect your investment, educate yourself on the web design industry by <a href="http://www.vertstudios.com/blog/feed/">subscribing to the Vert Studios Blog</a>. We'll show you the tough questions you should ask your designer, ensuring you receive the highest quality product. 
 ]]></content>
-    <excerpt:encoded><![CDATA[So you read our article on <a href="http://www.vertstudios.com/blog/why-you-should-hire-professional-web-designers/">why you should hire a professional web designer</a> and decided to examine the portfolios of local web designers. You call a few companies to get quotes, and the figures surprise you: The quotes range from $1,500 to $4,500 for the same project description! Why such a large difference? The answer lies in knowing exactly what a website's price says about its design. ]]></excerpt:encoded>
+    <excerpt><![CDATA[So you read our article on <a href="http://www.vertstudios.com/blog/why-you-should-hire-professional-web-designers/">why you should hire a professional web designer</a> and decided to examine the portfolios of local web designers. You call a few companies to get quotes, and the figures surprise you: The quotes range from $1,500 to $4,500 for the same project description! Why such a large difference? The answer lies in knowing exactly what a website's price says about its design. ]]></excerpt>
   </item>
   <item>
     <title>Facebook Clear Chat History Gone? SOLUTION!</title>
@@ -3490,7 +3490,7 @@ This has upset many Facebook chat users. However, the clear chat history is stil
 <h2>To Access the Clear Chat History Feature</h2>
 You must scroll all the way up to the top of the chat box. "Clear Chat History" can be seen in the top right corner.
 <img src="http://www.vertstudios.com/blog/images/facebook-clear-chat-history/clear-chat-history.png" alt="Facebook clear chat history" />]]></content>
-    <excerpt:encoded><![CDATA[Recently, Facebook has implemented some drastic <a href="http://www.vertstudios.com/blog/new-facebook-picture-chat/">changes to their chat interface</a>. Among these changes includes the apparent removal of the <strong>clear chat history feature</strong>. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Recently, Facebook has implemented some drastic <a href="http://www.vertstudios.com/blog/new-facebook-picture-chat/">changes to their chat interface</a>. Among these changes includes the apparent removal of the <strong>clear chat history feature</strong>. ]]></excerpt>
   </item>
   <item>
     <title>Silversoap Media Web Design Tutorial</title>
@@ -3595,7 +3595,7 @@ So far you've spent $55 on your company. It's time to recover that investment. N
 
 <h2>Congratulations, Web Designer!</h2>
 You are now armed with all the knowledge you need to become a super awesome web designer! Simply repeat this set of processes over and over again until you dominate your local market. ]]></content>
-    <excerpt:encoded><![CDATA[Tired of your current job? Want to be a part of something new and cutting-edge? Look no further! After reading this simple step by step guide, you'll be able to set up your very own web design company. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Tired of your current job? Want to be a part of something new and cutting-edge? Look no further! After reading this simple step by step guide, you'll be able to set up your very own web design company. ]]></excerpt>
   </item>
   <item>
     <title>Vert Studios Web Design Bookshelf</title>
@@ -3658,7 +3658,7 @@ For our fellow designers and developers, here is our web design/development book
 <ul>
 <li><a href="http://www.amazon.com/gp/product/0470110120/ref=oss_product">How to Measure Anything: Finding the Value of "Intangibles" in Business </a></li>
 </ul>]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Introduction to Logic: Part 1 – Negation, AND, and OR Statements</title>
@@ -3785,7 +3785,7 @@ The previous example brings up an important point about the disjunction operator
 As you can see, the only instance in which p || q is false is when p and q are both individually false.  
 
 ]]></content>
-    <excerpt:encoded><![CDATA[Decision making remains an integral portion of even the most simple web applications. In order to design a program that provides accurate information, it's imperative that we web developers provide the computer with accurate commands. In this series of tutorials entitled "Introduction to Logic", we will dissect logical operators and learn how to properly apply them to our programs. This tutorial will define the three most basic logical operators: Negation, Conjunction, and Disjunction. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Decision making remains an integral portion of even the most simple web applications. In order to design a program that provides accurate information, it's imperative that we web developers provide the computer with accurate commands. In this series of tutorials entitled "Introduction to Logic", we will dissect logical operators and learn how to properly apply them to our programs. This tutorial will define the three most basic logical operators: Negation, Conjunction, and Disjunction. ]]></excerpt>
   </item>
   <item>
     <title>Yelp Hurting Local Businesses with Incorrectly Associated Reviews</title>
@@ -3867,7 +3867,7 @@ It's always disappointing to see a business fail to correct a simple issue simpl
 
 <strong>What do you feel the best course of action should be for Yelp, Google, or the unfairly damaged business owner?</strong>
 ]]></content>
-    <excerpt:encoded><![CDATA[In order to inflate their numbers, Yelp does not remove the listings of companies that have been declared out of business. Why display the address, phone number, and reviews of a company that no longer exists? The only possible justification is to inflate the traffic statistics. Deleting a listing at all means a drop in traffic. Now multiply this by every single business that has gone under since Yelp's inception in 2004, and you're looking at a significant amount of traffic decrease. As described before, traffic directly relates to advertising revenue. It's understandable from an economic perspective as to <i>why</i> Yelp keeps these listings active. However, this approach is leading to an extremely negative consequence that Yelp does not seem to care about.]]></excerpt:encoded>
+    <excerpt><![CDATA[In order to inflate their numbers, Yelp does not remove the listings of companies that have been declared out of business. Why display the address, phone number, and reviews of a company that no longer exists? The only possible justification is to inflate the traffic statistics. Deleting a listing at all means a drop in traffic. Now multiply this by every single business that has gone under since Yelp's inception in 2004, and you're looking at a significant amount of traffic decrease. As described before, traffic directly relates to advertising revenue. It's understandable from an economic perspective as to <i>why</i> Yelp keeps these listings active. However, this approach is leading to an extremely negative consequence that Yelp does not seem to care about.]]></excerpt>
   </item>
   <item>
     <title>Top 5 SEO Resources for Tyler Texas Businesses</title>
@@ -3897,7 +3897,7 @@ Can something like SEO be fun? Can something like SEO be funny also? I had my do
 Heather Lloyd-Martin of <a href="http://www.seocopywriting.com/blog/">Success Works</a> is easily one of the most charismatic figures in Search Engine Optimization. As you delve more into SEO, you will begin to see the clear overlap between keyword optimization and copywriting. Copy that doesn't sell and keywords that don't bring paying visitors are equally useless. Heather teaches you how to find that perfect balance between pleasing people and pleasing search engines, helping you maximize traffic and conversions. Additionally, Heather's <a href="http://twitter.com/heatherlloyd">Twitter feed</a> has proven time after time to be the most useful 140 characters I see all day. For business owners aspiring to run their company blog effectively, Heather offers an <a href="http://www.seocopywriting.com/training/subscription-based-online-seo-copywriting-classes/">SEO Copywriting course</a> to help you write copy that sells to users <i>and</i> search engines. 
 
 We've found these resources to be invaluable, and we hope you find them equally useful. ]]></content>
-    <excerpt:encoded><![CDATA[SEO is not magic, no matter how much some SEO scammers attempt to convince you otherwise. Search Engine Optimization is simply the implementation of the scientific method in relation to a search engine's algorithm: Hypothesize, experiment, analyze, conclude, and repeat until you find what the search engines like. However, unless you work as a full time SEO, you most likely don't have the time to experiment with on-site modifications and link building methods. In all honesty, one only needs very basic knowledge of search engine optimization techniques to rank above local Tyler competitors. Furthermore, knowing the basics of SEO prevents you from being scammed by shady SEO firms. To arm you with the basics of SEO, we've compiled a list of our 5 favorite SEO resources. ]]></excerpt:encoded>
+    <excerpt><![CDATA[SEO is not magic, no matter how much some SEO scammers attempt to convince you otherwise. Search Engine Optimization is simply the implementation of the scientific method in relation to a search engine's algorithm: Hypothesize, experiment, analyze, conclude, and repeat until you find what the search engines like. However, unless you work as a full time SEO, you most likely don't have the time to experiment with on-site modifications and link building methods. In all honesty, one only needs very basic knowledge of search engine optimization techniques to rank above local Tyler competitors. Furthermore, knowing the basics of SEO prevents you from being scammed by shady SEO firms. To arm you with the basics of SEO, we've compiled a list of our 5 favorite SEO resources. ]]></excerpt>
   </item>
   <item>
     <title>The Fear of Knowledge as applied to Web Development</title>
@@ -3933,7 +3933,7 @@ And most importantly,
 Oh shit, as in "<b>Enjoy what you can learn, when you can learn it</b>."
 
 You can't learn everything, and that's really okay. Really. In fact, if you spent all your time learning, you'd never spend any time doing. And knowledge without application is High School. ]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Do You Know What You’re Using?</title>
@@ -3956,7 +3956,7 @@ A large number of problems that ended up being Google'd could have been easily s
 
 <h3>A simple challenge</h3>
 Instead of reading A List Apart, Smashing Magazine, Mashable, etc, take a week to actually read through the official documentation of the languages that you use. Learn the ins and outs of the data structures, and read through every single function description. I guarantee you that you'll come across extremely useful functions you never knew existed. ]]></content>
-    <excerpt:encoded><![CDATA[In today's fast-paced and beginner-friendly web development world, people tend to learn programming languages in code snippets. We come across a problem, Google it, copy and paste the solution, and ask questions later. While this practice may be a necessary evil when it comes to meeting deadlines, Google should not be a developer's first instinct. ]]></excerpt:encoded>
+    <excerpt><![CDATA[In today's fast-paced and beginner-friendly web development world, people tend to learn programming languages in code snippets. We come across a problem, Google it, copy and paste the solution, and ask questions later. While this practice may be a necessary evil when it comes to meeting deadlines, Google should not be a developer's first instinct. ]]></excerpt>
   </item>
   <item>
     <title>PHP Regex Class</title>
@@ -4065,7 +4065,7 @@ foreach($myform as $type =&gt; $value)
 Discovered that if a type not found in the $pattern array was passed into a method, a match would always be found. This has been fixed. 
 
 If you find any bugs or have any questions/suggestions, let us know in the comments below! ]]></content>
-    <excerpt:encoded><![CDATA[The PHP Regex class provides methods for validating data.]]></excerpt:encoded>
+    <excerpt><![CDATA[The PHP Regex class provides methods for validating data.]]></excerpt>
   </item>
   <item>
     <title>JavaScript Regex Class</title>
@@ -4187,7 +4187,7 @@ The purpose of this method is mainly for convenient automation.
 <h3><a href="http://vertstudios.com/blog/src/js/regex.txt">Download the source code</a></h3>
 
 If you find any bugs or have any questions/suggestions, let us know in the comments below! ]]></content>
-    <excerpt:encoded><![CDATA[The Vert Studios <a href="http://www.vertstudios.com/blog/php-regex-class/">PHP Regex Class</a> comes to JavaScript! ]]></excerpt:encoded>
+    <excerpt><![CDATA[The Vert Studios <a href="http://www.vertstudios.com/blog/php-regex-class/">PHP Regex Class</a> comes to JavaScript! ]]></excerpt>
   </item>
   <item>
     <title>Word Lens iPhone App Review</title>
@@ -4238,9 +4238,9 @@ It's important to note that Word Lens is not very accurate when it comes to pick
 
 <h2>Final Thoughts</h2>
 I'm thoroughly convinced this app will only get better with time. For $4.99, you can get the Spanish to English translation dictionary for Word Lens. This app will have many practical uses. It's definitely worth the investment.]]></content>
-    <excerpt:encoded><![CDATA[<a href="http://itunes.apple.com/us/app/word-lens/id383463868">Word Lens</a> is an iPhone app that lets you translate in real time using your iPhone's camera. The idea seemed excellent, and the youtube video was extremely convincing.
+    <excerpt><![CDATA[<a href="http://itunes.apple.com/us/app/word-lens/id383463868">Word Lens</a> is an iPhone app that lets you translate in real time using your iPhone's camera. The idea seemed excellent, and the youtube video was extremely convincing.
 
-<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/h2OfQdYrHRs?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/h2OfQdYrHRs?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>]]></excerpt:encoded>
+<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/h2OfQdYrHRs?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/h2OfQdYrHRs?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>]]></excerpt>
   </item>
   <item>
     <title>jQuery Sticky Scroller / Position:Fixed Plugin</title>
@@ -4437,7 +4437,7 @@ The purpose of this plugin, and all my plugins, is to serve as a canvas for your
 
 <h3>Jan 8, 2011: Firefox</h3>
 This effect sucks with Firefox. There's a significant delay in position calculation when switching from position: absolute to position: fixed. Additionally, altering the top value to be $(window).scrollTop() + specified margin yields a really choppy animation in Firefox. If anyone can provide a workaround, that'd be great. ]]></content>
-    <excerpt:encoded><![CDATA[Free jQuery Plugin that enables an object to appear fixed for a specified range.]]></excerpt:encoded>
+    <excerpt><![CDATA[Free jQuery Plugin that enables an object to appear fixed for a specified range.]]></excerpt>
   </item>
   <item>
     <title>A jQuery Development Pattern</title>
@@ -4754,7 +4754,7 @@ To see this development pattern in action, check out my <a href="http://www.vert
 If you have any feedback or suggestions, please leave them in the comments below! 
 
 ]]></content>
-    <excerpt:encoded><![CDATA[Discusses an alternate development pattern to jQuery plugins.]]></excerpt:encoded>
+    <excerpt><![CDATA[Discusses an alternate development pattern to jQuery plugins.]]></excerpt>
   </item>
   <item>
     <title>Introduction to Logic: Part 2 – Constructing Truth Tables</title>
@@ -5060,7 +5060,7 @@ Repeating this process for all 8 combinations, the following truth table is prod
 
 <h2>Feedback</h2>
 Have any questions concerning truth tables? Leave us a comment below!]]></content>
-    <excerpt:encoded><![CDATA[Creating truth tables is an invaluable tool for tracking your logic flow. We discuss how to create and organize a truth table. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Creating truth tables is an invaluable tool for tracking your logic flow. We discuss how to create and organize a truth table. ]]></excerpt>
   </item>
   <item>
     <title>Remember The Milk iPhone App Review</title>
@@ -5115,9 +5115,9 @@ To see more features including Google Calendar integration, RSS feeds, and more,
 
 <h2>Conclusion</h2>
 To those who appreciate the value of great task management, the $25/year fee will be nothing compared to the value Remember The Milk provides. To those who may be skeptical, I invite you to try out the App's 14 day free trial. As always, you're welcome to leave your questions or comments below! ]]></content>
-    <excerpt:encoded><![CDATA[When it comes to task management, I recommended <a href="http://rememberthemilk.com/">Remember The Milk</a>. Remember The Milk(RTM) started off as a simple web application in <a href="http://web.archive.org/web/20051124024804/http://rememberthemilk.com/">2005</a>. While RTM was a decent utility on its own, an online to-do list didn't appeal to many. What if you were away from your computer? Well, now that the web-based application has <a href="http://www.rememberthemilk.com/services/iphone/">made its way to the iPhone</a>, its appeal and usefulness have increased exponentially. 
+    <excerpt><![CDATA[When it comes to task management, I recommended <a href="http://rememberthemilk.com/">Remember The Milk</a>. Remember The Milk(RTM) started off as a simple web application in <a href="http://web.archive.org/web/20051124024804/http://rememberthemilk.com/">2005</a>. While RTM was a decent utility on its own, an online to-do list didn't appeal to many. What if you were away from your computer? Well, now that the web-based application has <a href="http://www.rememberthemilk.com/services/iphone/">made its way to the iPhone</a>, its appeal and usefulness have increased exponentially. 
 
-<img style="display: block; margin: 0px auto;" src="http://www.vertstudios.com/blog/images/remember-the-milk/remember-the-milk-cow.jpg" alt="Remember The Milk" />]]></excerpt:encoded>
+<img style="display: block; margin: 0px auto;" src="http://www.vertstudios.com/blog/images/remember-the-milk/remember-the-milk-cow.jpg" alt="Remember The Milk" />]]></excerpt>
   </item>
   <item>
     <title>Introduction to Regular Expressions</title>
@@ -5316,7 +5316,7 @@ As for books, I highly recommend the e-book available from <a href="http://www.r
 <h2>Next Article</h2>
 My next article over RegEx will cover back-references and anchors, two critical concepts related to Regular Expressions. Be sure to <a href="http://www.vertstudios.com/blog/feed/">subscribe</a> so you don't miss it!
 ]]></content>
-    <excerpt:encoded><![CDATA[Regular expressions are a mysterious, extremely useful programming tool. The syntax of Regular Expressions(RegEx) can be extremely daunting for those starting out. Additionally, I've found a lot of RegEx intro guides to be extremely vague, which personally turned me off to learning RegEx for many months. For a while, my "knowledge base" of RegEx consisted of copying and pasting Regular Expression snippets as needed. However, this guide will introduce you to the basics of Regular Expressions in a hopefully extremely accessible manner. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Regular expressions are a mysterious, extremely useful programming tool. The syntax of Regular Expressions(RegEx) can be extremely daunting for those starting out. Additionally, I've found a lot of RegEx intro guides to be extremely vague, which personally turned me off to learning RegEx for many months. For a while, my "knowledge base" of RegEx consisted of copying and pasting Regular Expression snippets as needed. However, this guide will introduce you to the basics of Regular Expressions in a hopefully extremely accessible manner. ]]></excerpt>
   </item>
   <item>
     <title>Back References, Quantifiers, and Anchors in RegEx</title>
@@ -5508,7 +5508,7 @@ This pattern will not match
 
 <h2>Next Article</h2>
 My next article over Regex will describe the use of Regular Expressions in IDEs. It will provide plenty of great examples over combining all the concepts discussed in this article. Be sure to <a href="http://www.vertstudios.com/blog/feed">Subscribe</a> so you don't miss it! ]]></content>
-    <excerpt:encoded><![CDATA[When you begin delving further into regular expressions, you find just how useful they are. The combination of back references, quantifiers, and anchors causes RegEx to be one of the most powerful tools in your arsenal. ]]></excerpt:encoded>
+    <excerpt><![CDATA[When you begin delving further into regular expressions, you find just how useful they are. The combination of back references, quantifiers, and anchors causes RegEx to be one of the most powerful tools in your arsenal. ]]></excerpt>
   </item>
   <item>
     <title>IDE Friday: A New Series from Vert Studios</title>
@@ -5533,8 +5533,8 @@ No way! IDEs have so many tools available to the developer/designer that shamefu
 <h2>Subscribe</h2>
 We're looking forward to sharing this unique series with the web design and web development community. <a href="http://www.vertstudios.com/blog/feed/">Subscribe to the blog</a> so you don't miss a post! Also, if you have a particular IDE you'd like reviewed, let us know in the comments below!
 ]]></content>
-    <excerpt:encoded><![CDATA[We're excited to announce that starting next Friday, Vert Studios will begin the IDE Friday series. 
-IDE Friday will offer reviews of various IDEs, along with specific tutorials for each. We'll venture into well known IDEs, as well as some development environments that have not yet hit mainstream.]]></excerpt:encoded>
+    <excerpt><![CDATA[We're excited to announce that starting next Friday, Vert Studios will begin the IDE Friday series. 
+IDE Friday will offer reviews of various IDEs, along with specific tutorials for each. We'll venture into well known IDEs, as well as some development environments that have not yet hit mainstream.]]></excerpt>
   </item>
   <item>
     <title>Vert 2.0, A Redesign Case Study Close to Home</title>
@@ -5735,7 +5735,7 @@ Although we're extremely excited about the launch of our new site, we still have
 
 <h2>What do you think of the new site?</h2>
 Let us know in the comments below! ]]></content>
-    <excerpt:encoded><![CDATA[Welcome to the new Vert Studios website. <a href="http://twitter.com/vertjustin">Justin</a> and I have been working on the redesign since we merged back in July 2010. It's such a great feeling to know the world can finally see the product of your hard work. The project was dynamic, as our vision for Vert Studios changed quite frequently throughout the project. We'd like to share our thought process behind the redesign. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Welcome to the new Vert Studios website. <a href="http://twitter.com/vertjustin">Justin</a> and I have been working on the redesign since we merged back in July 2010. It's such a great feeling to know the world can finally see the product of your hard work. The project was dynamic, as our vision for Vert Studios changed quite frequently throughout the project. We'd like to share our thought process behind the redesign. ]]></excerpt>
   </item>
   <item>
     <title>Double Squares Solution: Facebook Hacker Cup</title>
@@ -5892,7 +5892,7 @@ This output was declared correct by the Hacker Cup judges. Woohoo!
 
 <h2>Your Algorithm</h2>
 If you participated in the Hacker Cup, I'm curious to know how you went about the problem. That's one of the amazing things about programming: So many different ways to think about any given problem. Leave your comments below! ]]></content>
-    <excerpt:encoded><![CDATA[Now that the qualification round of the Facebook Hacker Cup has ended, I figured I'd post my solution to the Double Squares problem. As this one involved some fun math, it was my favorite. I hope you all made it through!]]></excerpt:encoded>
+    <excerpt><![CDATA[Now that the qualification round of the Facebook Hacker Cup has ended, I figured I'd post my solution to the Double Squares problem. As this one involved some fun math, it was my favorite. I hope you all made it through!]]></excerpt>
   </item>
   <item>
     <title>The Vert Web Design Dictionary</title>
@@ -5958,7 +5958,7 @@ google.com
 <a name="validation">Validation</a>Involves using <a href="#client-side">client-side</a> and <a href="#server-side">server-side</a> programming languages to make sure data received from a contact form is accurate. Serves as an effective method for decreasing spam. 
 
 <a name="wordpress">Wordpress</a>A popular blogging platform that is extremely user friendly. ]]></content>
-    <excerpt:encoded><![CDATA[If you're looking to hire a web design company, look through these terms so you won't get confused by web design jargon. If you're a web designer, refer prospects here so they'll be able to communicate with you better. This post won't cover every web related term - only the bare minimum to get designer and client on the same page. ]]></excerpt:encoded>
+    <excerpt><![CDATA[If you're looking to hire a web design company, look through these terms so you won't get confused by web design jargon. If you're a web designer, refer prospects here so they'll be able to communicate with you better. This post won't cover every web related term - only the bare minimum to get designer and client on the same page. ]]></excerpt>
   </item>
   <item>
     <title>Introduction to Logic: Part 3 – Useful Tautologies</title>
@@ -6010,7 +6010,7 @@ Now that we've discussed what makes a tautology and how to prove one, here's a r
 <tr><td align="right">(p && q) && r</td><td>&harr;</td><td align="left">p && (q && r)</td></tr>
 <tr><td align="right">~(p && q)</td><td>&harr;</td><td align="left">(~p) || (~q)</td></tr>
 </table>]]></content>
-    <excerpt:encoded><![CDATA[Tautologies are extremely useful when it comes to crafting conditional statements in your programs. They can simplify and condense your logical statements by large amounts when implemented successfully. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Tautologies are extremely useful when it comes to crafting conditional statements in your programs. They can simplify and condense your logical statements by large amounts when implemented successfully. ]]></excerpt>
   </item>
   <item>
     <title>IDE Friday: Using Regular Expressions in IDEs</title>
@@ -6369,7 +6369,7 @@ Replace:
 <h2>Use Your Judgement</h2> 
 Sometimes going through and manually deleting characters may be faster. However, I encourage you to take the time and challenge yourself to use regular expressions in your find and replace operations, solely as an exercise. Like any skill, the more you do it, the better you get. But if you're under a substantial time crunch, there's no shame in editing the old-fashioned way. Enjoy the world of RegEx!
  ]]></content>
-    <excerpt:encoded><![CDATA[Welcome to the first article in our IDE Friday series. Today, we'll be discussing the use of Regular Expressions in your IDE of choice. If you're unfamiliar with Regular Expressions, check out our tutorial series, beginning with the <a href="http://www.vertstudios.com/blog/introduction-to-regular-expressions/">Introduction to Regular Expressions</a>. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Welcome to the first article in our IDE Friday series. Today, we'll be discussing the use of Regular Expressions in your IDE of choice. If you're unfamiliar with Regular Expressions, check out our tutorial series, beginning with the <a href="http://www.vertstudios.com/blog/introduction-to-regular-expressions/">Introduction to Regular Expressions</a>. ]]></excerpt>
   </item>
   <item>
     <title>Great Content but No Links.</title>
@@ -6411,7 +6411,7 @@ If you've accepted my ideas, you may be tempted to ditch your blog and allocate 
 
 <h2>It's all about the optimal balance</h2>
 It's up to you to experiment with your writing:networking ratio. You might network 1 hour for every 1 hour you write. You might find commenting on blogs 2 hours for every 1 hour you spend writing your own articles to be optimal. You have to experiment to find the right balance. Just remember that a blog without updates and a blog without an audience are equally worthless. ]]></content>
-    <excerpt:encoded><![CDATA[There exists a notion amongst the SEO community that if you produce great content, the traffic and links will come. You don't have to do anything bit sit in a text editor or illustrative tool and pound out the best content of your life. If it's unique, well written, and useful, you'll get the traffic and links you deserve.]]></excerpt:encoded>
+    <excerpt><![CDATA[There exists a notion amongst the SEO community that if you produce great content, the traffic and links will come. You don't have to do anything bit sit in a text editor or illustrative tool and pound out the best content of your life. If it's unique, well written, and useful, you'll get the traffic and links you deserve.]]></excerpt>
   </item>
   <item>
     <title>Learn Social Media by Reliving your Teenage Years</title>
@@ -6489,7 +6489,7 @@ Free Resources:
 <li><a href="http://www.mahalo.com/how-to-become-popular">How to become popular</a></li>
 </ul>
 ]]></content>
-    <excerpt:encoded><![CDATA[That's right. If you ever went through that period of teenage angst in your life known as puberty and survived, you have the skills necessary to run a social media campaign. All you need to do is apply the lessons you learned in your teenage years to your marketing strategy. ]]></excerpt:encoded>
+    <excerpt><![CDATA[That's right. If you ever went through that period of teenage angst in your life known as puberty and survived, you have the skills necessary to run a social media campaign. All you need to do is apply the lessons you learned in your teenage years to your marketing strategy. ]]></excerpt>
   </item>
   <item>
     <title>Saving States with jQuery.data()</title>
@@ -6601,7 +6601,7 @@ So if the item is contracted, we want it to expand. If it is expanded, we want i
 <h2>Feedback</h2>
 Have any questions/comments about storing states with jQuery.data()? Let us know in the comments below.
 ]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Hide Elements On Page Load with JavaScript</title>
@@ -6636,7 +6636,7 @@ If JavaScript is <em>disabled</em>, then the element will not be hidden.
 
 <h2>Can't I just use jQuery.hide()?</h2>
 jQuery's <a href="http://api.jquery.com/hide/">.hide()</a> method kicks in at the very earliest on DOM load. In the event you have a significant amount of content on your page, the content you wish to hide will be loaded and THEN disappear. This looks very, very, VERY corny. ]]></content>
-    <excerpt:encoded><![CDATA[Sometimes when you're getting expressive with JavaScript, you find it necessary to hide certain elements when the page loads. An example of this would be our very own <a href="http://www.vertstudios.com/work.php">work page</a>. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Sometimes when you're getting expressive with JavaScript, you find it necessary to hide certain elements when the page loads. An example of this would be our very own <a href="http://www.vertstudios.com/work.php">work page</a>. ]]></excerpt>
   </item>
   <item>
     <title>A Break from jQuery</title>
@@ -6663,7 +6663,7 @@ There are many more JavaScript libraries listed on <a href="http://javascriptlib
 <h2>It's All About Self-Improvement</h2>
 While I could allot more time to making even cooler things with jQuery, I feel that the next step towards improving my skill set as a JavaScript developer is to understand pure JavaScript and experiment with other libraries. A degree of pride and satisfaction goes into being able to make something yourself. I have no intentions of reinventing the wheel - I simply wish to know what makes it roll in the first place. 
 <blockquote>"I have no intentions of reinventing the wheel - I simply wish to know what makes it roll in the first place."</blockquote>]]></content>
-    <excerpt:encoded><![CDATA[It's been less than a year since I entered the beautiful world of jQuery. I've had a lot of fun interacting with the jQuery community and crafting my own plugins. However, I've come to the point where I'm acquainted enough with jQuery to explore alternatives. ]]></excerpt:encoded>
+    <excerpt><![CDATA[It's been less than a year since I entered the beautiful world of jQuery. I've had a lot of fun interacting with the jQuery community and crafting my own plugins. However, I've come to the point where I'm acquainted enough with jQuery to explore alternatives. ]]></excerpt>
   </item>
   <item>
     <title>3 Quick Blogging Tips for Small Businesses</title>
@@ -6694,7 +6694,7 @@ Contrary to some notions, blog articles do not have to be the length of small no
 
 <h2>Questions about Blogging?</h2>
 Have any questions about blogging to market your business? Leave us a comment below, or <a href="http://www.vertstudios.com/contact.php">get in contact</a> with us!]]></content>
-    <excerpt:encoded><![CDATA[Company blogs used to be just for the corporate world. However, thanks to open source platforms like Wordpress, we are now experiencing a transition where more and more small businesses are maintaining company blogs. It's worth nothing, though, that many of these small businesses are not using their blogs effectively. Today, we'll share <strong>3 quick blogging tips</strong> for small businesses running a company blog. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Company blogs used to be just for the corporate world. However, thanks to open source platforms like Wordpress, we are now experiencing a transition where more and more small businesses are maintaining company blogs. It's worth nothing, though, that many of these small businesses are not using their blogs effectively. Today, we'll share <strong>3 quick blogging tips</strong> for small businesses running a company blog. ]]></excerpt>
   </item>
   <item>
     <title>Can&#039;t Detect Connected Canon Wireless Printer [SOLUTION]</title>
@@ -6718,7 +6718,7 @@ The hard reset will cause all machines attached to the router to disconnect. Thi
 
 <h2>Feedback</h2>
 Did this solve your problem? Let us know in the comments below! ]]></content>
-    <excerpt:encoded><![CDATA[Over the past few weeks, the computers in my house have been unable to detect my <strong>Cannon MG5200</strong> printer. The printer itself said it successfully connected to the wireless network, which left me quite puzzled. After a while, I found the root cause, and it left me quite baffled. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Over the past few weeks, the computers in my house have been unable to detect my <strong>Cannon MG5200</strong> printer. The printer itself said it successfully connected to the wireless network, which left me quite puzzled. After a while, I found the root cause, and it left me quite baffled. ]]></excerpt>
   </item>
   <item>
     <title>getElementById IE7 Issue</title>
@@ -6770,7 +6770,7 @@ Man...what have I gotten myself into?
 [js]
 $(&quot;joseph&quot;).hide();
 [/js] ]]></content>
-    <excerpt:encoded><![CDATA[As <a href="http://www.vertstudios.com/blog/a-break-from-jquery/">previously stated</a>, I'm taking some time to learn pure JavaScript. That means I am beginning to experience the joy that is cross-browser JS quirks! ]]></excerpt:encoded>
+    <excerpt><![CDATA[As <a href="http://www.vertstudios.com/blog/a-break-from-jquery/">previously stated</a>, I'm taking some time to learn pure JavaScript. That means I am beginning to experience the joy that is cross-browser JS quirks! ]]></excerpt>
   </item>
   <item>
     <title>Apache 301: Force www, Redirect Index to Root</title>
@@ -6827,7 +6827,7 @@ Notice that every link variation resolves to http://www.vertstudios.com.
 
 <h2>Take Care of Your Content</h2>
 You work hard to create content that drives traffic to your site. Take care of your content by ensuring links to your site have their maximum effect. If you have any questions about the URL normalization process, let us know in the comments section below! ]]></content>
-    <excerpt:encoded><![CDATA[This .htaccess code redirects http://domainname.com to http://<b>www.</b>domainname.com. Additionally, it forces any call to index.php to the domain root.]]></excerpt:encoded>
+    <excerpt><![CDATA[This .htaccess code redirects http://domainname.com to http://<b>www.</b>domainname.com. Additionally, it forces any call to index.php to the domain root.]]></excerpt>
   </item>
   <item>
     <title>Are You a Credible Web Design Company?</title>
@@ -6862,7 +6862,7 @@ I can't tell you how happy to be rid of MLA Format forever. However, even though
 
 <h2>Ultimately...</h2>
 Your content should function as a way to retain customers who may be browsing. When they consume your content, your competitor's probable lack of content will definitely influence their thought process. Building trust by maintaining your credibility is an intuitive, effective method for differentiating yourself in the marketplace. ]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Social Media for Small Business - An Experiment</title>
@@ -6896,7 +6896,7 @@ Previously, I had published an article concerning <a href="http://www.vertstudio
 
 <h2>Your Social Media Experience</h2>
 If you're a small business and have engaged in social media or hired a social media marketer, let us know about your experiences in the comment section below!]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Lynx for Windows 7 64 Bit</title>
@@ -6915,7 +6915,7 @@ If you've tried to install Lynx from the download page while on Windows 7, you m
 <h2>What do you think of Lynx?</h2>
 Ever used Lynx? Let us know what you think about it in the comments section below!
 ]]></content>
-    <excerpt:encoded><![CDATA[If you've tried to install Lynx from the download page while on Windows 7, you might have come across various errors preventing you from installing this great tool. While searching for a solution myself, I came across a <a href="http://www.vordweb.co.uk/standards/download_lynx.htm">Lynx Download Page</a> with instructions that work for Windows 7 64 bit. Just checkout the readme and follow the step by step guide, and you'll be browsing in no time.]]></excerpt:encoded>
+    <excerpt><![CDATA[If you've tried to install Lynx from the download page while on Windows 7, you might have come across various errors preventing you from installing this great tool. While searching for a solution myself, I came across a <a href="http://www.vordweb.co.uk/standards/download_lynx.htm">Lynx Download Page</a> with instructions that work for Windows 7 64 bit. Just checkout the readme and follow the step by step guide, and you'll be browsing in no time.]]></excerpt>
   </item>
   <item>
     <title>Add Nofollow to Links with PHP</title>
@@ -6977,7 +6977,7 @@ echo &quot;After: &quot; . $link;
 [/html]
 
 The code first sees if there is already a rel attribute attached to the anchor. (For example, <a href="http://snipplr.com/view/3047/open-new-window-using-rel-external-instead-of-deprecated-target-attribute/">rel="external"</a>). If so, it appends the $nofollow string to the end of the rel attribute value list before the ending quote. If not, it places rel= followed by the $nofollow string immediately after the anchor tag is opened. ]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>libmysql.dll 32 Bit Download </title>
@@ -6995,9 +6995,9 @@ The only other site I could find that hosts this individual file had so many aff
 
 <a href="http://www.vertstudios.com/downloads/libmysql.zip">Download libmysql.dll</a> (ZIP File)
 ]]></content>
-    <excerpt:encoded><![CDATA[<a href="http://www.vertstudios.com/downloads/libmysql.zip">Download libmysql.dll</a> (ZIP File)
+    <excerpt><![CDATA[<a href="http://www.vertstudios.com/downloads/libmysql.zip">Download libmysql.dll</a> (ZIP File)
 
-The only other site I could find that hosts this individual file had so many affiliate links, I couldn't find where to download. I ended up having to install MySQL 32 bit just to snag the dll. I think people would prefer a 1MB download to a 120MB download!]]></excerpt:encoded>
+The only other site I could find that hosts this individual file had so many affiliate links, I couldn't find where to download. I ended up having to install MySQL 32 bit just to snag the dll. I think people would prefer a 1MB download to a 120MB download!]]></excerpt>
   </item>
   <item>
     <title>Windows PHP Mail Server Installation Guide</title>
@@ -7131,7 +7131,7 @@ The script will print "YES" if the email sent, and you should find that you have
 <h2>Feedback</h2>
 Did you find this tutorial helpful? Did you come across any problems? Let us know in the comments below!
 ]]></content>
-    <excerpt:encoded><![CDATA[Learn to to install and configure a local mail server to work with PHP, allowing you to use PHP's mail() function locally. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Learn to to install and configure a local mail server to work with PHP, allowing you to use PHP's mail() function locally. ]]></excerpt>
   </item>
   <item>
     <title>3 Tips for Making Your Web Copy Kick-Ass</title>
@@ -7185,7 +7185,7 @@ People who frequently read online usually skim documents based on headlines. How
 
 Creating great web copy takes time and <em>tons</em> of practice. But don't worry! By adhering to these simple principles, as well as keeping up with the copywriting blog <a href="http://www.copyblogger.com">Copyblogger</a>, you can dramatically increase the effectiveness of your content.
 ]]></content>
-    <excerpt:encoded><![CDATA[The text on your website, without question, will influence a visitor's decision to accept or ignore your message. Your message may be as simple as "this product will make you happy", or as complex as "this is why you should enable Apache's mod_rewrite." Regardless, conveying your message in a clear, appropriate, and motivating manner remains a critical component of satisfying visitor wants and needs. We'll show you three easy ways to elevate your web copy from mediocre to kick-ass. ]]></excerpt:encoded>
+    <excerpt><![CDATA[The text on your website, without question, will influence a visitor's decision to accept or ignore your message. Your message may be as simple as "this product will make you happy", or as complex as "this is why you should enable Apache's mod_rewrite." Regardless, conveying your message in a clear, appropriate, and motivating manner remains a critical component of satisfying visitor wants and needs. We'll show you three easy ways to elevate your web copy from mediocre to kick-ass. ]]></excerpt>
   </item>
   <item>
     <title>What Is a Function</title>
@@ -7286,9 +7286,9 @@ Are random functions useless? Not at all! Random functions in programming aim to
 <h2>Further Reading</h2>
 I hope you've enjoyed this very, VERY brief introduction to functions! Please, do not consider this summary complete in any form. I was mainly hoping to entice you to the beautiful overlap between mathematics and computer science. If you wish to further your ability to think abstractly, I highly recommend reading through <a href="http://www.brics.dk/~gwinskel/STiCS.pdf">Set Theory for Computer Science</a>, a free textbook with excellent information regarding functions and proofs, along with applications for the field of computer science.
 ]]></content>
-    <excerpt:encoded><![CDATA[I believe all programmers and computer scientists should take the time to appreciate the foundations of mathematics. If you currently attend a university, I highly encourage you to take a foundations course. Learning math foundations expands your mind, and gives you a greater understanding of the concepts we programmers implement every single day. 
+    <excerpt><![CDATA[I believe all programmers and computer scientists should take the time to appreciate the foundations of mathematics. If you currently attend a university, I highly encourage you to take a foundations course. Learning math foundations expands your mind, and gives you a greater understanding of the concepts we programmers implement every single day. 
 
-For those of you who do not have the ability or desire to invest in a foundations of mathematics course, but still appreciate the complexities and origins of our field of work, I will very briefly describe what a function really is. ]]></excerpt:encoded>
+For those of you who do not have the ability or desire to invest in a foundations of mathematics course, but still appreciate the complexities and origins of our field of work, I will very briefly describe what a function really is. ]]></excerpt>
   </item>
   <item>
     <title>Test PHP Mail Function</title>
@@ -7327,7 +7327,7 @@ If you do not specify a time zone, the mail() function will yell at you. Be sure
 <h3>Mail Function Boolean Value</h3>
 The mail() function returns true if mail was successfully sent, and false otherwise. You can use this characteristic to inform the user whether the message was successfully delivered. 
 ]]></content>
-    <excerpt:encoded><![CDATA[When setting up your mail server, you may want to check your php mail function with a simple script.]]></excerpt:encoded>
+    <excerpt><![CDATA[When setting up your mail server, you may want to check your php mail function with a simple script.]]></excerpt>
   </item>
   <item>
     <title>Switch From Windows Command Prompt to Explorer</title>
@@ -7361,8 +7361,8 @@ This opens up a command prompt correlating to the current directory.
 <h2>That's It!</h2>
 That was easy! Knowing the shortcuts of your OS can save you a lot of time, regardless of what OS you use. 
 ]]></content>
-    <excerpt:encoded><![CDATA[In your development workflow, you might find it more convenient to head back to the GUI interface of windows explorer while working from the command prompt. It's not uncommon for me to be 7 directories in from the root directory while working on a project. 
-Thankfully, there are extremely simple ways to open your current <strong>command prompt directory</strong> in Windows Explorer, and vice versa.]]></excerpt:encoded>
+    <excerpt><![CDATA[In your development workflow, you might find it more convenient to head back to the GUI interface of windows explorer while working from the command prompt. It's not uncommon for me to be 7 directories in from the root directory while working on a project. 
+Thankfully, there are extremely simple ways to open your current <strong>command prompt directory</strong> in Windows Explorer, and vice versa.]]></excerpt>
   </item>
   <item>
     <title>Dear Smashing Magazine</title>
@@ -7411,7 +7411,7 @@ If the life of the community rides on our shoulders, where exactly do we fit it 
 Why judge the community by quantity of comments or twitter flame wars or the number of verbose blog posts? Why not judge the community by the overall beauty of the web. That's our goal as web designers; to make websites that look and function spectacularly. There is a web outside of our little Web 2.0 bubble, and you know what? It's starting to look pretty good. 
 
 Do you know how you can contribute to the community of the web <em>as a whole</em>? Be good at what you do. Try your very best to make every single project you take on one you can be proud of. Make inspiring work. It's that simple.]]></content>
-    <excerpt:encoded><![CDATA[According to <a href="http://www.smashingmagazine.com/2011/03/21/dear-web-design-community-where-have-you-gone/">Smashing Magazine</a>, the sky is falling. <a href="http://www.smashingmagazine.com/2010/04/08/opinion-column-the-sad-state-of-the-web-design-community/">Again</a>. The web design community has heeled over, and is down for the count.]]></excerpt:encoded>
+    <excerpt><![CDATA[According to <a href="http://www.smashingmagazine.com/2011/03/21/dear-web-design-community-where-have-you-gone/">Smashing Magazine</a>, the sky is falling. <a href="http://www.smashingmagazine.com/2010/04/08/opinion-column-the-sad-state-of-the-web-design-community/">Again</a>. The web design community has heeled over, and is down for the count.]]></excerpt>
   </item>
   <item>
     <title>Less.app for Windows (Sort of)</title>
@@ -7497,7 +7497,7 @@ Now you can automatically compile and update your .less files on any of your pro
 
 <h2>Feedback</h2>
 Was there anything unclear in this guide? Did the tutorial rock? Let us know in the comments below! ]]></content>
-    <excerpt:encoded><![CDATA[After recently purchasing my first Mac, I decided I wanted to sync my Mac and Windows workflow. The <a href="http://incident57.com/less/">Less.app</a> app for Mac is amazing for compiling your Less files the instant you save them. Unfortunately, there was no Less.app equivalent for Windows...until now!...sorta. (This may have already been done before, but I seriously couldn't find anything after an hour of Googling). ]]></excerpt:encoded>
+    <excerpt><![CDATA[After recently purchasing my first Mac, I decided I wanted to sync my Mac and Windows workflow. The <a href="http://incident57.com/less/">Less.app</a> app for Mac is amazing for compiling your Less files the instant you save them. Unfortunately, there was no Less.app equivalent for Windows...until now!...sorta. (This may have already been done before, but I seriously couldn't find anything after an hour of Googling). ]]></excerpt>
   </item>
   <item>
     <title>Physxcudart_20.dll Download</title>
@@ -7520,7 +7520,7 @@ I recently purchased Borderlands for PC, but would receive the error message "<s
 
 <a href="http://www.vertstudios.com/downloads/physxcudart_20.zip">Download physxcudart_20.dll</a> (ZIP File)
 ]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Overcome Programming Apathy</title>
@@ -7572,7 +7572,7 @@ Find a niece, nephew, aunt, uncle, anyone bored enough to let you ramble on for 
 <h2>Your Story</h2>
 Have you ever faced a slump that made you dread the job you once loved? How did you handle it? Leave a comment below! 
 ]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>mkdir and cd at the Same Time</title>
@@ -7600,7 +7600,7 @@ mkcd testFile
 will create the testFile directory and make that your working directory.
 
 Horray for lazy!]]></content>
-    <excerpt:encoded><![CDATA[Fact: I'm lazy as hell. <strong>mkdir x && cd x</strong> for whatever reason just seems too long to create a directory and cd into it at the same time. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Fact: I'm lazy as hell. <strong>mkdir x && cd x</strong> for whatever reason just seems too long to create a directory and cd into it at the same time. ]]></excerpt>
   </item>
   <item>
     <title>Linux Snippet: Run ~/.bash_profile on Startup (GNOME)</title>
@@ -7618,9 +7618,9 @@ source ~/.bash_profile
 <h2>Ta-da! </h2>
 
 Now you can print out some cool ascii art on start up, define custom functions (such as <a href="http://www.vertstudios.com/blog/mkdir-cd-at-same-time/">mkdir and cd</a> at the same time), and other fun Linux-ey type things.]]></content>
-    <excerpt:encoded><![CDATA[If you've edited your ~/.bash_profile to include scripts you'd like executed on start up, you might be surprised when you open up your terminal and those scripts don't execute. By default, ~/.bashrc executes on session start, but ~/.bash_profile doesn't. 
+    <excerpt><![CDATA[If you've edited your ~/.bash_profile to include scripts you'd like executed on start up, you might be surprised when you open up your terminal and those scripts don't execute. By default, ~/.bashrc executes on session start, but ~/.bash_profile doesn't. 
 
-To execute your ~/.bash_profile on startup, simply append this to your ~/.bashrc]]></excerpt:encoded>
+To execute your ~/.bash_profile on startup, simply append this to your ~/.bashrc]]></excerpt>
   </item>
   <item>
     <title>Remove All Ruby Gems (Ubuntu)</title>
@@ -7636,9 +7636,9 @@ The snippet adjustment for Ubuntu was easy, just involved remove some quotes and
 [code]
 gem list | cut -d&quot; &quot; -f1 | xargs sudo gem uninstall -aIx
 [/code] ]]></content>
-    <excerpt:encoded><![CDATA[Recently (as in thirty seconds ago) I needed to remove all ruby gems from my system. After searching the interwebs, I came across an <a href="http://geekystuff.net/2009/01/14/remove-all-ruby-gems/">article</a> explaining how to remove all ruby gems on Fedora core linux.
+    <excerpt><![CDATA[Recently (as in thirty seconds ago) I needed to remove all ruby gems from my system. After searching the interwebs, I came across an <a href="http://geekystuff.net/2009/01/14/remove-all-ruby-gems/">article</a> explaining how to remove all ruby gems on Fedora core linux.
 
-The snippet adjustment for Ubuntu was easy, just involved remove some quotes and adding sudo. For a detailed explanation on how the command works, check out that article. ]]></excerpt:encoded>
+The snippet adjustment for Ubuntu was easy, just involved remove some quotes and adding sudo. For a detailed explanation on how the command works, check out that article. ]]></excerpt>
   </item>
   <item>
     <title>Static Classes in JavaScript with Immutable Members</title>
@@ -7716,7 +7716,7 @@ Physics.constant(&quot;pi&quot;); // 3.14
 This obviously is not a strong degree of protection, but I do honestly believe it's better than nothing. Suggestions and improvements are welcomed!
 
 ]]></content>
-    <excerpt:encoded><![CDATA[Okay, we know that JavaScript <a href="http://www.1stwebdesigner.com/design/object-oriented-basics-javascript/">doesn't actually have classes</a>. Prototypes, yada yada, life goes on. So while Static Classes in JavaScript don't exist, let's talk about them anyway! ]]></excerpt:encoded>
+    <excerpt><![CDATA[Okay, we know that JavaScript <a href="http://www.1stwebdesigner.com/design/object-oriented-basics-javascript/">doesn't actually have classes</a>. Prototypes, yada yada, life goes on. So while Static Classes in JavaScript don't exist, let's talk about them anyway! ]]></excerpt>
   </item>
   <item>
     <title>Install PyQuery under Cygwin</title>
@@ -7733,7 +7733,7 @@ The main problem comes down to lxml not being available in your current cygwin i
 
 <h2>You're Done!?!?!</h2>
 That's right! Now just pip install pyquery and you should be good to go. ]]></content>
-    <excerpt:encoded><![CDATA[]]></excerpt:encoded>
+    <excerpt><![CDATA[]]></excerpt>
   </item>
   <item>
     <title>Example .screenrc - A Simple Workflow</title>
@@ -7794,7 +7794,7 @@ The console tab is the one I'm most flexible with. In a Rails/Flask environment,
 
 <h3>Server</h3>
 This tab is where I execute my local server commands, such as <b>rails s</b>. ]]></content>
-    <excerpt:encoded><![CDATA[<a href="http://www.gnu.org/s/screen/">GNU screen</a> is a terminal application that lets you run multiple terminals within a single terminal instance. This tool, which has been around for <i>ages</i>, can greatly improve your organization and workflow.]]></excerpt:encoded>
+    <excerpt><![CDATA[<a href="http://www.gnu.org/s/screen/">GNU screen</a> is a terminal application that lets you run multiple terminals within a single terminal instance. This tool, which has been around for <i>ages</i>, can greatly improve your organization and workflow.]]></excerpt>
   </item>
   <item>
     <title>GitHub API - Get Latest Commit Details (PHP)</title>
@@ -7880,7 +7880,7 @@ $commitURL = &quot;https://github.com/$login/$repoName/commit/$commitSHA&quot;;
 [/php]
 
 Simply replace my username with yours on lines 41 and 42. You get a lot of information back from the function...just use what you need! (And remember, if you're not sure what information the API/function gives you, print_r is your friend)]]></content>
-    <excerpt:encoded><![CDATA[Want to show off the cool open source project you're working on via <a href="https://github.com/joequery">GitHub</a>? This PHP code snippet will snag your most recently updated repo information and its latest commit message through the <a href="http://develop.github.com/">GitHub API</a>. All you have to do is plug in your username.]]></excerpt:encoded>
+    <excerpt><![CDATA[Want to show off the cool open source project you're working on via <a href="https://github.com/joequery">GitHub</a>? This PHP code snippet will snag your most recently updated repo information and its latest commit message through the <a href="http://develop.github.com/">GitHub API</a>. All you have to do is plug in your username.]]></excerpt>
   </item>
   <item>
     <title>Daily Contact Form Tests with Python and Cron</title>
@@ -8015,7 +8015,7 @@ If you want to use another time interval, I suggest using the <a href="http://ww
 
 <h2>Feedback</h2>
 Have any questions? Get stuck somewhere in the tutorial? Let us know and we'll help you out! ]]></content>
-    <excerpt:encoded><![CDATA[For most websites, the contact form is the primary means of lead generation. A contact form that fails to email you those leads can potentially devastate your business - no exaggeration. How can you tell whether business is slow or your contact form just isn't working? The answer is to simply test the form by filling it out yourself and seeing if you receive the email. This article aims to automate that process. ]]></excerpt:encoded>
+    <excerpt><![CDATA[For most websites, the contact form is the primary means of lead generation. A contact form that fails to email you those leads can potentially devastate your business - no exaggeration. How can you tell whether business is slow or your contact form just isn't working? The answer is to simply test the form by filling it out yourself and seeing if you receive the email. This article aims to automate that process. ]]></excerpt>
   </item>
   <item>
     <title>Avoiding the AJAX New Line Pitfall</title>
@@ -8069,7 +8069,7 @@ You'll see "false" as the alert when you load up the html file. Now comment out 
 
 <h2>Moral of the Story</h2>
 Use console.log or alert to echo print the value the server sends. If your string comparisons fail when you <em>KNOW</em> they shouldn't, make sure there are no stray newlines in the files associated with an AJAX request. ]]></content>
-    <excerpt:encoded><![CDATA[Here, my friends, is a JavaScript pitfall that has plagued entire workdays. It's small and simple, but menacing ... you'd do well to heed this warning! ]]></excerpt:encoded>
+    <excerpt><![CDATA[Here, my friends, is a JavaScript pitfall that has plagued entire workdays. It's small and simple, but menacing ... you'd do well to heed this warning! ]]></excerpt>
   </item>
   <item>
     <title>Snippet: What Linux Distro is Running? </title>
@@ -8087,7 +8087,7 @@ For example, on Media Temple (dv), the following comes up
 [code]
 CentOS release 5.5 (Final)
 [/code] ]]></content>
-    <excerpt:encoded><![CDATA[Quick snippet here for you guys!  You're a dev SSHing into various VPS's and you need to know what linux distro you're running. ]]></excerpt:encoded>
+    <excerpt><![CDATA[Quick snippet here for you guys!  You're a dev SSHing into various VPS's and you need to know what linux distro you're running. ]]></excerpt>
   </item>
   <item>
     <title>Rails Singular/Plural Reference Chart</title>
@@ -8110,7 +8110,7 @@ class UsersController &lt; ApplicationController
 user.rb (model)
 class User &lt; ActiveRecord::Base
 [/code] ]]></content>
-    <excerpt:encoded><![CDATA[I've begun my descent into pure Rails. The whole naming convention idiom is hard to remember while I'm just learning, so here's a reference chart for myself and for any other Rails noobs. ]]></excerpt:encoded>
+    <excerpt><![CDATA[I've begun my descent into pure Rails. The whole naming convention idiom is hard to remember while I'm just learning, so here's a reference chart for myself and for any other Rails noobs. ]]></excerpt>
   </item>
   <item>
     <title>Installing RSpec, Autotest, and Spork on Ubuntu/OS X</title>
@@ -8335,7 +8335,7 @@ And that's it!
 
 <h2>Feedback</h2>
 Did the tutorial help? Did you find parts of the tutorial unclear? Let us know in the comments below!]]></content>
-    <excerpt:encoded><![CDATA[I'm an Ubuntu lover in the process of learning Ruby on Rails. I've spent a good majority of my time "learning" rails trying to get Rspec, Spork, and Autotest to play nicely. Unfortunately, <a href="http://www.twitter.com/vertjustin">our designer</a> is an Apple fanboy, so my testing suite needs to perform on OS X as well. It's extremely frustrating to spend so many hours trying to get these gems to work, just so you can continue on with the tutorial! Thus, to save you all the heartache I endured, here is a definitive guide to integrating Spork and Autotest with Rspec for Ubuntu AND Mac OS X!]]></excerpt:encoded>
+    <excerpt><![CDATA[I'm an Ubuntu lover in the process of learning Ruby on Rails. I've spent a good majority of my time "learning" rails trying to get Rspec, Spork, and Autotest to play nicely. Unfortunately, <a href="http://www.twitter.com/vertjustin">our designer</a> is an Apple fanboy, so my testing suite needs to perform on OS X as well. It's extremely frustrating to spend so many hours trying to get these gems to work, just so you can continue on with the tutorial! Thus, to save you all the heartache I endured, here is a definitive guide to integrating Spork and Autotest with Rspec for Ubuntu AND Mac OS X!]]></excerpt>
   </item>
   <item>
     <title>Start VIM in File Navigation Mode</title>
@@ -8361,7 +8361,7 @@ function vim(){
     fi  
 }
 [/bash] ]]></content>
-    <excerpt:encoded><![CDATA[A quick way to open VIM in file navigation mode when no files are passed to VIM. ]]></excerpt:encoded>
+    <excerpt><![CDATA[A quick way to open VIM in file navigation mode when no files are passed to VIM. ]]></excerpt>
   </item>
   <item>
     <title>List of Rails Session Variables</title>
@@ -8857,7 +8857,7 @@ Here is my list of Rails Session Variables. These will vary across different app
 - :xml_http_request
 - :y
 [/code] ]]></content>
-    <excerpt:encoded><![CDATA[As a rails novice, one of the more frustrating things I've encountered with rails is the inability to search for specific method names in its API. This is because a lot of these methods are dynamically generated helpers that you should know by heart once you've mastered the "Rails Way." Unfortunately for me, I'm not at the point of calling myself a Rails guru, so I still need to know what all I have available to me. In my opinion, nothing is more frustrating than not knowing what methods you have at your disposal. ]]></excerpt:encoded>
+    <excerpt><![CDATA[As a rails novice, one of the more frustrating things I've encountered with rails is the inability to search for specific method names in its API. This is because a lot of these methods are dynamically generated helpers that you should know by heart once you've mastered the "Rails Way." Unfortunately for me, I'm not at the point of calling myself a Rails guru, so I still need to know what all I have available to me. In my opinion, nothing is more frustrating than not knowing what methods you have at your disposal. ]]></excerpt>
   </item>
   <item>
     <title>PyQuery Tutorial: Basic HTML Parsing with PyQuery</title>
@@ -8991,7 +8991,7 @@ Wanna parse a remote file? No problem!
 
 <h2>Conclusion</h2>
 Now that we've given you a nice kickstart of PyQuery, your knowledge of jQuery coupled with the <a href="http://packages.python.org/pyquery/api.html">PyQuery API</a> provides sufficient power to parse XML/HTML documents.]]></content>
-    <excerpt:encoded><![CDATA[As Python is my programming language of choice when it comes to getting things done quickly, I need a dead simple XML parser that gets me the data I want and gets the hell out of the way. ]]></excerpt:encoded>
+    <excerpt><![CDATA[As Python is my programming language of choice when it comes to getting things done quickly, I need a dead simple XML parser that gets me the data I want and gets the hell out of the way. ]]></excerpt>
   </item>
   <item>
     <title>[SOLVED] warning: Insecure world writable dir</title>
@@ -9027,9 +9027,9 @@ module Bundler
 [/ruby]
 
 Now that annoying warning should leave you alone. ]]></content>
-    <excerpt:encoded><![CDATA[I've had my face-palm moment for the day.
+    <excerpt><![CDATA[I've had my face-palm moment for the day.
 
-While searching for how to solve the annoying ruby alert of "Insecure world writable dir", the fact that I was on a FAT32 partition completely skipped my mind. The chmod/chown commands tutorials told me to execute weren't working, and my mind was blown. If you're an Ubuntu user working on a FAT32 partition, <b>you can't change file permissions</b>!]]></excerpt:encoded>
+While searching for how to solve the annoying ruby alert of "Insecure world writable dir", the fact that I was on a FAT32 partition completely skipped my mind. The chmod/chown commands tutorials told me to execute weren't working, and my mind was blown. If you're an Ubuntu user working on a FAT32 partition, <b>you can't change file permissions</b>!]]></excerpt>
   </item>
   <item>
     <title>Autotest Won&#039;t Work - Just Be Ghetto!</title>
@@ -9059,7 +9059,7 @@ function do_test(){
 
 do_test
 [/code] ]]></content>
-    <excerpt:encoded><![CDATA[So I somehow managed to botch my Autotest installation I described in <a href="http://www.vertstudios.com/blog/installing-rspec-autotest-spork-ubuntu-osx/">this tutorial</a>. After spending many hours trying to get it back up and running again, I've decided it's just not worth it. Here's a ghetto bash script for semi-auto testing. You just have to press any key and it'll run the test. ]]></excerpt:encoded>
+    <excerpt><![CDATA[So I somehow managed to botch my Autotest installation I described in <a href="http://www.vertstudios.com/blog/installing-rspec-autotest-spork-ubuntu-osx/">this tutorial</a>. After spending many hours trying to get it back up and running again, I've decided it's just not worth it. Here's a ghetto bash script for semi-auto testing. You just have to press any key and it'll run the test. ]]></excerpt>
   </item>
   <item>
     <title>Multiple .screenrc Configurations &#124; GNU Screen Tutorial</title>
@@ -9127,7 +9127,7 @@ Note that we use "scr" instead of "screen". Executing "screen" by itself will ju
 
 It's important to note that there isn't any configuration file inheritance going on here. The files located in /usr/local/screen need to be full fledged configuration files, as unfortunate as that is.
 ]]></content>
-    <excerpt:encoded><![CDATA[As an extension of my <a href="http://www.vertstudios.com/blog/screenrc-simple-workflow/">example .screenrc article</a>, this article describes the why and how of multiple .screenrc configurations.]]></excerpt:encoded>
+    <excerpt><![CDATA[As an extension of my <a href="http://www.vertstudios.com/blog/screenrc-simple-workflow/">example .screenrc article</a>, this article describes the why and how of multiple .screenrc configurations.]]></excerpt>
   </item>
   <item>
     <title>Nginx, PHP-FPM Installation Guide on Ubuntu 10.04</title>
@@ -9388,7 +9388,7 @@ The web page won't display because we haven't started php5-fpm
 [/code]
 
 Now we should be able to see our phpinfo in the browser!]]></content>
-    <excerpt:encoded><![CDATA[In my first screen cast ever, I'll guide you through setting up Nginx with php-fpm on Ubuntu 10.04.]]></excerpt:encoded>
+    <excerpt><![CDATA[In my first screen cast ever, I'll guide you through setting up Nginx with php-fpm on Ubuntu 10.04.]]></excerpt>
   </item>
   <item>
     <title>How to fix Guard events not firing on OS X</title>
@@ -9406,7 +9406,7 @@ $ bundle exec guard --no-vendor
 [/code]
 
 Polling is a more expensive operation, but hey, at least it works.]]></content>
-    <excerpt:encoded><![CDATA[How to fix Guard when events seem to not be firing when working on OS X. ]]></excerpt:encoded>
+    <excerpt><![CDATA[How to fix Guard when events seem to not be firing when working on OS X. ]]></excerpt>
   </item>
   <item>
     <title>Stop Annoying your Git Collaborators</title>
@@ -9440,8 +9440,8 @@ Using a <a href="http://jqr.github.com/2009/02/03/global-git-ignore.html">global
 
 <h2>*Bonus* Lack of Bundler Use in Rails Projects</h2>
 Plain and simple, use <a href="https://github.com/Hack56/Rails-Template/wiki/Configuring-Bundler">properly configured Bundler</a> for your Rails projects. Fewer things are more frustrating than tracking down Gems used throughout a Rails project that are not listed in the Gemfile. Just because a gem is installed on your system does not mean it's installed on mine! Remember to track both the Gemfile AND Gemfile.lock files. ]]></content>
-    <excerpt:encoded><![CDATA[Over the past couple of years, Git has become the standard version control system among the Open Source community. As a consequence of Git hitting the mainstream, the number of Git novices is at an all time high. While there is absolutely no shame in being a novice, the following habits shared among many designers/junior developers should be kicked as soon as possible.
-]]></excerpt:encoded>
+    <excerpt><![CDATA[Over the past couple of years, Git has become the standard version control system among the Open Source community. As a consequence of Git hitting the mainstream, the number of Git novices is at an all time high. While there is absolutely no shame in being a novice, the following habits shared among many designers/junior developers should be kicked as soon as possible.
+]]></excerpt>
   </item>
   <item>
     <title>Productivity Tip: Your Hosts file is Just Barely Annoying Enough</title>
@@ -9468,7 +9468,7 @@ which will require a password, and then you'll need to find the entries and comm
 
 <h2>Work Hard, Break Hard</h2>
 When you work, work hard. When you break, break hard. Programming can be hard, and working on a fun project can get boring at times. Push through, get the work done, and reward yourself with real breaks as needed. ]]></content>
-    <excerpt:encoded><![CDATA[There's absolutely nothing wrong with taking a mental break when working on software development. However, there's a small but significant difference between taking a break and randomly scouring the internet. ]]></excerpt:encoded>
+    <excerpt><![CDATA[There's absolutely nothing wrong with taking a mental break when working on software development. However, there's a small but significant difference between taking a break and randomly scouring the internet. ]]></excerpt>
   </item>
   <item>
     <title>Dual Monitors on Kubuntu 11.10 (In Under 10 Minutes)</title>
@@ -9543,7 +9543,7 @@ If this causes the monitors to go back to dual-screen mode, then the script work
 <h2>Now you have Dual Monitor Suuport!</h2>
 
 Go ahead and restart your computer, and you should find that Kubuntu starts with your dual monitors functioning correctly.]]></content>
-    <excerpt:encoded><![CDATA[If you're having trouble getting dual monitors to work on the latest version of Kubuntu (Currently 11.10), this guide will attempt to save your sanity!]]></excerpt:encoded>
+    <excerpt><![CDATA[If you're having trouble getting dual monitors to work on the latest version of Kubuntu (Currently 11.10), this guide will attempt to save your sanity!]]></excerpt>
   </item>
   <item>
     <title>K&amp;R: Error: conflicting types for &#039;getline&#039;</title>
@@ -9572,7 +9572,7 @@ And, to your confusion, you receive the following error: <b>Error: conflicting t
 <h2>The Solution!</h2>
 
 It turns out getline is included in stdio.h, similar to printf! You can complete the exercise by renaming the getline function to something different like "readline" or "get_the_line". ]]></content>
-    <excerpt:encoded><![CDATA[So you're reading through K&R's <a href="http://www.amazon.com/C-Programming-Language-2nd-Edition/dp/0131103628/ref=sr_1_1?ie=UTF8&qid=1331341099&sr=8-1">The C Programming Language</a>, and you're on page 29 or so, section 1.9 entitled <b>Character Arrays</b>.]]></excerpt:encoded>
+    <excerpt><![CDATA[So you're reading through K&R's <a href="http://www.amazon.com/C-Programming-Language-2nd-Edition/dp/0131103628/ref=sr_1_1?ie=UTF8&qid=1331341099&sr=8-1">The C Programming Language</a>, and you're on page 29 or so, section 1.9 entitled <b>Character Arrays</b>.]]></excerpt>
   </item>
   <item>
     <title>Introduction to Recursion - Part 1</title>
@@ -9583,7 +9583,7 @@ It turns out getline is included in stdio.h, similar to printf! You can complete
     <content><![CDATA[Part 1 of a multipart series covering the basics of recursion. I hope you enjoy!
 
 http://www.youtube.com/watch?v=TA_qrRZ1cpI]]></content>
-    <excerpt:encoded><![CDATA[Part 1 of a multipart series covering the basics of recursion.]]></excerpt:encoded>
+    <excerpt><![CDATA[Part 1 of a multipart series covering the basics of recursion.]]></excerpt>
   </item>
   <item>
     <title>C: request for member in something not a structure or union</title>
@@ -9680,7 +9680,7 @@ so
 [code]bob-&gt;job = &quot;Sysadmin&quot;;[/code]
 
 would work as well. ]]></content>
-    <excerpt:encoded><![CDATA[If you're trying to pass a pointer to a structure to a function, you may be getting the compiler error <b>request for member ‘SOME_PROPERTY’ in something not a structure or union</b>. If you  <em>swear</em> you're passing in a pointer to the proper structure, and you're <em>certain</em>, there are no typos for the member name you're trying to access, you may just be experiencing a bit of pointer ambiguity. ]]></excerpt:encoded>
+    <excerpt><![CDATA[If you're trying to pass a pointer to a structure to a function, you may be getting the compiler error <b>request for member ‘SOME_PROPERTY’ in something not a structure or union</b>. If you  <em>swear</em> you're passing in a pointer to the proper structure, and you're <em>certain</em>, there are no typos for the member name you're trying to access, you may just be experiencing a bit of pointer ambiguity. ]]></excerpt>
   </item>
   <item>
     <title>Git Workflow: Crap, I committed to master! </title>
@@ -9790,9 +9790,9 @@ Date:   Wed Apr 11 12:05:10 2012 -0500
 [/code]
 
 So we still have our work, but it's on a feature branch, as it should be! We're now free to send a pull request without any bickering from the project owner, or we can merge the new_feature branch later once it's ready for production.  ]]></content>
-    <excerpt:encoded><![CDATA[So you know you should pretty much <a href="http://scottchacon.com/2011/08/31/github-flow.html">never hack directly on master</a> when working with git. Instead, you should create branches and merge them later.  Beyond best practices for their own sake, some github projects really want you creating pull requests from a certain branch.   
+    <excerpt><![CDATA[So you know you should pretty much <a href="http://scottchacon.com/2011/08/31/github-flow.html">never hack directly on master</a> when working with git. Instead, you should create branches and merge them later.  Beyond best practices for their own sake, some github projects really want you creating pull requests from a certain branch.   
 
-Sometimes, however, I get in <b>the zone</b> and forget to checkout a branch because I want to get this feature DONE! In my haste, I commit to master directly. I don't want my pull request to be rejected just because I hacked on master.]]></excerpt:encoded>
+Sometimes, however, I get in <b>the zone</b> and forget to checkout a branch because I want to get this feature DONE! In my haste, I commit to master directly. I don't want my pull request to be rejected just because I hacked on master.]]></excerpt>
   </item>
   <item>
     <title>jQuery Table Sort Plugin &#124; Stupidly simple jQuery table sort</title>
@@ -9807,8 +9807,8 @@ Consequently, I embarked on a journey to create a stupidly simple jQuery table s
 
 <h2>Check out the demo!</h2>
 <a href="http://joequery.github.com/Stupid-Table-Plugin/">View the demo</a>, and let me know what you think! ]]></content>
-    <excerpt:encoded><![CDATA[I needed a simple jQuery plugin to let me sort table columns. Unfortunately, I couldn't find one that captured the simplicity I was looking for. I don't need 1000+ lines of code for a simple table sort!
-]]></excerpt:encoded>
+    <excerpt><![CDATA[I needed a simple jQuery plugin to let me sort table columns. Unfortunately, I couldn't find one that captured the simplicity I was looking for. I don't need 1000+ lines of code for a simple table sort!
+]]></excerpt>
   </item>
   <item>
     <title>Introduction to Recursion – Part 2</title>
@@ -9819,7 +9819,7 @@ Consequently, I embarked on a journey to create a stupidly simple jQuery table s
     <content><![CDATA[Part two of the <a href="http://www.vertstudios.com/blog/introduction-recursion-part-1">Introduction to Recursion series</a>! In this video, we discuss the Factorial function and its recursive properties in depth.
 
 http://www.youtube.com/watch?v=CboUF7gtVSo]]></content>
-    <excerpt:encoded><![CDATA[Part two of the <a href="http://www.vertstudios.com/blog/introduction-recursion-part-1">Introduction to Recursion series</a>! In this video, we discuss the Factorial function and its recursive properties in depth.]]></excerpt:encoded>
+    <excerpt><![CDATA[Part two of the <a href="http://www.vertstudios.com/blog/introduction-recursion-part-1">Introduction to Recursion series</a>! In this video, we discuss the Factorial function and its recursive properties in depth.]]></excerpt>
   </item>
   <item>
     <title>VI Keybindings in your Shell</title>
@@ -9874,8 +9874,8 @@ Fx - find the previous occurrence of the character 'x'
 5W - move forward five white-space delimited words. 
 
 [/code] ]]></content>
-    <excerpt:encoded><![CDATA[There was once a very sad point in my development career where if I made a typo earlier in one of my bash statements, I would have to hold the left arrow to get my cursor over to the problem area and fix it. Then, one fateful day, I discovered VI keybindings in the shell!
-]]></excerpt:encoded>
+    <excerpt><![CDATA[There was once a very sad point in my development career where if I made a typo earlier in one of my bash statements, I would have to hold the left arrow to get my cursor over to the problem area and fix it. Then, one fateful day, I discovered VI keybindings in the shell!
+]]></excerpt>
   </item>
   <item>
     <title>Ubuntu Screencast Software for 11.04+</title>
@@ -9911,7 +9911,7 @@ And you're done! You can run kazam via the command line or your distro's menu.
 
 <h2>Extras</h2>
 If you happen to have FFMpeg installed, here's a nice 2-pass video/audio <a href="https://gist.github.com/2486369">encoder script</a> that encodes with H.264. ]]></content>
-    <excerpt:encoded><![CDATA[I browsed Google for quite a while before I finally found a good product for recording screencasts on Ubuntu. Most software I found, no offense gtk-recordMyDesktop, was extremely outdated and hardly functional. Video quality was either terrible or video/audio was out of sync.]]></excerpt:encoded>
+    <excerpt><![CDATA[I browsed Google for quite a while before I finally found a good product for recording screencasts on Ubuntu. Most software I found, no offense gtk-recordMyDesktop, was extremely outdated and hardly functional. Video quality was either terrible or video/audio was out of sync.]]></excerpt>
   </item>
   <item>
     <title>Markdown to PDF Utility</title>
@@ -9932,7 +9932,7 @@ $ md2pdf my-markdown-document.md
 <h2>How it was made</h2>
 This utility is actually pretty silly. It simply serves as a glue between
 <a href="http://code.google.com/p/python-markdown2/">markdown2</a>, which takes Markdown and produces HTML, and <a href="www.xhtml2pdf.com">xhtml2pdf</a>, which takes HTML and produces PDFs. The script uses a system call because the xhtml2pdf interface is non-trivial. Consequently, you're probably better off not using this on a production server.  ]]></content>
-    <excerpt:encoded><![CDATA[I needed to get a Markdown document in PDF format. Unable to find a good solution, I set off to make a Markdown to PDF conversion utility. About 20 lines of Python later, here we are!]]></excerpt:encoded>
+    <excerpt><![CDATA[I needed to get a Markdown document in PDF format. Unable to find a good solution, I set off to make a Markdown to PDF conversion utility. About 20 lines of Python later, here we are!]]></excerpt>
   </item>
 </channel>
 </rss>

@@ -202,7 +202,7 @@ Just kidding...eh...heh.
 
 This Post Will Show You How To Capitalize Each Word In C++, Similar To The Way I Am Typing Right Now. This Is Also Known As Proper Case. First I Will Show You The Code, And Then Offer An Explanation.
 <h2>The Code</h2>
-[cpp]
+<code>
 
 //Joseph McCullough
 //Program: capEachWord.cpp
@@ -315,7 +315,7 @@ void lowerCase(string&amp; strToConvert)
 }
 
 
-[/cpp]
+</code>
 
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/CapEachWord.cpp">Download the Source Code</a>
 
@@ -633,7 +633,7 @@ So this post will show you how to convert a string to sentence  case using C++. 
 
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
 <h2>The Code</h2>
-[cpp]
+<code>
 //Joseph McCullough
 //Program: sentencecase.cpp
 //Description: Converts a string to sentence case.
@@ -763,7 +763,7 @@ bool isSentencePunc(char character)
       return false;
   }
 }
-[/cpp]
+</code>
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
 <h2>The Explanation</h2>
 You'll notice the logic for the sentenceCase function is very similar to the logic of the <a href="http://www.mcculloughdesigns.com/blog/c-capitalize-word-proper-case/200/">capEachWord (proper case) function</a>.
@@ -776,7 +776,7 @@ In English, a sentence is a series of alphanumeric characters, punctuation marks
 current sentence has ended and the next sentence is about to begin.
 
 C++ has a standard function for evaluating if a character is a punctuation mark via ispunct(). However, this function includes every punctuation mark: Colons, commas, hyphens, things that usually do not denote the end of a sentence. For this reason, we have to make our own function.
-[cpp]
+<code>
 bool isSentencePunc(char character)
 {
   switch(character)
@@ -789,14 +789,14 @@ bool isSentencePunc(char character)
       return false;
   }
 }
-[/cpp]
+</code>
 The function takes in a character by value, and returns true if the character is an exclamation point, period, or question mark. The function returns false if otherwise.
 
 The sentenceCase function starts out by <a href="http://www.mcculloughdesigns.com/blog/string-lowercase-uppercase-c/133/">lowercasing the string</a>. We do this so random capital letters within words will be accounted for.
-[cpp]This IS Not sentence Case.[/cpp]
-[cpp]This iS not  sentence case.[/cpp]
+<code>This IS Not sentence Case.</code>
+<code>This iS not  sentence case.</code>
 However, this brings up a problem: What about proper nouns? The following sentence <em>is</em> sentence case.
-[cpp]My name is Joseph.[/cpp]
+<code>My name is Joseph.</code>
 In order to accommodate for proper nouns, we would have to have a library or database with all the proper nouns known. For simplicities sake, we'll omit that process.
 
 Now on to the sentenceCase function itself.
@@ -808,9 +808,9 @@ When thisSentenceCapped is false and the current character being processed in th
 At that point, thisSentenceCapped is set to true, and the loop moves on to the next character. The loop will not uppercase any letters until thisSentenceCapped is set to false. thisSentenceCapped will not be set to false until a period, exclamation point, or question mark is found (in other words, when isSentencePunct() evaluates to TRUE).
 
 Here is a visualization using the sentence:
-[cpp]&quot;dude, Where’s my Car? i don’t Know man.[/cpp]
+<code>&quot;dude, Where’s my Car? i don’t Know man.</code>
 With proper sentence case applied, the sentence should read
-[cpp]&quot;Dude, where's my car? I don't know man.&quot;[/cpp]
+<code>&quot;Dude, where's my car? I don't know man.&quot;</code>
 So here we are, starting off: thisSentenceCapped is set to false.
 <img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase1.png" alt="C++ Sentence Case Step 1" />
 
@@ -876,7 +876,7 @@ Here is a program that will remove the punctuations and spaces from a string.
 
 <h2>The  Code</h2>
 
-[cpp]
+<code>
 
 //Joseph McCullough
 //Program: alphanumonly.cpp
@@ -944,7 +944,7 @@ string alphaNumOnly(string strToConvert)
   return strConverted;
 
 }
-[/cpp]
+</code>
 
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/alphanum/alphanumonly.zip">Download the EXE and Source Code</a>
 
@@ -954,18 +954,18 @@ string alphaNumOnly(string strToConvert)
 The main() component  of this function is just a sentinel controlled loop. The alphaNumOnly function is what's important.
 
 We create a local string variable
-[cpp]string strConverted[/cpp]
+<code>string strConverted</code>
 To store all the letters and numbers from the original string. This string is returned at the end of the function.
 
 Let's examine the for loop
-[cpp]
+<code>
 for (unsigned int i=0; i&lt;strToConvert.length();i++)
   {
     if (isalnum(strToConvert[i])) //If current character is alpha-numeric
      strConverted += strToConvert[i]; //Add the character to strConverted
 
   }
-[/cpp]
+</code>
 
 We begin by setting a counter i to 0. We use unsigned int because string lengths will always be positive. We then tell the loop to keep going until we reach the end of the string being processed.
 
@@ -1528,7 +1528,7 @@ I will cover how to install and configure mysql, pear, and phpMyAdmin in an upco
     <content><![CDATA[C++ Does not have string case manipulation built in to its <a href="http://www.cplusplus.com/reference/string/string/"> standard library</a>. For this  reason, it's necessary to make your own upperCase and lowerCase functions. I'll show you how to do just that.
 <h2>The Function Code</h2>
 For all lowercase:
-[cpp]
+<code>
 void lowerCase(string&amp; strToConvert)
 {
    for(unsigned int i=0;i&lt;strToConvert.length();i++)
@@ -1536,9 +1536,9 @@ void lowerCase(string&amp; strToConvert)
       strToConvert[i] = tolower(strToConvert[i]);
    }
 }
-[/cpp]
+</code>
 For all UPPERCASE:
-[cpp]
+<code>
 void upperCase(string&amp; strToConvert)
 {
    for(unsigned int i=0;i&lt;strToConvert.length();i++)
@@ -1546,7 +1546,7 @@ void upperCase(string&amp; strToConvert)
       strToConvert[i] = toupper(strToConvert[i]);
    }
 }
-[/cpp]
+</code>
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/tolower/lowercase.zip">Download the .exe and Source File</a>
 <h2>The Explanation</h2>
 A string is technically an <a href="http://www.cplusplus.com/doc/tutorial/arrays/">array</a> of characters. Although C++ can not uppercase or lowercase a string, it can uppercase or lowercase an individual character, using the toupper() and tolower() standard functions respectively. This means we need to be able to isolate the characters of a string so we can apply the toupper() or tolower() function. The way we do this is by referring to the string as an array.
@@ -1584,12 +1584,12 @@ This tells us
 The length of the string can be found with string.length()
 
 So the for loop turns out
-[cpp]
+<code>
    for(unsigned int i=0;i&lt;strToConvert.length();i++)
       {
          strToConvert[i] = tolower(strToConvert[i]);
       }
-[/cpp]
+</code>
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/tolower/lowercase.zip">Download the .exe and Source File</a>]]></content>
     <excerpt><![CDATA[C++ Does not have string case manipulation built in to its <a href="http://www.cplusplus.com/reference/string/string/"> standard library</a>. For this  reason, it's necessary to make your own upperCase and lowerCase functions. I'll show you how to do just that.]]></excerpt>
   </item>
@@ -1912,15 +1912,15 @@ alt="tumblr hit tracking tool" /></a></div></noscript>
 
 <h2>Pointers and the "new" Operator</h2>
 Take a look at this declaration.
-[cpp]float *q;[/cpp]
+<code>float *q;</code>
 
 This identifies q as a <em>pointer variable</em> to a float. This means that we can store a memory address into q. A memory address is usually represented in hexadecimal form and looks something like
-[cpp]0x002132[/cpp]
+<code>0x002132</code>
 
 Rarely do you need to know the hexadecimal value of a memory address, but it is important to know that q will be holding this type of value and NOT a floating point value.
 
 Now look at the following
-[cpp] q = new float; [/cpp]
+<code> q = new float; </code>
 
 The new operator takes memory from the heap and makes it available for the program to use. Thus, q will have the value of a memory address. Once again, q does NOT hold a floating point value, it holds the value of a memory address.
 
@@ -1930,16 +1930,16 @@ In order to associate a value with a memory address, we use the indirection oper
 
 In my opinion, The best way to understand pointers is to be able to read out the meaning of the syntax.
 
-[cpp]*q[/cpp] literally translates to
+<code>*q</code> literally translates to
 "The value associated with the memory address assigned to q."
 
 Putting all these concepts together, we can come up with
 
-[cpp]
+<code>
 float *q;      //Establish q as a pointer variable, enabling it to hold a memory address
 q = new float; //Dynamically allocate memory for a float and assign a memory address to q
 *q = 13.5;     //Associate the float value 13.5 with the memory address assigned to q
-[/cpp]
+</code>
 
 Once you can audibly describe the process occurring, pointers begin to make a lot more sense.]]></content>
     <excerpt><![CDATA[]]></excerpt>

@@ -28,9 +28,9 @@ $(window).load(function()
     //--------------------Customize These-------------------------//
     var opacity = 0.50,
     fadeTime = 300,
-    featured = $(".featured_work img"),
-    bubble = $("#sub_page_intro"),
-    copy = $(".copy"),
+    featured = $("#work .featured_work img"),
+    bubble = $("#work #sub_page_intro"),
+    copy = $("#work .copy"),
     
     //Calculations
     bubbleText = $(copy).eq(0),

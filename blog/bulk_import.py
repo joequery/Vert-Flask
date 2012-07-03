@@ -2,6 +2,7 @@
 
 from pyquery import PyQuery
 from html2text import html2text
+from time import strptime, strftime
 
 # Get the xml file contents into a PyQuery object for parsing.
 f = open('wpblog.xml', 'r')
@@ -23,6 +24,17 @@ for post in posts:
 
   # Isolate the url, since this will become our directory.
   # http://www.vertstudios.com/blog/some-post => some-post
-  link = link.split('/')[-2]
+  directory = link.split('/')[-2]
 
-  print(link)
+  # Parse the date provided into a time object. We start off with
+  # Sat, 06 Feb 2010 07:41:48 +0000. We get rid of Sat, and the +0000
+  pubdate = pubdate.split(',')[1].strip()[:-6]
+
+  # Now we have "06 Feb 2010 07:41:48", which is parseable.
+  pubdateObj = strptime(pubdate, "%d %b %Y %H:%M:%S")
+
+  # With the time object, we can now put the date in the form of the timestamp
+  # We'll use when writing articles: 2012-07-03 Tue 04:37 PM
+  pubdate = strftime("%Y-%m-%d %a %H:%M %p", pubdateObj)
+
+  print(directory)

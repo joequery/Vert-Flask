@@ -3,11 +3,12 @@
 {% filter markdown %}
 
 
-[{{meta.title}}]("{{request.url}}")
+[{{meta['title']}}]("{{request.url}}")
 ===================================
 
-{{meta.description}}
+{{meta['description']}}
 
+{{meta['date']}}
 
 
 {% endfilter %}

@@ -20,6 +20,7 @@ BLOG_SYS_PATH = os.sep.join(ThisFilePath.split('/')[:-1])
 def blog_index():
   return render_template("templates/blog_index.html")
 
+@blog.route('/blog/<post>/')
 @blog.route('/blog/<post>')
 def blog_post(post):
   postDir = os.path.join("posts", post)
@@ -39,6 +40,7 @@ def blog_post(post):
       'date' : time.strftime("%B %d, %Y", postTime) # January 15, 2012
     }
     return render_template(bodyPath, post=post)
-  except (TemplateNotFound, IOError) as e:
+  #except (TemplateNotFound, IOError) as e:
+  except None as e:
     return render_template('404.html'), 404
 

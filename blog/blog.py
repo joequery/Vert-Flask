@@ -2,7 +2,7 @@
 # The blog!
 ##########################
 from flask import (
- Blueprint, render_template, abort, request, flash   
+ Blueprint, render_template, abort, request, flash, make_response
 )
 from jinja2 import TemplateNotFound
 from markdown import markdown
@@ -44,4 +44,11 @@ def blog_post(post):
   #except (TemplateNotFound, IOError) as e:
   except None as e:
     return render_template('404.html'), 404
+
+@blog.route('/blog/feed')
+@blog.route('/blog/feed/')
+def rss_feed():
+  response = make_response(render_template("templates/rssfeed.html"))
+  response.headers['Content-Type'] = "text/xml; charset=UTF-8"
+  return response
 

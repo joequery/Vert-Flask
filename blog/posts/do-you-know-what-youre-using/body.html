@@ -1,0 +1,27 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Due to frequent crashes exhibited  by <a href="http://notepad-plus-plus.org/">Notepad++</a>, I've decided to try out another text editor named <a href="http://www.activestate.com/komodo-edit">Komodo</a>. Download and installation was easy. I thought about jumping right in and working on some ongoing projects. I mean it's a text editor, right? What's to learn or acclimate to? It was at this moment that I realized
+
+<h2>We don't fully utilize the tools available to us</h2>
+Most likely I would have had a satisfactory experience with Komodo without reading its documentation.  However, reading Komodo's documentation helped me clearly understand what it had to offer. Instead of having to adapt Komodo's features over time, I can fully implement Komodo's productivity-enhancing features into my workflow from the very beginning. That's the difference between a satisfactory experience and an <b>exceptional</b> experience. 
+
+This epiphany on its own is not terribly insightful. However, when you apply this idea to the web development world, a more significant epiphany arises. 
+<h3>We don't fully utilize programming languages</h3>
+Why? Because we don't know what they have to offer. 
+
+In today's fast-paced and beginner-friendly web development world, people tend to learn programming languages in code snippets. We come across a problem, Google it, copy and paste the solution, and ask questions later. While this practice may be a necessary evil when it comes to meeting deadlines, Google should not be a developer's first instinct. 
+
+A large number of problems that ended up being Google'd could have been easily solved by the developer if they knew what functions they had in the arsenal. While I'm not discouraging developers to seek help when needed, it's important to note that there's almost always a better way to solve any problem. YOU could be the one to find that more elegant solution for the world to use. 
+
+<h3>A simple challenge</h3>
+Instead of reading A List Apart, Smashing Magazine, Mashable, etc, take a week to actually read through the official documentation of the languages that you use. Learn the ins and outs of the data structures, and read through every single function description. I guarantee you that you'll come across extremely useful functions you never knew existed.
+{% endblock post %}
+

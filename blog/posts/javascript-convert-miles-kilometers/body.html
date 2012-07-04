@@ -1,0 +1,74 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+At the end of the post you can view the working example. This example comes from Problem Solving, Abstraction, and Design using C++ (Third Edition)
+
+As a reminder, here are the steps to the Software Development Method
+<ol>
+  <li>Specify the Problem Requirements</li>
+  <li>Analyze the problem.</li>
+  <li>Design the algorithm to solve the problem.</li>
+  <li>Implement the algorithm.</li>
+  <li>Test and verify the completed program.</li>
+  <li>Maintain and Update the Program.</li>
+</ol>
+<h2>1. Specify the Problem Requirements</h2>
+Your summer surveying job requires you to study some maps that give distances in kilometers and some that use miles. You and your co-workers prefer to deal in metric measurements. Write a program that performs the necessary conversion, rounded to 2 decimal places.
+<h2>2.Analyze the Problem</h2>
+Given user input of the value of miles, display the conversion of miles to kilometers.
+<strong>Data Requirements</strong>
+<pre class="prettyprint">
+Problem Constants:
+MILES_TO_KM = 1.609;   //Conversion constant for Miles to Kilometers</pre>
+
+Problem Input
+miles; //The Distance in Miles
+
+Constraints on problem Input
+miles &gt;= 0;
+miles is a number
+
+Problem Output
+km; //The distance in kilometers
+
+Relevant Formula
+1 Mile = 1.609 Kilometers
+<h2>3. Design the Algorithm</h2>
+<ol>
+  <li>Read in Distance in Miles</li>
+  <li>Convert the distance in miles to distance in kilometers
+<ol>The distance in kilometers is 1.609 times the distance in miles</ol>
+</li>
+  <li>Round the Distance in Kilometers to 2 Decimal Places</li>
+  <li>Display the Distance in Kilometers</li>
+</ol>
+<h2>4.Implement the algorithm</h2>
+Program language options:
+<ol>
+  <li>PHP</li>
+  <li>Javascript</li>
+</ol>
+Program Language choice: Javascript
+<strong> Justification</strong>: No critical data must be passed to the server, so using Javascript will not pose any security risks in this situation. Although PHP could report the same output correctly, it would hinder the user experience by forcing the user to wait for a page refresh every calculation.
+
+<a href="http://www.vertstudios.com/blog/images/mc-blog/sdm/miletokmconversion/conversion.html">View the Program in action</a>
+<h2>5. Test and verify the completed program</h2>
+<strong>Test Data</strong>(Done by manual calculation):
+20 Miles = 32.18 Kilometers
+0 miles = 0 Kilometers
+15 Miles = 24.14 Kilometers
+37 Miles = 59.53 Kilometers
+113 Miles = 181.82 Kilometers.
+<h2>6. Maintain and Update the Program</h2>
+At this point maintenance is currently not needed, but could be easily performed. In the event that standards change, such as the miles to km conversion rate, the program will need very little adjusting in order to function properly.
+
+<a href="http://www.vertstudios.com/blog/images/mc-blog/sdm/miletokmconversion/conversion.html">View the Program</a>
+{% endblock post %}
+

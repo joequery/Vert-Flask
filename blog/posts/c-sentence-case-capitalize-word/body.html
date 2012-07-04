@@ -1,0 +1,244 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+when typing up important documents, it is important to use sentence case to invoke a sense of formality. imagine writing an email or heck, an entire blog post, not using a capital letter. it would really hurt your professional decorum.
+
+So this post will show you how to convert a string to sentence  case using C++. Sentence case is having the first letter of the first word in a sentence capitalized.
+
+<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
+<h2>The Code</h2>
+<pre class="prettyprint">
+//Joseph McCullough
+//Program: sentencecase.cpp
+//Description: Converts a string to sentence case.
+//Visit http://www.mcculloughdesigns.com for more C++ Goods
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+void sentenceCase(string&amp;);
+void lowerCase(string&amp;);
+bool isSentencePunc(char);
+
+const string SENTINEL = &quot;0&quot;;//When entered as strToConvert,
+              //terminates program.
+
+int main()
+{
+  string strToConvert;    //The string that will be converted
+
+  cout &lt;&lt; &quot;***************************************************&quot; &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;SentenceCase.exe&quot;                     &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;Converts Strings to Sentence Case&quot; &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;Provided By McCullough Designs&quot;      &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;***************************************************&quot;;
+
+  //Read in strToConvert
+  cout &lt;&lt; &quot;\n\nEnter a String or enter 0 to exit: &quot;;
+  getline(cin, strToConvert);
+
+  while (strToConvert != SENTINEL)
+  {
+    sentenceCase(strToConvert);
+    cout &lt;&lt; &quot;New String: &quot; &lt;&lt; strToConvert;
+
+    //Read in strToConvert
+    cout &lt;&lt; &quot;\n\nEnter a String or enter 0 to exit: &quot;;
+    getline(cin, strToConvert);
+
+  }
+  return 0;
+}
+
+/****** function sentenceCase *****
+Description: Converts a string so that the first letter of the first word
+of a sentence is capitalized.
+
+PARAMETERS
+  strToConvert: the string being manipulated
+
+Precondition:
+  strToConvert: undefined
+
+  HEADERS
+  #include &lt;string&gt;
+
+Postcondition:
+  Returns the manipulated string by reference */
+
+void sentenceCase(string&amp; strToConvert)
+{
+  //Identifies if the sentence has been capitalized. Set to false by default.
+  bool thisSentenceCapped = false;
+  lowerCase(strToConvert);  //Lowercase the string before processing.
+
+  for (unsigned int i=0; i&lt;strToConvert.length();i++)
+  {
+    //At a punctuation mark, the next sentence has not been manipulated
+    //yet to have its first letter capitalized, so thisSentenceCapped is false.
+    if (isSentencePunc(strToConvert[i]))
+      thisSentenceCapped = false;
+
+    if ((thisSentenceCapped==false) &amp;&amp; (isalpha(strToConvert[i])))
+    {
+      strToConvert[i]=toupper(strToConvert[i]);
+      thisSentenceCapped = true;
+    }
+
+  }
+}
+
+/****** function lowerCase *****
+Description: makes all the characters of a string lowercase
+
+PARAMETERS
+  strToConvert: the string being manipulated
+
+Precondition:
+  strToConvert: undefined
+
+  HEADERS
+  #include &lt;string&gt;
+
+Postcondition:
+  Returns the string all lowercase */
+
+void lowerCase(string&amp; strToConvert)
+{
+   for(unsigned int i=0;i&lt;strToConvert.length();i++)
+   {
+      strToConvert[i] = tolower(strToConvert[i]);
+   }
+}
+
+/****** function isSentencePunc *****
+Description: Checks to see if a character is a punctuation mark used to denote
+the end of a sentence. (! . ?)
+
+PARAMETERS
+  character: The character being tested
+
+Precondition:
+  character: defined
+
+Postcondition:
+  Returns boolean value of true if the character is ! . or ? */
+
+bool isSentencePunc(char character)
+{
+  switch(character)
+  {
+    case '!':
+    case '.':
+    case '?':
+      return true;
+    default:
+      return false;
+  }
+}
+</pre>
+<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
+<h2>The Explanation</h2>
+You'll notice the logic for the sentenceCase function is very similar to the logic of the <a href="http://www.mcculloughdesigns.com/blog/c-capitalize-word-proper-case/200/">capEachWord (proper case) function</a>.
+
+To understand sentence case, we must first understand a sentence.
+
+So what is a sentence?
+
+In English, a sentence is a series of alphanumeric characters, punctuation marks, and blank spaces followed by a period, exclamation point, or question mark.  Once we have come across one of these three characters, we know the
+current sentence has ended and the next sentence is about to begin.
+
+C++ has a standard function for evaluating if a character is a punctuation mark via ispunct(). However, this function includes every punctuation mark: Colons, commas, hyphens, things that usually do not denote the end of a sentence. For this reason, we have to make our own function.
+<pre class="prettyprint">
+bool isSentencePunc(char character)
+{
+  switch(character)
+  {
+    case '!':
+    case '&amp;':
+    case '?':
+      return true;
+    default:
+      return false;
+  }
+}
+</pre>
+The function takes in a character by value, and returns true if the character is an exclamation point, period, or question mark. The function returns false if otherwise.
+
+The sentenceCase function starts out by <a href="http://www.mcculloughdesigns.com/blog/string-lowercase-uppercase-c/133/">lowercasing the string</a>. We do this so random capital letters within words will be accounted for.
+<pre class="prettyprint">This IS Not sentence Case.</pre>
+<pre class="prettyprint">This iS not  sentence case.</pre>
+However, this brings up a problem: What about proper nouns? The following sentence <em>is</em> sentence case.
+<pre class="prettyprint">My name is Joseph.</pre>
+In order to accommodate for proper nouns, we would have to have a library or database with all the proper nouns known. For simplicities sake, we'll omit that process.
+
+Now on to the sentenceCase function itself.
+
+thisSentenceCapped is a boolean variable set to false by default. As the name implies, this keeps track of whether the current sentence being processed has been capitalized. thisSentenceCapped is set to false by default so that if the first character of a string happens to be a letter, it will be capitalized.
+
+When thisSentenceCapped is false and the current character being processed in the forloop is a letter, the letter is uppercased using the standard character toupper() function.
+
+At that point, thisSentenceCapped is set to true, and the loop moves on to the next character. The loop will not uppercase any letters until thisSentenceCapped is set to false. thisSentenceCapped will not be set to false until a period, exclamation point, or question mark is found (in other words, when isSentencePunct() evaluates to TRUE).
+
+Here is a visualization using the sentence:
+<pre class="prettyprint">&quot;dude, Where&#8217;s my Car? i don&#8217;t Know man.</pre>
+With proper sentence case applied, the sentence should read
+<pre class="prettyprint">&quot;Dude, where's my car? I don't know man.&quot;</pre>
+So here we are, starting off: thisSentenceCapped is set to false.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase1.png" alt="C++ Sentence Case Step 1" />
+
+Now we lowercase all the letters before processing.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase2.png" alt="C++ Sentence Case Step 2" />
+
+We begin to process the first character. Since thisSentenceCapped is false and the current character is a letter, we uppercase the  letter and set thisSentenceCapped to true.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase3.png" alt="C++ Sentence Case Step 3" />
+
+thisSentenceCapped is true, we will move through each character until we come across a sentence punctuation mark (. ? !)
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase4.png" alt="C++ Sentence Case Step 4" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase5.png" alt="C++ Sentence Case Step 5" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase6.png" alt="C++ Sentence Case Step 6" />
+
+Although the comma is a punctuation mark, it is not a sentence punctuation of a period, question mark, or exclamation point, so isSentencePunc still evaluates to false, and thisSentenceCapped is still true.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase7.png" alt="C++ Sentence Case Step 7" />
+
+Blank spaces do not denote the end of a sentence, so thisSentenceCapped is still true
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase8.png" alt="C++ Sentence Case Step 8" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase9.png" alt="C++ Sentence Case Step 9" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase10.png" alt="C++ Sentence Case Step 10" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase11.png" alt="C++ Sentence Case Step 11" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase12.png" alt="C++ Sentence Case Step 12" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase13.png" alt="C++ Sentence Case Step 13" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase14.png" alt="C++ Sentence Case Step 14" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase15.png" alt="C++ Sentence Case Step 15" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase16.png" alt="C++ Sentence Case Step 16" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase17.png" alt="C++ Sentence Case Step 17" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase18.png" alt="C++ Sentence Case Step 18" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase19.png" alt="C++ Sentence Case Step 19" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase20.png" alt="C++ Sentence Case Step 20" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase21.png" alt="C++ Sentence Case Step 21" />
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase22.png" alt="C++ Sentence Case Step 22" />
+
+We come across a question mark, which makes  isSentencePunc evaluate to true. This causes thisSentenceCapped to become false.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase23.png" alt="C++ Sentence Case Step 23" />
+
+Although thisSentenceCapped is false, the function calls for the character to be alphabetical (via isalpha()), so the blankspace is not uppercased and thisSentenceCapped remains false.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase24.png" alt="C++ Sentence Case Step 24" />
+
+Since thisSentenceCapped is false, and the current character is alphabetical, we uppercase the letter and set thisSentenceCapped to true.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase25.png" alt="C++ Sentence Case Step 25" />
+
+After this point, there  will be no visible changes since this is the last sentence being processed in the string. The loop will continue to process  the string, but no changes will occur until the period, in which thisSentenceCapped is set to false and the loop terminates.
+
+<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
+
+This concludes how to manipulate a string to sentence case in C++.
+{% endblock post %}
+

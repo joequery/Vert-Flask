@@ -1,0 +1,67 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+<h2>Are hidden-text penalties a hoax?</h2>
+
+There are more articles about <a href="http://www.seostandards.org/seo-best-practices/hiding-text-with-css-for-seo">why hidden text is bad for SEO</a> than the number of tacos I've consumed over my life-time.
+
+And I freaking love tacos.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/marketing/seo/google-lies/seo.jpg" alt="Your company SEO"  style="float: left; margin-right: 20px;"/>
+
+Anyway, I was redesigning my website, and I thought it would be cute to alter the HTML of a Google search result page to have the top slot say "Your Business!" or something super awesome like that.
+
+As I was adjusting the HTML for my purposes, it finally dawned on me:
+<strong>I'm looking at Google's HTML Source Code</strong>
+
+What better place to look for proper usage of header tags, strong tags, and em tags?
+
+I was browsing through the code all excited. I felt like I had a personal breakthrough. This would serve as a template for best practices.  I scoffed at the fact that I hadn't done it before.
+
+Then I came across something.
+<pre class="prettyprint">&lt;h1&gt;&lt;a id=logo href=&quot;http://www.google.com/webhp?hl=en&quot; title=&quot;Go to Google Home&quot;&gt;Google&lt;img width=167 height=222 src=&quot;/images/srpr/nav_logo13.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;
+</pre>
+<p style="clear: both;">I thought to myself: <b>Hey, isn't that what people do when they're replacing text with an image by moving the text off screen so they can trick search engines?</b></p>
+
+Well....<pre class="prettyprint">#logo img{border:none;position:absolute;left:-0px;top:-41px}</pre>
+
+Google's image logo is positioned over the h1 text.
+
+Remove the image tag and you see a tiny Google link.
+
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/marketing/seo/google-lies/seo-1.jpg" alt="Google hides its text" />
+
+Let's see what Google's own Webmaster's document says about this...
+<blockquote style="width: 500px; margin: 0px auto; display: block;">
+Hiding text or links in your content can cause your site to be perceived as untrustworthy since it presents information to search engines differently than to visitors. Text (such as excessive keywords) can be hidden in several ways, including:
+
+    * Using white text on a white background
+    * Including text behind an image
+    * <b>Using CSS to hide text</b>
+    * Setting the font size to 0
+
+</blockquote>
+
+Hmph.
+
+The trickery doesn't end there.
+<pre class="prettyprint">&lt;h2 class=hd&gt;Search Results&lt;/h2&gt;</pre>
+
+Examining class <b>h</b>i<b>d</b>e reveals
+<pre class="prettyprint">.hd{position:absolute;width:1px;height:1px;top:-1000em;overflow:hidden}</pre>
+
+If you do a browser-search for the phrase "Search Results", the results will be found, but you can't see the text on the screen.
+
+<h2>Nice Double-standard, Google</h2>
+
+This may very well be old news, but I find myself extremely peeved.
+{% endblock post %}
+

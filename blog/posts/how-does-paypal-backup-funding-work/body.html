@@ -1,0 +1,48 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+I have always trusted PayPal when it comes to online transactions. I've never had an issue with account security. However, Paypal has managed to greatly irritate me today with semantics that obviously don't match up to what's written.
+
+<h2>The Issue</h2>
+I have two bank accounts. My primary checking account and a school account with a MasterCard that has about $100 on it. I bought some photos from <a href="http://www.istockphoto.com/">iStockPhoto</a> for $50 bucks via PayPal. My primary account didn't have much money on it, about $25 or so. However, since I had both bank accounts linked to my account with my MasterCard as the "Backup Funding Source", PayPal made it seem like this wouldn't be a big deal.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/opinion/paypal-sleight-of-hand/order.jpg" alt="PayPal Order" />
+The point of interest is the red underline:
+<cite>"PayPal will use MasterCard XXXX-XXXX-XXXX-XXXX to fund this transaction if your bank does not have enough funds."</cite>
+
+So there are two ways to interpret this:
+<ol>
+<li>PayPal will see if there is enough money in the primary bank account before the transaction is made, and if there is not enough, it will go to the Backup Funding Source and have the entire transaction take place on that source </li>
+<li>PayPal will take what money it can from the primary bank account and fund the difference with the backup source</li>
+</ol>
+
+Those are reasonable interpretations that would make it seem like it would be safe to make the transaction under my circumstances.
+
+But How does it <strong>really</strong> work?
+
+<h2>The Semantics</h2>
+
+According to an administrator at the <a href="https://www.paypal-community.com/t5/How-to-use-PayPal/Backup-funding-source-to-pay-balance-not-a-backup-funding-source/m-p/26663#M9147">PayPal forums</a>,
+"The back up funding source comes into play if the bank rejects the transaction. That may be for insufficient funds, closed account or some type of processing error. If it is rejected for insufficient funds, PayPal will attempt the transaction once more.
+
+If the transaction is rejected by the bank, then PayPal will charge the backup funding source for the transaction."
+
+So the Backup Funding Source will <em>only</em> be used when rejected. The way they justify the wording is by stating that a transaction <em>can</em> be rejected due to insufficient funds. However, if you bank with one of the banks in the 99% percentile that allows you to go into overdraft, then the transaction will not be rejected, and your Backup Funding Source proves worthless.
+
+Not only that, but PayPal will continue to probe your bank account to see if you have "sufficient funds." What does that mean? More overdraft fees. In fact, overdraft fees of <a href="https://www.paypal-community.com/t5/How-to-use-PayPal/Backup-funding-source-to-pay-balance-not-a-backup-funding-source/m-p/26663#M9147">up to $245 have been accumulated</a> due to PayPal probing the bank account by "attempting the transaction".
+
+The PayPal forums are littered with issues similar to mine, and even some ebay sellers are trying to <a href="http://reviews.ebay.com/Using-a-Credit-Card-as-PayPal-Backup-Funds-BE-CAREFUL_W0QQugidZ10000000003862286">warn customers of PayPal's ambiguity</a>.
+
+<h2>The Bottom Line</h2>
+Ignore PayPal's wording. They are unable to view how much money you have in your primary bank account. Thus they will always charge the primary bank account, even if the transaction exceeds the funds available. 
+
+<strong>Have you had any issues with PayPal before? If so, please leave a comment. </strong>
+{% endblock post %}
+

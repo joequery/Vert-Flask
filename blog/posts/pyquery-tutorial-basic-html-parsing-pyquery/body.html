@@ -1,0 +1,138 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+As Python is my programming language of choice when it comes to getting things done quickly, I need a dead simple XML parser that gets me the data I want and gets the hell out of the way. 
+
+<h2>Enter PyQuery</h2>
+<a href="http://pypi.python.org/pypi/pyquery">PyQuery</a>, as you may have guessed, is a Python port of the extremely popular <a href="http://jquery.com">jQuery</a> JavaScript library. Anyone even remotely experienced with jQuery know how easy it is to select any element you wish from the DOM. Once you move away from JavaScript, many XML parsers become extremely verbose. PyQuery helps us keeps things simple and extract the data we want without wasting any time. 
+
+<h2>Using PyQuery for Basic Parsing</h2>
+PyQuery includes many of the jQuery DOM <a href="http://packages.python.org/pyquery/manipulating.html">manipulation methods</a>. For this tutorial, we'll just deal with retrieving data from HTML. Once you can read the HTML to a string via PyQuery, you can instantly apply your knowledge of jQuery and append(), remove(), or whatever you need. 
+
+<h2>The Setup</h2>
+<strong>This guide uses Python 2.6.</strong> If you don't have <a href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>, grab it now. We'll use it in a minute to install the PyQuery package. 
+Now create a project directory for this tutorial. I'll call it pyquery_tutorial
+
+<pre class="prettyprint">
+$ mkdir pyquery_tutorial
+$ cd pyquery_tutorial
+</pre>
+
+Now create the virtual environment with your Python executable version of choice (I have only tested this for 2.6 and 2.7)
+
+<pre class="prettyprint">
+$ virtualenv env --python=python2.6
+Running virtualenv with interpreter /usr/bin/python2.6
+New python executable in env/bin/python2.6
+Also creating executable in env/bin/python
+Installing distribute.................................................................................................................................................................................done.
+</pre>
+
+Now activate the virtualenv. (You should see (env) beside your prompt if done correctly)
+<pre class="prettyprint">$ . env/bin/activate</pre>
+
+Now we install the PyQuery package.
+<pre class="prettyprint">(env) $ pip install pyquery
+...
+Successfully installed lxml pyquery
+Cleaning up...
+</pre>
+
+Woohoo, PyQuery is now ready for use!
+
+<h2>Using PyQuery</h2>
+Using PyQuery for parsing will feel extremely similar to using jQuery. One of the only differences is initializing the jQuery object. 
+
+First, create this html file called "index.html" in the project directory. 
+
+<i>index.html</i>
+<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;PyQuery Test!&lt;/title&gt;
+  &lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;PyQuery is AWESOME!&lt;/h1&gt;
+  &lt;p&gt;&lt;a href=&quot;http://pypi.python.org/pypi/pyquery&quot;&gt;PyQuery&lt;/a&gt; is a Python port of the famous &lt;a href=&quot;http://jquery.com&quot;&gt;jQuery&lt;/a&gt; JavaScript library.
+  &lt;h2&gt;What is it Good For?&lt;/h2&gt;
+  &lt;ul id=&quot;pitch&quot;&gt;
+    &lt;li&gt;It makes parsing files a &lt;strong&gt;SNAP&lt;/strong&gt;!&lt;/li&gt;
+    &lt;li&gt;DOM Manipulation is EASY!&lt;/li&gt;
+    &lt;li&gt;You &lt;em&gt;never&lt;/em&gt; have to worry about confusing syntax&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+Now fire up Python. (Make sure your virtualenv is still activated!)
+<pre class="prettyprint">$ python
+Python 2.6.6 (r266:84292, Mar 25 2011, 19:36:32) 
+[GCC 4.5.2] on linux2
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; 
+</pre>
+
+First we import PyQuery from the pyquery package. 
+<pre class="prettyprint">
+&gt;&gt;&gt; from pyquery import PyQuery
+</pre>
+
+Now let's read in our <i>index.html</i> file and store it to a string.
+<pre class="prettyprint">
+&gt;&gt;&gt; html = open(&quot;index.html&quot;, 'r').read()
+</pre>
+
+Now we instantiate a PyQuery object, passing in our html string. To keep things looking familiar, let the instantiating object be named jQuery!
+
+<pre class="prettyprint">
+&gt;&gt;&gt; jQuery = PyQuery(html)
+</pre>
+
+Now we can traverse this document using the selectors we've grown to love through CSS and jQuery. It might look strange that we're assigning jQuery to something, but at this point, we use this jQuery variable JUST like we use $ in our JavaScript. For example, let's get the title tag.
+
+<pre class="prettyprint">
+&gt;&gt;&gt; jQuery(&quot;title&quot;).text()
+'PyQuery Test!'
+</pre>
+
+jQuery developers that have created their own plugin may already be comfortable using jQuery in place of $ in their JS. Let's mess around with PyQuery some more.
+
+<pre class="prettyprint">
+&gt;&gt;&gt; jQuery(&quot;li&quot;).eq(1).text()
+'DOM Manipulation is EASY!'
+&gt;&gt;&gt; jQuery(&quot;a&quot;) # The 'jQuery Object' we're used to is now a list
+[&lt;a&gt;, &lt;a&gt;]
+&gt;&gt;&gt; for x in jQuery(&quot;a&quot;): # We can do for-loops as normal in Python
+... print jQuery(x).text()
+...
+PyQuery
+jQuery
+</pre>
+
+Get the HTML of the first li element.
+<pre class="prettyprint">
+&gt;&gt;&gt; jQuery(&quot;ul&quot;).children().eq(0).html()
+u'It makes parsing files a &lt;strong&gt;SNAP&lt;/strong&gt;!'
+</pre>
+
+<h3>Remote Files</h3>
+Wanna parse a remote file? No problem!
+<pre class="prettyprint">
+&gt;&gt;&gt; jQuery = PyQuery(url=&quot;http://www.vertstudios.com/&quot;)
+&gt;&gt;&gt; jQuery(&quot;title&quot;).text()
+&quot;Web Design that Doesn't Suck | Vert Studios | Tyler, Texas&quot;
+</pre>
+
+<h2>Conclusion</h2>
+Now that we've given you a nice kickstart of PyQuery, your knowledge of jQuery coupled with the <a href="http://packages.python.org/pyquery/api.html">PyQuery API</a> provides sufficient power to parse XML/HTML documents.
+{% endblock post %}
+

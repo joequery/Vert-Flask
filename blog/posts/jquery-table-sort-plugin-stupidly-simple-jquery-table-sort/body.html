@@ -1,0 +1,19 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+I needed a simple jQuery plugin to let me sort table columns. Unfortunately, I couldn't find one that captured the simplicity I was looking for. I don't need 1000+ lines of code for a simple table sort!
+
+<h2>The Stupid Table Sort!</h2>
+Consequently, I embarked on a journey to create a stupidly simple jQuery table sort plugin. Remaining true to that, I've named the plugin the <a href="http://joequery.github.com/Stupid-Table-Plugin/">Stupid jQuery Table Sort</a>. Flattering name, I know...this is why I'm not a marketer. 
+
+<h2>Check out the demo!</h2>
+<a href="http://joequery.github.com/Stupid-Table-Plugin/">View the demo</a>, and let me know what you think!
+{% endblock post %}
+

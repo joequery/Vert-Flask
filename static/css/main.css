@@ -958,10 +958,11 @@ text-align: left;
     }
 
 #blog pre{
-  background-color: #FFFFFF;
+  background-color: #EDEDED;
   border: 0px;
   text-shadow: 0px 0px 0px;
   font-size: 12px;
+  margin-top: 10px;
 }
 
 #blogSidebar{

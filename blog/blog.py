@@ -32,7 +32,7 @@ def blog_post(post):
     metaData = imp.load_source('data', metaPath)
 
     # Get the timestamp into a time object so we can display it however we want
-    postTime = time.strptime(metaData.time, "%Y-%m-%d %a %I:%M %p")
+    postTime = time.strptime(metaData.time, "%Y-%m-%d %a %H:%M %p")
     post = {
       'title' : metaData.title,
       'description' : metaData.description,

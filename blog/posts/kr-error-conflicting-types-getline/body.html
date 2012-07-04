@@ -1,0 +1,33 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+So you're reading through K&R's <a href="http://www.amazon.com/C-Programming-Language-2nd-Edition/dp/0131103628/ref=sr_1_1?ie=UTF8&qid=1331341099&sr=8-1">The C Programming Language</a>, and you're on page 29 or so, section 1.9 entitled <b>Character Arrays</b>.
+
+The beginning of the sample program is as follows:
+
+[c]
+#include &lt;stdio.h&gt;
+#define MAXLINE 1000   /* maximum input line size */
+
+int getline(char line[], int maxline);
+void copy(char to[], char from[]);
+
+/* print longest input line */
+main()
+...
+[/c]
+
+And, to your confusion, you receive the following error: <b>Error: conflicting types for 'getline' </b>
+
+<h2>The Solution!</h2>
+
+It turns out getline is included in stdio.h, similar to printf! You can complete the exercise by renaming the getline function to something different like "readline" or "get_the_line".
+{% endblock post %}
+

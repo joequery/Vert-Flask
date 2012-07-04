@@ -1,0 +1,201 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+The jQuery sticky scroll effect is a trending effect that has great user experience capabilities. One of the most cited examples of the sticky scroller effect is found at <a href="http://www.blueskyresumes.com/about-us/">Blue Sky Resumes</a>. 
+
+While the effect at Blue Sky is pretty neat, we see that it doesn't leave many options. 90% of sticky scroller plugins only give the developer the ability to end the scrolling object at a certain point. I felt that there was a large opportunity gap that we need to fill.
+
+<h2>STOP! Before you read any further</h2>
+This plugin is intended to solve a very specific problem: Triggering callbacks at certain intervals of scrolling with a fixed object. If you would like to simply switch an item from position: fixed to position:absolute/static based on how far you've scrolled, or any other simple scroll callbacks, you need to check out <a href="http://imakewebthings.github.com/jquery-waypoints/">jQuery Waypoints</a>. 
+
+<h2>Improving the Sticky Scroller</h2>
+
+So how do we make the sticky scroller more versatile? 
+<ol>
+<li>Allow the object to scroll a specified margin from the top of the browser window</li>
+<li>Allow the object to begin the scroll effect after the users scrolls a certain amount</li>
+<li>Take the starting point of the effect and the ending point of the effect and create a grid of indexes between them</li>
+<li>Use these indexes to trigger callbacks that respond to indexes of jQuery ojects</li>
+</ol>
+
+<h2>Demo</h2>
+View our <a href="http://vertstudios.com/blog/demo/stickyscroller/demo.php">simple demo</a> which showcases the capabilities sticky scrollers have when combined with the previously stated ideas. 
+
+In the demo, you'll see the skeletal framework of what could potentially be an extremely engaging experience when fused with some creativity and skillful design. 
+
+<h2>Download</h2>
+<a href="http://www.vertstudios.com/blog/demo/stickyscroller/StickyScroller.zip">Download the Zip File</a>
+(Currently revamping the code, GitHub link will be posted back here soon). 
+
+<h2>CSS</h2>
+The only major requirement for CSS is that the scrolling object be absolutely positioned without an absolutely/relatively positioned parent.
+
+<h2>Constructor</h2>
+<h3>StickyScroller(obj, options)</h3>
+obj: The jQuery selector for the object that will be scrolling. Note that only ONE object should be selected.
+<b>Options: An object containing one or more of the following object members</b>
+start: At what vertical position of the scrollbar the object will actually begin scrolling (in pixels)
+end: At what vertical position of the scrollbar the object will stop scrolling (in pixels)
+margin: How many pixels below the browser window the object will be fixed while scrolling (in pixels)
+interval: The length of each index (in pixels)
+range: Length of a range of pixels starting at the top of interval. Convenient for callbacks.
+
+This diagram of the demo may help you understand the more abstract options. 
+<img src="http://www.vertstudios.com/blog/demo/stickyscroller/diagram.jpg" alt="jQuery Sticky Scroller" />
+
+Note: "limbo" is the state the scroller is in when it's outside of the range but still within the interval associated with the range. This property isn't set by the developer. It's the calculated difference between the interval and the range.
+
+To instantiate a StickyScroller, use the <i>new</i> operator. 
+The call to the StickyScroller class in the demo is:
+<pre class="prettyprint">
+        var scroller = new StickyScroller(&quot;#scrollbox&quot;,
+        {
+            start: 300,
+            end: 1800,
+            interval: 300,
+            range: 100,
+            margin: 100
+        });
+</pre>
+
+So what you observed was after scrolling down 300px, the sticky scroller effect began by keeping the div "scrollbox" 100px below the top of the browser window. After the initial 300px to initiate the scroller, every 300px scrolled initiates a callback. After scrolling 1800px total, the effect stops and the scrolling object stays put. 
+
+<h2>Public Methods</h2>
+Public methods are functions that can be called by instantiations of the StickyScroller class using the dot operator. For the following public function documentations, consider the instantiation of the <a href="<a href="http://vertstudios.com/blog/demo/stickyscroller/demo.php">demo</a>:
+<pre class="prettyprint">
+        var scroller = new StickyScroller(&quot;#scrollbox&quot;,
+        {
+            start: 300,
+            end: 1800,
+            interval: 300,
+            range: 100,
+            margin: 100
+        });
+</pre>
+
+<h3>Accessor Methods</h3>
+Each option member has an accessor method that returns the property value to the calling environment. 
+<pre class="prettyprint">
+scroller.getStart(); //300
+scroller.getEnd(); //1800
+scroller.getInterval();//300
+scroller.getRange(); //100
+scroller.getMargin();//100
+</pre>
+
+Additionally, you can get the current index and previous index
+<pre class="prettyprint">
+scroller.getIndex();
+scroller.getOldIndex();
+</pre>
+
+<h3>Callbacks</h3>
+The callback functions for the StickyScroller work similar to all the callback functions of jQuery you've grown to love, such as <a href="http://api.jquery.com/click/">.click()</a>. However, instead of passing an anonymous function to the callback, you have the choice to pass current index to the callbacks as well. (Alternatively you could just use scroller.getIndex() in the function body). These callbacks, combined with <a href="http://api.jquery.com/eq/">jQuery's .eq() method</a> (as seen in the demo), can pack quite the UX punch. The callback functions available at this time are:
+<ul>
+<li>onScroll()</li>
+<li>onNewIndex()</li>
+<li>onLimbo()</li>
+</ul>
+
+<h4>onScroll(func)</h4>
+<b>Description</b>: Executes whenever the user scrolls, regardless of position on the screen. 
+<b>Example</b>:
+<pre class="prettyprint">
+//Will cause an alert every single time the user scrolls. 
+//Please don't do this in a real project!
+scroller.onScroll(function()
+{
+     alert(&quot;This is rather spammy!&quot;);
+});
+</pre>
+
+<h4>onNewIndex(func)</h4>
+<b>Description</b>: Executes whenever the user scrolls to a new index. This should be used over onScroll as much as possible.
+<b>Example</b>:
+<pre class="prettyprint">
+//Add a class to the div with a class &quot;box&quot; that corresponds to the new index
+scroller.onNewIndex(function(index)
+{
+     $(&quot;div.box&quot;).eq(index).addClass(&quot;active&quot;);
+});
+</pre>
+
+<h4>onLimbo(func)</h4>
+<b>Description</b>: Executes whenever the user scrolls beyond the range of the current index, but is not yet to the next index. This callback is useful for removing/adding classes to reset a group of elements back to a normal state while the user scrolls to the next index.
+<b>Example</b>:
+<pre class="prettyprint">
+//Removes the &quot;active&quot; class from each div with the class of &quot;box&quot;
+scroller.onLimbo(function()
+{
+     $(&quot;div.box&quot;).removeClass(&quot;active&quot;);
+});
+</pre>
+
+<h3>inRange()</h3>
+<b>Description</b>: Determines if the scroller is in interval range. For more explanation on what the range is, refer to the diagram above. 
+<b>Example</b>:
+<pre class="prettyprint">
+//Every scroll, see if the scroller is in the range. 
+scroller.onScroll(function(index)
+{
+     //If in range, add the blue class. If not, remove the blue class.
+     if(scroller.inRange())
+     {
+          $(&quot;div.box&quot;).eq(index).addClass(&quot;blue&quot;);
+     }
+     else
+     {
+          $(&quot;div.box&quot;).eq(index).removeClass(&quot;blue&quot;);
+     }
+});
+</pre>
+
+<h3>.distanceFrom(index)</h3>
+<b>Description</b>: Returns the shortest distance in pixels between the scroller and an index. 
+<b>Example</b>:
+<pre class="prettyprint">
+//Get the shortest distance in pixels from index 2. 
+scroller.distanceFrom(2);
+</pre>
+
+<h3>.closestIndex()</h3>
+<b>Description</b>: Returns the closest index that is not the current index
+<b>Example</b>:
+<pre class="prettyprint">
+//Hide the div with class box associated with the closest index
+$(&quot;div.box&quot;).eq(scroller.closestIndex()).hide();
+</pre>
+
+<h3>.firstIndex()</h3>
+<b>Description</b>: Returns the first index (0). This method exists simply for readability purposes. 
+<b>Example</b>:
+<pre class="prettyprint">
+//Show the first div with class &quot;box&quot;
+$(&quot;div.box&quot;).eq(scroller.firstIndex()).show();
+</pre>
+
+<h3>.lastIndex()</h3>
+<b>Description</b>: Returns the last index. 
+<b>Example</b>:
+<pre class="prettyprint">
+//Show the last div with class &quot;box&quot;
+$(&quot;div.box&quot;).eq(scroller.lastIndex()).show();
+</pre>
+
+<h2>Download</h2>
+<a href="https://github.com/joequery/jQuery-Position-Fixed-Sticky-Scroller">Download the source on GitHub</a>
+
+<h2>Notes</h2>
+The purpose of this plugin, and all my plugins, is to serve as a canvas for your own creativity. Please let me know if there is some limitation in the code that prevents you from realizing your vision. 
+
+<h3>Jan 8, 2011: Firefox</h3>
+This effect sucks with Firefox. There's a significant delay in position calculation when switching from position: absolute to position: fixed. Additionally, altering the top value to be $(window).scrollTop() + specified margin yields a really choppy animation in Firefox. If anyone can provide a workaround, that'd be great.
+{% endblock post %}
+

@@ -1,0 +1,32 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+This is my first week messing around with jQuery, and I can tell it is going to be an extremely powerful tool.
+
+A common use for JavaScript/jQuery is the creation of slideshows, so I decided to create my own to see what I've learned so far.
+
+This slideshow is modeled off the <a href="http://www.alistapart.com/articles/sprites">CSS Sprite</a> Technique.
+
+<iframe src ="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-sprite-slideshow/slideshow.php" width="600" height="200" scrolling="no">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+So you can better understand how the sprite technique comes into play, here is the slideshow again without overflow: hidden on the outer div.
+
+<iframe src ="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-sprite-slideshow/slideshow1.php" width="600" height="210" scrolling="no">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+The border that you see in the transition period is the outer div that contains the slideshow, and defines the  area that the viewer actually sees. The divs are simply placed right next to each other, and then slid into the "frame" that the user sees one at a time.
+
+<h2>EDIT:</h2>
+My friend Jeremy over at Jc-Designs.net has come up with a much more elegant implementation of this sprite slideshow. Please view <a rel="nofollow" href="http://jc-designs.net/blog/2010/05/jquery-sprite-slideshow-because-i-wanted-to-see-if-i-could-do-it-with-less/">his post on the jQuery Sprite Slideshow.</a>
+{% endblock post %}
+

@@ -1,0 +1,209 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Greetings Canadian students. You should do your own homework!
+
+Just kidding...eh...heh. 
+
+This Post Will Show You How To Capitalize Each Word In C++, Similar To The Way I Am Typing Right Now. This Is Also Known As Proper Case. First I Will Show You The Code, And Then Offer An Explanation.
+<h2>The Code</h2>
+<pre class="prettyprint">
+
+//Joseph McCullough
+//Program: capEachWord.cpp
+//Description: Takes a string and capitalizes each word of the string.
+//Visit www.mcculloughdesigns.com/blog for more C++ Goods!
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+void lowerCase(string&amp;);
+void capEachWord(string&amp;);
+
+const string SENTINEL = &quot;0&quot;;//When entered as strToConvert,
+              //terminates program.
+
+int main()
+{
+  string strToConvert;  //The string that will be converted.
+
+  cout &lt;&lt; &quot;***********************************&quot; &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;CapEachWord.exe&quot;                     &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;Capitalizes every word in a string.&quot; &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;Provided By McCullough Designs&quot;      &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;***********************************&quot;;
+
+  //Read in strToConvert
+  cout &lt;&lt; &quot;\n\nEnter a String or enter 0 to exit: &quot;;
+  getline(cin, strToConvert);
+
+  while (strToConvert != SENTINEL)
+  {
+    capEachWord(strToConvert);
+    cout &lt;&lt; &quot;\nNew String: &quot; &lt;&lt; strToConvert;
+
+    //Read in strToConvert
+    cout &lt;&lt; &quot;\n\nEnter a String or enter 0 to exit: &quot;;
+    getline(cin, strToConvert);
+
+  }
+  return 0;
+}
+
+
+/****** function capEachWord *****
+Description: converts the first letter of a word to a capital letter
+
+PARAMETERS
+  strToConvert: the string being manipulated
+
+Precondition:
+  strToConvert: undefined
+
+  HEADERS
+  #include &lt;string&gt;
+
+Postcondition:
+  Returns the string with the first letter of every word capitalized.  */
+
+void capEachWord(string&amp; strToConvert)
+{
+  //Identifies if the current word has been capitalized.
+  //Set to false by default.
+  bool thisWordCapped = false;
+  //Turn all letters lowercase
+  lowerCase(strToConvert);
+
+  for (unsigned int i=0; i&lt;strToConvert.length();i++)
+  {
+     //At a space or punctuation mark, the current word has ended.
+     //We are now on a new word that has not yet been capitalized,
+     //so thisWordCapped is set to false.
+    if ((ispunct(strToConvert[i])) || (isspace(strToConvert[i])))
+      thisWordCapped = false;
+
+     //If current word has not been capitalized AND the current character
+     //is a letter, uppercase the letter. The word is now capitalized, so
+     //thisWordCapped is set to true, and will not be set to false until
+     //a space or punctuation is found.
+    if ((thisWordCapped==false) &amp;&amp; (isalpha(strToConvert[i])))
+    {
+      strToConvert[i]=toupper(strToConvert[i]);
+      thisWordCapped = true;
+    }
+
+  }
+
+}
+/****** function lowerCase *****
+Description: makes all the characters of a string lowercase
+
+PARAMETERS
+  strToConvert: the string being manipulated
+
+Precondition:
+  strToConvert: undefined
+
+  HEADERS
+  #include &lt;string&gt;
+
+Postcondition:
+  Returns the string all lowercase */
+
+void lowerCase(string&amp; strToConvert)
+{
+   for(unsigned int i=0;i&lt;strToConvert.length();i++)
+   {
+      strToConvert[i] = tolower(strToConvert[i]);
+   }
+}
+
+
+</pre>
+
+<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/CapEachWord.cpp">Download the Source Code</a>
+
+<h2>The Explanation</h2>
+Here is a visual representation to help you understand the logic of the code.
+
+We create a local boolean value called thisWordCapped. Like the name implies, the value is set to true when the current word of the string being processed has been capitalized. It is set to false by default, because we must account for the possibility of a letter being the first character of the string. If thisWordCapped was defaulted to true and the first character of a string was a letter, the letter would not be uppercased.
+
+We define a word as a series of characters following a blank space or punctuation mark.
+
+If thisWordCapped is true, no code in the loop body will execute,the counter will increment, moving us on to the next character. If thisWordCapped is false, that means the current word we are working on has not yet been capitalized. If thisWordCapped is false and the current character is a letter, we uppercase the letter and set thisWordCapped to true because we have just capitalized the word. thisWordCapped will remain true and the loop will continue to not execute anything and only increment <strong>UNTIL</strong> we reach a space or punctuation.
+
+Here is the logic laid out for you.
+
+Here is our example. The string "hi. You-are nice." We have 4 words here: hi, you, are, nice. So the string should read when we're finished "Hi. You-Are Nice."
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword1.jpg" alt="step1" />
+
+We start by lowercasing all characters using the lowerCase function.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword2.jpg" alt="step2" />
+
+Since thisWordCapped was false and the current character is a letter, we uppercase the  letter and set thisWordCapped to true.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword4.jpg" alt="step4" />
+
+thisWordCapped is true, so we do nothing and move on to the next character.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword5.jpg" alt="step5" />
+
+The current character is a punctuation mark, so thisWordCapped is set to false again.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword6.jpg" alt="step6" />
+
+The current character is a blank space, so thisWordCapped is set to false again.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword7.jpg" alt="step7" />
+
+Since thisWordCapped was false and the current character is a letter, we uppercase the  letter and set thisWordCapped to true.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword8.jpg" alt="step8" />
+
+thisWordCapped is true, so we do nothing and move on to the next character.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword9.jpg" alt="step9" />
+
+thisWordCapped is true, so we do nothing and move on to the next character.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword10.jpg" alt="step10" />
+
+The current character is a punctuation mark, so thisWordCapped is set to false again.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword11.jpg" alt="step11" />
+
+Since thisWordCapped was false and the current character is a letter, we uppercase the  letter and set thisWordCapped to true.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword12.jpg" alt="step12" />
+
+thisWordCapped is true, so we do nothing and move on to the next character.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword13.jpg" alt="step13" />
+
+thisWordCapped is true, so we do nothing and move on to the next character.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword14.jpg" alt="step14" />
+
+The current character is a blank space, so thisWordCapped is set to false again.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword15.jpg" alt="step15" />
+
+Since thisWordCapped was false and the current character is a letter, we uppercase the  letter and set thisWordCapped to true.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword16.jpg" alt="step16" />
+
+thisWordCapped is true, so we do nothing and move on to the next character.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword17.jpg" alt="step17" />
+
+thisWordCapped is true, so we do nothing and move on to the next character.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword18.jpg" alt="step18" />
+
+thisWordCapped is true, so we do nothing and move on to the next character.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword19.jpg" alt="step19" />
+
+The current character is a punctuation mark, so thisWordCapped is set to false again.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword20.jpg" alt="step20" />
+
+We've reached the end of the string, and this is the final result.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/capeachword21.jpg" alt="step21" />
+
+I hope the visual put things in perspective. If you are looking for how to use sentence case in C++, <a href="http://www.mcculloughdesigns.com/blog/c-sentence-case-capitalize-word/345/">visit this post</a>.
+
+<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/CapEachWord.cpp">Download the Source Code</a>
+{% endblock post %}
+

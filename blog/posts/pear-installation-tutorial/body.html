@@ -1,0 +1,71 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Installing PHP PEAR packages is pretty simple, but you need to make sure you have&#160;<a href="http://www.mcculloughdesigns.com/blog/php-apache-installation-tutorial/112/">PHP and Apache correctly installed</a> before you get started.
+<h2>Installing PEAR</h2>
+If you've correctly set your path in the windows system properties as described in my&#160;<a href="http://www.mcculloughdesigns.com/blog/php-apache-installation-tutorial/112/">PHP installation tutorial</a>, then installing PEAR will be extremely simple.
+
+Step 1)Open up the run window by holding the windows key and pressing R. Type in "cmd" and press enter to bring up the command prompt.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/step1a.jpg" alt="Bring up the run window" />
+
+Alternatively, you can open the command prompt in the accessories folder of the start menu.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/step1b.jpg" alt="Bring up the command prompt" />
+
+Step 2)Once the command prompt is open, change the current directory to the php directory. If you followed my&#160;<a href="http://www.mcculloughdesigns.com/blog/php-apache-installation-tutorial/112/">php installation tutorial</a>, your php folder is located at C:\webserver\php. So to change to the directory in the command prompt, you would type:
+<pre class="prettyprint">cd C:\webserver\php</pre>
+(cd stands for Change Directory in the command prompt. )
+Once you press enter, you should see that the directory has changed in my case from C:&#92;Users&#92;Joseph to C:&#92;webserver&#92;php.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/step2.jpg" alt="Change the directory" />
+
+Step 3)Now that you are in the php directory, type in
+<pre class="prettyprint">go-pear.bat</pre>
+This loads the pear installation batch file that came with PHP. You will be prompted with the question:
+"Are you installing a system-wide PEAR or a local copy?" You can type in either system or local as your response. I chose system. Press Enter.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/step3.jpg" alt="Enter go-pear.bat" />
+
+Step 4)A wall of text will hit your screen. PEAR is basically allowing you to change installation directories if you wish. If you want to keep everything in the default installation directories (which I recommend), then press Enter. PEAR will begin to install, and you will see a lot of text, until you come across this message:
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/pearwarning.jpg" alt="Pear Warning" />
+
+Type in Y and press enter. When prompted, press enter again. You will see
+<pre class="prettyprint">The 'pear' command is now at your service at c:&amp;#92;webserver&amp;#92;php&amp;#92;pear.bat</pre>
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/pearready.jpg" alt="Pear is now ready" />
+
+Step 5)You are also told a registry file named PEAR_ENV.reg has been created in the php directory.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/pearregistry.jpg" alt="Pear Registry Configuration" />
+
+Open up your php directory (C:&#92;webserver&#92;php) and look for the PEAR_ENV.reg file. When you locate it, double click it and grant it permission.
+
+Step 6)Installing PEAR Packages:
+Now that you have PEAR installed, you can start installing some packages. A list of the most useful and most downloaded PEAR Packages can be found at the&#160;<a href="http://pear.php.net/package-stats.php">PEAR Projects official website</a>. For this example, let's install HTML_Template_IT, which is a way to use integrated templates with PHP.
+
+Step 7)If you have closed the command prompt, open it up again and make sure you are in the C:&#92;webserver&#92;php directory. (Refer to step 2 if you can't remember how to switch directories)
+
+Step 8)Now simply type in
+<pre class="prettyprint">pear install HTML_Template_IT</pre> into the command prompt, press enter, and it will install!
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/installhtml.jpg" alt="Installing with Pear" />
+
+Step 9)If you want to uninstall a PEAR Package, you follow the same procedure but type "uninstall" instead of install. So to uninstall HTML_Template_IT, you would go to the command prompt and type
+<pre class="prettyprint">pear uninstall HTML_Template_IT</pre>
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/uninstallhtml.jpg" alt="Uninstalling with Pear" />
+
+That concludes the installation of Pear.
+
+<h2>Warning: require_once(Structures/Graph/Node.php)</h2>
+
+If you've come across this error while installing PEAR, Max has left us <a href="http://www.vertstudios.com/blog/pear-installation-tutorial/comment-page-1/#comment-2229">a potential solution</a> in the comments. Let us know if it works!
+{% endblock post %}
+

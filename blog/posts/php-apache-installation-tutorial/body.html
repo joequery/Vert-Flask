@@ -1,0 +1,172 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+I have lost many hours of sleep because of not being able to set up PHP and Apache. I have missed homework deadlines, fallen asleep in class, accidentally eaten an onion, and much worse. Here is my attempt to help you guys sleep at night with a very quick and easy PHP and Apache installation guide. (This is for <strong>Windows ONLY</strong>. I don't know anything about linux or mac, I'm sorry. I'm using vista 32 for this tutorial)
+
+To make sure this works, I've uninstalled my webserver, and I'll be installing it right along side you.
+
+<h3>UPDATE:</h3>
+Although this installation is for Apache 2.2.14 and PHP 5.3.1, I've personally confirmed this exact installation guide works for Apache 2.2.17 and PHP 5.3.3.
+
+<h3>UPDATE: Windows 7 Users</h3>
+I've verified that this setup works for Windows 7 Ultimate 64 Bit. 
+
+<h3>General Rule of Thumb</h3>
+If you have a choice between installing everything manually or using a packaged installer to do it all for you,
+<strong>ALWAYS ALWAYS INSTALL IT MANUALLY!</strong>
+So far, the packaged installers are always missing files, and the configurations are completely screwed up. Although the task of manual installation with zip files seems extremely daunting, it's actually MUCH easier to work with. And besides, you've got someone to walk you through the process :)
+
+Also, take note of which direction the slashes are facing when I tell you what to type in. That is also extremely important.
+<h3>The Order of Business</h3>
+Apache
+PHP
+
+<h2>Installing Apache Webserver</h2>
+In this case, we get to use an MSI installer. Setting up Apache and MySQL are the easy parts. It's setting up PHP that made me lose all that precious sleep.
+
+<strong>Step 1)</strong>Make a folder called "webserver" on your C:&#92; drive.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/step1.jpg" alt="Make a folder called webserver on your C:&#92; drive" />
+
+<strong>Step 2)</strong>Visit <a href="http://httpd.apache.org/download.cgi">The Apache Download Page</a>. The version I will be installing in this tutorial is 2.2.14. Scroll down until you see
+"Win32 Binary including OpenSSL 0.9.8k (MSI Installer)" and then click the download link right beside it.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/step2.jpg" alt="Visit apache.org and download the MSI installer and run it" />
+
+<strong>Step 3)</strong>After the installation file has finished downloading, run it. Accept all the terms and whatnot, but stop when you get to the server information.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/step3.jpg" alt="Accept all terms and conditions" />
+
+<strong>Step 4)</strong>For both the Network Domain and Server Name, type in localhost. For the email just put your email. I also have "for all users , on Port 80, as a service" selected. Click next.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/step4.jpg" alt="Type in localhost in network domain and server name" />
+
+<strong>Step 5)</strong>Select Custom Install and click next.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/step5.jpg" alt="Select custom install" />
+
+<strong>Step 6)</strong>You'll notice a red X by "Build Headers and Libraries". Click the dropdown menu by the X and select "This feature will be installed on local hard drive"
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/step6.jpg" alt="Enable build headers and libraries" />
+
+<strong>Step 7)</strong>Click on Apache HTTP Server 2.2.14 on top and make sure it's highlighted. This is to make sure when we specify our installation location in the next step, we aren't just specifying a component of the webserver; we want to move the WHOLE thing.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/step7.jpg" alt="Select Apache HTTP Server 2.2.14" />
+
+<strong>Step 8 )</strong>Click on change to bring up the window to change the installation path.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/step8.jpg" alt="Click on change to bring up installation path window" />
+
+<strong>Step 9)</strong>In the folder name text box, type in C:&#92;webserver, and click Ok. Then click next and begin the installation.
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/step9.jpg" alt="Change the installation path to C:&#92;webserver and install" />
+
+<strong>Step 10)</strong>After the installation has completed, go into a browser and type in localhost as the URL. If it the installation worked...well, Apache will tell you. :)
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/step10.jpg" alt="Type localhost into your browser and see if it worked" />
+
+That wasn't so bad! Now on to the sleep depriving monster
+<h2>PHP</h2>
+These steps will help you install PHP onto your webserver. We will be using manual installation for this.
+
+<strong>Step 1)</strong>Visit <a href="http://windows.php.net/download/">The PHP Downloads Page</a>. The version of PHP I'll be installing is PHP 5.3 (5.3.1). Download the <strong>THREAD SAFE</strong> zip file.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step1.jpg" alt="Download thread safe php zip file" />
+
+<strong>Step 2)</strong>After the download has finished, extract the files to C:&#92;webserver&#92;php
+
+<strong>Step 3)</strong>Locate the PHP folder and open it. Look for a file called php.ini-development. Once you have found it, rename it to php.ini Windows will tell you that changing the file extension may cause it to become unusable. Change it anyway.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step3.jpg" alt="Rename php.ini-development to php.ini" />
+
+<strong>Step 4)</strong>Open up php.ini in notepad.
+
+<strong>Step 5)</strong>Do a search (CTRL+F) for the phrase "doc_root" (omit quotations). After the = sign, type in "C:&#92;webserver&#92;htdocs" (INCLUDE quotes). Your text file should look like this.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step5.jpg" alt="Add in the htdocs path for the doc_root" />
+
+<strong>Step 6)</strong>Scroll down until you see
+; Directory in which the loadable extensions (modules) reside.
+; http://php.net/extension-dir
+; extension_dir = "./"
+; On windows:
+; extension_dir = "ext"
+
+Not too far below where we just were. Delete the semicolon in front of the line
+; extension_dir = "ext"
+
+Then replace "ext" with "C:&#92;webserver&#92;php&#92;ext"
+
+Your file should resemble this.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step6.jpg" alt="php.ini file adjusted for extension directory and doc_root" />
+
+<strong>Step 7)</strong>Save and Close the php.ini file. Now go back to the C:&#92;webserver directory. Open up the "conf" file.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step7.jpg" alt="Open apache conf file from C:&#92;webserver directory" />
+
+<strong>Step 8)</strong>Open the httpd.conf file with notepad. Copy and paste the following to the top of the file
+
+<pre class="prettyprint">
+LoadModule php5_module &quot;C:/webserver/php/php5apache2_2.dll&quot;
+AddType application/x-httpd-php .php
+PHPIniDir &quot;C:/webserver/php&quot;</pre>
+This tells the webserver what files to load for php and where to locate the php configuration file.
+Make sure a # does not appear until after the block of text you have pasted.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step8.jpg" alt="httpd.conf configuration" />
+
+We're almost there!
+
+Now we just have a lot of copying and pasting to do. <b>In the event you're unable to find one of the files this tutorial references</b>, make sure to go back and verify you downloaded the right file. If you don't download the thread-safe version of PHP, for example, many of the dll files this guide references will be missing. 
+
+<h3>Update:</h3>
+I've confirmed that the installation works without all this copying and pasting. You can skip to step 12 for now. If your installation fails to work, you can try these steps. 
+
+<strong>Step 9)</strong>Open the C:&#92;webserver&#92;php directory. Look for the file called php5apache2_2.dll. Copy and paste it into C:&#92;windows&#92;system32
+
+<strong>Step 10)</strong>Copy php.ini from C:&#92;webserver&#92;php into C:&#92;windows and C:&#92;windows&#92;system32
+
+<strong>Step 11)</strong>Copy all the contents of C:&#92;webserver&#92;php&#92;ext into C:&#92;windows&#92;system32
+
+<strong>Step 12)</strong>This step will be composed of many steps.
+A) Open My Computer and click System Properties at the top. (If you do not see that option, you can also right click on My Computer and click Properties)
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step12a.jpg" alt="Open system properties" />
+
+B) Click Advanced System Settings
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step12b.jpg" alt="Advanced System Settings" />
+
+C) Click Environment Variables
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step12c.jpg" alt="Environment Variables" />
+
+D) Under System Variables (The lower half of the screen), scroll down until you see the variable named Path. Click it and press Edit.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step12d.jpg" alt="Find path under system variables" />
+
+E) After the last semicolon in the variable value box, copy and paste C:&#92;webserver&#92;php; (Include the ending semicolon)
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/step12e.jpg" alt="Adjust path" />
+
+<strong>You're done!</strong> Now it's time for testing.
+<h3>Testing PHP and Apache</h3>
+Be sure to restart your apache server. You can do this by right clicking on the apache icon in the system tray and clicking Open Apache Monitor (Or you can access the apache monitor from your Programs into the start menu). Select apache 2.2 and click restart. If you do not restart your webserver, PHP will not work until you restart your computer.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/restartapache.jpg" alt="Restart Apache" />
+
+Open up notepad, and paste this in:
+<pre class="prettyprint">&lt;?php phpinfo(); ?&gt;</pre>
+
+Save the file as phpinfo.php in the C:&#92;webserver&#92;htdocs directory.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/phpinfotxt.jpg" alt="phpinfo" />
+
+Now open up your browser and type in localhost/phpinfo.php into the URL bar. Do NOT Type in C:&#92;webserver&#92;htdocs&#92;phpinfo.php  They are NOT treated the same way even if the path leads to the same file.
+
+If you've followed everything correctly, you should see a screen full of your php information. This indicates that you can now perform server-side operations such as the execution of php scripts.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/php/phpinfopic.jpg" alt="Display of phpinfo" />
+
+ Please let me know if there are any errors with this tutorial, or if you have any questions. I want to make sure this is just about perfect so that people don't have to spend days and days trying to configure their first webserver. This whole process turned me off to learning php for a few months because I had already spent so much time failing to set up apache.
+
+I will cover how to install and configure mysql, pear, and phpMyAdmin in an upcoming post.
+{% endblock post %}
+

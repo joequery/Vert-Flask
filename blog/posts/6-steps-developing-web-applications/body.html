@@ -1,0 +1,169 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+The main purpose of my blog is to convince you that web programming should follow the structure of any other type of programming. This obviously involves taking the time to learn the syntax of the language and the semantics of the language. (<a href="http://www.jguru.com/faq/view.jsp?EID=81">Syntax vs Semantics</a>) The larger issue, however, is the way we approach our design and programming. Do we really approach our HTML, CSS, and PHP as a programmer would?
+
+The Software Development Method(SDM) as described by Frank L. Friedman, author of the frequently used Computer Science text book&#160;<a href="http://www.amazon.com/Problem-Solving-Abstraction-Design-Using/dp/0201612771">Problem Solving, Abstraction, and Design Using C++</a> has six major parts. The Software Development Method is to be completed in a word processor or even with pen and paper. The point is to design the structure of the application instead of just burrowing headfirst into the work without a proper plan. The six major parts are:
+<ol>
+  <li>Specify the Problem Requirements</li>
+  <li>Analyze the problem.</li>
+  <li>Design the algorithm to solve the problem.</li>
+  <li>Implement the algorithm.</li>
+  <li>Test and verify the completed program.</li>
+  <li>Maintain and Update the Program.</li>
+</ol>
+Let's examine these parts individually.
+<h2>1. Specify the Problem Requirements</h2>
+Most web designers and programmers have already lost the battle at this point. There is a tendency to sit down in front of your computer and start coding without putting any thought into the specifics of what you are doing. Specifying the problem requirements means you must clearly state the problem. If you can not clearly state the problem, how can you measure whether your project is a solution to that problem? Most web programmers make their projects and then spend time finding out what problems it can solve. That is completely inefficient. It is much better to zero in on the root problem and create a solution. We should strive for <strong>purpose driven</strong> programming.
+
+You should treat your problem statement like you would treat a thesis statement for an English paper. Your problem statement gives your application direction, and lets you know what resources you may need.&#160;<em>The stronger and more concise your problem statement, &#160;the more efficient your code will be. </em>
+
+Let's up ourselves in the position of a web programmer. We have received a call from GameTraders, a company that buys and sells games in retail stores distributed around the country. They tell us that they have no computer systems for storing employee information. They tell us that they would like us to make an information system accessible by managers on the company website. They also say they would like to be able to determine what information about an employee they wish to have at anytime &#160;so they won't need to call us every time they need an adjustment.
+
+From this conversation, we can now formulate a problem statement.
+<strong>Problem Statement:</strong>
+"GameTraders has all employee records only on paper and now wishes to have them available on their company website for managers to view. Create an application on the website that allows managers to specify what information they wish to store for each employee and a form that &#160;generates automatically based on their specifications. Only managers should have access to this information."
+
+With a solid problem statement created, we are able to tell exactly what our finished product should be able to do. With this information in hand, we can now move on to Problem Analysis, where we discuss how the problem should be approached from a logic and coding standpoint.
+<h2>2. Analyze the Problem</h2>
+Analyzing the problem has four main parts:
+<ol>
+  <li>Identify&#160;Inputs (What data you have to work with)</li>
+  <li>Identify Outputs and Output Format (What you will display and how it will look)</li>
+  <li>Additional Requirements or Constraints (Any limitations on Data)</li>
+  <li>Identify Relevant Formulas</li>
+</ol>
+If steps 1 and 2 are not done correctly, you will solve the wrong problem! You can only solve the problem utilizing only the inputs available. Going beyond the bounds of available inputs will mean you are not creating a solution that will cater to the needs of your client.
+
+Let's go ahead and follow the Problem Analysis steps for GameTraders.
+
+<strong>Problem Inputs</strong>
+For problem inputs, you want to define your constants and your variables. When defining these, it is very important that you have relevant variable names and stick to consistent variable naming conventions. Naming conventions are pattens you apply to certain data types to improve the readability of the code. For instance, a common convention for constants is to have them&#160;capitalized. There are numerous naming conventions, but here are the two I like to use:
+<ol>
+  <li><a href="http://msdn.microsoft.com/en-us/library/aa240858(VS.60).aspx">Microsoft's Development Conventions</a></li>
+  <li><a href="http://www.tizag.com/phpT/variable.php">Tizag's PHP Conventions</a></li>
+</ol>
+Relevant variable names are extremely important for readability. Here is where I make a very important claim:
+<strong>Code that works in and of itself is NOT good code!
+</strong>
+Good code has these characteristics:
+<ol>
+  <li>Readability - You can tell the processes that are occurring based on meaningful variable and function names.</li>
+  <li>Logic - The code is presented so that the steps to arrive to a solution have thought progressions that are easy too follow.</li>
+  <li>Easily Alterable - Good code can be changed very easily and very quickly.</li>
+</ol>
+As an example, if we wanted to add the number of fighting games in stock worth $30 each with the number of shooting games worth $40 each to get a value of current Inventory, we could do this:
+<pre class="prettyprint">
+$a = 30; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;// Fighting Games Price
+$b = 40; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;// Shooting Game Price
+$c = 5; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; // Number of Fighting Games in stock
+$d = 10;&#160;&#160;&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; // Number of Shooting Games in stock
+$e = ($a*$c) + ($b*$d); &#160; // Total value of inventory. Price times Quantity.
+echo $e; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;// Display value of inventory </pre>
+
+The code displays the value of inventory perfectly, so what's so wrong with it? Well after the programming has left your short term memory, when you come back to the code it will make no sense. If these values are called later in the program, you'll have to keep on scrolling up to see the comments explaining what it means, or you will have to comment every single time the variable is called, which would lead to very cluttered code.
+
+The code would be more readable, more logical, and much more easy to update if the variables were named in this fashion
+
+<pre class="prettyprint">
+$fightingPrice = 30;
+$shootingPrice = 40;
+$fightingInventory = 5;
+$shootingInventory = 10;
+$inventoryValue =($fightingPrice*$fightingInventory)+($shootingPrice*$shootingInventory); &#160; // Total value of inventory. Price times Quantity.
+echo $inventoryValue; </pre>
+
+It is much easier to follow the logic of the code with relevant names used.
+
+Now that we've discussed how to name and work with inputs, let's apply it to GameTraders. GameTraders problem inputs are unique in that they are dynamic: GameTraders wants to be able to change what information they have stored about an employee at any time. It would be counterproductive for us to list inputs such as "Name", "Social Security","Insurance", etc because our client has asked to be able to define the inputs. The best way to&#160;accommodate&#160;is to have their input of employee information be an <a href="http://www.tizag.com/phpT/arrays.php">Array</a>. Additionally, GameTraders requested this data be exclusive to the managers. How do we make data exclusive? Logins. So we will be receiving input of a login username and a password. So now we type the following into our word processor:
+
+<strong>Problem Inputs:</strong>
+<pre class="prettyprint">
+$arrEmployeeInfoCategories&#160;//Decides what information categories concerning an employee are stored.</pre>
+
+<pre class="prettyprint"> $username &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;//Login username
+$password &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;//Login password
+</pre>
+Our variables make sense and are easy to read. If we see $arrEmployeeInfoCategories later in the code, we will know it's an array due to the naming convention I used for arrays, which is the "arr" prefix. Feel free to make your own naming conventions, just be <strong>CONSISTENT</strong>.
+
+We have good inputs defined and established. It's time to move on to the next step of Problem Analysis: Outputs.
+
+<strong>Problem Outputs</strong>
+
+Problem Outputs are what will be displayed for the user to see. So let's consider what GameTraders want to see. They want to see information about their employee. Although we could probably reason that "John" is a first name, "Smith" is a last name, and "999-92-9999" is a Social Security number, why make the user have to work any harder than necessary? It would be easier to have the Category name displayed too. Another thing that could help the user is the ability to see if it is his account that is actually logged in. The easiest way to let someone know if they are logged in to the correct account is to see their login name somewhere on the page.
+
+We've established we need to display the category of information, the actual information, and the user's login name on the page. Now all that's left to do is list them out in our word processor.
+
+<strong>Problem Outputs:</strong>
+<pre class="prettyprint">
+$arrEmployeeInfoCategories //Decides what information categories concerning an employee are stored.
+$arrEmployeeInfoValues &#160; &#160; //Employee information corresponding to a category
+$username &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;//Login username
+</pre>
+
+Now that outputs are clearly defined and taken care of, let's move on to
+<strong>Additional Requirements or Constraints on Data. </strong>
+In this section, we will declare the expected data entry. What does this mean? This means when a user is prompted for their first name, we expect them to enter letters, possibly some apostrophes for foreign names. We do not want them to enter symbols such as #,@,!. In order to avoid invalid data being stored, we use <a href="http://php.net/manual/en/function.preg-match.php">Regular Expressions</a>. I won't go into detail on the syntax of Regular Expressions here, but I will go through the logic of filtering through bad input data.
+
+So let's refer back to our inputs.
+
+<pre class="prettyprint">
+$arrEmployeeInfoCategories
+$username
+$password</pre>
+
+Common limitations on usernames and passwords are:
+<ul>
+  <li>Minimum width of around 5-6 characters</li>
+  <li>Must include at least one non-alphabetical character such as a number or symbol.</li>
+</ul>
+Since the storage of data in this application merits use of a database, The limitation on the employee category array would be the same limitations on the field values of a table for the database you are using. So for <a href="http://www.mysql.com/">MySQL</a>, you could say the constraints are Alphanumeric Characters and Underscores.
+
+Now that we have data constraints defined, all we have to do is list them out in our word processor.
+<strong>Data Constraints:</strong>
+<pre class="prettyprint">
+$arrEmployeeInfoCategories //Only alphanumeric characters and underscores
+$username &#160; &#160; //At least six characters long, must contain one non alphabetical character.
+$password &#160; &#160; //At least six characters long, must contain one non alphabetical character.
+</pre>
+
+This example requires no relevant formulas, so we can skip step four of Problem Analysis. This is where you would list conversions or math formulas used in your application.
+
+We've wrapped up Problem Analysis. Next step:
+<h2>3. Design the Algorithm</h2>
+Algorithm is just a fancy word for "a series of steps used to solve the problem". There are many ways to design an algorithm, but I choose to use <a href="http://en.wikipedia.org/wiki/Pseudocode">Pseudo-Code</a>, which is a representation of the code meant for human reading instead of machine syntax interpretation. Our Algorithm for GameTraders would resemble this:
+<pre class="prettyprint">
+Read in(get from user) username
+Read in password
+Validate username and password combination.</pre>
+
+<pre class="prettyprint"> </pre>
+
+<pre class="prettyprint">
+If validation unsuccessful,
+Display &quot;Username and password do not match&quot;
+Else
+Read in $arrEmployeeInfoCategories
+Validate $arrEmployeeInfoCategories
+If validation unsuccessful
+Display &quot;Category _____ does not exist&quot;
+Else
+Retrieve corresponding category data and store into $arrEmployeeInfoValues
+Display $arrEmployeeInfoCategories
+Display $arrEmployeeInfoValues
+</pre>
+
+That's all the algorithm is: Spelling out exactly what you want to program.
+
+Step 4 of Developing Web Applications, implementing the Algorithm, is simply taking the&#160;Pseudo-Code made in step three and actually programming it. Step 5, Testing the Data, is making sure the data lines up correctly and returns consistently correct results. Testing the Data also involves making sure the &#160;application executes properly <strong>REGARDLESS OF USER INPUT</strong>. Step 6, Maintaining and Updating the program, is keeping the application current with government standards and user needs. Step 6 is nearly impossible to do if the initial code is illogical, unreadable, and inefficient.
+
+There is a LOT more to web application programming and even web design than just putting yourself in front of your computer and typing away. Without taking the time to establish and analyze the problem, there's no way you will provide the best solution possible to your client. Designing your program with these steps will help eliminate short term frustrations and long term time losses.
+{% endblock post %}
+

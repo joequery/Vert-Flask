@@ -1,0 +1,67 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Justin and I both firmly advocate self-teaching as a necessity in the web design industry. No one is ever really finished learning web design or web development. Books serve as an excellent way to learn new concepts. Books are usually much more in-depth than a blog post or article, and also provide plenty of examples of real-world applications. 
+
+For our fellow designers and developers, here is our web design/development bookshelf!
+
+<h2>Beginner's Books</h2>
+<ul>
+<li><a href="http://www.amazon.com/gp/product/1590598393/ref=oss_product">Web Design and Marketing Solutions for Business Websites</a></li>
+<li><a href="http://www.amazon.com/gp/product/0975841963/ref=oss_product">The Principles of Beautiful Web Design</a></li>
+<li><a href="http://www.amazon.com/gp/product/0470096284/ref=oss_product">Web Design: The L Line</a></li>
+</ul>
+
+
+<h2>Design</h2>
+<ul>
+<li><a href="http://www.amazon.com/gp/product/1592534724/ref=oss_product">Layout Essentials: 100 Design Principles for Using Grids</a></li>
+<li><a href="http://www.amazon.com/gp/product/3822840416/ref=oss_product">Web Design: Best Studios (Icons) </a></li>
+<li><a href="http://www.amazon.com/gp/product/1592532616/ref=oss_product">Design Elements: A Graphic Style Manual</a></li>
+<li><a href="http://www.amazon.com/gp/product/1592533876/ref=oss_product">Design Evolution: A Handbook of Basic Design Principles Applied in Contemporary Design</a></li>
+<li><a href="http://www.amazon.com/gp/product/1568982496/ref=oss_product">Geometry of Design: Studies in Proportion and Composition</a></li>
+<li><a href="http://www.amazon.com/gp/product/1592534473/ref=oss_product">Graphic Design, Referenced</a></li>
+</ul>
+<h2>Development</h2>
+<ul>
+<li><a href="http://www.amazon.com/gp/product/0764544055/ref=oss_product">Beginning JavaScript</a></li>
+<li><a href="http://www.amazon.com/gp/product/0596802447/ref=oss_product">CSS: The Missing Manual</a></li>
+<li><a href="http://www.amazon.com/gp/product/0596514085/ref=oss_product">JavaScript & DHTML Cookbook(2nd Edition)</a></li>
+<li><a href="http://www.amazon.com/gp/product/0596005431/ref=oss_product">Web Database Applications with PHP & MySQL, 2nd Edition</a></li>
+<li><a href="http://www.amazon.com/gp/product/0672325675/ref=oss_product">Sams Teach Yourself SQL in 10 Minutes (3rd Edition)</a></li>
+<li><a href="http://www.amazon.com/gp/product/0135050707/ref=oss_product">Java Software Solutions: Foundations of Program Design</a></li>
+<li><a href="http://www.amazon.com/gp/product/0538695641/ref=oss_product">Fundamentals of C++ and Data Structures: Advanced Course</a></li>
+<li><a href="http://www.amazon.com/gp/product/1933988355/ref=oss_product">jQuery in Action</a></li>
+<li><a href="http://www.amazon.com/gp/product/1590597273/ref=oss_product">Pro JavaScript Techniques</a></li>
+<li><a href="http://www.amazon.com/gp/product/0131350641/ref=oss_product">Advanced Ajax: Architecture and Best Practices</a></li>
+<li><a href="http://www.amazon.com/Beginning-PHP-MySQL-Commerce-Professional/dp/1590598644/ref=dp_ob_title_bk">Beginning PHP and MySQL E-Commerce: From Novice to Professional</a></li>
+<li><a href="http://www.amazon.com/gp/product/0321450051/ref=oss_product">Problem Solving, Abstraction & Design Using C++</a></li>
+</ul>
+<h2>Marketing</h2>
+<ul>
+<li><a href="http://www.amazon.com/gp/product/0470567023/ref=oss_product">Smart Calling: Eliminate the Fear, Failure, and Rejection From Cold Calling</a></li>
+<li><a href="http://www.amazon.com/gp/product/159555131X/ref=oss_product">Duct Tape Marketing: The World's Most Practical Small Business Marketing Guide</a></li>
+<li><a href="http://www.amazon.com/gp/product/096673839X/ref=oss_product">The 33 Ruthless Rules of Local Advertising</a></li>
+<li><a href="http://www.amazon.com/gp/product/0805078045/ref=oss_product">The Copywriter's Handbook, Third Edition: A Step-By-Step Guide To Writing Copy That Sells</a></li>
+<li><a href="http://www.amazon.com/gp/product/1448614643/ref=oss_product">Get Found Now! </a></li>
+<li><a href="http://www.amazon.com/gp/product/0132390027/ref=oss_product">Principles of Marketing, 12th Edition</a></li>
+<li><a href="http://www.amazon.com/gp/product/0470224487/ref=oss_product">Search Engine Optimization: Your Visual Blueprint for Effective Internet Marketing</a></li>
+</ul>
+<h2>Photography</h2>
+<ul>
+<li><a href="http://www.amazon.com/gp/product/1552636143/ref=oss_product">Photography and the Art of Seeing</a></li>
+<li><a href="http://www.amazon.com/gp/product/0321227999/ref=oss_product">How to Wow: Photoshop for Photography</a></li>
+</ul>
+<h2>Business</h2>
+<ul>
+<li><a href="http://www.amazon.com/gp/product/0470110120/ref=oss_product">How to Measure Anything: Finding the Value of "Intangibles" in Business </a></li>
+</ul>
+{% endblock post %}
+

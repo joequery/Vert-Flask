@@ -1,0 +1,319 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+After dealing with jQuery for about 7 months, I've finally settled into my own style of plugin development. This article will discuss what I feel are the shortcomings of the current jQuery development pattern, and my alternative: the class based plugin development pattern.
+
+<h2>Shortcomings of the Current Plugin Pattern</h2>
+<h3>The Plugin Pattern Clutters the Arguments</h3>
+It's not uncommon to see a plugin that takes multiple objects and multiple anonymous functions in as arguments. The result is extremely cluttered, borderline unreadable syntactical soup. For instance, take this example, provided in the documentation of the most popular <a href="http://docs.jquery.com/Plugins/validation">jQuery validation</a> plugin:
+<pre class="prettyprint">
+  $(&quot;form&quot;).validate({
+    invalidHandler: function(e, validator) {
+      var errors = validator.numberOfInvalids();
+      if (errors) {
+        var message = errors == 1
+          ? 'You missed 1 field. It has been highlighted below'
+          : 'You missed ' + errors + ' fields.';
+        $(&quot;div.error span&quot;).html(message);
+        $(&quot;div.error&quot;).show();
+      } else {
+        $(&quot;div.error&quot;).hide();
+      }
+    },
+    onkeyup: false,
+    submitHandler: function() {
+      $(&quot;div.error&quot;).hide();
+      alert(&quot;submit! use link below to go to the other step&quot;);
+    },
+    messages: {
+      password2: {
+        required: &quot; &quot;,
+        equalTo: &quot;Please enter the same password as above&quot;  
+      },
+      email: {
+        required: &quot; &quot;,
+        email: &quot;Please enter a valid email address, example: you@yourdomain.com&quot;,
+        remote: jQuery.validator.format(&quot;{0} is already taken, please enter a different address.&quot;)  
+      }
+    },
+    debug:true
+  });
+</pre>
+As the code user's needs grow, so does the complexity of the plugin instantiation. It's easy to get lost in the sea of curly braces, especially once conditional statements and objects within objects are thrown into the equation. From lines 19-23, you can see that the plugin actually goes 3 layers deep in objects.
+
+<h4>Solution</h4>
+Keep the plugin instantiation for the most basic settings. Use public methods to take care of the more complex customizations. The easiest way to accomplish this adjustment is to use JavaScripts "new" operator in conjunction with some <a href="http://www.1stwebdesigner.com/design/object-oriented-basics-javascript/">object-oriented principles</a>. If the plugin had been authored using a class(prototype) model, the equivalent configuration would look like so:
+<pre class="prettyprint">
+  var form = new validate(&quot;form&quot;, 
+  {
+    onkeyup: false,
+    debug: true
+  });
+  
+  form.invalidHandler(function(e, validator) 
+  {
+    var errors = form.numberOfInvalids();
+    if (errors) 
+    {
+      var message = errors == 1
+        ? 'You missed 1 field. It has been highlighted below'
+        : 'You missed ' + errors + ' fields.';
+      $(&quot;div.error span&quot;).html(message);
+      $(&quot;div.error&quot;).show();
+    } 
+    else 
+    {
+      $(&quot;div.error&quot;).hide();
+    }
+  });
+  
+  form.submitHandler(function() 
+  {
+    $(&quot;div.error&quot;).hide();
+    alert(&quot;submit! use link below to go to the other step&quot;);
+  });
+    
+  form.message(&quot;password2&quot;, 
+  {
+    required: &quot; &quot;,
+    equalTo: &quot;Please enter the same password as above&quot;
+  });
+  
+  form.message(&quot;email&quot;,
+  {
+    required: &quot; &quot;,
+    email: &quot;Please enter a valid email address, example: you@yourdomain.com&quot;,
+    remote: jQuery.validator.format(&quot;{0} is already taken, please enter a different address.&quot;)  
+  });
+</pre>
+The separation of handlers and basic configuration promotes readability and organization. Additionally, the start and end of configuration options are now explicitly clear. Adjusting or removing configurations would be extremely easy. These conveniences also extend to the plugin source itself.
+
+<h3>Many Complex Plugins Simply Do Too Much</h3>
+As a plugin becomes increasingly complex, it becomes increasingly difficult to preserve the reason why plugins are developed in the first place: ease of use in projects. Remember that the plugin should conform to the wishes of the developer, not the other way around. Many plugin developers strive to make their plugin work with an empty argument call, such as $("selector").myplugin();. There's an underlying notion amongst developers that an empty argument call equates to ultimate ease of use, and this is rarely the case. A complex plugin with an empty argument call usually means the code user has to alter large quantities of HTML and/or CSS. At that point, the zero argument call is nothing but meaningless flare. Notice my emphasis on "complex plugins". A simple plugin, such as a plugin that fades in elements in sequence, could benefit greatly from an empty argument call. My main point is
+
+<b>Do not devoid the plugin user of all responsibility.</b>
+
+If you adequately document your plugin, it is up to the plugin user to implement it correctly. There are going to be some developers that will fail to use your code successfully. That's okay. What's not okay is absolving the plugin user of responsibility to the extent that they can no longer customize the plugin implementation to fit their specific needs. No one knows the full capabilities of their code. I'm sure John Resig, creator of jQuery, has been surprised at what's been created by the development community with his code. You might think the plugin you're authoring is only good for a certain situation, but another developer with a different mindset might find it useful in another situation. The moment you hard-code your situation into the plugin, you eliminate other, possibly better, ideas. 
+
+The ultimate goal of your plugin should be to make a developer's idea easy to execute. That idea might be brilliant. That idea might be terrible. Either way, your job is to make that idea simple to put in motion. 
+
+<h2>Class Based Plugin Development Pattern</h2>
+Now that we've discussed the shortcomings of the current plugin development pattern, lets discuss an alternative: the class-based plugin development pattern. 
+ 
+This pattern requires you to know the <a href="http://www.1stwebdesigner.com/design/object-oriented-basics-javascript/">object oriented basics of JavaScript</a>. Whether you decide to implement this pattern or not, I highly encourage you to learn the object oriented fundamentals found in that article. 
+
+<h3>Defining the Plugin</h3>
+Defining the plugin with the class-based pattern is similar to the normal plugin pattern. 
+
+Normal plugin pattern:
+<pre class="prettyprint">
+jQuery.fn.myPlugin = function()
+{
+     //Code stuff goes here!
+};
+</pre>
+
+Class-based plugin pattern
+<pre class="prettyprint">
+function myPlugin()
+{
+     //Code stuff goes here!
+}
+</pre>
+
+<h3>Function Header and Default Values</h3>
+Since you're creating a plugin, chances are you're wanting to manipulate an element that can be represented by a jQuery selector. Thus, the most natural function header is
+<pre class="prettyprint">
+function myPlugin(obj, options)
+{
+     //Code stuff goes here!
+}
+</pre>
+Where obj represents the jQuery selector or jQuery object for the element(s) you wish to manipulate, and options is an object with properties that will be used in the plugin. 
+
+This brings up a question: <b>Why not have obj just be a property of options?</b> In many instances, you want default values to be values associated with the CSS properties of the elements in question. However, object members can't refer to other object members in the definition of the object. This is simply because at the time the object is being populated with values, it does not yet exist to refer to itself. 
+<pre class="prettyprint">
+    var test1 = {val1: 10, val2: 5+test1.val1};
+    alert(test1.val2); //Error, val1 undefined
+    
+    var test2 = {val1: 10, val2: 5+val1};
+    alert(test2.val2); //Error, val1 undefined
+
+    var test3 = {val1: 10, val2: 5+this.val1};
+    alert(test3.val2); //Error, val2 Not a number
+</pre>
+
+For default values, jQuery extend works perfectly. Lets say our plugin options takes in 3 properties: x, y, and z. jQuery extend allows us to fill in our options with default values in the event they aren't specified in the function call.
+<pre class="prettyprint">
+function myPlugin(obj, options)
+{
+    //------------------------------------------------------------
+    // Set default property values
+    //------------------------------------------------------------
+    var defaults = {
+    x:0,
+    y: 0,
+    z: 0
+    },  settings = jQuery.extend(defaults,options);
+}
+</pre>
+
+The settings object is the options object populated with the values of default in the instance a value from options is missing. For example, if we passed in {x: 5, y:10} as our options object, settings.x would be 5, settings.y would be 10, and settings.z would be 0. Since z was not specified in the options object, the value of z associated with the defaults object was placed in the settings object.
+
+Throughout the plugin, you should refer to the option values via the settings object. 
+
+<h3>Constructor Methods</h3>
+If you have any events that you would like to take place once the plugin is initiated, you should have those executed immediately after declaring your default values. For example, if we wanted to make our jQuery selected object have an absolute position at coordinates (x,y), 
+
+<pre class="prettyprint">
+function myPlugin(obj, options)
+{
+    //------------------------------------------------------------
+    // Set default property values
+    //------------------------------------------------------------
+    var defaults = {
+    x:0,
+    y: 0,
+    z: 0
+    },  settings = jQuery.extend(defaults,options);
+
+    //Do this immediately 
+    $(obj).css({'position': 'absolute', 
+                    'left': settings.x, 
+                    'top': settings.y});
+}
+</pre>
+<h3>Private Methods and Properties</h3>
+Private methods are functions that can only be called within the plugin definition. Similarly, private properties are properties that can only be accessed within the plugin definition. Private methods are useful for calculations and callbacks. Private methods promote readability for those viewing/maintaining the code. Since JavaScript exhibits function scope, private methods and properties can be created by simply using the "var" statement.
+<pre class="prettyprint">
+function myPlugin(obj, options)
+{
+    //------------------------------------------------------------
+    // Set default property values
+    //------------------------------------------------------------
+    var defaults = {
+    x:0,
+    y: 0,
+    z: 0
+    },  settings = jQuery.extend(defaults,options);
+
+    //Do this immediately 
+    $(obj).css({'position': 'absolute', 
+                    'left': settings.x, 
+                    'top': settings.y});
+    
+     //Cannot be accessed by calling environment
+     var callback = function()
+     {
+          alert(&quot;Callbacked!&quot;);
+     };
+}
+</pre>
+<h3>Public Methods</h3>
+Public methods are functions that can be accessed by the calling environment. Notice that public properties are not listed, as most of the time public properties are poor programming practice. You don't want the values inside the plugin to be altered by the outside without validation. 
+
+Public methods are extremely useful for initiating actions, setting values, validation of arguments, and my personal favorite, altering callbacks.  To make a method public, you attribute it to the plugin itself with the "this" keyword.
+
+Lets say we want our plugin to allow the user to move the elements in the selected jQuery object to a certain coordinate. After the element has moved, we want a custom callback to occur.
+<pre class="prettyprint">
+function myPlugin(obj, options)
+{
+    //------------------------------------------------------------
+    // Set default property values
+    //------------------------------------------------------------
+    var defaults = {
+    x:0,
+    y: 0,
+    z: 0
+    },  settings = jQuery.extend(defaults,options);
+
+    //Do this immediately 
+    $(obj).css({'position': 'absolute', 
+                    'left': settings.x, 
+                    'top': settings.y});
+    
+     //Cannot be accessed by calling environment
+     var callback = function()
+     {
+          alert(&quot;Callbacked!&quot;);
+     };
+
+     //Replace the callback with a custom callback
+     this.callback = function(func)
+     {
+          callback = func;
+     };
+
+     //Animate the element to a coordinate, then do the callback
+     this.move = function(x,y)
+     {
+          //Make sure the values are positive.
+          x = Math.abs(x);
+          y = Math.abs(y);
+
+          $(obj).stop(true,true).animate({'left': x, 'top': y}, 500, 
+          function() {
+          callback(); 
+          });          
+     };
+}
+</pre>
+<h3>Calling the Plugin</h3>
+Now that we have our Plugin defined, it's time to call it. Plugins under this pattern will be called using the "new" operator, and it must be assigned to a variable. While this might feel awkward at first, you'll grow comfortable with this instantiation over time.
+
+<pre class="prettyprint">
+var item = new myPlugin(&quot;#box&quot;, 
+{
+     x: 20,
+     y: 30
+});
+</pre>
+Once this statement is executed, the constructor of the plugin occurs. Thus, the element with a div ID of "box" will be positioned absolutely with left value at 20 and top value at 30.
+
+In order to access public method, use the "." operator along with the name of the variable used.
+<pre class="prettyprint">
+$(document).ready(function()
+{
+     var item = new myPlugin(&quot;#box&quot;,
+     {
+          x: 20,
+          y: 30
+     });
+
+    var x = 0;
+    var y = 0;
+     
+    //Alters the default callback function
+    item.callback(function()
+    {
+        $(&quot;#box&quot;).html(&quot;Left: &quot; + x + &quot;&lt;br /&gt;Top: &quot; + y);
+    });
+
+    //Moves box when clicked
+    $(&quot;#box&quot;).click(function()
+    {
+       item.move(x, y);
+       x += 10;
+       y += 10;
+    });
+});
+</pre>
+<h3>Demo of our little plugin</h3>
+So we've spent some time creating this little plugin, and you might be attached after all this work. I understand! Feel free to <a href="http://vertstudios.com/blog/demo/pattern/patterndemo.php">view this plugin in action</a> and <a href="http://vertstudios.com/blog/demo/pattern/patterndemo.txt">download the source code</a>. 
+
+Note how our plugin by itself is not hard-coded to move the element every time it's clicked and display the coordinates in the element. All that was done outside of the plugin. It's that type of versatility that makes me really enjoy this development pattern.
+
+<h3>A Real Example</h3>
+To see this development pattern in action, check out my <a href="http://www.vertstudios.com/blog/jquery-sticky-scroller-position-fixed-plugin/">jQuery sticky scroller</a> plugin. 
+
+<h2>Feedback</h2>
+If you have any feedback or suggestions, please leave them in the comments below!
+{% endblock post %}
+

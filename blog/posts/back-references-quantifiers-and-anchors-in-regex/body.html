@@ -1,0 +1,196 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+This article will cover some intermediate concepts concerning regular expressions. If you're not acquainted with the basics of regex, check out our article, <a href="http://www.vertstudios.com/blog/introduction-to-regular-expressions/">Introduction to Regular Expressions</a>. 
+
+When you begin delving further into regular expressions, you find just how useful they are. The combination of back references, quantifiers, and anchors causes RegEx to be one of the most powerful tools in your arsenal. 
+
+<h2>Conventions</h2>
+Throughout this article, all patterns will be delimited by slashes (/pattern/). Note that the slashes are not part of the pattern, but merely indicate where the pattern begins and ends. That's why you will not see the slashes in RegexPal examples provided throughout the article. For convenience, in some examples involving anchors, ^$ match at line breaks. In other words, each new line for those examples simulates a different string. Be sure to keep this in mind while learning the concepts. 
+
+<h2>Quantifiers(Revisited)</h2>
+Our introduction to regular expressions article discussed the basics of quantifiers. For your convenience, here is the table from that article.
+
+<table>
+<tr><th>Quantifier</th><th>Description</th></tr>
+<tr><td>?</td><td>0 or 1 occurrences (optional)</td></tr>
+<tr><td>*</td><td>0 or more occurrences</td></tr>
+<tr><td>+</td><td>1 or more occurrences</td></tr>
+<tr><td>{x}</td><td>Exactly x number of occurrences</td></tr>
+<tr><td>{x, y}</td><td>Between x and y number of occurrences</td></tr>
+<tr><td>{x,}</td><td>At least x number of occurrences</td></tr>
+</table>
+
+Also recall that in order to apply a quantifier or bar operator to a sequence of characters, you'll need to use parenthesis. 
+The pattern /face(b|cr)ook/ matches 
+<ul>
+<li>facebook</li>
+<li>facecrook</li>
+</ul>
+<a href="http://bit.ly/h4YqBt">See the facebook example</a>
+
+<h3>Example: Constructing an Email Pattern</h3>
+Quantifiers are extremely useful when combined with character classes. Consider the most basic email address: Name1@domain.com
+We'll define an email address as:
+<blockquote>
+2 or more alphanumeric characters,
+followed by the @ symbol,
+followed by 2 or more alphanumeric characters,
+followed by a period,
+followed by at least 2 alphabetic characters. 
+</blockquote>
+(This definition of an email pattern should not be used in a real application. This simple and strict definition is just easier to learn with. )
+
+So valid email addresses would be joseph@vertstudios.com, myEmail9090@haha1.com
+The following would be invalid email addresses: j0$eph@@vertstudios.com,  justin@vertstudios
+
+Using our quantifier definitions, let's build this pattern line by line using our definition. 
+
+<h4>2 or more alphanumeric characters</h4>
+An alphanumeric character is any letter of the alphabet (both lowercase and upper case) or any number between 0 and 9. This can be represented by [a-zA-Z0-9]. Refer to the introduction article if you're unfamiliar with ranges in character classes. 
+
+So we need an alphanumeric character to repeat at least twice. Referring to the quantifier table above, we see that the last row contains the quantifier that suits this need. So, in order to specify at least two alphanumeric characters, the pattern would be <pre class="prettyprint">/[a-zA-Z0-9]{2,}/</pre>
+
+<h4>followed by the @ symbol</h4>
+Since the @ symbol is not a special character, adding the symbol immediately after our previous pattern will require the @ character to be placed after the alphanumeric characters.
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@/</pre>
+
+<h4>followed by 2 or more alphanumeric characters</h4>
+Notice we already defined the  pattern for 2 or more alphanumeric characters. Simply append that to what we have so far. 
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}/</pre>
+
+<h4>followed by a period</h4>
+Since a period is a special character, we must escape it. 
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\./</pre>
+
+
+<h4>followed by at least 2 alphabetic characters</h4>
+Now we want at least 2 alphabetic characters. This will represent the com, edu, etc. This pattern will be similar to our alphanumeric pattern used earlier, but without the numbers in the character class. After including this pattern, we arrive at our final product. 
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</pre>
+
+<a href="http://bit.ly/fdgY6i">View our email example</a>
+
+<h3>Negated Character Classes and Quantifiers</h3>
+One of the most amazing 1-2 punches you can throw as a developer using RegEx is the union of negated character classes and quantifiers. 
+
+
+<h4>Example: Matching HTML Elements</h4>
+Say you wanted to match all the opening and closing tags of some HTML. There are a TON of characters that are allowed to be in an HTML document, so attempting to match the tags through a normal character class would be extremely cumbersome. However, we can easily avoid this issue by logically analyzing an HTML tag. 
+
+<h5>What is an HTML tag?</h5>
+HTML tags begin with &lt; and end with &gt;. For example, the line break tag &lt;br /&gt;. Since &gt; denotes the end of the tag, it makes sense to say that everything in between &lt; and &gt; is a character that is not &gt;. Thus, in order to match the contents of an HTML tag, the following pattern is used:
+<pre class="prettyprint">/&lt;[^&gt;]+&gt;/</pre>
+This pattern says: 
+"Match a &lt; followed by one or more of any character that is not a &gt;, followed by &gt;. "
+<a href="http://bit.ly/icEs4I">See Match all HTML Tags Example</a>
+
+
+If you wanted to be a bit more specific and find XHTML non-paired tags (such as &lt;link /&gt; and &lt;img /&gt;) you could modify the pattern to include the slash before the closing tag. 
+<pre class="prettyprint">/&lt;[^&gt;]+/&gt;/</pre>
+<a href="http://bit.ly/hHTeFU">See Self-closing XHTML tags Example</a>
+
+Using the logic of these examples, you can expand your regular expressions into tools of absolute efficiency. 
+<h2>Anchors</h2>
+Sometimes where you want to begin and end the search for a pattern is as important as the content of the pattern itself. This is especially true concerning validation of user input. Consider our regex for an email that we created earlier:
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</pre>
+
+If we were processing user input from a form through JS or PHP, the following would match the pattern:
+<ul>
+<li>joseph@vertstudios.com</li>
+<li>joseph@vertstudios.com IS A LOSER</li>
+<li>(<a href="http://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> Here!) joseph@vertstudios.com</li>
+</ul>
+
+Without implementing an anchor, our pattern can be applied anywhere in the string we're testing. 
+<a href="http://bit.ly/eG2tPE">See email regex without anchors</a>
+
+<h3>Start of String Anchor</h3>
+When used at the beginning of the pattern and outside of a character class, the caret (^) "matches" the position before the first character in the string being tested. In other words, the pattern will find a match only if the first character after ^ is matched. Unlike how /[a-z]/ matches a lowercase letter, the caret does not represent a value (unless <a href="http://www.regular-expressions.info/anchors.html">multi-line mode</a> is enabled).
+
+For example, /^a/ matches the first character in the string "about" since the first character in the string "about" is the lowercase letter a. /^c/ does NOT match anywhere in the string "acute" since c is not the first character of the string. 
+
+As another example, say you want to match strings that have only alphanumeric characters, but begin with a letter. The pattern would be
+<pre class="prettyprint">/^[a-zA-Z][a-zA-Z0-9]*/</pre>
+<a href="http://bit.ly/giGDlL">See beginning anchor example</a> Note: ^$ match at line breaks to simulate multiple strings
+
+<h3>End of String Anchor</h3>
+Similar to the start of string anchor, when the dollar sign symbol ($) is placed at the end of the pattern and outside of a character class, it matches the position after the last character in the string tested. In other words, the pattern will find a match only if the pattern ends with the character before $. Similar to the caret, $ does not explicitly represent a character unless multi-line mode is enabled. 
+
+For example, /[0-9]$/ matches "h20" since the last character is a number. However, that pattern will not match the string "You have 5 dollars" since it does not end in a digit. 
+<a href="http://bit.ly/eotWor">See ending anchor example</a> Note: ^$ match at line breaks to simulate multiple strings
+
+<h3>Combining the Anchors</h3>
+By placing the ^ at the beginning of the Regex pattern and $ at the end, you're essentially saying that the string being tested against the pattern must not only contain the pattern, it can't contain any more than what the pattern specifies. It has to match the pattern exactly: Nothing more, nothing less. 
+
+As an example, let's examine the following pattern:
+<pre class="prettyprint">/^[0-9]{3,} +[a-zA-Z .]+$/</pre>
+This pattern reads: A string that begins with at least 3 numbers, followed by 1 or more spaces, ending with 1 or more alphanumeric characters, spaces, or periods. 
+Look familiar? 
+
+Consider the string "1725 North Haynie Avenue". It starts with at least 3 numbers, followed by a space, ending with a sequence of alphabetic characters and spaces. 
+We see that the regex pattern can be interpreted as a very loose definition for a US street address. 
+
+<h4>Combining Anchors is Imperative for Validation</h4>
+If you are validating user input from a form, you <b>MUST</b> use both anchors. Let's consider our Email example again. Recall how an email address contained anywhere in our test string would trigger a match. Thus, a bot or mischievous developer can embed more than the characters of an email address into the form field. To prevent this, we adjust our regex to include anchors.
+
+Before:
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</pre>
+<a href="http://bit.ly/eG2tPE">See email validation without anchors</a>
+
+After:
+<pre class="prettyprint">/^[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}$/</pre>
+<a href="http://bit.ly/fPQszu">See email validation with anchors</a>
+
+Note the differences in the two examples: Before the anchors were in place, every string matched the pattern. However, after the anchors were placed in the pattern, only the top string matched an email address. 
+
+Make sure to mind your anchors, otherwise the usefulness of the rest of your pattern can easily be nullified. 
+
+<h2> Back References </h2>
+Now that we've discussed quantifiers and anchors, let's combine our current knowledge with the concept of back references. Back references allow you to refer to the characters matched earlier in the regex pattern definition. Back references are always defined using parenthesis. For this tutorial, the backslash (\) will be used to call back references. Check the syntax of your development language to see how to call back references.
+
+For example, consider the regex pattern <pre class="prettyprint">/^([0-9])\s*=\s*\1$/</pre>
+The pattern reads: Match a string that begins with a single digit, followed by 0 or more spaces, followed by the equals sign, followed by 0 or more spaces, ending with the digit matched at the beginning of the string.
+The following strings match the pattern:
+<ul>
+<li>1=1</li>
+<li>2= 2</li>
+<li>3 = 3</li>
+</ul>
+The following strings do not match the pattern:
+<ul>
+<li>10 = 10</li>
+<li>5=3</li>
+</ul>
+<a href="http://bit.ly/h1feby">See equality back-reference example</a>
+
+Note that what we wrapped what we wanted to refer back to in parenthesis. To refer to the matched characters later in the pattern, we use \ and the number that corresponds to the reference. Reference numbers begin with 1, and usually go up to 9.  The first set of parenthesis starting from the left is referred to with a 1. The next set, 2, and so on.
+
+To demonstrate the usage of multiple back references, consider this pattern that describes the <a href="http://en.wikipedia.org/wiki/Commutativity">commutative property</a>. <pre class="prettyprint">/^([0-9])\+([0-9])=\2\+\1$/</pre>
+The pattern reads: Match a string that begins with a single digit, followed by a plus sign, followed by a single digit, followed by an equal sign, followed by the second digit matched, followed by a plus sign, ending with the first digit matched.
+
+This pattern will match
+<ul>
+<li>5+3=3+5</li>
+<li>2+1=1+2</li>
+<li>9+7=7+9</li>
+</ul>
+
+This pattern will not match
+<ul>
+<li>9+3=2+1</li>
+<li>9=9</li>
+<li>3+3=3+3+0</li>
+</ul>
+<a href="http://bit.ly/dUtBuN">See commutative property example</a>
+
+<h2>Next Article</h2>
+My next article over Regex will describe the use of Regular Expressions in IDEs. It will provide plenty of great examples over combining all the concepts discussed in this article. Be sure to <a href="http://www.vertstudios.com/blog/feed">Subscribe</a> so you don't miss it!
+{% endblock post %}
+

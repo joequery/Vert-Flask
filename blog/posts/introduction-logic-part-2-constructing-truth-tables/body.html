@@ -1,0 +1,310 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+This article continues assuming you've read the <a href="http://www.vertstudios.com/blog/introduction-logic-part-1-negation-and-or-statements/">Introduction to Logic: Part 1</a>, where we discussed negation, conjunction, and disjunction statements. 
+
+<h2>Truth Table Construction</h2>
+We read that each of the previous statements have their own truth table. A truth table is a visual tool that helps us see the logical outcomes of every possible combination of statements. 
+
+For the following example, let p,q, and r be statements.
+<pre class="prettyprint">p &amp;&amp; [(q || r) &amp;&amp; (r || p)]</pre>
+
+<h3>Number of combinations</h3>
+The total number of possible outcomes is equal to 2^n, where n is equal to the number of statements. In this example we have three statements in the form of p, q, and r. Thus the number of combinations is 2^3, or 8. 
+
+<h3>Organizing the table</h3>
+When creating the truth table, it's extremely important that you keep it organized. My method for constructing organized truth tables is:
+<ul>
+     <li>Begin with statements themselves</li>
+     <li>Place the simplest compound statements to the left of the table, and move progressively to the more complex compound statements</li>
+</ul>
+So for our example of <b>p && [(q || r) && (r || p)]</b>, here's how you should construct the truth table:
+<table>
+    <tr>
+        <th>p</th>
+        <th>q</th>
+        <th>r</th>
+        <th>q || r</th>
+        <th>r || p</th>
+        <th>(q || r) && (r || p)</th>
+        <th>p && [(q || r) && (r || p)]</th>
+    </tr>
+</table>
+
+Note that the last column will always end up being the original series of statements. 
+
+So the first thing we must do is populate the p,q, and r columns with all the possible combinations of True and False. There is a simple pattern you can follow that makes populating these columns extremely easy. In this example, we have 8 combinations since we have 3 statements. For one statement column, alternate between True and False every 4 statements. The next statement column, alternate between True and False every 2 statements. For the last statement column, alternate between True and False every statement. 
+
+So for p,q, and r, the initial truth table population would look like so:
+<table>
+    <tr>
+        <th>p</th>
+        <th>q</th>
+        <th>r</th>
+    </tr>
+    
+    <tr>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td>T</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td>F</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td>F</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>F</td>
+        <td>T</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>F</td>
+        <td>T</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>F</td>
+        <td>F</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+    </tr>
+</table>
+
+<h3>Filling in the table</h3>
+So now we know how to populate the initial fields. Now we get down to the meat of the situation: Evaluating the compound statements to complete the truth table. The great thing about how we organized the truth table is that we can solve simple compound statements and use the solutions to solve complex compound statements. Let's walk through the population of a row.
+
+For the sake of demonstration, let's choose a more complex combination: p is true, q is false, r is true. 
+<table>
+    <tr>
+        <th>p</th>
+        <th>q</th>
+        <th>r</th>
+        <th>q || r</th>
+        <th>r || p</th>
+        <th>(q || r) && (r || p)</th>
+        <th>p && [(q || r) && (r || p)]</th>
+    </tr>
+
+    <tr>
+        <td>T</td>
+        <td>F</td>
+        <td>T</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+Now we move on to the next column, q || r. Since r is true, q || r is true. 
+<table>
+    <tr>
+        <th>p</th>
+        <th>q</th>
+        <th>r</th>
+        <th>q || r</th>
+        <th>r || p</th>
+        <th>(q || r) && (r || p)</th>
+        <th>p && [(q || r) && (r || p)]</th>
+    </tr>
+
+    <tr>
+        <td>T</td>
+        <td>F</td>
+        <td>T</td>
+        <td>T</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+Similarly, r || p is true
+<table>
+    <tr>
+        <th>p</th>
+        <th>q</th>
+        <th>r</th>
+        <th>q || r</th>
+        <th>r || p</th>
+        <th>(q || r) && (r || p)</th>
+        <th>p && [(q || r) && (r || p)]</th>
+    </tr>
+
+    <tr>
+        <td>T</td>
+        <td>F</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+Since q || r and r || p are both true, then the statement (q || r) && (r || p) is also true.
+<table>
+    <tr>
+        <th>p</th>
+        <th>q</th>
+        <th>r</th>
+        <th>q || r</th>
+        <th>r || p</th>
+        <th>(q || r) && (r || p)</th>
+        <th>p && [(q || r) && (r || p)]</th>
+    </tr>
+
+    <tr>
+        <td>T</td>
+        <td>F</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td></td>
+    </tr>
+</table>
+
+Since p is true and (p || q) && (r || p) is true, then the statement p && [(p||q) && (r || p)] is true.
+<table>
+    <tr>
+        <th>p</th>
+        <th>q</th>
+        <th>r</th>
+        <th>q || r</th>
+        <th>r || p</th>
+        <th>(q || r) && (r || p)</th>
+        <th>p && [(q || r) && (r || p)]</th>
+    </tr>
+
+    <tr>
+        <td>T</td>
+        <td>F</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+    </tr>
+</table>
+
+<h3>Final Product</h3>
+Repeating this process for all 8 combinations, the following truth table is produced:
+<table>
+    <tr>
+        <th>p</th>
+        <th>q</th>
+        <th>r</th>
+        <th>q || r</th>
+        <th>r || p</th>
+        <th>(q || r) && (r || p)</th>
+        <th>p && [(q || r) && (r || p)]</th>
+    </tr>
+
+    <tr>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+    </tr>
+
+    <tr>
+        <td>T</td>
+        <td>T</td>
+        <td>F</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+    </tr>
+
+    <tr>
+        <td>T</td>
+        <td>F</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+    </tr>
+
+    <tr>
+        <td>T</td>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+        <td>T</td>
+        <td>F</td>
+        <td>F</td>
+    </tr>
+
+    <tr>
+        <td>F</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>F</td>
+    </tr>
+
+    <tr>
+        <td>F</td>
+        <td>T</td>
+        <td>F</td>
+        <td>T</td>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+    </tr>
+
+    <tr>
+        <td>F</td>
+        <td>F</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>T</td>
+        <td>F</td>
+    </tr>
+
+    <tr>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+        <td>F</td>
+    </tr>
+</table>
+
+<h2>Feedback</h2>
+Have any questions concerning truth tables? Leave us a comment below!
+{% endblock post %}
+

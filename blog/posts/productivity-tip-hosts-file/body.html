@@ -1,0 +1,31 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+There's absolutely nothing wrong with taking a mental break when working on software development. However, there's a small but significant difference between taking a break and randomly scouring the internet. 
+
+<h2>Distraction is <= 6 keystrokes away</h2>
+In the past, after I solved a hard problem, fixed something that annoyed me, or came across a bug, I would execute the following keystrokes: &#8984;&lt;TAB&gt;&#8984;tn&lt;ENTER&gt;
+
+If you frequent HN and your browser was your previously active window, those keystrokes will get you to HN in about 1 second. I get annoyed very easily (and I find a lot of bugs!), so a large chunk of my working time was me taking "quick mental breaks" that lead from Twitter to Facebook to Youtube and beyond. At those moments, I wanted to simply <b>not work</b> more than I actively wanted to browse the internet.
+
+<h2>The Art of Doing Nothing</h2>
+Each escape to the internet from my work was sort of an awkwardly long verbal pause: I had just finished "saying" a lot to my Terminal, so I was tired. Instead of just closing my eyes and quieting my mind, I would  visit sites that actually stimulate me, somehow convincing myself I was still working because it was a "quick mental break".
+
+<h2>The Hosts File: Just Annoying Enough</h2>
+Visiting a fun website when a software problem got difficult became so habitual to me that I'd execute :wq&lt;ENTER&gt;&#8984;&lt;TAB&gt;&#8984;tn&lt;ENTER&gt; from VIM without even realizing I was doing so. I didn't even want to see the top story that moment, I just wanted to not feel so bored/stressed/tired. To combat this, I simply place my favorite websites in my host file while I'm at work. When I visit those sites out of compulsion, I find the "Website Not Found" message and the idea of having to edit my host file JUST annoying enough to not do it. Because, again, I don't even want to see these sites. Unless you're cheating and have your hosts file already opened as root, you'll have to execute
+<pre class="prettyprint">
+sudo vim /etc/hosts
+</pre>
+which will require a password, and then you'll need to find the entries and comment them out. The whole process will only take about 10 seconds, which is no time at all when you want to actively want to view the sites, but just annoying enough when visiting mindlessly.
+
+<h2>Work Hard, Break Hard</h2>
+When you work, work hard. When you break, break hard. Programming can be hard, and working on a fun project can get boring at times. Push through, get the work done, and reward yourself with real breaks as needed.
+{% endblock post %}
+

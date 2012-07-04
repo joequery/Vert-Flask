@@ -1,0 +1,19 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+My review of jQuery in Action.
+
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/lVv1Qszqbhk&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/lVv1Qszqbhk&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+
+Overall I was not very pleased with the book. Very few examples, and the ones provided were mundane and irrelevant to real-world situations. Very sluggish pace and very unsatisfying.
+
+I highly recommend <a href="http://blog.themeforest.net/screencasts/jquery-for-absolute-beginners-video-series/">jQuery for Absolute Beginners</a> as an alternative.
+{% endblock post %}
+

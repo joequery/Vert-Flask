@@ -1,0 +1,31 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+It's been less than a year since I entered the beautiful world of jQuery. I've had a lot of fun interacting with the jQuery community and crafting my own plugins. However, I've come to the point where I'm acquainted enough with jQuery to explore alternatives. 
+
+<h2>Back to Basics</h2>
+jQuery does some wonderful things and makes the execution of certain ideas extremely simple. For the past several months, I've allotted time to finding answers to questions in the form of: "How do I do X with jQuery?". Thanks to the great dev community associated with jQuery, finding answers to these problems proved relatively easy. Now that my skill with jQuery has increased, there are very few problems I'm unable to solve that involve jQuery. Consequently, my curiosity is beginning to shift from "How do I do X with jQuery" to "How does jQuery do X"? I'd like to explore tweening, collision detection, and DOM manipulation using pure JavaScript. I'd like to learn the browser quirks from the ground up. While some might consider such a decision a technological "step backward", I whole-heatedly believe that the only way the JavaScript language can move forward is to have more developers appreciate how these great libraries actually work. 
+<blockquote>"I whole-heatedly believe that the only way the JavaScript language can move forward is to have more developers appreciate how these great libraries actually work."</blockquote>
+<h2>Alternative Libraries</h2>
+There are many libraries floating around that I have never taken the time to tinker with. Some serve the purpose of animation. Some server other purposes. Either way, I'd like to learn what these alternative libraries have to offer. Here are the JS libraries I'll be experimenting with. 
+<ul>
+<li><a href="http://jashkenas.github.com/coffee-script/">CoffeScript</a></li>
+<li><a href="http://mootools.net/">MooTools</a></li>
+<li><a href="http://code.google.com/closure/">Google Closure</a></li>
+<li><a href="http://www.prototypejs.org/">Prototype</a></li>
+</ul>
+
+There are many more JavaScript libraries listed on <a href="http://javascriptlibraries.com/">JavaScriptLibraries.com</a> that I may or may not get to. I hope to efficiently implement these libraries into future projects, as well as examine their source to appreciate exactly how they work. 
+
+<h2>It's All About Self-Improvement</h2>
+While I could allot more time to making even cooler things with jQuery, I feel that the next step towards improving my skill set as a JavaScript developer is to understand pure JavaScript and experiment with other libraries. A degree of pride and satisfaction goes into being able to make something yourself. I have no intentions of reinventing the wheel - I simply wish to know what makes it roll in the first place. 
+<blockquote>"I have no intentions of reinventing the wheel - I simply wish to know what makes it roll in the first place."</blockquote>
+{% endblock post %}
+

@@ -1,0 +1,78 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+C++ Does not have string case manipulation built in to its <a href="http://www.cplusplus.com/reference/string/string/"> standard library</a>. For this  reason, it's necessary to make your own upperCase and lowerCase functions. I'll show you how to do just that.
+<h2>The Function Code</h2>
+For all lowercase:
+<pre class="prettyprint">
+void lowerCase(string&amp; strToConvert)
+{
+   for(unsigned int i=0;i&lt;strToConvert.length();i++)
+   {
+      strToConvert[i] = tolower(strToConvert[i]);
+   }
+}
+</pre>
+For all UPPERCASE:
+<pre class="prettyprint">
+void upperCase(string&amp; strToConvert)
+{
+   for(unsigned int i=0;i&lt;strToConvert.length();i++)
+   {
+      strToConvert[i] = toupper(strToConvert[i]);
+   }
+}
+</pre>
+<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/tolower/lowercase.zip">Download the .exe and Source File</a>
+<h2>The Explanation</h2>
+A string is technically an <a href="http://www.cplusplus.com/doc/tutorial/arrays/">array</a> of characters. Although C++ can not uppercase or lowercase a string, it can uppercase or lowercase an individual character, using the toupper() and tolower() standard functions respectively. This means we need to be able to isolate the characters of a string so we can apply the toupper() or tolower() function. The way we do this is by referring to the string as an array.
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/tolower/basketball.jpg" alt="A string is an array of characters." />
+
+In our example of
+<pre class="prettyprint">string sport = "Basketball";</pre>
+If we were to output sport[0], we would output the character 'B'.
+<em>Recall that arrays begin indexing at 0, not 1. Array indexes are contained within square brackets</em> [ ].
+
+If we were to output sport[3], we would output the character 'k'.
+
+Now that we know how to isolate a character,  we can apply the toupper or tolower function. As you could guess, tolower makes a character lowercase. toupper makes a character uppercase.
+
+If we were to output tolower(sport[0]), we would get a lowercase 'b'.
+If we were to output toupper(sport[5]), we would get an uppercase 'T'.
+
+So we want to process the entire string. Since array indexes go by an increment of one, we have a perfect condition to use a for loop.
+
+Here's our logic for this function:
+<ol>
+  <li>Start at the first character of the string</li>
+  <li>Turn that character lowercase</li>
+  <li>Move on to the next character in the string</li>
+  <li>Repeat until all characters have been turned lowercase</li>
+</ol>
+This tells us
+<ol>
+  <li>The for loop counter should start at 0</li>
+  <li>We should tolower the index of the string that corresponds to the counter</li>
+  <li>The counter should be incremented by 1 after execution of the loop body</li>
+  <li>The loop should continue until the counter reaches the length of the string</li>
+</ol>
+The length of the string can be found with string.length()
+
+So the for loop turns out
+<pre class="prettyprint">
+   for(unsigned int i=0;i&lt;strToConvert.length();i++)
+      {
+         strToConvert[i] = tolower(strToConvert[i]);
+      }
+</pre>
+<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/tolower/lowercase.zip">Download the .exe and Source File</a>
+{% endblock post %}
+

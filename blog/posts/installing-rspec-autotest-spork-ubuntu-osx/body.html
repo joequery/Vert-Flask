@@ -1,0 +1,229 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+I'm an Ubuntu lover in the process of learning Ruby on Rails. I've spent a good majority of my time "learning" rails trying to get Rspec, Spork, and Autotest to play nicely. Unfortunately, <a href="http://www.twitter.com/vertjustin">our designer</a> is an Apple fanboy, so my testing suite needs to perform on OS X as well. It's extremely frustrating to spend so many hours trying to get these gems to work, just so you can continue on with the tutorial! Thus, to save you all the heartache I endured, here is a definitive guide to integrating Spork and Autotest with Rspec for Ubuntu AND Mac OS X!
+
+<h2>Time Required</h2>
+15 - 30 minutes
+
+<h2>The Main Problem: Gemfile Hacks</h2>
+The main issue with most of the tutorials I've followed is that they require you to list gems such as autotest in Gemfiles, and this can cause a huge array of conflicts between the different operating systems. So our philosophy throughout this tutorial is knowing when a gem should be executed via its binary (autotest) or via bundle exec (bundle exec autotest). Most of the time executing via binary or through bundle exec doesn't make any difference. However, in this context, autotest and spork react much differently based upon which way you call them. Thus, in order to keep our project portable, we aim to eliminate any OS-specific hacks in the Gemfile. 
+
+<h2>Get the Project Template</h2>
+First, we'll pull a rails project template file that has rspec preconfigured.
+<pre class="prettyprint">$ git clone git://github.com/joequery/Rails-Template.git</pre>
+Now rename the app to whatever you want
+<pre class="prettyprint">$ rails g rename_to YourApp</pre>
+
+Now execute the following
+<pre class="prettyprint">
+$ bundle install
+$ gem install ZenTest
+$ gem install autotest-rails
+</pre>
+(You may need to use sudo for your gem install, depends on your setup)
+
+
+Now we move on to OS-Specific implementations.
+
+<h2 id="ubuntu">Ubuntu Configuration</h2>
+(<a href="#osx">Skip to OS X</a>)
+Credit most of the Ubuntu instructions to <a href="http://ykyuen.wordpress.com/2010/11/15/rails-integrate-autotest-and-rspec-in-linux/">Ykyuen</a>
+
+First, execute
+<pre class="prettyprint">
+$ sudo apt-get install libnotify-bin
+</pre>
+
+Now create an autotest configuration file in the home directory (~/.autotest) and paste in the following:
+[ruby]
+#!/bin/ruby
+
+#require 'redgreen'
+require 'autotest/timestamp'
+
+module Autotest::GnomeNotify
+def self.notify title, msg, img
+system &quot;notify-send '#{title}' '#{msg}' -i #{img} -t 1500&quot;
+end
+
+Autotest.add_hook :ran_command do |at|
+  image_root = &quot;~/.autotest_images&quot;
+  results = [at.results].flatten.join(&quot;\n&quot;)
+  results.gsub!(/\\e\[\d+m/,'')
+  output = results.slice(/(\d+)\sexamples?,\s(\d+)\sfailures?(,\s(\d+)\spending?|)/)
+  full_sentence, green, failures, garbage, pending = $~.to_a.map(&amp;:to_i)
+  if output
+    if failures &gt; 0
+    notify &quot;FAIL&quot;, &quot;#{output}&quot;, &quot;#{image_root}/fail.png&quot;
+
+    elsif pending &gt; 0
+    notify &quot;Pending&quot;, &quot;#{output}&quot;, &quot;#{image_root}/pending.png&quot;
+
+    else
+    notify &quot;Pass&quot;, &quot;#{output}&quot;, &quot;#{image_root}/pass.png&quot;
+
+    end
+  end
+end
+
+end
+[/ruby]
+
+Now create an ~/.autotest_images folder and extract <a href="http://www.vertstudios.com/blog/images/rspec/images.tar.gz">these images</a> to it.
+
+Everything is now configured. Jump to <a href="#testing">Testing Your Setup</a>
+
+<h2 id="osx">Mac OS X</h2>
+
+First, execute 
+<pre class="prettyprint">
+$ gem install autotest-growl
+</pre>
+
+(You may need to use sudo, based upon your setup).
+
+Edit the ~/.autotest file (create it if it does not exist), and paste the following in
+<pre class="prettyprint">
+require &quot;autotest/growl&quot;
+</pre>
+
+Everything is now configured. Jump to <a href="#testing">Testing Your Setup</a>
+
+<h2 id="testing">Testing Your Setup</h2>
+The Ubuntu Nerds and the Apple Fanboys reunite! It's time to test our installations.
+
+First, lets generate a controller to test.
+<pre class="prettyprint">
+$ rails generate controller Pages home contact
+</pre>
+
+You'll see a bunch of files created. Let's get rid of some of the unnecessary files rspec made
+<pre class="prettyprint">
+$ rm -rf spec/helpers
+$ rm -rf spec/views
+</pre>
+
+Now let's run our test without autotest. We should have 2 success and 0 failures at this point.
+<pre class="prettyprint">
+$ bundle exec rspec spec/
+</pre>
+
+Now open two terminal windows or tabs and cd back to your project directory in both of them.
+In one tab, execute 
+<pre class="prettyprint">$ bundle exec spork</pre>
+You may see a bunch of warning messages. It's safe to ignore these for the time being. If everything went well, you should see
+<pre class="prettyprint">
+Preloading Rails environment
+Loading Spork.prefork block...
+Spork is ready and listening on 8989!
+</pre>
+
+In the other tab you opened, simply execute
+<pre class="prettyprint">$ autotest -c</pre>
+
+
+Once again, you may see a bunch of warning messages in the terminal, and these are also safe to ignore for now. More importantly, you should see a pop up notification that shows that the tests passed. You'll also see
+<pre class="prettyprint">
+Finished in 0.xxxx seconds
+2 examples, 0 failures
+</pre>
+in the window/tab where you executed autotest.
+
+Now, to see if the autotest is working properly, lets open spec/controllers/pages_controller_spec.rb. The file contains the following:
+
+[ruby]
+require 'spec_helper'
+
+describe PagesController do
+
+  describe &quot;GET 'home'&quot; do
+    it &quot;should be successful&quot; do
+      get 'home'
+      response.should be_success
+    end
+  end
+
+  describe &quot;GET 'contact'&quot; do
+    it &quot;should be successful&quot; do
+      get 'contact'
+      response.should be_success
+    end
+  end
+
+end
+[/ruby]
+
+Lets make the test fail by changing all occurances of "contact" in the second describe block to "about".
+
+[ruby]
+require 'spec_helper'
+
+describe PagesController do
+
+  describe &quot;GET 'home'&quot; do
+    it &quot;should be successful&quot; do
+      get 'home'
+      response.should be_success
+    end
+  end
+
+  describe &quot;GET 'about'&quot; do
+    it &quot;should be successful&quot; do
+      get 'about'
+      response.should be_success
+    end
+  end
+
+end
+[/ruby]
+
+We should get a pop up saying that the test failed, and you can find the details in the tab with autotest running.
+<pre class="prettyprint">
+Finished in 0.07293 seconds
+2 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/controllers/pages_controller_spec.rb:13 # PagesController GET 'about' should be successful
+
+# Waiting since 2011-09-13 14:19:31
+
+</pre>
+
+If this shows up along with the pop up, congratulations, you've successufully integrated Spork and Autotest into RSpec!
+
+<strong>Note:</strong> Sometimes spork can get kind of screwy. If you're ever in a situation where you KNOW a test should pass or should fail, you should restart spork and see if that helps.
+
+<h2>Do I have to do this EVERY TIME?!?!</h2>
+Nope! For subsequent projects, your procedure should be as follows:
+<pre class="prettyprint">
+$ git clone git@github.com:joequery/Rails-Template.git
+$ cd Rails-Template
+$ rails g rename_to MyApp
+$ bundle install
+</pre>
+
+In a separate window/tab
+<pre class="prettyprint">
+$ bundle exec spork
+</pre>
+
+In another separate window/tab
+<pre class="prettyprint">
+$ autotest
+</pre>
+
+And that's it!
+
+<h2>Feedback</h2>
+Did the tutorial help? Did you find parts of the tutorial unclear? Let us know in the comments below!
+{% endblock post %}
+

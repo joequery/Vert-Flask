@@ -1,0 +1,79 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+If you're having trouble getting dual monitors to work on the latest version of Kubuntu (Currently 11.10), this guide will attempt to save your sanity!
+
+<h2>Installing Dual Monitors on Kubuntu 11.10</h2>
+Make sure you have the latest Nvidia drivers. To do this, Navigate to "Additional Drivers" via Applications => System => Additional Drivers. 
+
+Now execute the following commands in your terminal in order to get <a href="http://willem.engen.nl/projects/disper/">disper</a>, a nice utility that saves us from the headache of configuring via Nvidia-Settings. 
+
+<pre class="prettyprint">
+$ sudo add-apt-repository ppa:disper-dev/ppa
+$ sudo add-apt-repository ppa:nmellegard/disper-indicator-ppa
+$ sudo apt-get update
+$ sudo apt-get install disper disper-indicator
+</pre>
+
+(Credit to  <a href="http://www.joeyconway.com/blog/2011/08/13/ubuntu-how-to-extend-display-with-two-monitors/">Joey Conway</a>)
+
+Verify that disper works by executing the following in your terminal:
+<pre class="prettyprint">
+$ disper -e
+</pre>
+
+This should extend your monitors, giving you the desired functionality. This is great, except for currently we'd have to do this every single time we boot up Kubuntu.
+
+<h2>Activate Disper on Startup</h2>
+My first instinct, being slightly familiar with Ubuntu, was to create a startup script in <b>/etc/init.d</b>. This, however, didn't seem to work. Instead of creating a script in the init.d directory, we'll create the script in a Kubuntu-specific directory called Autostart.
+
+First, navigate to the Autostart directory:
+<pre class="prettyprint">
+$ cd ~/.kde/Autostart
+</pre>
+
+Now using your favorite text editor, create a script called <b>dual-monitors</b>
+
+<pre class="prettyprint">
+$ vim dual-monitors
+</pre>
+
+Paste in the following:
+
+<pre class="prettyprint">
+#!/bin/bash
+/usr/bin/disper -e
+</pre>
+
+Save the file and quit the text editor. We now need to make the file executable or it will just be ignored by Kubuntu on startup.
+
+<pre class="prettyprint">
+$ chmod +x dual-monitors
+</pre>
+
+To verify the script works, we first need to get out of our current dual screen mode to make sure the script correctly puts us back in. Thus, we use disper to force only the primary display to appear.
+
+<pre class="prettyprint">
+$ disper -s
+</pre>
+
+Your 2nd monitor should deactivate. Now, while we're still in the ~/.kde/Autotest directory, execute the following:
+
+<pre class="prettyprint">
+$ ./dual-monitors
+</pre>
+
+If this causes the monitors to go back to dual-screen mode, then the script works! T
+
+<h2>Now you have Dual Monitor Suuport!</h2>
+
+Go ahead and restart your computer, and you should find that Kubuntu starts with your dual monitors functioning correctly.
+{% endblock post %}
+

@@ -1,0 +1,61 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Backlinks are the foundation of <a href="http://www.vertstudios.com/blog/seo/">SEO</a>. If you spent hours trying to get a particular backlink, it'd be extremely discouraging to know that you somehow lost a portion of the credibility associated with that link. This can happen when a website's URLs are not <a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=139066">canonicalized/normalized</a>.
+
+<h2>The Code</h2>
+This .htaccess code redirects http://domainname.com to http://<b>www.</b>domainname.com. Additionally, it forces any call to index.php to the domain root. (This code snippet assumes you're using PHP extensions. If you're using HTML extensions, just replace each instance of PHP with HTML.)
+<pre class="prettyprint">
+#redirect index.php to root
+Options +FollowSymLinks
+DirectoryIndex index.php
+
+# force www in url
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.yourdomain\.com [NC]
+RewriteRule ^(.*)$ http://www.yourdomain.com/$1 [R=301,L]
+# END force www in url
+
+#rewrite index.php
+RewriteEngine On
+RewriteBase /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ http://www.yourdomain.com/ [R=301,L]
+#END rewrite index.php 
+</pre>
+
+<h2>The Concept</h2>
+In my opinion, the most consistent way to normalize URLs is through Apache 301 Redirects. However, the recent advent of the <a href="http://www.seomoz.org/blog/301-redirect-or-relcanonical-which-one-should-you-use">rel=canonical</a> tag has provided an alternative to the development-heavy Apache 301s, but some <a href="http://searchengineland.com/why-i-still-hate-relcanonical-48317">remain skeptical</a> on its effectiveness.  
+
+<h2>An Example</h2>
+As an example, take <a rel="nofollow" href="http://cloud929.com/">Cloud929</a>, a company that implements <a href="http://joomla15.siteground.com/?template=siteground-j15-27">Joomla templates</a>.
+Currently, the following URLs are all valid. (After clicking them, the URL doesn't change).
+<ul>
+<li><a rel="nofollow" href="http://www.cloud929.com/">http://www.cloud929.com/</a></li>
+<li><a rel="nofollow" href="http://www.cloud929.com/index.php">http://www.cloud929.com/index.php</a></li>
+<li><a rel="nofollow" href="http://cloud929.com/">http://cloud929.com/</a></li>
+<li><a rel="nofollow" href="http://cloud929.com/index.php">http://cloud929.com/index.php</a></li>
+</ul>
+Note that both www and non-www versions as well as index.php are treated as separate web pages to the search engines. This could lead to duplicate content being indexed, potentially devaluing the significance of the content. 
+
+Contrast this with the Vert site, which uses the Apache .htaccess 301. 
+<ul>
+<li><a href="http://www.vertstudios.com/">http://www.vertstudios.com/</a></li>
+<li><a href="http://www.vertstudios.com/index.php">http://www.vertstudios.com/index.php</a></li>
+<li><a href="http://vertstudios.com/">http://vertstudios.com/</a></li>
+<li><a href="http://vertstudios.com/index.php">http://vertstudios.com/index.php</a></li>
+</ul>
+
+Notice that every link variation resolves to http://www.vertstudios.com. 
+
+<h2>Take Care of Your Content</h2>
+You work hard to create content that drives traffic to your site. Take care of your content by ensuring links to your site have their maximum effect. If you have any questions about the URL normalization process, let us know in the comments section below!
+{% endblock post %}
+

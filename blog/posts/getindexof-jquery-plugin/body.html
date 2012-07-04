@@ -1,0 +1,218 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+<h2>.getIndexOf(array)</h2>
+
+<strong>Description</strong>
+Returns the location of the matched set of elements in a specified array. Returns Boolean false if the matched set is not found in the array. 
+
+<a href="http://www.vertstudios.com/lib/js/blog/plugins/getindexof/getindexof.zip">Download the ZIP File with Source and Demo</a>
+
+<h3>Parameters:</h3>
+<ul>
+<li>array: The array that will be searched through</li>
+</ul>
+
+<h2>Demos</h2>
+
+
+If you manipulate the structure of a jQuery wrapped set using array methods, the standard <a href="http://api.jquery.com/index/">.index()</a> of jQuery fails to adapt to the new structure.
+
+In this example, the index number for each element is displayed in its respective box. Clicking <a href="http://www.w3schools.com/jsref/jsref_splice.asp">splice</a> will remove the first element of the jQuery wrapped set, and repopulate the boxes with their new index. 
+
+<iframe src="http://www.vertstudios.com/lib/js/blog/plugins/getindexof/demo-jquery-this.html" width="300" height="100" scrolling="no">Your browser does not support iFrames.</iframe>
+
+
+Notice that the index's do not change using jQuery(this).index() (See line 47)
+<div class="codeToggle">
+<a href="#" class="codeTrigger">Click to toggle source code</a> 
+<div class="codeDisplay">
+  <pre class="prettyprint">
+&lt;html&gt; 
+&lt;head&gt; 
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;getindexof.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;title&gt;GetIndexOf plugin&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+.box{
+width: 30px;
+height: 30px;
+border: 1px solid #000000;
+float: left;
+margin-left: 10px;
+}
+
+button{
+margin-top: 20px;
+margin-left: 10px;
+float: left;
+width: 50px;
+height: 30px;
+}
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(function(){
+  var boxes = $(&quot;.box&quot;);
+  
+  //store boxes into a variable in case user resets
+  var storage = boxes.clone();
+
+  $(boxes).each(function()
+  {
+    //Populate box with their index number
+    $(this).html($(this).index());
+  });
+  
+  $(&quot;#splice&quot;).click(function()
+  {
+    //Clear index numbers
+    boxes.each(function(){$(this).html(&quot;&quot;);});
+    
+    //Get rid of first element in jQuery boxes object
+    boxes.splice(0,1);
+    
+    $(boxes).each(function()
+    {
+      //Populate box with their index number
+      $(this).html($(this).index());
+    });
+  });
+  
+  $(&quot;#reset&quot;).click(function()
+  {
+    boxes.remove();
+    
+    //Retrieve original object
+    boxes = storage;
+    
+    $(&quot;#content&quot;).html(boxes);
+    
+    //Populate box with their index number
+    $(boxes).each(function(){$(this).html($(this).index());});
+    
+    //store boxes into a variable in case user resets
+    storage = boxes.clone();    
+  });
+});
+&lt;/script&gt;  
+&lt;/head&gt; 
+&lt;body&gt; 
+  &lt;div id=&quot;content&quot;&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box2&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box3&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box4&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button style=&quot;clear:both;&quot; type=&quot;button&quot; id=&quot;splice&quot;&gt;Splice&lt;/button&gt;
+  &lt;button type=&quot;button&quot; id=&quot;reset&quot;&gt;Reset&lt;/button&gt;
+&lt;/body&gt; 
+&lt;/html&gt; 
+</pre>
+</div>
+</div>
+
+The .getIndexOf method, however, accounts for the fact that the array structure has changed. (See line 49)
+
+<iframe src="http://www.vertstudios.com/lib/js/blog/plugins/getindexof/demo.html" width="300" height="100" scrolling="no">Your browser does not support iFrames.</iframe>
+
+<div class="codeToggle">
+<a href="#" class="codeTrigger">Click to toggle source code</a> 
+<div class="codeDisplay">
+  <pre class="prettyprint">
+&lt;html&gt; 
+&lt;head&gt; 
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;getindexof.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;title&gt;GetIndexOf plugin&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body{background-color: #FFFFFF;}
+
+.box{
+width: 30px;
+height: 30px;
+border: 1px solid #000000;
+float: left;
+margin-left: 10px;
+}
+
+button{
+margin-top: 20px;
+margin-left: 10px;
+float: left;
+width: 50px;
+height: 30px;
+}
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(function(){
+  var boxes = $(&quot;.box&quot;);
+  
+  //store boxes into a variable in case user resets
+  var storage = boxes.clone();
+
+  $(boxes).each(function()
+  {
+    //Populate box with their index number
+    $(this).html($(this).index());
+  });
+  
+  $(&quot;#splice&quot;).click(function()
+  {
+    //Clear index numbers
+    boxes.each(function(){$(this).html(&quot;&quot;);});
+    
+    //Get rid of first element in jQuery boxes object
+    boxes.splice(0,1);
+    
+    $(boxes).each(function()
+    {
+      //Populate box with their index number
+      $(this).html($(this).getIndexOf(boxes));
+    });
+  });
+  
+  $(&quot;#reset&quot;).click(function()
+  {
+    boxes.remove();
+    
+    //Retrieve original object
+    boxes = storage;
+    
+    $(&quot;#content&quot;).html(boxes);
+    
+    //Populate box with their index number
+    $(boxes).each(function(){$(this).html($(this).index());});
+    
+    //store boxes into a variable in case user resets
+    storage = boxes.clone();    
+  });
+});
+&lt;/script&gt;  
+&lt;/head&gt; 
+&lt;body&gt; 
+  &lt;div id=&quot;content&quot;&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box2&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box3&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box4&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button style=&quot;clear:both;&quot; type=&quot;button&quot; id=&quot;splice&quot;&gt;Splice&lt;/button&gt;
+  &lt;button type=&quot;button&quot; id=&quot;reset&quot;&gt;Reset&lt;/button&gt;
+&lt;/body&gt; 
+&lt;/html&gt; 
+</pre>
+</div>
+</div>
+<a href="http://www.vertstudios.com/lib/js/blog/plugins/getindexof/getindexof.zip">Download the ZIP File with Source and Demo</a>
+<h2>Dependencies</h2>
+(Note: All dependencies are included in the source)
+<a href="http://www.vertstudios.com/blog/equalto-jquery-plugin/">.equalTo()</a> - Tests if two jQuery objects are equal to eachother.
+{% endblock post %}
+

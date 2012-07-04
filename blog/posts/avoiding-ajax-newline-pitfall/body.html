@@ -1,0 +1,58 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Here, my friends, is a JavaScript pitfall that has plagued entire workdays. It's small and simple, but menacing ... you'd do well to heed this warning! 
+
+<h2>Beware of Trailing New Lines!</h2>
+If you're retrieving information via AJAX, you have two easy options for retaining your sanity:
+<ul>
+<li>Make sure the document sending a response to your AJAX request has no trailing Newline. This includes all the files that may be <i>included</i> or <i>required</i> in a php file.</li>
+<li>Sanitize the server response with a <a href="http://stackoverflow.com/questions/3000649/trim-spaces-from-start-and-end-of-string">whitespace trim function</a></li>
+</ul>
+
+Why is that? Let's take a look at an example.
+
+<h2>Example of the Pitfall</h2>
+Let's execute a simple jQuery.post request to see how this can happen. 
+
+<pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;jQuery AJAX Pitfall&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+$.post(&quot;ajax.php&quot;, function(data) {
+      alert(data == &quot;foo&quot;)
+   });
+  &lt;/script&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+Now we have a file ajax.php
+<pre class="prettyprint">
+&lt;?php 
+require(&quot;whitespacetrap.php&quot;);
+echo &quot;foo&quot;;
+?&gt;
+</pre>
+
+The file <b>whitespacetrap.php</b> is simply a file with a newline. (Just open up notepad and press enter once and save).
+
+You'll see "false" as the alert when you load up the html file. Now comment out the require file in ajax.php, and reload the html file. It's now true! That new line is concatenated with the echo and returned. This will completely screw up any string comparisons with the response message. 
+
+<h2>Moral of the Story</h2>
+Use console.log or alert to echo print the value the server sends. If your string comparisons fail when you <em>KNOW</em> they shouldn't, make sure there are no stray newlines in the files associated with an AJAX request.
+{% endblock post %}
+

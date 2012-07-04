@@ -1,0 +1,59 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+There was once a very sad point in my development career where if I made a typo earlier in one of my bash statements, I would have to hold the left arrow to get my cursor over to the problem area and fix it. Then, one fateful day, I discovered VI keybindings in the shell!
+
+<h2>Activating VI Keybindings</h2>
+
+To get VI keybindings working in your shell, simply execute
+
+<pre class="prettyprint">
+$ set -o vi
+</pre>
+
+(If you decide you like vi keybindings in the shell and you want this mode enabled upon shell startup, append the command to your ~/.bash_profile for OS X and ~/.bashrc for linux ((<a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html">Why the difference?</a>))
+
+<h2>Using the VI Keybindings</h2>
+
+The shell will have normal/insert mode as expected. Here are the commands I use frequently:
+
+<pre class="prettyprint">
+i - enter insert mode
+esc - back to normal mode
+
+* IN NORMAL MODE *
+cc - clear the current line and enter insert mode
+ C - clear from cursor until the end of the line and enter insert mode
+dd - delete the current line
+ D - delete from the cursor until the end of the line
+ w - next word
+ W - next white-space delimited word
+ b - previous word
+ B - previous white-space delimited word
+dw - delete word
+cw - change word
+fx - find the next occurrence of the character 'x'
+Fx - find the previous occurrence of the character 'x'
+ $ - move the cursor to the end of the line
+ 0 - move the cursor to the beginning of the line
+ ; - repeat last find command (preserves direction)
+ l - move cursor right
+ h - move cursor left
+ k - scroll up through command history
+ j - scroll down through command history
+ A - move the cursor to the end of the line and enter insert mode
+ I - move the cursor to the beginning of the line and enter insert mode
+
+* Numeric modifier keys work as well! *
+5W - move forward five white-space delimited words. 
+
+</pre>
+{% endblock post %}
+

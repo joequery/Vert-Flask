@@ -1,0 +1,121 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+There may be times in which you need to do character processing that only deals with the Alphanumeric characters of a string, not the punctuations or blank spaces.
+
+Here is a program that will remove the punctuations and spaces from a string.
+
+<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/alphanum/alphanumonly.zip">Download the EXE and Source Code</a>
+
+<h2>The  Code</h2>
+
+<pre class="prettyprint">
+
+//Joseph McCullough
+//Program: alphanumonly.cpp
+//Description: Takes a string and creates another string that contains only the
+//letters and numbers of the first string.
+//Visit www.mcculloughdesigns.com/blog for more C++ Goods!
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+string alphaNumOnly(string);
+
+const string SENTINEL = &quot;0&quot;;//When entered as strToConvert,
+              //terminates program.
+
+int main()
+{
+  string strToConvert;  //The string that will be converted to.
+  string strConverted;  //strToConverted with only letters and numbers.
+
+  cout &lt;&lt; &quot;***************************************************&quot; &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;AlphaNumOnly.exe&quot;                     &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;Removes blank spaces and punctuations from a string&quot; &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;Provided By McCullough Designs&quot;      &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;***************************************************&quot;;
+
+  //Read in strToConvert
+  cout &lt;&lt; &quot;\n\nEnter a String or enter 0 to exit: &quot;;
+  getline(cin, strToConvert);
+
+  while (strToConvert != SENTINEL)
+  {
+
+    strConverted = alphaNumOnly(strToConvert);
+    cout &lt;&lt; &quot;\nNew String: &quot; &lt;&lt; strConverted;
+
+    //Read in strToConvert
+    cout &lt;&lt; &quot;\n\nEnter a String or enter 0 to exit: &quot;;
+    getline(cin, strToConvert);
+
+  }
+  return 0;
+}
+
+/************ function alphaNumOnly *********************************\
+Description: Used to isolate the alphanumeric characters of a string
+
+Precondition: strToConvert is defined
+
+Postcondition: Returns a string
+/********************************************************************/
+
+string alphaNumOnly(string strToConvert)
+{
+  string strConverted; //strToConvert with only alpha-numeric characters.
+
+  for (unsigned int i=0; i&lt;strToConvert.length();i++)
+  {
+    if (isalnum(strToConvert[i])) //If current character is alpha-numeric
+     strConverted += strToConvert[i]; //Add the character to strConverted
+
+  }
+
+  return strConverted;
+
+}
+</pre>
+
+<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/alphanum/alphanumonly.zip">Download the EXE and Source Code</a>
+
+
+<h2>The Explanation</h2>
+
+The main() component  of this function is just a sentinel controlled loop. The alphaNumOnly function is what's important.
+
+We create a local string variable
+<pre class="prettyprint">string strConverted</pre>
+To store all the letters and numbers from the original string. This string is returned at the end of the function.
+
+Let's examine the for loop
+<pre class="prettyprint">
+for (unsigned int i=0; i&lt;strToConvert.length();i++)
+  {
+    if (isalnum(strToConvert[i])) //If current character is alpha-numeric
+     strConverted += strToConvert[i]; //Add the character to strConverted
+
+  }
+</pre>
+
+We begin by setting a counter i to 0. We use unsigned int because string lengths will always be positive. We then tell the loop to keep going until we reach the end of the string being processed.
+
+The body of the for loop is where the magic happens.
+
+The logic  is as follows:
+Instead of removing the spaces and punctuation from the string being processed, it would be much easier to create a new string that contains only the alphanumeric characters. Each time an alphanumeric character is found (<strong>if(isalnum(string)</strong> evaluates to true), it is appended to the end of strToConvert (as indicated by the += operator. A+=b is short for A= A+b)
+
+So after you do this for the entire string, strToConvert will appear to be the original string but with only alpha numeric characters.
+
+<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/alphanum/alphanumonly.zip">Download the EXE and Source Code</a>
+{% endblock post %}
+

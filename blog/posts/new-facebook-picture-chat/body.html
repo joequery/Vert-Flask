@@ -1,0 +1,68 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Two similar but significant changes over the past week highlight the direction Facebook is moving when it comes to User Experience (how the user interacts with a web-based environment). 
+
+<h2>Picturfication?</h2>
+Facebook rolled out two separate changes to the extremely important chat interface. While some users simply log on Facebook and examine or comment other's profiles, many people's primary use of Facebook is its chat feature. Facebook chat consists of 3 main sections:
+<ul>
+<li>The sidebar friends list available on your "Home" page</li>
+<li>The friends list always available on the bottom right portion of your screen</li>
+<li>The chat box itself</li>
+</ul>
+
+Over the past week, Facebook has "Picturfied" the sidebar friends list and the chat box. Let's examine the changes in further detail. 
+
+<h3>The Chat Box</h3>
+Last week, the chat box looked like so:
+<img src="http://tothepc.com/img/2010/04/facebook-chat-bold-underline.png" alt="Facebook Chat Box" title="Facebook Chat Box"/>
+The components of the chat box included:
+<ul>
+<li>The name and picture of the person you're chatting with on top of the chat box</li>
+<li>The name of the person who sent the last message in chat</li>
+<li>An option to clear the chat history</li>
+<li>Options to close or minimize the chat box on the top right</li>
+<li>Time stamps</li>
+<li>Option to close the chat box on the bottom right hand portion of the screen</li>
+<li>The ability to browse through chat boxes using the tab key</li>
+</ul>
+
+The chat box was sufficient and provided all the tools necessary to execute a plain-text conversation. 
+
+However, enter this week and the <strong>new Facebook chat box</strong>.
+<img src="http://vertstudios.com/blog/images/facebook-chat/new-facebook-chat.png" alt="New Facebook Chat Box" title="New Facebook Chat Box" />
+The changes include:
+<ul>
+<li>Removal of the minimize indicator (-) in the top right (The user is expected to know clicking on the blue bar's empty space minimizes the window)</li>
+<li>Removal of the close indicator (x) in the top right</li>
+<li><b>Replaced the name of the person in chat with their picture</b></li>
+<li>Removed ability to browse through chat what with tab key</li>
+</ul>
+
+<h4>Observations</h4>
+The central dogma of User Experience design is removing the unnecessary. Notice in the list of changes how many times I used the word "remove". Generally speaking, removing bits of information from view declutters the interface. While in theory the new Facebook chat box is more minimalist due to its decreased functionality, it actually appears <i>less</i> sophisticated and <i>more</i> cluttered due to its new picture-chat style. Facebook believes the average user needs a visual reminder of who they're talking to every time a message is exchanged. Seeing the profile picture along with the name once at the top of the chat box sufficed. Seeing profile pictures over and over again in chat is simply obnoxious (and mildly insulting to the average user's intelligence). 
+
+<h3>The Sidebar Friends List</h3>
+The sidebar friends list was only just recently introduced, and had simple yet useful features including the profile pictures, names, and availability of online friends.
+
+<img src="http://vertstudios.com/blog/images/facebook-chat/facebook-old-sidebar-friends-list.png" alt="Old Facebook Friends Sidebar" title="Old Facebook Friends Sidebar" />
+
+However, to keep consistent with the Picturfication theme, Facebook changed this interface as well. 
+<img src="http://vertstudios.com/blog/images/facebook-chat/facebook-new-sidebar-friends-list.png" alt="New Facebook Friends Sidebar" title="New Facebook Friends Sidebar" />
+
+<h4>Observations</h4>
+Facebook has stripped everything away except a tiny thumbnail of the profile picture. Now the user can no longer see the names of their online friends without mousing over the thumbnails. Additionally, the green and gray availability icons are extremely hard to see since they reside within the thumbnails themselves. In the event a friend changes their profile picture or has a profile picture set to something other than their face, you may not realize they're online. 
+
+<h2>Conclusion</h2>
+While I whole-heartedly agree that a user should not have to work hard at all to enjoy the use of an interface, I believe Facebook has pushed this ideology to the extreme, incidentally diminishing the User Experience they aimed to enhance.
+
+How do you feel about the new Facebook Chat changes?
+{% endblock post %}
+

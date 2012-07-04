@@ -1,0 +1,35 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Company blogs used to be just for the corporate world. However, thanks to open source platforms like Wordpress, we are now experiencing a transition where more and more small businesses are maintaining company blogs. It's worth nothing, though, that many of these small businesses are not using their blogs effectively. Today, we'll share <strong>3 quick blogging tips</strong> for small businesses running a company blog. 
+
+<h2>1) Let People Know it Exists</h2>
+As previously discussed, having great content on your blog <a href="http://www.vertstudios.com/blog/great-content-but-no-links/">is not enough</a>. A blog with no audience is worthless! You have to let people know your blog exists so it will obtain the traffic it deserves. Here are a few ways to do just that:
+<ul>
+<li>Leave quality comments on blogs within your industry.</li>
+<li>Integrate your blogging into social media tools such as <a href="http://hootsuite.com/">HootSuite</a>.</li>
+<li>Communicate with local people of influence, and convince them to stop by and comment.</li>
+<li>Find Guest Blogging opportunities by doing a Google search for "<a href="http://www.google.com/webhp?sourceid=chrome#sclient=psy&hl=en&site=webhp&q=food+intitle:%22write+for+us%22&aq=f&aqi=&aql=&oq=&pbx=1&fp=fca90e9507624f80">(your industry) + write for us</a>"</li>
+</ul>
+<blockquote>"A blog with no audience is worthless!"</blockquote>
+
+<h2>2) Make a Blogging Calendar</h2>
+At first, blogging is extremely fun and enjoyable. While this flair does not necessarily <i>die out</i>, the excitement can wither as you begin to realize how much work goes into maintaining a blog. Sometimes, having to sit down and think of a topic completely gets you out of the blogging mood. To combat this scenario, I suggest setting aside a few hours near the end of the month to generate blog posts that you will use for the entire next month. Task management applications such as <a href="http://www.vertstudios.com/blog/remember-the-milk-iphone-app-review/">Remember The Milk</a> can make this process much easier. Trust me - generating a list of blog posts for future use saves a HUGE amount of time! 
+<blockquote>"...generating a list of blog posts for future use saves a HUGE amount of time!"</blockquote>
+
+<h2>3) Keep it Short, Keep it Sweet</h2>
+Contrary to some notions, blog articles do not have to be the length of small novels. When it comes to writing an article, you simply should write the exact amount of words necessary to convey your idea. With regards to web copy, people like to scan text, not read word for word. Having certain key points visually emphasized can greatly enhance user comprehension and experience. Extremely technical articles, such as my <a  href="http://www.vertstudios.com/blog/introduction-to-regular-expressions/">Introduction to Regular Expressions</a>, will require a lot of time to develop. Splitting technical articles up over a period of two days helps the task seem less daunting. 
+<blockquote>With regards to web copy, people like to scan text, not read word for word."</blockquote>
+
+
+<h2>Questions about Blogging?</h2>
+Have any questions about blogging to market your business? Leave us a comment below, or <a href="http://www.vertstudios.com/contact.php">get in contact</a> with us!
+{% endblock post %}
+

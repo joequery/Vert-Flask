@@ -1,0 +1,55 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Sometimes you feel like you never have the energy to program, whether at work or for your own startup. You wish you had the energy, and you have a genuine passion for development...but you just can't seem to get started.
+
+<h2>The Solutions</h2>
+These are the strategies I use to overcome my slumps and get myself motivated to code again.
+
+<h3>Manage Energy Sinks</h3>
+As an introvert with a love for <a href="http://news.ycombinator.com/">hacker news</a> and <a href="http://us.battle.net/sc2/en/profile/2757225/1/RegEx/">starcraft</a>, spending 15+ hours a day on the computer (6-8 work + 6-8 play) does not take any effort. Many activities on the computer are what I call 'energy sinks'. Energy sinks such as gaming require energy and focus but give none back.  In contrast, activities such as exercise and socializing tend to leave me feeling as energized (or more so) than before. During my stages of programming apathy, I may pour my entire day into energy sinks, leading to the slow deterioration of my mental diligence. Common energy sinks include:
+
+<ul>
+<li>Video Games</li>
+<li>Television</li>
+<li>Social Media</li>
+<li>Forum Trolling</li>
+</ul>
+
+Of course these activities are not inherently bad. In fact, I'd argue they help relieve stress caused by everyday life. Just make sure these activities do not begin to contribute to the stress you wish to escape by overindulging.
+
+<h3>Brain Teasers</h3>
+Sometimes in your programming career, the tasks at hand are, let's face it, <strong>boring as hell</strong>. It's difficult to maintain your perseverance and passion for development when you absolutely dread the project work has in store for you. Spending thirty minutes a day on programming brain teasers not only improves your ability as a programmer, it serves as a friendly reminder that programming can be fun. After all, that euphoria inducing "I figured it out!" moment is why many of us do what we do. 
+
+Programming brain teaser sites include:
+<ul>
+<li><a href="http://projecteuler.net/">Project Euler</a></li>
+<li><a href="http://puzzlenode.com/puzzles">Puzzle Node</a></li>
+<li><a href="http://www.ioi2009.org/index.jsp;jsessionid=0B6696CAD77A789846D13C10D25C1CD8?ln=2&id=363">IOI</a></li>
+<li><a href="http://www.olympiad.org.uk/problems.html">Computer Problems from BIO and IOI</a></li>
+<li><a href="http://www.facebook.com/careers/puzzles.php">Facebook's Engineering Puzzles</a></li>
+<li><a href="http://www.pythonchallenge.com/">The Python Challenge</a></li>
+<li><a href="http://www.gowrikumar.com/c/index.html">C Puzzles</a></li>
+<li><a href="https://sites.google.com/site/prologsite/prolog-problems">Prolog Problems</a></li>
+<li><a href="http://plg1.cs.uwaterloo.ca/~acm00/">Waterloo Programming Contests</a></li>
+<li><a href="http://code.google.com/codejam/contests.html">Google's Code Jam</a></li>
+<li><a href="http://mathschallenge.net/search">MathChallenges.net</a></li>
+<li><a href="http://codekata.pragprog.com/">Code Kata</a></li>
+<li><a href="http://icpc.baylor.edu/Past/PastProblems.html">Baylor Problem Archives</a></li>
+<li><a href="http://www.karrels.org/Ed/ACM/">Ed's Programming Contest Archives</a></li>
+</ul>
+
+<h3>Teach Someone</h3>
+Find a niece, nephew, aunt, uncle, anyone bored enough to let you ramble on for an hour, and introduce them to programming via an easy language like python. If you like something, teaching someone else the ropes often strengthens your own enthusiasm for the subject. For example, I recently helped my cousin through a <a href="http://www.sthurlow.com/python/lesson01/">python beginner's tutorial</a>, and his enthusiasm for the content mirrored my own when I first started. His energy and amazement gave me the push I needed to get back on my feet. The power of a student's enthusiasm can not be overstated; I now see why teacher's choose such a path. 
+
+<h2>Your Story</h2>
+Have you ever faced a slump that made you dread the job you once loved? How did you handle it? Leave a comment below!
+{% endblock post %}
+

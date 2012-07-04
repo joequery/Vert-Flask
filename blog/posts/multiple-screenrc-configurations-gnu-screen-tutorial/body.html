@@ -1,0 +1,71 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+As an extension of my <a href="http://www.vertstudios.com/blog/screenrc-simple-workflow/">example .screenrc article</a>, this article describes the why and how of multiple .screenrc configurations.
+
+<h2>Why Do I Need Multiple .screenrc Configs?</h2>
+Your workflow can vary greatly depending on the type of project. Sure, all will involve your text editor (such as VIM) as well as some type of version control, such as git. However, that leaves out quite a few requirements. A rails developer will be testing often, thus requiring tabs dedicated to spork, autotest, or other testing tools. Additionally, a screen for running the server locally will be needed. Having multiple screen configurations helps you avoid the hassle of creating new screens and naming each tab over and over again. 
+
+<h2>How to Add Multiple .screenrc Configs</h2>
+Create a directory where you plan on storing your screen configuration files. For this tutorial, I'll use <b>/usr/local/screen</b>
+<pre class="prettyprint">
+$ sudo mkdir /usr/local/screen
+$ cd /usr/local/screen
+</pre>
+
+Now create your configuration files and name them based on your workflow, and place them in the /usr/local/screen directory. For example, "rails", "flask", or "javascript". Here's my rails screen config file.
+
+<i>rails</i>
+<pre class="prettyprint">
+# Screen Configuration file for Rails!
+# Skip the startup message
+startup_message off 
+
+# Display a caption string below, appearing like tabs and
+# displaying the window number and application name (by default).
+caption always
+caption string &quot;%{kw}%-w%{wr}%n %t%{-}%+w&quot;
+
+# j to move down a window, k to move up. Like teh VIM!
+bind j focus down
+bind k focus up
+
+screen -t VIM
+screen -t Test
+screen -t Bash
+screen -t Git
+screen -t Spork
+screen -t Server
+
+# Select first screen
+select 0
+</pre>
+
+Remember to make sure this file is in your /usr/local/screen directory.
+
+Next, we have to tell screen to load these different configuration files. We'll make a simple bash function and append it to our ~/.bashrc
+
+<pre class="prettyprint">
+# Special screens
+# $1 - screen config file name
+function scr(){
+    screen -c /usr/local/screen/$1
+}
+</pre>
+
+<h2>Calling the Configurations</h2>
+Now if we want to use our rails screen configuration file, we execute 
+<pre class="prettyprint">$ scr rails</pre>
+
+Note that we use "scr" instead of "screen". Executing "screen" by itself will just load the ~/.screenrc file as its configuration.
+
+It's important to note that there isn't any configuration file inheritance going on here. The files located in /usr/local/screen need to be full fledged configuration files, as unfortunate as that is.
+{% endblock post %}
+

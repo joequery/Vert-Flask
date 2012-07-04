@@ -1,0 +1,129 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Decision making remains an integral portion of even the most simple web applications. In order to design a program that provides accurate information, it's imperative that we web developers provide the computer with accurate commands. In this series of tutorials entitled "Introduction to Logic", we will dissect logical operators and learn how to properly apply them to our programs. This tutorial will define the three most basic logical operators: Negation, Conjunction, and Disjunction. 
+
+<h2>Statements</h2>
+Before we begin with the explication of logic, we must note that logic does not tolerate ambiguity or subjectivity. Logic is composed of a series of statements, where statement is defined as a sentence that can evaluate to true or false. 
+
+Examples of statements include:
+<ul>
+<li>2 + 3 = 12 (Note that something not true can still be a statement)</li>
+<li>The capital of Texas is Austin</li>
+<li>3 is a prime number</li>
+</ul>
+
+Examples of non statements include:
+<ul>
+<li>Today is a pretty day (subjective)</li>
+<li>Justin's beard is quite handsome (subjective)</li>
+</ul>
+
+<h2>Negation</h2>
+For a statement p, the <em>negation of p</em> (denoted !p) is the logical opposite of p. The statement !p can be read "not p". 
+
+<h3>Examples</h3>
+p: 2 + 3 = 5
+!p: 2 + 3 &ne; 5
+
+p: Austin is the capital of Texas
+!p: Austin is not the capital of Texas
+
+Some examples using <a href="http://en.wikipedia.org/wiki/De_Morgan's_laws">De Morgan's laws</a>:
+p: 5 - 1 &gt; 2
+!p: 5 - 1 &le; 2
+
+p: 2 + 8 &ge; 10
+!p: 2 + 8 &lt; 10
+
+<h3>Truth Table</h3>
+Truth tables are tools used to view the possible logical outcomes of every possible combination of statements. In truth tables, T stands for a true statement while F stands for a false statement. 
+
+The truth table for negation is as follows:
+<table>
+<tr>
+<th>p</th>
+<th>!p</th>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+</tr>
+</table>
+
+As described earlier, the negation of a statement has the opposite truth value of the original statement. 
+
+<h2>Conjunction (AND) Statements</h2>
+The <em>conjunction</em> of statements p and q, denoted p &amp;&amp; q, is read "p AND q", and is true only when p and q are both true. 
+
+<h3>Examples</h3>
+p: 2 + 3 = 5
+q: The earth is larger than the Moon
+p &amp;&amp; q: 2 + 3 = 5 and the earth is larger than the moon. 
+
+<b>p &amp;&amp; q is true.</b>
+
+p: Bicycles have three wheels
+q: 5 &lt; 10
+p &amp;&amp; q: Bicycles have three wheels and 5 &lt; 10
+
+<b>p &amp;&amp; q is false since Bicycles do not have three wheels.</b>
+
+<h3>Truth Table</h3>
+<table>
+<tr><th>p</th><th>q</th><th>p&amp;&amp;q</th></tr>
+<tr><td>T</td><td>T</td><td>T</td></tr>
+<tr><td>T</td><td>F</td><td>F</td></tr>
+<tr><td>F</td><td>T</td><td>F</td></tr>
+<tr><td>F</td><td>F</td><td>F</td></tr>
+</table>
+
+As you can see, the only instance in which p &amp;&amp; q is true is when p and q are both individually true. 
+
+<h2>Disjunction (OR) Statements</h2>
+The <em>disjunction</em> of statements p and q, denoted p || q, is read "p OR q", and is true when at least one of p or q is true. 
+
+<h3>Examples</h3>
+p: 2 + 3 = 5
+q: 5 + 3 = 2
+p || q: 2 + 3 = 5 OR 5 + 3 = 2
+
+<b>p || q is true since at 2 + 3 = 5.</b>
+
+p: Africa is a country
+q: 1 &gt; 2
+p || q: Africa is a country or 1 &gt; 2. 
+
+<b>p||q is false since neither p nor q is true</b>
+
+p: Tyler is in Texas
+q: Texas is in the United States
+p || q: Tyler is in Texas or Texas is in the United States
+
+<b>p || q is true since Tyler is in Texas and Texas is in the United States</b>
+
+The previous example brings up an important point about the disjunction operator. This particular "or" is known as an "and/or", in contrast to an "exclusive or" (xor for short). With the disjunction operator, if p &amp;&amp; q is true, p || q is also true. However, in an "exclusive or", p xor q evaluates to true only when there exists at least one statement that is true but p&amp;&amp;q is false.
+
+<h3>Truth Table</h3>
+<table>
+<tr><th>p</th><th>q</th><th>p || q</th></tr>
+<tr><td>T</td><td>T</td><td>T</td></tr>
+<tr><td>T</td><td>F</td><td>T</td></tr>
+<tr><td>F</td><td>T</td><td>T</td></tr>
+<tr><td>F</td><td>F</td><td>F</td></tr>
+</table>
+
+As you can see, the only instance in which p || q is false is when p and q are both individually false.
+{% endblock post %}
+

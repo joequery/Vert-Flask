@@ -1,0 +1,32 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Fact: I'm lazy as hell. <strong>mkdir x && cd x</strong> for whatever reason just seems too long to create a directory and cd into it at the same time. 
+
+To engage in my laziness, append the following to your ~/.bashrc
+
+<pre class="prettyprint">
+function mkcd(){
+    mkdir -p $1 &amp;&amp; cd $1
+}
+</pre>
+
+Now execute the command <strong>source ~/.bashrc</strong> so your session takes the edited file into account. 
+
+Now simply executing
+<pre class="prettyprint">
+mkcd testFile
+</pre>
+
+will create the testFile directory and make that your working directory.
+
+Horray for lazy!
+{% endblock post %}
+

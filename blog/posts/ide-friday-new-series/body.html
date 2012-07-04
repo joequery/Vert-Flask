@@ -1,0 +1,28 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+We're excited to announce that starting next Friday, Vert Studios will begin the IDE Friday series. 
+
+<h2>What Will it Cover?</h2>
+IDE Friday will offer reviews of various IDEs, along with specific tutorials for each. We'll venture into well known IDEs, as well as some development environments that have not yet hit mainstream.
+
+<h2>Who Can Benefit?</h2>
+Designers and Developers alike can benefit from IDE Friday. The topics discussed will not be specific to a language, so anyone using some form of text document can benefit from the tutorials offered.
+
+<h2>What will IDE Friday do for Me?</h2>
+IDE Friday will teach you how to greatly improve productivity in your development environment. We hope that by following IDE Friday, you'll learn a new concept that makes work life during the week more productive, and ultimately more enjoyable. We'll be discussing macros, commands, snippets, regular expressions, and other invaluable tools for aiding your work flow. 
+
+<h2>Isn't a Text Editor just a Text Editor?</h2>
+No way! IDEs have so many tools available to the developer/designer that shamefully go unused! Many time saving features are completely ignored, simply because we have a tendency to see that blinking text scroller and <b>GO GO GO</b>. 
+
+<h2>Subscribe</h2>
+We're looking forward to sharing this unique series with the web design and web development community. <a href="http://www.vertstudios.com/blog/feed/">Subscribe to the blog</a> so you don't miss a post! Also, if you have a particular IDE you'd like reviewed, let us know in the comments below!
+{% endblock post %}
+

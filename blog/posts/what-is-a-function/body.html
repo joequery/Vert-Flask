@@ -1,0 +1,104 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+I believe all programmers and computer scientists should take the time to appreciate the foundations of mathematics. If you currently attend a university, I highly encourage you to take a foundations course. Learning math foundations expands your mind, and gives you a greater understanding of the concepts we programmers implement every single day. 
+
+For those of you who do not have the ability or desire to invest in a foundations of mathematics course, but still appreciate the complexities and origins of our field of work, I will very briefly describe what a function really is. 
+
+<h2>Set Theory</h2>
+<a href="http://en.wikipedia.org/wiki/Set_theory">Set theory</a> is an extremely important branch of mathematics. Without set theory, we would not have <a href="http://en.wikipedia.org/wiki/Computability_theory">computability theory</a>. 
+
+<h3>Definition of Set</h3>
+The definition of a set is somewhat circular, namely a collection of objects that are known as <em>elements</em> of the set. Sets are denoted using curly braces, and elements of the set are separated by a comma.
+
+Examples:
+{a,b,c,...,z}
+{1,3,5,7}
+
+It's important to note that sets do not take order into account. That is,<strong> {a,b,c} = {c,b,a}</strong>. Additionally, repeated entries can be ommitted. For example, {a,b,c,c} = {a,b,c}
+
+
+<h3>Complex Sets</h3>
+More complex sets can be described using the "|" symbol, which is read "such that" or "with the property that"
+
+{2x|x is an integer} (Also known as the set of even numbers)
+{2x+1|x is an integer} (Also known as the set of odd numbers}
+
+<h3>Pre-defined Sets</h3>
+In mathematics, some sets are referred to so much, we have them predefined and represented by symbols. Here is a table of the most commonly used sets.
+<table>
+    <tr>
+        <th>Set</th><th>Symbol</th>
+    </tr>
+    <tr>
+        <td>Integers</td><td>Z</td>
+    </tr>
+    <tr>
+        <td>Real Numbers</td><td>R</td>
+    </tr>
+    <tr>
+        <td>Rational Numbers</td><td>Q</td>
+    </tr>
+</table>
+
+<h3>Elements and Subsets</h3>
+Objects that are in the set are said to be elements of the set. This relationship is denoted element&isin;Set. For example, 2&isin;{2,4,6,8}. If every element of set A is also an element of set B, it is said that A is a subset of B, denoted A&sube;B.
+
+Examples:
+{1,2,3}&sube;{1,2,3,4,5}
+{2,4,6,...,8}&sube;{2x|x&isin;Z}
+
+<h2>Cartesian Product</h2>
+The Cartesian Product of two sets A and B, denoted AXB, is defined as follows:
+AXB = {(a,b)|a&isin;A and b&isin;B}
+
+So AXB yields a set of ordered pairs.
+
+Example:
+A={1,2,3}, B={a,b,c}
+AXB = {(1,a),(1,b),(1,c),(2,a),(2,b),(2,c),(3,a),(3,b),(3,c)} 
+
+<h2>Relations</h2>
+A relation R from set A to set B is any subset of AxB (defined above). 
+
+Take our previous example:
+A={1,2,3}, B={a,b,c}
+AXB = {(1,a),(1,b),(1,c),(2,a),(2,b),(2,c),(3,a),(3,b),(3,c)} 
+
+The following are relations.
+R1={(1,a),(3,b),(2,a)}
+R2={(2,b),(2,c),(3,b)}
+
+<h3>Domain and Range</h3>
+The domain and range of a relation R from set A to set B is as follows:
+Dom(R) = {a&isin;A|There exists a b&isin;B such that (a,b)&isin;R}
+So for the examples above, Dom(R1) = {1,3,2}, and Dom(R2)={2,3}
+Ran(R) = {b&isin;B|There exists an a&isin;A such that (a,b)&isin;R}
+So for the examples above, Ran(R1) = {a,b}, and Ran(R2) = {b,c}
+<h2>Functions</h2>
+Now we get to the fun! As a programmer, you already know the notion of a function. When you pass a set of values to a function, you get a value back. An obvious fact that you may not have taken the time to consider is that if you pass in the same input, a function will ALWAYS give you the same result back. Thus, the formal definition of a function is as follows:
+<blockquote>A function f is a relation from A to B such that for x1,x2&isin;Dom(f)=A, x1=x2 implies f(x1)=f(x2).</blockquote>
+
+In other words, in the event two values passed to a function are equal, the corresponding function values will be equal. Essentially, every value only yields one and only one output...just like in our programming functions!
+
+<h3>But What About Random Functions?</h3>
+You might think that random functions, such as <a href="http://php.net/manual/en/function.rand.php">PHP's rand()</a>, nullify the concept of a function. It's true, calling rand() can yield multiple values. But upon examining the official documentation, we see the following:
+<blockquote>"The random number generator is seeded automatically."</blockquote>
+
+This means the rand() function is automatically passed a value, referred to here as a seed. The function returns an output based on that value. Randomness cannot simply "occur" and be "extracted by" a computer. The general solution is a <a href="http://en.wikipedia.org/wiki/Pseudorandom_number_generator">Pseudorandom number generator</a>, which is what every random function in every programming language uses. Usually the seed is some derivation of the current time, since time never remains constant. However, if your seed is based on a relatively slow unit of time, such as seconds or even minutes, the function will return the same value, <b>guaranteed</b>. This is echoed by a <a href="http://www.php.net/manual/en/function.rand.php#75325">user's comment</a> in the official rand documentation:
+<blockquote>"Note that the automatic seeding seems to be done with the current number of seconds which means you can get the same results for several runs on a fast server.  Either call srand() yourself with a more frequently changing seed or use mt_rand() which doesn't appear to suffer from the problem."</blockquote>
+
+Are random functions useless? Not at all! Random functions in programming aim to be <em>random enough</em> for general use. Check out this awesome visual example of <a href="http://www.boallen.com/random-numbers.html">True Random vs PHP rand()</a>. 
+
+
+<h2>Further Reading</h2>
+I hope you've enjoyed this very, VERY brief introduction to functions! Please, do not consider this summary complete in any form. I was mainly hoping to entice you to the beautiful overlap between mathematics and computer science. If you wish to further your ability to think abstractly, I highly recommend reading through <a href="http://www.brics.dk/~gwinskel/STiCS.pdf">Set Theory for Computer Science</a>, a free textbook with excellent information regarding functions and proofs, along with applications for the field of computer science.
+{% endblock post %}
+

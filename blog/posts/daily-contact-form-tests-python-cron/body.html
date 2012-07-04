@@ -1,0 +1,139 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+For most websites, the contact form is the primary means of lead generation. A contact form that fails to email you those leads can potentially devastate your business - no exaggeration. How can you tell whether business is slow or your contact form just isn't working? The answer is to simply test the form by filling it out yourself and seeing if you receive the email. This article aims to automate that process. 
+
+<h2>Time Required</h2>
+30-45 minutes
+
+<h2>Tools You Will Need</h2>
+First and foremost, you will need a UNIX server with root access. That server needs the following items installed:
+<ul>
+<li><a href="http://www.python.org/getit/releases/2.6/">Python 2.6</a> or greater (but still in the Python 2 family)</li>
+<li><a href="http://pypi.python.org/pypi/virtualenv">virtualenv</a></li>
+</ul>
+
+<h2>Getting Everything Set Up</h2>
+
+<h3>Move to your scripts directory</h3>
+cd to the directory where you keep all your custom scripts. In case you don't have one, you can do what I did and make a scripts directory from the home folder.
+<pre class="prettyprint">
+sudo mkdir ~/scripts
+cd ~/scripts
+</pre>
+
+<h3>Set up working environment</h3>
+Now that you're in the ~/scripts directory, make another directory and call it daily_mail and cd into it.
+<pre class="prettyprint">
+mkdir daily_mail
+cd daily_mail
+</pre>
+(Sidenote: <a href="http://www.vertstudios.com/blog/mkdir-cd-at-same-time/">Learn how to make a directory and cd into it in one line</a>)
+
+Now we want to setup our virtualenv, which allows for local python packages.
+<pre class="prettyprint">
+virtualenv env --python=python2.6 #Put your version here
+</pre>
+
+To activate the virtual environment (and grant python access to the libraries we will be installing), execute the following from the ~/daily_mail directory:
+<pre class="prettyprint">
+. env/bin/activate
+</pre>
+
+If the environment activation was successful, you will see (env) somewhere in your next terminal line. (To disable the virtual environment at anytime, simply execute the command "deactivate")
+
+We'll now install the <a href="http://wwwsearch.sourceforge.net/mechanize/">Mechanize</a> library. (<b>Note</b>: We activate the virtual environment before installing libraries to make sure that the libraries are installed only to this environment instead of across the whole system). 
+<pre class="prettyprint">pip install mechanize</pre>
+
+<h2>Coding the Contact Form Filler-Outer</h2>
+Make sure your virtual environment is activated and start python (just type python in the terminal). Create and open <b>contact_form.py</b> in your favorite text editor. Paste the following in.
+
+[python]
+'''
+Fill out a contact form!
+'''
+
+import mechanize
+
+# Simulate a browser
+br = mechanize.Browser()
+
+# The URL where the contact form is located
+br.open(&quot;http://www.yourdomain.com/contact&quot;)
+
+# Choose which form on the page we're going to use, beginning
+# from the 0th index. If only one form on the page, it's 0.
+br.select_form(nr=0)
+
+# Begin filling br with the name =&gt; value pairs of your form.
+br[&quot;name&quot;] = &quot;Joseph McCullough&quot;
+br[&quot;phone&quot;] = &quot;903 555 5555&quot;
+br[&quot;email&quot;] = &quot;Joseph@vertstudios.com&quot;
+br[&quot;message&quot;] = &quot;Daily test of contact form&quot;
+
+# Submit and we're done!
+response = br.submit()
+[/python] 
+
+Test by executing 
+<pre class="prettyprint">python contact_form.py</pre>
+You should get an email in your inbox just as if a user had filled out the form.
+
+Due to how Cron works, we <a href="http://stackoverflow.com/questions/4150671/python-how-to-set-virtualenv-for-a-crontab">won't be able to directly call the python file</a>, or else the virtual environment won't get activated and our mechanize library won't be available to use. The solution is to create a bash script that activates the virtual environment, executes the python script, and deactivates the environment. 
+
+Create and open <b>send_mail</b> in your favorite text editor.
+<pre class="prettyprint">
+#!/bin/bash
+cd ~/scripts/daily_mail 
+. env/bin/activate
+python contact_form.py
+deactivate
+</pre>
+
+To test this script, first deactivate your virtual environment. Next, make sure the file is executable.
+<pre class="prettyprint">
+chmod +x send_mail
+</pre>
+
+Now execute
+<pre class="prettyprint">
+./send_mail
+</pre>
+
+If everything goes according to plan, the python script will execute and you'll get another email in your inbox. 
+
+<h2>The Cron Job</h2>
+So our python script and bash helper script work -- great! Now we need to automate the execution of this script so it gets executed at a specified interval. This is where cron comes into play. 
+
+First, open up the crontab file.
+<pre class="prettyprint">
+crontab -e
+</pre>
+
+Next, append the following line at the end of the file
+<pre class="prettyprint">
+0 9 * * * ~/scripts/daily_mail/send_mail
+</pre>
+
+This schedules the send_mail bash script(which executes the python script) to run at 9AM every day.
+
+Save and exit the text editor -- you're done! You should receive an email from the form every morning at 9AM (server time). To test if the cron file is working, you can change the line we appended to
+<pre class="prettyprint">
+* * * * * ~/scripts/daily_mail/send_mail
+</pre>
+
+This executes the script <em>every minute</em>. Just sit by your inbox for a few minutes and see if the email comes. Be sure to change it back ASAP, or your mailbox will get flooded! Also, remember that the crontabs changes do not take effect until you exit your text editor.
+
+If you want to use another time interval, I suggest using the <a href="http://www.openjs.com/scripts/jslibrary/demos/crontab.php">Crontab Code Generator</a>. To learn more about Cron, visit the <a href="http://adminschoice.com/crontab-quick-reference">Crontab quick reference</a>. 
+
+<h2>Feedback</h2>
+Have any questions? Get stuck somewhere in the tutorial? Let us know and we'll help you out!
+{% endblock post %}
+

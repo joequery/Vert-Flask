@@ -1,0 +1,27 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+I've begun my descent into pure Rails. The whole naming convention idiom is hard to remember while I'm just learning, so here's a reference chart for myself and for any other Rails noobs. 
+
+<pre class="prettyprint">
+# Routes
+resources: users
+
+# Controllers
+users_controller.rb
+class UsersController &lt; ApplicationController
+@users = User.all
+
+# Models
+user.rb (model)
+class User &lt; ActiveRecord::Base
+</pre>
+{% endblock post %}
+

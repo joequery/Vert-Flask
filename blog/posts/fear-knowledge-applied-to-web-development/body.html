@@ -1,0 +1,40 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Hi, I'm Joseph.
+
+And I just overcame a huge problem. 
+
+You see, my entire career used to span around a love/hate relationship I couldn't seem to alleviate. I lived and breathed web development. I read, wrote, and occasionally dreamed about code. However, the reading portion of my web development passion began to gradually induce a sense of anxiety. Each article I read about a cutting edge jQuery plugin or PHP library began to make me increasingly uncomfortable. Innovation was something I loved!...or so I thought. I should have been <b>excited</b> over the fact that someone could create an infinite carousel <a href="http://joshcaza.com/jquery-infinite-carousel/">with only 5 lines of code</a> when my version took 190 lines of code. I should've been <b>excited</b> over the news of an Apache server alternative <a href="http://blogs.sitepoint.com/2010/11/19/lightning-fast-wordpress-with-php-fpm-and-nginx/">by name of nginx</a>. So why, instead of being excited, was I afraid? 
+
+<h2>I had an Inordinate Fear of Knowledge</h2>
+Doesn't make sense, right? Why would a developer not go <i>absolutely nuts</i> over the latest and greatest innovations in web technology? Why would a developer intentionally skip over Chris Coyier and SitePoint? Why would a developer completely ignore the existence of CSS3? 
+
+<h3>The web was expanding, but I felt imaginary walls closing in</h3>
+
+Our minds deal with stress in peculiar ways. Sometimes our minds "delete" memories of traumatic events - a process termed "repression". Sometimes our own guilt causes us to emphasize faults in other people - a process termed "displacement". The mind seems to shift perception in a polar-opposite direction to help us cope. In my case, I didn't want to feel obsolete. A sudden influx of client work caused me to fall behind with my RSS feed. By the time I emerged from the pile of work, I immediately felt overwhelmed with the amount of innovation and progress made over such a short period of time. I simply could not mentally cope with the amount of material I needed to learn to catch up with the web community.
+
+<h3>I felt antiquated, obsolete - everything I hated</h3>
+
+A mind that hates itself is obviously not healthy, so my instincts came to the rescue. To cope with my insecurities, I began subconciously ignoring any innovations other than my own. Cutting-edge PHP libraries and <a href="http://facedetection.jaysalvat.com/">a new jQuery facial recognition algorithm</a> filtered through my mind as utter bullshit. I became increasingly elitist. Instead of taking delight in self-improvement, I began to take joy in demoralizing those I considered inferior or useless. I became an internet bully. But it helped me cope. 
+
+In the movies, usually a protagonist comes to accept their past after a specific incident triggers an epiphany. 
+
+<h3>While I, on the other hand, simply had a random <br />"Oh shit" moment. </h3>
+
+Oh shit, as in "this plugin is awesome!"
+Oh shit, as in "Man, that slider would've been so much easier had I known about this technique"
+
+And most importantly,
+Oh shit, as in "<b>Enjoy what you can learn, when you can learn it</b>."
+
+You can't learn everything, and that's really okay. Really. In fact, if you spent all your time learning, you'd never spend any time doing. And knowledge without application is High School.
+{% endblock post %}
+

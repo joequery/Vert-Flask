@@ -1,0 +1,65 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+<a href="http://www.gnu.org/s/screen/">GNU screen</a> is a terminal application that lets you run multiple terminals within a single terminal instance. This tool, which has been around for <i>ages</i>, can greatly improve your organization and workflow.
+
+<h2>An Example .screenrc</h2>
+The screenrc file is a file that allows for customization of GNU Screen, similar to how .vimrc helps you customize your VIM experience.  
+
+The example .screenrc source below offers the following features:
+<ul>
+<li>Visual tabs for all screen instances</li>
+<li>VIM-like movement through split screens</li>
+<li>No more annoying startup message!</li>
+<li>Default tabs that aid a rails/WSGI driven workflow</li>
+</ul>
+<pre class="prettyprint">
+# skip the startup message
+startup_message off
+
+# Display a caption string below, appearing like tabs and
+# displaying the window number and application name (by default).
+caption always
+caption string &quot;%{kw}%-w%{wr}%n %t%{-}%+w&quot;
+#
+# j to move down a window, k to move up. Like teh VIM!
+bind j focus down
+bind k focus up
+#
+# Default screens
+screen -t VIM
+screen -t Git
+screen -t Console
+screen -t Server
+#
+# Select first screen
+select 0
+
+</pre>
+
+A screenshot of the implementation:
+<img src="http://www.vertstudios.com/blog/images/screenrc/screenshot.png" alt="Screenshot of my GNU Screen Environment" title="Screenshot of my GNU Screen Environment" />
+
+<h2>Workflow</h2>
+Feel free to change the names of the default tabs. I personally find this tab scheme extremely helpful in keeping myself organized. For those interested in adopting this scheme, or those who just like to examine other developer's workflows, I'll explain my interaction with each tab.
+
+<h3>VIM</h3>
+The VIM tab is where I do all my text editing. All text editing should be done here! Opening a text editor in another tab can lead to overwritten files if you are careless and/or under-caffeinated. 
+
+<h3>Git</h3>
+All version control related commands should occur in the Git tab. (Feel free to rename to SVN if you're THAT type of person ;) )
+
+<h3>Console</h3>
+The console tab is the one I'm most flexible with. In a Rails/Flask environment, this would be where I run rails console/python respectively. A lot of individual function testing is done in this tab. Additionally, I use this tab for general UNIX commands such as mv, touch, and cp. 
+
+<h3>Server</h3>
+This tab is where I execute my local server commands, such as <b>rails s</b>.
+{% endblock post %}
+

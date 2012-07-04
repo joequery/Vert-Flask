@@ -1,0 +1,56 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+As <a href="http://www.vertstudios.com/blog/a-break-from-jquery/">previously stated</a>, I'm taking some time to learn pure JavaScript. That means I am beginning to experience the joy that is cross-browser JS quirks! 
+
+I recently came across a simple issue: IE7 was throwing the following error for getElementById:
+<h2>Object Doesn't Support this Property or Method</h2>
+In my head I was thinking: "What the heck IE? getElementById is the MAIN THING you should get right!". The code was as following:
+<pre class="prettyprint">
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    window.onload = function()
+    {
+      var d = document;
+      block = d.getElementById('block');
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      var blockHeight = block.clientHeight;
+      var offset = block.offsetTop;
+      block.style.top = windowHeight - (offset + blockHeight) + 'px';
+    };
+
+  &lt;/script&gt;
+</pre>
+
+<h2>The Solution</h2>
+It seems that I somehow forgot to include "var" before the assignment of "blocks" on line 5. Including "var" fixed the problem in IE7!
+<pre class="prettyprint">
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    window.onload = function()
+    {
+      var d = document;
+      var block = d.getElementById('block');
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      var blockHeight = block.clientHeight;
+      var offset = block.offsetTop;
+      block.style.top = windowHeight - (offset + blockHeight) + 'px';
+    };
+
+  &lt;/script&gt;
+</pre>
+
+Man...what have I gotten myself into? 
+<pre class="prettyprint">
+$(&quot;joseph&quot;).hide();
+</pre>
+{% endblock post %}
+

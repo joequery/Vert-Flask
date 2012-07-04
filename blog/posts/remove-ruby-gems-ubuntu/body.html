@@ -1,0 +1,20 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Recently (as in thirty seconds ago) I needed to remove all ruby gems from my system. After searching the interwebs, I came across an <a href="http://geekystuff.net/2009/01/14/remove-all-ruby-gems/">article</a> explaining how to remove all ruby gems on Fedora core linux.
+
+The snippet adjustment for Ubuntu was easy, just involved remove some quotes and adding sudo. For a detailed explanation on how the command works, check out that article. 
+
+<h2>Remove All Ruby Gems</h2>
+<pre class="prettyprint">
+gem list | cut -d&quot; &quot; -f1 | xargs sudo gem uninstall -aIx
+</pre>
+{% endblock post %}
+

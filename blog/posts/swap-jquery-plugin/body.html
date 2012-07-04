@@ -1,0 +1,132 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+<h2>.swap(index1, index2)</h2>
+
+<strong>Description</strong>
+Swaps the elements within a jQuery object. 
+
+<a href="http://www.vertstudios.com/lib/js/blog/plugins/swap/swap.zip">Download the ZIP File with Source and Demo</a>
+
+<h3>Parameters:</h3>
+<ul>
+<li>index1: The first index of the jQuery object being swapped</li>
+<li>index2: The second index of the jQuery object being swapped</li>
+</ul>
+Note: The first index starts at 0. 
+
+<h2>Demos</h2>
+
+Boxes of class "box" selected with jQuery via $(".box") are displayed with their respective index number. Choose two indexes to swap, and then click the swap button. Click "Toggle Index 0" to see that Index 0 will be toggled regardless of an element's starting position, indicating the elements of the jQuery object have indeed been swapped. 
+
+<iframe src="http://www.vertstudios.com/lib/js/blog/plugins/swap/demo.html" width="250" height="250" scrolling="no">Your browser does not support iFrames.</iframe>
+*** Please note that the .swap() method does not physically swap the element position styles, only their abstract position within the jQuery object. The index-based style positioning is handled by the fakeFloat method on line 34. 
+
+<div class="codeToggle">
+<a href="#" class="codeTrigger">Click to toggle source code</a>
+<div class="codeDisplay">
+  <pre class="prettyprint">
+&lt;head&gt; 
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;swap.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body{background-color: #FFFFFF;}
+.box{width: 30px;height: 30px;border: 1px solid #000000;position: absolute; top: 10px;}
+#hideToggle{margin-top: 50px;}
+button{margin-top: 10px;margin-left: 10px;clear: both;float: left;width: 150px;height: 30px;}
+#firstIndex{clear: both;float: left;margin-left: 10px;}
+#secondIndex{float: left;margin-left: 10px;}
+#box1{background-color: #FFFF00;}
+#box2{background-color: #CCCCCC;}
+#box3{background-color: #009999;}
+#box4{background-color: #FF0000;}
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(function(){
+  var boxes = $(&quot;.box&quot;);
+  
+  $(boxes).each(function()
+  {
+    $(this).html($(this).index());
+  });
+  
+  $(boxes).fakeFloat({margin: 10, offset: 20});
+  
+  $(&quot;#swapTrigger&quot;).click(function()
+  {
+    var index1 = $('input:radio[name=index1]:checked').val();
+    var index2 = $('input:radio[name=index2]:checked').val();
+    boxes = $(boxes).swap(index1,index2);
+      
+    $(boxes).fakeFloat({margin: 10, offset: 20, speed: 300}).each(function()
+    {
+      $(this).html($(this).getIndexOf(boxes));
+    });
+  });
+  
+  $(&quot;#hideToggle&quot;).toggle(function()
+  {
+    $(boxes[0]).hide();
+    $(&quot;#swapTrigger&quot;).attr('disabled', 'disabled');
+  },
+  function()
+  {
+    $(boxes[0]).show();
+    $(&quot;#swapTrigger&quot;).removeAttr('disabled');
+  });
+});
+&lt;/script&gt;  
+&lt;/head&gt; 
+&lt;body&gt; 
+  &lt;div class=&quot;box&quot; id=&quot;box1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box2&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box3&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box4&quot;&gt;&lt;/div&gt;
+  &lt;button type=&quot;button&quot; id=&quot;hideToggle&quot;&gt;Toggle index 0&lt;/button&gt;
+  &lt;button type=&quot;button&quot; id=&quot;swapTrigger&quot;&gt;Swap&lt;/button&gt;
+  &lt;div id=&quot;firstIndex&quot;&gt;
+  &lt;b&gt;Swap Index&lt;/b&gt;&lt;br /&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;index1&quot; value=&quot;0&quot; /&gt;0&lt;br /&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;index1&quot; value=&quot;1&quot; /&gt;1&lt;br /&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;index1&quot; value=&quot;2&quot; /&gt;2&lt;br /&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;index1&quot; value=&quot;3&quot; /&gt;3&lt;br /&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;secondIndex&quot;&gt;
+  &lt;b&gt;With Index&lt;/b&gt;&lt;br /&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;index2&quot; value=&quot;0&quot; /&gt;0&lt;br /&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;index2&quot; value=&quot;1&quot; /&gt;1&lt;br /&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;index2&quot; value=&quot;2&quot; /&gt;2&lt;br /&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;index2&quot; value=&quot;3&quot; /&gt;3&lt;br /&gt;
+  &lt;/div&gt;
+&lt;/body&gt; 
+&lt;/html&gt; 
+</pre>
+</div>
+</div>
+
+<h4>Bugs? Comments? Leave your feedback below!</h4>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=6420126; 
+var sc_invisible=1; 
+var sc_security="2834d5e4"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div
+class="statcounter"><a title="statistics for vBulletin"
+class="statcounter"
+href="http://statcounter.com/vbulletin/"><img
+class="statcounter"
+src="http://c.statcounter.com/6420126/0/2834d5e4/1/"
+alt="statistics for vBulletin" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+{% endblock post %}
+

@@ -1,0 +1,127 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Boolean Logic is an essential part of php when dealing with MySQL. If you do not understand boolean logic, a lot of the mysql functions may not make sense to you.
+
+Take the commonly used <a href="http://php.net/manual/en/function.mysql-fetch-array.php">mysql_fetch_array</a> function. It is commonly used with a while loop in this manner:
+
+<pre class="prettyprint">
+while($row = mysql_fetch_array($query))
+{
+//Do something with the record data
+}
+</pre>
+
+The condition for that while loop might not make sense if you haven't created your own boolean functions. Usually we see conditions like
+
+<pre class="prettyprint">while($x&gt;$y)</pre>
+or
+<pre class="prettyprint">while($houseStatus != &quot;forclosure&quot;)</pre>
+
+Those are pretty straight forward. So how is $row = mysql_fetch_array($query) a condition?
+
+<h2>Boolean Logic</h2>
+Boolean logic is composed of two values: TRUE and FALSE, meaning exactly what true and false mean.
+
+Here are some examples. The following all evaluate to TRUE.
+<pre class="prettyprint">
+2==2
+5&gt;3
+&quot;hello&quot; != &quot;goodbye&quot;
+</pre>
+
+The following all evaluate to FALSE
+<pre class="prettyprint">
+2==15
+12&lt;5
+&quot;Sally&quot; == &quot;Sue&quot;
+</pre>
+
+So it's very easy to understand boolean logic in terms of relational expressions and equality statements. But outside of these types of statements exist another side of the boolean spectrum.
+
+<h3>The Boolean Value of Literals</h3>
+
+All literal values, being the number 10, the character 'B', and the string "bob" have a corresponding boolean value. How do you determine it? Simple.
+
+<strong>Anything not 0 is TRUE</strong>
+Naturally, 0 is considered false.
+
+Before we put this in perspective, here is a reminder of how If statements work
+
+<pre class="prettyprint">
+
+&lt;?php
+
+if(condition to be tested)
+   {
+      //Code to be executed if condition is TRUE
+   }
+else
+   {
+     //Code to be executed if condition is FALSE
+   }
+?&gt;
+
+</pre>
+
+So now to put the boolean  value of literals into perspective
+<pre class="prettyprint">
+
+&lt;?php
+$x  = 5;
+
+if($x)
+   echo &quot;Hello!&quot;;
+else
+   echo &quot;Goodbye!&quot;;
+?&gt;
+
+</pre>
+
+The code above outputs "Hello!". Since  $x is not equal to zero, its boolean value is TRUE. Since $x  is TRUE, the if($x) condition evaluates to TRUE, causing the echo "Hello!" line of code to be executed.
+
+In a similar example:
+
+<pre class="prettyprint">
+
+&lt;?php
+$x = 0;
+
+if($foo = $x)
+    $foo = 10;
+else
+    $foo = 20;
+
+echo $foo;
+
+?&gt;
+</pre>
+
+The code above outputs 20. Remember, since there is only one equal sign, only an assignment occurs, not an equality test. $foo is assigned the value of $x (zero), and then if($foo) is evaluated. Since $foo is 0, $foo has a boolean equivalent of FALSE. This causes the if statement condition to evaluate FALSE, and the code attached to the else statement will be executed.
+
+<h2>Relation to MySQL</h2>
+
+Let's take a look at the mysql_fetch_array function again, now that we know more about Boolean Logic
+
+<pre class="prettyprint">
+while($row = mysql_fetch_array($query))
+{
+//Do something with the record data
+}
+</pre>
+
+According to the PHP  Manual, mysql_fetch_array
+<cite>Returns an array of strings that corresponds to the fetched row, or FALSE if there are no more rows.</cite>
+
+So as long as the function has a row to process, $row is assigned an array of strings. Since the value of an Array is not 0 (although the elements of the array could very well be 0, the value of the Array itself is not), the while condition evaluates TRUE. If the function has no more rows to process, $row is assigned FALSE, and the while condition evaluates FALSE, terminating the loop.
+
+Hopefully you better understand the mysql_fetch_array function and the basics of boolean logic.
+{% endblock post %}
+

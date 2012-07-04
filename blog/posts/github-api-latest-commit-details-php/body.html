@@ -1,0 +1,90 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+Want to show off the cool open source project you're working on via <a href="https://github.com/joequery">GitHub</a>? This PHP code snippet will snag your most recently updated repo information and its latest commit message through the <a href="http://develop.github.com/">GitHub API</a>. All you have to do is plug in your username.
+
+      <pre class="prettyprint">
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Test Github API with PHP&lt;/title&gt;&lt;/head&gt;
+
+&lt;body&gt;
+&lt;?php
+function get_json($url){
+  $base = &quot;https://api.github.com/&quot;;
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, $base . $url);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+    //curl_setopt($curl, CONNECTTIMEOUT, 1);
+  $content = curl_exec($curl);
+  curl_close($curl);
+  return $content;
+}
+
+function get_latest_repo($user) {
+  // Get the json from github for the repos
+    $json = json_decode(get_json(&quot;users/$user/repos&quot;),true);
+
+  // Sort the array returend by pushed_at time
+  function compare_pushed_at($b, $a){
+    return strnatcmp($a['pushed_at'], $b['pushed_at']);
+  }
+  usort($json, 'compare_pushed_at');
+
+  //Now just get the latest repo
+  $json = $json[0];
+
+  return $json;
+}
+
+function get_commits($repo, $user){
+  // Get the name of the repo that we'll use in the request url
+  $repoName = $repo[&quot;name&quot;];  
+  return json_decode(get_json(&quot;repos/$user/$repoName/commits&quot;),true);
+}
+
+
+$latestRepo = get_latest_repo(&quot;joequery&quot;);
+$commits = get_commits($latestRepo, &quot;joequery&quot;);
+$latestCommit = $commits[0];
+
+// Relevant information
+$repoURL = $latestRepo[&quot;html_url&quot;];
+$repoName = $latestRepo[&quot;name&quot;];
+$repoDescription = $latestRepo[&quot;description&quot;];
+$gravatar = $latestRepo[&quot;owner&quot;][&quot;avatar_url&quot;];
+$author = $latestCommit[&quot;commit&quot;][&quot;author&quot;][&quot;name&quot;];
+$login = $latestCommit[&quot;author&quot;][&quot;login&quot;];
+$userURL = &quot;https://github.com/$login&quot;;
+$commitMessage = $latestCommit[&quot;commit&quot;][&quot;message&quot;];
+$commitSHA = $latestCommit[&quot;sha&quot;];
+$commitURL = &quot;https://github.com/$login/$repoName/commit/$commitSHA&quot;;
+?&gt;
+
+&lt;h1&gt;Latest Github Activity&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Project: &lt;a href=&quot;&lt;?php echo $repoURL; ?&gt;&quot;&gt;&lt;?php echo $repoName; ?&gt;&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;Description: &lt;?php echo $repoDescription; ?&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src=&quot;&lt;?php echo $gravatar; ?&gt;&quot; /&gt;&lt;/li&gt;
+&lt;li&gt;Author: &lt;a href=&quot;&lt;?php echo $userURL; ?&gt;&quot;&gt;&lt;?php echo $author; ?&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Last Commit:  &lt;?php echo $commitMessage; ?&gt; (&lt;a href=&quot;&lt;?php echo $commitURL; ?&gt;&quot;&gt;see commit&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+
+Simply replace my username with yours on lines 41 and 42. You get a lot of information back from the function...just use what you need! (And remember, if you're not sure what information the API/function gives you, print_r is your friend)
+{% endblock post %}
+

@@ -11,17 +11,24 @@ jQuery = PyQuery(f.read())
 f.close()
 
 posts = jQuery("item")
-posts = posts[0:1]
+#posts = posts[4:1]
 
+def get_attr(post, attr):
+  html = jQuery(post).children(attr).html()
+  if html:
+  	html = html.encode('ascii','xmlcharrefreplace').strip()
+  else:
+  	html = ''
+  return html
 
 for post in posts:
-  title = jQuery(post).children("title").html()
-  link = jQuery(post).children("link").html()
-  pubdate = jQuery(post).children("pubdate").html()
-  guid = jQuery(post).children("guid").html()
-  description = jQuery(post).children("description").html()
-  content = jQuery(post).children("content").html()
-  excerpt = jQuery(post).children("excerpt").html()
+  title = get_attr(post, "title")
+  link = get_attr(post, "link")
+  pubdate = get_attr(post, "pubdate")
+  guid = get_attr(post, "guid")
+  description = get_attr(post, "description")
+  content = get_attr(post, "content")
+  excerpt = get_attr(post, "excerpt")
 
   ##################################################################
   # Prepare variables
@@ -34,7 +41,7 @@ for post in posts:
 
   # Parse the date provided into a time object. 
   # "Sat, 06 Feb 2010 07:41:48 +0000" =>  "06 Feb 2010 07:41:48"
-  pubdate = pubdate.split(',')[1].strip()[:-6]
+  pubdate = pubdate.split(',')[1][:-5].strip()
   pubdateObj = strptime(pubdate, "%d %b %Y %H:%M:%S")
 
   # With the time object, we can now put the date in the form of the timestamp
@@ -42,7 +49,7 @@ for post in posts:
   pubdate = strftime("%Y-%m-%d %a %H:%M %p", pubdateObj)
 
   # Get the post content into markdown. Get rid of unicode spaces
-  content = content.replace(u'\xa0', u' ')
+  #content = content.replace(u'\xa0', u' ')
 
   # posts/some-post/body.html
   bodyfilePath = os.path.join(directory, "body.html")
@@ -71,7 +78,7 @@ for post in posts:
 
 """
   )
-  bodyfile.write(content)
+  bodyfile.write(content.encode('ascii','xmlcharrefreplace'))
   bodyfile.write(
 """
 {% endblock post %}\n
@@ -82,10 +89,10 @@ for post in posts:
 
   metafile.write(
 """
-title="%s"
-description="%s"
-time="%s"
-excerpt="%s" \n
+title=\"\"\"%s\"\"\"
+description=\"\"\"%s\"\"\"
+time=\"\"\"%s\"\"\"
+excerpt=\"\"\"%s\"\"\" \n
 """ % (title, description, pubdate, excerpt)
   )
 
@@ -95,3 +102,4 @@ excerpt="%s" \n
 
   bodyfile.close()
   metafile.close()
+  print("Wrote %s" % directory)

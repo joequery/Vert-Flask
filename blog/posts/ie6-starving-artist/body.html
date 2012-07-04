@@ -1,0 +1,90 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+<img src="http://www.vertstudios.com/blog/images/mc-blog/opinion/starvingartist/starvingartists.jpg" alt="The Starving Artist" />
+
+According to my former Art History professor <a href="http://www.christopher-stewart.com/">Christopher Stewart</a>, there are two reasons why an artist can starve:
+<ol>
+  <li>His lack of skill</li>
+  <li>His integrity</li>
+</ol>
+The first one makes complete sense. A person who can't draw a straight line shouldn't be paid to be an artist. But why would an artist with skill and integrity starve? Simple:
+<h2>The Audience Controls The Art</h2>
+Wait a second: How does the audience control the art when it's the artist that creates it in the first place?
+
+The artist creates, but <strong>the audience signs the paycheck</strong>.
+
+Mr. Stewart and I were on a car ride to Dallas to hang out with his son, my best friend, who was in town visiting from Texas Tech University. At that time in the Art History class, Mr. Stewart was discussing the Middle Ages(also known as the Dark Ages). The Middle Ages are notorious for the lack of scientific innovation and the devolution of art.
+
+Centuries  before the middle ages, we had the Greeks, who got really good at casting in bronze.
+
+<img src="http://www.artlex.com/ArtLex/g/images/greek_zeusartem.1.lg.JPG" alt="Zeus casted in Bronze" />
+
+Artists were becoming famous for the first time, and people wanted these sculptures in their households, so replication production was a huge industry.
+
+However, following the <a href="http://en.wikipedia.org/wiki/Peloponnesian_War">Peloponnesian War </a> and <a href="http://en.wikipedia.org/wiki/Decline_of_the_Roman_Empire">fall of the Roman Empire</a>, people no longer wanted and could no longer afford the beautiful sculptures.
+
+With the rise of Christianity, Christian art became the mainstream. Since Christianity is opposed to idol worshipping, artists ensured their depiction of Jesus and the saints was distorted to the point to where it would not be worshipped.
+
+<img src="http://www.historyforkids.org/learn/medieval/art/pictures/calvaryivory.jpg" alt="Medieval Art" />
+
+This is what the people wanted: Too accurate or beautiful a presentation of biblical figures would be a sin, so artists did not use detail in their work. In the image above, you can see disfigured proportions, and the perspectives are extremely off. But it's what the people wanted. Consequently, the artists simply forgot how to create in proportion and create with proper perspective.
+
+Additionally, all the Christians destroyed the Greek sculptures.
+
+"<em>Christianity defeated and wiped out the old faith of the pagans. Then with great fervour and diligence it strove to cast out and utterly destroy every last possible occasion of sin; and in doing so it ruined or demolished all the marvelous statues, besides the other sculptures, the pictures, mosaics and ornaments representing the false pagan gods; and as well as this it destroyed countless memorials and inscriptions left in honor of illustrious persons who had been commemorated by the genius of the ancient world in statues and other public monuments&#8230;their tremendous zeal was responsible for inflicting severe damage on the practice of the arts, which then fell into total confusion. </em>"
+-Giorgio Vasari (1511-1574), <a href="http://www.amazon.com/Lives-Artists-Oxford-Worlds-Classics/dp/0199537194/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1268178238&amp;sr=8-1">Lives of the Artists</a>.
+
+It was up to the Italians to rescue art: They still had preserved Roman work to treat as a template. This was the mechanism by which <a href="http://en.wikipedia.org/wiki/Renaissance">the Renaissance</a> sprouted.
+
+The same principle applies to music.
+
+Take the audience at a DCI marching competition. They want to see awesome marching fundamentals, good forms and solid stick heights from the percussion. They want to hear good intonation, blend, and dynamic contrast from the brass.
+<a href="http://www.youtube.com/watch?v=hQKZLc5VcDw">2002 Cavaliers Frameworks</a>
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="425" height="350" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="src" value="http://www.youtube.com/v/hQKZLc5VcDw" /></object>
+
+The audience of Dallas Carter  High School just want to have something to dance to.
+
+<a href="http://www.youtube.com/watch?v=UlXo61paMM8">Dallas Carter "Marching Band"</a>
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="425" height="350" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="src" value="http://www.youtube.com/v/UlXo61paMM8" /></object>
+
+Both shows meet audience expectations favorably, but it's completely obvious which performance has more intellectual integrity. If an audience for perfect band performances didn't exist, perfect bands wouldn't exist. If an audience for crappy bands didn't exist, crappy bands wouldn't exist.
+<h2>Relation to Web Design</h2>
+We spend hours debugging IE6 to make our clients happy. But by doing so, we create disgusting CSS Hacks. How do we expect exceptional progress while we place
+<pre class="prettyprint">
+  div.thingy {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/girl_small.png', sizingMethod='scale');
+}
+
+* &gt; .thingy {
+  background-image: url(images/girl_small.png);
+}<!--formatted--></pre></pre>
+To <a href="http://snipplr.com/view/2680/transparent-png-css-for-ie6/">make a transparent PNG work in IE6</a>.
+
+We've also seen the decline of good coding practices. Some developers will see a problem in IE and automatically make an &lt;if IE6&gt; conditional statement without considering the possibility that their code is flawed, simply because IE6 is so prone to mess things up.
+
+Go validate a random website and look at how trashy the code is. Why are people getting paid to create such garbage?
+
+Because the clients do not want good code: They want thrilling web applications and designs that work on all browsers. Due to IE6's terrible CSS rendering, it is nearly impossible to have both good code and innovative IE6 design exist at the same time. The clients give us the money to feed our families, so who are we to say "No, I refuse to develop for IE6."
+
+Microsoft has already declared that them <a href="http://arstechnica.com/microsoft/news/2009/08/microsoft-dropping-support-for-ie6-is-not-an-option.ars">dropping support for IE6 is not an option</a>.
+
+So it's up to us. Pressure from larger companies will help the process. For example, <a href="http://arstechnica.com/microsoft/news/2010/02/youtube-to-kill-ie6-support-on-march-13.ars">Youtube will be cutting off IE6 Support</a>. But even so, the designers who make the code will determine if IE6 stays or IE6 goes.
+
+As past technology and present technology drift further apart, we will experience more pain as we stretch ourselves out trying to hold on to both. Eventually we will take the bold step into the future, or we will watch our web standards crumble as we try to accommodate antiquated technology. It's either R.I.P Progress or <a href="http://ripie6.com/">R.I.P IE6</a>
+
+Personally, I'm with <a href="http://www.webdesignerwall.com/general/trash-all-ie-hacks/">Web Designer Wall: Trash IE6 Hacks!!!</a>.
+{% endblock post %}
+

@@ -1,0 +1,34 @@
+
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+So I somehow managed to botch my Autotest installation I described in <a href="http://www.vertstudios.com/blog/installing-rspec-autotest-spork-ubuntu-osx/">this tutorial</a>. After spending many hours trying to get it back up and running again, I've decided it's just not worth it. Here's a ghetto bash script for semi-auto testing. You just have to press any key and it'll run the test. 
+
+test.sh
+<pre class="prettyprint">
+#!/bin/bash
+# Our ghetto auto-testish thing. User presses any key to test,
+# Ctrl-C to get out
+
+function hold(){
+    read -n 1 -s    
+}
+
+function do_test(){
+    printf &quot;\nTesting...&quot;
+    bundle exec rspec spec/
+    printf &quot;\nPress any key to test... \n&quot;
+    hold
+    do_test
+}
+
+do_test
+</pre>
+{% endblock post %}
+

@@ -34,12 +34,13 @@ def blog_post(post):
 
     # Get the timestamp into a time object so we can display it however we want
     postTime = time.strptime(metaData.time, "%Y-%m-%d %a %H:%M %p")
-    post = {
+    postData = {
       'title' : metaData.title,
       'description' : metaData.description,
-      'date' : time.strftime("%B %d, %Y", postTime) # January 15, 2012
+      'date' : time.strftime("%B %d, %Y", postTime), # January 15, 2012
+      'url': "/blog/%s" % post
     }
-    return render_template(bodyPath, post=post)
+    return render_template(bodyPath, post=postData)
   #except (TemplateNotFound, IOError) as e:
   except None as e:
     return render_template('404.html'), 404

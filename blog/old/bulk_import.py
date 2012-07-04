@@ -59,20 +59,19 @@ for post in posts:
   # Begin execution!
   ##################################################################
 
-  os.mkdir(directory)
+  #os.mkdir(directory)
 
   bodyfile = open(bodyfilePath, 'w')
   metafile = open(metafilePath, 'w')
 
   # Write the body
   bodyfile.write(
-"""
-{% extends "templates/post.html" %}
+"""{% extends "templates/post.html" %}
 {% block post %}
 {% filter markdown %}
 
 
-[{{post['title']}}]("{{request.url}}")
+[{{post['title']}}]({{post['url']}})
 ======================================
 {% endfilter %}
 

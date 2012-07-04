@@ -1,10 +1,9 @@
-
 {% extends "templates/post.html" %}
 {% block post %}
 {% filter markdown %}
 
 
-[{{post['title']}}]("{{request.url}}")
+[{{post['title']}}]({{post['url']}})
 ======================================
 {% endfilter %}
 

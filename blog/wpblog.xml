@@ -84,37 +84,37 @@ Good code has these characteristics:
   <li>Easily Alterable - Good code can be changed very easily and very quickly.</li>
 </ol>
 As an example, if we wanted to add the number of fighting games in stock worth $30 each with the number of shooting games worth $40 each to get a value of current Inventory, we could do this:
-<code>
+<pre class="prettyprint">
 $a = 30;                  // Fighting Games Price
 $b = 40;                  // Shooting Game Price
 $c = 5;                   // Number of Fighting Games in stock
 $d = 10;                  // Number of Shooting Games in stock
 $e = ($a*$c) + ($b*$d);   // Total value of inventory. Price times Quantity.
-echo $e;                  // Display value of inventory </code>
+echo $e;                  // Display value of inventory </pre>
 
 The code displays the value of inventory perfectly, so what's so wrong with it? Well after the programming has left your short term memory, when you come back to the code it will make no sense. If these values are called later in the program, you'll have to keep on scrolling up to see the comments explaining what it means, or you will have to comment every single time the variable is called, which would lead to very cluttered code.
 
 The code would be more readable, more logical, and much more easy to update if the variables were named in this fashion
 
-<code>
+<pre class="prettyprint">
 $fightingPrice = 30;
 $shootingPrice = 40;
 $fightingInventory = 5;
 $shootingInventory = 10;
 $inventoryValue =($fightingPrice*$fightingInventory)+($shootingPrice*$shootingInventory);   // Total value of inventory. Price times Quantity.
-echo $inventoryValue; </code>
+echo $inventoryValue; </pre>
 
 It is much easier to follow the logic of the code with relevant names used.
 
 Now that we've discussed how to name and work with inputs, let's apply it to GameTraders. GameTraders problem inputs are unique in that they are dynamic: GameTraders wants to be able to change what information they have stored about an employee at any time. It would be counterproductive for us to list inputs such as "Name", "Social Security","Insurance", etc because our client has asked to be able to define the inputs. The best way to accommodate is to have their input of employee information be an <a href="http://www.tizag.com/phpT/arrays.php">Array</a>. Additionally, GameTraders requested this data be exclusive to the managers. How do we make data exclusive? Logins. So we will be receiving input of a login username and a password. So now we type the following into our word processor:
 
 <strong>Problem Inputs:</strong>
-<code>
-$arrEmployeeInfoCategories //Decides what information categories concerning an employee are stored.</code>
+<pre class="prettyprint">
+$arrEmployeeInfoCategories //Decides what information categories concerning an employee are stored.</pre>
 
-<code> $username                  //Login username
+<pre class="prettyprint"> $username                  //Login username
 $password                  //Login password
-</code>
+</pre>
 Our variables make sense and are easy to read. If we see $arrEmployeeInfoCategories later in the code, we will know it's an array due to the naming convention I used for arrays, which is the "arr" prefix. Feel free to make your own naming conventions, just be <strong>CONSISTENT</strong>.
 
 We have good inputs defined and established. It's time to move on to the next step of Problem Analysis: Outputs.
@@ -126,11 +126,11 @@ Problem Outputs are what will be displayed for the user to see. So let's conside
 We've established we need to display the category of information, the actual information, and the user's login name on the page. Now all that's left to do is list them out in our word processor.
 
 <strong>Problem Outputs:</strong>
-<code>
+<pre class="prettyprint">
 $arrEmployeeInfoCategories //Decides what information categories concerning an employee are stored.
 $arrEmployeeInfoValues     //Employee information corresponding to a category
 $username                  //Login username
-</code>
+</pre>
 
 Now that outputs are clearly defined and taken care of, let's move on to
 <strong>Additional Requirements or Constraints on Data. </strong>
@@ -138,10 +138,10 @@ In this section, we will declare the expected data entry. What does this mean? T
 
 So let's refer back to our inputs.
 
-<code>
+<pre class="prettyprint">
 $arrEmployeeInfoCategories
 $username
-$password</code>
+$password</pre>
 
 Common limitations on usernames and passwords are:
 <ul>
@@ -152,25 +152,26 @@ Since the storage of data in this application merits use of a database, The limi
 
 Now that we have data constraints defined, all we have to do is list them out in our word processor.
 <strong>Data Constraints:</strong>
-<code>
+<pre class="prettyprint">
 $arrEmployeeInfoCategories //Only alphanumeric characters and underscores
 $username     //At least six characters long, must contain one non alphabetical character.
 $password     //At least six characters long, must contain one non alphabetical character.
-</code>
+</pre>
 
 This example requires no relevant formulas, so we can skip step four of Problem Analysis. This is where you would list conversions or math formulas used in your application.
 
 We've wrapped up Problem Analysis. Next step:
 <h2>3. Design the Algorithm</h2>
 Algorithm is just a fancy word for "a series of steps used to solve the problem". There are many ways to design an algorithm, but I choose to use <a href="http://en.wikipedia.org/wiki/Pseudocode">Pseudo-Code</a>, which is a representation of the code meant for human reading instead of machine syntax interpretation. Our Algorithm for GameTraders would resemble this:
-<code>
+<pre class="prettyprint">
 Read in(get from user) username
 Read in password
-Validate username and password combination.</code>
+Validate username and password combination.</pre>
 
-<code> </code>
+<pre class="prettyprint"> </pre>
 
-<code>If validation unsuccessful,
+<pre class="prettyprint">
+If validation unsuccessful,
 Display &quot;Username and password do not match&quot;
 Else
 Read in $arrEmployeeInfoCategories
@@ -181,7 +182,7 @@ Else
 Retrieve corresponding category data and store into $arrEmployeeInfoValues
 Display $arrEmployeeInfoCategories
 Display $arrEmployeeInfoValues
-</code>
+</pre>
 
 That's all the algorithm is: Spelling out exactly what you want to program.
 
@@ -202,7 +203,7 @@ Just kidding...eh...heh.
 
 This Post Will Show You How To Capitalize Each Word In C++, Similar To The Way I Am Typing Right Now. This Is Also Known As Proper Case. First I Will Show You The Code, And Then Offer An Explanation.
 <h2>The Code</h2>
-<code>
+<pre class="prettyprint">
 
 //Joseph McCullough
 //Program: capEachWord.cpp
@@ -315,7 +316,7 @@ void lowerCase(string&amp; strToConvert)
 }
 
 
-</code>
+</pre>
 
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/capeachword/CapEachWord.cpp">Download the Source Code</a>
 
@@ -480,7 +481,8 @@ The audience of Dallas Carter  High School just want to have something to dance 
 Both shows meet audience expectations favorably, but it's completely obvious which performance has more intellectual integrity. If an audience for perfect band performances didn't exist, perfect bands wouldn't exist. If an audience for crappy bands didn't exist, crappy bands wouldn't exist.
 <h2>Relation to Web Design</h2>
 We spend hours debugging IE6 to make our clients happy. But by doing so, we create disgusting CSS Hacks. How do we expect exceptional progress while we place
-<pre><code>div.thingy {
+<pre class="prettyprint">
+  div.thingy {
   height: 100px;
   width: 100px;
   position: relative;
@@ -489,7 +491,7 @@ We spend hours debugging IE6 to make our clients happy. But by doing so, we crea
 
 * &gt; .thingy {
   background-image: url(images/girl_small.png);
-}<!--formatted--></code></pre>
+}<!--formatted--></pre></pre>
 To <a href="http://snipplr.com/view/2680/transparent-png-css-for-ie6/">make a transparent PNG work in IE6</a>.
 
 We've also seen the decline of good coding practices. Some developers will see a problem in IE and automatically make an &lt;if IE6&gt; conditional statement without considering the possibility that their code is flawed, simply because IE6 is so prone to mess things up.
@@ -633,7 +635,7 @@ So this post will show you how to convert a string to sentence  case using C++. 
 
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
 <h2>The Code</h2>
-<code>
+<pre class="prettyprint">
 //Joseph McCullough
 //Program: sentencecase.cpp
 //Description: Converts a string to sentence case.
@@ -763,7 +765,7 @@ bool isSentencePunc(char character)
       return false;
   }
 }
-</code>
+</pre>
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
 <h2>The Explanation</h2>
 You'll notice the logic for the sentenceCase function is very similar to the logic of the <a href="http://www.mcculloughdesigns.com/blog/c-capitalize-word-proper-case/200/">capEachWord (proper case) function</a>.
@@ -776,7 +778,7 @@ In English, a sentence is a series of alphanumeric characters, punctuation marks
 current sentence has ended and the next sentence is about to begin.
 
 C++ has a standard function for evaluating if a character is a punctuation mark via ispunct(). However, this function includes every punctuation mark: Colons, commas, hyphens, things that usually do not denote the end of a sentence. For this reason, we have to make our own function.
-<code>
+<pre class="prettyprint">
 bool isSentencePunc(char character)
 {
   switch(character)
@@ -789,14 +791,14 @@ bool isSentencePunc(char character)
       return false;
   }
 }
-</code>
+</pre>
 The function takes in a character by value, and returns true if the character is an exclamation point, period, or question mark. The function returns false if otherwise.
 
 The sentenceCase function starts out by <a href="http://www.mcculloughdesigns.com/blog/string-lowercase-uppercase-c/133/">lowercasing the string</a>. We do this so random capital letters within words will be accounted for.
-<code>This IS Not sentence Case.</code>
-<code>This iS not  sentence case.</code>
+<pre class="prettyprint">This IS Not sentence Case.</pre>
+<pre class="prettyprint">This iS not  sentence case.</pre>
 However, this brings up a problem: What about proper nouns? The following sentence <em>is</em> sentence case.
-<code>My name is Joseph.</code>
+<pre class="prettyprint">My name is Joseph.</pre>
 In order to accommodate for proper nouns, we would have to have a library or database with all the proper nouns known. For simplicities sake, we'll omit that process.
 
 Now on to the sentenceCase function itself.
@@ -808,9 +810,9 @@ When thisSentenceCapped is false and the current character being processed in th
 At that point, thisSentenceCapped is set to true, and the loop moves on to the next character. The loop will not uppercase any letters until thisSentenceCapped is set to false. thisSentenceCapped will not be set to false until a period, exclamation point, or question mark is found (in other words, when isSentencePunct() evaluates to TRUE).
 
 Here is a visualization using the sentence:
-<code>&quot;dude, Where’s my Car? i don’t Know man.</code>
+<pre class="prettyprint">&quot;dude, Where’s my Car? i don’t Know man.</pre>
 With proper sentence case applied, the sentence should read
-<code>&quot;Dude, where's my car? I don't know man.&quot;</code>
+<pre class="prettyprint">&quot;Dude, where's my car? I don't know man.&quot;</pre>
 So here we are, starting off: thisSentenceCapped is set to false.
 <img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase1.png" alt="C++ Sentence Case Step 1" />
 
@@ -877,7 +879,7 @@ Here is a program that will remove the punctuations and spaces from a string.
 
 <h2>The  Code</h2>
 
-<code>
+<pre class="prettyprint">
 
 //Joseph McCullough
 //Program: alphanumonly.cpp
@@ -945,7 +947,7 @@ string alphaNumOnly(string strToConvert)
   return strConverted;
 
 }
-</code>
+</pre>
 
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/alphanum/alphanumonly.zip">Download the EXE and Source Code</a>
 
@@ -955,18 +957,18 @@ string alphaNumOnly(string strToConvert)
 The main() component  of this function is just a sentinel controlled loop. The alphaNumOnly function is what's important.
 
 We create a local string variable
-<code>string strConverted</code>
+<pre class="prettyprint">string strConverted</pre>
 To store all the letters and numbers from the original string. This string is returned at the end of the function.
 
 Let's examine the for loop
-<code>
+<pre class="prettyprint">
 for (unsigned int i=0; i&lt;strToConvert.length();i++)
   {
     if (isalnum(strToConvert[i])) //If current character is alpha-numeric
      strConverted += strToConvert[i]; //Add the character to strConverted
 
   }
-</code>
+</pre>
 
 We begin by setting a counter i to 0. We use unsigned int because string lengths will always be positive. We then tell the loop to keep going until we reach the end of the string being processed.
 
@@ -1012,15 +1014,15 @@ First, I will admit that it was my mistake for not taking the time to notice tha
 Some specific noteworthy annoyances:
 <ol>
   <li>The instructor forgets that you can not embed a double quote within a double quote. He attempts to do
-<pre><code>&lt;p onClick = "alert("You clicked me");"&gt;Don't click&lt;/p&gt;<!--formatted--></code></pre>
+<pre><pre class="prettyprint">&lt;p onClick = "alert("You clicked me");"&gt;Don't click&lt;/p&gt;<!--formatted--></pre></pre>
 When he catches his mistake, he takes forever to explain the simple fact that single quotes should be used inside double quotes and vice versa.</li>
   <li>This is their idea of email vaildation:
-<pre><code>if(email_address.indexOf("@") == "-1" || name_first == ""){
+<pre><pre class="prettyprint">if(email_address.indexOf("@") == "-1" || name_first == ""){
 
   alert("Fill in the form properly dude!");
   return false;
 
-  } &lt;!--formatted--&gt;<!--formatted--></code></pre>
+  } &lt;!--formatted--&gt;<!--formatted--></pre></pre>
 </li>
   <li>The instructor will spend 5 minutes on code that was already explained in another clip. Why not display on the screen "See video 3" instead of spending more time on something we already learned?</li>
   <li>Terrible usage of variable names. When creating a flag for whether a menu is currently toggled or not (what would be a boolean variable if JavaScript required the declaration of data types), the instructor named the variable "onOff". So if onOff==Off, the menu was set to be off, and if onOff ==On, the menu was on.onOff? That looks more like an event handler than a variable name that describes whether a menu is toggled. Why not menuActive or menuDisplayed or menuExpanded? Since this guy is teaching beginners, he's teaching people that might not have adequate programming fundamentals to see how bad his coding practices are. For those who are putting their trust in this instructor, they are not learning how to properly name their variables, which is a <strong>HUGE</strong> contributing factor to code readability.</li>
@@ -1055,18 +1057,18 @@ An extensive review of www.killerjavascript.com 's video tutorial series on begi
 
 Take the commonly used <a href="http://php.net/manual/en/function.mysql-fetch-array.php">mysql_fetch_array</a> function. It is commonly used with a while loop in this manner:
 
-<code>
+<pre class="prettyprint">
 while($row = mysql_fetch_array($query))
 {
 //Do something with the record data
 }
-</code>
+</pre>
 
 The condition for that while loop might not make sense if you haven't created your own boolean functions. Usually we see conditions like
 
-<code>while($x&gt;$y)</code>
+<pre class="prettyprint">while($x&gt;$y)</pre>
 or
-<code>while($houseStatus != &quot;forclosure&quot;)</code>
+<pre class="prettyprint">while($houseStatus != &quot;forclosure&quot;)</pre>
 
 Those are pretty straight forward. So how is $row = mysql_fetch_array($query) a condition?
 
@@ -1074,18 +1076,18 @@ Those are pretty straight forward. So how is $row = mysql_fetch_array($query) a 
 Boolean logic is composed of two values: TRUE and FALSE, meaning exactly what true and false mean.
 
 Here are some examples. The following all evaluate to TRUE.
-<code>
+<pre class="prettyprint">
 2==2
 5&gt;3
 &quot;hello&quot; != &quot;goodbye&quot;
-</code>
+</pre>
 
 The following all evaluate to FALSE
-<code>
+<pre class="prettyprint">
 2==15
 12&lt;5
 &quot;Sally&quot; == &quot;Sue&quot;
-</code>
+</pre>
 
 So it's very easy to understand boolean logic in terms of relational expressions and equality statements. But outside of these types of statements exist another side of the boolean spectrum.
 
@@ -1098,7 +1100,7 @@ Naturally, 0 is considered false.
 
 Before we put this in perspective, here is a reminder of how If statements work
 
-<code>
+<pre class="prettyprint">
 
 &lt;?php
 
@@ -1112,10 +1114,10 @@ else
    }
 ?&gt;
 
-</code>
+</pre>
 
 So now to put the boolean  value of literals into perspective
-<code>
+<pre class="prettyprint">
 
 &lt;?php
 $x  = 5;
@@ -1126,13 +1128,13 @@ else
    echo &quot;Goodbye!&quot;;
 ?&gt;
 
-</code>
+</pre>
 
 The code above outputs "Hello!". Since  $x is not equal to zero, its boolean value is TRUE. Since $x  is TRUE, the if($x) condition evaluates to TRUE, causing the echo "Hello!" line of code to be executed.
 
 In a similar example:
 
-<code>
+<pre class="prettyprint">
 
 &lt;?php
 $x = 0;
@@ -1145,7 +1147,7 @@ else
 echo $foo;
 
 ?&gt;
-</code>
+</pre>
 
 The code above outputs 20. Remember, since there is only one equal sign, only an assignment occurs, not an equality test. $foo is assigned the value of $x (zero), and then if($foo) is evaluated. Since $foo is 0, $foo has a boolean equivalent of FALSE. This causes the if statement condition to evaluate FALSE, and the code attached to the else statement will be executed.
 
@@ -1153,12 +1155,12 @@ The code above outputs 20. Remember, since there is only one equal sign, only an
 
 Let's take a look at the mysql_fetch_array function again, now that we know more about Boolean Logic
 
-<code>
+<pre class="prettyprint">
 while($row = mysql_fetch_array($query))
 {
 //Do something with the record data
 }
-</code>
+</pre>
 
 According to the PHP  Manual, mysql_fetch_array
 <cite>Returns an array of strings that corresponds to the fetched row, or FALSE if there are no more rows.</cite>
@@ -1170,12 +1172,12 @@ Hopefully you better understand the mysql_fetch_array function and the basics of
 
 Take the commonly used <a href="http://php.net/manual/en/function.mysql-fetch-array.php">mysql_fetch_array</a> function. It is commonly used with a while loop in this manner:
 
-<code>
+<pre class="prettyprint">
 while($row = mysql_fetch_array($query))
 {
 //Do something with the record data
 }
-</code>
+</pre>
 
 The condition for that while loop might not make sense if you haven't created your own boolean functions.]]></excerpt>
   </item>
@@ -1304,9 +1306,9 @@ Your summer surveying job requires you to study some maps that give distances in
 <h2>2.Analyze the Problem</h2>
 Given user input of the value of miles, display the conversion of miles to kilometers.
 <strong>Data Requirements</strong>
-<code>
+<pre class="prettyprint">
 Problem Constants:
-MILES_TO_KM = 1.609;   //Conversion constant for Miles to Kilometers</code>
+MILES_TO_KM = 1.609;   //Conversion constant for Miles to Kilometers</pre>
 
 Problem Input
 miles; //The Distance in Miles
@@ -1454,10 +1456,10 @@ Your file should resemble this.
 
 <strong>Step 8)</strong>Open the httpd.conf file with notepad. Copy and paste the following to the top of the file
 
-<code>
+<pre class="prettyprint">
 LoadModule php5_module &quot;C:/webserver/php/php5apache2_2.dll&quot;
 AddType application/x-httpd-php .php
-PHPIniDir &quot;C:/webserver/php&quot;</code>
+PHPIniDir &quot;C:/webserver/php&quot;</pre>
 This tells the webserver what files to load for php and where to locate the php configuration file.
 Make sure a # does not appear until after the block of text you have pasted.
 
@@ -1503,7 +1505,7 @@ Be sure to restart your apache server. You can do this by right clicking on the 
 <img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/apache/restartapache.jpg" alt="Restart Apache" />
 
 Open up notepad, and paste this in:
-<code>&lt;?php phpinfo(); ?&gt;</code>
+<pre class="prettyprint">&lt;?php phpinfo(); ?&gt;</pre>
 
 Save the file as phpinfo.php in the C:&#92;webserver&#92;htdocs directory.
 
@@ -1529,7 +1531,7 @@ I will cover how to install and configure mysql, pear, and phpMyAdmin in an upco
     <content><![CDATA[C++ Does not have string case manipulation built in to its <a href="http://www.cplusplus.com/reference/string/string/"> standard library</a>. For this  reason, it's necessary to make your own upperCase and lowerCase functions. I'll show you how to do just that.
 <h2>The Function Code</h2>
 For all lowercase:
-<code>
+<pre class="prettyprint">
 void lowerCase(string&amp; strToConvert)
 {
    for(unsigned int i=0;i&lt;strToConvert.length();i++)
@@ -1537,9 +1539,9 @@ void lowerCase(string&amp; strToConvert)
       strToConvert[i] = tolower(strToConvert[i]);
    }
 }
-</code>
+</pre>
 For all UPPERCASE:
-<code>
+<pre class="prettyprint">
 void upperCase(string&amp; strToConvert)
 {
    for(unsigned int i=0;i&lt;strToConvert.length();i++)
@@ -1547,7 +1549,7 @@ void upperCase(string&amp; strToConvert)
       strToConvert[i] = toupper(strToConvert[i]);
    }
 }
-</code>
+</pre>
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/tolower/lowercase.zip">Download the .exe and Source File</a>
 <h2>The Explanation</h2>
 A string is technically an <a href="http://www.cplusplus.com/doc/tutorial/arrays/">array</a> of characters. Although C++ can not uppercase or lowercase a string, it can uppercase or lowercase an individual character, using the toupper() and tolower() standard functions respectively. This means we need to be able to isolate the characters of a string so we can apply the toupper() or tolower() function. The way we do this is by referring to the string as an array.
@@ -1555,7 +1557,7 @@ A string is technically an <a href="http://www.cplusplus.com/doc/tutorial/arrays
 <img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/tolower/basketball.jpg" alt="A string is an array of characters." />
 
 In our example of
-<code>string sport = "Basketball";</code>
+<pre class="prettyprint">string sport = "Basketball";</pre>
 If we were to output sport[0], we would output the character 'B'.
 <em>Recall that arrays begin indexing at 0, not 1. Array indexes are contained within square brackets</em> [ ].
 
@@ -1585,12 +1587,12 @@ This tells us
 The length of the string can be found with string.length()
 
 So the for loop turns out
-<code>
+<pre class="prettyprint">
    for(unsigned int i=0;i&lt;strToConvert.length();i++)
       {
          strToConvert[i] = tolower(strToConvert[i]);
       }
-</code>
+</pre>
 <a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/tolower/lowercase.zip">Download the .exe and Source File</a>]]></content>
     <excerpt><![CDATA[C++ Does not have string case manipulation built in to its <a href="http://www.cplusplus.com/reference/string/string/"> standard library</a>. For this  reason, it's necessary to make your own upperCase and lowerCase functions. I'll show you how to do just that.]]></excerpt>
   </item>
@@ -1611,14 +1613,14 @@ Alternatively, you can open the command prompt in the accessories folder of the 
 <img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/step1b.jpg" alt="Bring up the command prompt" />
 
 Step 2)Once the command prompt is open, change the current directory to the php directory. If you followed my <a href="http://www.mcculloughdesigns.com/blog/php-apache-installation-tutorial/112/">php installation tutorial</a>, your php folder is located at C:\webserver\php. So to change to the directory in the command prompt, you would type:
-<code>cd C:\webserver\php</code>
+<pre class="prettyprint">cd C:\webserver\php</pre>
 (cd stands for Change Directory in the command prompt. )
 Once you press enter, you should see that the directory has changed in my case from C:&#92;Users&#92;Joseph to C:&#92;webserver&#92;php.
 
 <img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/step2.jpg" alt="Change the directory" />
 
 Step 3)Now that you are in the php directory, type in
-<code>go-pear.bat</code>
+<pre class="prettyprint">go-pear.bat</pre>
 This loads the pear installation batch file that came with PHP. You will be prompted with the question:
 "Are you installing a system-wide PEAR or a local copy?" You can type in either system or local as your response. I chose system. Press Enter.
 
@@ -1629,7 +1631,7 @@ Step 4)A wall of text will hit your screen. PEAR is basically allowing you to ch
 <img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/pearwarning.jpg" alt="Pear Warning" />
 
 Type in Y and press enter. When prompted, press enter again. You will see
-<code>The 'pear' command is now at your service at c:&amp;#92;webserver&amp;#92;php&amp;#92;pear.bat</code>
+<pre class="prettyprint">The 'pear' command is now at your service at c:&amp;#92;webserver&amp;#92;php&amp;#92;pear.bat</pre>
 
 <img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/pearready.jpg" alt="Pear is now ready" />
 
@@ -1645,12 +1647,12 @@ Now that you have PEAR installed, you can start installing some packages. A list
 Step 7)If you have closed the command prompt, open it up again and make sure you are in the C:&#92;webserver&#92;php directory. (Refer to step 2 if you can't remember how to switch directories)
 
 Step 8)Now simply type in
-<code>pear install HTML_Template_IT</code> into the command prompt, press enter, and it will install!
+<pre class="prettyprint">pear install HTML_Template_IT</pre> into the command prompt, press enter, and it will install!
 
 <img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/installhtml.jpg" alt="Installing with Pear" />
 
 Step 9)If you want to uninstall a PEAR Package, you follow the same procedure but type "uninstall" instead of install. So to uninstall HTML_Template_IT, you would go to the command prompt and type
-<code>pear uninstall HTML_Template_IT</code>
+<pre class="prettyprint">pear uninstall HTML_Template_IT</pre>
 
 <img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/pear/uninstallhtml.jpg" alt="Uninstalling with Pear" />
 
@@ -1685,7 +1687,7 @@ The problem is MySQL did not properly uninstall. Remnants of MySQL still exist o
 <strong>Step 4)</strong><a href="http://www.c3scripts.com/tutorials/msdos/open-window.html">Open the  Command Prompt</a>
 
 <strong>Step 5)</strong>Type in
-<code>sc delete mysql</code>
+<pre class="prettyprint">sc delete mysql</pre>
 into the command prompt. If it fails, that's fine.
 
 <img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/mysql-command-prompt-delete.jpg" alt="Delete MySQL Service via Command Prompt" />
@@ -1913,15 +1915,15 @@ alt="tumblr hit tracking tool" /></a></div></noscript>
 
 <h2>Pointers and the "new" Operator</h2>
 Take a look at this declaration.
-<code>float *q;</code>
+<pre class="prettyprint">float *q;</pre>
 
 This identifies q as a <em>pointer variable</em> to a float. This means that we can store a memory address into q. A memory address is usually represented in hexadecimal form and looks something like
-<code>0x002132</code>
+<pre class="prettyprint">0x002132</pre>
 
 Rarely do you need to know the hexadecimal value of a memory address, but it is important to know that q will be holding this type of value and NOT a floating point value.
 
 Now look at the following
-<code> q = new float; </code>
+<pre class="prettyprint"> q = new float; </pre>
 
 The new operator takes memory from the heap and makes it available for the program to use. Thus, q will have the value of a memory address. Once again, q does NOT hold a floating point value, it holds the value of a memory address.
 
@@ -1931,16 +1933,16 @@ In order to associate a value with a memory address, we use the indirection oper
 
 In my opinion, The best way to understand pointers is to be able to read out the meaning of the syntax.
 
-<code>*q</code> literally translates to
+<pre class="prettyprint">*q</pre> literally translates to
 "The value associated with the memory address assigned to q."
 
 Putting all these concepts together, we can come up with
 
-<code>
+<pre class="prettyprint">
 float *q;      //Establish q as a pointer variable, enabling it to hold a memory address
 q = new float; //Dynamically allocate memory for a float and assign a memory address to q
 *q = 13.5;     //Associate the float value 13.5 with the memory address assigned to q
-</code>
+</pre>
 
 Once you can audibly describe the process occurring, pointers begin to make a lot more sense.]]></content>
     <excerpt><![CDATA[]]></excerpt>
@@ -2198,12 +2200,12 @@ The logic behind the sequential fade in is fairly straightforward: Go through ea
 
 So simple that this for loop might seem correct.
 
-<code>
+<pre class="prettyprint">
 for(var i=0; i&lt;$(wrapper).length; i++)
 {
    $(wrapper[i]).delay(1000).fadeIn(500);
 }
-</code>
+</pre>
 
 But the demo shows that everything comes up at once. Why is that? Two reasons.
 <ol>
@@ -2215,35 +2217,35 @@ But the demo shows that everything comes up at once. Why is that? Two reasons.
 
 Assuming our $(wrapper) contains 3 elements, JavaScript sees our for loop
 
-<code>
+<pre class="prettyprint">
 for(var i=0; i&lt;$(wrapper).length; i++)
 {
    $(wrapper[i]).delay(1000).fadeIn(500);
 }
-</code>
+</pre>
 
 As equal to these three separate statements.
 
-<code>
+<pre class="prettyprint">
 $(wrapper[0]).delay(1000).fadeIn(500);
 $(wrapper[1]).delay(1000).fadeIn(500);
 $(wrapper[2]).delay(1000).fadeIn(500);
-</code>
+</pre>
 
 JavaScript executes statements so fast that for our purposes, we can assume JavaScript executes these statements simultaneously.
 
 Loop iterations operate in direct contrast to jQuery's method "chaining". Consider the jQuery chain
 
-<code>$(wrapper).fadeIn(500).fadeOut(500);</code>
+<pre class="prettyprint">$(wrapper).fadeIn(500).fadeOut(500);</pre>
 
 fadeOut does not attempt to happen at the same time as fadeIn. fadeOut is placed in a queue and waits for the fadeIn animation to complete.
 
 The following also causes fadeOut to happen after fadeIn, despite the fact that they are two separate statements.
 
-<code>
+<pre class="prettyprint">
 $(wrapper).fadeIn(500);
 $(wrapper).fadeOut(500);
-</code>
+</pre>
 
 This is because the JavaScript queue is global, and no matter where a statement is executed, it has to go through the same queue-check. Even though the fadeIn and fadeOut methods are in separate statements, JavaScript recognizes that $(wrapper) is under animation, and places fadeOut in the queue for $(wrapper) until the fadeIn animation is complete. But for best coding practices, that type of code should just be chained to one line.
 
@@ -2256,12 +2258,12 @@ Here's a visual aid I use to remember the queuing differences between iterations
 
 Therefore, JavaScript sees our for loop
 
-<code>
+<pre class="prettyprint">
 for(var i=0; i&lt;$(wrapper).length; i++)
 {
    $(wrapper[i]).delay(1000).fadeIn(500);
 }
-</code>
+</pre>
 
 Like this
 <img src="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-fadein/image1.jpg" alt="For Loop time-line" />
@@ -2293,11 +2295,11 @@ What better place to look for proper usage of header tags, strong tags, and em t
 I was browsing through the code all excited. I felt like I had a personal breakthrough. This would serve as a template for best practices.  I scoffed at the fact that I hadn't done it before.
 
 Then I came across something.
-<code>&lt;h1&gt;&lt;a id=logo href=&quot;http://www.google.com/webhp?hl=en&quot; title=&quot;Go to Google Home&quot;&gt;Google&lt;img width=167 height=222 src=&quot;/images/srpr/nav_logo13.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;
-</code>
+<pre class="prettyprint">&lt;h1&gt;&lt;a id=logo href=&quot;http://www.google.com/webhp?hl=en&quot; title=&quot;Go to Google Home&quot;&gt;Google&lt;img width=167 height=222 src=&quot;/images/srpr/nav_logo13.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;
+</pre>
 <p style="clear: both;">I thought to myself: <b>Hey, isn't that what people do when they're replacing text with an image by moving the text off screen so they can trick search engines?</b></p>
 
-Well....<code>#logo img{border:none;position:absolute;left:-0px;top:-41px}</code>
+Well....<pre class="prettyprint">#logo img{border:none;position:absolute;left:-0px;top:-41px}</pre>
 
 Google's image logo is positioned over the h1 text.
 
@@ -2320,10 +2322,10 @@ Hiding text or links in your content can cause your site to be perceived as untr
 Hmph.
 
 The trickery doesn't end there.
-<code>&lt;h2 class=hd&gt;Search Results&lt;/h2&gt;</code>
+<pre class="prettyprint">&lt;h2 class=hd&gt;Search Results&lt;/h2&gt;</pre>
 
 Examining class <b>h</b>i<b>d</b>e reveals
-<code>.hd{position:absolute;width:1px;height:1px;top:-1000em;overflow:hidden}</code>
+<pre class="prettyprint">.hd{position:absolute;width:1px;height:1px;top:-1000em;overflow:hidden}</pre>
 
 If you do a browser-search for the phrase "Search Results", the results will be found, but you can't see the text on the screen.
 
@@ -2471,7 +2473,7 @@ Table-based code can still be maintainable if you do not attempt to implement pr
 
 Here is an example of a simple table-based form that lets CSS do most of the work(but thanks to using tables the work is easy!).
 
-<code>&lt;table id=”contactForm” cellspacing=”0″ cellpadding=”0″ border=”0″&gt;
+<pre class="prettyprint">&lt;table id=”contactForm” cellspacing=”0″ cellpadding=”0″ border=”0″&gt;
 
 &lt;tr&gt;
 &lt;td align=”right” valign=”middle”&gt;&lt;label for=”name”&gt;Name:&lt;/label&gt;&lt;/td&gt;
@@ -2498,7 +2500,7 @@ Here is an example of a simple table-based form that lets CSS do most of the wor
 &lt;td&gt;&lt;textarea class=”&quot; id=”details” name=”details” cols=”10″ rows=”6″&gt;&lt;/textarea&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
-&lt;/table&gt;</code>
+&lt;/table&gt;</pre>
 
 Enjoy the simple things in life :)
 <h2>In Conclusion</h2>
@@ -2624,7 +2626,7 @@ Places the matched set of elements at the front of an array.
 Due to scope issues, the JavaScript array method .unshift() sometimes fails to function properly. This is often followed by an error in FireBug stating .unshift() is not a function. Sometimes the scope issue is extremely difficult to find, and it's easier to simply use this plugin to insert jQuery objects at the front of an array. 
 
 <h2>Demos</h2>
-<code>
+<pre class="prettyprint">
 &lt;html&gt; 
 &lt;head&gt; 
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
@@ -2643,7 +2645,7 @@ $(function(){
   &lt;div class=&quot;box&quot; id=&quot;box3&quot;&gt;&lt;/div&gt;
 &lt;/body&gt; 
 &lt;/html&gt; 
-</code>
+</pre>
 
 <a href="http://www.vertstudios.com/lib/js/blog/plugins/frontpush.zip">Download the ZIP File with Source and Demo</a>]]></content>
     <excerpt><![CDATA[<strong>Description</strong>
@@ -2693,7 +2695,7 @@ Notice that the index's do not change using jQuery(this).index() (See line 47)
 <div class="codeToggle">
 <a href="#" class="codeTrigger">Click to toggle source code</a> 
 <div class="codeDisplay">
-  <code>
+  <pre class="prettyprint">
 &lt;html&gt; 
 &lt;head&gt; 
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
@@ -2773,7 +2775,7 @@ $(function(){
   &lt;button type=&quot;button&quot; id=&quot;reset&quot;&gt;Reset&lt;/button&gt;
 &lt;/body&gt; 
 &lt;/html&gt; 
-</code>
+</pre>
 </div>
 </div>
 
@@ -2784,7 +2786,7 @@ The .getIndexOf method, however, accounts for the fact that the array structure 
 <div class="codeToggle">
 <a href="#" class="codeTrigger">Click to toggle source code</a> 
 <div class="codeDisplay">
-  <code>
+  <pre class="prettyprint">
 &lt;html&gt; 
 &lt;head&gt; 
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
@@ -2866,7 +2868,7 @@ $(function(){
   &lt;button type=&quot;button&quot; id=&quot;reset&quot;&gt;Reset&lt;/button&gt;
 &lt;/body&gt; 
 &lt;/html&gt; 
-</code>
+</pre>
 </div>
 </div>
 <a href="http://www.vertstudios.com/lib/js/blog/plugins/getindexof/getindexof.zip">Download the ZIP File with Source and Demo</a>
@@ -2903,7 +2905,7 @@ In this example, a div is given a class "box" and id "box1". This div is selecte
 <div class="codeToggle">
 <a href="#" class="codeTrigger">Click to toggle source code</a>
 <div class="codeDisplay">
-  <code>
+  <pre class="prettyprint">
 &lt;html&gt; 
 &lt;head&gt; 
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
@@ -2938,7 +2940,7 @@ $(function(){
   &lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
 &lt;/body&gt; 
 &lt;/html&gt; 
-</code>
+</pre>
 </div>
 </div>
 
@@ -2948,7 +2950,7 @@ Using the .equalTo() method, however, properly evaluates that $("#box1") and $("
 <div class="codeToggle">
 <a href="#" class="codeTrigger">Click to toggle source code</a>
 <div class="codeDisplay">
-  <code>
+  <pre class="prettyprint">
 &lt;html&gt; 
 &lt;head&gt; 
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
@@ -2983,7 +2985,7 @@ $(function(){
   &lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
 &lt;/body&gt; 
 &lt;/html&gt; 
-</code>
+</pre>
 </div>
 </div>
 ]]></content>
@@ -3020,7 +3022,7 @@ Boxes of class "box" selected with jQuery via $(".box") are displayed with their
 <div class="codeToggle">
 <a href="#" class="codeTrigger">Click to toggle source code</a>
 <div class="codeDisplay">
-  <code>
+  <pre class="prettyprint">
 &lt;head&gt; 
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;swap.jquery.js&quot;&gt;&lt;/script&gt;
@@ -3095,7 +3097,7 @@ $(function(){
   &lt;/div&gt;
 &lt;/body&gt; 
 &lt;/html&gt; 
-</code>
+</pre>
 </div>
 </div>
 
@@ -3153,7 +3155,7 @@ The arrayShift() method combined with the fakeFloat() method simplifies carousel
 <div class="codeToggle">
 <a href="#" class="codeTrigger">Click to toggle source code</a>
 <div class="codeDisplay">
-<code>
+<pre class="prettyprint">
 &lt;html&gt; 
 &lt;head&gt; 
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
@@ -3235,7 +3237,7 @@ $(function(){
   &lt;/div&gt;
 &lt;/body&gt; 
 &lt;/html&gt; 
-</code>
+</pre>
 </div>
 </div>
 
@@ -3998,7 +4000,7 @@ The class contains 4 methods as part of the main interface:
 <h3>Regex::is($type,$value)</h3>
 <b>Description</b>: returns boolean true if $value is an exact match with the pattern associated with $type. False if otherwise. 
 <b>Examples:</b>
-<code>
+<pre class="prettyprint">
 &lt;?php
 echo Regex::is(&quot;email&quot;,&quot;hi@vertstudios.com&quot;)? &quot;Found&quot; : &quot;Not Found&quot;; //Found
 echo Regex::is(&quot;int&quot;,&quot;A 100 dollar bill&quot;)? &quot;Found&quot; : &quot;Not Found&quot;; //Not Found
@@ -4006,12 +4008,12 @@ echo Regex::is(&quot;usphone&quot;,&quot;903-920-9514&quot;)? &quot;Found&quot; 
 echo Regex::is(&quot;zip&quot;,&quot;75701&quot;)? &quot;Found&quot; : &quot;Not Found&quot;; //Found
 echo Regex::is(&quot;float&quot;,57.10)? &quot;Found&quot; : &quot;Not Found&quot;; //Found
 ?&gt;
-</code>
+</pre>
 
 <h3>Regex::has($type,$value)</h3>
 <b>Description</b>: returns boolean true if $value contains at least one instance of the pattern associated with $type. False if otherwise. 
 <b>Examples:</b>
-<code>
+<pre class="prettyprint">
 &lt;?php
 echo Regex::has(&quot;email&quot;,&quot;our email: hi@vertstudios.com&quot;)? &quot;Found&quot; : &quot;Not Found&quot;; //Found
 echo Regex::has(&quot;int&quot;,&quot;A 100 dollar bill&quot;)? &quot;Found&quot; : &quot;Not Found&quot;; //Found
@@ -4019,20 +4021,20 @@ echo Regex::has(&quot;html&quot;,&quot;Jolly Jolly&quot;)? &quot;Found&quot; : &
 echo Regex::has(&quot;name&quot;,&quot;#@#$! Arthur&quot;)? &quot;Found&quot; : &quot;Not Found&quot;; //Found
 echo Regex::has(&quot;float&quot;,&quot;I'm tired. Aren't you?&quot;)? &quot;Found&quot; : &quot;Not Found&quot;; //Not Found
 ?&gt;
-</code>
+</pre>
 
 <h3>Regex::hasAny($types,$value)</h3>
 $types is a string with various pattern types separated by a comma. Ex: "html,bbcode,int"
 
 <b>Description</b>: returns boolean true if $value contains at least one instance of any pattern associated with $types. False if otherwise. 
 <b>Examples:</b>
-<code>
+<pre class="prettyprint">
 &lt;?php
 echo Regex::hasAny(&quot;email,usphone&quot;,&quot;our email: hi@vertstudios.com&quot;)? &quot;Found&quot; : &quot;Not Found&quot;; //Found
 echo Regex::hasAny(&quot;html,bbcode&quot;,'&lt;a href=&quot;lolspam.html&quot;&gt;oeutaoeuaoeu&lt;/a&gt;')? &quot;Found&quot; : &quot;Not Found&quot;; //Found
 echo Regex::hasAny(&quot;html,int,float&quot;,&quot;Jolly Jolly&quot;)? &quot;Found&quot; : &quot;Not Found&quot;; //Not Found
 ?&gt;
-</code>
+</pre>
 (Note the convenient spam validation of a textarea form submission using Regex::hasAny("html,bbcode,mailstrings", $textarea) )
 
 <h3>Regex::getDescription($type)</h3>
@@ -4042,7 +4044,7 @@ You'll see in the <a href="http://www.vertstudios.com/blog/src/php/regexclass.tx
 
 If you use this class for form processing, it will be useful to get a nicely formatted description of the pattern type. 
 <b>Example:</b>
-<code>
+<pre class="prettyprint">
 $myform = array(&quot;name&quot; =&gt; &quot;Joseph&quot;, &quot;email&quot; =&gt; &quot;Joseph@@vertstudios.com&quot;,
                  &quot;usphone&quot; =&gt; &quot;9033305057&quot;, &quot;zip&quot; =&gt; &quot;75AA8&quot;);
 
@@ -4057,7 +4059,7 @@ foreach($myform as $type =&gt; $value)
 //Email is invalid
 //Phone is valid
 //Zip Code is invalid
-</code>
+</pre>
 (***One could argue that it would make more sense to have the $pattern and $description arrays combined into a multidimensional array, but I felt that it was simply easier to keep the arrays separate and update the two arrays as needed. )
 
 <h3><a href="https://github.com/joequery/PHP-Regex-Class">Download the source on GitHub</a></h3>
@@ -4110,7 +4112,7 @@ The class contains 4 methods as part of the main interface:
 <h3>Regex.is(type,value)</h3>
 <b>Description</b>: returns boolean true if value is an exact match with the pattern associated with type. False if otherwise. 
 <b>Examples:</b>
-<code>
+<pre class="prettyprint">
         console.log(Regex.is(&quot;email&quot;,&quot;hi@vertstudios.com&quot;));
         console.log(Regex.is(&quot;int&quot;,&quot;A 100 dollar bill&quot;));
         console.log(Regex.is(&quot;usphone&quot;,&quot;903-920-9514&quot;));
@@ -4123,12 +4125,12 @@ The class contains 4 methods as part of the main interface:
         //true
         //true
         //true
-</code>
+</pre>
 
 <h3>Regex.has(type,value)</h3>
 <b>Description</b>: returns boolean true if value contains at least one instance of the pattern associated with type. False if otherwise. 
 <b>Examples:</b>
-<code>
+<pre class="prettyprint">
         console.log(Regex.has(&quot;email&quot;,&quot;our email: hi@vertstudios.com&quot;));
         console.log(Regex.has(&quot;int&quot;,&quot;A 100 dollar bill&quot;));
         console.log(Regex.has(&quot;html&quot;,&quot;Jolly Jolly&quot;));
@@ -4141,14 +4143,14 @@ The class contains 4 methods as part of the main interface:
         //false
         //true
         //false
-</code>
+</pre>
 
 <h3>Regex.hasAny(types,value)</h3>
 types is a string with various pattern types separated by a comma. Ex: "html,bbcode,int"
 
 <b>Description</b>: returns boolean true if value contains at least one instance of any pattern associated with types. False if otherwise. 
 <b>Examples:</b>
-<code>
+<pre class="prettyprint">
         console.log(Regex.hasAny(&quot;email,usphone&quot;,&quot;our email: hi@vertstudios.com&quot;));
         console.log(Regex.hasAny(&quot;html,bbcode&quot;,'&lt;a href=&quot;lolspam.html&quot;&gt;oeutaoeuaoeu&lt;/a&gt;'));
         console.log(Regex.hasAny(&quot;html,int,float&quot;,&quot;Jolly Jolly&quot;));
@@ -4157,7 +4159,7 @@ types is a string with various pattern types separated by a comma. Ex: "html,bbc
         //true
         //true
         //false
-</code>
+</pre>
 (Note the convenient spam validation of a textarea form submission using Regex.hasAny("html,bbcode,mailstrings", textarea) )
 
 <h3>Regex.getDescription(type)</h3>
@@ -4167,7 +4169,7 @@ You'll see in the <a href="http://vertstudios.com/blog/src/js/regex.txt">source 
 
 The purpose of this method is mainly for convenient automation. 
 <b>Example:</b>
-<code>
+<pre class="prettyprint">
         var myform = {name: &quot;Joseph&quot;, email: &quot;Joseph@@vertstudios.com&quot;,
                          usphone: &quot;9033305057&quot;, zip: &quot;75AA8&quot;};
         
@@ -4182,7 +4184,7 @@ The purpose of this method is mainly for convenient automation.
         //Email is invalid
         //Phone is valid
         //Zip Code is invalid
-</code>
+</pre>
 
 
 <h3><a href="http://vertstudios.com/blog/src/js/regex.txt">Download the source code</a></h3>
@@ -4295,7 +4297,7 @@ Note: "limbo" is the state the scroller is in when it's outside of the range but
 
 To instantiate a StickyScroller, use the <i>new</i> operator. 
 The call to the StickyScroller class in the demo is:
-<code>
+<pre class="prettyprint">
         var scroller = new StickyScroller(&quot;#scrollbox&quot;,
         {
             start: 300,
@@ -4304,13 +4306,13 @@ The call to the StickyScroller class in the demo is:
             range: 100,
             margin: 100
         });
-</code>
+</pre>
 
 So what you observed was after scrolling down 300px, the sticky scroller effect began by keeping the div "scrollbox" 100px below the top of the browser window. After the initial 300px to initiate the scroller, every 300px scrolled initiates a callback. After scrolling 1800px total, the effect stops and the scrolling object stays put. 
 
 <h2>Public Methods</h2>
 Public methods are functions that can be called by instantiations of the StickyScroller class using the dot operator. For the following public function documentations, consider the instantiation of the <a href="<a href="http://vertstudios.com/blog/demo/stickyscroller/demo.php">demo</a>:
-<code>
+<pre class="prettyprint">
         var scroller = new StickyScroller(&quot;#scrollbox&quot;,
         {
             start: 300,
@@ -4319,23 +4321,23 @@ Public methods are functions that can be called by instantiations of the StickyS
             range: 100,
             margin: 100
         });
-</code>
+</pre>
 
 <h3>Accessor Methods</h3>
 Each option member has an accessor method that returns the property value to the calling environment. 
-<code>
+<pre class="prettyprint">
 scroller.getStart(); //300
 scroller.getEnd(); //1800
 scroller.getInterval();//300
 scroller.getRange(); //100
 scroller.getMargin();//100
-</code>
+</pre>
 
 Additionally, you can get the current index and previous index
-<code>
+<pre class="prettyprint">
 scroller.getIndex();
 scroller.getOldIndex();
-</code>
+</pre>
 
 <h3>Callbacks</h3>
 The callback functions for the StickyScroller work similar to all the callback functions of jQuery you've grown to love, such as <a href="http://api.jquery.com/click/">.click()</a>. However, instead of passing an anonymous function to the callback, you have the choice to pass current index to the callbacks as well. (Alternatively you could just use scroller.getIndex() in the function body). These callbacks, combined with <a href="http://api.jquery.com/eq/">jQuery's .eq() method</a> (as seen in the demo), can pack quite the UX punch. The callback functions available at this time are:
@@ -4348,41 +4350,41 @@ The callback functions for the StickyScroller work similar to all the callback f
 <h4>onScroll(func)</h4>
 <b>Description</b>: Executes whenever the user scrolls, regardless of position on the screen. 
 <b>Example</b>:
-<code>
+<pre class="prettyprint">
 //Will cause an alert every single time the user scrolls. 
 //Please don't do this in a real project!
 scroller.onScroll(function()
 {
      alert(&quot;This is rather spammy!&quot;);
 });
-</code>
+</pre>
 
 <h4>onNewIndex(func)</h4>
 <b>Description</b>: Executes whenever the user scrolls to a new index. This should be used over onScroll as much as possible.
 <b>Example</b>:
-<code>
+<pre class="prettyprint">
 //Add a class to the div with a class &quot;box&quot; that corresponds to the new index
 scroller.onNewIndex(function(index)
 {
      $(&quot;div.box&quot;).eq(index).addClass(&quot;active&quot;);
 });
-</code>
+</pre>
 
 <h4>onLimbo(func)</h4>
 <b>Description</b>: Executes whenever the user scrolls beyond the range of the current index, but is not yet to the next index. This callback is useful for removing/adding classes to reset a group of elements back to a normal state while the user scrolls to the next index.
 <b>Example</b>:
-<code>
+<pre class="prettyprint">
 //Removes the &quot;active&quot; class from each div with the class of &quot;box&quot;
 scroller.onLimbo(function()
 {
      $(&quot;div.box&quot;).removeClass(&quot;active&quot;);
 });
-</code>
+</pre>
 
 <h3>inRange()</h3>
 <b>Description</b>: Determines if the scroller is in interval range. For more explanation on what the range is, refer to the diagram above. 
 <b>Example</b>:
-<code>
+<pre class="prettyprint">
 //Every scroll, see if the scroller is in the range. 
 scroller.onScroll(function(index)
 {
@@ -4396,39 +4398,39 @@ scroller.onScroll(function(index)
           $(&quot;div.box&quot;).eq(index).removeClass(&quot;blue&quot;);
      }
 });
-</code>
+</pre>
 
 <h3>.distanceFrom(index)</h3>
 <b>Description</b>: Returns the shortest distance in pixels between the scroller and an index. 
 <b>Example</b>:
-<code>
+<pre class="prettyprint">
 //Get the shortest distance in pixels from index 2. 
 scroller.distanceFrom(2);
-</code>
+</pre>
 
 <h3>.closestIndex()</h3>
 <b>Description</b>: Returns the closest index that is not the current index
 <b>Example</b>:
-<code>
+<pre class="prettyprint">
 //Hide the div with class box associated with the closest index
 $(&quot;div.box&quot;).eq(scroller.closestIndex()).hide();
-</code>
+</pre>
 
 <h3>.firstIndex()</h3>
 <b>Description</b>: Returns the first index (0). This method exists simply for readability purposes. 
 <b>Example</b>:
-<code>
+<pre class="prettyprint">
 //Show the first div with class &quot;box&quot;
 $(&quot;div.box&quot;).eq(scroller.firstIndex()).show();
-</code>
+</pre>
 
 <h3>.lastIndex()</h3>
 <b>Description</b>: Returns the last index. 
 <b>Example</b>:
-<code>
+<pre class="prettyprint">
 //Show the last div with class &quot;box&quot;
 $(&quot;div.box&quot;).eq(scroller.lastIndex()).show();
-</code>
+</pre>
 
 <h2>Download</h2>
 <a href="https://github.com/joequery/jQuery-Position-Fixed-Sticky-Scroller">Download the source on GitHub</a>
@@ -4451,7 +4453,7 @@ This effect sucks with Firefox. There's a significant delay in position calculat
 <h2>Shortcomings of the Current Plugin Pattern</h2>
 <h3>The Plugin Pattern Clutters the Arguments</h3>
 It's not uncommon to see a plugin that takes multiple objects and multiple anonymous functions in as arguments. The result is extremely cluttered, borderline unreadable syntactical soup. For instance, take this example, provided in the documentation of the most popular <a href="http://docs.jquery.com/Plugins/validation">jQuery validation</a> plugin:
-<code>
+<pre class="prettyprint">
   $(&quot;form&quot;).validate({
     invalidHandler: function(e, validator) {
       var errors = validator.numberOfInvalids();
@@ -4483,12 +4485,12 @@ It's not uncommon to see a plugin that takes multiple objects and multiple anony
     },
     debug:true
   });
-</code>
+</pre>
 As the code user's needs grow, so does the complexity of the plugin instantiation. It's easy to get lost in the sea of curly braces, especially once conditional statements and objects within objects are thrown into the equation. From lines 19-23, you can see that the plugin actually goes 3 layers deep in objects.
 
 <h4>Solution</h4>
 Keep the plugin instantiation for the most basic settings. Use public methods to take care of the more complex customizations. The easiest way to accomplish this adjustment is to use JavaScripts "new" operator in conjunction with some <a href="http://www.1stwebdesigner.com/design/object-oriented-basics-javascript/">object-oriented principles</a>. If the plugin had been authored using a class(prototype) model, the equivalent configuration would look like so:
-<code>
+<pre class="prettyprint">
   var form = new validate(&quot;form&quot;, 
   {
     onkeyup: false,
@@ -4530,7 +4532,7 @@ Keep the plugin instantiation for the most basic settings. Use public methods to
     email: &quot;Please enter a valid email address, example: you@yourdomain.com&quot;,
     remote: jQuery.validator.format(&quot;{0} is already taken, please enter a different address.&quot;)  
   });
-</code>
+</pre>
 The separation of handlers and basic configuration promotes readability and organization. Additionally, the start and end of configuration options are now explicitly clear. Adjusting or removing configurations would be extremely easy. These conveniences also extend to the plugin source itself.
 
 <h3>Many Complex Plugins Simply Do Too Much</h3>
@@ -4551,33 +4553,33 @@ This pattern requires you to know the <a href="http://www.1stwebdesigner.com/des
 Defining the plugin with the class-based pattern is similar to the normal plugin pattern. 
 
 Normal plugin pattern:
-<code>
+<pre class="prettyprint">
 jQuery.fn.myPlugin = function()
 {
      //Code stuff goes here!
 };
-</code>
+</pre>
 
 Class-based plugin pattern
-<code>
+<pre class="prettyprint">
 function myPlugin()
 {
      //Code stuff goes here!
 }
-</code>
+</pre>
 
 <h3>Function Header and Default Values</h3>
 Since you're creating a plugin, chances are you're wanting to manipulate an element that can be represented by a jQuery selector. Thus, the most natural function header is
-<code>
+<pre class="prettyprint">
 function myPlugin(obj, options)
 {
      //Code stuff goes here!
 }
-</code>
+</pre>
 Where obj represents the jQuery selector or jQuery object for the element(s) you wish to manipulate, and options is an object with properties that will be used in the plugin. 
 
 This brings up a question: <b>Why not have obj just be a property of options?</b> In many instances, you want default values to be values associated with the CSS properties of the elements in question. However, object members can't refer to other object members in the definition of the object. This is simply because at the time the object is being populated with values, it does not yet exist to refer to itself. 
-<code>
+<pre class="prettyprint">
     var test1 = {val1: 10, val2: 5+test1.val1};
     alert(test1.val2); //Error, val1 undefined
     
@@ -4586,10 +4588,10 @@ This brings up a question: <b>Why not have obj just be a property of options?</b
 
     var test3 = {val1: 10, val2: 5+this.val1};
     alert(test3.val2); //Error, val2 Not a number
-</code>
+</pre>
 
 For default values, jQuery extend works perfectly. Lets say our plugin options takes in 3 properties: x, y, and z. jQuery extend allows us to fill in our options with default values in the event they aren't specified in the function call.
-<code>
+<pre class="prettyprint">
 function myPlugin(obj, options)
 {
     //------------------------------------------------------------
@@ -4601,7 +4603,7 @@ function myPlugin(obj, options)
     z: 0
     },  settings = jQuery.extend(defaults,options);
 }
-</code>
+</pre>
 
 The settings object is the options object populated with the values of default in the instance a value from options is missing. For example, if we passed in {x: 5, y:10} as our options object, settings.x would be 5, settings.y would be 10, and settings.z would be 0. Since z was not specified in the options object, the value of z associated with the defaults object was placed in the settings object.
 
@@ -4610,7 +4612,7 @@ Throughout the plugin, you should refer to the option values via the settings ob
 <h3>Constructor Methods</h3>
 If you have any events that you would like to take place once the plugin is initiated, you should have those executed immediately after declaring your default values. For example, if we wanted to make our jQuery selected object have an absolute position at coordinates (x,y), 
 
-<code>
+<pre class="prettyprint">
 function myPlugin(obj, options)
 {
     //------------------------------------------------------------
@@ -4627,10 +4629,10 @@ function myPlugin(obj, options)
                     'left': settings.x, 
                     'top': settings.y});
 }
-</code>
+</pre>
 <h3>Private Methods and Properties</h3>
 Private methods are functions that can only be called within the plugin definition. Similarly, private properties are properties that can only be accessed within the plugin definition. Private methods are useful for calculations and callbacks. Private methods promote readability for those viewing/maintaining the code. Since JavaScript exhibits function scope, private methods and properties can be created by simply using the "var" statement.
-<code>
+<pre class="prettyprint">
 function myPlugin(obj, options)
 {
     //------------------------------------------------------------
@@ -4653,14 +4655,14 @@ function myPlugin(obj, options)
           alert(&quot;Callbacked!&quot;);
      };
 }
-</code>
+</pre>
 <h3>Public Methods</h3>
 Public methods are functions that can be accessed by the calling environment. Notice that public properties are not listed, as most of the time public properties are poor programming practice. You don't want the values inside the plugin to be altered by the outside without validation. 
 
 Public methods are extremely useful for initiating actions, setting values, validation of arguments, and my personal favorite, altering callbacks.  To make a method public, you attribute it to the plugin itself with the "this" keyword.
 
 Lets say we want our plugin to allow the user to move the elements in the selected jQuery object to a certain coordinate. After the element has moved, we want a custom callback to occur.
-<code>
+<pre class="prettyprint">
 function myPlugin(obj, options)
 {
     //------------------------------------------------------------
@@ -4702,21 +4704,21 @@ function myPlugin(obj, options)
           });          
      };
 }
-</code>
+</pre>
 <h3>Calling the Plugin</h3>
 Now that we have our Plugin defined, it's time to call it. Plugins under this pattern will be called using the "new" operator, and it must be assigned to a variable. While this might feel awkward at first, you'll grow comfortable with this instantiation over time.
 
-<code>
+<pre class="prettyprint">
 var item = new myPlugin(&quot;#box&quot;, 
 {
      x: 20,
      y: 30
 });
-</code>
+</pre>
 Once this statement is executed, the constructor of the plugin occurs. Thus, the element with a div ID of "box" will be positioned absolutely with left value at 20 and top value at 30.
 
 In order to access public method, use the "." operator along with the name of the variable used.
-<code>
+<pre class="prettyprint">
 $(document).ready(function()
 {
      var item = new myPlugin(&quot;#box&quot;,
@@ -4742,7 +4744,7 @@ $(document).ready(function()
        y += 10;
     });
 });
-</code>
+</pre>
 <h3>Demo of our little plugin</h3>
 So we've spent some time creating this little plugin, and you might be attached after all this work. I understand! Feel free to <a href="http://vertstudios.com/blog/demo/pattern/patterndemo.php">view this plugin in action</a> and <a href="http://vertstudios.com/blog/demo/pattern/patterndemo.txt">download the source code</a>. 
 
@@ -4769,7 +4771,7 @@ If you have any feedback or suggestions, please leave them in the comments below
 We read that each of the previous statements have their own truth table. A truth table is a visual tool that helps us see the logical outcomes of every possible combination of statements. 
 
 For the following example, let p,q, and r be statements.
-<code>p &amp;&amp; [(q || r) &amp;&amp; (r || p)]</code>
+<pre class="prettyprint">p &amp;&amp; [(q || r) &amp;&amp; (r || p)]</pre>
 
 <h3>Number of combinations</h3>
 The total number of possible outcomes is equal to 2^n, where n is equal to the number of statements. In this example we have three statements in the form of p, q, and r. Thus the number of combinations is 2^3, or 8. 
@@ -5373,24 +5375,24 @@ Using our quantifier definitions, let's build this pattern line by line using ou
 <h4>2 or more alphanumeric characters</h4>
 An alphanumeric character is any letter of the alphabet (both lowercase and upper case) or any number between 0 and 9. This can be represented by [a-zA-Z0-9]. Refer to the introduction article if you're unfamiliar with ranges in character classes. 
 
-So we need an alphanumeric character to repeat at least twice. Referring to the quantifier table above, we see that the last row contains the quantifier that suits this need. So, in order to specify at least two alphanumeric characters, the pattern would be <code>/[a-zA-Z0-9]{2,}/</code>
+So we need an alphanumeric character to repeat at least twice. Referring to the quantifier table above, we see that the last row contains the quantifier that suits this need. So, in order to specify at least two alphanumeric characters, the pattern would be <pre class="prettyprint">/[a-zA-Z0-9]{2,}/</pre>
 
 <h4>followed by the @ symbol</h4>
 Since the @ symbol is not a special character, adding the symbol immediately after our previous pattern will require the @ character to be placed after the alphanumeric characters.
-<code>/[a-zA-Z0-9]{2,}@/</code>
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@/</pre>
 
 <h4>followed by 2 or more alphanumeric characters</h4>
 Notice we already defined the  pattern for 2 or more alphanumeric characters. Simply append that to what we have so far. 
-<code>/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}/</code>
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}/</pre>
 
 <h4>followed by a period</h4>
 Since a period is a special character, we must escape it. 
-<code>/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\./</code>
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\./</pre>
 
 
 <h4>followed by at least 2 alphabetic characters</h4>
 Now we want at least 2 alphabetic characters. This will represent the com, edu, etc. This pattern will be similar to our alphanumeric pattern used earlier, but without the numbers in the character class. After including this pattern, we arrive at our final product. 
-<code>/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</code>
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</pre>
 
 <a href="http://bit.ly/fdgY6i">View our email example</a>
 
@@ -5403,20 +5405,20 @@ Say you wanted to match all the opening and closing tags of some HTML. There are
 
 <h5>What is an HTML tag?</h5>
 HTML tags begin with &lt; and end with &gt;. For example, the line break tag &lt;br /&gt;. Since &gt; denotes the end of the tag, it makes sense to say that everything in between &lt; and &gt; is a character that is not &gt;. Thus, in order to match the contents of an HTML tag, the following pattern is used:
-<code>/&lt;[^&gt;]+&gt;/</code>
+<pre class="prettyprint">/&lt;[^&gt;]+&gt;/</pre>
 This pattern says: 
 "Match a &lt; followed by one or more of any character that is not a &gt;, followed by &gt;. "
 <a href="http://bit.ly/icEs4I">See Match all HTML Tags Example</a>
 
 
 If you wanted to be a bit more specific and find XHTML non-paired tags (such as &lt;link /&gt; and &lt;img /&gt;) you could modify the pattern to include the slash before the closing tag. 
-<code>/&lt;[^&gt;]+/&gt;/</code>
+<pre class="prettyprint">/&lt;[^&gt;]+/&gt;/</pre>
 <a href="http://bit.ly/hHTeFU">See Self-closing XHTML tags Example</a>
 
 Using the logic of these examples, you can expand your regular expressions into tools of absolute efficiency. 
 <h2>Anchors</h2>
 Sometimes where you want to begin and end the search for a pattern is as important as the content of the pattern itself. This is especially true concerning validation of user input. Consider our regex for an email that we created earlier:
-<code>/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</code>
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</pre>
 
 If we were processing user input from a form through JS or PHP, the following would match the pattern:
 <ul>
@@ -5434,7 +5436,7 @@ When used at the beginning of the pattern and outside of a character class, the 
 For example, /^a/ matches the first character in the string "about" since the first character in the string "about" is the lowercase letter a. /^c/ does NOT match anywhere in the string "acute" since c is not the first character of the string. 
 
 As another example, say you want to match strings that have only alphanumeric characters, but begin with a letter. The pattern would be
-<code>/^[a-zA-Z][a-zA-Z0-9]*/</code>
+<pre class="prettyprint">/^[a-zA-Z][a-zA-Z0-9]*/</pre>
 <a href="http://bit.ly/giGDlL">See beginning anchor example</a> Note: ^$ match at line breaks to simulate multiple strings
 
 <h3>End of String Anchor</h3>
@@ -5447,7 +5449,7 @@ For example, /[0-9]$/ matches "h20" since the last character is a number. Howeve
 By placing the ^ at the beginning of the Regex pattern and $ at the end, you're essentially saying that the string being tested against the pattern must not only contain the pattern, it can't contain any more than what the pattern specifies. It has to match the pattern exactly: Nothing more, nothing less. 
 
 As an example, let's examine the following pattern:
-<code>/^[0-9]{3,} +[a-zA-Z .]+$/</code>
+<pre class="prettyprint">/^[0-9]{3,} +[a-zA-Z .]+$/</pre>
 This pattern reads: A string that begins with at least 3 numbers, followed by 1 or more spaces, ending with 1 or more alphanumeric characters, spaces, or periods. 
 Look familiar? 
 
@@ -5458,11 +5460,11 @@ We see that the regex pattern can be interpreted as a very loose definition for 
 If you are validating user input from a form, you <b>MUST</b> use both anchors. Let's consider our Email example again. Recall how an email address contained anywhere in our test string would trigger a match. Thus, a bot or mischievous developer can embed more than the characters of an email address into the form field. To prevent this, we adjust our regex to include anchors.
 
 Before:
-<code>/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</code>
+<pre class="prettyprint">/[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}/</pre>
 <a href="http://bit.ly/eG2tPE">See email validation without anchors</a>
 
 After:
-<code>/^[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}$/</code>
+<pre class="prettyprint">/^[a-zA-Z0-9]{2,}@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,}$/</pre>
 <a href="http://bit.ly/fPQszu">See email validation with anchors</a>
 
 Note the differences in the two examples: Before the anchors were in place, every string matched the pattern. However, after the anchors were placed in the pattern, only the top string matched an email address. 
@@ -5472,7 +5474,7 @@ Make sure to mind your anchors, otherwise the usefulness of the rest of your pat
 <h2> Back References </h2>
 Now that we've discussed quantifiers and anchors, let's combine our current knowledge with the concept of back references. Back references allow you to refer to the characters matched earlier in the regex pattern definition. Back references are always defined using parenthesis. For this tutorial, the backslash (\) will be used to call back references. Check the syntax of your development language to see how to call back references.
 
-For example, consider the regex pattern <code>/^([0-9])\s*=\s*\1$/</code>
+For example, consider the regex pattern <pre class="prettyprint">/^([0-9])\s*=\s*\1$/</pre>
 The pattern reads: Match a string that begins with a single digit, followed by 0 or more spaces, followed by the equals sign, followed by 0 or more spaces, ending with the digit matched at the beginning of the string.
 The following strings match the pattern:
 <ul>
@@ -5489,7 +5491,7 @@ The following strings do not match the pattern:
 
 Note that what we wrapped what we wanted to refer back to in parenthesis. To refer to the matched characters later in the pattern, we use \ and the number that corresponds to the reference. Reference numbers begin with 1, and usually go up to 9.  The first set of parenthesis starting from the left is referred to with a 1. The next set, 2, and so on.
 
-To demonstrate the usage of multiple back references, consider this pattern that describes the <a href="http://en.wikipedia.org/wiki/Commutativity">commutative property</a>. <code>/^([0-9])\+([0-9])=\2\+\1$/</code>
+To demonstrate the usage of multiple back references, consider this pattern that describes the <a href="http://en.wikipedia.org/wiki/Commutativity">commutative property</a>. <pre class="prettyprint">/^([0-9])\+([0-9])=\2\+\1$/</pre>
 The pattern reads: Match a string that begins with a single digit, followed by a plus sign, followed by a single digit, followed by an equal sign, followed by the second digit matched, followed by a plus sign, ending with the first digit matched.
 
 This pattern will match
@@ -5642,7 +5644,7 @@ We'll be publishing the jQuery used to power the carousel in the near future. Bu
 <div class="codeToggle">
 <a href="#" class="codeTrigger">Click to toggle source code</a>
 <div class="codeDisplay">
-<code>
+<pre class="prettyprint">
                        &lt;?php
                         date_default_timezone_set('America/Chicago');
                         
@@ -5714,7 +5716,7 @@ We'll be publishing the jQuery used to power the carousel in the near future. Bu
     
                         } 
                         ?&gt;
-</code>
+</pre>
 </div>
 </div>
 
@@ -5759,7 +5761,7 @@ Output
 For each value of X, you should output the number of ways to write X as the sum of two squares.
 
 <h2>Provided Input File</h2>
-<code>
+<pre class="prettyprint">
 20
 1148284322
 1538292481
@@ -5781,10 +5783,10 @@ For each value of X, you should output the number of ways to write X as the sum 
 326122507
 1941554117
 3
-</code>
+</pre>
 
 <h2>Source Code</h2>
-<code>
+<pre class="prettyprint">
 &lt;?php
 //------------------------------------------------------------
 // File: doublesquare.php
@@ -5865,10 +5867,10 @@ function isPerfectSquare($int)
     return $temp == intval($temp);
 }
 ?&gt;
-</code>
+</pre>
 <h2>Output</h2>
 This output was declared correct by the Hacker Cup judges. Woohoo!
-<code>
+<pre class="prettyprint">
 1
 2
 0
@@ -5889,7 +5891,7 @@ This output was declared correct by the Hacker Cup judges. Woohoo!
 0
 1
 0
-</code>
+</pre>
 
 <h2>Your Algorithm</h2>
 If you participated in the Hacker Cup, I'm curious to know how you went about the problem. That's one of the amazing things about programming: So many different ways to think about any given problem. Leave your comments below! ]]></content>
@@ -6049,22 +6051,22 @@ The focal point of this article is providing useful snippets of find and replace
 
 When debugging JavaScript, you may track your variables using console.log(). This RegEx eliminates the calls from the source. 
  
-<code> 
+<pre class="prettyprint"> 
 Find:\s*console.log\([^)]+\);?
 Replace:
-</code> 
+</pre> 
 <h3>2) Make Relative Paths Absolute</h3> 
 
 At times, you might want to take a relative path in an HTML document and make it absolute. This becomes especially useful when you're referencing JS files, images, and other pages from multiple directories.
  
-<code> 
+<pre class="prettyprint"> 
 Find:(src|href)=[&quot;'](\.\.\/)*([a-zA-Z0-9][a-zA-Z0-9\/_.-]+)\.([a-z]+)[&quot;']
 Replace:\1=&quot;http://www.yourdomain.com/\3.\4&quot;
-</code> 
+</pre> 
 
 Example:
  
-<code> 
+<pre class="prettyprint"> 
 &lt;img src=&quot;../../images/image1.jpg&quot; alt=&quot;Image 1&quot;&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;../lib/js/js1.js&quot;&gt;&lt;/script&gt;
 &lt;a href=&quot;index.php&quot;&gt;Home page&lt;/a&gt;
@@ -6073,35 +6075,35 @@ After Find and Replace All:
 &lt;img src=&quot;http://www.yourdomain.com/images/image1.jpg&quot; alt=&quot;Image 1&quot;&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://www.yourdomain.com/lib/js/js1.js&quot;&gt;&lt;/script&gt;
 &lt;a href=&quot;http://www.yourdomain.com/index.php&quot;&gt;Home page&lt;/a&gt;
-</code> 
+</pre> 
 <h3>3) Check for Non-Absolute Paths</h3> 
 
 In the event you want all your paths to be absolute, this can ensure that you've done so correctly.<br /> 
 *Assume absolute paths begin with http. 
  
-<code> 
+<pre class="prettyprint"> 
 Find:(src|href)=['&quot;][^h]
-</code> 
+</pre> 
 <h3>4) Add minified JavaScript File Reference</h3> 
 
 This regex pattern allows you to transform a JavaScript file call with the pattern "filename.js" to "filename.min.js"
  
-<code> 
+<pre class="prettyprint"> 
 Find:&lt;script(.+)src=('|&quot;)([a-zA-Z0-9_.-]+)\.js\2
 Replace:&lt;script\1src=\2\3.min.js\2
-</code> 
+</pre> 
 <h3>A Simple HTML Whitespace Remover</h3> 
 
 This is by no means the most ideal HTML whitespace remover, but it demonstrates how powerful simple RegEx can be when implemented in a text editor.
  
-<code> 
+<pre class="prettyprint"> 
 Find:(&lt;[^&gt;]+&gt;)\s*
 Replace:\1
-</code> 
+</pre> 
 
 Before:
  
-<code> 
+<pre class="prettyprint"> 
 &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt; 
  
@@ -6247,11 +6249,11 @@ alt=&quot;free web stats&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/noscript&gt;
     &lt;/body&gt; 
  
 &lt;/html&gt;
-</code> 
+</pre> 
 
 After:
  
-<code> 
+<pre class="prettyprint"> 
 &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;&lt;head&gt;&lt;script type=&quot;text/javascript&quot;&gt;//Credit: Doug Neiner - http://dougneiner.com/
             document.documentElement.className += &quot; js&quot;
         &lt;/script&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;&lt;meta name=&quot;description&quot; content=&quot;View our web design services, and learn the approach we take in creating the most effective website for your business.&quot; /&gt;&lt;meta name=&quot;google-site-verification&quot; content=&quot;36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8&quot; /&gt;&lt;meta name = &quot;viewport&quot; content = &quot;width=device-width, maximum-scale=1.0, initial-scale = 1, user-scalable = no&quot; /&gt;&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;&lt;title&gt;Services | Vert Studios&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/reset.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/js.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/text.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/main.css&quot; /&gt;&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;apple-touch-icon.png&quot;/&gt;&lt;/head&gt;&lt;body id=&quot;services&quot;&gt;&lt;div id=&quot;wrapper&quot;&gt;&lt;div id=&quot;header&quot;&gt;&lt;div id=&quot;vertStudios&quot;&gt;&lt;a href=&quot;http://www.vertstudios.com/&quot;&gt;Vert Studios&lt;img src=&quot;http://www.vertstudios.com/images/vert_logo_header.png&quot; alt=&quot;Vert Logo&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;ul id=&quot;main_nav&quot;&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/about.php&quot;&gt;About&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;We're a small web design company with big ideas in Tyler, Texas.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/work.php&quot;&gt;Work&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;See what our work has to say. &lt;b&gt;WARNING&lt;/b&gt;: &lt;br /&gt;It might get loud.&lt;/p&gt;&lt;/li&gt;&lt;li class=&quot;active&quot; &gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/services.php&quot;&gt;Services&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;We design web sites that don't suck. We're quite proud of that.&lt;/p&gt;&lt;img src=&quot;images/nav_current.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/blog/&quot;&gt;Blog&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Read our articles on design, code, SEO, and the state of the web.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/contact.php&quot;&gt;Contact&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;You've got ideas. Get in touch, and we'll put them into action.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div id=&quot;content&quot;&gt;&lt;div id=&quot;sub_page_intro&quot;&gt;&lt;h1&gt;Services&lt;/h1&gt;&lt;p&gt;We offer superior quality, functionality, and results for the following:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Web Design&lt;/li&gt;&lt;li&gt;Web Application Development&lt;/li&gt;&lt;li&gt;Mobile Web Design&lt;/li&gt;&lt;li&gt;Mobile Web Apps&lt;/li&gt;&lt;/ul&gt;&lt;img src=&quot;http://www.vertstudios.com/images/pointer.png&quot; alt=&quot;&quot; class=&quot;pointer&quot; /&gt;&lt;/div&gt;&lt;div class=&quot;sub_page_1 clearfix&quot;&gt;&lt;h2&gt;We Take a Strategic Approach&lt;/h2&gt;&lt;p&gt;&lt;em&gt;We identify your needs and provide results based on what's best for you.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;In today's fast-paced world, a lot of focus is put on efficiency and instant-gratification. While we are efficient, we believe in first taking the time to clearly define what approach will best work for you and your company.&lt;/p&gt;&lt;p&gt;We address your current website challenges, identify problems, and deliver solutions that will make your business stand out from the competition.&lt;/p&gt;&lt;h3&gt;To Combine Form &amp;amp;amp; Function&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Great design is one thing.&lt;br/&gt;Elegant programing is another.&lt;br/&gt;Luckily we do both.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;There is nothing worse than losing hundreds of potential customers because of a poorly designed website. Is your layout beautiful, but lacking an engaging user experience? Is your content outstanding, but design amateurish? Our business is solving these problems to grow yours - both aesthetically and technically.&lt;/p&gt;&lt;/div&gt;&lt;div id=&quot;tertiary&quot;&gt;&lt;div id=&quot;what_now&quot;&gt;&lt;h2&gt;What Now?&lt;/h2&gt;&lt;p&gt;To see our capabilities in action, check out &lt;a href=&quot;work.php&quot;&gt;our work&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Interested in keeping up with web design or East Texas? Follow us on Twitter: &lt;a href=&quot;http://www.twitter.com/vertstudios&quot;&gt;@vertstudios&lt;/a&gt;, and subscribe to the &lt;a href=&quot;http://www.vertstudios.com/blog/&quot;&gt;Vert Studios Blog&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;!--END tertiary--&gt;&lt;/div&gt;&lt;!--END content--&gt;&lt;div id=&quot;footer&quot;&gt;&lt;div class=&quot;hr&quot;&gt;&lt;hr /&gt;&lt;/div&gt;&lt;p&gt;903-920-9514 |
@@ -6273,7 +6275,7 @@ alt=&quot;free web stats&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/noscript&gt;&lt;!
     pageTracker._trackPageview();
     } catch(err) {}
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-</code> 
+</pre> 
 
 <h2>A Real Life Scenario</h2>
 Interestingly enough, as I was writing this article, my crappy ISP decided to let my connection drop while I was saving the draft. I had frequently previewed the post, so the post was available in HTML form. Unfortunately, the last draft that was saved was about an hour old. Regular Expressions to the rescue!
@@ -6281,7 +6283,7 @@ Interestingly enough, as I was writing this article, my crappy ISP decided to le
 <h3>The Problem</h3>
 The HTML that Wordpress generates is difficult to read. While I could have copied and pasted the HTML of the preview directly into the Wordpress editor, every character was escaped, and every blank line was wrapped in a paragraph tag. Since this article is relatively advanced, I may need to make some revisions in the future. However, revisions would be a nightmare if I had to deal with this type of text:
 
-<code>
+<pre class="prettyprint">
 &lt;p&gt;Welcome to the first article in our IDE Friday series. Today, we&amp;#8217;ll be discussing the use of Regular Expressions in your IDE of choice. If you&amp;#8217;re unfamiliar with Regular Expressions, check out our tutorial series, beginning with the &lt;a href=&quot;http://www.vertstudios.com/blog/introduction-to-regular-expressions/&quot;&gt;Introduction to Regular Expressions&lt;/a&gt;. &lt;/p&gt; 
 &lt;h2&gt;Wait, isn&amp;#8217;t RegEx just for Form Validation?&lt;/h2&gt; 
 &lt;p&gt;Many developers new to the world of Regular Expressions think that RegEx&amp;#8217;s sole purpose is for validating user input through a contact form. While of course RegEx is great for user input validation, it is in no way confined to that single task. &lt;/p&gt; 
@@ -6294,35 +6296,35 @@ The HTML that Wordpress generates is difficult to read. While I could have copie
 &lt;h2&gt;Conventions&lt;/h2&gt; 
 &lt;p&gt;In most IDEs/editors, special characters in the &amp;#8220;Find&amp;#8221; field need to be escaped. Characters in the &amp;#8220;Replace&amp;#8221; field do not need to be escaped except for the backslash &amp;#8216;\&amp;#8217;. This is because the backlash is used to refer to &lt;a href=&quot;http://www.vertstudios.com/blog/back-references-quantifiers-and-anchors-in-regex/&quot;&gt;back-references&lt;/a&gt;. Keep in mind the entire text file is the string being tested, so the typical anchors are not needed. &lt;/p&gt; 
 &lt;h2&gt;Find/Find and Replace Snippets&lt;/h2&gt;
-</code>
+</pre>
 
 <h3>Pattern Recognition</h3>
 The first step to solving this problem was to recognize the pattern between the HTML output and what I had been typing in the Wordpress editor. Then I simply needed to make Regular Expressions that represented the patterns. 
 <table>
 <tr><th width="200">Problem</th><th>Regular Expression Solution</th></tr>
 <tr><td>New Lines in the editor came out as paragraph tags</td><td>
-<code>
+<pre class="prettyprint">
 Find:&lt;/?p&gt;
 Replace: \n
-</code>
+</pre>
 </td></tr>
 <tr><td>code brackets came out as a &lt;pre&gt; tag with different classes</td><td>
-<code>
+<pre class="prettyprint">
 Find:&lt;(/|)pre[^&gt;]*&gt;
 Replace:[\1code]
-</code>
+</pre>
 </td></tr>
 <tr><td>All my quotations had been escaped to &amp;#8220;, &amp;#8221;, or &amp;quot;</td><td>
-<code>
+<pre class="prettyprint">
 Find:&amp;(quot|#822[01]);
 Replace:&quot;
-</code>
+</pre>
 </td></tr>
 <tr><td>Some apostrophes had been escaped to &amp;#8216; and &amp;#8217;</td><td>
-<code>
+<pre class="prettyprint">
 Find:&amp;#821[67];
 Replace:'
-</code>
+</pre>
 </td></tr>
 <tr><td>HTML tags in the code snippets had been escaped. &lt; to &amp;lt;, and &gt; to &amp;gt;</td><td>
 Done using regular find and replace
@@ -6330,7 +6332,7 @@ Done using regular find and replace
 </table>
 
 So in just a few minutes, I was able to recover the text in a usable form. 
-<code>
+<pre class="prettyprint">
 
 Welcome to the first article in our IDE Friday series. Today, we'll be discussing the use of Regular Expressions in your IDE of choice. If you're unfamiliar with Regular Expressions, check out our tutorial series, beginning with the &lt;a href=&quot;http://www.vertstudios.com/blog/introduction-to-regular-expressions/&quot;&gt;Introduction to Regular Expressions&lt;/a&gt;. 
  
@@ -6362,10 +6364,10 @@ The focal point of this article is providing useful snippets of find and replace
 
 When debugging JavaScript, you may track your variables using console.log(). This RegEx eliminates the calls from the source. 
  
-<code> 
+<pre class="prettyprint"> 
 Find:\s*console.log\([^)]+\);?
 Replace:
-</code>
+</pre>
 
 <h2>Use Your Judgement</h2> 
 Sometimes going through and manually deleting characters may be faster. However, I encourage you to take the time and challenge yourself to use regular expressions in your find and replace operations, solely as an exercise. Like any skill, the more you do it, the better you get. But if you're under a substantial time crunch, there's no shame in editing the old-fashioned way. Enjoy the world of RegEx!
@@ -6507,7 +6509,7 @@ As I'm not a designer by any stretch (that would be <a href="http://twitter.com/
 
 <h2>CSS/HTML</h2>
 The CSS is easy. Just have what you want to slide out positioned absolutely underneath what's on top using z-index.
-<code>
+<pre class="prettyprint">
 &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt; 
 &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;  
 &lt;head&gt; 
@@ -6561,11 +6563,11 @@ The CSS is easy. Just have what you want to slide out positioned absolutely unde
     &lt;/div&gt;    
 &lt;/body&gt; 
 &lt;/html&gt;
-</code>
+</pre>
 
 <h2>JavaScript</h2>
 This is the fun part! Using logic and <a href="http://api.jquery.com/jQuery.data/">jQuery.data()</a>, we're able to store the state of the sliding div. 
-<code>
+<pre class="prettyprint">
     &lt;script type=&quot;text/javascript&quot;&gt;    
     $(function()
     {
@@ -6587,12 +6589,12 @@ This is the fun part! Using logic and <a href="http://api.jquery.com/jQuery.data
         });
     });
     &lt;/script&gt;
-</code>
+</pre>
 <h3>Logic Breakdown</h3>
 So the item starts off in a contracted state. Thus,  'contracted' should be set to true by default. The use of logical negation helps our cause. The line
-<code>
+<pre class="prettyprint">
 $(this).data('contracted', !$(this).data('contracted'));
-</code>
+</pre>
 
 says "Store the logical negation of the 'contracted' property of $(this) into the 'contracted' property of $(this)". 
 So when the DOM is loaded, $(this).data('contracted') is false since we have not assigned any value to it. Thus, by negating it through !$(this).data('contracted'), the value associated with $(this).data('contracted') is now true. It's important that we use the negation since you can't normally work with an undefined object. It's a logical game that has a wide array of uses!
@@ -6614,24 +6616,24 @@ Have any questions/comments about storing states with jQuery.data()? Let us know
 
 <h2>The Code</h2>
 <a href="http://dougneiner.com/">Doug Neiner</a> describes a very painless way to hide elements using JavaScript without a flicker. Add the following right after the opening &lt;head&gt; tag:
-<code>
+<pre class="prettyprint">
         &lt;script type=&quot;text/javascript&quot;&gt;
             //Credit: Doug Neiner - http://dougneiner.com/
             document.documentElement.className += &quot; js&quot;
         &lt;/script&gt;
-</code>
+</pre>
 
 This adds the class "js" to the HTML element. Declare the following style in your stylesheet
-<code>
+<pre class="prettyprint">
 .js .jshidden{
 display: none;
 }
-</code>
+</pre>
 
 Now apply the jshidden class to the items you wish to have hidden in the even the user has JavaScript enabled.
-<code>
+<pre class="prettyprint">
 &lt;img class=&quot;jshidden&quot; src=&quot;someimg.jpg&quot; /&gt;
-</code>
+</pre>
 
 If JavaScript is <em>disabled</em>, then the element will not be hidden.
 
@@ -6732,7 +6734,7 @@ Did this solve your problem? Let us know in the comments below! ]]></content>
 I recently came across a simple issue: IE7 was throwing the following error for getElementById:
 <h2>Object Doesn't Support this Property or Method</h2>
 In my head I was thinking: "What the heck IE? getElementById is the MAIN THING you should get right!". The code was as following:
-<code>
+<pre class="prettyprint">
 
   &lt;script type=&quot;text/javascript&quot;&gt;
     window.onload = function()
@@ -6747,11 +6749,11 @@ In my head I was thinking: "What the heck IE? getElementById is the MAIN THING y
     };
 
   &lt;/script&gt;
-</code>
+</pre>
 
 <h2>The Solution</h2>
 It seems that I somehow forgot to include "var" before the assignment of "blocks" on line 5. Including "var" fixed the problem in IE7!
-<code>
+<pre class="prettyprint">
   &lt;script type=&quot;text/javascript&quot;&gt;
     window.onload = function()
     {
@@ -6765,12 +6767,12 @@ It seems that I somehow forgot to include "var" before the assignment of "blocks
     };
 
   &lt;/script&gt;
-</code>
+</pre>
 
 Man...what have I gotten myself into? 
-<code>
+<pre class="prettyprint">
 $(&quot;joseph&quot;).hide();
-</code> ]]></content>
+</pre> ]]></content>
     <excerpt><![CDATA[As <a href="http://www.vertstudios.com/blog/a-break-from-jquery/">previously stated</a>, I'm taking some time to learn pure JavaScript. That means I am beginning to experience the joy that is cross-browser JS quirks! ]]></excerpt>
   </item>
   <item>
@@ -6783,7 +6785,7 @@ $(&quot;joseph&quot;).hide();
 
 <h2>The Code</h2>
 This .htaccess code redirects http://domainname.com to http://<b>www.</b>domainname.com. Additionally, it forces any call to index.php to the domain root. (This code snippet assumes you're using PHP extensions. If you're using HTML extensions, just replace each instance of PHP with HTML.)
-<code>
+<pre class="prettyprint">
 #redirect index.php to root
 Options +FollowSymLinks
 DirectoryIndex index.php
@@ -6800,7 +6802,7 @@ RewriteBase /
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
 RewriteRule ^index\.php$ http://www.yourdomain.com/ [R=301,L]
 #END rewrite index.php 
-</code>
+</pre>
 
 <h2>The Concept</h2>
 In my opinion, the most consistent way to normalize URLs is through Apache 301 Redirects. However, the recent advent of the <a href="http://www.seomoz.org/blog/301-redirect-or-relcanonical-which-one-should-you-use">rel=canonical</a> tag has provided an alternative to the development-heavy Apache 301s, but some <a href="http://searchengineland.com/why-i-still-hate-relcanonical-48317">remain skeptical</a> on its effectiveness.  
@@ -6928,7 +6930,7 @@ Ever used Lynx? Let us know what you think about it in the comments section belo
 
 <h2>The Code</h2>
 This code uses simple <a href="http://www.vertstudios.com/blog/introduction-to-regular-expressions/">regular expressions</a> to add the rel=nofollow attribute to the passed in anchor string.
-<code>
+<pre class="prettyprint">
 //$str: The anchor string that will be altered
 //$nofollow: The rel attribute values you wish to have attached to the anchor
 function makeNoFollow(&amp;$str, $nofollow){
@@ -6943,10 +6945,10 @@ function makeNoFollow(&amp;$str, $nofollow){
   }
     $str = preg_replace($pattern, $replace, $str);
 }
-</code>
+</pre>
 
 <h2>Example</h2>
-<code>
+<pre class="prettyprint">
 &lt;html&gt;
 &lt;head&gt;
   &lt;title&gt;NoFollow Append&lt;/title&gt;
@@ -6975,7 +6977,7 @@ echo &quot;After: &quot; . $link;
 
 &lt;/body&gt;
 &lt;/html&gt;
-</code>
+</pre>
 
 The code first sees if there is already a rel attribute attached to the anchor. (For example, <a href="http://snipplr.com/view/3047/open-new-window-using-rel-external-instead-of-deprecated-target-attribute/">rel="external"</a>). If so, it appends the $nofollow string to the end of the rel attribute value list before the ending quote. If not, it places rel= followed by the $nofollow string immediately after the anchor tag is opened. ]]></content>
     <excerpt><![CDATA[]]></excerpt>
@@ -7108,7 +7110,7 @@ Save the configuration, and restart your Apache webserver. Now we're finished!
 <h2>Testing the Configuration</h2>
 Now we need to see if our mail server actually works. Here's a simple php script that'll test our configuration. 
 
-<code>
+<pre class="prettyprint">
 &lt;?php
 $to      = 'youremail@yourdomain.com';
 $subject = 'the subject';
@@ -7125,7 +7127,7 @@ echo &quot;YES&quot;;
 echo &quot;NO&quot;;
 }
 ?&gt;
-</code>
+</pre>
 
 The script will print "YES" if the email sent, and you should find that you have new mail in your inbox!
 
@@ -7300,7 +7302,7 @@ For those of you who do not have the ability or desire to invest in a foundation
     <content><![CDATA[When <a href="http://www.vertstudios.com/blog/windows-php-mail-server-installation-guide/">setting up your mail server</a>, you may want to check your <strong>php mail</strong> function with a simple script. 
 <h2>The PHP Code</h2>
 The following script was snagged from the <a href="http://php.net/manual/en/function.mail.php">php mail()</a> documentation, with a few minor adjustments explained below.
-<code>
+<pre class="prettyprint">
 &lt;?php
 $to      = 'youremail@yourdomain.com';
 $subject = 'the subject';
@@ -7317,7 +7319,7 @@ if($mail){
     echo &quot;NO&quot;;
 }
 ?&gt;
-</code>
+</pre>
 
 <h2>The Breakdown</h2>
 While the code is pretty self explanatory, there are a few noteworthy items. 
@@ -7343,7 +7345,7 @@ Thankfully, there are extremely simple ways to open your current <strong>command
 Take this rather long directory for example, which contains this very Wordpress theme.
 <img src="http://www.vertstudios.com/blog/images/command-prompt-switch/command-prompt-switch-0.png" />
 If I wanted to view the files in explorer, I'd have to double click on a pretty long series of files to get to the same directory. The quick alternative is to use
-<code>start %CD%</code>
+<pre class="prettyprint">start %CD%</pre>
 <img src="http://www.vertstudios.com/blog/images/command-prompt-switch/command-prompt-switch-1.png" />
 The command successfully opens the current directory into a new explorer window. 
 
@@ -7458,13 +7460,13 @@ Now download the most recent copy of <a href="https://github.com/cloudhead/less.
 
 <h2>Configuration</h2>
 The rest of the tutorial <strong>and the code itself</strong> assumes you have the following file structure for your projects:
-<code>
+<pre class="prettyprint">
 css/
 less/
 images/
 file1.html
 file2.html
-</code>
+</pre>
 
 Most importantly, your less directory and your css directory should be "sibling" directories. 
 <img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-3.png" alt="Less.app for Windows" />
@@ -7488,7 +7490,7 @@ Open your less directory in the command prompt. (See a shortcut <a href="http://
 <img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-8.png" alt="Less.app for Windows" />
 
 Now type the following in the command prompt:
-<code>node less.js</code>
+<pre class="prettyprint">node less.js</pre>
 
 The module first compiles all .less files in the directory to css, and outputs the css file in the css directory. Next, as long as you leave the command prompt open, the module listens for any more changes to any of the .less files. Once it detects a change, it automatically compiles and updates the css file. To stop the module, use <b>CTRL + c</b>. 
 <img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-9.png" alt="Less.app for Windows" />
@@ -7585,18 +7587,18 @@ Have you ever faced a slump that made you dread the job you once loved? How did 
 
 To engage in my laziness, append the following to your ~/.bashrc
 
-<code>
+<pre class="prettyprint">
 function mkcd(){
     mkdir -p $1 &amp;&amp; cd $1
 }
-</code>
+</pre>
 
 Now execute the command <strong>source ~/.bashrc</strong> so your session takes the edited file into account. 
 
 Now simply executing
-<code>
+<pre class="prettyprint">
 mkcd testFile
-</code>
+</pre>
 
 will create the testFile directory and make that your working directory.
 
@@ -7612,9 +7614,9 @@ Horray for lazy!]]></content>
     <content><![CDATA[If you've edited your ~/.bash_profile to include scripts you'd like executed on start up, you might be surprised when you open up your terminal and those scripts don't execute. By default, ~/.bashrc executes on session start, but ~/.bash_profile doesn't. 
 
 To execute your ~/.bash_profile on startup, simply append this to your ~/.bashrc
-<code>
+<pre class="prettyprint">
 source ~/.bash_profile
-</code>
+</pre>
 
 <h2>Ta-da! </h2>
 
@@ -7634,9 +7636,9 @@ To execute your ~/.bash_profile on startup, simply append this to your ~/.bashrc
 The snippet adjustment for Ubuntu was easy, just involved remove some quotes and adding sudo. For a detailed explanation on how the command works, check out that article. 
 
 <h2>Remove All Ruby Gems</h2>
-<code>
+<pre class="prettyprint">
 gem list | cut -d&quot; &quot; -f1 | xargs sudo gem uninstall -aIx
-</code> ]]></content>
+</pre> ]]></content>
     <excerpt><![CDATA[Recently (as in thirty seconds ago) I needed to remove all ruby gems from my system. After searching the interwebs, I came across an <a href="http://geekystuff.net/2009/01/14/remove-all-ruby-gems/">article</a> explaining how to remove all ruby gems on Fedora core linux.
 
 The snippet adjustment for Ubuntu was easy, just involved remove some quotes and adding sudo. For a detailed explanation on how the command works, check out that article. ]]></excerpt>
@@ -7652,11 +7654,11 @@ The snippet adjustment for Ubuntu was easy, just involved remove some quotes and
 <h2>Reminder: Static Classes</h2>
 Static classes are classes that are not instantiated. For example, the Math class in JavaScript. 
 
-<code>
+<pre class="prettyprint">
 var number = Math.pow(2,3); // Math is a static class
 var john = new Person();    // Person is not a static class
 john.say_hi();              // Invoke the say_hi method
-</code>
+</pre>
 
 Since the <b><i>say_hi</i></b> method is called via the Person object john, it is not static. In contrast, the <b><i>pow</i></b> method is called directly from the Math class itself. 
 
@@ -7664,7 +7666,7 @@ Since the <b><i>say_hi</i></b> method is called via the Person object john, it i
 The decision to use a static class depends all on personal preference and readability. The downside to static classes is that the class name populates the global namespace. A static class can easily be converted to a non static class, so if you change your mind, it's really not a big deal.
 
 <h3>A Sample Static Class</h3>
-<code>
+<pre class="prettyprint">
 // Start off with an empty object
 var Physics = {};
 
@@ -7677,23 +7679,23 @@ Physics.get_velocity = function(vi, a, t){
  * instantiating a Physics object
  */
 var velocity = Physics.get_velocity(5, 9.81, 10); 
-</code>
+</pre>
 
 <h2>Creating Immutable Properties</h2>
 The term "immutable" in JS must be taken with a grain of salt. Few items are truly immutable. Not even the methods of the official JS Math class are protected.
 
-<code>
+<pre class="prettyprint">
 /* My plot to sabotage the data of my colleagues 
  * and win the Nobel Prize!!!
  */
 Math.pow =  function(a,b){return a + b};
 
 Math.pow(2,3)  // 5, not 8! Bwahahah!
-</code>
+</pre>
 
 But hey, an extra layer of security is better than nothing, right? By using anonymous functions, we can (better) protect the values of properties that we do not want changed. 
 
-<code>
+<pre class="prettyprint">
 // Create our static class, starting with an empty object
 var Physics = {};
 
@@ -7712,7 +7714,7 @@ Physics.constant(&quot;pi&quot;); // 3.14
 
 Physics.prop()[&quot;pi&quot;] = &quot;LOL&quot;;
 Physics.constant(&quot;pi&quot;); // 3.14
-</code>
+</pre>
 
 This obviously is not a strong degree of protection, but I do honestly believe it's better than nothing. Suggestions and improvements are welcomed!
 
@@ -7754,7 +7756,7 @@ The example .screenrc source below offers the following features:
 <li>No more annoying startup message!</li>
 <li>Default tabs that aid a rails/WSGI driven workflow</li>
 </ul>
-<code>
+<pre class="prettyprint">
 # skip the startup message
 startup_message off
 
@@ -7776,7 +7778,7 @@ screen -t Server
 # Select first screen
 select 0
 
-</code>
+</pre>
 
 A screenshot of the implementation:
 <img src="http://www.vertstudios.com/blog/images/screenrc/screenshot.png" alt="Screenshot of my GNU Screen Environment" title="Screenshot of my GNU Screen Environment" />
@@ -7805,7 +7807,7 @@ This tab is where I execute my local server commands, such as <b>rails s</b>. ]]
     <description></description>
     <content><![CDATA[Want to show off the cool open source project you're working on via <a href="https://github.com/joequery">GitHub</a>? This PHP code snippet will snag your most recently updated repo information and its latest commit message through the <a href="http://develop.github.com/">GitHub API</a>. All you have to do is plug in your username.
 
-      <code>
+      <pre class="prettyprint">
 &lt;html&gt;
   &lt;head&gt;&lt;title&gt;Test Github API with PHP&lt;/title&gt;&lt;/head&gt;
 
@@ -7878,7 +7880,7 @@ $commitURL = &quot;https://github.com/$login/$repoName/commit/$commitSHA&quot;;
 &lt;/body&gt;
 
 &lt;/html&gt;
-</code>
+</pre>
 
 Simply replace my username with yours on lines 41 and 42. You get a lot of information back from the function...just use what you need! (And remember, if you're not sure what information the API/function gives you, print_r is your friend)]]></content>
     <excerpt><![CDATA[Want to show off the cool open source project you're working on via <a href="https://github.com/joequery">GitHub</a>? This PHP code snippet will snag your most recently updated repo information and its latest commit message through the <a href="http://develop.github.com/">GitHub API</a>. All you have to do is plug in your username.]]></excerpt>
@@ -7905,33 +7907,33 @@ First and foremost, you will need a UNIX server with root access. That server ne
 
 <h3>Move to your scripts directory</h3>
 cd to the directory where you keep all your custom scripts. In case you don't have one, you can do what I did and make a scripts directory from the home folder.
-<code>
+<pre class="prettyprint">
 sudo mkdir ~/scripts
 cd ~/scripts
-</code>
+</pre>
 
 <h3>Set up working environment</h3>
 Now that you're in the ~/scripts directory, make another directory and call it daily_mail and cd into it.
-<code>
+<pre class="prettyprint">
 mkdir daily_mail
 cd daily_mail
-</code>
+</pre>
 (Sidenote: <a href="http://www.vertstudios.com/blog/mkdir-cd-at-same-time/">Learn how to make a directory and cd into it in one line</a>)
 
 Now we want to setup our virtualenv, which allows for local python packages.
-<code>
+<pre class="prettyprint">
 virtualenv env --python=python2.6 #Put your version here
-</code>
+</pre>
 
 To activate the virtual environment (and grant python access to the libraries we will be installing), execute the following from the ~/daily_mail directory:
-<code>
+<pre class="prettyprint">
 . env/bin/activate
-</code>
+</pre>
 
 If the environment activation was successful, you will see (env) somewhere in your next terminal line. (To disable the virtual environment at anytime, simply execute the command "deactivate")
 
 We'll now install the <a href="http://wwwsearch.sourceforge.net/mechanize/">Mechanize</a> library. (<b>Note</b>: We activate the virtual environment before installing libraries to make sure that the libraries are installed only to this environment instead of across the whole system). 
-<code>pip install mechanize</code>
+<pre class="prettyprint">pip install mechanize</pre>
 
 <h2>Coding the Contact Form Filler-Outer</h2>
 Make sure your virtual environment is activated and start python (just type python in the terminal). Create and open <b>contact_form.py</b> in your favorite text editor. Paste the following in.
@@ -7964,29 +7966,29 @@ response = br.submit()
 [/python] 
 
 Test by executing 
-<code>python contact_form.py</code>
+<pre class="prettyprint">python contact_form.py</pre>
 You should get an email in your inbox just as if a user had filled out the form.
 
 Due to how Cron works, we <a href="http://stackoverflow.com/questions/4150671/python-how-to-set-virtualenv-for-a-crontab">won't be able to directly call the python file</a>, or else the virtual environment won't get activated and our mechanize library won't be available to use. The solution is to create a bash script that activates the virtual environment, executes the python script, and deactivates the environment. 
 
 Create and open <b>send_mail</b> in your favorite text editor.
-<code>
+<pre class="prettyprint">
 #!/bin/bash
 cd ~/scripts/daily_mail 
 . env/bin/activate
 python contact_form.py
 deactivate
-</code>
+</pre>
 
 To test this script, first deactivate your virtual environment. Next, make sure the file is executable.
-<code>
+<pre class="prettyprint">
 chmod +x send_mail
-</code>
+</pre>
 
 Now execute
-<code>
+<pre class="prettyprint">
 ./send_mail
-</code>
+</pre>
 
 If everything goes according to plan, the python script will execute and you'll get another email in your inbox. 
 
@@ -7994,21 +7996,21 @@ If everything goes according to plan, the python script will execute and you'll 
 So our python script and bash helper script work -- great! Now we need to automate the execution of this script so it gets executed at a specified interval. This is where cron comes into play. 
 
 First, open up the crontab file.
-<code>
+<pre class="prettyprint">
 crontab -e
-</code>
+</pre>
 
 Next, append the following line at the end of the file
-<code>
+<pre class="prettyprint">
 0 9 * * * ~/scripts/daily_mail/send_mail
-</code>
+</pre>
 
 This schedules the send_mail bash script(which executes the python script) to run at 9AM every day.
 
 Save and exit the text editor -- you're done! You should receive an email from the form every morning at 9AM (server time). To test if the cron file is working, you can change the line we appended to
-<code>
+<pre class="prettyprint">
 * * * * * ~/scripts/daily_mail/send_mail
-</code>
+</pre>
 
 This executes the script <em>every minute</em>. Just sit by your inbox for a few minutes and see if the email comes. Be sure to change it back ASAP, or your mailbox will get flooded! Also, remember that the crontabs changes do not take effect until you exit your text editor.
 
@@ -8038,7 +8040,7 @@ Why is that? Let's take a look at an example.
 <h2>Example of the Pitfall</h2>
 Let's execute a simple jQuery.post request to see how this can happen. 
 
-<code>
+<pre class="prettyprint">
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;jQuery AJAX Pitfall&lt;/title&gt;
@@ -8054,15 +8056,15 @@ $.post(&quot;ajax.php&quot;, function(data) {
 
 &lt;/body&gt;
 &lt;/html&gt;
-</code>
+</pre>
 
 Now we have a file ajax.php
-<code>
+<pre class="prettyprint">
 &lt;?php 
 require(&quot;whitespacetrap.php&quot;);
 echo &quot;foo&quot;;
 ?&gt;
-</code>
+</pre>
 
 The file <b>whitespacetrap.php</b> is simply a file with a newline. (Just open up notepad and press enter once and save).
 
@@ -8080,14 +8082,14 @@ Use console.log or alert to echo print the value the server sends. If your strin
     <description></description>
     <content><![CDATA[Quick snippet here for you guys!  You're a dev SSHing into various VPS's and you need to know what linux distro you're running. Simply execute
 
-<code>
+<pre class="prettyprint">
 cat /etc/*release
-</code>
+</pre>
 
 For example, on Media Temple (dv), the following comes up
-<code>
+<pre class="prettyprint">
 CentOS release 5.5 (Final)
-</code> ]]></content>
+</pre> ]]></content>
     <excerpt><![CDATA[Quick snippet here for you guys!  You're a dev SSHing into various VPS's and you need to know what linux distro you're running. ]]></excerpt>
   </item>
   <item>
@@ -8098,7 +8100,7 @@ CentOS release 5.5 (Final)
     <description></description>
     <content><![CDATA[I've begun my descent into pure Rails. The whole naming convention idiom is hard to remember while I'm just learning, so here's a reference chart for myself and for any other Rails noobs. 
 
-<code>
+<pre class="prettyprint">
 # Routes
 resources: users
 
@@ -8110,7 +8112,7 @@ class UsersController &lt; ApplicationController
 # Models
 user.rb (model)
 class User &lt; ActiveRecord::Base
-</code> ]]></content>
+</pre> ]]></content>
     <excerpt><![CDATA[I've begun my descent into pure Rails. The whole naming convention idiom is hard to remember while I'm just learning, so here's a reference chart for myself and for any other Rails noobs. ]]></excerpt>
   </item>
   <item>
@@ -8129,16 +8131,16 @@ The main issue with most of the tutorials I've followed is that they require you
 
 <h2>Get the Project Template</h2>
 First, we'll pull a rails project template file that has rspec preconfigured.
-<code>$ git clone git://github.com/joequery/Rails-Template.git</code>
+<pre class="prettyprint">$ git clone git://github.com/joequery/Rails-Template.git</pre>
 Now rename the app to whatever you want
-<code>$ rails g rename_to YourApp</code>
+<pre class="prettyprint">$ rails g rename_to YourApp</pre>
 
 Now execute the following
-<code>
+<pre class="prettyprint">
 $ bundle install
 $ gem install ZenTest
 $ gem install autotest-rails
-</code>
+</pre>
 (You may need to use sudo for your gem install, depends on your setup)
 
 
@@ -8149,9 +8151,9 @@ Now we move on to OS-Specific implementations.
 Credit most of the Ubuntu instructions to <a href="http://ykyuen.wordpress.com/2010/11/15/rails-integrate-autotest-and-rspec-in-linux/">Ykyuen</a>
 
 First, execute
-<code>
+<pre class="prettyprint">
 $ sudo apt-get install libnotify-bin
-</code>
+</pre>
 
 Now create an autotest configuration file in the home directory (~/.autotest) and paste in the following:
 [ruby]
@@ -8195,16 +8197,16 @@ Everything is now configured. Jump to <a href="#testing">Testing Your Setup</a>
 <h2 id="osx">Mac OS X</h2>
 
 First, execute 
-<code>
+<pre class="prettyprint">
 $ gem install autotest-growl
-</code>
+</pre>
 
 (You may need to use sudo, based upon your setup).
 
 Edit the ~/.autotest file (create it if it does not exist), and paste the following in
-<code>
+<pre class="prettyprint">
 require &quot;autotest/growl&quot;
-</code>
+</pre>
 
 Everything is now configured. Jump to <a href="#testing">Testing Your Setup</a>
 
@@ -8212,40 +8214,40 @@ Everything is now configured. Jump to <a href="#testing">Testing Your Setup</a>
 The Ubuntu Nerds and the Apple Fanboys reunite! It's time to test our installations.
 
 First, lets generate a controller to test.
-<code>
+<pre class="prettyprint">
 $ rails generate controller Pages home contact
-</code>
+</pre>
 
 You'll see a bunch of files created. Let's get rid of some of the unnecessary files rspec made
-<code>
+<pre class="prettyprint">
 $ rm -rf spec/helpers
 $ rm -rf spec/views
-</code>
+</pre>
 
 Now let's run our test without autotest. We should have 2 success and 0 failures at this point.
-<code>
+<pre class="prettyprint">
 $ bundle exec rspec spec/
-</code>
+</pre>
 
 Now open two terminal windows or tabs and cd back to your project directory in both of them.
 In one tab, execute 
-<code>$ bundle exec spork</code>
+<pre class="prettyprint">$ bundle exec spork</pre>
 You may see a bunch of warning messages. It's safe to ignore these for the time being. If everything went well, you should see
-<code>
+<pre class="prettyprint">
 Preloading Rails environment
 Loading Spork.prefork block...
 Spork is ready and listening on 8989!
-</code>
+</pre>
 
 In the other tab you opened, simply execute
-<code>$ autotest -c</code>
+<pre class="prettyprint">$ autotest -c</pre>
 
 
 Once again, you may see a bunch of warning messages in the terminal, and these are also safe to ignore for now. More importantly, you should see a pop up notification that shows that the tests passed. You'll also see
-<code>
+<pre class="prettyprint">
 Finished in 0.xxxx seconds
 2 examples, 0 failures
-</code>
+</pre>
 in the window/tab where you executed autotest.
 
 Now, to see if the autotest is working properly, lets open spec/controllers/pages_controller_spec.rb. The file contains the following:
@@ -8297,7 +8299,7 @@ end
 [/ruby]
 
 We should get a pop up saying that the test failed, and you can find the details in the tab with autotest running.
-<code>
+<pre class="prettyprint">
 Finished in 0.07293 seconds
 2 examples, 1 failure
 
@@ -8307,7 +8309,7 @@ rspec ./spec/controllers/pages_controller_spec.rb:13 # PagesController GET 'abou
 
 # Waiting since 2011-09-13 14:19:31
 
-</code>
+</pre>
 
 If this shows up along with the pop up, congratulations, you've successufully integrated Spork and Autotest into RSpec!
 
@@ -8315,22 +8317,22 @@ If this shows up along with the pop up, congratulations, you've successufully in
 
 <h2>Do I have to do this EVERY TIME?!?!</h2>
 Nope! For subsequent projects, your procedure should be as follows:
-<code>
+<pre class="prettyprint">
 $ git clone git@github.com:joequery/Rails-Template.git
 $ cd Rails-Template
 $ rails g rename_to MyApp
 $ bundle install
-</code>
+</pre>
 
 In a separate window/tab
-<code>
+<pre class="prettyprint">
 $ bundle exec spork
-</code>
+</pre>
 
 In another separate window/tab
-<code>
+<pre class="prettyprint">
 $ autotest
-</code>
+</pre>
 
 And that's it!
 
@@ -8345,9 +8347,9 @@ Did the tutorial help? Did you find parts of the tutorial unclear? Let us know i
     <guid isPermaLink="false">http://www.vertstudios.com/blog/?p=3734</guid>
     <description></description>
     <content><![CDATA[I often find myself doing the following:
-<code>
+<pre class="prettyprint">
 vim .
-</code>
+</pre>
 to open up VIM and then explore my files. Because I'm lazy, here's a way to open up VIM in file navigation mode if no files are specified when running VIM.
 
 Append the following to your .bashrc
@@ -8373,14 +8375,14 @@ function vim(){
     <content><![CDATA[As a rails novice, one of the more frustrating things I've encountered with rails is the inability to search for specific method names in its API. This is because a lot of these methods are dynamically generated helpers that you should know by heart once you've mastered the "Rails Way." Unfortunately for me, I'm not at the point of calling myself a Rails guru, so I still need to know what all I have available to me. In my opinion, nothing is more frustrating than not knowing what methods you have at your disposal. 
 
 After doing quite a bit of googling, I was able to find a list of session variables by executing the following in Rails Console:
-<code>
+<pre class="prettyprint">
 irb(main):001:0&gt; y app.methods.sort
-</code>
+</pre>
 
 <h2>Rails Session Variables List</h2>
 Here is my list of Rails Session Variables. These will vary across different apps based upon what gems you have installed. For example, you'll see methods with "refinery" in the list below, which refers to the <a href="http://refinerycms.com/">RefineryCMS</a> we've adopted here at Vert. I highly recommend you execute the command above for your own app.
 
-<code>
+<pre class="prettyprint">
 ---
 - :!
 - :!=
@@ -8857,7 +8859,7 @@ Here is my list of Rails Session Variables. These will vary across different app
 - :xhr
 - :xml_http_request
 - :y
-</code> ]]></content>
+</pre> ]]></content>
     <excerpt><![CDATA[As a rails novice, one of the more frustrating things I've encountered with rails is the inability to search for specific method names in its API. This is because a lot of these methods are dynamically generated helpers that you should know by heart once you've mastered the "Rails Way." Unfortunately for me, I'm not at the point of calling myself a Rails guru, so I still need to know what all I have available to me. In my opinion, nothing is more frustrating than not knowing what methods you have at your disposal. ]]></excerpt>
   </item>
   <item>
@@ -8878,30 +8880,30 @@ PyQuery includes many of the jQuery DOM <a href="http://packages.python.org/pyqu
 <strong>This guide uses Python 2.6.</strong> If you don't have <a href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>, grab it now. We'll use it in a minute to install the PyQuery package. 
 Now create a project directory for this tutorial. I'll call it pyquery_tutorial
 
-<code>
+<pre class="prettyprint">
 $ mkdir pyquery_tutorial
 $ cd pyquery_tutorial
-</code>
+</pre>
 
 Now create the virtual environment with your Python executable version of choice (I have only tested this for 2.6 and 2.7)
 
-<code>
+<pre class="prettyprint">
 $ virtualenv env --python=python2.6
 Running virtualenv with interpreter /usr/bin/python2.6
 New python executable in env/bin/python2.6
 Also creating executable in env/bin/python
 Installing distribute.................................................................................................................................................................................done.
-</code>
+</pre>
 
 Now activate the virtualenv. (You should see (env) beside your prompt if done correctly)
-<code>$ . env/bin/activate</code>
+<pre class="prettyprint">$ . env/bin/activate</pre>
 
 Now we install the PyQuery package.
-<code>(env) $ pip install pyquery
+<pre class="prettyprint">(env) $ pip install pyquery
 ...
 Successfully installed lxml pyquery
 Cleaning up...
-</code>
+</pre>
 
 Woohoo, PyQuery is now ready for use!
 
@@ -8911,7 +8913,7 @@ Using PyQuery for parsing will feel extremely similar to using jQuery. One of th
 First, create this html file called "index.html" in the project directory. 
 
 <i>index.html</i>
-<code>
+<pre class="prettyprint">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -8929,42 +8931,42 @@ First, create this html file called "index.html" in the project directory.
   &lt;/ul&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code>
+</pre>
 
 Now fire up Python. (Make sure your virtualenv is still activated!)
-<code>$ python
+<pre class="prettyprint">$ python
 Python 2.6.6 (r266:84292, Mar 25 2011, 19:36:32) 
 [GCC 4.5.2] on linux2
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
 &gt;&gt;&gt; 
-</code>
+</pre>
 
 First we import PyQuery from the pyquery package. 
-<code>
+<pre class="prettyprint">
 &gt;&gt;&gt; from pyquery import PyQuery
-</code>
+</pre>
 
 Now let's read in our <i>index.html</i> file and store it to a string.
-<code>
+<pre class="prettyprint">
 &gt;&gt;&gt; html = open(&quot;index.html&quot;, 'r').read()
-</code>
+</pre>
 
 Now we instantiate a PyQuery object, passing in our html string. To keep things looking familiar, let the instantiating object be named jQuery!
 
-<code>
+<pre class="prettyprint">
 &gt;&gt;&gt; jQuery = PyQuery(html)
-</code>
+</pre>
 
 Now we can traverse this document using the selectors we've grown to love through CSS and jQuery. It might look strange that we're assigning jQuery to something, but at this point, we use this jQuery variable JUST like we use $ in our JavaScript. For example, let's get the title tag.
 
-<code>
+<pre class="prettyprint">
 &gt;&gt;&gt; jQuery(&quot;title&quot;).text()
 'PyQuery Test!'
-</code>
+</pre>
 
 jQuery developers that have created their own plugin may already be comfortable using jQuery in place of $ in their JS. Let's mess around with PyQuery some more.
 
-<code>
+<pre class="prettyprint">
 &gt;&gt;&gt; jQuery(&quot;li&quot;).eq(1).text()
 'DOM Manipulation is EASY!'
 &gt;&gt;&gt; jQuery(&quot;a&quot;) # The 'jQuery Object' we're used to is now a list
@@ -8974,21 +8976,21 @@ jQuery developers that have created their own plugin may already be comfortable 
 ...
 PyQuery
 jQuery
-</code>
+</pre>
 
 Get the HTML of the first li element.
-<code>
+<pre class="prettyprint">
 &gt;&gt;&gt; jQuery(&quot;ul&quot;).children().eq(0).html()
 u'It makes parsing files a &lt;strong&gt;SNAP&lt;/strong&gt;!'
-</code>
+</pre>
 
 <h3>Remote Files</h3>
 Wanna parse a remote file? No problem!
-<code>
+<pre class="prettyprint">
 &gt;&gt;&gt; jQuery = PyQuery(url=&quot;http://www.vertstudios.com/&quot;)
 &gt;&gt;&gt; jQuery(&quot;title&quot;).text()
 &quot;Web Design that Doesn't Suck | Vert Studios | Tyler, Texas&quot;
-</code>
+</pre>
 
 <h2>Conclusion</h2>
 Now that we've given you a nice kickstart of PyQuery, your knowledge of jQuery coupled with the <a href="http://packages.python.org/pyquery/api.html">PyQuery API</a> provides sufficient power to parse XML/HTML documents.]]></content>
@@ -9008,11 +9010,11 @@ While searching for how to solve the annoying ruby alert of "Insecure world writ
 Thanks to <a href="http://www.ruby-forum.com/topic/79565">Ruby-Forum.com</a>, I found that inserting "$VERBOSE=nil" into my bundler runtime file helped suppress this annoying message. Please be careful with this, and only do this if you work exclusively on a FAT32 partition.
 
 Find your gem path so we can edit the bundler gem. Execute the following in your shell: (<a href="http://gilesbowkett.blogspot.com/2009/06/find-your-ruby-gems-path.html">credit</a>)
-<code>$ ruby -r rubygems -e &quot;p Gem.path&quot;</code>
+<pre class="prettyprint">$ ruby -r rubygems -e &quot;p Gem.path&quot;</pre>
 
 Navigate to your gem path and cd into the version of bundler currently being used. Now navigate to <b>lib -&gt; bundler </b> and open <b>runtime.rb</b> in your favorite text editor. Add "$VERBOSE = nil" to line 2.
 
-<code>
+<pre class="prettyprint">
 require &quot;digest/sha1&quot;
 $VERBOSE = nil 
 
@@ -9041,7 +9043,7 @@ While searching for how to solve the annoying ruby alert of "Insecure world writ
     <content><![CDATA[So I somehow managed to botch my Autotest installation I described in <a href="http://www.vertstudios.com/blog/installing-rspec-autotest-spork-ubuntu-osx/">this tutorial</a>. After spending many hours trying to get it back up and running again, I've decided it's just not worth it. Here's a ghetto bash script for semi-auto testing. You just have to press any key and it'll run the test. 
 
 test.sh
-<code>
+<pre class="prettyprint">
 #!/bin/bash
 # Our ghetto auto-testish thing. User presses any key to test,
 # Ctrl-C to get out
@@ -9059,7 +9061,7 @@ function do_test(){
 }
 
 do_test
-</code> ]]></content>
+</pre> ]]></content>
     <excerpt><![CDATA[So I somehow managed to botch my Autotest installation I described in <a href="http://www.vertstudios.com/blog/installing-rspec-autotest-spork-ubuntu-osx/">this tutorial</a>. After spending many hours trying to get it back up and running again, I've decided it's just not worth it. Here's a ghetto bash script for semi-auto testing. You just have to press any key and it'll run the test. ]]></excerpt>
   </item>
   <item>
@@ -9075,15 +9077,15 @@ Your workflow can vary greatly depending on the type of project. Sure, all will 
 
 <h2>How to Add Multiple .screenrc Configs</h2>
 Create a directory where you plan on storing your screen configuration files. For this tutorial, I'll use <b>/usr/local/screen</b>
-<code>
+<pre class="prettyprint">
 $ sudo mkdir /usr/local/screen
 $ cd /usr/local/screen
-</code>
+</pre>
 
 Now create your configuration files and name them based on your workflow, and place them in the /usr/local/screen directory. For example, "rails", "flask", or "javascript". Here's my rails screen config file.
 
 <i>rails</i>
-<code>
+<pre class="prettyprint">
 # Screen Configuration file for Rails!
 # Skip the startup message
 startup_message off 
@@ -9106,23 +9108,23 @@ screen -t Server
 
 # Select first screen
 select 0
-</code>
+</pre>
 
 Remember to make sure this file is in your /usr/local/screen directory.
 
 Next, we have to tell screen to load these different configuration files. We'll make a simple bash function and append it to our ~/.bashrc
 
-<code>
+<pre class="prettyprint">
 # Special screens
 # $1 - screen config file name
 function scr(){
     screen -c /usr/local/screen/$1
 }
-</code>
+</pre>
 
 <h2>Calling the Configurations</h2>
 Now if we want to use our rails screen configuration file, we execute 
-<code>$ scr rails</code>
+<pre class="prettyprint">$ scr rails</pre>
 
 Note that we use "scr" instead of "screen". Executing "screen" by itself will just load the ~/.screenrc file as its configuration.
 
@@ -9140,7 +9142,7 @@ It's important to note that there isn't any configuration file inheritance going
 
 http://www.youtube.com/watch?v=BmF638hV-bw&amp;
 <h2>Nginx/PHP package installation</h2>
-<code>
+<pre class="prettyprint">
 cd /tmp
 # Add a necessary repository.
 sudo apt-get install python-software-properties
@@ -9150,42 +9152,42 @@ sudo apt-get update
 sudo apt-get install nginx
 sudo apt-get install php5-cli php5-common php5-mysql php5-suhosin php5-gd php5-dev
 sudo apt-get install php5-fpm php5-cgi php-pear php5-memcache php-apc
-</code>
+</pre>
 <h2>Testing Nginx and php-fpm installations</h2>
 Verify php5-fpm can start
 
-<code>
+<pre class="prettyprint">
     $ sudo service php5-fpm start
-</code>
+</pre>
 
 Create a symbolic link to the default sites-available file to test nginx.
 
-<code>
+<pre class="prettyprint">
     $ cd /etc/nginx/sites-enabled
     $ sudo ln -s ../sites-available/default default
     $ sudo service nginx start
-</code>
+</pre>
 
 You should now be able to visit myvps.com (or your equivalent) and see "Welcome to Nginx!" If the installation
 was successful, remove the symbolic link and stop our processes.
 
-<code>
+<pre class="prettyprint">
     $ sudo rm default
     $ sudo service nginx stop
     $ sudo service php5-fpm stop
-</code>
+</pre>
 <h2>Nginx configuration</h2>
 <a href="http://codex.wordpress.org/Nginx">Credit to Wordpress</a> for these configuration files.
 
 Move to nginx directory
 
-<code>
+<pre class="prettyprint">
     $ cd /etc/nginx
-</code>
+</pre>
 
 Edit the nginx.conf file. Replace the contents with what's below. Note that you must use sudo when editing all these nginx configuration files.
 
-<code>
+<pre class="prettyprint">
 # Generic startup file.
 user www-data;
 worker_processes  2;
@@ -9233,17 +9235,17 @@ http {
      }
 
 }
-</code>
+</pre>
 
 Move to the sites-available directory.
 
-<code>
+<pre class="prettyprint">
     $ cd sites-available
-</code>
+</pre>
 
 Create a file named myvps.com and paste in the following:
 
-<code>
+<pre class="prettyprint">
 # Redirect everything to the main site.
 server {
   server_name myvps.com *.myvps.com;
@@ -9256,19 +9258,19 @@ server {
   include global/restrictions.conf;
   include global/php5-fpm.conf;
 }
-</code>
+</pre>
 
 Create a global directory within the nginx directory.
 
-<code>
+<pre class="prettyprint">
     $ cd /etc/nginx
     $ sudo mkdir global
     $ cd global
-</code>
+</pre>
 
 Create a file called restrictions.conf within the global directory and paste in the following:
 
-<code>
+<pre class="prettyprint">
 # Global restrictions configuration file.
 # Designed to be included in any server {} block.
 
@@ -9289,11 +9291,11 @@ location ~ /\. {
   access_log off;
   log_not_found off;
 }
-</code>
+</pre>
 
 Now create a php5-fpm.conf file within the global directory and paste in the following:
 
-<code>
+<pre class="prettyprint">
 # Pass all .php files onto a php-fpm/php-fcgi server.
 location ~ \.php$ {
   # Zero-day exploit defense.
@@ -9311,82 +9313,82 @@ location ~ \.php$ {
 # fastcgi_intercept_errors on;
   fastcgi_pass php;
 }
-</code>
+</pre>
 <h2>Setting up the site</h2>
 Activate our server configuration via symbolic link in the sites-enabled directory
 
-<code>
+<pre class="prettyprint">
     $ cd /etc/nginx/sites-enabled
     $ sudo ln -s ../sites-available/myvps.com myvps.com
-</code>
+</pre>
 
 Now navigate to our www directory, where we will store our sites.
 
-<code>
+<pre class="prettyprint">
     $ cd /var/www
-</code>
+</pre>
 
 Create a web group
 
-<code>
+<pre class="prettyprint">
     $ sudo groupadd web
-</code>
+</pre>
 
 Add your administrative user to the web group
 
-<code>
+<pre class="prettyprint">
     $ sudo usermod -a -G web YOURUSER
-</code>
+</pre>
 
 If you're logged in as the administrative user (which you most likely are), log out and log back in. Verify
 the user is a part of the web group
 
-<code>
+<pre class="prettyprint">
     $ groups
-</code>
+</pre>
 
 Now make the web group the group of the directory
 
-<code>
+<pre class="prettyprint">
     $ sudo chgrp web /var/www
-</code>
+</pre>
 
 Make the ```/var/www``` directory group writable.
 
-<code>
+<pre class="prettyprint">
     $ sudo chmod -R 775 /var/www
-</code>
+</pre>
 
 Make all files subsequently created in the /var/www directory belong to the web group
 
-<code>
+<pre class="prettyprint">
     $ sudo chmod g+s /var/www
-</code>
+</pre>
 
 Now we can create the myvps.com directory
 
-<code>
+<pre class="prettyprint">
     $ mkdir myvps.com
     $ cd myvps.com
-</code>
+</pre>
 
 Create an index.php file and paste in the following
 
-<code>
+<pre class="prettyprint">
 &lt;!--?php phpinfo(); ?--&gt;
-</code>
+</pre>
 
 Now start nginx
 
-<code>
+<pre class="prettyprint">
     $ sudo service nginx start
-</code>
+</pre>
 
 The web page won't display because we haven't started php5-fpm
 
-<code>
+<pre class="prettyprint">
     $ sudo service php5-fpm start
-</code>
+</pre>
 
 Now we should be able to see our phpinfo in the browser!]]></content>
     <excerpt><![CDATA[In my first screen cast ever, I'll guide you through setting up Nginx with php-fpm on Ubuntu 10.04.]]></excerpt>
@@ -9402,9 +9404,9 @@ Now we should be able to see our phpinfo in the browser!]]></content>
 <h2>The Workaround</h2>
 The workaround is to tell Guard to not look for rb-fsevent, but to instead <a href="http://en.wikipedia.org/wiki/Polling_(computer_science)"> use polling</a>. To do so, append the <strong>--no-vendor</strong> option when starting up your Guard server.
 
-<code>
+<pre class="prettyprint">
 $ bundle exec guard --no-vendor
-</code>
+</pre>
 
 Polling is a more expensive operation, but hey, at least it works.]]></content>
     <excerpt><![CDATA[How to fix Guard when events seem to not be firing when working on OS X. ]]></excerpt>
@@ -9433,11 +9435,11 @@ Your options:
 <h2>3) Overuse of global .gitignore</h2>
 Using a <a href="http://jqr.github.com/2009/02/03/global-git-ignore.html">global .gitignore</a> is a great way to save yourself time. However, if misused, your global .gitignore can easily become a headache for your collaborators. Let's say you've created a project with<a href="http://flask.pocoo.org/">Python Flask</a>, with SQLite as the database of choice. You decide "Hey, I never want to version .sqlite3 files. Let's just toss that in my global .gitignore!". At first glance, this mentality doesn't seem harmful at all. However, any collaborator that comes along without .sqlite3 listed in their global .gitignore can accidentally bring the generated database file into version control. Here's a small list of file extensions I find safe to place in your global .gitignore.
 
-<code>
+<pre class="prettyprint">
 *.o
 *.log
 *.DS_Store
-</code> 
+</pre> 
 
 <h2>*Bonus* Lack of Bundler Use in Rails Projects</h2>
 Plain and simple, use <a href="https://github.com/Hack56/Rails-Template/wiki/Configuring-Bundler">properly configured Bundler</a> for your Rails projects. Fewer things are more frustrating than tracking down Gems used throughout a Rails project that are not listed in the Gemfile. Just because a gem is installed on your system does not mean it's installed on mine! Remember to track both the Gemfile AND Gemfile.lock files. ]]></content>
@@ -9462,9 +9464,9 @@ Each escape to the internet from my work was sort of an awkwardly long verbal pa
 
 <h2>The Hosts File: Just Annoying Enough</h2>
 Visiting a fun website when a software problem got difficult became so habitual to me that I'd execute :wq&lt;ENTER&gt;⌘&lt;TAB&gt;⌘tn&lt;ENTER&gt; from VIM without even realizing I was doing so. I didn't even want to see the top story that moment, I just wanted to not feel so bored/stressed/tired. To combat this, I simply place my favorite websites in my host file while I'm at work. When I visit those sites out of compulsion, I find the "Website Not Found" message and the idea of having to edit my host file JUST annoying enough to not do it. Because, again, I don't even want to see these sites. Unless you're cheating and have your hosts file already opened as root, you'll have to execute
-<code>
+<pre class="prettyprint">
 sudo vim /etc/hosts
-</code>
+</pre>
 which will require a password, and then you'll need to find the entries and comment them out. The whole process will only take about 10 seconds, which is no time at all when you want to actively want to view the sites, but just annoying enough when visiting mindlessly.
 
 <h2>Work Hard, Break Hard</h2>
@@ -9484,19 +9486,19 @@ Make sure you have the latest Nvidia drivers. To do this, Navigate to "Additiona
 
 Now execute the following commands in your terminal in order to get <a href="http://willem.engen.nl/projects/disper/">disper</a>, a nice utility that saves us from the headache of configuring via Nvidia-Settings. 
 
-<code>
+<pre class="prettyprint">
 $ sudo add-apt-repository ppa:disper-dev/ppa
 $ sudo add-apt-repository ppa:nmellegard/disper-indicator-ppa
 $ sudo apt-get update
 $ sudo apt-get install disper disper-indicator
-</code>
+</pre>
 
 (Credit to  <a href="http://www.joeyconway.com/blog/2011/08/13/ubuntu-how-to-extend-display-with-two-monitors/">Joey Conway</a>)
 
 Verify that disper works by executing the following in your terminal:
-<code>
+<pre class="prettyprint">
 $ disper -e
-</code>
+</pre>
 
 This should extend your monitors, giving you the desired functionality. This is great, except for currently we'd have to do this every single time we boot up Kubuntu.
 
@@ -9504,40 +9506,40 @@ This should extend your monitors, giving you the desired functionality. This is 
 My first instinct, being slightly familiar with Ubuntu, was to create a startup script in <b>/etc/init.d</b>. This, however, didn't seem to work. Instead of creating a script in the init.d directory, we'll create the script in a Kubuntu-specific directory called Autostart.
 
 First, navigate to the Autostart directory:
-<code>
+<pre class="prettyprint">
 $ cd ~/.kde/Autostart
-</code>
+</pre>
 
 Now using your favorite text editor, create a script called <b>dual-monitors</b>
 
-<code>
+<pre class="prettyprint">
 $ vim dual-monitors
-</code>
+</pre>
 
 Paste in the following:
 
-<code>
+<pre class="prettyprint">
 #!/bin/bash
 /usr/bin/disper -e
-</code>
+</pre>
 
 Save the file and quit the text editor. We now need to make the file executable or it will just be ignored by Kubuntu on startup.
 
-<code>
+<pre class="prettyprint">
 $ chmod +x dual-monitors
-</code>
+</pre>
 
 To verify the script works, we first need to get out of our current dual screen mode to make sure the script correctly puts us back in. Thus, we use disper to force only the primary display to appear.
 
-<code>
+<pre class="prettyprint">
 $ disper -s
-</code>
+</pre>
 
 Your 2nd monitor should deactivate. Now, while we're still in the ~/.kde/Autotest directory, execute the following:
 
-<code>
+<pre class="prettyprint">
 $ ./dual-monitors
-</code>
+</pre>
 
 If this causes the monitors to go back to dual-screen mode, then the script works! T
 
@@ -9621,11 +9623,11 @@ void give_bob_a_job(Person *bob){
 [/c]
 
 We compile the file
-<code>
+<pre class="prettyprint">
 ~$ gcc bob.c -o bob.o
 bob.c: In function ‘give_bob_a_job’:
 bob.c:18:6: error: request for member ‘job’ in something not a structure or union
-</code>
+</pre>
 
 So we receive the error <b>error: request for member ‘job’ in something not a structure or union</b>. 
 
@@ -9663,22 +9665,22 @@ This reads
 
 Replace line 18 with the correction, and the code should compile with the following output upon execution:
 
-<code>
+<pre class="prettyprint">
 The job of bob is Sysadmin
-</code>
+</pre>
 
 <h2>Syntax cleanup</h2>
 Dereferencing a pointer to a structure is so common, we have a shorthand for doing so.
 
-<code>(*foo).bar</code>
+<pre class="prettyprint">(*foo).bar</pre>
 
 is equal to
 
-<code>foo-&gt;bar</code>
+<pre class="prettyprint">foo-&gt;bar</pre>
 
 so 
 
-<code>bob-&gt;job = &quot;Sysadmin&quot;;</code>
+<pre class="prettyprint">bob-&gt;job = &quot;Sysadmin&quot;;</pre>
 
 would work as well. ]]></content>
     <excerpt><![CDATA[If you're trying to pass a pointer to a structure to a function, you may be getting the compiler error <b>request for member ‘SOME_PROPERTY’ in something not a structure or union</b>. If you  <em>swear</em> you're passing in a pointer to the proper structure, and you're <em>certain</em>, there are no typos for the member name you're trying to access, you may just be experiencing a bit of pointer ambiguity. ]]></excerpt>
@@ -9698,7 +9700,7 @@ Sometimes, however, I get in <b>the zone</b> and forget to checkout a branch bec
 Luckily, recovery is extremely simple. We can fix the repo up to get back in line with branching best practices.
 
 So say we've just committed to master and we're currently on the master branch.
-<code>
+<pre class="prettyprint">
 $ git log
 commit 9huuh23tnhubazhuxbeeashebcdjis3hl2iidu
 Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
@@ -9717,16 +9719,16 @@ Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
 Date:   Wed Apr 11 12:05:10 2012 -0500
 
         Some upstream master commit
-</code>
+</pre>
 
 The last two commits needed to be on their own branch, say <b>new_feature</b>. Your local master branch needs to be at "Some upstream master commit". Here's how we can accomplish this. 
 
 <h3>Step 1) Create the new_feature branch</h3>
 Since master is currently in the state we want the new_feature branch to be in (since we've just added our new feature commit), we can just branch off of master.
 
-<code>
+<pre class="prettyprint">
 $ git branch new_feature
-</code>
+</pre>
 
 So new_feature is just a direct copy of master at this point.
 
@@ -9740,34 +9742,34 @@ It's important to note that git reset --hard is NOT a safe operation. You CAN lo
 
 Anyway, to get the master branch back to "Some upstream master commit", we can copy the SHA of the commit from git log to our clipboard and execute
 
-<code>
+<pre class="prettyprint">
 $ git checkout master
 $ git reset --hard b232udh24xub2394d249ud394ub34bu9348ub9
 HEAD is now at ... Some upstream master commit
-</code>
+</pre>
 
 Also, for convenience, we can use the HEAD alias. In this example, we wanted to reference the commit that was 2 commits behind the latest commit. We could have equally executed
 
-<code>
+<pre class="prettyprint">
 $ git checkout master
 $ git reset --hard HEAD~2
-</code> 
+</pre> 
 
 The git log should now look like the following:
-<code>
+<pre class="prettyprint">
 $ git log
 commit b232udh24xub2394d249ud394ub34bu9348ub9
 Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
 Date:   Wed Apr 11 12:05:10 2012 -0500
 
         Some upstream master commit
-</code>
+</pre>
 
 
 <h3>Step 3) Verification</h3>
 We've verified the master branch is where it should be, so now we should checkout the new_feature branch and run a git log. 
 
-<code>
+<pre class="prettyprint">
 $ git checkout new_feature
 Switched to branch 'new_feature'
 $ git log
@@ -9788,7 +9790,7 @@ Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
 Date:   Wed Apr 11 12:05:10 2012 -0500
 
         Some upstream master commit
-</code>
+</pre>
 
 So we still have our work, but it's on a feature branch, as it should be! We're now free to send a pull request without any bickering from the project owner, or we can merge the new_feature branch later once it's ready for production.  ]]></content>
     <excerpt><![CDATA[So you know you should pretty much <a href="http://scottchacon.com/2011/08/31/github-flow.html">never hack directly on master</a> when working with git. Instead, you should create branches and merge them later.  Beyond best practices for their own sake, some github projects really want you creating pull requests from a certain branch.   
@@ -9834,9 +9836,9 @@ http://www.youtube.com/watch?v=CboUF7gtVSo]]></content>
 
 To get VI keybindings working in your shell, simply execute
 
-<code>
+<pre class="prettyprint">
 $ set -o vi
-</code>
+</pre>
 
 (If you decide you like vi keybindings in the shell and you want this mode enabled upon shell startup, append the command to your ~/.bash_profile for OS X and ~/.bashrc for linux ((<a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html">Why the difference?</a>))
 
@@ -9844,7 +9846,7 @@ $ set -o vi
 
 The shell will have normal/insert mode as expected. Here are the commands I use frequently:
 
-<code>
+<pre class="prettyprint">
 i - enter insert mode
 esc - back to normal mode
 
@@ -9874,7 +9876,7 @@ Fx - find the previous occurrence of the character 'x'
 * Numeric modifier keys work as well! *
 5W - move forward five white-space delimited words. 
 
-</code> ]]></content>
+</pre> ]]></content>
     <excerpt><![CDATA[There was once a very sad point in my development career where if I made a typo earlier in one of my bash statements, I would have to hold the left arrow to get my cursor over to the problem area and fix it. Then, one fateful day, I discovered VI keybindings in the shell!
 ]]></excerpt>
   </item>
@@ -9897,16 +9899,16 @@ The quality is just fine for simple screencasts, and it allows you to record aud
 <h2>Installation</h2>
 
 First, we need some Python modules to be installed.
-<code>
+<pre class="prettyprint">
 $ sudo apt-get install --reinstall gir1.2-gtk-2.0 python-software-properties software-properties-gtk
-</code>
+</pre>
 
 Now we actually grab Kazam as instructed by their site.
-<code>
+<pre class="prettyprint">
 $ sudo add-apt-repository ppa:kazam-team/stable-series
 $ sudo apt-get update
 $ sudo apt-get install kazam
-</code>
+</pre>
 
 And you're done! You can run kazam via the command line or your distro's menu. 
 
@@ -9926,9 +9928,9 @@ If you happen to have FFMpeg installed, here's a nice 2-pass video/audio <a href
 
 You can download <a href="https://github.com/joequery/md2pdf">md2pdf</a> on Github. Installation instructions can be found in the README. Usage is extremely simple:
 
-<code>
+<pre class="prettyprint">
 $ md2pdf my-markdown-document.md
-</code>
+</pre>
 
 <h2>How it was made</h2>
 This utility is actually pretty silly. It simply serves as a glue between

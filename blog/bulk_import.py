@@ -42,7 +42,7 @@ for post in posts:
   pubdate = strftime("%Y-%m-%d %a %H:%M %p", pubdateObj)
 
   # Get the post content into markdown. Get rid of unicode spaces
-  markdown = html2text(content.replace(u'\xa0', u''))
+  content = content.replace(u'\xa0', u' ')
 
   # posts/some-post/body.html
   bodyfilePath = os.path.join(directory, "body.html")
@@ -59,32 +59,34 @@ for post in posts:
 
   # Write the body
   bodyfile.write(
-    """
-    {% extends "templates/post.html" %}
-    {% block post %}
-    {% filter markdown %}
-    [{{post['title']}}]("{{request.url}}")
-    ======================================
+"""
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
 
-    """
+
+[{{post['title']}}]("{{request.url}}")
+======================================
+{% endfilter %}
+
+"""
   )
-  bodyfile.write(markdown)
+  bodyfile.write(content)
   bodyfile.write(
-    """
-    {% endfilter %}
-    {% endblock post %}
-    """
+"""
+{% endblock post %}\n
+"""
   )
 
   # Write the metadata
 
   metafile.write(
-    """
-      title="%s"
-      description="%s"
-      time="%s"
-      excerpt="%s"
-    """ % (title, description, pubdate, excerpt)
+"""
+title="%s"
+description="%s"
+time="%s"
+excerpt="%s" \n
+""" % (title, description, pubdate, excerpt)
   )
 
   ##################################################################

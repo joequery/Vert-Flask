@@ -1,7 +1,7 @@
 markdown-pdf-utility
 ubuntu-screencast-software-11-04
 vi-keybindings-shell
-introduction-recursion-%e2%80%93-part-2
+introduction-recursion-part-2
 jquery-table-sort-plugin-stupidly-simple-jquery-table-sort
 git-workflow-crap-committed-master
 c-request-member-structure-union

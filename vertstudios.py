@@ -7,7 +7,8 @@ from flask import (
  render_template, url_for
 )
 from contact.contact import contact_page
-from blog.blog import blog, from_the_blog
+from blog.blog import blog
+from blog.helpers import from_the_blog
 from flaskext.markdown import Markdown
 from jinja2 import TemplateNotFound
 

@@ -15,6 +15,11 @@ if "FLASK_ENV" in os.environ.keys():
 else:
 	FLASK_ENV = "development"
 
+if FLASK_ENV == "development":
+  app.debug = False
+else:
+  app.debug = True
+
 @app.before_request
 def before_request():
   def get_body_id():

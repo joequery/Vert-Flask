@@ -117,7 +117,7 @@
   
     <div class="post">
     
-      <h2><a href="/blog/new-facebook-picture-chat">New Facebook Picture Chat &amp;#8211; Facebook Thinks We&amp;#8217;re Idiots</a></h2>
+      <h2><a href="/blog/new-facebook-picture-chat">New Facebook Picture Chat : Facebook Thinks We&#39;re Idiots</a></h2>
     
     <p>Two similar but significant changes over the past week highlight the direction in which Facebook is moving when it comes to User Experience (how the user interacts with a web-based environment). 
 
@@ -136,7 +136,7 @@ Facebook has "Picturfied" the sidebar friends list and the chat box. Let's exami
   
     <div class="post">
     
-      <h2><a href="/blog/self-promotion-for-starving-artists">FREE Presentation &amp;#8211; Self Promotion for Starving Artists</a></h2>
+      <h2><a href="/blog/self-promotion-for-starving-artists">FREE Presentation : Self Promotion for Starving Artists</a></h2>
     
     <p></p>
     10/04/2010 | 
@@ -145,7 +145,7 @@ Facebook has "Picturfied" the sidebar friends list and the chat box. Let's exami
   
     <div class="post">
     
-      <h2><a href="/blog/reciprocal-twitter-follows-the-new-reciprocal-links">Reciprocal Twitter Follows &amp;#8211; The New Reciprocal Links</a></h2>
+      <h2><a href="/blog/reciprocal-twitter-follows-the-new-reciprocal-links">Reciprocal Twitter Follows : The New Reciprocal Links</a></h2>
     
     <p>I've only been on Twitter for a few weeks, and while I am by no means a <a href="http://socialmediadouchebag.net/">social media guru</a>, I can already tell that a lot of people on Twitter have absolutely no idea what they're doing. Some people feel obligated to Retweet everything they see. Some people feel obligated to follow anyone mentioned in an Retweet. And, as this article will discuss, some people get so excited when someone follows them, they reciprocate the follow - no questions asked. What does this all lead to? Nothing. A whole lot of nothing.</p>
     09/02/2010 | 
@@ -194,7 +194,7 @@ Returns the location of the matched set of elements in a specified array. Return
   
     <div class="post">
     
-      <h2><a href="/blog/jquery-unshift-not-a-function-solution">jQuery unshift is not a function &amp;#8211; Solution!</a></h2>
+      <h2><a href="/blog/jquery-unshift-not-a-function-solution">jQuery unshift is not a function : Solution!</a></h2>
     
     <p>At times, jQuery can induce some scope issues when it comes to using the JavaScript array prototypes. One example in particular is the unshift() array prototype. In the same context as array.push(), Firebug may throw the error that <strong>unshift is not a function</strong>. Honestly, I can't account for why this happens, but in the event you need to use unshift for a jQuery object, I have created a jQuery plugin called <a href="http://www.vertstudios.com/blog/frontpush-jquery-plugin/">.frontpush()</a> that works around the issue.</p>
     08/11/2010 | 

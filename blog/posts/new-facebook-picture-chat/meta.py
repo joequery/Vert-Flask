@@ -1,5 +1,5 @@
 
-title="""New Facebook Picture Chat &#8211; Facebook Thinks We&#8217;re Idiots"""
+title="""New Facebook Picture Chat : Facebook Thinks We're Idiots"""
 description=""""""
 time="""2010-10-17 Sun 21:10 PM"""
 excerpt="""Two similar but significant changes over the past week highlight the direction in which Facebook is moving when it comes to User Experience (how the user interacts with a web-based environment). 

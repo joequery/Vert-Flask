@@ -1,6 +1,7 @@
 # Vert studios website. Yay!
 
-from settings import *
+from settings import FLASK_ENV
+from private import SECRET_KEY
 from flask import (
  Flask, render_template, request, g, abort, flash, redirect, 
  render_template, url_for

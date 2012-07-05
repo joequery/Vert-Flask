@@ -28,3 +28,4 @@ pip-log.txt
 
 *.pdf
 env/*
+private.py

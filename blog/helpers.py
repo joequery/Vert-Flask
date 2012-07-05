@@ -46,7 +46,7 @@ def get_posts(app, numPosts, start=0):
     postDict = {
       'title' : metaData.title,
       'description' : metaData.excerpt,
-      'url': "http://www.vertstudios.com/blog/%s" % post,
+      'url': "/blog/%s" % post,
       'pubDate': time.strptime(metaData.time, "%Y-%m-%d %a %H:%M %p")
     }
     postDict['comments'] = postDict['url'] + "#comments"
@@ -122,6 +122,7 @@ def _alter_rss(rssObj):
   # changes.
   rssObj["description"] = description
   rssObj["pubDate"] = date
+  rssObj['url'] = "http://www.vertstudios.com/blog%s" % rssObj['url'],
 
 def from_the_blog():
   return render_template("templates/from_the_blog.static")

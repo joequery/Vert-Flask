@@ -1,0 +1,13 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+
+**Now, we can use markdown!**
+
+{% endfilter %}
+{% endblock post %}
+

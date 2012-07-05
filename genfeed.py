@@ -53,12 +53,16 @@ def write_index_pages(postsPerPage):
     pagePath = os.path.join(BLOG_SYS_PATH, "pages", "page%d.static" % i)
     with app.test_request_context():
       before_request()
-      html = render_template("templates/blog_index.html", posts=posts)
+      newposts = get_posts(app, postsPerPage, postsPerPage * i - 1)
+
+      # Determine if we should display prev/next buttons
+      html = render_template("templates/blog_index.html", 
+          posts=posts)
       f = open(pagePath, 'w')
       f.write(html)
       f.close()
       i += 1
-      posts = get_posts(app, postsPerPage, postsPerPage * i - 1)
+      posts = newposts
   print("Generated static blog pages")
 
 

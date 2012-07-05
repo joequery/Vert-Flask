@@ -108,115 +108,109 @@
     <div class="post">
     
       
-      <h1><a href="/blog/vert-studios-jquery-plugin-library">The Vert Studios jQuery Plugin Library</a></h1>
+      <h1><a href="/blog/why-you-should-hire-professional-web-designers">Why You Should Hire Professional Web Designers</a></h1>
     
-    <p>We at Vert Studios absolutely love making custom jQuery plugins. Some plugins we create are large and robust, while others are simple and concise. Look through our list of plugins and JavaScript functions, and start incorporating them into your own projects!</p>
+    <p>Due to the availability of information present on the web, many small business owners have decided to undertake the responsibility of creating a website for their business. On the surface, this approach makes sense to most business owners: Why hire professionals for $4,000 when you could read some tutorials yourself or buy a $20 template? While advocating the Do-It-Yourself approach to your business website seems like an efficient way to minimize cost and maximize revenue, <strong>poorly designed websites actually cost your company much more than professionally designed websites</strong>.</p>
+    10/19/2010 | 
+    <a href="/blog/why-you-should-hire-professional-web-designers">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/new-facebook-picture-chat">New Facebook Picture Chat &amp;#8211; Facebook Thinks We&amp;#8217;re Idiots</a></h2>
+    
+    <p>Two similar but significant changes over the past week highlight the direction in which Facebook is moving when it comes to User Experience (how the user interacts with a web-based environment). 
+
+<h2>Picturfication?</h2>
+Facebook rolled out two separate changes to the extremely important chat interface. While some users simply log on Facebook and examine or comment other's profiles, many people's primary use of Facebook is its chat feature. Facebook chat consists of 3 main sections:
+<ul>
+<li>The sidebar friends list available on your "Home" page</li>
+<li>The friends list always available on the bottom right portion of your screen</li>
+<li>The chat box itself</li>
+</ul>
+
+Facebook has "Picturfied" the sidebar friends list and the chat box. Let's examine the changes in further detail.</p>
+    10/17/2010 | 
+    <a href="/blog/new-facebook-picture-chat">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/self-promotion-for-starving-artists">FREE Presentation &amp;#8211; Self Promotion for Starving Artists</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/self-promotion-for-starving-artists">FREE Presentation &amp;#8211; Self...</p>
+    10/04/2010 | 
+    <a href="/blog/self-promotion-for-starving-artists">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/reciprocal-twitter-follows-the-new-reciprocal-links">Reciprocal Twitter Follows &amp;#8211; The New Reciprocal Links</a></h2>
+    
+    <p>I've only been on Twitter for a few weeks, and while I am by no means a <a href="http://socialmediadouchebag.net/">social media guru</a>, I can already tell that a lot of people on Twitter have absolutely no idea what they're doing. Some people feel obligated to Retweet everything they see. Some people feel obligated to follow anyone mentioned in an Retweet. And, as this article will discuss, some people get so excited when someone follows them, they reciprocate the follow - no questions asked. What does this all lead to? Nothing. A whole lot of nothing.</p>
+    09/02/2010 | 
+    <a href="/blog/reciprocal-twitter-follows-the-new-reciprocal-links">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/arrayshift-jquery-plugin">.arrayShift() jQuery Plugin</a></h2>
+    
+    <p><strong>Description</strong>
+Places an element of the jQuery object at a new location in the object-array and shifts all affected indexes of the array.</p>
+    08/21/2010 | 
+    <a href="/blog/arrayshift-jquery-plugin">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/swap-jquery-plugin">jQuery .swap() Plugin</a></h2>
+    
+    <p><strong>Description</strong>
+Swaps the elements within a jQuery object.</p>
+    08/16/2010 | 
+    <a href="/blog/swap-jquery-plugin">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/equalto-jquery-plugin">.equalTo() jQuery Plugin</a></h2>
+    
+    <p><strong>Description</strong>
+Evaluates the equality between jQuery objects.</p>
+    08/12/2010 | 
+    <a href="/blog/equalto-jquery-plugin">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/getindexof-jquery-plugin">.getIndexOf() jQuery Plugin</a></h2>
+    
+    <p><strong>Description</strong>
+Returns the location of the matched set of elements in a specified array. Returns Boolean false if the matched set is not found in the array.</p>
+    08/11/2010 | 
+    <a href="/blog/getindexof-jquery-plugin">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/jquery-unshift-not-a-function-solution">jQuery unshift is not a function &amp;#8211; Solution!</a></h2>
+    
+    <p>At times, jQuery can induce some scope issues when it comes to using the JavaScript array prototypes. One example in particular is the unshift() array prototype. In the same context as array.push(), Firebug may throw the error that <strong>unshift is not a function</strong>. Honestly, I can't account for why this happens, but in the event you need to use unshift for a jQuery object, I have created a jQuery plugin called <a href="http://www.vertstudios.com/blog/frontpush-jquery-plugin/">.frontpush()</a> that works around the issue.</p>
+    08/11/2010 | 
+    <a href="/blog/jquery-unshift-not-a-function-solution">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/frontpush-jquery-plugin">.frontpush() jQuery Plugin</a></h2>
+    
+    <p><strong>Description</strong>
+Places the matched set of elements at the front of an array.</p>
     08/10/2010 | 
-    <a href="/blog/vert-studios-jquery-plugin-library">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/how-to-write-an-effective-company-value-proposition">How to Write an Effective Company Value Proposition</a></h2>
-    
-    <p>A company's value proposition explicitly states the benefits or values it intends to provide its customers. Are value propositions just corporate jargon that have no place in the real world? No: you must be thinking of 99% of mission statements ;). 
-
-<h2>So what's the value of a company value proposition? </h2>
-Most customers will never read your company value proposition directly. They should, however, see it manifested in everything you do. Therefore, a value proposition does not attempt to pitch to the reader; <b>it serves as a guideline for the company</b>. All products offered by a company must fit within the scope of their value proposition. Products that do not fit within the scope of the value proposition risk overstretching the company brand, potentially leading to a loss of identity and trust amongst consumers. 
-
-An effective company value proposition performs the following functions:</p>
-    08/03/2010 | 
-    <a href="/blog/how-to-write-an-effective-company-value-proposition">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/forms-css-vs-tables">Creating Forms: Pure CSS vs Table Based</a></h2>
-    
-    <p>While I have always been an advocate for table-less layouts with semantic HTML, designing forms with pure CSS has proven to be a complete pain in the butt. And apparently I'm only one in <a href="http://www.google.com/search?hl=en&q=%22css+form+problem%22">10,000 to say so</a>.</p>
-    07/07/2010 | 
-    <a href="/blog/forms-css-vs-tables">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/5-essential-tips-teenage-web-designers">5 Essential Tips for Teenage Web Designers</a></h2>
-    
-    <p>
-    
-<h1><a href="/blog/5-essential-tips-teenage-web-designers">5 Essential Tips for Teenage Web...</p>
-    07/02/2010 | 
-    <a href="/blog/5-essential-tips-teenage-web-designers">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/google-hides-its-text">Google Hides its Text: Why Can&#39;t We?</a></h2>
-    
-    <p>
-    
-<h1><a href="/blog/google-hides-its-text">Google Hides its Text: Why Can't...</p>
-    06/26/2010 | 
-    <a href="/blog/google-hides-its-text">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/common-problems-jquery-delay">Common Problems with jQuery .delay()</a></h2>
-    
-    <p>
-    
-<h1><a href="/blog/common-problems-jquery-delay">Common Problems with jQuery...</p>
-    06/18/2010 | 
-    <a href="/blog/common-problems-jquery-delay">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/should-css-be-trendy">Should CSS be Trendy?</a></h2>
-    
-    <p>
-    
-<h1><a href="/blog/should-css-be-trendy">Should CSS be Trendy?</a></h1>
-
-Anyone who keeps up...</p>
-    06/16/2010 | 
-    <a href="/blog/should-css-be-trendy">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/how-does-paypal-backup-funding-work">How Does PayPal Backup Funding Work?</a></h2>
-    
-    <p>
-    
-<h1><a href="/blog/how-does-paypal-backup-funding-work">How Does PayPal Backup Funding...</p>
-    06/07/2010 | 
-    <a href="/blog/how-does-paypal-backup-funding-work">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/why-i-wish-iphone-apps-were-more-expensive">Why I Wish iPhone Apps Were More Expensive</a></h2>
-    
-    <p>
-    
-<h1><a href="/blog/why-i-wish-iphone-apps-were-more-expensive">Why I Wish iPhone Apps Were...</p>
-    06/06/2010 | 
-    <a href="/blog/why-i-wish-iphone-apps-were-more-expensive">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/seo-google-local-places">SEO For Google Local/Places</a></h2>
-    
-    <p>
-    
-<h1><a href="/blog/seo-google-local-places">SEO For Google Local/Places</a></h1>
-
-Ranking...</p>
-    06/04/2010 | 
-    <a href="/blog/seo-google-local-places">Read the full article &rArr;</a>
+    <a href="/blog/frontpush-jquery-plugin">Read the full article &rArr;</a>
     </div>
   
 </div>

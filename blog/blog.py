@@ -19,16 +19,7 @@ BLOG_SYS_PATH = os.sep.join(ThisFilePath.split('/')[:-1])
 blog = Blueprint('blog', __name__, template_folder="./")
 @blog.route('/blog/')
 def blog_index():
-  posts = get_posts(app, 10, 0)
-
-  for post in posts:
-    # If a post doesn't have a description, get an excerpt from the body.
-    if not post['description']:
-      post['description'] = get_excerpt(post['body'], 100)
-     
-    # Make the date in the form '04/25/2012'
-    post['pubDate'] = time.strftime("%m/%d/%Y", post['pubDate'])
-  return render_template("templates/blog_index.html", posts=posts)
+  return render_template("pages/page1.static")
 
 @blog.route('/blog/page/<int:pagenum>/')
 def blog_index_page(pagenum):

@@ -108,102 +108,105 @@
     <div class="post">
     
       
-      <h1><a href="/blog/3-tips-making-web-copy-kick-ass">3 Tips for Making Your Web Copy Kick-Ass</a></h1>
+      <h1><a href="/blog/remove-ruby-gems-ubuntu">Remove All Ruby Gems (Ubuntu)</a></h1>
     
-    <p>The text on your website, without question, will influence a visitor's decision to accept or ignore your message. Your message may be as simple as "this product will make you happy", or as complex as "this is why you should enable Apache's mod_rewrite." Regardless, conveying your message in a clear, appropriate, and motivating manner remains a critical component of satisfying visitor wants and needs. We'll show you three easy ways to elevate your web copy from mediocre to kick-ass.</p>
-    03/25/2011 | 
-    <a href="/blog/3-tips-making-web-copy-kick-ass">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/windows-php-mail-server-installation-guide">Windows PHP Mail Server Installation Guide</a></h2>
-    
-    <p>Learn to to install and configure a local mail server to work with PHP, allowing you to use PHP's mail() function locally.</p>
-    03/13/2011 | 
-    <a href="/blog/windows-php-mail-server-installation-guide">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/libmysqldll-32-bit-download">libmysql.dll 32 Bit Download</a></h2>
-    
-    <p><a href="http://www.vertstudios.com/downloads/libmysql.zip">Download libmysql.dll</a> (ZIP File)
+    <p>Recently (as in thirty seconds ago) I needed to remove all ruby gems from my system. After searching the interwebs, I came across an <a href="http://geekystuff.net/2009/01/14/remove-all-ruby-gems/">article</a> explaining how to remove all ruby gems on Fedora core linux.
 
-The only other site I could find that hosts this individual file had so many affiliate links, I couldn't find where to download. I ended up having to install MySQL 32 bit just to snag the dll. I think people would prefer a 1MB download to a 120MB download!</p>
-    03/12/2011 | 
-    <a href="/blog/libmysqldll-32-bit-download">Read the full article &rArr;</a>
+The snippet adjustment for Ubuntu was easy, just involved remove some quotes and adding sudo. For a detailed explanation on how the command works, check out that article.</p>
+    06/26/2011 | 
+    <a href="/blog/remove-ruby-gems-ubuntu">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/add-nofollow-links-with-php">Add Nofollow to Links with PHP</a></h2>
+      <h2><a href="/blog/linux-snippet-run-bash-profile-start">Linux Snippet: Run ~/.bash_profile on Startup (GNOME)</a></h2>
     
-    <p>
-    
-<h1><a href="/blog/add-nofollow-links-with-php">Add Nofollow to Links with PHP</a></h1>
+    <p>If you've edited your ~/.bash_profile to include scripts you'd like executed on start up, you might be surprised when you open up your terminal and those scripts don't execute. By default, ~/.bashrc executes on session start, but ~/.bash_profile doesn't. 
 
-If...</p>
-    02/26/2011 | 
-    <a href="/blog/add-nofollow-links-with-php">Read the full article &rArr;</a>
+To execute your ~/.bash_profile on startup, simply append this to your ~/.bashrc</p>
+    06/26/2011 | 
+    <a href="/blog/linux-snippet-run-bash-profile-start">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/lynx-windows-7-64-bit">Lynx for Windows 7 64 Bit</a></h2>
+      <h2><a href="/blog/mkdir-cd-at-same-time">mkdir and cd at the Same Time</a></h2>
     
-    <p>If you've tried to install Lynx from the download page while on Windows 7, you might have come across various errors preventing you from installing this great tool. While searching for a solution myself, I came across a <a href="http://www.vordweb.co.uk/standards/download_lynx.htm">Lynx Download Page</a> with instructions that work for Windows 7 64 bit. Just checkout the readme and follow the step by step guide, and you'll be browsing in no time.</p>
-    02/22/2011 | 
-    <a href="/blog/lynx-windows-7-64-bit">Read the full article &rArr;</a>
+    <p>Fact: I'm lazy as hell. <strong>mkdir x && cd x</strong> for whatever reason just seems too long to create a directory and cd into it at the same time.</p>
+    06/25/2011 | 
+    <a href="/blog/mkdir-cd-at-same-time">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/social-media-small-business-experiment">Social Media for Small Business - An Experiment</a></h2>
+      <h2><a href="/blog/overcome-programming-apathy">Overcome Programming Apathy</a></h2>
     
     <p>
     
-<h1><a href="/blog/social-media-small-business-experiment">Social Media for Small Business -...</p>
-    02/22/2011 | 
-    <a href="/blog/social-media-small-business-experiment">Read the full article &rArr;</a>
+<h1><a href="/blog/overcome-programming-apathy">Overcome Programming...</p>
+    06/21/2011 | 
+    <a href="/blog/overcome-programming-apathy">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/credible-web-design-company">Are You a Credible Web Design Company?</a></h2>
+      <h2><a href="/blog/physxcudart20-dll-download">Physxcudart_20.dll Download</a></h2>
     
     <p>
     
-<h1><a href="/blog/credible-web-design-company">Are You a Credible Web Design...</p>
-    02/17/2011 | 
-    <a href="/blog/credible-web-design-company">Read the full article &rArr;</a>
+<h1><a href="/blog/physxcudart20-dll-download">Physxcudart_20.dll Download</a></h1>
+
+<a...</p>
+    06/07/2011 | 
+    <a href="/blog/physxcudart20-dll-download">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/apache-301-force-www-redirect-index-root">Apache 301: Force www, Redirect Index to Root</a></h2>
+      <h2><a href="/blog/less-app-windows-sorta">Less.app for Windows (Sort of)</a></h2>
     
-    <p>This .htaccess code redirects http://domainname.com to http://<b>www.</b>domainname.com. Additionally, it forces any call to index.php to the domain root.</p>
-    02/08/2011 | 
-    <a href="/blog/apache-301-force-www-redirect-index-root">Read the full article &rArr;</a>
+    <p>After recently purchasing my first Mac, I decided I wanted to sync my Mac and Windows workflow. The <a href="http://incident57.com/less/">Less.app</a> app for Mac is amazing for compiling your Less files the instant you save them. Unfortunately, there was no Less.app equivalent for Windows...until now!...sorta. (This may have already been done before, but I seriously couldn't find anything after an hour of Googling).</p>
+    03/27/2011 | 
+    <a href="/blog/less-app-windows-sorta">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/getelementbyid-ie7-issue">getElementById IE7 Issue</a></h2>
+      <h2><a href="/blog/dear-smashing-magazine">Dear Smashing Magazine</a></h2>
     
-    <p>As <a href="http://www.vertstudios.com/blog/a-break-from-jquery/">previously stated</a>, I'm taking some time to learn pure JavaScript. That means I am beginning to experience the joy that is cross-browser JS quirks!</p>
-    01/30/2011 | 
-    <a href="/blog/getelementbyid-ie7-issue">Read the full article &rArr;</a>
+    <p>According to <a href="http://www.smashingmagazine.com/2011/03/21/dear-web-design-community-where-have-you-gone/">Smashing Magazine</a>, the sky is falling. <a href="http://www.smashingmagazine.com/2010/04/08/opinion-column-the-sad-state-of-the-web-design-community/">Again</a>. The web design community has heeled over, and is down for the count.</p>
+    03/22/2011 | 
+    <a href="/blog/dear-smashing-magazine">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/cant-detect-canon-wireless-printer-solution">Can&#39;t Detect Connected Canon Wireless Printer [SOLUTION]</a></h2>
+      <h2><a href="/blog/switch-windows-command-prompt-explorer">Switch From Windows Command Prompt to Explorer</a></h2>
     
-    <p>Over the past few weeks, the computers in my house have been unable to detect my <strong>Cannon MG5200</strong> printer. The printer itself said it successfully connected to the wireless network, which left me quite puzzled. After a while, I found the root cause, and it left me quite baffled.</p>
-    01/29/2011 | 
-    <a href="/blog/cant-detect-canon-wireless-printer-solution">Read the full article &rArr;</a>
+    <p>In your development workflow, you might find it more convenient to head back to the GUI interface of windows explorer while working from the command prompt. It's not uncommon for me to be 7 directories in from the root directory while working on a project. 
+Thankfully, there are extremely simple ways to open your current <strong>command prompt directory</strong> in Windows Explorer, and vice versa.</p>
+    03/21/2011 | 
+    <a href="/blog/switch-windows-command-prompt-explorer">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/test-php-mail-function">Test PHP Mail Function</a></h2>
+    
+    <p>When setting up your mail server, you may want to check your php mail function with a simple script.</p>
+    03/22/2011 | 
+    <a href="/blog/test-php-mail-function">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/what-is-a-function">What Is a Function</a></h2>
+    
+    <p>I believe all programmers and computer scientists should take the time to appreciate the foundations of mathematics. If you currently attend a university, I highly encourage you to take a foundations course. Learning math foundations expands your mind, and gives you a greater understanding of the concepts we programmers implement every single day. 
+
+For those of you who do not have the ability or desire to invest in a foundations of mathematics course, but still appreciate the complexities and origins of our field of work, I will very briefly describe what a function really is.</p>
+    03/23/2011 | 
+    <a href="/blog/what-is-a-function">Read the full article &rArr;</a>
     </div>
   
 </div>

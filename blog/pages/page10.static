@@ -108,103 +108,115 @@
     <div class="post">
     
       
-      <h1><a href="/blog/introduction-pointers-c-tutorial">Introduction to Pointers in C++ Tutorial</a></h1>
+      <h1><a href="/blog/vert-studios-jquery-plugin-library">The Vert Studios jQuery Plugin Library</a></h1>
+    
+    <p>We at Vert Studios absolutely love making custom jQuery plugins. Some plugins we create are large and robust, while others are simple and concise. Look through our list of plugins and JavaScript functions, and start incorporating them into your own projects!</p>
+    08/10/2010 | 
+    <a href="/blog/vert-studios-jquery-plugin-library">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/how-to-write-an-effective-company-value-proposition">How to Write an Effective Company Value Proposition</a></h2>
+    
+    <p>A company's value proposition explicitly states the benefits or values it intends to provide its customers. Are value propositions just corporate jargon that have no place in the real world? No: you must be thinking of 99% of mission statements ;). 
+
+<h2>So what's the value of a company value proposition? </h2>
+Most customers will never read your company value proposition directly. They should, however, see it manifested in everything you do. Therefore, a value proposition does not attempt to pitch to the reader; <b>it serves as a guideline for the company</b>. All products offered by a company must fit within the scope of their value proposition. Products that do not fit within the scope of the value proposition risk overstretching the company brand, potentially leading to a loss of identity and trust amongst consumers. 
+
+An effective company value proposition performs the following functions:</p>
+    08/03/2010 | 
+    <a href="/blog/how-to-write-an-effective-company-value-proposition">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/forms-css-vs-tables">Creating Forms: Pure CSS vs Table Based</a></h2>
+    
+    <p>While I have always been an advocate for table-less layouts with semantic HTML, designing forms with pure CSS has proven to be a complete pain in the butt. And apparently I'm only one in <a href="http://www.google.com/search?hl=en&q=%22css+form+problem%22">10,000 to say so</a>.</p>
+    07/07/2010 | 
+    <a href="/blog/forms-css-vs-tables">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/5-essential-tips-teenage-web-designers">5 Essential Tips for Teenage Web Designers</a></h2>
     
     <p>
     
-<h1><a href="/blog/introduction-pointers-c-tutorial">Introduction to Pointers in C++...</p>
-    06/05/2010 | 
-    <a href="/blog/introduction-pointers-c-tutorial">Read the full article &rArr;</a>
+<h1><a href="/blog/5-essential-tips-teenage-web-designers">5 Essential Tips for Teenage Web...</p>
+    07/02/2010 | 
+    <a href="/blog/5-essential-tips-teenage-web-designers">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/5-principles-of-web-marketing">The 5 Principles of Web Marketing</a></h2>
-    
-    <p>SEO. Pay-Per-Click. Social Media Marketing. We've all heard those terms at one point or another, and nearly every branded corporation in the US is pursuing at least one of those as a web marketing strategy. Why? Some companies pursue web marketing because they see great value in incorporating it into their business model. The remaining companies adopt web marketing strategies because they see their competitors engaging in it and follow suit out of fear. 
-
-<img src="http://vertstudios.com/blog/images/follow-the-leader.jpg" alt="Follow the leader" />
-
-<h2>Fear not!</h2></p>
-    08/02/2010 | 
-    <a href="/blog/5-principles-of-web-marketing">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/mysql-installation-tutorial">MySQL 5.1 Installation Tutorial</a></h2>
-    
-    <p>A step by step tutorial for installing MySQL and phpMyAdmin on a windows system with PLENTY of screen shots to help guide you.</p>
-    03/02/2010 | 
-    <a href="/blog/mysql-installation-tutorial">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/mysql-error0-cannot-create-windows-service">MySQL Error 0 Cannot Create Windows Service</a></h2>
-    
-    <p>This is the MySQL Error 0, which usually follows a windows notification that mysqld.exe has stopped working. After reading many forum posts, it appears that there is no definite answer as to how to solve the problem. However, I finally came across a method that worked for me, and hopefully it will work for you.</p>
-    03/02/2010 | 
-    <a href="/blog/mysql-error0-cannot-create-windows-service">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/pear-installation-tutorial">PEAR Installation Tutorial</a></h2>
-    
-    <p>Step by step tutorial for installing PEAR on a windows system with PLENTY of screen shots to help.</p>
-    02/28/2010 | 
-    <a href="/blog/pear-installation-tutorial">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/string-lowercase-uppercase-c">Make a string lowercase/uppercase in C++</a></h2>
-    
-    <p>C++ Does not have string case manipulation built in to its <a href="http://www.cplusplus.com/reference/string/string/"> standard library</a>. For this  reason, it's necessary to make your own upperCase and lowerCase functions. I'll show you how to do just that.</p>
-    02/28/2010 | 
-    <a href="/blog/string-lowercase-uppercase-c">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/php-apache-installation-tutorial">PHP and Apache Installation Tutorial</a></h2>
-    
-    <p>I have lost many hours of sleep because of not being able to set up PHP and Apache. I have missed homework deadlines, fallen asleep in class, accidentally eaten an onion, and much worse. Here is my attempt to help you guys sleep at night with a very quick and easy PHP and Apache installation guide.</p>
-    02/21/2010 | 
-    <a href="/blog/php-apache-installation-tutorial">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/javascript-convert-miles-kilometers">Convert Miles to Kilometers with JavaScript</a></h2>
-    
-    <p>Your summer surveying job requires you to study some maps that give distances in kilometers and some that use miles. You and your co-workers prefer to deal in metric measurements. <strong>Write a program that performs the necessary conversion, rounded to 2 decimal places.</strong></p>
-    02/07/2010 | 
-    <a href="/blog/javascript-convert-miles-kilometers">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/jquery-in-action-review">jQuery in Action Review</a></h2>
+      <h2><a href="/blog/google-hides-its-text">Google Hides its Text: Why Can&#39;t We?</a></h2>
     
     <p>
     
-<h1><a href="/blog/jquery-in-action-review">jQuery in Action Review</a></h1>
-
-My review of...</p>
-    06/03/2010 | 
-    <a href="/blog/jquery-in-action-review">Read the full article &rArr;</a>
+<h1><a href="/blog/google-hides-its-text">Google Hides its Text: Why Can't...</p>
+    06/26/2010 | 
+    <a href="/blog/google-hides-its-text">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/free-jquery-cheat-sheet">Free jQuery Cheat Sheet</a></h2>
+      <h2><a href="/blog/common-problems-jquery-delay">Common Problems with jQuery .delay()</a></h2>
     
-    <p><a href="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet1.pdf">Click to download this FREE jQuery Cheat Sheet (PDF)</a>
-<a href="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet1.pdf"><img src="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet.jpg" alt="Click to download jQuery Cheat Sheet" title="Click to download jQuery Cheat Sheet" /></a></p>
-    05/24/2010 | 
-    <a href="/blog/free-jquery-cheat-sheet">Read the full article &rArr;</a>
+    <p>
+    
+<h1><a href="/blog/common-problems-jquery-delay">Common Problems with jQuery...</p>
+    06/18/2010 | 
+    <a href="/blog/common-problems-jquery-delay">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/should-css-be-trendy">Should CSS be Trendy?</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/should-css-be-trendy">Should CSS be Trendy?</a></h1>
+
+Anyone who keeps up...</p>
+    06/16/2010 | 
+    <a href="/blog/should-css-be-trendy">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/how-does-paypal-backup-funding-work">How Does PayPal Backup Funding Work?</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/how-does-paypal-backup-funding-work">How Does PayPal Backup Funding...</p>
+    06/07/2010 | 
+    <a href="/blog/how-does-paypal-backup-funding-work">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/why-i-wish-iphone-apps-were-more-expensive">Why I Wish iPhone Apps Were More Expensive</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/why-i-wish-iphone-apps-were-more-expensive">Why I Wish iPhone Apps Were...</p>
+    06/06/2010 | 
+    <a href="/blog/why-i-wish-iphone-apps-were-more-expensive">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/seo-google-local-places">SEO For Google Local/Places</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/seo-google-local-places">SEO For Google Local/Places</a></h1>
+
+Ranking...</p>
+    06/04/2010 | 
+    <a href="/blog/seo-google-local-places">Read the full article &rArr;</a>
     </div>
   
 </div>

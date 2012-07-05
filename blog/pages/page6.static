@@ -108,97 +108,94 @@
     <div class="post">
     
       
-      <h1><a href="/blog/vert-redesign-case-study">Vert 2.0, A Redesign Case Study Close to Home</a></h1>
+      <h1><a href="/blog/3-quick-blogging-tips-for-small-businesses">3 Quick Blogging Tips for Small Businesses</a></h1>
     
-    <p>Welcome to the new Vert Studios website. <a href="http://twitter.com/vertjustin">Justin</a> and I have been working on the redesign since we merged back in July 2010. It's such a great feeling to know the world can finally see the product of your hard work. The project was dynamic, as our vision for Vert Studios changed quite frequently throughout the project. We'd like to share our thought process behind the redesign.</p>
-    01/10/2011 | 
-    <a href="/blog/vert-redesign-case-study">Read the full article &rArr;</a>
+    <p>Company blogs used to be just for the corporate world. However, thanks to open source platforms like Wordpress, we are now experiencing a transition where more and more small businesses are maintaining company blogs. It's worth nothing, though, that many of these small businesses are not using their blogs effectively. Today, we'll share <strong>3 quick blogging tips</strong> for small businesses running a company blog.</p>
+    01/28/2011 | 
+    <a href="/blog/3-quick-blogging-tips-for-small-businesses">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/ide-friday-new-series">IDE Friday: A New Series from Vert Studios</a></h2>
+      <h2><a href="/blog/a-break-from-jquery">A Break from jQuery</a></h2>
     
-    <p>We're excited to announce that starting next Friday, Vert Studios will begin the IDE Friday series. 
-IDE Friday will offer reviews of various IDEs, along with specific tutorials for each. We'll venture into well known IDEs, as well as some development environments that have not yet hit mainstream.</p>
-    01/08/2011 | 
-    <a href="/blog/ide-friday-new-series">Read the full article &rArr;</a>
+    <p>It's been less than a year since I entered the beautiful world of jQuery. I've had a lot of fun interacting with the jQuery community and crafting my own plugins. However, I've come to the point where I'm acquainted enough with jQuery to explore alternatives.</p>
+    01/29/2011 | 
+    <a href="/blog/a-break-from-jquery">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/back-references-quantifiers-and-anchors-in-regex">Back References, Quantifiers, and Anchors in RegEx</a></h2>
+      <h2><a href="/blog/hide-elements-page-load-javascript">Hide Elements On Page Load with JavaScript</a></h2>
     
-    <p>When you begin delving further into regular expressions, you find just how useful they are. The combination of back references, quantifiers, and anchors causes RegEx to be one of the most powerful tools in your arsenal.</p>
-    01/07/2011 | 
-    <a href="/blog/back-references-quantifiers-and-anchors-in-regex">Read the full article &rArr;</a>
+    <p>Sometimes when you're getting expressive with JavaScript, you find it necessary to hide certain elements when the page loads. An example of this would be our very own <a href="http://www.vertstudios.com/work.php">work page</a>.</p>
+    01/25/2011 | 
+    <a href="/blog/hide-elements-page-load-javascript">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/introduction-to-regular-expressions">Introduction to Regular Expressions</a></h2>
+      <h2><a href="/blog/saving-states-jquery-data">Saving States with jQuery.data()</a></h2>
     
-    <p>Regular expressions are a mysterious, extremely useful programming tool. The syntax of Regular Expressions(RegEx) can be extremely daunting for those starting out. Additionally, I've found a lot of RegEx intro guides to be extremely vague, which personally turned me off to learning RegEx for many months. For a while, my "knowledge base" of RegEx consisted of copying and pasting Regular Expression snippets as needed. However, this guide will introduce you to the basics of Regular Expressions in a hopefully extremely accessible manner.</p>
-    01/05/2011 | 
-    <a href="/blog/introduction-to-regular-expressions">Read the full article &rArr;</a>
+    <p>
+    
+<h1><a href="/blog/saving-states-jquery-data">Saving States with...</p>
+    01/18/2011 | 
+    <a href="/blog/saving-states-jquery-data">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/remember-the-milk-iphone-app-review">Remember The Milk iPhone App Review</a></h2>
+      <h2><a href="/blog/learn-social-media-by-reliving-your-teenage-years">Learn Social Media by Reliving your Teenage Years</a></h2>
     
-    <p>When it comes to task management, I recommended <a href="http://rememberthemilk.com/">Remember The Milk</a>. Remember The Milk(RTM) started off as a simple web application in <a href="http://web.archive.org/web/20051124024804/http://rememberthemilk.com/">2005</a>. While RTM was a decent utility on its own, an online to-do list didn't appeal to many. What if you were away from your computer? Well, now that the web-based application has <a href="http://www.rememberthemilk.com/services/iphone/">made its way to the iPhone</a>, its appeal and usefulness have increased exponentially. 
-
-<img style="display: block; margin: 0px auto;" src="http://www.vertstudios.com/blog/images/remember-the-milk/remember-the-milk-cow.jpg" alt="Remember The Milk" /></p>
-    01/04/2011 | 
-    <a href="/blog/remember-the-milk-iphone-app-review">Read the full article &rArr;</a>
+    <p>That's right. If you ever went through that period of teenage angst in your life known as puberty and survived, you have the skills necessary to run a social media campaign. All you need to do is apply the lessons you learned in your teenage years to your marketing strategy.</p>
+    01/17/2011 | 
+    <a href="/blog/learn-social-media-by-reliving-your-teenage-years">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/introduction-logic-part-2-constructing-truth-tables">Introduction to Logic: Part 2 &amp;#8211; Constructing Truth Tables</a></h2>
+      <h2><a href="/blog/great-content-but-no-links">Great Content but No Links.</a></h2>
     
-    <p>Creating truth tables is an invaluable tool for tracking your logic flow. We discuss how to create and organize a truth table.</p>
-    01/03/2011 | 
-    <a href="/blog/introduction-logic-part-2-constructing-truth-tables">Read the full article &rArr;</a>
+    <p>There exists a notion amongst the SEO community that if you produce great content, the traffic and links will come. You don't have to do anything bit sit in a text editor or illustrative tool and pound out the best content of your life. If it's unique, well written, and useful, you'll get the traffic and links you deserve.</p>
+    01/16/2011 | 
+    <a href="/blog/great-content-but-no-links">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/jquery-development-pattern">A jQuery Development Pattern</a></h2>
+      <h2><a href="/blog/using-regular-expressions-in-ides">IDE Friday: Using Regular Expressions in IDEs</a></h2>
     
-    <p>Discusses an alternate development pattern to jQuery plugins.</p>
-    01/01/2011 | 
-    <a href="/blog/jquery-development-pattern">Read the full article &rArr;</a>
+    <p>Welcome to the first article in our IDE Friday series. Today, we'll be discussing the use of Regular Expressions in your IDE of choice. If you're unfamiliar with Regular Expressions, check out our tutorial series, beginning with the <a href="http://www.vertstudios.com/blog/introduction-to-regular-expressions/">Introduction to Regular Expressions</a>.</p>
+    01/15/2011 | 
+    <a href="/blog/using-regular-expressions-in-ides">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/jquery-sticky-scroller-position-fixed-plugin">jQuery Sticky Scroller / Position:Fixed Plugin</a></h2>
+      <h2><a href="/blog/introduction-to-logic-useful-tautologies">Introduction to Logic: Part 3 &amp;#8211; Useful Tautologies</a></h2>
     
-    <p>Free jQuery Plugin that enables an object to appear fixed for a specified range.</p>
-    12/31/2010 | 
-    <a href="/blog/jquery-sticky-scroller-position-fixed-plugin">Read the full article &rArr;</a>
+    <p>Tautologies are extremely useful when it comes to crafting conditional statements in your programs. They can simplify and condense your logical statements by large amounts when implemented successfully.</p>
+    01/13/2011 | 
+    <a href="/blog/introduction-to-logic-useful-tautologies">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/word-lens-iphone-app-review">Word Lens iPhone App Review</a></h2>
+      <h2><a href="/blog/web-design-dictionary">The Vert Web Design Dictionary</a></h2>
     
-    <p><a href="http://itunes.apple.com/us/app/word-lens/id383463868">Word Lens</a> is an iPhone app that lets you translate in real time using your iPhone's camera. The idea seemed excellent, and the youtube video was extremely convincing.
-
-<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/h2OfQdYrHRs?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/h2OfQdYrHRs?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object></p>
-    12/17/2010 | 
-    <a href="/blog/word-lens-iphone-app-review">Read the full article &rArr;</a>
+    <p>If you're looking to hire a web design company, look through these terms so you won't get confused by web design jargon. If you're a web designer, refer prospects here so they'll be able to communicate with you better. This post won't cover every web related term - only the bare minimum to get designer and client on the same page.</p>
+    01/12/2011 | 
+    <a href="/blog/web-design-dictionary">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/javascript-regex-class">JavaScript Regex Class</a></h2>
+      <h2><a href="/blog/double-squares-solution-facebook-hacker-cup">Double Squares Solution: Facebook Hacker Cup</a></h2>
     
-    <p>The Vert Studios <a href="http://www.vertstudios.com/blog/php-regex-class/">PHP Regex Class</a> comes to JavaScript!</p>
-    12/07/2010 | 
-    <a href="/blog/javascript-regex-class">Read the full article &rArr;</a>
+    <p>Now that the qualification round of the Facebook Hacker Cup has ended, I figured I'd post my solution to the Double Squares problem. As this one involved some fun math, it was my favorite. I hope you all made it through!</p>
+    01/12/2011 | 
+    <a href="/blog/double-squares-solution-facebook-hacker-cup">Read the full article &rArr;</a>
     </div>
   
 </div>

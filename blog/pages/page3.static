@@ -108,105 +108,96 @@
     <div class="post">
     
       
-      <h1><a href="/blog/remove-ruby-gems-ubuntu">Remove All Ruby Gems (Ubuntu)</a></h1>
+      <h1><a href="/blog/start-vim-file-navigation-mode">Start VIM in File Navigation Mode</a></h1>
     
-    <p>Recently (as in thirty seconds ago) I needed to remove all ruby gems from my system. After searching the interwebs, I came across an <a href="http://geekystuff.net/2009/01/14/remove-all-ruby-gems/">article</a> explaining how to remove all ruby gems on Fedora core linux.
-
-The snippet adjustment for Ubuntu was easy, just involved remove some quotes and adding sudo. For a detailed explanation on how the command works, check out that article.</p>
-    06/26/2011 | 
-    <a href="/blog/remove-ruby-gems-ubuntu">Read the full article &rArr;</a>
+    <p>A quick way to open VIM in file navigation mode when no files are passed to VIM.</p>
+    09/15/2011 | 
+    <a href="/blog/start-vim-file-navigation-mode">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/linux-snippet-run-bash-profile-start">Linux Snippet: Run ~/.bash_profile on Startup (GNOME)</a></h2>
+      <h2><a href="/blog/installing-rspec-autotest-spork-ubuntu-osx">Installing RSpec, Autotest, and Spork on Ubuntu/OS X</a></h2>
     
-    <p>If you've edited your ~/.bash_profile to include scripts you'd like executed on start up, you might be surprised when you open up your terminal and those scripts don't execute. By default, ~/.bashrc executes on session start, but ~/.bash_profile doesn't. 
-
-To execute your ~/.bash_profile on startup, simply append this to your ~/.bashrc</p>
-    06/26/2011 | 
-    <a href="/blog/linux-snippet-run-bash-profile-start">Read the full article &rArr;</a>
+    <p>I'm an Ubuntu lover in the process of learning Ruby on Rails. I've spent a good majority of my time "learning" rails trying to get Rspec, Spork, and Autotest to play nicely. Unfortunately, <a href="http://www.twitter.com/vertjustin">our designer</a> is an Apple fanboy, so my testing suite needs to perform on OS X as well. It's extremely frustrating to spend so many hours trying to get these gems to work, just so you can continue on with the tutorial! Thus, to save you all the heartache I endured, here is a definitive guide to integrating Spork and Autotest with Rspec for Ubuntu AND Mac OS X!</p>
+    09/13/2011 | 
+    <a href="/blog/installing-rspec-autotest-spork-ubuntu-osx">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/mkdir-cd-at-same-time">mkdir and cd at the Same Time</a></h2>
+      <h2><a href="/blog/rails-singularplural-reference-chart">Rails Singular/Plural Reference Chart</a></h2>
     
-    <p>Fact: I'm lazy as hell. <strong>mkdir x && cd x</strong> for whatever reason just seems too long to create a directory and cd into it at the same time.</p>
-    06/25/2011 | 
-    <a href="/blog/mkdir-cd-at-same-time">Read the full article &rArr;</a>
+    <p>I've begun my descent into pure Rails. The whole naming convention idiom is hard to remember while I'm just learning, so here's a reference chart for myself and for any other Rails noobs.</p>
+    09/08/2011 | 
+    <a href="/blog/rails-singularplural-reference-chart">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/overcome-programming-apathy">Overcome Programming Apathy</a></h2>
+      <h2><a href="/blog/what-linux-distro-running">Snippet: What Linux Distro is Running?</a></h2>
+    
+    <p>Quick snippet here for you guys!  You're a dev SSHing into various VPS's and you need to know what linux distro you're running.</p>
+    09/04/2011 | 
+    <a href="/blog/what-linux-distro-running">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/avoiding-ajax-newline-pitfall">Avoiding the AJAX New Line Pitfall</a></h2>
+    
+    <p>Here, my friends, is a JavaScript pitfall that has plagued entire workdays. It's small and simple, but menacing ... you'd do well to heed this warning!</p>
+    08/31/2011 | 
+    <a href="/blog/avoiding-ajax-newline-pitfall">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/daily-contact-form-tests-python-cron">Daily Contact Form Tests with Python and Cron</a></h2>
+    
+    <p>For most websites, the contact form is the primary means of lead generation. A contact form that fails to email you those leads can potentially devastate your business - no exaggeration. How can you tell whether business is slow or your contact form just isn't working? The answer is to simply test the form by filling it out yourself and seeing if you receive the email. This article aims to automate that process.</p>
+    08/25/2011 | 
+    <a href="/blog/daily-contact-form-tests-python-cron">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/github-api-latest-commit-details-php">GitHub API - Get Latest Commit Details (PHP)</a></h2>
+    
+    <p>Want to show off the cool open source project you're working on via <a href="https://github.com/joequery">GitHub</a>? This PHP code snippet will snag your most recently updated repo information and its latest commit message through the <a href="http://develop.github.com/">GitHub API</a>. All you have to do is plug in your username.</p>
+    08/22/2011 | 
+    <a href="/blog/github-api-latest-commit-details-php">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/screenrc-simple-workflow">Example .screenrc - A Simple Workflow</a></h2>
+    
+    <p><a href="http://www.gnu.org/s/screen/">GNU screen</a> is a terminal application that lets you run multiple terminals within a single terminal instance. This tool, which has been around for <i>ages</i>, can greatly improve your organization and workflow.</p>
+    08/20/2011 | 
+    <a href="/blog/screenrc-simple-workflow">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/install-pyquery-cygwin">Install PyQuery under Cygwin</a></h2>
     
     <p>
     
-<h1><a href="/blog/overcome-programming-apathy">Overcome Programming...</p>
-    06/21/2011 | 
-    <a href="/blog/overcome-programming-apathy">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/physxcudart20-dll-download">Physxcudart_20.dll Download</a></h2>
-    
-    <p>
-    
-<h1><a href="/blog/physxcudart20-dll-download">Physxcudart_20.dll Download</a></h1>
+<h1><a href="/blog/install-pyquery-cygwin">Install PyQuery under Cygwin</a></h1>
 
-<a...</p>
-    06/07/2011 | 
-    <a href="/blog/physxcudart20-dll-download">Read the full article &rArr;</a>
+Quick...</p>
+    08/18/2011 | 
+    <a href="/blog/install-pyquery-cygwin">Read the full article &rArr;</a>
     </div>
   
     <div class="post">
     
-      <h2><a href="/blog/less-app-windows-sorta">Less.app for Windows (Sort of)</a></h2>
+      <h2><a href="/blog/static-classes-js-immutable-members">Static Classes in JavaScript with Immutable Members</a></h2>
     
-    <p>After recently purchasing my first Mac, I decided I wanted to sync my Mac and Windows workflow. The <a href="http://incident57.com/less/">Less.app</a> app for Mac is amazing for compiling your Less files the instant you save them. Unfortunately, there was no Less.app equivalent for Windows...until now!...sorta. (This may have already been done before, but I seriously couldn't find anything after an hour of Googling).</p>
-    03/27/2011 | 
-    <a href="/blog/less-app-windows-sorta">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/dear-smashing-magazine">Dear Smashing Magazine</a></h2>
-    
-    <p>According to <a href="http://www.smashingmagazine.com/2011/03/21/dear-web-design-community-where-have-you-gone/">Smashing Magazine</a>, the sky is falling. <a href="http://www.smashingmagazine.com/2010/04/08/opinion-column-the-sad-state-of-the-web-design-community/">Again</a>. The web design community has heeled over, and is down for the count.</p>
-    03/22/2011 | 
-    <a href="/blog/dear-smashing-magazine">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/switch-windows-command-prompt-explorer">Switch From Windows Command Prompt to Explorer</a></h2>
-    
-    <p>In your development workflow, you might find it more convenient to head back to the GUI interface of windows explorer while working from the command prompt. It's not uncommon for me to be 7 directories in from the root directory while working on a project. 
-Thankfully, there are extremely simple ways to open your current <strong>command prompt directory</strong> in Windows Explorer, and vice versa.</p>
-    03/21/2011 | 
-    <a href="/blog/switch-windows-command-prompt-explorer">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/test-php-mail-function">Test PHP Mail Function</a></h2>
-    
-    <p>When setting up your mail server, you may want to check your php mail function with a simple script.</p>
-    03/22/2011 | 
-    <a href="/blog/test-php-mail-function">Read the full article &rArr;</a>
-    </div>
-  
-    <div class="post">
-    
-      <h2><a href="/blog/what-is-a-function">What Is a Function</a></h2>
-    
-    <p>I believe all programmers and computer scientists should take the time to appreciate the foundations of mathematics. If you currently attend a university, I highly encourage you to take a foundations course. Learning math foundations expands your mind, and gives you a greater understanding of the concepts we programmers implement every single day. 
-
-For those of you who do not have the ability or desire to invest in a foundations of mathematics course, but still appreciate the complexities and origins of our field of work, I will very briefly describe what a function really is.</p>
-    03/23/2011 | 
-    <a href="/blog/what-is-a-function">Read the full article &rArr;</a>
+    <p>Okay, we know that JavaScript <a href="http://www.1stwebdesigner.com/design/object-oriented-basics-javascript/">doesn't actually have classes</a>. Prototypes, yada yada, life goes on. So while Static Classes in JavaScript don't exist, let's talk about them anyway!</p>
+    07/11/2011 | 
+    <a href="/blog/static-classes-js-immutable-members">Read the full article &rArr;</a>
     </div>
   
 </div>

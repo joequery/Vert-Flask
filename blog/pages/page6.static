@@ -198,6 +198,19 @@
     <a href="/blog/double-squares-solution-facebook-hacker-cup">Read the full article &rArr;</a>
     </div>
   
+  <div id="nextPrev">
+    <p>
+    
+      <a href="/blog/page/5">&laquo; Previous Page</a> 
+    
+    
+      &#8212;
+    
+    
+    <a href="/blog/page/7">Next Page&raquo;</a> 
+    
+    </p>
+  </div>
 </div>
 
   </div><!--content-->

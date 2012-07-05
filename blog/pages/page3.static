@@ -200,6 +200,19 @@ Quick...</p>
     <a href="/blog/static-classes-js-immutable-members">Read the full article &rArr;</a>
     </div>
   
+  <div id="nextPrev">
+    <p>
+    
+      <a href="/blog/page/2">&laquo; Previous Page</a> 
+    
+    
+      &#8212;
+    
+    
+    <a href="/blog/page/4">Next Page&raquo;</a> 
+    
+    </p>
+  </div>
 </div>
 
   </div><!--content-->

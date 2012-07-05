@@ -209,6 +209,19 @@ For those of you who do not have the ability or desire to invest in a foundation
     <a href="/blog/what-is-a-function">Read the full article &rArr;</a>
     </div>
   
+  <div id="nextPrev">
+    <p>
+    
+      <a href="/blog/page/3">&laquo; Previous Page</a> 
+    
+    
+      &#8212;
+    
+    
+    <a href="/blog/page/5">Next Page&raquo;</a> 
+    
+    </p>
+  </div>
 </div>
 
   </div><!--content-->

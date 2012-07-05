@@ -207,6 +207,19 @@ My review of...</p>
     <a href="/blog/free-jquery-cheat-sheet">Read the full article &rArr;</a>
     </div>
   
+  <div id="nextPrev">
+    <p>
+    
+      <a href="/blog/page/10">&laquo; Previous Page</a> 
+    
+    
+      &#8212;
+    
+    
+    <a href="/blog/page/12">Next Page&raquo;</a> 
+    
+    </p>
+  </div>
 </div>
 
   </div><!--content-->

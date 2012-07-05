@@ -124,6 +124,15 @@
     <a href="/blog/6-steps-developing-web-applications">Read the full article &rArr;</a>
     </div>
   
+  <div id="nextPrev">
+    <p>
+    
+      <a href="/blog/page/12">&laquo; Previous Page</a> 
+    
+    
+    
+    </p>
+  </div>
 </div>
 
   </div><!--content-->

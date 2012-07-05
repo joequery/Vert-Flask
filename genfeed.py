@@ -56,8 +56,15 @@ def write_index_pages(postsPerPage):
       newposts = get_posts(app, postsPerPage, postsPerPage * i - 1)
 
       # Determine if we should display prev/next buttons
+      prevPage = False
+      nextPage = False
+      if i>1:
+        prevPage = i-1
+      if len(newposts) > 0:
+        nextPage = i+1
       html = render_template("templates/blog_index.html", 
-          posts=posts)
+          posts=posts, prevPage=prevPage, nextPage=nextPage)
+
       f = open(pagePath, 'w')
       f.write(html)
       f.close()

@@ -15,5 +15,18 @@
     <a href="{{post['url']}}">Read the full article &rArr;</a>
     </div>
   {% endfor %}
+  <div id="nextPrev">
+    <p>
+    {% if prevPage %}
+      <a href="/blog/page/{{prevPage}}">&laquo; Previous Page</a> 
+    {% endif %}
+    {% if prevPage and nextPage %}
+      &#8212;
+    {% endif%}
+    {% if nextPage %}
+    <a href="/blog/page/{{nextPage}}">Next Page&raquo;</a> 
+    {% endif %}
+    </p>
+  </div>
 </div>
 {% endblock body %}

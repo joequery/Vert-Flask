@@ -213,6 +213,19 @@ Places the matched set of elements at the front of an array.</p>
     <a href="/blog/frontpush-jquery-plugin">Read the full article &rArr;</a>
     </div>
   
+  <div id="nextPrev">
+    <p>
+    
+      <a href="/blog/page/8">&laquo; Previous Page</a> 
+    
+    
+      &#8212;
+    
+    
+    <a href="/blog/page/10">Next Page&raquo;</a> 
+    
+    </p>
+  </div>
 </div>
 
   </div><!--content-->

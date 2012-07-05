@@ -887,7 +887,7 @@ text-align: left;
     }
     
 #blogPost{
-    width: 650px;
+    width: 600px;
     float: left;
     margin: 10px 0px 10px 0px;
     /*    border-bottom: 1px solid #1ba0cc; */
@@ -1015,7 +1015,11 @@ pre{
        border-bottom: 1px solid #1ba0cc;
        padding-bottom: 25px;
     }
-        
+
+      #blogSidebar #popular a{
+        display: block;
+        margin-top: 10px;
+      }
         #blogSidebar #popular h2{
         padding: 0px;
         margin-bottom: 10px;

@@ -15,7 +15,7 @@ if "FLASK_ENV" in os.environ.keys():
 else:
 	FLASK_ENV = "development"
 
-if FLASK_ENV == "development":
+if FLASK_ENV == "production":
   app.debug = False
 else:
   app.debug = True

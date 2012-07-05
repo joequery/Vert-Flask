@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -102,6 +103,31 @@
 
   <div id="content">
     
+
+  <div id="blogSidebar">
+  <div id="subscribe">
+  <p><a href="/blog/feed/">Subscribe</a>
+      <a href="/blog/feed/" id="rss">
+<img 
+  src="/static/images/rss.png" 
+  alt="RSS" 
+  class="" 
+  />
+</a></p>
+  </div>
+
+  <div id="popular">
+  <h2>Top Articles &rArr;</h2>                
+
+  <ul>
+  <a href="/blog/php-apache-installation-tutorial/">PHP and Apache Installation Tutorial</a>
+  <a href="/blog/less-app-windows-sorta/">Less.app for Windows (Sort of)</a>
+  <a href="/blog/mysql-error0-cannot-create-windows-service/">MySQL Error 0 Cannot Create Windows Service</a>
+  </ul>
+
+  </div><!--popular-->            
+  </div><!--blogSidebar-->
+
 <div id="blogPost">
   
   

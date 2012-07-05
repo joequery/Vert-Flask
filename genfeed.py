@@ -18,9 +18,21 @@ def cdata(string):
 
 # Get `numPosts` number of posts. Returns a list of dictionaries with the
 # following attributes: title, excerpt, date, url, body
-def get_posts(numPosts):
+# Start from `start`, 0 indexed.
+# get_posts(10, 10) gets posts 11-21
+def get_posts(numPosts, start=0):
   with open('blog/rss.txt', 'r') as f:
     posts = []
+
+    # consume `start` number of lines to make sure we start at the right 
+    # place in the file
+    for x in xrange(start):
+      try:
+        f.next()
+      except StopIteration:
+        break
+
+    # Now get `numPosts` number of post URLs
     for x in xrange(numPosts):
       try:
         posts.append(f.next().strip())
@@ -28,7 +40,7 @@ def get_posts(numPosts):
         break
     f.close()
 
-  postList = []
+  postList = [] # We'll be populating this w/ dictionaries and returning 
   for post in posts:
     # Get all the data needed for the rss feed.
     metaPath = os.path.join(BLOG_SYS_PATH, "posts", post, 'meta.py')
@@ -69,11 +81,15 @@ def gen_rss_feed(postList):
           lastBuild=lastBuild, 
           posts=postList)
 
-  # Now write the rss to a file.
+  return rss
+
+# Write an rss feed to the appropriate file
+def write_rss_feed(rss):
   feedPath = os.path.join(BLOG_SYS_PATH, "templates", "rssfeed.html")
   f = open(feedPath, 'w')
   f.write(rss)
   f.close()
 
 posts = get_posts(10)
-gen_rss_feed(posts)
+rss = gen_rss_feed(posts)
+write_rss_feed(rss)

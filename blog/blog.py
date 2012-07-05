@@ -9,7 +9,7 @@ from markdown import markdown
 import os
 import imp
 import time
-from helpers import get_posts
+from helpers import get_posts, get_excerpt
 from settings import app
 
 blog = Blueprint('blog', __name__, template_folder="./")
@@ -21,9 +21,15 @@ BLOG_SYS_PATH = os.sep.join(ThisFilePath.split('/')[:-1])
 @blog.route('/blog')
 def blog_index():
   posts = get_posts(app, 10, 0)
-  print(posts)
 
-  return render_template("templates/blog_index.html")
+  for post in posts:
+    # If a post doesn't have a description, get an excerpt from the body.
+    if not post['description']:
+      post['description'] = get_excerpt(post['body'], 100)
+     
+    # Make the date in the form '04/25/2012'
+    post['pubDate'] = time.strftime("%m/%d/%Y", post['pubDate'])
+  return render_template("templates/blog_index.html", posts=posts)
 
 @blog.route('/blog/<post>/')
 @blog.route('/blog/<post>')

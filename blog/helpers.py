@@ -46,7 +46,8 @@ def get_posts(app, numPosts, start=0):
     postDict = {
       'title' : metaData.title,
       'description' : metaData.excerpt,
-      'url': "http://www.vertstudios.com/blog/%s" % post
+      'url': "http://www.vertstudios.com/blog/%s" % post,
+      'pubDate': time.strptime(metaData.time, "%Y-%m-%d %a %H:%M %p")
     }
     postDict['comments'] = postDict['url'] + "#comments"
 
@@ -55,10 +56,6 @@ def get_posts(app, numPosts, start=0):
       content = render_template(bodyPath, post=postDict)
       jQuery = PyQuery(content)
       body = jQuery("#blogPost .post").html()
-
-      # Get the publication date into RFC822 format as specified in the RSS
-      # 2.0 specifications.
-      postDict['pubDate'] = time.strftime("%a, %d %b %Y %H:%M:%S +0000", postTime)
       
       postDict['body'] = body
       postList.append(postDict)
@@ -83,6 +80,8 @@ def gen_rss_feed(app, postList):
     post['title'] = escape(post['title'])
     post['description'] = cdata(post['description'])
     post['body'] = cdata(post['body'])
+    # RFC822 specifications.
+    post['pubDate']=time.strftime("%a, %d %b %Y %H:%M:%S +0000",post['pubDate'])
  
   with app.test_request_context():
     rss = render_template("templates/rssfeed.html", 
@@ -117,7 +116,6 @@ def _alter_rss(rssObj):
   ##############################################
   # Objective 3: Format date
   ##############################################
-  date = time.strptime(date, "%a, %d %b %Y %H:%M:%S +0000")
   date = time.strftime("%m/%d/%Y", date)
 
   # Now we replace the initial values of the object entries with our

@@ -13,7 +13,7 @@
 <atom:link href="http://www.vertstudios.com/blog/feed/" rel="self" type="application/rss+xml"/>
 <link>http://www.vertstudios.com/blog</link>
 <description>Web and software development tutorials geared towards the beginner-intermediate programmer.</description>
-<lastBuildDate>Thu, 05 Jul 2012 03:32:54 +0000</lastBuildDate>
+<lastBuildDate>Thu, 05 Jul 2012 05:46:45 +0000</lastBuildDate>
 <language>en</language>
 
 
@@ -319,8 +319,7 @@ So we receive the error &lt;b&gt;error: request for member &amp;#8216;job&amp;#8
 
 We run through a mental checklist:
 
-&lt;ul&gt;
-&lt;li&gt;Did I pass a pointer to the right structure?&lt;/li&gt;
+&lt;ul&gt;&lt;li&gt;Did I pass a pointer to the right structure?&lt;/li&gt;
 &lt;li&gt;Does that structure really have a 'job' member?&lt;/li&gt;
 &lt;li&gt;Did I make any typos in declaring the member or calling the member?&lt;/li&gt;
 &lt;/ul&gt;

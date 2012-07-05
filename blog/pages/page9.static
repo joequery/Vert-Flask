@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <script type="text/javascript">
+  //Credit: Doug Neiner - http://dougneiner.com/
+  document.documentElement.className += " js"
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="description" content="Your website is your company's first impression. Together, we can make it a lasting one. Vert Studios is a web design company in Tyler, Texas." />
+  <meta name="google-site-verification" content="36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/reset.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/js.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/text.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/main.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/codestream.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/prettify.css" 
+  />
+
+  
+</head>
+
+  <body onload="prettyPrint()" id="index">
+<div id="wrapper">
+  
+<div id="header">				
+  <div id="vertStudios">
+    <a href="/">Vert Studios
+<img 
+  src="/static/images/vert_logo_header.png" 
+  alt="Vert Studios" 
+  class="" 
+  />
+</a>
+  </div>
+  <ul id="main_nav">
+  <li>
+      <h5><a href="/about">About</a></h5>
+      <p>We're a small web design company with big ideas in Tyler, Texas.</p>
+  </li>
+  <li>
+      <h5><a href="/work">Work</a></h5>
+      <p>See what our work has to say. <b>WARNING</b>: <br />It might get loud.</p>
+  </li>
+  <li>
+      <h5><a href="/services">Services</a></h5>
+      <p>We design web sites that don't suck. We're quite proud of that.</p>
+  </li>
+  <li>
+      <h5><a href="/blog/">Blog</a></h5>
+      <p>Read our articles on design, code, SEO, and the state of the web.</p>
+  </li>
+  <li>
+      <h5><a href="/contact">Get A Quote</a></h5>
+      <p>How much will it cost?<br /><br /><strong>Find out now!</strong></p>
+  </li>
+  </ul>
+</div>
+
+  <div id="content">
+    
+<div id="blogPost">
+  
+  
+    <div class="post">
+    
+      
+      <h1><a href="/blog/vert-studios-jquery-plugin-library">The Vert Studios jQuery Plugin Library</a></h1>
+    
+    <p>We at Vert Studios absolutely love making custom jQuery plugins. Some plugins we create are large and robust, while others are simple and concise. Look through our list of plugins and JavaScript functions, and start incorporating them into your own projects!</p>
+    08/10/2010 | 
+    <a href="/blog/vert-studios-jquery-plugin-library">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/how-to-write-an-effective-company-value-proposition">How to Write an Effective Company Value Proposition</a></h2>
+    
+    <p>A company's value proposition explicitly states the benefits or values it intends to provide its customers. Are value propositions just corporate jargon that have no place in the real world? No: you must be thinking of 99% of mission statements ;). 
+
+<h2>So what's the value of a company value proposition? </h2>
+Most customers will never read your company value proposition directly. They should, however, see it manifested in everything you do. Therefore, a value proposition does not attempt to pitch to the reader; <b>it serves as a guideline for the company</b>. All products offered by a company must fit within the scope of their value proposition. Products that do not fit within the scope of the value proposition risk overstretching the company brand, potentially leading to a loss of identity and trust amongst consumers. 
+
+An effective company value proposition performs the following functions:</p>
+    08/03/2010 | 
+    <a href="/blog/how-to-write-an-effective-company-value-proposition">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/forms-css-vs-tables">Creating Forms: Pure CSS vs Table Based</a></h2>
+    
+    <p>While I have always been an advocate for table-less layouts with semantic HTML, designing forms with pure CSS has proven to be a complete pain in the butt. And apparently I'm only one in <a href="http://www.google.com/search?hl=en&q=%22css+form+problem%22">10,000 to say so</a>.</p>
+    07/07/2010 | 
+    <a href="/blog/forms-css-vs-tables">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/5-essential-tips-teenage-web-designers">5 Essential Tips for Teenage Web Designers</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/5-essential-tips-teenage-web-designers">5 Essential Tips for Teenage Web...</p>
+    07/02/2010 | 
+    <a href="/blog/5-essential-tips-teenage-web-designers">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/google-hides-its-text">Google Hides its Text: Why Can&#39;t We?</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/google-hides-its-text">Google Hides its Text: Why Can't...</p>
+    06/26/2010 | 
+    <a href="/blog/google-hides-its-text">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/common-problems-jquery-delay">Common Problems with jQuery .delay()</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/common-problems-jquery-delay">Common Problems with jQuery...</p>
+    06/18/2010 | 
+    <a href="/blog/common-problems-jquery-delay">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/should-css-be-trendy">Should CSS be Trendy?</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/should-css-be-trendy">Should CSS be Trendy?</a></h1>
+
+Anyone who keeps up...</p>
+    06/16/2010 | 
+    <a href="/blog/should-css-be-trendy">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/how-does-paypal-backup-funding-work">How Does PayPal Backup Funding Work?</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/how-does-paypal-backup-funding-work">How Does PayPal Backup Funding...</p>
+    06/07/2010 | 
+    <a href="/blog/how-does-paypal-backup-funding-work">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/why-i-wish-iphone-apps-were-more-expensive">Why I Wish iPhone Apps Were More Expensive</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/why-i-wish-iphone-apps-were-more-expensive">Why I Wish iPhone Apps Were...</p>
+    06/06/2010 | 
+    <a href="/blog/why-i-wish-iphone-apps-were-more-expensive">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/seo-google-local-places">SEO For Google Local/Places</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/seo-google-local-places">SEO For Google Local/Places</a></h1>
+
+Ranking...</p>
+    06/04/2010 | 
+    <a href="/blog/seo-google-local-places">Read the full article &rArr;</a>
+    </div>
+  
+</div>
+
+  </div><!--content-->
+  
+<div id="footer">
+  <div class="hr"><hr /></div>
+  <p>
+    <a href="mailto:hi@vertstudios.com">hi@vertstudios.com</a> |
+    <a href="http://www.twitter.com/vertstudios">@vertstudios</a>
+  </p>
+</div>
+
+</div><!--wrapper-->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/vertlib.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/jsCSS.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/index_init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/easing.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/slaveshow.min.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/carousel.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/carousel-init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/easing.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/Scroller.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/work_init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/contact.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/prettify.js">
+  </script>
+
+
+
+</body>
+</html>

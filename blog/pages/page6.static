@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <script type="text/javascript">
+  //Credit: Doug Neiner - http://dougneiner.com/
+  document.documentElement.className += " js"
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="description" content="Your website is your company's first impression. Together, we can make it a lasting one. Vert Studios is a web design company in Tyler, Texas." />
+  <meta name="google-site-verification" content="36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/reset.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/js.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/text.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/main.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/codestream.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/prettify.css" 
+  />
+
+  
+</head>
+
+  <body onload="prettyPrint()" id="index">
+<div id="wrapper">
+  
+<div id="header">				
+  <div id="vertStudios">
+    <a href="/">Vert Studios
+<img 
+  src="/static/images/vert_logo_header.png" 
+  alt="Vert Studios" 
+  class="" 
+  />
+</a>
+  </div>
+  <ul id="main_nav">
+  <li>
+      <h5><a href="/about">About</a></h5>
+      <p>We're a small web design company with big ideas in Tyler, Texas.</p>
+  </li>
+  <li>
+      <h5><a href="/work">Work</a></h5>
+      <p>See what our work has to say. <b>WARNING</b>: <br />It might get loud.</p>
+  </li>
+  <li>
+      <h5><a href="/services">Services</a></h5>
+      <p>We design web sites that don't suck. We're quite proud of that.</p>
+  </li>
+  <li>
+      <h5><a href="/blog/">Blog</a></h5>
+      <p>Read our articles on design, code, SEO, and the state of the web.</p>
+  </li>
+  <li>
+      <h5><a href="/contact">Get A Quote</a></h5>
+      <p>How much will it cost?<br /><br /><strong>Find out now!</strong></p>
+  </li>
+  </ul>
+</div>
+
+  <div id="content">
+    
+<div id="blogPost">
+  
+  
+    <div class="post">
+    
+      
+      <h1><a href="/blog/vert-redesign-case-study">Vert 2.0, A Redesign Case Study Close to Home</a></h1>
+    
+    <p>Welcome to the new Vert Studios website. <a href="http://twitter.com/vertjustin">Justin</a> and I have been working on the redesign since we merged back in July 2010. It's such a great feeling to know the world can finally see the product of your hard work. The project was dynamic, as our vision for Vert Studios changed quite frequently throughout the project. We'd like to share our thought process behind the redesign.</p>
+    01/10/2011 | 
+    <a href="/blog/vert-redesign-case-study">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/ide-friday-new-series">IDE Friday: A New Series from Vert Studios</a></h2>
+    
+    <p>We're excited to announce that starting next Friday, Vert Studios will begin the IDE Friday series. 
+IDE Friday will offer reviews of various IDEs, along with specific tutorials for each. We'll venture into well known IDEs, as well as some development environments that have not yet hit mainstream.</p>
+    01/08/2011 | 
+    <a href="/blog/ide-friday-new-series">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/back-references-quantifiers-and-anchors-in-regex">Back References, Quantifiers, and Anchors in RegEx</a></h2>
+    
+    <p>When you begin delving further into regular expressions, you find just how useful they are. The combination of back references, quantifiers, and anchors causes RegEx to be one of the most powerful tools in your arsenal.</p>
+    01/07/2011 | 
+    <a href="/blog/back-references-quantifiers-and-anchors-in-regex">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/introduction-to-regular-expressions">Introduction to Regular Expressions</a></h2>
+    
+    <p>Regular expressions are a mysterious, extremely useful programming tool. The syntax of Regular Expressions(RegEx) can be extremely daunting for those starting out. Additionally, I've found a lot of RegEx intro guides to be extremely vague, which personally turned me off to learning RegEx for many months. For a while, my "knowledge base" of RegEx consisted of copying and pasting Regular Expression snippets as needed. However, this guide will introduce you to the basics of Regular Expressions in a hopefully extremely accessible manner.</p>
+    01/05/2011 | 
+    <a href="/blog/introduction-to-regular-expressions">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/remember-the-milk-iphone-app-review">Remember The Milk iPhone App Review</a></h2>
+    
+    <p>When it comes to task management, I recommended <a href="http://rememberthemilk.com/">Remember The Milk</a>. Remember The Milk(RTM) started off as a simple web application in <a href="http://web.archive.org/web/20051124024804/http://rememberthemilk.com/">2005</a>. While RTM was a decent utility on its own, an online to-do list didn't appeal to many. What if you were away from your computer? Well, now that the web-based application has <a href="http://www.rememberthemilk.com/services/iphone/">made its way to the iPhone</a>, its appeal and usefulness have increased exponentially. 
+
+<img style="display: block; margin: 0px auto;" src="http://www.vertstudios.com/blog/images/remember-the-milk/remember-the-milk-cow.jpg" alt="Remember The Milk" /></p>
+    01/04/2011 | 
+    <a href="/blog/remember-the-milk-iphone-app-review">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/introduction-logic-part-2-constructing-truth-tables">Introduction to Logic: Part 2 &amp;#8211; Constructing Truth Tables</a></h2>
+    
+    <p>Creating truth tables is an invaluable tool for tracking your logic flow. We discuss how to create and organize a truth table.</p>
+    01/03/2011 | 
+    <a href="/blog/introduction-logic-part-2-constructing-truth-tables">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/jquery-development-pattern">A jQuery Development Pattern</a></h2>
+    
+    <p>Discusses an alternate development pattern to jQuery plugins.</p>
+    01/01/2011 | 
+    <a href="/blog/jquery-development-pattern">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/jquery-sticky-scroller-position-fixed-plugin">jQuery Sticky Scroller / Position:Fixed Plugin</a></h2>
+    
+    <p>Free jQuery Plugin that enables an object to appear fixed for a specified range.</p>
+    12/31/2010 | 
+    <a href="/blog/jquery-sticky-scroller-position-fixed-plugin">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/word-lens-iphone-app-review">Word Lens iPhone App Review</a></h2>
+    
+    <p><a href="http://itunes.apple.com/us/app/word-lens/id383463868">Word Lens</a> is an iPhone app that lets you translate in real time using your iPhone's camera. The idea seemed excellent, and the youtube video was extremely convincing.
+
+<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/h2OfQdYrHRs?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/h2OfQdYrHRs?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object></p>
+    12/17/2010 | 
+    <a href="/blog/word-lens-iphone-app-review">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/javascript-regex-class">JavaScript Regex Class</a></h2>
+    
+    <p>The Vert Studios <a href="http://www.vertstudios.com/blog/php-regex-class/">PHP Regex Class</a> comes to JavaScript!</p>
+    12/07/2010 | 
+    <a href="/blog/javascript-regex-class">Read the full article &rArr;</a>
+    </div>
+  
+</div>
+
+  </div><!--content-->
+  
+<div id="footer">
+  <div class="hr"><hr /></div>
+  <p>
+    <a href="mailto:hi@vertstudios.com">hi@vertstudios.com</a> |
+    <a href="http://www.twitter.com/vertstudios">@vertstudios</a>
+  </p>
+</div>
+
+</div><!--wrapper-->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/vertlib.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/jsCSS.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/index_init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/easing.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/slaveshow.min.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/carousel.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/carousel-init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/easing.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/Scroller.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/work_init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/contact.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/prettify.js">
+  </script>
+
+
+
+</body>
+</html>

@@ -13,16 +13,16 @@
 <atom:link href="http://www.vertstudios.com/blog/feed/" rel="self" type="application/rss+xml"/>
 <link>http://www.vertstudios.com/blog</link>
 <description>Web and software development tutorials geared towards the beginner-intermediate programmer.</description>
-<lastBuildDate>Thu, 05 Jul 2012 05:46:45 +0000</lastBuildDate>
+<lastBuildDate>Thu, 05 Jul 2012 09:33:02 +0000</lastBuildDate>
 <language>en</language>
 
 
 <item>
   <title>Markdown to PDF Utility</title>
-  <link>http://www.vertstudios.com/blog/markdown-pdf-utility</link>
+  <link>/blog/markdown-pdf-utility</link>
   <pubDate>Thu, 03 May 2012 22:57:00 +0000</pubDate>
   <description><![CDATA[I needed to get a Markdown document in PDF format. Unable to find a good solution, I set off to make a Markdown to PDF conversion utility. About 20 lines of Python later, here we are!]]></description>
-  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/markdown-pdf-utility"&gt;Markdown to PDF Utility&lt;/a&gt;&lt;/h1&gt;
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="/blog/markdown-pdf-utility"&gt;Markdown to PDF Utility&lt;/a&gt;&lt;/h1&gt;
 
 I needed to get a Markdown document in PDF format. Unable to find a good solution, I set off to make a Markdown to PDF conversion utility. About 20 lines of Python later, here we are!
 
@@ -41,10 +41,10 @@ This utility is actually pretty silly. It simply serves as a glue between
 
 <item>
   <title>Ubuntu Screencast Software for 11.04+</title>
-  <link>http://www.vertstudios.com/blog/ubuntu-screencast-software-11-04</link>
+  <link>/blog/ubuntu-screencast-software-11-04</link>
   <pubDate>Wed, 25 Apr 2012 05:07:00 +0000</pubDate>
   <description><![CDATA[I browsed Google for quite a while before I finally found a good product for recording screencasts on Ubuntu. Most software I found, no offense gtk-recordMyDesktop, was extremely outdated and hardly functional. Video quality was either terrible or video/audio was out of sync.]]></description>
-  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/ubuntu-screencast-software-11-04"&gt;Ubuntu Screencast Software for 11.04+&lt;/a&gt;&lt;/h1&gt;
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="/blog/ubuntu-screencast-software-11-04"&gt;Ubuntu Screencast Software for 11.04+&lt;/a&gt;&lt;/h1&gt;
 
 I browsed Google for quite a while before I finally found a good product for recording screencasts on Ubuntu. Most software I found, no offense gtk-recordMyDesktop, was extremely outdated and hardly functional. Video quality was either terrible or video/audio was out of sync.
 
@@ -78,10 +78,10 @@ If you happen to have FFMpeg installed, here's a nice 2-pass video/audio &lt;a h
 
 <item>
   <title>VI Keybindings in your Shell</title>
-  <link>http://www.vertstudios.com/blog/vi-keybindings-shell</link>
+  <link>/blog/vi-keybindings-shell</link>
   <pubDate>Wed, 25 Apr 2012 03:52:00 +0000</pubDate>
   <description><![CDATA[There was once a very sad point in my development career where if I made a typo earlier in one of my bash statements, I would have to hold the left arrow to get my cursor over to the problem area and fix it. Then, one fateful day, I discovered VI keybindings in the shell!]]></description>
-  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/vi-keybindings-shell"&gt;VI Keybindings in your Shell&lt;/a&gt;&lt;/h1&gt;
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="/blog/vi-keybindings-shell"&gt;VI Keybindings in your Shell&lt;/a&gt;&lt;/h1&gt;
 
 There was once a very sad point in my development career where if I made a typo earlier in one of my bash statements, I would have to hold the left arrow to get my cursor over to the problem area and fix it. Then, one fateful day, I discovered VI keybindings in the shell!
 
@@ -134,10 +134,10 @@ Fx - find the previous occurrence of the character 'x'
 
 <item>
   <title>Introduction to Recursion - Part 2</title>
-  <link>http://www.vertstudios.com/blog/introduction-recursion-part-2</link>
+  <link>/blog/introduction-recursion-part-2</link>
   <pubDate>Mon, 16 Apr 2012 06:01:00 +0000</pubDate>
   <description><![CDATA[Part two of the &lt;a href="http://www.vertstudios.com/blog/introduction-recursion-part-1"&gt;Introduction to Recursion series&lt;/a&gt;! In this video, we discuss the Factorial function and its recursive properties in depth.]]></description>
-  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/introduction-recursion-part-2"&gt;Introduction to Recursion - Part 2&lt;/a&gt;&lt;/h1&gt;
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="/blog/introduction-recursion-part-2"&gt;Introduction to Recursion - Part 2&lt;/a&gt;&lt;/h1&gt;
 
 Part two of the &lt;a href="http://www.vertstudios.com/blog/introduction-recursion-part-1"&gt;Introduction to Recursion series&lt;/a&gt;! In this video, we discuss the Factorial function and its recursive properties in depth.
 
@@ -146,10 +146,10 @@ http://www.youtube.com/watch?v=CboUF7gtVSo]]></content:encoded>
 
 <item>
   <title>jQuery Table Sort Plugin | Stupidly simple jQuery table sort</title>
-  <link>http://www.vertstudios.com/blog/jquery-table-sort-plugin-stupidly-simple-jquery-table-sort</link>
+  <link>/blog/jquery-table-sort-plugin-stupidly-simple-jquery-table-sort</link>
   <pubDate>Fri, 13 Apr 2012 21:16:00 +0000</pubDate>
   <description><![CDATA[I needed a simple jQuery plugin to let me sort table columns. Unfortunately, I couldn't find one that captured the simplicity I was looking for. I don't need 1000+ lines of code for a simple table sort!]]></description>
-  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/jquery-table-sort-plugin-stupidly-simple-jquery-table-sort"&gt;jQuery Table Sort Plugin | Stupidly simple jQuery table sort&lt;/a&gt;&lt;/h1&gt;
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="/blog/jquery-table-sort-plugin-stupidly-simple-jquery-table-sort"&gt;jQuery Table Sort Plugin | Stupidly simple jQuery table sort&lt;/a&gt;&lt;/h1&gt;
 
 I needed a simple jQuery plugin to let me sort table columns. Unfortunately, I couldn't find one that captured the simplicity I was looking for. I don't need 1000+ lines of code for a simple table sort!
 
@@ -162,12 +162,12 @@ Consequently, I embarked on a journey to create a stupidly simple jQuery table s
 
 <item>
   <title>Git Workflow: Crap, I committed to master!</title>
-  <link>http://www.vertstudios.com/blog/git-workflow-crap-committed-master</link>
+  <link>/blog/git-workflow-crap-committed-master</link>
   <pubDate>Thu, 12 Apr 2012 05:08:00 +0000</pubDate>
   <description><![CDATA[So you know you should pretty much &lt;a href="http://scottchacon.com/2011/08/31/github-flow.html"&gt;never hack directly on master&lt;/a&gt; when working with git. Instead, you should create branches and merge them later.  Beyond best practices for their own sake, some github projects really want you creating pull requests from a certain branch.   
 
 Sometimes, however, I get in &lt;b&gt;the zone&lt;/b&gt; and forget to checkout a branch because I want to get this feature DONE! In my haste, I commit to master directly. I don't want my pull request to be rejected just because I hacked on master.]]></description>
-  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/git-workflow-crap-committed-master"&gt;Git Workflow: Crap, I committed to master!&lt;/a&gt;&lt;/h1&gt;
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="/blog/git-workflow-crap-committed-master"&gt;Git Workflow: Crap, I committed to master!&lt;/a&gt;&lt;/h1&gt;
 
 So you know you should pretty much &lt;a href="http://scottchacon.com/2011/08/31/github-flow.html"&gt;never hack directly on master&lt;/a&gt; when working with git. Instead, you should create branches and merge them later.  Beyond best practices for their own sake, some github projects really want you creating pull requests from a certain branch.   
 
@@ -275,10 +275,10 @@ So we still have our work, but it's on a feature branch, as it should be! We're 
 
 <item>
   <title>C: request for member in something not a structure or union</title>
-  <link>http://www.vertstudios.com/blog/c-request-member-structure-union</link>
+  <link>/blog/c-request-member-structure-union</link>
   <pubDate>Tue, 03 Apr 2012 03:31:00 +0000</pubDate>
   <description><![CDATA[If you're trying to pass a pointer to a structure to a function, you may be getting the compiler error &lt;b&gt;request for member &amp;#8216;SOME_PROPERTY&amp;#8217; in something not a structure or union&lt;/b&gt;. If you  &lt;em&gt;swear&lt;/em&gt; you're passing in a pointer to the proper structure, and you're &lt;em&gt;certain&lt;/em&gt;, there are no typos for the member name you're trying to access, you may just be experiencing a bit of pointer ambiguity.]]></description>
-  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/c-request-member-structure-union"&gt;C: request for member in something not a structure or union&lt;/a&gt;&lt;/h1&gt;
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="/blog/c-request-member-structure-union"&gt;C: request for member in something not a structure or union&lt;/a&gt;&lt;/h1&gt;
 
 If you're trying to pass a pointer to a structure to a function, you may be getting the compiler error &lt;b&gt;request for member &amp;#8216;SOME_PROPERTY&amp;#8217; in something not a structure or union&lt;/b&gt;. If you  &lt;em&gt;swear&lt;/em&gt; you're passing in a pointer to the proper structure, and you're &lt;em&gt;certain&lt;/em&gt;, there are no typos for the member name you're trying to access, you may just be experiencing a bit of pointer ambiguity. 
 
@@ -372,10 +372,10 @@ would work as well.]]></content:encoded>
 
 <item>
   <title>Introduction to Recursion - Part 1</title>
-  <link>http://www.vertstudios.com/blog/introduction-recursion-part-1</link>
+  <link>/blog/introduction-recursion-part-1</link>
   <pubDate>Sat, 31 Mar 2012 02:36:00 +0000</pubDate>
   <description><![CDATA[Part 1 of a multipart series covering the basics of recursion.]]></description>
-  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/introduction-recursion-part-1"&gt;Introduction to Recursion - Part 1&lt;/a&gt;&lt;/h1&gt;
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="/blog/introduction-recursion-part-1"&gt;Introduction to Recursion - Part 1&lt;/a&gt;&lt;/h1&gt;
 
 Part 1 of a multipart series covering the basics of recursion. I hope you enjoy!
 
@@ -384,10 +384,10 @@ http://www.youtube.com/watch?v=TA_qrRZ1cpI]]></content:encoded>
 
 <item>
   <title>K&amp;R: Error: conflicting types for 'getline'</title>
-  <link>http://www.vertstudios.com/blog/kr-error-conflicting-types-getline</link>
+  <link>/blog/kr-error-conflicting-types-getline</link>
   <pubDate>Sat, 10 Mar 2012 01:09:00 +0000</pubDate>
   <description><![CDATA[So you're reading through K&amp;R's &lt;a href="http://www.amazon.com/C-Programming-Language-2nd-Edition/dp/0131103628/ref=sr_1_1?ie=UTF8&amp;qid=1331341099&amp;sr=8-1"&gt;The C Programming Language&lt;/a&gt;, and you're on page 29 or so, section 1.9 entitled &lt;b&gt;Character Arrays&lt;/b&gt;.]]></description>
-  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/kr-error-conflicting-types-getline"&gt;K&amp;amp;R: Error: conflicting types for 'getline'&lt;/a&gt;&lt;/h1&gt;
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="/blog/kr-error-conflicting-types-getline"&gt;K&amp;amp;R: Error: conflicting types for 'getline'&lt;/a&gt;&lt;/h1&gt;
 
 So you're reading through K&amp;amp;R's &lt;a href="http://www.amazon.com/C-Programming-Language-2nd-Edition/dp/0131103628/ref=sr_1_1?ie=UTF8&amp;amp;qid=1331341099&amp;amp;sr=8-1"&gt;The C Programming Language&lt;/a&gt;, and you're on page 29 or so, section 1.9 entitled &lt;b&gt;Character Arrays&lt;/b&gt;.
 
@@ -414,10 +414,10 @@ It turns out getline is included in stdio.h, similar to printf! You can complete
 
 <item>
   <title>Dual Monitors on Kubuntu 11.10 (In Under 10 Minutes)</title>
-  <link>http://www.vertstudios.com/blog/dual-monitors-kubuntu-11-10-in-10-minutes</link>
+  <link>/blog/dual-monitors-kubuntu-11-10-in-10-minutes</link>
   <pubDate>Sat, 03 Mar 2012 02:32:00 +0000</pubDate>
   <description><![CDATA[If you're having trouble getting dual monitors to work on the latest version of Kubuntu (Currently 11.10), this guide will attempt to save your sanity!]]></description>
-  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/dual-monitors-kubuntu-11-10-in-10-minutes"&gt;Dual Monitors on Kubuntu 11.10 (In Under 10 Minutes)&lt;/a&gt;&lt;/h1&gt;
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="/blog/dual-monitors-kubuntu-11-10-in-10-minutes"&gt;Dual Monitors on Kubuntu 11.10 (In Under 10 Minutes)&lt;/a&gt;&lt;/h1&gt;
 
 If you're having trouble getting dual monitors to work on the latest version of Kubuntu (Currently 11.10), this guide will attempt to save your sanity!
 

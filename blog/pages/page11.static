@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <script type="text/javascript">
+  //Credit: Doug Neiner - http://dougneiner.com/
+  document.documentElement.className += " js"
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="description" content="Your website is your company's first impression. Together, we can make it a lasting one. Vert Studios is a web design company in Tyler, Texas." />
+  <meta name="google-site-verification" content="36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/reset.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/js.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/text.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/main.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/codestream.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/prettify.css" 
+  />
+
+  
+</head>
+
+  <body onload="prettyPrint()" id="index">
+<div id="wrapper">
+  
+<div id="header">				
+  <div id="vertStudios">
+    <a href="/">Vert Studios
+<img 
+  src="/static/images/vert_logo_header.png" 
+  alt="Vert Studios" 
+  class="" 
+  />
+</a>
+  </div>
+  <ul id="main_nav">
+  <li>
+      <h5><a href="/about">About</a></h5>
+      <p>We're a small web design company with big ideas in Tyler, Texas.</p>
+  </li>
+  <li>
+      <h5><a href="/work">Work</a></h5>
+      <p>See what our work has to say. <b>WARNING</b>: <br />It might get loud.</p>
+  </li>
+  <li>
+      <h5><a href="/services">Services</a></h5>
+      <p>We design web sites that don't suck. We're quite proud of that.</p>
+  </li>
+  <li>
+      <h5><a href="/blog/">Blog</a></h5>
+      <p>Read our articles on design, code, SEO, and the state of the web.</p>
+  </li>
+  <li>
+      <h5><a href="/contact">Get A Quote</a></h5>
+      <p>How much will it cost?<br /><br /><strong>Find out now!</strong></p>
+  </li>
+  </ul>
+</div>
+
+  <div id="content">
+    
+<div id="blogPost">
+  
+  
+    <div class="post">
+    
+      
+      <h1><a href="/blog/what-car-dealers-can-teach-us-about-portfolio-pages">What Car Dealers Can Teach us About Portfolio Pages</a></h1>
+    
+    <p>
+    
+<h1><a href="/blog/what-car-dealers-can-teach-us-about-portfolio-pages">What Car Dealers Can...</p>
+    06/02/2010 | 
+    <a href="/blog/what-car-dealers-can-teach-us-about-portfolio-pages">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/jquery-sprite-slideshow">jQuery Sprite Slideshow</a></h2>
+    
+    <p>This is my first week messing around with jQuery, and I have already found it to be an extremely powerful tool.
+
+A common use for JavaScript/jQuery is the creation of slideshows, so I decided to create my own as well.
+
+This slideshow is modeled off the <a href="http://www.alistapart.com/articles/sprites">CSS Sprite</a> Technique.</p>
+    05/11/2010 | 
+    <a href="/blog/jquery-sprite-slideshow">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/boolean-logic-mysql-functions">Boolean Logic and MySQL Functions</a></h2>
+    
+    <p>Boolean Logic is an essential part of php when dealing with MySQL. If you do not understand boolean logic, a lot of the mysql functions may not make sense to you.
+
+Take the commonly used <a href="http://php.net/manual/en/function.mysql-fetch-array.php">mysql_fetch_array</a> function. It is commonly used with a while loop in this manner:
+
+<pre class="prettyprint">
+while($row = mysql_fetch_array($query))
+{
+//Do something with the record data
+}
+</pre>
+
+The condition for that while loop might not make sense if you haven't created your own boolean functions.</p>
+    04/06/2010 | 
+    <a href="/blog/boolean-logic-mysql-functions">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/killer-javascript-video-book-review">Book Review: Killerjavascript.com</a></h2>
+    
+    <p><a href="http://www.killerjavascript.com/videos/"><img style="width: 500px;" src="http://www.vertstudios.com/blog/images/mc-blog/bookcorner/killerjavascript/cd.jpg" alt="Killer Javascript" /></a>
+
+An extensive review of www.killerjavascript.com 's video tutorial series on beginning JavaScript</p>
+    03/27/2010 | 
+    <a href="/blog/killer-javascript-video-book-review">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/removing-punctuation-spaces-string-c">Removing punctuation and spaces from a String in C++</a></h2>
+    
+    <p>There may be times in which you need to do character processing that only deals with the Alphanumeric characters of a string, not the punctuations or blank spaces.
+
+Here is a program that will remove the punctuations and spaces from a string.</p>
+    03/20/2010 | 
+    <a href="/blog/removing-punctuation-spaces-string-c">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/c-sentence-case-capitalize-word">C++ Sentence Case (Capitalize First Word)</a></h2>
+    
+    <p>when typing up important documents, it is important to use sentence case to invoke a sense of formality. imagine writing an email or heck, an entire blog post, not using a capital letter. it would really hurt your professional decorum.
+
+So this post will show you how to convert a string to sentence  case using C++. Sentence case is having the first letter of the first word in a sentence capitalized.</p>
+    03/21/2010 | 
+    <a href="/blog/c-sentence-case-capitalize-word">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/relationships-struggling-blog">Using Relationships to Help Your Blog</a></h2>
+    
+    <p><img src="http://www.vertstudios.com/blog/images/mc-blog/blogging/commenting/asleep_at_computer.jpg" alt="Asleep at Computer" />
+
+If you're like me, you've spent a lot of time making posts and commenting posts, yet you don't have many (if any) subscribers. The problem isn't that you're not posting or commenting enough: You might simply be commenting <strong>the wrong blogs</strong>.</p>
+    03/13/2010 | 
+    <a href="/blog/relationships-struggling-blog">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/blogging-escaping-mediocrity">Blogging: Escaping the Mediocrity</a></h2>
+    
+    <p>If you want your blog to be successful, you must differentiate. We all have the same tools on our blogs, so it is how we use those tools that determine our success. Since our blog is our product, we can treat ideas that relate to product differentiation to our blog.</p>
+    03/13/2010 | 
+    <a href="/blog/blogging-escaping-mediocrity">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/ie6-starving-artist">IE6 and the Starving Artist</a></h2>
+    
+    <p><img src="http://www.vertstudios.com/blog/images/mc-blog/opinion/starvingartist/starvingartists.jpg" alt="The Starving Artist" />
+
+According to my former Art History professor <a href="http://www.christopher-stewart.com/">Christopher Stewart</a>, there are two reasons why an artist can starve:
+<ol>
+  <li>His lack of skill</li>
+  <li>His integrity</li>
+</ol>
+The first one makes complete sense. A person who can't draw a straight line shouldn't be paid to be an artist. But why would an artist with skill and integrity starve?</p>
+    03/09/2010 | 
+    <a href="/blog/ie6-starving-artist">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/sprinkles-cupcakes-seo-lol">SEO LOL - Sprinkles Cupcakes</a></h2>
+    
+    <p>I must start off saying that I freaking love <a rel="nofollow" href="http://www.sprinkles.com/">Sprinkes Cupcakes</a>.
+But come on, this is a bit silly.</p>
+    03/05/2010 | 
+    <a href="/blog/sprinkles-cupcakes-seo-lol">Read the full article &rArr;</a>
+    </div>
+  
+</div>
+
+  </div><!--content-->
+  
+<div id="footer">
+  <div class="hr"><hr /></div>
+  <p>
+    <a href="mailto:hi@vertstudios.com">hi@vertstudios.com</a> |
+    <a href="http://www.twitter.com/vertstudios">@vertstudios</a>
+  </p>
+</div>
+
+</div><!--wrapper-->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/vertlib.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/jsCSS.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/index_init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/easing.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/slaveshow.min.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/carousel.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/carousel-init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/easing.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/Scroller.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/work_init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/contact.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/prettify.js">
+  </script>
+
+
+
+</body>
+</html>

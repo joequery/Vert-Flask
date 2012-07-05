@@ -12,13 +12,12 @@ import time
 from helpers import get_posts, get_excerpt
 from settings import app
 
-blog = Blueprint('blog', __name__, template_folder="./")
 
 ThisFilePath = os.path.realpath(__file__)
 BLOG_SYS_PATH = os.sep.join(ThisFilePath.split('/')[:-1])
 
+blog = Blueprint('blog', __name__, template_folder="./")
 @blog.route('/blog/')
-@blog.route('/blog')
 def blog_index():
   posts = get_posts(app, 10, 0)
 
@@ -31,8 +30,16 @@ def blog_index():
     post['pubDate'] = time.strftime("%m/%d/%Y", post['pubDate'])
   return render_template("templates/blog_index.html", posts=posts)
 
+@blog.route('/blog/page/<int:pagenum>/')
+def blog_index_page(pagenum):
+  try:
+    return render_template("pages/page%d.static" % pagenum)
+  #except (TemplateNotFound, IOError) as e:
+  except None as e:
+    return render_template('404.html'), 404
+
+
 @blog.route('/blog/<post>/')
-@blog.route('/blog/<post>')
 def blog_post(post):
   postDir = os.path.join("posts", post)
   metaPath = os.path.join(BLOG_SYS_PATH, postDir, 'meta.py')
@@ -56,7 +63,6 @@ def blog_post(post):
   except None as e:
     return render_template('404.html'), 404
 
-@blog.route('/blog/feed')
 @blog.route('/blog/feed/')
 def rss_feed():
   response = make_response(render_template("templates/rssfeed.static"))

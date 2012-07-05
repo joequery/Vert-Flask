@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <script type="text/javascript">
+  //Credit: Doug Neiner - http://dougneiner.com/
+  document.documentElement.className += " js"
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="description" content="Your website is your company's first impression. Together, we can make it a lasting one. Vert Studios is a web design company in Tyler, Texas." />
+  <meta name="google-site-verification" content="36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/reset.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/js.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/text.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/main.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/codestream.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/prettify.css" 
+  />
+
+  
+</head>
+
+  <body onload="prettyPrint()" id="index">
+<div id="wrapper">
+  
+<div id="header">				
+  <div id="vertStudios">
+    <a href="/">Vert Studios
+<img 
+  src="/static/images/vert_logo_header.png" 
+  alt="Vert Studios" 
+  class="" 
+  />
+</a>
+  </div>
+  <ul id="main_nav">
+  <li>
+      <h5><a href="/about">About</a></h5>
+      <p>We're a small web design company with big ideas in Tyler, Texas.</p>
+  </li>
+  <li>
+      <h5><a href="/work">Work</a></h5>
+      <p>See what our work has to say. <b>WARNING</b>: <br />It might get loud.</p>
+  </li>
+  <li>
+      <h5><a href="/services">Services</a></h5>
+      <p>We design web sites that don't suck. We're quite proud of that.</p>
+  </li>
+  <li>
+      <h5><a href="/blog/">Blog</a></h5>
+      <p>Read our articles on design, code, SEO, and the state of the web.</p>
+  </li>
+  <li>
+      <h5><a href="/contact">Get A Quote</a></h5>
+      <p>How much will it cost?<br /><br /><strong>Find out now!</strong></p>
+  </li>
+  </ul>
+</div>
+
+  <div id="content">
+    
+<div id="blogPost">
+  
+  
+    <div class="post">
+    
+      
+      <h1><a href="/blog/3-tips-making-web-copy-kick-ass">3 Tips for Making Your Web Copy Kick-Ass</a></h1>
+    
+    <p>The text on your website, without question, will influence a visitor's decision to accept or ignore your message. Your message may be as simple as "this product will make you happy", or as complex as "this is why you should enable Apache's mod_rewrite." Regardless, conveying your message in a clear, appropriate, and motivating manner remains a critical component of satisfying visitor wants and needs. We'll show you three easy ways to elevate your web copy from mediocre to kick-ass.</p>
+    03/25/2011 | 
+    <a href="/blog/3-tips-making-web-copy-kick-ass">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/windows-php-mail-server-installation-guide">Windows PHP Mail Server Installation Guide</a></h2>
+    
+    <p>Learn to to install and configure a local mail server to work with PHP, allowing you to use PHP's mail() function locally.</p>
+    03/13/2011 | 
+    <a href="/blog/windows-php-mail-server-installation-guide">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/libmysqldll-32-bit-download">libmysql.dll 32 Bit Download</a></h2>
+    
+    <p><a href="http://www.vertstudios.com/downloads/libmysql.zip">Download libmysql.dll</a> (ZIP File)
+
+The only other site I could find that hosts this individual file had so many affiliate links, I couldn't find where to download. I ended up having to install MySQL 32 bit just to snag the dll. I think people would prefer a 1MB download to a 120MB download!</p>
+    03/12/2011 | 
+    <a href="/blog/libmysqldll-32-bit-download">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/add-nofollow-links-with-php">Add Nofollow to Links with PHP</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/add-nofollow-links-with-php">Add Nofollow to Links with PHP</a></h1>
+
+If...</p>
+    02/26/2011 | 
+    <a href="/blog/add-nofollow-links-with-php">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/lynx-windows-7-64-bit">Lynx for Windows 7 64 Bit</a></h2>
+    
+    <p>If you've tried to install Lynx from the download page while on Windows 7, you might have come across various errors preventing you from installing this great tool. While searching for a solution myself, I came across a <a href="http://www.vordweb.co.uk/standards/download_lynx.htm">Lynx Download Page</a> with instructions that work for Windows 7 64 bit. Just checkout the readme and follow the step by step guide, and you'll be browsing in no time.</p>
+    02/22/2011 | 
+    <a href="/blog/lynx-windows-7-64-bit">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/social-media-small-business-experiment">Social Media for Small Business - An Experiment</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/social-media-small-business-experiment">Social Media for Small Business -...</p>
+    02/22/2011 | 
+    <a href="/blog/social-media-small-business-experiment">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/credible-web-design-company">Are You a Credible Web Design Company?</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/credible-web-design-company">Are You a Credible Web Design...</p>
+    02/17/2011 | 
+    <a href="/blog/credible-web-design-company">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/apache-301-force-www-redirect-index-root">Apache 301: Force www, Redirect Index to Root</a></h2>
+    
+    <p>This .htaccess code redirects http://domainname.com to http://<b>www.</b>domainname.com. Additionally, it forces any call to index.php to the domain root.</p>
+    02/08/2011 | 
+    <a href="/blog/apache-301-force-www-redirect-index-root">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/getelementbyid-ie7-issue">getElementById IE7 Issue</a></h2>
+    
+    <p>As <a href="http://www.vertstudios.com/blog/a-break-from-jquery/">previously stated</a>, I'm taking some time to learn pure JavaScript. That means I am beginning to experience the joy that is cross-browser JS quirks!</p>
+    01/30/2011 | 
+    <a href="/blog/getelementbyid-ie7-issue">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/cant-detect-canon-wireless-printer-solution">Can&#39;t Detect Connected Canon Wireless Printer [SOLUTION]</a></h2>
+    
+    <p>Over the past few weeks, the computers in my house have been unable to detect my <strong>Cannon MG5200</strong> printer. The printer itself said it successfully connected to the wireless network, which left me quite puzzled. After a while, I found the root cause, and it left me quite baffled.</p>
+    01/29/2011 | 
+    <a href="/blog/cant-detect-canon-wireless-printer-solution">Read the full article &rArr;</a>
+    </div>
+  
+</div>
+
+  </div><!--content-->
+  
+<div id="footer">
+  <div class="hr"><hr /></div>
+  <p>
+    <a href="mailto:hi@vertstudios.com">hi@vertstudios.com</a> |
+    <a href="http://www.twitter.com/vertstudios">@vertstudios</a>
+  </p>
+</div>
+
+</div><!--wrapper-->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/vertlib.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/jsCSS.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/index_init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/easing.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/slaveshow.min.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/carousel.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/carousel-init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/easing.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/Scroller.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/work_init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/contact.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/prettify.js">
+  </script>
+
+
+
+</body>
+</html>

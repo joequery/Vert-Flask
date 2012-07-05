@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <script type="text/javascript">
+  //Credit: Doug Neiner - http://dougneiner.com/
+  document.documentElement.className += " js"
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="description" content="Your website is your company's first impression. Together, we can make it a lasting one. Vert Studios is a web design company in Tyler, Texas." />
+  <meta name="google-site-verification" content="36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/reset.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/js.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/text.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/main.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/codestream.css" 
+  />
+
+  
+    
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="/static/css/prettify.css" 
+  />
+
+  
+</head>
+
+  <body onload="prettyPrint()" id="index">
+<div id="wrapper">
+  
+<div id="header">				
+  <div id="vertStudios">
+    <a href="/">Vert Studios
+<img 
+  src="/static/images/vert_logo_header.png" 
+  alt="Vert Studios" 
+  class="" 
+  />
+</a>
+  </div>
+  <ul id="main_nav">
+  <li>
+      <h5><a href="/about">About</a></h5>
+      <p>We're a small web design company with big ideas in Tyler, Texas.</p>
+  </li>
+  <li>
+      <h5><a href="/work">Work</a></h5>
+      <p>See what our work has to say. <b>WARNING</b>: <br />It might get loud.</p>
+  </li>
+  <li>
+      <h5><a href="/services">Services</a></h5>
+      <p>We design web sites that don't suck. We're quite proud of that.</p>
+  </li>
+  <li>
+      <h5><a href="/blog/">Blog</a></h5>
+      <p>Read our articles on design, code, SEO, and the state of the web.</p>
+  </li>
+  <li>
+      <h5><a href="/contact">Get A Quote</a></h5>
+      <p>How much will it cost?<br /><br /><strong>Find out now!</strong></p>
+  </li>
+  </ul>
+</div>
+
+  <div id="content">
+    
+<div id="blogPost">
+  
+  
+    <div class="post">
+    
+      
+      <h1><a href="/blog/introduction-pointers-c-tutorial">Introduction to Pointers in C++ Tutorial</a></h1>
+    
+    <p>
+    
+<h1><a href="/blog/introduction-pointers-c-tutorial">Introduction to Pointers in C++...</p>
+    06/05/2010 | 
+    <a href="/blog/introduction-pointers-c-tutorial">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/5-principles-of-web-marketing">The 5 Principles of Web Marketing</a></h2>
+    
+    <p>SEO. Pay-Per-Click. Social Media Marketing. We've all heard those terms at one point or another, and nearly every branded corporation in the US is pursuing at least one of those as a web marketing strategy. Why? Some companies pursue web marketing because they see great value in incorporating it into their business model. The remaining companies adopt web marketing strategies because they see their competitors engaging in it and follow suit out of fear. 
+
+<img src="http://vertstudios.com/blog/images/follow-the-leader.jpg" alt="Follow the leader" />
+
+<h2>Fear not!</h2></p>
+    08/02/2010 | 
+    <a href="/blog/5-principles-of-web-marketing">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/mysql-installation-tutorial">MySQL 5.1 Installation Tutorial</a></h2>
+    
+    <p>A step by step tutorial for installing MySQL and phpMyAdmin on a windows system with PLENTY of screen shots to help guide you.</p>
+    03/02/2010 | 
+    <a href="/blog/mysql-installation-tutorial">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/mysql-error0-cannot-create-windows-service">MySQL Error 0 Cannot Create Windows Service</a></h2>
+    
+    <p>This is the MySQL Error 0, which usually follows a windows notification that mysqld.exe has stopped working. After reading many forum posts, it appears that there is no definite answer as to how to solve the problem. However, I finally came across a method that worked for me, and hopefully it will work for you.</p>
+    03/02/2010 | 
+    <a href="/blog/mysql-error0-cannot-create-windows-service">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/pear-installation-tutorial">PEAR Installation Tutorial</a></h2>
+    
+    <p>Step by step tutorial for installing PEAR on a windows system with PLENTY of screen shots to help.</p>
+    02/28/2010 | 
+    <a href="/blog/pear-installation-tutorial">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/string-lowercase-uppercase-c">Make a string lowercase/uppercase in C++</a></h2>
+    
+    <p>C++ Does not have string case manipulation built in to its <a href="http://www.cplusplus.com/reference/string/string/"> standard library</a>. For this  reason, it's necessary to make your own upperCase and lowerCase functions. I'll show you how to do just that.</p>
+    02/28/2010 | 
+    <a href="/blog/string-lowercase-uppercase-c">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/php-apache-installation-tutorial">PHP and Apache Installation Tutorial</a></h2>
+    
+    <p>I have lost many hours of sleep because of not being able to set up PHP and Apache. I have missed homework deadlines, fallen asleep in class, accidentally eaten an onion, and much worse. Here is my attempt to help you guys sleep at night with a very quick and easy PHP and Apache installation guide.</p>
+    02/21/2010 | 
+    <a href="/blog/php-apache-installation-tutorial">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/javascript-convert-miles-kilometers">Convert Miles to Kilometers with JavaScript</a></h2>
+    
+    <p>Your summer surveying job requires you to study some maps that give distances in kilometers and some that use miles. You and your co-workers prefer to deal in metric measurements. <strong>Write a program that performs the necessary conversion, rounded to 2 decimal places.</strong></p>
+    02/07/2010 | 
+    <a href="/blog/javascript-convert-miles-kilometers">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/jquery-in-action-review">jQuery in Action Review</a></h2>
+    
+    <p>
+    
+<h1><a href="/blog/jquery-in-action-review">jQuery in Action Review</a></h1>
+
+My review of...</p>
+    06/03/2010 | 
+    <a href="/blog/jquery-in-action-review">Read the full article &rArr;</a>
+    </div>
+  
+    <div class="post">
+    
+      <h2><a href="/blog/free-jquery-cheat-sheet">Free jQuery Cheat Sheet</a></h2>
+    
+    <p><a href="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet1.pdf">Click to download this FREE jQuery Cheat Sheet (PDF)</a>
+<a href="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet1.pdf"><img src="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-cheat-sheet/jquery-cheat-sheet.jpg" alt="Click to download jQuery Cheat Sheet" title="Click to download jQuery Cheat Sheet" /></a></p>
+    05/24/2010 | 
+    <a href="/blog/free-jquery-cheat-sheet">Read the full article &rArr;</a>
+    </div>
+  
+</div>
+
+  </div><!--content-->
+  
+<div id="footer">
+  <div class="hr"><hr /></div>
+  <p>
+    <a href="mailto:hi@vertstudios.com">hi@vertstudios.com</a> |
+    <a href="http://www.twitter.com/vertstudios">@vertstudios</a>
+  </p>
+</div>
+
+</div><!--wrapper-->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/vertlib.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/jsCSS.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/index_init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/easing.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/slaveshow.min.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/carousel.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/carousel-init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/easing.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/Scroller.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/work_init.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/contact.js">
+  </script>
+
+
+    
+<script 
+  type="text/javascript" 
+  src="/static/js/prettify.js">
+  </script>
+
+
+
+</body>
+</html>

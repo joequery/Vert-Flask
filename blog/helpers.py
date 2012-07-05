@@ -80,6 +80,7 @@ def gen_rss_feed(app, postList):
     post['title'] = escape(post['title'])
     post['description'] = cdata(post['description'])
     post['body'] = cdata(post['body'])
+    post['url'] = "http://vertstudios.com%s" % post['url']
     # RFC822 specifications.
     post['pubDate']=time.strftime("%a, %d %b %Y %H:%M:%S +0000",post['pubDate'])
  

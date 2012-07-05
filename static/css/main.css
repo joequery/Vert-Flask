@@ -946,12 +946,15 @@ text-align: left;
         }
     
     #author_bio {
-        padding: 10px;
-        background: #1d1d1d;
-        border: 1px solid #919591;
+        margin-top: 10px;
         min-height: 140px;
     }
     
+    #author_bio h5 {
+      font-size: 18px;
+      border-bottom: 1px solid #1ba0cc;
+    }
+
     #author_bio img {
         float: left;
         margin-right: 15px;

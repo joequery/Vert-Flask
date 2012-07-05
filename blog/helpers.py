@@ -91,6 +91,9 @@ def gen_rss_feed(app, postList):
 
   return rss
 
+# Credit to http://stackoverflow.com/a/250406/670823
+def get_excerpt(string, charLimit):
+  return string[:charLimit].rsplit(' ', 1)[0]+"..."
 
 # Helper method for altering RSS feed content for preview purposes.  
 def _alter_rss(rssObj):
@@ -109,10 +112,7 @@ def _alter_rss(rssObj):
   ##############################################
   # Objective 2: Create description cutoff
   ##############################################
-
-  # Credit to http://stackoverflow.com/a/250406/670823
-  charLimit = 90
-  description = description[:charLimit].rsplit(' ', 1)[0]+"..."
+  description = get_excerpt(description, 90)
 
   ##############################################
   # Objective 3: Format date
@@ -125,6 +125,5 @@ def _alter_rss(rssObj):
   rssObj["description"] = description
   rssObj["pubDate"] = date
 
-# Return html to use for the 'from the blog' section on the home page.
 def from_the_blog():
   return render_template("templates/from_the_blog.static")

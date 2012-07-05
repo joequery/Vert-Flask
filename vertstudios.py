@@ -1,21 +1,15 @@
 # Vert studios website. Yay!
 
-from settings import FLASK_ENV
-from private import SECRET_KEY
+from settings import FLASK_ENV, app
 from flask import (
- Flask, render_template, request, g, abort, flash, redirect, 
+ request, g, abort, flash, redirect, 
  render_template, url_for
 )
 from contact.contact import contact_page
 from blog.blog import blog
 from blog.helpers import from_the_blog
-from flaskext.markdown import Markdown
 from jinja2 import TemplateNotFound
 
-# App configuration
-app = Flask(__name__)
-app.secret_key = SECRET_KEY
-Markdown(app)
 app.register_blueprint(contact_page)
 app.register_blueprint(blog)
 

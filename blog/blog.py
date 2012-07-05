@@ -9,6 +9,8 @@ from markdown import markdown
 import os
 import imp
 import time
+from helpers import get_posts
+from settings import app
 
 blog = Blueprint('blog', __name__, template_folder="./")
 
@@ -18,6 +20,9 @@ BLOG_SYS_PATH = os.sep.join(ThisFilePath.split('/')[:-1])
 @blog.route('/blog/')
 @blog.route('/blog')
 def blog_index():
+  posts = get_posts(app, 10, 0)
+  print(posts)
+
   return render_template("templates/blog_index.html")
 
 @blog.route('/blog/<post>/')
@@ -51,7 +56,3 @@ def rss_feed():
   response = make_response(render_template("templates/rssfeed.static"))
   response.headers['Content-Type'] = "text/xml; charset=UTF-8"
   return response
-
-# Return html to use for the 'from the blog' section on the home page.
-def from_the_blog():
-  return render_template("templates/from_the_blog.static")

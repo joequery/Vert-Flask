@@ -5,9 +5,8 @@ from flask import (
  Flask, render_template, request, g, abort, flash, redirect, 
  render_template, url_for
 )
-from helpers.rss import get_blog_feed
 from contact.contact import contact_page
-from blog.blog import blog
+from blog.blog import blog, from_the_blog
 from flaskext.markdown import Markdown
 from jinja2 import TemplateNotFound
 
@@ -60,7 +59,7 @@ def page_not_found(e):
 @app.route('/')
 def home():
   # Get HTML for the home page rss feed
-  rssFeed = get_blog_feed(CACHE_DIR, BLOG_CACHE_FILE, NUM_BLOG_POSTS)
+  rssFeed = from_the_blog()
   return render_template("index.html", rssFeed=rssFeed)
 
 @app.route('/work')

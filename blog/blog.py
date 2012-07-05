@@ -52,3 +52,6 @@ def rss_feed():
   response.headers['Content-Type'] = "text/xml; charset=UTF-8"
   return response
 
+# Return html to use for the 'from the blog' section on the home page.
+def from_the_blog():
+  return render_template("templates/from_the_blog.html")

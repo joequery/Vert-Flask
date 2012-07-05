@@ -43,10 +43,6 @@ def write_index_pages(postsPerPage):
   posts = get_posts(app, 10)
   while posts:
     for post in posts:
-      # If a post doesn't have a description, get an excerpt from the body.
-      if not post['description']:
-        post['description'] = get_excerpt(post['body'], 100)
-       
       # Make the date in the form '04/25/2012'
       post['pubDate'] = time.strftime("%m/%d/%Y", post['pubDate'])
 

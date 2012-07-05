@@ -20,7 +20,13 @@ def cdata(string):
 # following attributes: title, excerpt, date, url, body
 def get_posts(numPosts):
   with open('blog/rss.txt', 'r') as f:
-    posts = [f.next().strip() for x in xrange(numPosts)]
+    posts = []
+    for x in xrange(numPosts):
+      try:
+        posts.append(f.next().strip())
+      except StopIteration:
+        break
+    f.close()
 
   postList = []
   for post in posts:

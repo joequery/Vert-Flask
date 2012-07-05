@@ -85,7 +85,7 @@ def gen_rss_feed(postList):
     post['body'] = cdata(post['body'])
  
   with app.test_request_context():
-    rss = render_template("templates/rssgen.html", 
+    rss = render_template("templates/rssfeed.html", 
           lastBuild=lastBuild, 
           posts=posts)
 
@@ -93,7 +93,7 @@ def gen_rss_feed(postList):
 
 # Write an rss feed to the appropriate file
 def write_rss_feed(rss):
-  feedPath = os.path.join(BLOG_SYS_PATH, "templates", "rssfeed.html")
+  feedPath = os.path.join(BLOG_SYS_PATH, "templates", "rssfeed.static")
   f = open(feedPath, 'w')
   f.write(rss)
   f.close()
@@ -106,10 +106,10 @@ def write_from_the_blog(posts):
 
   # Get the rendered html from from_the_blog_gen
   with app.test_request_context():
-    html = render_template("templates/from_the_blog_gen.html", stories=stories)
+    html = render_template("templates/from_the_blog.html", stories=stories)
   
   # Write the html to from_the_blog to call from the home page.
-  feedPath = os.path.join(BLOG_SYS_PATH, "templates", "from_the_blog.html")
+  feedPath = os.path.join(BLOG_SYS_PATH, "templates", "from_the_blog.static")
   f = open(feedPath, 'w')
   f.write(html)
   f.close()

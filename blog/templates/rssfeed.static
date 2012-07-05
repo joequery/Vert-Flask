@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+  >
+
+<channel>
+<title>Vert Studios - Software Development Blog</title>
+<atom:link href="http://www.vertstudios.com/blog/feed/" rel="self" type="application/rss+xml"/>
+<link>http://www.vertstudios.com/blog</link>
+<description>Web and software development tutorials geared towards the beginner-intermediate programmer.</description>
+<lastBuildDate>Thu, 05 Jul 2012 03:29:32 +0000</lastBuildDate>
+<language>en</language>
+
+
+<item>
+  <title>Markdown to PDF Utility</title>
+  <link>http://www.vertstudios.com/blog/markdown-pdf-utility</link>
+  <pubDate>Thu, 03 May 2012 22:57:00 +0000</pubDate>
+  <description><![CDATA[I needed to get a Markdown document in PDF format. Unable to find a good solution, I set off to make a Markdown to PDF conversion utility. About 20 lines of Python later, here we are!]]></description>
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/markdown-pdf-utility"&gt;Markdown to PDF Utility&lt;/a&gt;&lt;/h1&gt;
+
+I needed to get a Markdown document in PDF format. Unable to find a good solution, I set off to make a Markdown to PDF conversion utility. About 20 lines of Python later, here we are!
+
+&lt;h2&gt;md2pdf: Markdown to PDF&lt;/h2&gt;
+
+You can download &lt;a href="https://github.com/joequery/md2pdf"&gt;md2pdf&lt;/a&gt; on Github. Installation instructions can be found in the README. Usage is extremely simple:
+
+&lt;pre class="prettyprint"&gt;
+$ md2pdf my-markdown-document.md
+&lt;/pre&gt;
+
+&lt;h2&gt;How it was made&lt;/h2&gt;
+This utility is actually pretty silly. It simply serves as a glue between
+&lt;a href="http://code.google.com/p/python-markdown2/"&gt;markdown2&lt;/a&gt;, which takes Markdown and produces HTML, and &lt;a href="www.xhtml2pdf.com"&gt;xhtml2pdf&lt;/a&gt;, which takes HTML and produces PDFs. The script uses a system call because the xhtml2pdf interface is non-trivial. Consequently, you're probably better off not using this on a production server.]]></content:encoded>
+</item>
+
+<item>
+  <title>Ubuntu Screencast Software for 11.04+</title>
+  <link>http://www.vertstudios.com/blog/ubuntu-screencast-software-11-04</link>
+  <pubDate>Wed, 25 Apr 2012 05:07:00 +0000</pubDate>
+  <description><![CDATA[I browsed Google for quite a while before I finally found a good product for recording screencasts on Ubuntu. Most software I found, no offense gtk-recordMyDesktop, was extremely outdated and hardly functional. Video quality was either terrible or video/audio was out of sync.]]></description>
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/ubuntu-screencast-software-11-04"&gt;Ubuntu Screencast Software for 11.04+&lt;/a&gt;&lt;/h1&gt;
+
+I browsed Google for quite a while before I finally found a good product for recording screencasts on Ubuntu. Most software I found, no offense gtk-recordMyDesktop, was extremely outdated and hardly functional. Video quality was either terrible or video/audio was out of sync.
+
+&lt;h2&gt;Enter Kazam!&lt;/h2&gt;
+Thanks to some more strict queries on Google, I found &lt;a href="http://www.twm-kd.com/linux/kazam/kazam-1-2-0-released-as-stable/"&gt;Kazam&lt;/a&gt; on &lt;a href="http://www.askubuntu.com"&gt;AskUbuntu.com&lt;/a&gt;. 
+
+It has an extremely simple interface, as seen below.
+&lt;img src="http://i.imgur.com/WhhVN.png" alt="Kazam Ubuntu Screencast Software"/&gt;
+
+The quality is just fine for simple screencasts, and it allows you to record audio that actually syncs with the video! 
+
+&lt;h2&gt;Installation&lt;/h2&gt;
+
+First, we need some Python modules to be installed.
+&lt;pre class="prettyprint"&gt;
+$ sudo apt-get install --reinstall gir1.2-gtk-2.0 python-software-properties software-properties-gtk
+&lt;/pre&gt;
+
+Now we actually grab Kazam as instructed by their site.
+&lt;pre class="prettyprint"&gt;
+$ sudo add-apt-repository ppa:kazam-team/stable-series
+$ sudo apt-get update
+$ sudo apt-get install kazam
+&lt;/pre&gt;
+
+And you're done! You can run kazam via the command line or your distro's menu. 
+
+&lt;h2&gt;Extras&lt;/h2&gt;
+If you happen to have FFMpeg installed, here's a nice 2-pass video/audio &lt;a href="https://gist.github.com/2486369"&gt;encoder script&lt;/a&gt; that encodes with H.264.]]></content:encoded>
+</item>
+
+<item>
+  <title>VI Keybindings in your Shell</title>
+  <link>http://www.vertstudios.com/blog/vi-keybindings-shell</link>
+  <pubDate>Wed, 25 Apr 2012 03:52:00 +0000</pubDate>
+  <description><![CDATA[There was once a very sad point in my development career where if I made a typo earlier in one of my bash statements, I would have to hold the left arrow to get my cursor over to the problem area and fix it. Then, one fateful day, I discovered VI keybindings in the shell!]]></description>
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/vi-keybindings-shell"&gt;VI Keybindings in your Shell&lt;/a&gt;&lt;/h1&gt;
+
+There was once a very sad point in my development career where if I made a typo earlier in one of my bash statements, I would have to hold the left arrow to get my cursor over to the problem area and fix it. Then, one fateful day, I discovered VI keybindings in the shell!
+
+&lt;h2&gt;Activating VI Keybindings&lt;/h2&gt;
+
+To get VI keybindings working in your shell, simply execute
+
+&lt;pre class="prettyprint"&gt;
+$ set -o vi
+&lt;/pre&gt;
+
+(If you decide you like vi keybindings in the shell and you want this mode enabled upon shell startup, append the command to your ~/.bash_profile for OS X and ~/.bashrc for linux ((&lt;a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html"&gt;Why the difference?&lt;/a&gt;))
+
+&lt;h2&gt;Using the VI Keybindings&lt;/h2&gt;
+
+The shell will have normal/insert mode as expected. Here are the commands I use frequently:
+
+&lt;pre class="prettyprint"&gt;
+i - enter insert mode
+esc - back to normal mode
+
+* IN NORMAL MODE *
+cc - clear the current line and enter insert mode
+ C - clear from cursor until the end of the line and enter insert mode
+dd - delete the current line
+ D - delete from the cursor until the end of the line
+ w - next word
+ W - next white-space delimited word
+ b - previous word
+ B - previous white-space delimited word
+dw - delete word
+cw - change word
+fx - find the next occurrence of the character 'x'
+Fx - find the previous occurrence of the character 'x'
+ $ - move the cursor to the end of the line
+ 0 - move the cursor to the beginning of the line
+ ; - repeat last find command (preserves direction)
+ l - move cursor right
+ h - move cursor left
+ k - scroll up through command history
+ j - scroll down through command history
+ A - move the cursor to the end of the line and enter insert mode
+ I - move the cursor to the beginning of the line and enter insert mode
+
+* Numeric modifier keys work as well! *
+5W - move forward five white-space delimited words. 
+
+&lt;/pre&gt;]]></content:encoded>
+</item>
+
+<item>
+  <title>Introduction to Recursion - Part 2</title>
+  <link>http://www.vertstudios.com/blog/introduction-recursion-part-2</link>
+  <pubDate>Mon, 16 Apr 2012 06:01:00 +0000</pubDate>
+  <description><![CDATA[Part two of the &lt;a href="http://www.vertstudios.com/blog/introduction-recursion-part-1"&gt;Introduction to Recursion series&lt;/a&gt;! In this video, we discuss the Factorial function and its recursive properties in depth.]]></description>
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/introduction-recursion-part-2"&gt;Introduction to Recursion - Part 2&lt;/a&gt;&lt;/h1&gt;
+
+Part two of the &lt;a href="http://www.vertstudios.com/blog/introduction-recursion-part-1"&gt;Introduction to Recursion series&lt;/a&gt;! In this video, we discuss the Factorial function and its recursive properties in depth.
+
+http://www.youtube.com/watch?v=CboUF7gtVSo]]></content:encoded>
+</item>
+
+<item>
+  <title>jQuery Table Sort Plugin | Stupidly simple jQuery table sort</title>
+  <link>http://www.vertstudios.com/blog/jquery-table-sort-plugin-stupidly-simple-jquery-table-sort</link>
+  <pubDate>Fri, 13 Apr 2012 21:16:00 +0000</pubDate>
+  <description><![CDATA[I needed a simple jQuery plugin to let me sort table columns. Unfortunately, I couldn't find one that captured the simplicity I was looking for. I don't need 1000+ lines of code for a simple table sort!]]></description>
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/jquery-table-sort-plugin-stupidly-simple-jquery-table-sort"&gt;jQuery Table Sort Plugin | Stupidly simple jQuery table sort&lt;/a&gt;&lt;/h1&gt;
+
+I needed a simple jQuery plugin to let me sort table columns. Unfortunately, I couldn't find one that captured the simplicity I was looking for. I don't need 1000+ lines of code for a simple table sort!
+
+&lt;h2&gt;The Stupid Table Sort!&lt;/h2&gt;
+Consequently, I embarked on a journey to create a stupidly simple jQuery table sort plugin. Remaining true to that, I've named the plugin the &lt;a href="http://joequery.github.com/Stupid-Table-Plugin/"&gt;Stupid jQuery Table Sort&lt;/a&gt;. Flattering name, I know...this is why I'm not a marketer. 
+
+&lt;h2&gt;Check out the demo!&lt;/h2&gt;
+&lt;a href="http://joequery.github.com/Stupid-Table-Plugin/"&gt;View the demo&lt;/a&gt;, and let me know what you think!]]></content:encoded>
+</item>
+
+<item>
+  <title>Git Workflow: Crap, I committed to master!</title>
+  <link>http://www.vertstudios.com/blog/git-workflow-crap-committed-master</link>
+  <pubDate>Thu, 12 Apr 2012 05:08:00 +0000</pubDate>
+  <description><![CDATA[So you know you should pretty much &lt;a href="http://scottchacon.com/2011/08/31/github-flow.html"&gt;never hack directly on master&lt;/a&gt; when working with git. Instead, you should create branches and merge them later.  Beyond best practices for their own sake, some github projects really want you creating pull requests from a certain branch.   
+
+Sometimes, however, I get in &lt;b&gt;the zone&lt;/b&gt; and forget to checkout a branch because I want to get this feature DONE! In my haste, I commit to master directly. I don't want my pull request to be rejected just because I hacked on master.]]></description>
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/git-workflow-crap-committed-master"&gt;Git Workflow: Crap, I committed to master!&lt;/a&gt;&lt;/h1&gt;
+
+So you know you should pretty much &lt;a href="http://scottchacon.com/2011/08/31/github-flow.html"&gt;never hack directly on master&lt;/a&gt; when working with git. Instead, you should create branches and merge them later.  Beyond best practices for their own sake, some github projects really want you creating pull requests from a certain branch.   
+
+Sometimes, however, I get in &lt;b&gt;the zone&lt;/b&gt; and forget to checkout a branch because I want to get this feature DONE! In my haste, I commit to master directly. I don't want my pull request to be rejected just because I hacked on master.
+
+&lt;h2&gt;What do we do now?&lt;/h2&gt;
+
+Luckily, recovery is extremely simple. We can fix the repo up to get back in line with branching best practices.
+
+So say we've just committed to master and we're currently on the master branch.
+&lt;pre class="prettyprint"&gt;
+$ git log
+commit 9huuh23tnhubazhuxbeeashebcdjis3hl2iidu
+Author: Joseph McCullough &amp;lt;joseph@vertstudios.com&amp;gt;
+Date:   Wed Apr 11 22:15:10 2012 -0500
+
+        Refactor new feature X to be more awesome
+
+commit xotnhnt234ub23st2b323hb23tu2bh32bu23uu
+Author: Joseph McCullough &amp;lt;joseph@vertstudios.com&amp;gt;
+Date:   Wed Apr 11 22:05:10 2012 -0500
+
+        New feature X
+
+commit b232udh24xub2394d249ud394ub34bu9348ub9
+Author: Joseph McCullough &amp;lt;joseph@vertstudios.com&amp;gt;
+Date:   Wed Apr 11 12:05:10 2012 -0500
+
+        Some upstream master commit
+&lt;/pre&gt;
+
+The last two commits needed to be on their own branch, say &lt;b&gt;new_feature&lt;/b&gt;. Your local master branch needs to be at "Some upstream master commit". Here's how we can accomplish this. 
+
+&lt;h3&gt;Step 1) Create the new_feature branch&lt;/h3&gt;
+Since master is currently in the state we want the new_feature branch to be in (since we've just added our new feature commit), we can just branch off of master.
+
+&lt;pre class="prettyprint"&gt;
+$ git branch new_feature
+&lt;/pre&gt;
+
+So new_feature is just a direct copy of master at this point.
+
+Right now, we're still on the master branch. As stated above, we want the master branch to be at "Some upstream master commit". We can accomplish this via &lt;b&gt;git reset --hard&lt;/b&gt;. 
+
+&lt;h3&gt;Step 2) Resetting the master branch&lt;/h3&gt;
+
+&lt;b&gt;A side note regarding git reset --hard&lt;/b&gt;:
+
+It's important to note that git reset --hard is NOT a safe operation. You CAN lose work if you don't use it carefully. Luckily, in this context, there's nothing to worry about since I'm guiding you through the process...but just for your toolbelt, visit this &lt;a href="http://stackoverflow.com/a/1109433"&gt;StackOverflow&lt;/a&gt; answer thread if you ever accidentally lose work to git reset --hard.
+
+Anyway, to get the master branch back to "Some upstream master commit", we can copy the SHA of the commit from git log to our clipboard and execute
+
+&lt;pre class="prettyprint"&gt;
+$ git checkout master
+$ git reset --hard b232udh24xub2394d249ud394ub34bu9348ub9
+HEAD is now at ... Some upstream master commit
+&lt;/pre&gt;
+
+Also, for convenience, we can use the HEAD alias. In this example, we wanted to reference the commit that was 2 commits behind the latest commit. We could have equally executed
+
+&lt;pre class="prettyprint"&gt;
+$ git checkout master
+$ git reset --hard HEAD~2
+&lt;/pre&gt; 
+
+The git log should now look like the following:
+&lt;pre class="prettyprint"&gt;
+$ git log
+commit b232udh24xub2394d249ud394ub34bu9348ub9
+Author: Joseph McCullough &amp;lt;joseph@vertstudios.com&amp;gt;
+Date:   Wed Apr 11 12:05:10 2012 -0500
+
+        Some upstream master commit
+&lt;/pre&gt;
+
+
+&lt;h3&gt;Step 3) Verification&lt;/h3&gt;
+We've verified the master branch is where it should be, so now we should checkout the new_feature branch and run a git log. 
+
+&lt;pre class="prettyprint"&gt;
+$ git checkout new_feature
+Switched to branch 'new_feature'
+$ git log
+commit 9huuh23tnhubazhuxbeeashebcdjis3hl2iidu
+Author: Joseph McCullough &amp;lt;joseph@vertstudios.com&amp;gt;
+Date:   Wed Apr 11 22:15:10 2012 -0500
+
+        Refactor new feature X to be more awesome
+
+commit xotnhnt234ub23st2b323hb23tu2bh32bu23uu
+Author: Joseph McCullough &amp;lt;joseph@vertstudios.com&amp;gt;
+Date:   Wed Apr 11 22:05:10 2012 -0500
+
+        New feature X
+
+commit b232udh24xub2394d249ud394ub34bu9348ub9
+Author: Joseph McCullough &amp;lt;joseph@vertstudios.com&amp;gt;
+Date:   Wed Apr 11 12:05:10 2012 -0500
+
+        Some upstream master commit
+&lt;/pre&gt;
+
+So we still have our work, but it's on a feature branch, as it should be! We're now free to send a pull request without any bickering from the project owner, or we can merge the new_feature branch later once it's ready for production.]]></content:encoded>
+</item>
+
+<item>
+  <title>C: request for member in something not a structure or union</title>
+  <link>http://www.vertstudios.com/blog/c-request-member-structure-union</link>
+  <pubDate>Tue, 03 Apr 2012 03:31:00 +0000</pubDate>
+  <description><![CDATA[If you're trying to pass a pointer to a structure to a function, you may be getting the compiler error &lt;b&gt;request for member &amp;#8216;SOME_PROPERTY&amp;#8217; in something not a structure or union&lt;/b&gt;. If you  &lt;em&gt;swear&lt;/em&gt; you're passing in a pointer to the proper structure, and you're &lt;em&gt;certain&lt;/em&gt;, there are no typos for the member name you're trying to access, you may just be experiencing a bit of pointer ambiguity.]]></description>
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/c-request-member-structure-union"&gt;C: request for member in something not a structure or union&lt;/a&gt;&lt;/h1&gt;
+
+If you're trying to pass a pointer to a structure to a function, you may be getting the compiler error &lt;b&gt;request for member &amp;#8216;SOME_PROPERTY&amp;#8217; in something not a structure or union&lt;/b&gt;. If you  &lt;em&gt;swear&lt;/em&gt; you're passing in a pointer to the proper structure, and you're &lt;em&gt;certain&lt;/em&gt;, there are no typos for the member name you're trying to access, you may just be experiencing a bit of pointer ambiguity. 
+
+&lt;h2&gt; The Problem! &lt;/h2&gt;
+Consider a very simple example. 
+
+[c]
+// Example demonstrating C pointer ambiguity 
+#include&amp;lt;stdio.h&amp;gt;
+
+typedef struct{
+  char* job;
+  int age;
+} Person;
+
+void give_bob_a_job(Person*);
+
+int main(){
+  Person bob;
+  give_bob_a_job(&amp;amp;bob);
+  printf("The job of bob is %s\n", bob.job);
+        return 0;
+}
+
+void give_bob_a_job(Person *bob){
+  *bob.job = "Sysadmin";
+}
+[/c]
+
+We compile the file
+&lt;pre class="prettyprint"&gt;
+~$ gcc bob.c -o bob.o
+bob.c: In function &amp;#8216;give_bob_a_job&amp;#8217;:
+bob.c:18:6: error: request for member &amp;#8216;job&amp;#8217; in something not a structure or union
+&lt;/pre&gt;
+
+So we receive the error &lt;b&gt;error: request for member &amp;#8216;job&amp;#8217; in something not a structure or union&lt;/b&gt;. 
+
+We run through a mental checklist:
+
+&lt;ul&gt;
+&lt;li&gt;Did I pass a pointer to the right structure?&lt;/li&gt;
+&lt;li&gt;Does that structure really have a 'job' member?&lt;/li&gt;
+&lt;li&gt;Did I make any typos in declaring the member or calling the member?&lt;/li&gt;
+&lt;/ul&gt;
+
+If all these check out, then we move on.
+
+Let's look closer at the statement on line 18.
+[c]*bob.job = "Sysadmin";[/c]
+
+This actually reads 
+&lt;blockquote&gt;
+'Assign the string "Sysadmin" to the pointer variable of bob.job'
+&lt;/blockquote&gt;
+
+In other words, the deference operator (&lt;b&gt;*&lt;/b&gt;) is dereferencing all of &lt;b&gt;bob.job&lt;/b&gt; instead of dereferencing bob and accessing its job member. In this context, &lt;b&gt;bob&lt;/b&gt; is just a pointer to Person, so it's a memory address. Thus the compiler error makes sense! 
+
+Luckily, the solution is super simple.
+
+&lt;h2&gt; The Solution! &lt;/h2&gt;
+
+We can be explicit about our dereferencing by using parenthesis. 
+[c](*bob).job = "Sysadmin";[/c]
+
+This reads
+&lt;blockquote&gt;
+'Assign the string "Sysadmin" to the pointer variable of bob's job member'
+&lt;/blockquote&gt;
+
+Replace line 18 with the correction, and the code should compile with the following output upon execution:
+
+&lt;pre class="prettyprint"&gt;
+The job of bob is Sysadmin
+&lt;/pre&gt;
+
+&lt;h2&gt;Syntax cleanup&lt;/h2&gt;
+Dereferencing a pointer to a structure is so common, we have a shorthand for doing so.
+
+&lt;pre class="prettyprint"&gt;(*foo).bar&lt;/pre&gt;
+
+is equal to
+
+&lt;pre class="prettyprint"&gt;foo-&amp;gt;bar&lt;/pre&gt;
+
+so 
+
+&lt;pre class="prettyprint"&gt;bob-&amp;gt;job = "Sysadmin";&lt;/pre&gt;
+
+would work as well.]]></content:encoded>
+</item>
+
+<item>
+  <title>Introduction to Recursion - Part 1</title>
+  <link>http://www.vertstudios.com/blog/introduction-recursion-part-1</link>
+  <pubDate>Sat, 31 Mar 2012 02:36:00 +0000</pubDate>
+  <description><![CDATA[Part 1 of a multipart series covering the basics of recursion.]]></description>
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/introduction-recursion-part-1"&gt;Introduction to Recursion - Part 1&lt;/a&gt;&lt;/h1&gt;
+
+Part 1 of a multipart series covering the basics of recursion. I hope you enjoy!
+
+http://www.youtube.com/watch?v=TA_qrRZ1cpI]]></content:encoded>
+</item>
+
+<item>
+  <title>K&amp;R: Error: conflicting types for 'getline'</title>
+  <link>http://www.vertstudios.com/blog/kr-error-conflicting-types-getline</link>
+  <pubDate>Sat, 10 Mar 2012 01:09:00 +0000</pubDate>
+  <description><![CDATA[So you're reading through K&amp;R's &lt;a href="http://www.amazon.com/C-Programming-Language-2nd-Edition/dp/0131103628/ref=sr_1_1?ie=UTF8&amp;qid=1331341099&amp;sr=8-1"&gt;The C Programming Language&lt;/a&gt;, and you're on page 29 or so, section 1.9 entitled &lt;b&gt;Character Arrays&lt;/b&gt;.]]></description>
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/kr-error-conflicting-types-getline"&gt;K&amp;amp;R: Error: conflicting types for 'getline'&lt;/a&gt;&lt;/h1&gt;
+
+So you're reading through K&amp;amp;R's &lt;a href="http://www.amazon.com/C-Programming-Language-2nd-Edition/dp/0131103628/ref=sr_1_1?ie=UTF8&amp;amp;qid=1331341099&amp;amp;sr=8-1"&gt;The C Programming Language&lt;/a&gt;, and you're on page 29 or so, section 1.9 entitled &lt;b&gt;Character Arrays&lt;/b&gt;.
+
+The beginning of the sample program is as follows:
+
+[c]
+#include &amp;lt;stdio.h&amp;gt;
+#define MAXLINE 1000   /* maximum input line size */
+
+int getline(char line[], int maxline);
+void copy(char to[], char from[]);
+
+/* print longest input line */
+main()
+...
+[/c]
+
+And, to your confusion, you receive the following error: &lt;b&gt;Error: conflicting types for 'getline' &lt;/b&gt;
+
+&lt;h2&gt;The Solution!&lt;/h2&gt;
+
+It turns out getline is included in stdio.h, similar to printf! You can complete the exercise by renaming the getline function to something different like "readline" or "get_the_line".]]></content:encoded>
+</item>
+
+<item>
+  <title>Dual Monitors on Kubuntu 11.10 (In Under 10 Minutes)</title>
+  <link>http://www.vertstudios.com/blog/dual-monitors-kubuntu-11-10-in-10-minutes</link>
+  <pubDate>Sat, 03 Mar 2012 02:32:00 +0000</pubDate>
+  <description><![CDATA[If you're having trouble getting dual monitors to work on the latest version of Kubuntu (Currently 11.10), this guide will attempt to save your sanity!]]></description>
+  <content:encoded><![CDATA[&lt;h1&gt;&lt;a href="http://www.vertstudios.com/blog/dual-monitors-kubuntu-11-10-in-10-minutes"&gt;Dual Monitors on Kubuntu 11.10 (In Under 10 Minutes)&lt;/a&gt;&lt;/h1&gt;
+
+If you're having trouble getting dual monitors to work on the latest version of Kubuntu (Currently 11.10), this guide will attempt to save your sanity!
+
+&lt;h2&gt;Installing Dual Monitors on Kubuntu 11.10&lt;/h2&gt;
+Make sure you have the latest Nvidia drivers. To do this, Navigate to "Additional Drivers" via Applications =&amp;gt; System =&amp;gt; Additional Drivers. 
+
+Now execute the following commands in your terminal in order to get &lt;a href="http://willem.engen.nl/projects/disper/"&gt;disper&lt;/a&gt;, a nice utility that saves us from the headache of configuring via Nvidia-Settings. 
+
+&lt;pre class="prettyprint"&gt;
+$ sudo add-apt-repository ppa:disper-dev/ppa
+$ sudo add-apt-repository ppa:nmellegard/disper-indicator-ppa
+$ sudo apt-get update
+$ sudo apt-get install disper disper-indicator
+&lt;/pre&gt;
+
+(Credit to  &lt;a href="http://www.joeyconway.com/blog/2011/08/13/ubuntu-how-to-extend-display-with-two-monitors/"&gt;Joey Conway&lt;/a&gt;)
+
+Verify that disper works by executing the following in your terminal:
+&lt;pre class="prettyprint"&gt;
+$ disper -e
+&lt;/pre&gt;
+
+This should extend your monitors, giving you the desired functionality. This is great, except for currently we'd have to do this every single time we boot up Kubuntu.
+
+&lt;h2&gt;Activate Disper on Startup&lt;/h2&gt;
+My first instinct, being slightly familiar with Ubuntu, was to create a startup script in &lt;b&gt;/etc/init.d&lt;/b&gt;. This, however, didn't seem to work. Instead of creating a script in the init.d directory, we'll create the script in a Kubuntu-specific directory called Autostart.
+
+First, navigate to the Autostart directory:
+&lt;pre class="prettyprint"&gt;
+$ cd ~/.kde/Autostart
+&lt;/pre&gt;
+
+Now using your favorite text editor, create a script called &lt;b&gt;dual-monitors&lt;/b&gt;
+
+&lt;pre class="prettyprint"&gt;
+$ vim dual-monitors
+&lt;/pre&gt;
+
+Paste in the following:
+
+&lt;pre class="prettyprint"&gt;
+#!/bin/bash
+/usr/bin/disper -e
+&lt;/pre&gt;
+
+Save the file and quit the text editor. We now need to make the file executable or it will just be ignored by Kubuntu on startup.
+
+&lt;pre class="prettyprint"&gt;
+$ chmod +x dual-monitors
+&lt;/pre&gt;
+
+To verify the script works, we first need to get out of our current dual screen mode to make sure the script correctly puts us back in. Thus, we use disper to force only the primary display to appear.
+
+&lt;pre class="prettyprint"&gt;
+$ disper -s
+&lt;/pre&gt;
+
+Your 2nd monitor should deactivate. Now, while we're still in the ~/.kde/Autotest directory, execute the following:
+
+&lt;pre class="prettyprint"&gt;
+$ ./dual-monitors
+&lt;/pre&gt;
+
+If this causes the monitors to go back to dual-screen mode, then the script works! T
+
+&lt;h2&gt;Now you have Dual Monitor Suuport!&lt;/h2&gt;
+
+Go ahead and restart your computer, and you should find that Kubuntu starts with your dual monitors functioning correctly.]]></content:encoded>
+</item>
+
+</channel>
+</rss>
+

@@ -887,7 +887,7 @@ text-align: left;
     }
     
 #blogPost{
-    width: 750px;
+    width: 650px;
     float: left;
     margin: 10px 0px 10px 0px;
     /*    border-bottom: 1px solid #1ba0cc; */
@@ -966,6 +966,7 @@ text-align: left;
   text-shadow: 0px 0px 0px;
   font-size: 12px;
   margin-top: 10px;
+  overflow-x: auto;
 }
 
 #blogSidebar{

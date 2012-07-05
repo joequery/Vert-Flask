@@ -13,7 +13,7 @@ BLOG_SYS_PATH = os.path.join(currentDir, "blog")
 # Wrap a string in a CDATA block
 def cdata(string):
   html = string.encode('ascii','xmlcharrefreplace').strip()
-  return "<![CDATA[%s]]>" % html
+  return "<![CDATA[%s]]>" % escape(html)
 
 
 # Get `numPosts` number of posts. Returns a list of dictionaries with the
@@ -31,7 +31,7 @@ def get_posts(numPosts):
 
     postTime = time.strptime(metaData.time, "%Y-%m-%d %a %H:%M %p")
     postDict = {
-      'title' : metaData.title,
+      'title' : escape(metaData.title),
       'excerpt' : cdata(metaData.excerpt),
       'date' : time.strftime("%B %d, %Y", postTime), # January 15, 2012
       'url': "http://www.vertstudios.com/blog/%s" % post

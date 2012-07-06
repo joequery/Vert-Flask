@@ -68,6 +68,7 @@ alt=""></noscript>
 <!-- End of StatCounter Code -->
 
 {% if g.env == "production" %}
+  {{js(g, "vertlib")}}
   {{js(g, "compressed.min")}}
 {% else %}
   {% for file in 

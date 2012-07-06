@@ -123,7 +123,6 @@ def _alter_rss(rssObj):
   # changes.
   rssObj["description"] = description
   rssObj["pubDate"] = date
-  rssObj['url'] = "http://www.vertstudios.com/blog%s" % rssObj['url'],
 
 def from_the_blog():
   return render_template("templates/from_the_blog.static")

@@ -2,7 +2,8 @@
 import os
 from flask import Flask, request, g, render_template
 from flaskext.markdown import Markdown
-from private import SECRET_KEY
+
+SECRET_KEY = "1ZLsDDIpqQ1rKXiwoEIHMEtjNj-dmrMLyDIXvLEQjeeaCpJyI9T8G6rxRDYMIkwWxIQ="
 
 # App configuration
 app = Flask(__name__)

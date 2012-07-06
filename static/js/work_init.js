@@ -29,7 +29,7 @@ $(window).load(function()
     var opacity = 0.50,
     fadeTime = 300,
     featured = $("#work .featured_work img"),
-    bubble = $("#work #sub_page_intro"),
+    bubble = $("#work #sub_page_intro.workbubble"),
     copy = $("#work .copy"),
     
     //Calculations

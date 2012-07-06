@@ -88,5 +88,5 @@ def contact():
 
       return render_template("contact.html", form=form, info=info)
   else:
-    return render_template("contact.html", form=form)
+    return render_template("contact.html", form=form, title="Contact Us")
 

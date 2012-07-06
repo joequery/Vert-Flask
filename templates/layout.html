@@ -1,7 +1,7 @@
 {% from "sections" import meta_and_css, nav, javascripts, footer %}
 <!DOCTYPE html>
 <html lang="en">
-  {{ meta_and_css(g)|safe }}
+  {{ meta_and_css(g, title)|safe }}
   <body onload="prettyPrint()" id="{{g.bodyID}}">
 <div id="wrapper">
   {{ nav(g)|safe }}

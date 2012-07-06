@@ -25,15 +25,15 @@ def home():
 
 @app.route('/work')
 def work():
-  return render_template("work.html")
+  return render_template("work.html", title="Work")
 
 @app.route('/services')
 def services():
-  return render_template("services.html")
+  return render_template("services.html", title="Services")
 
 @app.route('/about')
 def about():
-  return render_template("about.html")
+  return render_template("about.html", title="About")
 
 
 if __name__ == "__main__":

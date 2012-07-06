@@ -43,7 +43,7 @@ def before_request():
   # Determine cloudfront vs local assets delivery
   def set_assets_dir():
     if FLASK_ENV == "production":
-      g.assets = "http://assets.vertstudios.com"
+      g.assets = "https://s3.amazonaws.com/assets.vertstudios.com"
     else:
       g.assets = app.static_url_path
 

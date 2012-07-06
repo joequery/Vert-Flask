@@ -10,9 +10,13 @@
   <meta name="google-site-verification" content="36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
   <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
-  {% for file in ["reset", "js", "text", "main", "codestream", "prettify"] %}
-    {{ css(g, file) }}
-  {% endfor %}
+  {% if g.env == "production" %}
+    {{ css(g, "compressed.min") }}
+  {% else %}
+    {% for file in ["reset", "js", "text", "main", "codestream", "prettify"] %}
+      {{ css(g, file) }}
+    {% endfor %}
+  {% endif %}
 </head>
 {% endmacro %}
 
@@ -48,12 +52,17 @@
 
 {% macro javascripts(g) %}
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
-{% for file in 
-  ["vertlib", "jsCSS", "index_init", "easing", "slaveshow.min", 
-  "carousel", "carousel-init", "easing", "Scroller", "work_init", "contact",
-  "prettify"] %}
-    {{ js(g, file) }}
-{% endfor %}
+{% if g.env == "production" %}
+  {{js(g, "vertlib")}}
+  {{js(g, "compressed.min")}}
+{% else %}
+  {% for file in 
+    ["vertlib", "jsCSS", "index_init", "easing", "slaveshow.min", 
+    "carousel", "carousel-init", "easing", "Scroller", "work_init", "contact",
+    "prettify"] %}
+      {{ js(g, file) }}
+  {% endfor %}
+{% endif %}
 {% endmacro  %}
 
 {% macro footer() %}

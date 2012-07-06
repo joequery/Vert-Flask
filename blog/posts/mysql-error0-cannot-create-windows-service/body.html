@@ -9,7 +9,7 @@
 
 If you are visiting this page, most likely you have seen this on your screen after trying to reinstall MySQL 5.X
 
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/mysql-error-0.jpg" alt="MySQL Error 0" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/mysql-error-0.jpg" alt="MySQL Error 0" />
 
 This is the MySQL Error 0, which usually follows a windows notification that mysqld.exe has stopped working. After reading many forum posts, it appears that there is no definite answer as to how to solve the problem. However, I finally came across a method that worked for me, and hopefully it will work for you. The OS in this scenario is Vista 32-bit.
 <h2>The Problem</h2>
@@ -18,7 +18,7 @@ The problem is MySQL did not properly uninstall. Remnants of MySQL still exist o
 <strong>Step 1)</strong>If MySQL is still Installed, run the MySQL Server Instance Config Wizard. (Should be found in your start menu under MySQL)
 
 <strong>Step 2)</strong>Select "Remove Instance".
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/step2.jpg" alt="Select Remove Instance" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/step2.jpg" alt="Select Remove Instance" />
 
 <strong>Step 3)</strong>Click Execute, and once complete, click finish.
 
@@ -28,21 +28,21 @@ The problem is MySQL did not properly uninstall. Remnants of MySQL still exist o
 <pre class="prettyprint">sc delete mysql</pre>
 into the command prompt. If it fails, that's fine.
 
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/mysql-command-prompt-delete.jpg" alt="Delete MySQL Service via Command Prompt" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/mysql-command-prompt-delete.jpg" alt="Delete MySQL Service via Command Prompt" />
 
 <strong>Step 6)</strong><a href="http://kb.iu.edu/data/aixt.html">Uninstall MySQL Server 5.X</a> via the control panel.
 
 <strong>Step 7)</strong>Open the C:&#92; directory.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/c-directory.jpg" alt="Open the C:&#92; Directory" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/c-directory.jpg" alt="Open the C:&#92; Directory" />
 
 <strong>Step 8)</strong>Make hidden folders visible. You can do this by pressing alt to bring up the menu, then go to Tools -> Folder Options. Click the View Tab, and look for "Hidden files and folders." Then click "Show Hidden Files and Folders". (If you need more guidance on making hidden files visible, you can visit the <a href="http://windows.microsoft.com/en-US/windows-vista/Show-hidden-files">Microsoft tutorial</a>.)
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/show-hidden-files.jpg" alt="Show Hidden Files" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/show-hidden-files.jpg" alt="Show Hidden Files" />
 
 <strong>Step 9)</strong>In you C:&#92; drive, you will now see a folder named ProgramData that was not visible before. Open it.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/program-data-file.jpg" alt="ProgramData file now visible" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/program-data-file.jpg" alt="ProgramData file now visible" />
 
 <strong>Step 10)</strong>If you see the MySQL Folder, Delete it!
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/delete-mysql-folder.jpg" alt="Delete the MySQL Folder" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/delete-mysql-folder.jpg" alt="Delete the MySQL Folder" />
 
 <strong>Step 11)</strong>Check the C:&#92;Program Files directory. If you see a MySQL Folder, Delete it!
 

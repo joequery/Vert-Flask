@@ -10,51 +10,51 @@
 This post will guide you through installing MySQL 5.1.
 <h2>Installing MySQL</h2>
 <strong>Step 1)</strong> Visit the <a href="http://www.mysql.com/downloads/mysql/">MySQL Download Page</a>. Choose the MSI Installer that corresponds to your OS type. I'm on this crappy Dell Inspiron laptop running vista, so I'll snag the x86, 32-bit MSI  installer.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step1.jpg" alt="Download MySQL" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step1.jpg" alt="Download MySQL" />
 
 <strong>Step 2)</strong>You will be prompted to log in or register, but you can actually just scroll down and click "No thanks, just take me to the downloads!" below the login form.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step2.jpg" alt="Skip MySQL Registration" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step2.jpg" alt="Skip MySQL Registration" />
 
 <strong>Step 3)</strong>Choose a mirror close to you and download via HTTP.
 
 <strong>Step 4)</strong>When the download has completed, run the file.  When the window opens, press next, and then choose  "Custom" install.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step4.jpg" alt="Custom Installation" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step4.jpg" alt="Custom Installation" />
 
 <strong>Step 5)</strong>I highly recommend including the "C Include Files" in your installation in case you ever want to do some work with c++.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step5.jpg" alt="MySQL C++ Include Files" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step5.jpg" alt="MySQL C++ Include Files" />
 
 <strong>Step 6)</strong>For MySQL, it doesn't matter if you install it to your webserver directory or to the default program files.  I chose to install it to the program files. Click next and then install.
 
 <strong>Step 7)</strong>When the installation has completed and the pretty dolphin shows up,  press next until it tells you the wizard is complete.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step7.jpg" alt="Installation Complete" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step7.jpg" alt="Installation Complete" />
 
 <strong>Step 8)</strong>Make sure that "Configure this MySQL Server Now" is complete is checked. I chose not to Register the server, so you can skip that for now. Once you've made sure "Configure this MySQL Server Now" is checked, click Finish.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step8.jpg" alt="Configure the Sever Now" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step8.jpg" alt="Configure the Sever Now" />
 
 <strong>Step 9)</strong>When the new window pops up, click Next and then select Detailed Configuration.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step9.jpg" alt="Select Detailed MySQL Configuration" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step9.jpg" alt="Select Detailed MySQL Configuration" />
 
 <strong>Step 10)</strong>You will then be asked whether your machine is a Developer Machine, Server Machine, and Dedicated MySQL Server Machine. If you are wanting to make web applications or communicate with databases from your computer, you should select Developer Machine. If you are unsure, you should select Developer Machine. Click Next.
 
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step10.jpg" alt="Select Machine Type" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step10.jpg" alt="Select Machine Type" />
 
 <strong>Step 11)</strong>You will be given a list of database types to choose from. Most likely you should choose Multifunctional Database, unless you know for sure you should select one of the other options. Click Next when you've made your selection.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step11.jpg" alt="Database Type" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step11.jpg" alt="Database Type" />
 
 <strong>Step 12)</strong>You will be asked where you would like the InnoDB datafile to be installed. There's no real need to change it from the default, so just click next. The path should read "Installation Path". Feel free to change it if you really want to though.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step12.jpg" alt="InnoDB Datafile" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step12.jpg" alt="InnoDB Datafile" />
 
 <strong>Step 13)</strong>You will be asked how many concurrent connections to the server should be allowed. Unless you know you'll need more than 20, just  stick with Decision Support(DSS)/OLAP. Click Next.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step13.jpg" alt="Concurrent Connections" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step13.jpg" alt="Concurrent Connections" />
 
 <strong>Step 14)</strong>Make sure "<a href="http://www.webopedia.com/TERM/T/TCP_IP.html">Enable TCP/IP Networking</a>" is checked along with "Enable Strict Mode". Adjust the port if you know you need to, otherwise keep it at the provided value. Make sure to add a firewall exception for the port. Click Next.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step14.jpg" alt="MySQL Configuration" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step14.jpg" alt="MySQL Configuration" />
 
 <strong>Step 15)</strong>Choose your character set. If you're planning on dealing with foreign languages, select "Best Support for Multilingualism", which will utilize the <a href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a> character set. I chose the Standard Character set. Click Next.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step15.jpg" alt="Choose Character Set" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step15.jpg" alt="Choose Character Set" />
 
 <strong>Step 16)</strong>Choose to install MySQL as a service. You can change the service name if you want, but I just left it at MySQL. I also have it set to launch automatically. You don't have to do this, but be aware you will have to launch MySQL every time you want to connect to your database. &#160;Also, make sure you check "Include Bin Directory in  windows PATH"
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/step16.jpg" alt="MySQL as a Service configured for PATH" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/step16.jpg" alt="MySQL as a Service configured for PATH" />
 
 <strong>Step 17)</strong>Now it's time to add in the security information. Enter your desired password into New root password and confirm it. Do not create an anonymous account. Based on your situation, you can choose to enable remote access, but I chose not to. Press Next.
 
@@ -64,7 +64,7 @@ If you have had MySQL on your system before and have uninstalled it for whatever
 "Cannot create Windows Service for MySQL.Error:0".
 
 <a href="http://www.mcculloughdesigns.com/blog/mysql-error0-windows-service-failed-start/174">
-<img title="MySQL Error 0: Click to view Solution" src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/mysql-error-0.jpg" alt="MySQL Error:0" /></a>
+<img title="MySQL Error 0: Click to view Solution" src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/error0/mysql-error-0.jpg" alt="MySQL Error:0" /></a>
 
 If you see this message, click cancel, and then head over to <a href="http://www.mcculloughdesigns.com/blog/mysql-error0-windows-service-failed-start/174">How to solve MySQL Error: 0</a>. Afterwards, you will have to repeat the installation process up to this point. Sorry!
 <h2>Testing your MySQL Configuration</h2>
@@ -78,7 +78,7 @@ After the service has been successfully started and the security settings succes
 </ol>
 When the prompt "enter password" comes up,enter the password you created during the installation configuration. If successful, you should see a screen resembling this.
 
-<img src="http://www.vertstudios.com/blog/images/mc-blog/webserver/mysql/mysql-configuration-test.jpg" alt="MySQL Configuration Test" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/webserver/mysql/mysql-configuration-test.jpg" alt="MySQL Configuration Test" />
 
 MySQL is now configured and ready for you to use!
 {% endblock post %}

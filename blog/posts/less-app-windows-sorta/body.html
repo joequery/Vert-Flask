@@ -31,17 +31,17 @@ I've verified that this actually works for Ubuntu as well! Follow <a href="http:
 So our "less.app" will simply be a command line job that monitors your less files.
 
 First, you'll need to snag the latest <a href="http://node-js.prcn.co.cc/">Node.js Windows binaries</a>. (If you don't have <a href="http://www.7-zip.org/">7-Zip</a>, you'll need it to extract the files). 
-<img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-0.png" alt="Less.app for Windows" />
+<img src="http://assets.vertstudios.com/blog/images/less-app-windows/less-app-windows-0.png" alt="Less.app for Windows" />
 
 Next, extract the files to a location preferably close to the root directory, making sure the path ends in "node". I'll be using E:\node
-<img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-1.png" alt="Less.app for Windows" />
+<img src="http://assets.vertstudios.com/blog/images/less-app-windows/less-app-windows-1.png" alt="Less.app for Windows" />
 
 Modify your <a href="http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx">Windows PATH</a> to include the bin directory of your node download. In my case, I'll append E:\node\bin.
-<img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-4.png" alt="Less.app for Windows" />
+<img src="http://assets.vertstudios.com/blog/images/less-app-windows/less-app-windows-4.png" alt="Less.app for Windows" />
 
 
 Now download the most recent copy of <a href="https://github.com/cloudhead/less.js/">Less.js</a> from GitHub. (The Downloads button on the right allows you to download a zipped version). 
-<img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-2.png" alt="Less.app for Windows" />
+<img src="http://assets.vertstudios.com/blog/images/less-app-windows/less-app-windows-2.png" alt="Less.app for Windows" />
 
 <h2>Configuration</h2>
 The rest of the tutorial <strong>and the code itself</strong> assumes you have the following file structure for your projects:
@@ -54,31 +54,31 @@ file2.html
 </pre>
 
 Most importantly, your less directory and your css directory should be "sibling" directories. 
-<img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-3.png" alt="Less.app for Windows" />
+<img src="http://assets.vertstudios.com/blog/images/less-app-windows/less-app-windows-3.png" alt="Less.app for Windows" />
 
-Download this simple <a href="http://www.vertstudios.com/blog/images/less-app-windows/test_site.zip">project structure</a> to follow along with the rest of the guide. 
+Download this simple <a href="http://assets.vertstudios.com/blog/images/less-app-windows/test_site.zip">project structure</a> to follow along with the rest of the guide. 
 
 (If you need to change the directory output, you can easily alter the code we will be using soon). 
 
 Extract the downloaded Less.js Zip to the the less directory of the project you'll be using less in. 
-<img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-6.png" alt="Less.app for Windows" />
+<img src="http://assets.vertstudios.com/blog/images/less-app-windows/less-app-windows-6.png" alt="Less.app for Windows" />
 
 The folder name will be in the form "cloudhead-less.js..." followed by some numbers. Rename the folder to "lessjs". <strong>At this point, your less folder contains the lessjs folder</strong>.
 
-Now download this JavaScript file named <a href="http://www.vertstudios.com/blog/images/less-app-windows/less.js">less.js</a>. <strong>This is the script that compiles your less into css</strong>. Move it to your less folder. Your less folder should now look like so:
-<img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-7.png" alt="Less.app for Windows" />
+Now download this JavaScript file named <a href="http://assets.vertstudios.com/blog/images/less-app-windows/less.js">less.js</a>. <strong>This is the script that compiles your less into css</strong>. Move it to your less folder. Your less folder should now look like so:
+<img src="http://assets.vertstudios.com/blog/images/less-app-windows/less-app-windows-7.png" alt="Less.app for Windows" />
 
 <h2>Compiling Less to CSS</h2>
 Now we're finally ready to compile our Less to CSS! 
 
 Open your less directory in the command prompt. (See a shortcut <a href="http://www.vertstudios.com/blog/switch-windows-command-prompt-explorer/">HERE</a>)
-<img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-8.png" alt="Less.app for Windows" />
+<img src="http://assets.vertstudios.com/blog/images/less-app-windows/less-app-windows-8.png" alt="Less.app for Windows" />
 
 Now type the following in the command prompt:
 <pre class="prettyprint">node less.js</pre>
 
 The module first compiles all .less files in the directory to css, and outputs the css file in the css directory. Next, as long as you leave the command prompt open, the module listens for any more changes to any of the .less files. Once it detects a change, it automatically compiles and updates the css file. To stop the module, use <b>CTRL + c</b>. 
-<img src="http://www.vertstudios.com/blog/images/less-app-windows/less-app-windows-9.png" alt="Less.app for Windows" />
+<img src="http://assets.vertstudios.com/blog/images/less-app-windows/less-app-windows-9.png" alt="Less.app for Windows" />
 
 <h2>You're Done!</h2>
 Now you can automatically compile and update your .less files on any of your projects, regardless of platform. If you aren't too concerned about updated versions of less, you can simply copy the lessjs file and the less.js javascript file into all your projects. 

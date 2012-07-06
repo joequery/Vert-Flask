@@ -11,7 +11,7 @@ when typing up important documents, it is important to use sentence case to invo
 
 So this post will show you how to convert a string to sentence  case using C++. Sentence case is having the first letter of the first word in a sentence capitalized.
 
-<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
+<a href="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
 <h2>The Code</h2>
 <pre class="prettyprint">
 //Joseph McCullough
@@ -144,7 +144,7 @@ bool isSentencePunc(char character)
   }
 }
 </pre>
-<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
+<a href="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
 <h2>The Explanation</h2>
 You'll notice the logic for the sentenceCase function is very similar to the logic of the <a href="http://www.mcculloughdesigns.com/blog/c-capitalize-word-proper-case/200/">capEachWord (proper case) function</a>.
 
@@ -192,51 +192,51 @@ Here is a visualization using the sentence:
 With proper sentence case applied, the sentence should read
 <pre class="prettyprint">&quot;Dude, where's my car? I don't know man.&quot;</pre>
 So here we are, starting off: thisSentenceCapped is set to false.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase1.png" alt="C++ Sentence Case Step 1" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase1.png" alt="C++ Sentence Case Step 1" />
 
 Now we lowercase all the letters before processing.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase2.png" alt="C++ Sentence Case Step 2" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase2.png" alt="C++ Sentence Case Step 2" />
 
 We begin to process the first character. Since thisSentenceCapped is false and the current character is a letter, we uppercase the  letter and set thisSentenceCapped to true.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase3.png" alt="C++ Sentence Case Step 3" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase3.png" alt="C++ Sentence Case Step 3" />
 
 thisSentenceCapped is true, we will move through each character until we come across a sentence punctuation mark (. ? !)
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase4.png" alt="C++ Sentence Case Step 4" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase5.png" alt="C++ Sentence Case Step 5" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase6.png" alt="C++ Sentence Case Step 6" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase4.png" alt="C++ Sentence Case Step 4" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase5.png" alt="C++ Sentence Case Step 5" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase6.png" alt="C++ Sentence Case Step 6" />
 
 Although the comma is a punctuation mark, it is not a sentence punctuation of a period, question mark, or exclamation point, so isSentencePunc still evaluates to false, and thisSentenceCapped is still true.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase7.png" alt="C++ Sentence Case Step 7" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase7.png" alt="C++ Sentence Case Step 7" />
 
 Blank spaces do not denote the end of a sentence, so thisSentenceCapped is still true
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase8.png" alt="C++ Sentence Case Step 8" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase9.png" alt="C++ Sentence Case Step 9" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase10.png" alt="C++ Sentence Case Step 10" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase11.png" alt="C++ Sentence Case Step 11" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase12.png" alt="C++ Sentence Case Step 12" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase13.png" alt="C++ Sentence Case Step 13" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase14.png" alt="C++ Sentence Case Step 14" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase15.png" alt="C++ Sentence Case Step 15" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase16.png" alt="C++ Sentence Case Step 16" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase17.png" alt="C++ Sentence Case Step 17" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase18.png" alt="C++ Sentence Case Step 18" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase19.png" alt="C++ Sentence Case Step 19" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase20.png" alt="C++ Sentence Case Step 20" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase21.png" alt="C++ Sentence Case Step 21" />
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase22.png" alt="C++ Sentence Case Step 22" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase8.png" alt="C++ Sentence Case Step 8" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase9.png" alt="C++ Sentence Case Step 9" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase10.png" alt="C++ Sentence Case Step 10" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase11.png" alt="C++ Sentence Case Step 11" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase12.png" alt="C++ Sentence Case Step 12" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase13.png" alt="C++ Sentence Case Step 13" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase14.png" alt="C++ Sentence Case Step 14" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase15.png" alt="C++ Sentence Case Step 15" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase16.png" alt="C++ Sentence Case Step 16" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase17.png" alt="C++ Sentence Case Step 17" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase18.png" alt="C++ Sentence Case Step 18" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase19.png" alt="C++ Sentence Case Step 19" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase20.png" alt="C++ Sentence Case Step 20" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase21.png" alt="C++ Sentence Case Step 21" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase22.png" alt="C++ Sentence Case Step 22" />
 
 We come across a question mark, which makes  isSentencePunc evaluate to true. This causes thisSentenceCapped to become false.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase23.png" alt="C++ Sentence Case Step 23" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase23.png" alt="C++ Sentence Case Step 23" />
 
 Although thisSentenceCapped is false, the function calls for the character to be alphabetical (via isalpha()), so the blankspace is not uppercased and thisSentenceCapped remains false.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase24.png" alt="C++ Sentence Case Step 24" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase24.png" alt="C++ Sentence Case Step 24" />
 
 Since thisSentenceCapped is false, and the current character is alphabetical, we uppercase the letter and set thisSentenceCapped to true.
-<img src="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase25.png" alt="C++ Sentence Case Step 25" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase25.png" alt="C++ Sentence Case Step 25" />
 
 After this point, there  will be no visible changes since this is the last sentence being processed in the string. The loop will continue to process  the string, but no changes will occur until the period, in which thisSentenceCapped is set to false and the loop terminates.
 
-<a href="http://www.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
+<a href="http://assets.vertstudios.com/blog/images/mc-blog/cpp/sentencecase/sentencecase.cpp">Download the Source Code</a>
 
 This concludes how to manipulate a string to sentence case in C++.
 {% endblock post %}

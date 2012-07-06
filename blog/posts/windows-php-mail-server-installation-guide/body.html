@@ -25,35 +25,35 @@ You will also need a mail service of some form. A free option such as <a href="h
 Follow these steps in relation to your installation directories.
 
 Download the <a href="http://www.hmailserver.com/index.php?page=background_download_file&downloadid=207">hMailServer exe</a>. (If that download link fails, visit the hMailServer <a href="http://www.hmailserver.com/index.php?page=download">download page</a>.)
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img1.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img1.png" />
 
 Open the installer. Accept the terms and choose your installation directory.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img2.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img2.png" />
 
 Select both Server and Administrative Tools.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img3.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img3.png" />
 
 Select to use external database engine
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img4.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img4.png" />
 
 Determine if you want a Start Menu folder. I opted out, but that's your call. 
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img5.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img5.png" />
 
 The database wizard will pop up. Press next. 
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img6.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img6.png" />
 
 Select "Create a new hMailServer database"
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img7.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img7.png" />
 
 Select "MySQL" as your database server type.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img8.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img8.png" />
 
 At this point, we are brought to a form where we need to enter our database connection information.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img9.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img9.png" />
 
 <h3>If Using 32bit MySQL</h3>
 If you're on a 32bit Windows OS, open up the directory where MySQL is installed. It will usually be C:\Program Files\MySQL\MySQL Server 5.X\. Open up the lib folder, and locate libmysql.dll.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img11.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img11.png" />
 
 <h3>If Using 64bit MySQL</h3>
 If you're on a 64bit Windows OS using 64bit MySQL, it's important to note that hMailServer itself is a 32bit program, so it requires a 32bit dll from MySQL. You'll need to download <a href="http://www.vertstudios.com/blog/libmysqldll-32-bit-download/">libmysql.dll 32 bit</a> and use it in the next step.
@@ -61,13 +61,13 @@ If you're on a 64bit Windows OS using 64bit MySQL, it's important to note that h
 <h3>endif;</h3>
 
 Now that you have located your appropriate version of libmysql.dll, copy it to the "bin" folder of your hMailServer installation. 
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img12.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img12.png" />
 
 Switch back to the database configuration form. Your "Database Server Address" and Port will be localhost and 3306 respectively unless you specified otherwise in your MySQL installation. Database Name is whatever you want the database to be called. I call mine "localmail". Your server authentication is a username/password combination that acts as the "root" account for your MySQL server. In my case, the account is the default of root.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img13.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img13.png" />
 
 From the service drop down menu, select MySQL. Make sure the MySQL service is running in the background.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img14.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img14.png" />
 
 If all goes well, you will get a message confirming that the database was created successfully. 
 
@@ -75,19 +75,19 @@ If all goes well, you will get a message confirming that the database was create
 Now that we have hMailServer installed, we need to configure it so we can use it to send mail.
 
 After the Database was successfully created, hMailServer will ask you to specify a main password.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img15.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img15.png" />
 
 After you specified your main password, open hMailAdmin.exe in the Bin folder of your hMailServer installation.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img16.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img16.png" />
 
 Select the localhost - Administrator pair and press connect. (Note: Administrator is an important keyword in hMailServer. Do NOT change the username to something else.) Your password will be what you just specified as the "main password".
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img17.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img17.png" />
 
 From the welcome screen, select Settings -> Advanced -> IP Ranges -> My Computer. Make sure all boxes under "Require SMTP authentication" are UNchecked. Make sure to save.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img18.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img18.png" />
 
 Now go to Settings -> Protocols -> SMTP, and then the "Delivery of e-mail" tab.Write "localhost" as your Local host name.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img19.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img19.png" />
 
 As for the SMTP Relayer, this depends entirely on the email service you wish to use. I highly recommend creating a <a href="http://mail.google.com">free Gmail account</a> to follow along with these next few steps.
 
@@ -99,10 +99,10 @@ Whether you're using gmail, yahoo, a web host, or an ISP, you will need the foll
 </ul>
 
 Google <a href="http://mail.google.com/support/bin/answer.py?answer=13287">conveniently provides</a> this information for their Gmail service. Through some searching, you can find this information for whatever mail service you use by searching for "SMTP Client Configuration _______", where ___ is your desired email provider.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img20.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img20.png" />
 
 Using one of my gmail accounts as an example, here is how my configuration looks.
-<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img21.png" />
+<img alt="PHP Windows Local Mail Server" src="http://assets.vertstudios.com/blog/images/php-mail-server/img21.png" />
 
 Save the configuration, and restart your Apache webserver. Now we're finished!
 

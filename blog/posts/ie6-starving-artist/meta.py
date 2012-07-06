@@ -2,7 +2,7 @@
 title="""IE6 and the Starving Artist"""
 description=""""""
 time="""2010-03-09 Tue 23:37 PM"""
-excerpt="""<img src="http://www.vertstudios.com/blog/images/mc-blog/opinion/starvingartist/starvingartists.jpg" alt="The Starving Artist" />
+excerpt="""<img src="http://assets.vertstudios.com/blog/images/mc-blog/opinion/starvingartist/starvingartists.jpg" alt="The Starving Artist" />
 
 According to my former Art History professor <a href="http://www.christopher-stewart.com/">Christopher Stewart</a>, there are two reasons why an artist can starve:
 <ol>

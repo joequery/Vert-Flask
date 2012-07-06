@@ -65,7 +65,7 @@ $(wrapper).fadeOut(500);
 This is because the JavaScript queue is global, and no matter where a statement is executed, it has to go through the same queue-check. Even though the fadeIn and fadeOut methods are in separate statements, JavaScript recognizes that $(wrapper) is under animation, and places fadeOut in the queue for $(wrapper) until the fadeIn animation is complete. But for best coding practices, that type of code should just be chained to one line.
 
 Here's a visual aid I use to remember the queuing differences between iterations and chains
-<img src="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-fadein/queued.jpg" alt="jQuery queue" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/javascript/jquery-fadein/queued.jpg" alt="jQuery queue" />
 
 "Horizontal" chains are queued while "vertical" iterations (vertical because the loop goes back to the top and runs down the body of the loop) are NOT queued.
 <h3>.delay() is not Global</h3>
@@ -81,7 +81,7 @@ for(var i=0; i&lt;$(wrapper).length; i++)
 </pre>
 
 Like this
-<img src="http://www.vertstudios.com/blog/images/mc-blog/javascript/jquery-fadein/image1.jpg" alt="For Loop time-line" />
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/javascript/jquery-fadein/image1.jpg" alt="For Loop time-line" />
 <h2>A Working Sequential Fade-In</h2>
 Now that you understand the mechanics of the .delay() method, you might be interested in seeing a working example of a Sequential fade-in effect. If you are, head over to <a href="http://jc-designs.net/blog/2010/06/more-than-one-way-to-skin-a-jquery/">The Web Machine</a> and view <a href="http://jc-designs.net/blog/2010/06/more-than-one-way-to-skin-a-jquery/">Jeremy Carlson's solution</a>.
 {% endblock post %}

@@ -44,11 +44,11 @@
   </li>
   <li>
       <h5><a href="{{url_for("blog.blog_index")}}">Blog</a></h5>
-      <p>Read our articles on design, code, SEO, and the state of the web.</p>
+      <p>Read our articles on programming, development, and software.</p>
   </li>
   <li>
-      <h5><a href="{{url_for('contact_page.contact')}}">Get A Quote</a></h5>
-      <p>How much will it cost?<br /><br /><strong>Find out now!</strong></p>
+      <h5><a href="{{url_for('contact_page.contact')}}">Contact Us</a></h5>
+      <p>Contact us for a new website, for contract work, or just to say hi!</p>
   </li>
   </ul>
 </div>

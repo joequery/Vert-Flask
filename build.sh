@@ -5,7 +5,7 @@ rm -f static/css/compress*
 
 cat static/css/reset.css static/css/js.css static/css/text.css static/css/main.css static/css/codestream.css static/css/prettify.css > static/css/compressed.css
 
-java -jar /usr/local/yuicompress --type css static/css/compressed.css -o static/css/compressed.css
+java -jar /usr/local/yuicompress --type css static/css/compressed.css -o static/css/compressed.min.css
 
 
 # Compress javascript

@@ -12,7 +12,9 @@
   <meta name="description" content="Your website is your company's first impression. Together, we can make it a lasting one. Vert Studios is a web design company in Tyler, Texas." />
   <meta name="google-site-verification" content="36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-  <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
+  
+    <title>Programming blog | Page 12 | Vert Studios</title>
+  
   
     
       
@@ -180,7 +182,7 @@ The condition for that while loop might not make sense if you haven't created yo
     
       <h2><a href="/blog/killer-javascript-video-book-review">Book Review: Killerjavascript.com</a></h2>
     
-    <p><a href="http://www.killerjavascript.com/videos/"><img style="width: 500px;" src="http://www.vertstudios.com/blog/images/mc-blog/bookcorner/killerjavascript/cd.jpg" alt="Killer Javascript" /></a>
+    <p><a href="http://www.killerjavascript.com/videos/"><img style="width: 500px;" src="http://assets.vertstudios.com/blog/images/mc-blog/bookcorner/killerjavascript/cd.jpg" alt="Killer Javascript" /></a>
 
 An extensive review of www.killerjavascript.com 's video tutorial series on beginning JavaScript</p>
     03/27/2010 | 
@@ -213,7 +215,7 @@ So this post will show you how to convert a string to sentence  case using C++. 
     
       <h2><a href="/blog/relationships-struggling-blog">Using Relationships to Help Your Blog</a></h2>
     
-    <p><img src="http://www.vertstudios.com/blog/images/mc-blog/blogging/commenting/asleep_at_computer.jpg" alt="Asleep at Computer" />
+    <p><img src="http://assets.vertstudios.com/blog/images/mc-blog/blogging/commenting/asleep_at_computer.jpg" alt="Asleep at Computer" />
 
 If you're like me, you've spent a lot of time making posts and commenting posts, yet you don't have many (if any) subscribers. The problem isn't that you're not posting or commenting enough: You might simply be commenting <strong>the wrong blogs</strong>.</p>
     03/13/2010 | 
@@ -233,7 +235,7 @@ If you're like me, you've spent a lot of time making posts and commenting posts,
     
       <h2><a href="/blog/ie6-starving-artist">IE6 and the Starving Artist</a></h2>
     
-    <p><img src="http://www.vertstudios.com/blog/images/mc-blog/opinion/starvingartist/starvingartists.jpg" alt="The Starving Artist" />
+    <p><img src="http://assets.vertstudios.com/blog/images/mc-blog/opinion/starvingartist/starvingartists.jpg" alt="The Starving Artist" />
 
 According to my former Art History professor <a href="http://www.christopher-stewart.com/">Christopher Stewart</a>, there are two reasons why an artist can starve:
 <ol>

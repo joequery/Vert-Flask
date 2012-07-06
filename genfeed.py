@@ -58,8 +58,14 @@ def write_index_pages(postsPerPage):
         prevPage = i-1
       if len(newposts) > 0:
         nextPage = i+1
+
+      # Determine the appropriate title tag to use.
+      if i == 1:
+      	title = "Programming blog"
+      else:
+      	title = "Programming blog | Page %d" % i
       html = render_template("templates/blog_index.html", 
-          posts=posts, prevPage=prevPage, nextPage=nextPage)
+          posts=posts, prevPage=prevPage, nextPage=nextPage, title=title)
 
       f = open(pagePath, 'w')
       f.write(html)

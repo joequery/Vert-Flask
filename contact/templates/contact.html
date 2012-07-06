@@ -1,4 +1,4 @@
-{% from "macros" import render_field %}
+{% from "macros" import render_field, img %}
 {% from "sections" import what_now %}
 {% extends "layout.html" %}
 {% block body %}
@@ -17,7 +17,7 @@
   </ul>
 {% endif %}
 </div>
-<img src="http://www.vertstudios.com/images/pointer.png" alt="" class="pointer" />
+{{img(g, "pointer.png", "", "pointer")|safe}}
 </div>              
 <div class="featured_work">
 <div class="screenshot contact_form">

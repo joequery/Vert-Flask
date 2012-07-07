@@ -1,4 +1,4 @@
-{% extends "templates/post.HTML" %}
+{% extends "templates/post.html" %}
 {% block post %}
 {% filter markdown %}
 
@@ -50,8 +50,8 @@ function was broken in a recent build). Jinja does, however, have
 [template inheritance][1]. To demonstrate, suppose we have a parent 
 template `layout.html` 
 
-<pre class="prettyprint"> {% raw %}
-&lt;!DOCTYPE html&gt;
+{% raw %}
+<pre class="prettyprint">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;&lt;title&gt;My Website&lt;/title&gt; &lt;/head&gt;
   &lt;body&gt;
@@ -62,25 +62,23 @@ template `layout.html`
   &lt;/div&gt;&lt;!--wrapper--&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-{% endraw %}
 </pre>
+{% endraw %}
 
 And a child template `index.html` that inherits the parent and fills in its
 blocks
-
-<pre class="prettyprint"> {% raw %}
-{% extends "layout.html" %}
+{% raw %}
+<pre class="prettyprint">{% extends "layout.html" %}
 {% block body %}
   Body content goes here!
 {% endblock body %}
-{% endraw %}
 </pre>
+{% endraw %}
 
 If we were to call [render_template][2] on `index.html`, this is what we
 would get.
 
-
-<pre class="prettyprint"> {% raw %}
+<pre class="prettyprint">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;&lt;title&gt;My Website&lt;/title&gt; &lt;/head&gt;
@@ -92,18 +90,103 @@ would get.
   &lt;/div&gt;&lt;!--wrapper--&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-{% endraw %}
 </pre>
 
 I like the template inheritance pattern of Jinja, but the lack of an include
-statement can easily lead to huge parent themes.. However,
-I've noticed that a good portion of the [Flask Projects][3] have rather large
-parent templates, and that's something I'm not a fan of. Template inheritance
-with a working include function would be wonderful.
+statement can easily lead to huge parent templates. 
 
-I wasn't really in the mood to be told what to do on something so basic as
-templating. After all, Flask is a microframework - If I wanted something
-opinionated, I would just use Rails.
+Thankfully, I did find a sufficient workaround to the lack of an include 
+statement. Jinja lets you define [Macros][4], which are essentially functions
+used within templates to render something. I defined a macro called `nav` that
+simply returned the HTML for the navigation. I did the same thing for `header`,
+`footer`, and any other sections repeated throughout the site. Take our 
+footer, for example.
+
+{% raw %}
+<pre class="prettyprint">
+{% macro footer() %}
+&lt;div id="footer"&gt;
+  &lt;div class="hr"&gt;&lt;hr /&gt;&lt;/div&gt;
+  &lt;p&gt;
+    &lt;a href="mailto:hi@vertstudios.com"&gt;hi@vertstudios.com&lt;/a&gt; |
+    &lt;a href="http://www.twitter.com/vertstudios"&gt;@vertstudios&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+{% endmacro  %}
+</pre>
+{% endraw %}
+
+Then, from `layouts.html`, I could call the footer macro. Flask requires the 
+use of the `|safe` filter if you want to render the returned string. Thus, a 
+macro `foo()` can be called from a macro `bar()` without the need to specify 
+`{{'{{'}}foo()|safe{{'}}'}}`. But since `layouts.html` is something being
+directly rendered, we need to specify `|safe` every time we call a macro.
+
+So the final `layouts.html` ended up looking like
+
+{% raw %}
+<pre class="prettyprint">
+{% from "sections" import meta_and_css, nav, javascripts, footer %}
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  {{ meta_and_css(g, title)|safe }}
+  &lt;body onload="prettyPrint()" id="{{g.bodyID}}"&gt;
+&lt;div id="wrapper"&gt;
+  {{ nav(g)|safe }}
+  &lt;div id="content"&gt;
+    {% block body %}{% endblock body %}
+  &lt;/div&gt;&lt;!--content--&gt;
+  {{ footer()|safe }}
+&lt;/div&gt;&lt;!--wrapper--&gt;
+{{ javascripts(g)|safe }}
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+{% endraw %}
+
+This was less than ideal, but it worked; a recurring theme throughout the 
+development process that surprisingly didn't bother me so much. 
+
+Being 'Brave'
+-------------
+
+Flask didn't always have an out-of-the-box solution to the problem at hand. In 
+fact, it *rarely* did. Flask did, however, give me all the tools necessary to 
+create whatever I wanted. In a way, I felt that Flask itself was telling me
+"Joseph, you're smart enough to implement X functionality on your own... be 
+brave for once!"
+
+Sometimes reinventing the wheel is a rewarding exercise. 
+
+The Contact Form
+----------------
+
+The recommended method of dealing with forms in Flask is the [Flask-WTF][5]
+extension. Flask-WTF has many [built in validation methods][6], but it did not
+include validation for a phone number. No big deal, any form library worth its
+salt has means for defining custom validation functions. WTForms does in fact
+have a mechanism for implementing [custom validators][7], but I did not find 
+their examples very pleasing to the eye:
+
+<pre class="prettyprint">
+def length(min=-1, max=-1):
+    message = 'Must be between %d and %d characters long.' % (min, max)
+
+    def _length(form, field):
+        l = field.data and len(field.data) or 0
+        if l < min or max != -1 and l > max:
+            raise ValidationError(message)
+
+    return _length
+
+class MyForm(Form):
+    name = TextField('Name', [Required(), length(max=50)])
+</pre>
+
+Consequently, I used Flask-WTF to gather data from the form fields, but I 
+rolled my own validation module, which only took about an hour. 
+
+
 
 
 
@@ -111,6 +194,10 @@ opinionated, I would just use Rails.
 [1]: http://jinja.pocoo.org/docs/templates/#template-inheritance
 [2]: http://flask.pocoo.org/docs/quickstart/#rendering-templates
 [3]: http://flask.pocoo.org/community/poweredby/
+[4]: http://jinja.pocoo.org/docs/templates/#macros
+[5]: http://packages.python.org/Flask-WTF/
+[6]: http://flask.pocoo.org/docs/patterns/wtforms/#the-forms
+[7]: http://wtforms.simplecodes.com/docs/1.0.1/validators.html
 
 {% endfilter %}
 {% endblock post %}

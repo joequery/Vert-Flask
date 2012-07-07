@@ -1,0 +1,117 @@
+{% extends "templates/post.HTML" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+
+[Flask](http://flask.pocoo.org/) is a Python web framework that's steadily
+increasing in popularity within the webdev world. After reading so many 
+great things about Flask, I decided to try it out myself. I personally find 
+testing out a new framework difficult, because you must find a project complex 
+enough to reveal the framework's quirks, but not so daunting as to take the 
+fun out of the project. Luckily, my PHP/Wordpress powered website filled this
+role quite nicely - the website simply consists of static content, a contact
+page, and a blog. If I could not convert such a simple site over to Flask, 
+I would immediately know that Flask and I would not make a good team.
+
+Spoiler alert: You're reading this on a Flask powered site!
+
+Getting Started
+---------------
+
+The first task at hand was simply getting the home, about, services, and work
+pages to render correctly. While the task consisted mostly of copying and 
+pasting, I was able to immediately apply most of the concepts from the
+[Flask quickstart guide][0]. Specifically, I had to learn
+
+
+* How do I actually start the server?
+* Where do my templates go?
+* Where do my static assets go?
+* How do I retrieve my assets from within the templates?
+* How do I route requests?
+
+Sure enough, getting the pure HTML documents to render was pretty simple.
+By pure HTML, I mean there were no includes for headers, footers, etc. Thus 
+the logical next step was to take these pure HTML documents and DRY up the 
+repeating areas.
+
+Growing pains...already?!
+------------------------
+
+Coming from PHP, I was used to just `include`-ing the content I wanted and being
+done with it.  [Jinja2](http://jinja.pocoo.org/docs/), Flask's default
+templating engine, does not currently support includes. (Note: An `include` 
+function [does exist](http://jinja.pocoo.org/docs/templates/#include). However,
+I could not get the include function to return non-escaped html. Perhaps this
+function was broken in a recent build). Jinja does, however, have 
+[template inheritance][1]. To demonstrate, suppose we have a parent 
+template `layout.html` 
+
+<pre class="prettyprint"> {% raw %}
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;&lt;title&gt;My Website&lt;/title&gt; &lt;/head&gt;
+  &lt;body&gt;
+  &lt;div id="wrapper"&gt;
+    &lt;div id="content"&gt;
+      {% block body %}{% endblock body %}
+    &lt;/div&gt;&lt;!--content--&gt;
+  &lt;/div&gt;&lt;!--wrapper--&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+{% endraw %}
+</pre>
+
+And a child template `index.html` that inherits the parent and fills in its
+blocks
+
+<pre class="prettyprint"> {% raw %}
+{% extends "layout.html" %}
+{% block body %}
+  Body content goes here!
+{% endblock body %}
+{% endraw %}
+</pre>
+
+If we were to call [render_template][2] on `index.html`, this is what we
+would get.
+
+
+<pre class="prettyprint"> {% raw %}
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;&lt;title&gt;My Website&lt;/title&gt; &lt;/head&gt;
+  &lt;body&gt;
+  &lt;div id="wrapper"&gt;
+    &lt;div id="content"&gt;
+      Body content goes here!
+    &lt;/div&gt;&lt;!--content--&gt;
+  &lt;/div&gt;&lt;!--wrapper--&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+{% endraw %}
+</pre>
+
+I like the template inheritance pattern of Jinja, but the lack of an include
+statement can easily lead to huge parent themes.. However,
+I've noticed that a good portion of the [Flask Projects][3] have rather large
+parent templates, and that's something I'm not a fan of. Template inheritance
+with a working include function would be wonderful.
+
+I wasn't really in the mood to be told what to do on something so basic as
+templating. After all, Flask is a microframework - If I wanted something
+opinionated, I would just use Rails.
+
+
+
+[0]: http://flask.pocoo.org/docs/quickstart
+[1]: http://jinja.pocoo.org/docs/templates/#template-inheritance
+[2]: http://flask.pocoo.org/docs/quickstart/#rendering-templates
+[3]: http://flask.pocoo.org/community/poweredby/
+
+{% endfilter %}
+{% endblock post %}
+

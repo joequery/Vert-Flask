@@ -1,5 +1,5 @@
 {% from "macros" import img, js, css %}
-{% macro meta_and_css(g, title) %}
+{% macro meta_and_css(g, title, description) %}
 <head>
   <script type="text/javascript">
   //Credit: Doug Neiner - http://dougneiner.com/
@@ -7,7 +7,9 @@
   </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
   <meta name="google-site-verification" content="36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  {% if description %}
+    <meta name="description" content="{{description}}" />
+  {% endif %}
   {% if title %}
     <title>{{title}} | Vert Studios</title>
   {% else %}

@@ -10,9 +10,9 @@
   <h2>Top Articles &rArr;</h2>                
 
   <ul>
-  <a href="/blog/php-apache-installation-tutorial/">PHP and Apache Installation Tutorial</a>
-  <a href="/blog/less-app-windows-sorta/">Less.app for Windows (Sort of)</a>
-  <a href="/blog/mysql-error0-cannot-create-windows-service/">MySQL Error 0 Cannot Create Windows Service</a>
+  <a href="/blog/new-flask-site/">Converting a simple website to Python Flask</a>
+  <a href="/blog/introduction-recursion-part-1/">Introduction to Recursion - Part 1</a>
+  <a href="/blog/markdown-pdf-utility/">Markdown to PDF Utility</a>
   </ul>
 
   </div><!--popular-->            

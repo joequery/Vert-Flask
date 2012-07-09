@@ -16,7 +16,9 @@ role quite nicely - the website simply consists of static content, a contact
 page, and a blog. If I could not convert such a simple site over to Flask, 
 I would immediately know that Flask and I would not make a good team.
 
-Spoiler alert: You're reading this on a Flask powered site!
+Spoiler alert: You're reading this on a Flask powered site! Feel free to 
+check out the source of this site 
+[on Github](https://github.com/joequery/Vert-Flask).
 
 Getting Started
 ---------------
@@ -268,7 +270,7 @@ whatever you want. I created and used the property `g.assets`.
 
 While this suited my needs perfectly, it caused my templates to appear 
 slightly less pretty. Anytime I wanted to call a macro that looks for the 
-`g.assets` property, I'd obviously have to pass `g` to it. For example,
+`g.assets` property, I'd have to pass `g` to it. For example,
 here's the definition of the `img` macro, a function used to render images
 on the site:
 
@@ -284,7 +286,7 @@ on the site:
 </pre>
 {% endraw %}
 
-And example call to the macro:
+An example call to the macro:
 {% raw %}
 <pre class="prettyprint">
 {{img(g, "pointer.png", "", "pointer")|safe }}

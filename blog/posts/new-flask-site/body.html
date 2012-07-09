@@ -386,6 +386,16 @@ those tags. I'll either adjust prettyprint js and styles myself, find an
 alternative syntax highlighter, or do some processing of the markup to append
 the "prettyprint" class whenever it finds the &lt;pre&gt; tag.
 
+* Still need to set up git deployment. I'm currently just pulling from a 
+private bitbucket repo on my server.
+
+* I need to automate my build workflow. A single bash script should concat all
+my CSS/JS files, run YUICompressor, and upload the files to S3.
+
+* I really need to implement meta description tags for my posts...but that
+  would require me to actually write them.
+
+
 [0]: http://flask.pocoo.org/docs/quickstart
 [1]: http://jinja.pocoo.org/docs/templates/#template-inheritance
 [2]: http://flask.pocoo.org/docs/quickstart/#rendering-templates

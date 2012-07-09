@@ -1,0 +1,115 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+<h2>.equalTo(object)</h2>
+
+<strong>Description</strong>
+Returns boolean true if the wrapped set of elements is equal to object
+
+<a href="http://www.vertstudios.com/lib/js/blog/plugins/equalto/equalto.zip">Download the ZIP File with Source and Demo</a>
+
+<h3>Parameters:</h3>
+<ul>
+<li>object: A jQuery object being compared with the current wrapped set of elements</li>
+</ul>
+
+<h2>Demos</h2>
+
+The normal equality operators == and === do not properly evaluate the equality between jQuery objects. 
+
+In this example, a div is given a class "box" and id "box1". This div is selected by jQuery by its class and by its id.  Using the normal equality operators, the jQuery objects are determined to be unequal. 
+<iframe src="http://www.vertstudios.com/lib/js/blog/plugins/equalto/demo-bad.html" width="300" height="80" scrolling="no">Your browser does not support iFrames.</iframe>
+<div class="codeToggle">
+<a href="#" class="codeTrigger">Click to toggle source code</a>
+<div class="codeDisplay">
+  <pre class="prettyprint">
+&lt;html&gt; 
+&lt;head&gt; 
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;equalto.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;title&gt;equalTo plugin&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body{background-color: #FFFFFF;}
+.box{width: 200px;height: 30px;border: 1px solid #000000;float: left;margin-left: 10px;text-align: center;}
+button{float: left;margin: 10px 0px 0px 10px;clear: both;}
+#result{float: left;margin-left: 10px;}
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(function(){
+  $(&quot;#evaluate&quot;).click(function(){
+    if($(&quot;#box1&quot;) ===  $(&quot;.box&quot;))
+    {
+      $(&quot;#result&quot;).html(&quot;#box = .box&quot;);
+    }
+    else
+    {
+      $(&quot;#result&quot;).html(&quot;#box does not = .box&quot;);
+    }
+  });
+});
+&lt;/script&gt;  
+&lt;/head&gt; 
+&lt;body&gt; 
+  &lt;div id=&quot;content&quot;&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box1&quot;&gt;id of #box, class of .box&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;button&quot; id=&quot;evaluate&quot;&gt;Evaluate&lt;/button&gt;
+  &lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+&lt;/body&gt; 
+&lt;/html&gt; 
+</pre>
+</div>
+</div>
+
+Using the .equalTo() method, however, properly evaluates that $("#box1") and $(".box") are the same. 
+<iframe src="http://www.vertstudios.com/lib/js/blog/plugins/equalto/demo.html" width="300" height="80" scrolling="no">Your browser does not support iFrames.</iframe>
+
+<div class="codeToggle">
+<a href="#" class="codeTrigger">Click to toggle source code</a>
+<div class="codeDisplay">
+  <pre class="prettyprint">
+&lt;html&gt; 
+&lt;head&gt; 
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;equalto.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;title&gt;equalTo plugin&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body{background-color: #FFFFFF;}
+.box{width: 200px;height: 30px;border: 1px solid #000000;float: left;margin-left: 10px;text-align: center;}
+button{float: left;margin: 10px 0px 0px 10px;clear: both;}
+#result{float: left;margin-left: 10px;}
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(function(){
+  $(&quot;#evaluate&quot;).click(function(){
+    if($(&quot;#box1&quot;).equalTo(&quot;.box&quot;))
+    {
+      $(&quot;#result&quot;).html(&quot;#box = .box&quot;);
+    }
+    else
+    {
+      $(&quot;#result&quot;).html(&quot;#box does not = .box&quot;);
+    }
+  });
+});
+&lt;/script&gt;  
+&lt;/head&gt; 
+&lt;body&gt; 
+  &lt;div id=&quot;content&quot;&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box1&quot;&gt;id of #box, class of .box&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button type=&quot;button&quot; id=&quot;evaluate&quot;&gt;Evaluate&lt;/button&gt;
+  &lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+&lt;/body&gt; 
+&lt;/html&gt; 
+</pre>
+</div>
+</div>
+{% endblock post %}
+

@@ -1,0 +1,120 @@
+#container{
+position: absolute;
+top: 0px;
+left: 0px;
+height: 200px;
+width: 200px;
+overflow: hidden;
+background-color: #CCCCCC;
+}
+ 
+.box1{
+background-color: #000000;
+}
+ 
+.box2{
+background-color: #FF0000;
+}
+ 
+.box3{
+background-color: #000054;
+}
+ 
+.box4{
+background-color: #FFFF00;
+}
+ 
+.box5{
+background-color: #000099;
+}
+ 
+ 
+.box{
+position: absolute;
+top: 0px;
+height: 200px;
+width: 200px;
+cursor: pointer;
+overflow: hidden;
+}
+
+.box p{
+background-color: #FFFFFF;
+width: 190px;
+margin: 0px auto;
+text-align: center;
+}
+
+#slave
+{
+position: absolute;
+top: 0px;
+left: 220px;
+height: 200px;
+width: 200px;
+overflow: hidden;
+background-color: #CCCCCC;
+/*display: none;*/
+
+}
+
+#slave2
+{
+position: absolute;
+top: 0px;
+left: 440px;
+height: 200px;
+width: 200px;
+overflow: hidden;
+background-color: #CCCCCC;
+/*display: none;*/
+}
+ 
+#slideNav
+{
+position: absolute;
+top: 250px;
+left: 100px;
+}
+
+	#slideNav li
+	{
+		float: left;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;		
+		background: URL('sprite.jpg') 0px 0px no-repeat;
+		list-style-type: none;
+	}
+
+	#slideNav li.slideNavUnclickable, #slideNav li.slideNavUnclickable:hover
+	{
+		cursor: default;
+		background-position: -20px 0px;
+	}	
+	
+	#slideNav li.slideNavActive
+	{
+		cursor: default;
+		background-position: 0px -20px;
+	}	
+	
+	#slideNav li.slideNavActiveUnclickable
+	{
+		background-position: -20px -20px;
+	}
+	
+	#slideNav li:hover
+	{
+		background-position: 0px -20px;
+	}
+	
+#left, #right
+{
+float: left;
+margin-top: 400px;
+width: 100px;
+margin-left: 50px;
+cursor: pointer;
+}
+	

@@ -1,0 +1,47 @@
+{% from "macros" import render_field, img %}
+{% from "sections" import what_now %}
+{% extends "layout.html" %}
+{% block body %}
+<div id="sub_page_intro">
+<div class="copy">
+{% if info %}
+  {{info|safe}}
+{% else %}
+<h1>Contact Us</h1>        
+  <p>We'd love to hear from you. Feel free to send us inquiries over the following:</p>
+  <ul>
+    <li>Website quote requests</li>
+    <li>Web development projects</li>
+    <li>Contracting with us</li>
+    <li>Blog post requests</li>
+  </ul>
+{% endif %}
+</div>
+{{img(g, "pointer.png", "", "pointer")|safe}}
+</div>              
+<div class="featured_work">
+<div class="screenshot contact_form">
+<form action="{{url_for(".contact")}}" id="mail" method="post" autocomplete="off"> 
+<div id="frame_wrap">
+<div class="frame">
+<!--<h2>Contact Information</h2>-->
+<fieldset id="quote-details">                                 
+{% autoescape false %}
+{{ render_field(form.name, class="required") }}
+{{ render_field(form.email, class="required") }}
+{{ render_field(form.phone, class="required") }}
+{{ render_field(form.message, class="required") }}
+{% endautoescape %}
+<button type="submit" id="submit"> 
+Do it!
+</button> 
+<p class="form-meta">All fields are required.<br/>Mail is sent to:<br/><a href="mailto:joseph@vertstudios.com">joseph@vertstudios.com</a></p>                               
+</fieldset>                             
+</div>
+</div>
+</form> 
+</div>                
+<div class="clearfix"></div>
+</div>             
+{% endblock body %}
+

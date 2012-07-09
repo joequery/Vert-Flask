@@ -1,0 +1,55 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Tautologies are extremely useful when it comes to crafting conditional statements in your programs. They can simplify and condense your logical statements by large amounts when implemented successfully. 
+
+<h2>Biconditional Statements</h2>
+Tautologies are defined as logically equivalent statements, or more formally, biconditional statements. So a biconditional statement actually consists of two statements. 
+
+The notation p&harr;q states that p and q are logically equivalent. Two statements are logically equivalent if for every possible combination of True and False, the ending logical value is the same.  Using a truth table, we can identify if two statements are logically equivalent. For example, let's take a tautology that is obvious.
+
+p&harr;~(~p)
+
+The negation of the negation of p is obviously equivalent to p, but let's use the truth table to show this. 
+<table>
+<tr><th>p</th><th>~p</th><th>~(~p)</th></tr>
+<tr><td>T</td><td>F</td><td>T</td></tr>
+<tr><td>F</td><td>T</td><td>F</td></tr>
+</table>
+
+Remember, the beautiful thing about the truth table is that you can refer to columns you've already filled in. So for the ~(~p) column, all we have to do is negate the ~p column. 
+
+Since the values of p and ~(~p) are equal for every combination, we can say p&harr;~(~p), or p and ~(~p) are logical equivalent. 
+
+Let's take a less obvious example. ~(p || q)&harr;(~p) && (~q). 
+<table>
+<tr><th>p</th><th>q</th><th>p||q</th><th>~(p||q)</th><th>~p</th><th>~q</th><th>(~p) && (~q)</th></tr>
+<tr><td>T</td><td>T</td><td>T</td><th>F</th><td>F</td><td>F</td><th>F</th></tr>
+<tr><td>T</td><td>F</td><td>T</td><th>F</th><td>F</td><td>T</td><th>F</th></tr>
+<tr><td>F</td><td>T</td><td>T</td><th>F</th><td>T</td><td>F</td><th>F</th></tr>
+<tr><td>F</td><td>F</td><td>F</td><th>T</th><td>T</td><td>T</td><th>T</th></tr>
+</table>
+
+We see that for every combination of True and False for p and q, the columns for ~(p||q) and (~p) && (~q) are the same. Thus, these statements are logically equivalent. 
+
+To put tautologies into context, consider the compound statement "My iPhone is not wet or broken". An equivalent statement would be "My iPhone is not wet and my iPhone is not broken". This is a pretty intuitive statement, and it applies the tautology we just proved.
+
+<h2>Useful Tautologies</h2>
+Now that we've discussed what makes a tautology and how to prove one, here's a reference for useful tautologies you can implement throughout your program. Remember tautologies go "either direction". So you can convert a logical statement in the form of the left side of the arrows to the right side, and vice versa. 
+<table>
+<tr><td align="right">~(p || q)</td><td>&harr;</td><td align="left">(~p) && (~q)</td></tr>
+<tr><td align="right">~(~p)</td><td>&harr;</td><td align="left">p</td></tr>
+<tr><td align="right">(p || q) || r</td><td>&harr;</td><td align="left">p || (q || r)</td></tr>
+<tr><td align="right">(p && q) || (p && r)</td><td>&harr;</td><td align="left">p && (q || r)</td></tr>
+<tr><td align="right">p || (q && r)</td><td>&harr;</td><td align="left">(p || q) && (p || r)</td></tr>
+<tr><td align="right">(p && q) && r</td><td>&harr;</td><td align="left">p && (q && r)</td></tr>
+<tr><td align="right">~(p && q)</td><td>&harr;</td><td align="left">(~p) || (~q)</td></tr>
+</table>
+{% endblock post %}
+

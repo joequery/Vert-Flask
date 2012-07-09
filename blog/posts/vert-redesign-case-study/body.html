@@ -1,0 +1,204 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Welcome to the new Vert Studios website. <a href="http://twitter.com/vertjustin">Justin</a> and I have been working on the redesign since we merged back in July 2010. It's such a great feeling to know the world can finally see the product of your hard work. The project was dynamic, as our vision for Vert Studios changed quite frequently throughout the project. We'd like to share our thought process behind the redesign. 
+
+<h2>The Need for Change</h2>
+When considering whether or not you should redesign a website, the most important question you should ask yourself is "Why?". A redesign for redesign's sake usually leads to disappointment. Do you want to increase conversion rates? Are users confused by the layout? Does the current site cause your business to be perceived as outdated? If you don't have a definite answer as to why you want to redesign a website, you might want to consider making small adjustments instead of redesigning. 
+
+In the case of Vert Studios, there were two main reasons why the site needed to be redesigned.
+<h3>Along came a JoeQuery</h3>
+Originally, Vert Studios was a one-man shop run by Justin Edwards. At the time, I was running my own sole proprietorship by the name of McCullough Designs. In the summer of 2010, Justin and I met up for coffee to chat about web design. We discussed the markets, our competitors, our strengths, and our weaknesses. It was evident that Justin lacked development skills, and it was (more than) evident that I lacked design skills. After a few more chats, we decided we could provide higher quality work if we worked together. So in July of 2010, we merged under Vert Studios.
+
+What does that have to do with a redesign?
+
+The moment I joined Vert Studios, the personality of the company changed. Though Justin and I do have many things in common, we differ on many levels.
+<ul>
+<li>Justin's a Mac. I'm a PC.</li>
+<li>Justin can apply a pop-culture reference to any situation.</li>
+<li>Justin's been featured in an art show. My artistic ability stops at stick figure.</li>
+</ul>
+
+Justin did a great job of showing his artistic personality through the Vert website.
+<img src="http://assets.vertstudios.com/blog/images/vert-redesign/monitor.jpg" title="Old Vert Studios website" alt="Original Vert Studios Site" />
+
+But while paintbrush strokes and a plant portrayed Justin's personality, it no longer portrayed the personality of the company as a whole. Since we believe web design should represent exactly who you are, keeping the verdant website would go against our own design philosophy. We had to find a middle ground that blended Justin's artistic personality with my extremely techy personality. 
+
+In summary, the clash between the web design's presentation of our business image and our actual business image sparked the need for a redesign. 
+
+<h3>Look What I Can Do!</h3>
+Every designer knows design is composed of form and function. Every developer knows that you should never implement programming tools "just because". We agree with these ideas 100%. However, Justin and I felt that a little extra flare would help showcase our technical capabilities. I'm one of the only developers in East Texas that develops jQuery plugins. In order to show potential clients how that adds value to them, we obviously needed to let them experience the power of jQuery themselves. As Justin's strength lies in design, the most technical item on his site was a pre-packaged jQuery slideshow. We decided that we needed a website that would allow for many custom jQuery plugin implementations. We came up with some cool ideas. While "cool" is not "innovative user experience design engagement 2.0", we felt that as long as "cool" was always accompanied by "useful", potential clients could benefit from seeing our cool, quirky ideas put into action. The site simply did not have the visual structure that would allow for seamless jQuery effects.
+
+<h2>The Company Personality</h2>
+In order to produce an effective design, we had to establish what goals our design needed to achieve. To establish the goals, we came up with a list of adjectives that describe and do NOT describe our company. 
+<h3>Describes Vert Studios</h3>
+While we came up with many words to describe ourselves and the Vert persona, the words boiled down to
+<ul>
+<li>Quirky</li>
+<li>Competitive</li>
+</ul>
+<h3>Does NOT Describe Vert Studios</h3>
+Similarly, there are many characteristics that we did NOT want Vert to embody. The main ones were
+<ul>
+<li>Corporate</li>
+<li>Tame</li>
+<li>Boring</li>
+</ul>
+
+We wanted to avoid the suit-and-tie-corporate-web-2.0 persona at all costs. Some businesses feel that they must <a href="http://www.vertstudios.com/blog/its-ok-for-your-business-to-have-a-personality/">sacrifice their personality</a> in order to gain trust, respect, and ultimately clients. That is completely untrue. In order to let potential clients know it's okay for their website to have personality, our website had to <em>overflow </em> with it. 
+
+Let's examine how our design, development, and copy achieved our goal of representing a quirky and competitive web design company.
+<h2>Quirky</h2>
+<em>quirky &#8212; adj. containing many individual peculiarities of character.</em>
+
+<h3>Design</h3>
+The irregular polygon reiterated throughout the entire site, which we have termed "The Bubble", promotes the theme of quirkiness. 
+<img src="http://assets.vertstudios.com/blog/images/vert-redesign/bubble1.jpg" alt="Vert Studios Bubble" />
+<img src="http://assets.vertstudios.com/blog/images/vert-redesign/bubble3.jpg" alt="Vert Studios Bubble" />
+<img src="http://assets.vertstudios.com/blog/images/vert-redesign/bubble4.jpg" alt="Vert Studios Bubble" />
+
+Notice how the polygon very closely resembles a rectangle. That is, however, until the last "moment", when the shape deviates to a right triangle. This peculiarity and deviation from angular uniformity mirrors our core value of "be different".
+
+<h3>Development</h3>
+Quirky + jQuery = FUN. Most of the jQuery quirkiness takes place on the <a href="http://www.vertstudios.com/work.php">work page</a>.   I told Justin that I really wanted to break away from the <a href="http://www.lokeshdhakar.com/projects/lightbox2/">Lightbox</a> style portfolio showcase. We decided a scrolling effect would be effective, but instead of a <a href="http://www.vertstudios.com/blog/jquery-sticky-scroller-position-fixed-plugin/">sticky scroller</a>, I authored another plugin that triggers a callback each time the user scrolls a specified number of pixels. In this case, the text in "The Bubble" changes as it moves, and the image that correlates with the position fades to full opacity. This leads to a unique, engaging, and overall fun experience. 
+
+When the user browses to the end of the work page, they are (pleasantly) surprised with a contact form, with the "Name" input field conveniently focused. We've noticed through analytics that quote requests usually come directly after a visit to our work page. To prevent the user from needing to scroll all the way up, then find and the contact link, we simply placed a form right by the work that motivated the action to contact us.
+
+<img src="http://assets.vertstudios.com/blog/images/vert-redesign/workform2.jpg" alt="Vert Studios Work Form" />
+Note the "If you're afraid to be different, this link is for you". I invite you to scroll to the bottom of the work page and <a href="http://www.vertstudios.com/work.php">try it out yourself</a> ;)
+
+The form validates both on the client and server side thanks to our <a href="http://www.vertstudios.com/blog/javascript-regex-class/">JavaScript</a> and <a href="http://www.vertstudios.com/blog/php-regex-class/">PHP</a> Regex Libraries, and a versatile validation plugin that we'll be releasing soon. On the client side, an example for the current field with focus will appear in the bubble. 
+<img src="http://assets.vertstudios.com/blog/images/vert-redesign/workform1.jpg" alt="Vert Studios Work Form" />
+
+I had a lot of fun with the site development, which was the whole point. We're a fun company, and we're not afraid to show it. 
+
+<h3>Copywriting</h3>
+First and foremost, we'd like to thank <a href="http://twitter.com/agirlnamedelise">Elise Brooking</a> for her phenomenal writing skills. While we ultimately had to make some adjustments for the sake of design, she was able to give us a rock solid foundation to work with. 
+
+Our favorite quirky phrases include: 
+<ul>
+<li>We love cookies, but hate the cutter. (<a href="http://www.vertstudios.com/about.php">About</a>)</li>
+<li>See what our work has to say. <b>WARNING:</b> It might get loud. (Navigation)</li>
+<li>So go ahead, let your competition have that cookie cutter template while you turn up the heat with new business. They'll just be left with crumbs. (<a href="http://www.vertstudios.com/about.php">About</a>)</li>
+</ul>
+
+<h2>Competitive</h2>
+<em>competitive &#8212; adj. having a strong desire to compete or to succeed.</em>
+
+<h3>Design</h3>
+Justin and I strive to be the best at what we do. We take hours out of the week to read tutorials, explore new ideas, and create jQuery plugins, all for the sake of creating a better product. The best way to represent our competitive nature was to simply showcase our work such that it's immediately subject to scrutiny. 
+<img src="http://assets.vertstudios.com/blog/images/vert-redesign/work1.jpg" alt="Vert Studios Work Page" />
+
+Instead of the typical thumbnails or plain text link, we put our work out in large screen shots. We don't attempt to hide behind a client's name. It doesn't matter if you did So-and-So's website if it looks awful. We're confident in the quality of our work, so we let the world see it with no constraints. 
+
+<h3>Development</h3>
+One major differentiating factor between Vert Studios and other local web design companies is our blog. It's easily the most updated web design blog in East Texas. It not only showcases our expertise, it provides valuable <a href="http://www.vertstudios.com/blog/client-resources">client resources</a> for prospects. We have articles that describe how web design works, red flags for scam indicators, and much more.  Thus, we decided to implement a carousel on the home page that displays recent blog posts by pulling from our <a href="http://www.vertstudios.com/blog/feed">RSS feed</a>. 
+
+<img src="http://assets.vertstudios.com/blog/images/vert-redesign/from-the-blog.jpg" alt="Vert Studios, from the blog" />
+We'll be publishing the jQuery used to power the carousel in the near future. But for the developers curious how to parse an RSS feed, PHP makes it super easy.
+
+<div class="codeToggle">
+<a href="#" class="codeTrigger">Click to toggle source code</a>
+<div class="codeDisplay">
+<pre class="prettyprint">
+                       &lt;?php
+                        date_default_timezone_set('America/Chicago');
+                        
+                        //Credit to http://www.cybercoded.com/parse/parse.txt
+                        $url = &quot;rss.xml&quot;;
+                        $rss =  simplexml_load_file($url);
+            
+                        //Set up a counter. We only want 6 snippets.
+                        $count = 0;
+                        $numPosts = 6;
+                        
+                        //Length of the description
+                        $descLength = 90;
+                        
+                        foreach ($rss-&gt;channel-&gt;item as $item)
+                        {
+                                
+                                echo $item;
+                                if (++$count == $numPosts)
+                                {
+                                    break;
+                                }
+                                
+                                $href = $item-&gt;link;
+                                $title = $item-&gt;title;
+                                $description = $item-&gt;description;
+                                $date = new DateTime($item-&gt;pubdate);
+                                $date = $date-&gt;format('n/j/y');
+                $comments = $item-&gt;comments;
+                                                                
+                                //Remove links
+                                $pattern = '/&lt;a\b[^&gt;]*&gt;([^&lt;]+)&lt;\/a&gt;/';
+                                $replacement = '${1}';
+                                $description = preg_replace($pattern, $replacement, $description);
+                                
+                                if (strlen($description) &gt;= $descLength)
+                                {
+                                    //Get substring
+                                    $description = substr($description, 0, $descLength);
+                                    
+                                    //Get the last word, replace with Ellipse
+                                    $description = substr($description, 0, strrpos($description, &quot; &quot;));
+                                    $description .= &quot;...&quot;;
+                                }
+                                
+                                //Add a first class for CSS purposes 
+                                if($count == 1)
+                                {
+                                    echo '&lt;div class=&quot;post_snippet first&quot;&gt;';
+                                }
+                                else
+                                {
+                                    echo '&lt;div class=&quot;post_snippet&quot;&gt;';
+                                }
+                                
+                                
+                                //Prevent moderate titles from bumping into dismiss button.
+                                if( strlen($title)&gt;18 &amp;&amp; strlen($title)&lt;25 )
+                                {
+                                    echo &quot;&lt;h4&gt;&lt;a href=\&quot;$href\&quot;&gt;$title&lt;/a&gt;&lt;br /&gt; - $date&lt;/h4&gt;&quot;;
+                                }
+                                else
+                                {
+                                    echo &quot;&lt;h4&gt;&lt;a href=\&quot;$href\&quot;&gt;$title&lt;/a&gt; - $date&lt;/h4&gt;&quot;;
+                                }
+                                echo &quot;&lt;p&gt;$description&lt;/p&gt;&quot;;
+                                echo &quot;&lt;p class=\&quot;read_more\&quot;&gt;&lt;a href=\&quot;$href\&quot;&gt;Read More&lt;/a&gt; | &lt;a href=\&quot;$comments\&quot;&gt;View Comments&lt;/a&gt;&lt;/p&gt;&quot;;
+                                echo '&lt;/div&gt;';                                
+    
+                        } 
+                        ?&gt;
+</pre>
+</div>
+</div>
+
+
+<h3>Copywriting</h3>
+We're not afraid of losing on quality. Our work speaks volumes about our capabilities, and this blog speaks volumes about how much effort we pour into our craft. Instead of hiding our competition from prospects, we let them know immediately we're not afraid if they browse. In fact, we encourage it. 
+<img src="http://assets.vertstudios.com/blog/images/vert-redesign/competitors.jpg" alt="Vert Studios competitors" />
+(Found on the <a href="http://www.vertstudios.com/">Home page</a>.)
+
+Here are some other phrases that display confidence and competitiveness. 
+<ul>
+<li>We take the time to learn the latest technologies as they appear - staying step ahead of our competition, and allowing you to do the same.(<a href="http://www.vertstudios.com/about.php">About</a>)</li>
+<li>The word "template" doesn't exist in our vocabulary. We know what it means to stand out from the crowd.(<a href="http://www.vertstudios.com/about.php">About</a>)</li>
+<li>Great design is one thing. Elegant programing is another. Luckily we do both.(<a href="http://www.vertstudios.com/services.php">Services</a>)</li>
+</ul>
+
+<h2>Coming Soon</h2>
+Although we're extremely excited about the launch of our new site, we still have plenty of work left to do. We're already beginning to work on a mobile version of the site. Many graphics and JavaScript files are way too CPU intensive for a mobile browser. 
+
+<h2>What do you think of the new site?</h2>
+Let us know in the comments below!
+{% endblock post %}
+

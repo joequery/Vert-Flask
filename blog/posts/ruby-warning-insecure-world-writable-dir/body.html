@@ -1,0 +1,39 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+I've had my face-palm moment for the day.
+
+While searching for how to solve the annoying ruby alert of "Insecure world writable dir", the fact that I was on a FAT32 partition completely skipped my mind. The chmod/chown commands tutorials told me to execute weren't working, and my mind was blown. If you're an Ubuntu user working on a FAT32 partition, <b>you can't change file permissions</b>!
+
+<h2>The Solution</h2>
+Thanks to <a href="http://www.ruby-forum.com/topic/79565">Ruby-Forum.com</a>, I found that inserting "$VERBOSE=nil" into my bundler runtime file helped suppress this annoying message. Please be careful with this, and only do this if you work exclusively on a FAT32 partition.
+
+Find your gem path so we can edit the bundler gem. Execute the following in your shell: (<a href="http://gilesbowkett.blogspot.com/2009/06/find-your-ruby-gems-path.html">credit</a>)
+<pre class="prettyprint">$ ruby -r rubygems -e &quot;p Gem.path&quot;</pre>
+
+Navigate to your gem path and cd into the version of bundler currently being used. Now navigate to <b>lib -&gt; bundler </b> and open <b>runtime.rb</b> in your favorite text editor. Add "$VERBOSE = nil" to line 2.
+
+<pre class="prettyprint">
+require &quot;digest/sha1&quot;
+$VERBOSE = nil 
+
+module Bundler
+  class Runtime &lt; Environment
+    include SharedHelpers
+
+    def setup(*groups)
+      # Has to happen first
+      clean_load_path
+
+...
+[/ruby]
+
+Now that annoying warning should leave you alone.
+{% endblock post %}
+

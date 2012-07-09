@@ -1,0 +1,114 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+While browsing the jQuery forums, I came across a pretty handy technique to store the states of objects. Additionally, a Forrst member named <a href="http://twitter.com/bnschmdt">Ben Schmidt</a> requested information on using jQuery to make a div slide out when an item is clicked (and most likely make it contract when clicked again). 
+
+<h2>Demo</h2>
+As I'm not a designer by any stretch (that would be <a href="http://twitter.com/vertjustin">@vertjustin</a> of Vert Studios), my demos are always bare-bones div boxes. But hey...I like boxes, and you should too!
+
+<a href="http://www.vertstudios.com/blog/demo/jquery-data/slideToggle.php">View the demo</a>
+
+<h2>CSS/HTML</h2>
+The CSS is easy. Just have what you want to slide out positioned absolutely underneath what's on top using z-index.
+<pre class="prettyprint">
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt; 
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;  
+&lt;head&gt; 
+    &lt;title&gt;Example Slider&lt;/title&gt; 
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js&quot;&gt;&lt;/script&gt; 
+    
+    &lt;style type=&quot;text/css&quot;&gt;
+    #wrapper{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+    
+    #form{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #FF0000;
+    width: 400px;
+    height: 400px;
+    }
+    
+    #trigger{
+    position: absolute;
+    top: 0px;
+    left: 250px;
+    height: 20px;
+    width: 150px;
+    background-color: #FFFF00;
+    cursor: pointer;
+    z-index: 2;
+    }
+        
+    #sliding{
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    background-color: #000000;
+    width: 200px;
+    height: 400px;
+    z-index: -1;
+    }    
+    &lt;/style&gt;
+        
+&lt;/head&gt; 
+&lt;body&gt; 
+    &lt;div id=&quot;wrapper&quot;&gt;
+        &lt;div id=&quot;form&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;trigger&quot;&gt;Click to expand!&lt;/div&gt;
+        &lt;div id=&quot;sliding&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;    
+&lt;/body&gt; 
+&lt;/html&gt;
+</pre>
+
+<h2>JavaScript</h2>
+This is the fun part! Using logic and <a href="http://api.jquery.com/jQuery.data/">jQuery.data()</a>, we're able to store the state of the sliding div. 
+<pre class="prettyprint">
+    &lt;script type=&quot;text/javascript&quot;&gt;    
+    $(function()
+    {
+        $(&quot;#trigger&quot;).click(function()
+        {
+            $(this).data('contracted', !$(this).data('contracted'));
+            var contracted = $(this).data('contracted');
+            
+            if(contracted)
+            {
+                $(&quot;#sliding&quot;).animate({left: '+=200px'}, 500);
+                $(&quot;#trigger&quot;).html(&quot;Click to contract!&quot;);
+            }
+            else
+            {
+                $(&quot;#sliding&quot;).animate({left: '-=200px'}, 500);
+                $(&quot;#trigger&quot;).html(&quot;Click to expand!&quot;);
+            }            
+        });
+    });
+    &lt;/script&gt;
+</pre>
+<h3>Logic Breakdown</h3>
+So the item starts off in a contracted state. Thus,  'contracted' should be set to true by default. The use of logical negation helps our cause. The line
+<pre class="prettyprint">
+$(this).data('contracted', !$(this).data('contracted'));
+</pre>
+
+says "Store the logical negation of the 'contracted' property of $(this) into the 'contracted' property of $(this)". 
+So when the DOM is loaded, $(this).data('contracted') is false since we have not assigned any value to it. Thus, by negating it through !$(this).data('contracted'), the value associated with $(this).data('contracted') is now true. It's important that we use the negation since you can't normally work with an undefined object. It's a logical game that has a wide array of uses!
+
+So if the item is contracted, we want it to expand. If it is expanded, we want it to contract. The animate method takes care of that for us. 
+
+<h2>Feedback</h2>
+Have any questions/comments about storing states with jQuery.data()? Let us know in the comments below.
+{% endblock post %}
+

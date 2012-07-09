@@ -1,0 +1,160 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Now that the qualification round of the Facebook Hacker Cup has ended, I figured I'd post my solution to the Double Squares problem. As this one involved some fun math, it was my favorite. I hope you all made it through!
+
+<h2>Problem</h2>
+Double Squares
+A double-square number is an integer X which can be expressed as the sum of two perfect squares. For example, 10 is a double-square because 10 = 3<sup>2</sup> + 1<sup>2</sup>. Your task in this problem is, given X, determine the number of ways in which it can be written as the sum of two squares. For example, 10 can only be written as 3<sup>2</sup> + 1<sup>2</sup> (we don't count 1<sup>2</sup> + 3<sup>2</sup> as being different). On the other hand, 25 can be written as 5<sup>2</sup> + 0<sup>2</sup> or as 4<sup>2</sup> + 3<sup>2</sup>.
+
+Input
+You should first read an integer N, the number of test cases. The next N lines will contain N values of X.
+Constraints
+0 &#8804; X &#8804; 2147483647
+1 &#8804; N &#8804; 100
+Output
+For each value of X, you should output the number of ways to write X as the sum of two squares.
+
+<h2>Provided Input File</h2>
+<pre class="prettyprint">
+20
+1148284322
+1538292481
+2147483644
+4225
+2
+415485223
+2147483642
+801125
+1369439656
+148208125
+421330820
+25
+2147483647
+65
+874566596
+4
+625058908
+326122507
+1941554117
+3
+</pre>
+
+<h2>Source Code</h2>
+<pre class="prettyprint">
+&lt;?php
+//------------------------------------------------------------
+// File: doublesquare.php
+// Purpose: Double Square question
+// Author: Joseph McCullough (@joe_query) 
+// Last Updated: Jan 07, 2011
+//------------------------------------------------------------
+
+//------------Input and Output File Definitions--------------//
+//Open input file
+$input = fopen(&quot;input.txt&quot;, &quot;r&quot;);
+
+//Open output file
+$output = fopen(&quot;output.txt&quot;, &quot;w&quot;);
+
+//Get number of iterations, via the first line in the input file
+$iterations = fgets($input);
+$iterationCounter = 0;
+//------------------------------------------------------------//
+
+//-------------------Perfect Square Variables-----------------//
+//val: The value being tested
+//difference: The difference between two perfect squares
+//squares: Arrays containing the squares that add to val
+//first: The first square to be subtracted
+//------------------------------------------------------------//    
+$difference;
+
+//While we have a line and we haven't passed the iterationCounter
+while ($iterationCounter &lt; $iterations &amp;&amp; $val = fgets($input))
+{
+    $val = intval($val);
+    $first = floor( sqrt($val) );
+    
+    //Clear array
+    $squares = array();
+    
+    //Iterate through each perfect square less than or equal to $first until 0,
+    //or until the first repeat value is found in $squares array
+    for($i=$first; $i&gt;=0; $i--)
+    {
+        $difference = $val - pow($i, 2);
+        if( isPerfectSquare($difference) )
+        {
+            //Take square root of difference for convenience
+            $difference = sqrt($difference);
+            
+            //Make sure this value pair has not already been recorded. If it has
+            //been, break from the loop. If not, push values to the array.
+            if( !(in_array($difference, $squares) || in_array($i,$squares)) )
+            {
+                array_push($squares, $i, $difference);
+            }
+            else
+            {
+                break;            
+            }
+        }
+    }
+    
+    //Output the number of perfect square combinations to make $val
+    fwrite($output, sizeof($squares)/2 . &quot;\n&quot;);
+    $iterationCounter++;
+}
+
+//Close our files. 
+fclose ($input);
+fclose ($output);
+
+//Function that determines if a value has a perfect square
+//$int: Value being tested. 
+function isPerfectSquare($int)
+{
+    $temp = sqrt($int);
+    
+    //If $temp is an integer, it's a perfect square. Must chcek $temp against
+    //the truncated version of itself since sqrt returns a double. 
+    return $temp == intval($temp);
+}
+?&gt;
+</pre>
+<h2>Output</h2>
+This output was declared correct by the Hacker Cup judges. Woohoo!
+<pre class="prettyprint">
+1
+2
+0
+5
+1
+0
+0
+16
+4
+40
+4
+2
+0
+2
+1
+1
+0
+0
+1
+0
+</pre>
+
+<h2>Your Algorithm</h2>
+If you participated in the Hacker Cup, I'm curious to know how you went about the problem. That's one of the amazing things about programming: So many different ways to think about any given problem. Leave your comments below!
+{% endblock post %}
+

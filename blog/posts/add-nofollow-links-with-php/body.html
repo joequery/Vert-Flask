@@ -1,0 +1,65 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+If you're creating your own blogging or forum platform using PHP, you'll find that search engine spammers absolutely love to exploit those means of communication by spamming links to their sites. While a spam filter is a great way to combat this problem, occasionally even the best spam filters let a few spam posts through. At that point, you don't want your site authority being imparted to a spammy site (say a Viagra or Cialis reseller!). Your best bet is <a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=96569">rel=nofollow</a>. 
+
+<h2>The Code</h2>
+This code uses simple <a href="http://www.vertstudios.com/blog/introduction-to-regular-expressions/">regular expressions</a> to add the rel=nofollow attribute to the passed in anchor string.
+<pre class="prettyprint">
+//$str: The anchor string that will be altered
+//$nofollow: The rel attribute values you wish to have attached to the anchor
+function makeNoFollow(&amp;$str, $nofollow){
+  //See if there is already a &quot;rel&quot; attribute
+  if(strpos($str, &quot;rel&quot;)){
+    $pattern = &quot;/rel=([\&quot;'])([^\\1]+?)\\1/&quot;;
+    $replace = &quot;rel=\\1\\2 $nofollow\\1&quot;;
+  } 
+  else{
+    $pattern = &quot;/&lt;a /&quot;;
+    $replace = &quot;&lt;a rel=\&quot;$nofollow\&quot; &quot;;
+  }
+    $str = preg_replace($pattern, $replace, $str);
+}
+</pre>
+
+<h2>Example</h2>
+<pre class="prettyprint">
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;NoFollow Append&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+$link = &quot;&lt;a rel='external' href='www.linktomyspamsite.com'&gt;I swear this isn't spam!&lt;/a&gt;&quot;;
+echo &quot;Before: &quot; . $link . &quot;&lt;br /&gt;\n&quot;;
+
+function makeNoFollow(&amp;$str, $nofollow){
+  //See if there is already a &quot;rel&quot; attribute
+  if(strpos($str, &quot;rel&quot;)){
+    $pattern = &quot;/rel=([\&quot;'])([^\\1]+?)\\1/&quot;;
+    $replace = &quot;rel=\\1\\2 $nofollow\\1&quot;;
+  } 
+  else{
+    $pattern = &quot;/&lt;a /&quot;;
+    $replace = &quot;&lt;a rel=\&quot;$nofollow\&quot; &quot;;
+  }
+    $str = preg_replace($pattern, $replace, $str);
+}
+
+makeNoFollow($link, &quot;nofollow&quot;);
+echo &quot;After: &quot; . $link;
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+The code first sees if there is already a rel attribute attached to the anchor. (For example, <a href="http://snipplr.com/view/3047/open-new-window-using-rel-external-instead-of-deprecated-target-attribute/">rel="external"</a>). If so, it appends the $nofollow string to the end of the rel attribute value list before the ending quote. If not, it places rel= followed by the $nofollow string immediately after the anchor tag is opened.
+{% endblock post %}
+

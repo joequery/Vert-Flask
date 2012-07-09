@@ -1,0 +1,125 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+The Vert Studios <a href="http://www.vertstudios.com/blog/php-regex-class/">PHP Regex Class</a> comes to JavaScript! 
+
+<b>Key Differences:</b>
+While the method calls are identical between the PHP and JavaScript Regex classes (barring the static:: operator), the construction of the methods were quite different. JavaScript and PHP parse escape characters differently. 
+
+<h2>JavaScript Regex Class</h2>
+The JavaScript Regex class provides methods for validating data. Currently, the class contains the following patterns (denoted as types in the class methods):
+<ul>
+<li>int: Integer</li>
+<li>float: Float</li>
+<li>mailstrings: Mail Strings (cc: to: bcc:, etc)</li>
+<li>email: Email</li>
+<li>html: HTML</li>
+<li>url: URL</li>
+<li>zip: Zip Code</li>
+<li>alpha: Alphabetic Character</li>
+<li>num: Number</li>
+<li>bbcode: BB Code</li>
+<li>usphone: Phone</li>
+<li>usaddress: US Street Address</li>
+<li>name: Name</li>
+<li>fullname: Full Name(must be at least a first and a last name)</li>
+<li>lastname: Last Name(allows for numerical suffixes such as "2nd")</li>
+</ul>
+
+<h3><a href="http://vertstudios.com/blog/src/js/regex.txt">Download the source code</a></h3>
+
+The class is written so that you can easily add your own regular expression patterns. 
+
+It's important to note that the Regex class consists of static methods. That means you do not need to create an instance of the Regex class to use the methods.
+
+The class contains 4 methods as part of the main interface:
+
+<h3>Regex.is(type,value)</h3>
+<b>Description</b>: returns boolean true if value is an exact match with the pattern associated with type. False if otherwise. 
+<b>Examples:</b>
+<pre class="prettyprint">
+        console.log(Regex.is(&quot;email&quot;,&quot;hi@vertstudios.com&quot;));
+        console.log(Regex.is(&quot;int&quot;,&quot;A 100 dollar bill&quot;));
+        console.log(Regex.is(&quot;usphone&quot;,&quot;903-920-9514&quot;));
+        console.log(Regex.is(&quot;zip&quot;,&quot;75701&quot;));
+        console.log(Regex.is(&quot;float&quot;,57.10));
+        
+        //Output:
+        //true
+        //false
+        //true
+        //true
+        //true
+</pre>
+
+<h3>Regex.has(type,value)</h3>
+<b>Description</b>: returns boolean true if value contains at least one instance of the pattern associated with type. False if otherwise. 
+<b>Examples:</b>
+<pre class="prettyprint">
+        console.log(Regex.has(&quot;email&quot;,&quot;our email: hi@vertstudios.com&quot;));
+        console.log(Regex.has(&quot;int&quot;,&quot;A 100 dollar bill&quot;));
+        console.log(Regex.has(&quot;html&quot;,&quot;Jolly Jolly&quot;));
+        console.log(Regex.has(&quot;name&quot;,&quot;#@#$! Arthur&quot;));
+        console.log(Regex.has(&quot;float&quot;,&quot;I'm tired. Aren't you?&quot;));
+        
+        //Output:
+        //true
+        //true
+        //false
+        //true
+        //false
+</pre>
+
+<h3>Regex.hasAny(types,value)</h3>
+types is a string with various pattern types separated by a comma. Ex: "html,bbcode,int"
+
+<b>Description</b>: returns boolean true if value contains at least one instance of any pattern associated with types. False if otherwise. 
+<b>Examples:</b>
+<pre class="prettyprint">
+        console.log(Regex.hasAny(&quot;email,usphone&quot;,&quot;our email: hi@vertstudios.com&quot;));
+        console.log(Regex.hasAny(&quot;html,bbcode&quot;,'&lt;a href=&quot;lolspam.html&quot;&gt;oeutaoeuaoeu&lt;/a&gt;'));
+        console.log(Regex.hasAny(&quot;html,int,float&quot;,&quot;Jolly Jolly&quot;));
+        
+        //Output
+        //true
+        //true
+        //false
+</pre>
+(Note the convenient spam validation of a textarea form submission using Regex.hasAny("html,bbcode,mailstrings", textarea) )
+
+<h3>Regex.getDescription(type)</h3>
+<b>Description</b>: returns a string describing type
+
+You'll see in the <a href="http://vertstudios.com/blog/src/js/regex.txt">source code</a> that there are two objects, pattern and description. pattern takes the form type: "regexpattern", while description takes the form type: "description". description is where these strings are pulled from.*** 
+
+The purpose of this method is mainly for convenient automation. 
+<b>Example:</b>
+<pre class="prettyprint">
+        var myform = {name: &quot;Joseph&quot;, email: &quot;Joseph@@vertstudios.com&quot;,
+                         usphone: &quot;9033305057&quot;, zip: &quot;75AA8&quot;};
+        
+        //Iterate through the &quot;form&quot; and output which values are valid.
+        for(var i in myform)
+        {
+            console.log( Regex.getDescription(i) + &quot; is &quot; +
+                       (Regex.is(i, myform[i]) ? &quot;valid&quot; : &quot;invalid&quot;) );
+        }
+        //Output:
+        //Name is valid
+        //Email is invalid
+        //Phone is valid
+        //Zip Code is invalid
+</pre>
+
+
+<h3><a href="http://vertstudios.com/blog/src/js/regex.txt">Download the source code</a></h3>
+
+If you find any bugs or have any questions/suggestions, let us know in the comments below!
+{% endblock post %}
+

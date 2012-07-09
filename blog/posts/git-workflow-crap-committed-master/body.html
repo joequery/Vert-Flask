@@ -1,0 +1,113 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+So you know you should pretty much <a href="http://scottchacon.com/2011/08/31/github-flow.html">never hack directly on master</a> when working with git. Instead, you should create branches and merge them later.  Beyond best practices for their own sake, some github projects really want you creating pull requests from a certain branch.   
+
+Sometimes, however, I get in <b>the zone</b> and forget to checkout a branch because I want to get this feature DONE! In my haste, I commit to master directly. I don't want my pull request to be rejected just because I hacked on master.
+
+<h2>What do we do now?</h2>
+
+Luckily, recovery is extremely simple. We can fix the repo up to get back in line with branching best practices.
+
+So say we've just committed to master and we're currently on the master branch.
+<pre class="prettyprint">
+$ git log
+commit 9huuh23tnhubazhuxbeeashebcdjis3hl2iidu
+Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
+Date:   Wed Apr 11 22:15:10 2012 -0500
+
+        Refactor new feature X to be more awesome
+
+commit xotnhnt234ub23st2b323hb23tu2bh32bu23uu
+Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
+Date:   Wed Apr 11 22:05:10 2012 -0500
+
+        New feature X
+
+commit b232udh24xub2394d249ud394ub34bu9348ub9
+Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
+Date:   Wed Apr 11 12:05:10 2012 -0500
+
+        Some upstream master commit
+</pre>
+
+The last two commits needed to be on their own branch, say <b>new_feature</b>. Your local master branch needs to be at "Some upstream master commit". Here's how we can accomplish this. 
+
+<h3>Step 1) Create the new_feature branch</h3>
+Since master is currently in the state we want the new_feature branch to be in (since we've just added our new feature commit), we can just branch off of master.
+
+<pre class="prettyprint">
+$ git branch new_feature
+</pre>
+
+So new_feature is just a direct copy of master at this point.
+
+Right now, we're still on the master branch. As stated above, we want the master branch to be at "Some upstream master commit". We can accomplish this via <b>git reset --hard</b>. 
+
+<h3>Step 2) Resetting the master branch</h3>
+
+<b>A side note regarding git reset --hard</b>:
+
+It's important to note that git reset --hard is NOT a safe operation. You CAN lose work if you don't use it carefully. Luckily, in this context, there's nothing to worry about since I'm guiding you through the process...but just for your toolbelt, visit this <a href="http://stackoverflow.com/a/1109433">StackOverflow</a> answer thread if you ever accidentally lose work to git reset --hard.
+
+Anyway, to get the master branch back to "Some upstream master commit", we can copy the SHA of the commit from git log to our clipboard and execute
+
+<pre class="prettyprint">
+$ git checkout master
+$ git reset --hard b232udh24xub2394d249ud394ub34bu9348ub9
+HEAD is now at ... Some upstream master commit
+</pre>
+
+Also, for convenience, we can use the HEAD alias. In this example, we wanted to reference the commit that was 2 commits behind the latest commit. We could have equally executed
+
+<pre class="prettyprint">
+$ git checkout master
+$ git reset --hard HEAD~2
+</pre> 
+
+The git log should now look like the following:
+<pre class="prettyprint">
+$ git log
+commit b232udh24xub2394d249ud394ub34bu9348ub9
+Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
+Date:   Wed Apr 11 12:05:10 2012 -0500
+
+        Some upstream master commit
+</pre>
+
+
+<h3>Step 3) Verification</h3>
+We've verified the master branch is where it should be, so now we should checkout the new_feature branch and run a git log. 
+
+<pre class="prettyprint">
+$ git checkout new_feature
+Switched to branch 'new_feature'
+$ git log
+commit 9huuh23tnhubazhuxbeeashebcdjis3hl2iidu
+Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
+Date:   Wed Apr 11 22:15:10 2012 -0500
+
+        Refactor new feature X to be more awesome
+
+commit xotnhnt234ub23st2b323hb23tu2bh32bu23uu
+Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
+Date:   Wed Apr 11 22:05:10 2012 -0500
+
+        New feature X
+
+commit b232udh24xub2394d249ud394ub34bu9348ub9
+Author: Joseph McCullough &lt;joseph@vertstudios.com&gt;
+Date:   Wed Apr 11 12:05:10 2012 -0500
+
+        Some upstream master commit
+</pre>
+
+So we still have our work, but it's on a feature branch, as it should be! We're now free to send a pull request without any bickering from the project owner, or we can merge the new_feature branch later once it's ready for production.
+{% endblock post %}
+

@@ -1,0 +1,37 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Over the past couple of years, Git has become the standard version control system among the Open Source community. As a consequence of Git hitting the mainstream, the number of Git novices is at an all time high. While there is absolutely no shame in being a novice, the following habits shared among many designers/junior developers should be kicked as soon as possible.
+
+
+<h2>1) Committing everything to master</h2>
+A significant portion of Git's acceptance by the Open Source is due to its quick branching. Creating, deleting, and switching between branches is a trivial task in Git, in contrast to centralized version control systems such as SVN. Fewer companies understand Git more than Github! Thus it is highly recommend you read an explanation of their <a href="http://scottchacon.com/2011/08/31/github-flow.html">Git workflow</a>.
+
+<h2>2) Committing PSDs</h2>
+PSDs and other large binary files have no place in a collaborative environment. Committing a single PSDs (or worse, a collection of PSDs!!!) can cause the repository to grow to an ungodly size.
+
+Your options: 
+
+<ul>
+<li>Check out <a href="http://www.pixelapse.com/">Pixelapse</a>,  which is geared at solving the version control issues for designers.</li>
+<li>Use version numbers on multiple PSD files when significant milestones are reached.</li>
+
+<h2>3) Overuse of global .gitignore</h2>
+Using a <a href="http://jqr.github.com/2009/02/03/global-git-ignore.html">global .gitignore</a> is a great way to save yourself time. However, if misused, your global .gitignore can easily become a headache for your collaborators. Let's say you've created a project with<a href="http://flask.pocoo.org/">Python Flask</a>, with SQLite as the database of choice. You decide "Hey, I never want to version .sqlite3 files. Let's just toss that in my global .gitignore!". At first glance, this mentality doesn't seem harmful at all. However, any collaborator that comes along without .sqlite3 listed in their global .gitignore can accidentally bring the generated database file into version control. Here's a small list of file extensions I find safe to place in your global .gitignore.
+
+<pre class="prettyprint">
+*.o
+*.log
+*.DS_Store
+</pre> 
+
+<h2>*Bonus* Lack of Bundler Use in Rails Projects</h2>
+Plain and simple, use <a href="https://github.com/Hack56/Rails-Template/wiki/Configuring-Bundler">properly configured Bundler</a> for your Rails projects. Fewer things are more frustrating than tracking down Gems used throughout a Rails project that are not listed in the Gemfile. Just because a gem is installed on your system does not mean it's installed on mine! Remember to track both the Gemfile AND Gemfile.lock files.
+{% endblock post %}
+

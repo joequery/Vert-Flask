@@ -1,0 +1,27 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Over the past few weeks, the computers in my house have been unable to detect my <strong>Cannon MG5200</strong> printer. The printer itself said it successfully connected to the wireless network, which left me quite puzzled. After a while, I found the root cause, and it left me quite baffled. 
+
+<h2>It May Be Your iPhone</h2>
+If you are an iPhone user, you may have decided to try out Canon's Easy-PhotoPrint iPhone app. The app allows you to print directly from your iPhone. If you are unable to detect your wireless printer and you have used this app, check out your router settings.
+
+Your router settings can usually be accessed by typing the address 192.168.1.1 in the address bar. The default username is usually "admin" and default password is usually "password". 
+
+If you click on "Attached Devices" (or some variation of the phrase), you may notice that your iPhone name is listed twice. The iPhone seems to HiJack the name of your Printer, causing your computers to not be able to locate your printer. 
+
+<h2>The Solution</h2>
+You'll need to do a hard reset on your router. Generally, unplugging the router and plugging it back in does not accomplish this. There may be a "RESET" button on the back of the router, or you may need to take a paper clip and insert it into a small reset hole at the back of the router. Check with your instruction manual if you're unable to find these. 
+
+The hard reset will cause all machines attached to the router to disconnect. This allows the proper name of the printer to come through. After this, you should be able to install your Canon printer driver normally. 
+
+<h2>Feedback</h2>
+Did this solve your problem? Let us know in the comments below!
+{% endblock post %}
+

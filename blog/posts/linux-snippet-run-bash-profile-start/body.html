@@ -1,0 +1,21 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+If you've edited your ~/.bash_profile to include scripts you'd like executed on start up, you might be surprised when you open up your terminal and those scripts don't execute. By default, ~/.bashrc executes on session start, but ~/.bash_profile doesn't. 
+
+To execute your ~/.bash_profile on startup, simply append this to your ~/.bashrc
+<pre class="prettyprint">
+source ~/.bash_profile
+</pre>
+
+<h2>Ta-da! </h2>
+
+Now you can print out some cool ascii art on start up, define custom functions (such as <a href="http://www.vertstudios.com/blog/mkdir-cd-at-same-time/">mkdir and cd</a> at the same time), and other fun Linux-ey type things.
+{% endblock post %}
+

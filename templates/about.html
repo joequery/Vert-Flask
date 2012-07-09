@@ -1,0 +1,88 @@
+{% from "macros" import img %}
+{% from "sections" import what_now %}
+{% extends "layout.html" %}
+{% block body %}
+<div id="sub_page_intro">
+
+<h1>About Us</h1>
+<p>Vert Studios is a web and graphic design company located in beautiful Tyler, Texas.</p>
+<p>
+  We take the time to learn the latest technologies as they appear - staying 
+  a step ahead of our competition, and allowing you to do the same.
+</p>
+{{img(g, "pointer.png", "", "pointer")|safe }}
+</div>
+
+<div class="sub_page_1 clearfix">
+  <h2>Our Company</h2>
+  <p>
+    Born out of a love for quality web design and superior functionality, Vert Studios 
+    was founded by Justin Edwards in 2009. Identifying the need for a higher design 
+    standard in East Texas, Justin opened shop - bringing years of web development experience 
+    for a multi-billion dollar energy corporation with him. But he didn'
+    t stop there. Good design becomes great when paired with top-notch web 
+    programming, and co-founder Joseph McCullough tailors his development skills based on the 
+    business goals you're looking to achieve.
+  </p>
+  <p>
+    Template websites are becoming a thing of the past, and Vert Studios is 
+    here to help you create a custom website you can call your own. Give us 
+    a call today, and let us know how we can help you make that all-important 
+    first impression.
+  </p>
+
+</div>
+
+<div class="sub_page_3 clearfix">
+  <h2>Our Philosophy</h2>
+  <p>
+    We pride ourselves on delivering results you can be proud of. 
+    Here are a few key words we stand by:
+  </p>
+
+  <div>
+    <h3>Quality</h3>
+    <p><em>We love cookies, but hate the cutter.</em></p>
+    <p>
+      The word "template" doesn't exist in our vocabulary. We know what it means 
+      to stand out from the crowd. In today's world, differentiation is not only
+      good business practice, it's downright necessary.
+    </p>
+    <p>
+      When you come to Vert Studios, you receive quality, custom design - a 
+      website you can call your own. So go ahead, let your competition have
+      that cookie cutter template while you turn up the heat with new 
+      business. They'll just be left with crumbs.
+    </p>
+  </div>
+
+  <div>
+    <h3>Communication</h3>
+    <p><em>We're here for you. Anytime.</em></p>
+    <p>
+      You won't ever get that nerve-grating "robot-speak" when you give us 
+      a call. Instead, you'll be pleasantly surprised to find real people 
+      on the other end of that receiver - because while technology is a 
+      lovely thing, talking to it is not.
+    </p>
+  </div>
+
+  <div class="last">
+    <h3>Relationships</h3>
+    <p><em>Face-time used to actually mean something.</em></p>
+    <p>
+      Did you know some competing web design companies don't even have actual 
+      designers in office, and instead choose to outsource their work?
+    </p>
+    <p>
+      That's not an issue here, as you'll be doing business with either one of 
+      us - Justin or Joseph - two native East Texans who truly understand where you're coming from.
+    </p>
+  </div>
+</div>
+
+<div id="tertiary">
+{{ what_now()|safe}}
+</div><!--END tertiary-->
+
+{% endblock body %}

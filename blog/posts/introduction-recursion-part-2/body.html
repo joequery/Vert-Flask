@@ -1,0 +1,14 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Part two of the <a href="http://www.vertstudios.com/blog/introduction-recursion-part-1">Introduction to Recursion series</a>! In this video, we discuss the Factorial function and its recursive properties in depth.
+
+http://www.youtube.com/watch?v=CboUF7gtVSo
+{% endblock post %}
+

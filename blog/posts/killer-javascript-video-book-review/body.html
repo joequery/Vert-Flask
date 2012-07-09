@@ -1,0 +1,64 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+This is my first post of my book review corner. I'll be reviewing various web design books as I read them so you will know which books I believe are worth the money.
+
+First up is the Beginning Javascript video tutorial from <a href="http://www.killerjavascript.com/videos/">www.killerjavascript.com</a>
+<a href="http://www.killerjavascript.com/videos/"><img style="width: 500px;" src="http://assets.vertstudios.com/blog/images/mc-blog/bookcorner/killerjavascript/cd.jpg" alt="Killer Javascript" /></a>
+<h3>General Information</h3>
+<ul>
+  <li>Title: Beginners JavaScript</li>
+  <li>Cost: $19.99</li>
+  <li>Purpose:
+<cite>Beginners Javascript is designed to teach total beginners Javascript programming. By the end of the 5 hrs of video training (over 39 individual videos) you will feel comfortable reading and writing usable Javascript code for everyday web tasks like spawning windows, validating forms and creating simple page effects.</cite></li>
+  <li>Why I bought it: I figured a video tutorial would be nice and errata free since the examples have to work right on the screen.</li>
+</ul>
+<strong>The Review</strong>
+
+I recall a time in my younger years when my grandma would buy me toys throughout the week. There was this awesome $20 yo-yo I coveted. I cried, pouted, and unloaded everything else in the spoiled brat arsenal to compel my grandma to buy that yo-yo. She caved, but on the condition that she would not get me another toy for a whole month. That same day, the yo-yo broke in half just from walking the dog.
+
+This book is much more disappointing than that.
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/bookcorner/killerjavascript/crying_kid.jpg" alt="Crying Kid" />
+<h2>Why it Sucks</h2>
+<h3>1) The Instructor</h3>
+First, I will admit that it was my mistake for not taking the time to notice that there are <a href="http://www.killerjavascript.com/videos/">sample videos</a> available to be viewed. If I would have watched one of the sample videos and seen that the instructor was <a href="http://www.killerjavascript.com/videos/03-javascript-event-handlers-part-1/03-javascript-event-handlers-part-1.html">having issues with his Dreamweaver trial</a> right in the middle of the lesson, I would have known what to expect. (Why is he on a trial anyway?)
+Some specific noteworthy annoyances:
+<ol>
+  <li>The instructor forgets that you can not embed a double quote within a double quote. He attempts to do
+<pre><pre class="prettyprint">&lt;p onClick = "alert("You clicked me");"&gt;Don't click&lt;/p&gt;<!--formatted--></pre></pre>
+When he catches his mistake, he takes forever to explain the simple fact that single quotes should be used inside double quotes and vice versa.</li>
+  <li>This is their idea of email vaildation:
+<pre><pre class="prettyprint">if(email_address.indexOf("@") == "-1" || name_first == ""){
+
+  alert("Fill in the form properly dude!");
+  return false;
+
+  } &lt;!--formatted--&gt;<!--formatted--></pre></pre>
+</li>
+  <li>The instructor will spend 5 minutes on code that was already explained in another clip. Why not display on the screen "See video 3" instead of spending more time on something we already learned?</li>
+  <li>Terrible usage of variable names. When creating a flag for whether a menu is currently toggled or not (what would be a boolean variable if JavaScript required the declaration of data types), the instructor named the variable "onOff". So if onOff==Off, the menu was set to be off, and if onOff ==On, the menu was on.onOff? That looks more like an event handler than a variable name that describes whether a menu is toggled. Why not menuActive or menuDisplayed or menuExpanded? Since this guy is teaching beginners, he's teaching people that might not have adequate programming fundamentals to see how bad his coding practices are. For those who are putting their trust in this instructor, they are not learning how to properly name their variables, which is a <strong>HUGE</strong> contributing factor to code readability.</li>
+</ol>
+<h3>2) The BOREDOM</h3>
+This video tutorial is meant for absolute beginners: The product description says that, and that's completely fine. However, there is a difference between a beginner's paced course and the pointless ramblings of a middle aged man. Some people choose to buy video tutorials because they are <em>VISUAL</em> learners. Diagrams, charts, animations, all these things can be accomplished much better in a (well done) video tutorial than in a book. Others choose to view video tutorials because the idea of sitting back and watching a 10 minute video clip may seem less daunting than sitting down to read a chapter of a 600 page book.
+
+A good portion of the videos contain the instructor talking for the first 4-5 minutes with only the title screen up.
+
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/bookcorner/killerjavascript/frog_screen.jpg" alt="Killer JavaScript title screen" />
+
+Seriously, if I wanted nothing but dialogue, I would read a book. In the 5 minutes it takes him to mutter a coherent thought, I could have read it in 30 seconds. These are prime examples of failing to utilize the amazing tools available in video tutorials.
+<h3>3) No meaningful examples</h3>
+Having your basic examples is a great way to build up understanding of how code works. However, learning that code means nothing unless you can apply it. The instructor actually does nothing to put JavaScript in the context of a real website.  Will this toggle menu break the layout? Will an image placed in by JavaScript fill its container? These are important questions that the instructor leaves up to the beginner to answer.
+
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/bookcorner/killerjavascript/tutorial_shot.jpg" alt="Killer JavaScript screen shot" />
+
+This is the most complex a layout gets. Beginning JavaScript doesn't mean you're beginning CSS or web design in general. This video tutorial series just taught a whole bunch of people how to do a whole bunch of stuff without a context to actually apply the things learned.
+<h2>Final Word</h2>
+As you can see, I did not find this video tutorial helpful at all. I would not not recommend it to anybody, and I'm extremely upset that I bought it in the first place. Feel free to donate $20 to get me a new <span style="text-decoration: line-through;">yo-yo</span> JavaScript book.
+{% endblock post %}
+

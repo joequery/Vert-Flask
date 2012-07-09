@@ -1,0 +1,28 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+We at <a href="http://www.vertstudios.com/">Vert Studios</a> absolutely love making custom jQuery plugins. Some plugins we create are large and robust, while others are simple and concise. Look through our list of plugins and JavaScript functions, and start incorporating them into your own projects! Each time we develop a new Plugin, we'll link to it from this page: Bookmark it! 
+
+<a href="http://www.vertstudios.com/vertlib.js">Download the library</a>
+<a href="http://www.vertstudios.com/vertlib.min.js">Minified version</a>
+
+<h2>jQuery Plugins</h2>
+<h3>Animation/Effects</h3>
+<a href="http://www.thewebsqueeze.com/web-design-tutorials/sequential-fade-in-jquery-plug-in.html">.fadeInSequence()</a> - Fades in the wrapped set of elements one after the other. 
+
+<h3>Array Processing</h3>
+<a href="http://www.vertstudios.com/blog/frontpush-jquery-plugin/">.frontpush()</a> - Adds the wrapped set of elements to the front of an array.
+<a href="http://www.vertstudios.com/blog/getindexof-jquery-plugin/">.getIndexOf()</a> - Searches an array for the wrapped set of elements and returns the index. 
+<a href="http://www.vertstudios.com/blog/swap-jquery-plugin/">.swap()</a> - Swaps the positions of elements within the jQuery object. 
+<a href="http://www.vertstudios.com/blog/arrayshift-jquery-plugin/">.arrayShift()</a> Places an element at a new index and shifts the rest of the affected elements. 
+
+<h3>Logical</h3>
+<a href="http://www.vertstudios.com/blog/equalto-jquery-plugin/">.equalTo()</a> - Determines the equality between jQuery objects
+{% endblock post %}
+

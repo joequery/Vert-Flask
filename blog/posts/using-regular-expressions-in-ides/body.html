@@ -1,0 +1,361 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Welcome to the first article in our IDE Friday series. Today, we'll be discussing the use of Regular Expressions in your IDE of choice. If you're unfamiliar with Regular Expressions, check out our tutorial series, beginning with the <a href="http://www.vertstudios.com/blog/introduction-to-regular-expressions/">Introduction to Regular Expressions</a>. 
+ 
+<h2>Wait, isn't RegEx just for Form Validation?</h2> 
+
+Many developers new to the world of Regular Expressions think that RegEx's sole purpose is for validating user input through a contact form. While of course RegEx is great for user input validation, it is in no way confined to that single task. 
+ 
+<h2>RegEx as a Text Editing Tool</h2> 
+
+Many IDE's and programming-oriented text editors have a Find and Replace functionality. Additionally, these Find and Replaces generally have an option for Regular Expression searches. 
+ 
+
+Such as Notepad++<br /> 
+<img src="http://assets.vertstudios.com/blog/images/regex-ide/notepadpp.jpg" alt="Notepad++" />
+ 
+
+And Komodo<br /> 
+<img src="http://assets.vertstudios.com/blog/images/regex-ide/komodo.jpg" alt="Komodo" />
+ 
+<h2>Conventions</h2> 
+
+In most IDEs/editors, special characters in the "Find" field need to be escaped. Characters in the "Replace" field do not need to be escaped except for the backslash '\'. This is because the backlash is used to refer to <a href="http://www.vertstudios.com/blog/back-references-quantifiers-and-anchors-in-regex/">back-references</a>. Keep in mind the entire text file is the string being tested, so the typical anchors are not needed. If you see a blank replacement, that's intentional! 
+ 
+<h2>Find/Find and Replace Snippets</h2> 
+
+The focal point of this article is providing useful snippets of find and replace code to make life easier when making large adjustments. Some snippets involve more than one step. When we cover macros, we'll show how to combine the multi-step patterns into a single executable command.
+ 
+<h3>1) Clear all console.log() calls</h3> 
+
+When debugging JavaScript, you may track your variables using console.log(). This RegEx eliminates the calls from the source. 
+ 
+<pre class="prettyprint"> 
+Find:\s*console.log\([^)]+\);?
+Replace:
+</pre> 
+<h3>2) Make Relative Paths Absolute</h3> 
+
+At times, you might want to take a relative path in an HTML document and make it absolute. This becomes especially useful when you're referencing JS files, images, and other pages from multiple directories.
+ 
+<pre class="prettyprint"> 
+Find:(src|href)=[&quot;'](\.\.\/)*([a-zA-Z0-9][a-zA-Z0-9\/_.-]+)\.([a-z]+)[&quot;']
+Replace:\1=&quot;http://www.yourdomain.com/\3.\4&quot;
+</pre> 
+
+Example:
+ 
+<pre class="prettyprint"> 
+&lt;img src=&quot;../../images/image1.jpg&quot; alt=&quot;Image 1&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../lib/js/js1.js&quot;&gt;&lt;/script&gt;
+&lt;a href=&quot;index.php&quot;&gt;Home page&lt;/a&gt;
+ 
+After Find and Replace All:
+&lt;img src=&quot;http://www.yourdomain.com/images/image1.jpg&quot; alt=&quot;Image 1&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://www.yourdomain.com/lib/js/js1.js&quot;&gt;&lt;/script&gt;
+&lt;a href=&quot;http://www.yourdomain.com/index.php&quot;&gt;Home page&lt;/a&gt;
+</pre> 
+<h3>3) Check for Non-Absolute Paths</h3> 
+
+In the event you want all your paths to be absolute, this can ensure that you've done so correctly.<br /> 
+*Assume absolute paths begin with http. 
+ 
+<pre class="prettyprint"> 
+Find:(src|href)=['&quot;][^h]
+</pre> 
+<h3>4) Add minified JavaScript File Reference</h3> 
+
+This regex pattern allows you to transform a JavaScript file call with the pattern "filename.js" to "filename.min.js"
+ 
+<pre class="prettyprint"> 
+Find:&lt;script(.+)src=('|&quot;)([a-zA-Z0-9_.-]+)\.js\2
+Replace:&lt;script\1src=\2\3.min.js\2
+</pre> 
+<h3>A Simple HTML Whitespace Remover</h3> 
+
+This is by no means the most ideal HTML whitespace remover, but it demonstrates how powerful simple RegEx can be when implemented in a text editor.
+ 
+<pre class="prettyprint"> 
+Find:(&lt;[^&gt;]+&gt;)\s*
+Replace:\1
+</pre> 
+
+Before:
+ 
+<pre class="prettyprint"> 
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt; 
+ 
+    &lt;head&gt;
+      &lt;script type=&quot;text/javascript&quot;&gt;
+            //Credit: Doug Neiner - http://dougneiner.com/
+            document.documentElement.className += &quot; js&quot;
+        &lt;/script&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;View our web design services, and learn the approach we take in creating the most effective website for your business.&quot; /&gt;
+    &lt;meta name=&quot;google-site-verification&quot; content=&quot;36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8&quot; /&gt;
+    &lt;meta name = &quot;viewport&quot; content = &quot;width=device-width, maximum-scale=1.0, initial-scale = 1, user-scalable = no&quot; /&gt;
+    &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt; 
+ 
+    &lt;title&gt;Services | Vert Studios&lt;/title&gt; 
+ 
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/reset.css&quot; /&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/js.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/text.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/main.css&quot; /&gt;
+    &lt;link rel=&quot;apple-touch-icon&quot; href=&quot;apple-touch-icon.png&quot;/&gt; 
+ 
+    &lt;/head&gt; 
+ 
+    &lt;body id=&quot;services&quot;&gt; 
+ 
+    &lt;div id=&quot;wrapper&quot;&gt; 
+ 
+            &lt;div id=&quot;header&quot;&gt;
+        &lt;div id=&quot;vertStudios&quot;&gt;&lt;a href=&quot;http://www.vertstudios.com/&quot;&gt;Vert Studios&lt;img src=&quot;http://www.vertstudios.com/images/vert_logo_header.png&quot; alt=&quot;Vert Logo&quot; /&gt;&lt;/a&gt;&lt;/div&gt; 
+ 
+        &lt;ul id=&quot;main_nav&quot;&gt; 
+ 
+          &lt;li&gt;
+            &lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/about.php&quot;&gt;About&lt;/a&gt;&lt;/h5&gt;
+            &lt;p&gt;We're a small web design company with big ideas in Tyler, Texas.&lt;/p&gt;
+                      &lt;/li&gt; 
+ 
+          &lt;li&gt;
+            &lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/work.php&quot;&gt;Work&lt;/a&gt;&lt;/h5&gt;
+            &lt;p&gt;See what our work has to say. &lt;b&gt;WARNING&lt;/b&gt;: &lt;br /&gt;It might get loud.&lt;/p&gt;
+                      &lt;/li&gt; 
+ 
+          &lt;li class=&quot;active&quot; &gt;
+            &lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/services.php&quot;&gt;Services&lt;/a&gt;&lt;/h5&gt;
+            &lt;p&gt;We design web sites that don't suck. We're quite proud of that.&lt;/p&gt;
+            &lt;img src=&quot;images/nav_current.png&quot; alt=&quot;&quot; /&gt;         &lt;/li&gt; 
+ 
+          &lt;li&gt;
+            &lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/blog/&quot;&gt;Blog&lt;/a&gt;&lt;/h5&gt;
+            &lt;p&gt;Read our articles on design, code, SEO, and the state of the web.&lt;/p&gt;
+          &lt;/li&gt; 
+ 
+          &lt;li&gt;
+            &lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/contact.php&quot;&gt;Contact&lt;/a&gt;&lt;/h5&gt;
+            &lt;p&gt;You've got ideas. Get in touch, and we'll put them into action.&lt;/p&gt;
+                      &lt;/li&gt; 
+ 
+        &lt;/ul&gt; 
+ 
+      &lt;/div&gt; 
+ 
+      &lt;div id=&quot;content&quot;&gt; 
+ 
+        &lt;div id=&quot;sub_page_intro&quot;&gt; 
+ 
+          &lt;h1&gt;Services&lt;/h1&gt;
+          &lt;p&gt;We offer superior quality, functionality, and results for the following:&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Web Design&lt;/li&gt;
+            &lt;li&gt;Web Application Development&lt;/li&gt;
+            &lt;li&gt;Mobile Web Design&lt;/li&gt;
+            &lt;li&gt;Mobile Web Apps&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;img src=&quot;http://www.vertstudios.com/images/pointer.png&quot; alt=&quot;&quot; class=&quot;pointer&quot; /&gt;
+        &lt;/div&gt; 
+ 
+        &lt;div class=&quot;sub_page_1 clearfix&quot;&gt; 
+ 
+          &lt;h2&gt;We Take a Strategic Approach&lt;/h2&gt;
+          &lt;p&gt;&lt;em&gt;We identify your needs and provide results based on what's best for you.&lt;/em&gt;&lt;/p&gt;
+          &lt;p&gt;In today's fast-paced world, a lot of focus is put on efficiency and instant-gratification. While we are efficient, we believe in first taking the time to clearly define what approach will best work for you and your company.&lt;/p&gt;
+          &lt;p&gt;We address your current website challenges, identify problems, and deliver solutions that will make your business stand out from the competition.&lt;/p&gt;
+          &lt;h3&gt;To Combine Form &amp;amp;amp; Function&lt;/h3&gt;
+          &lt;p&gt;&lt;em&gt;Great design is one thing.&lt;br/&gt;Elegant programing is another.&lt;br/&gt;Luckily we do both.&lt;/em&gt;&lt;/p&gt;
+          &lt;p&gt;There is nothing worse than losing hundreds of potential customers because of a poorly designed website. Is your layout beautiful, but lacking an engaging user experience? Is your content outstanding, but design amateurish? Our business is solving these problems to grow yours - both aesthetically and technically.&lt;/p&gt; 
+ 
+        &lt;/div&gt; 
+ 
+        &lt;div id=&quot;tertiary&quot;&gt; 
+ 
+                    &lt;div id=&quot;what_now&quot;&gt;
+            &lt;h2&gt;What Now?&lt;/h2&gt;
+                        &lt;p&gt;To see our capabilities in action, check out &lt;a href=&quot;work.php&quot;&gt;our work&lt;/a&gt;.&lt;/p&gt;
+                        &lt;p&gt;Interested in keeping up with web design or East Texas? Follow us on Twitter: &lt;a href=&quot;http://www.twitter.com/vertstudios&quot;&gt;@vertstudios&lt;/a&gt;, and subscribe to the &lt;a href=&quot;http://www.vertstudios.com/blog/&quot;&gt;Vert Studios Blog&lt;/a&gt;.&lt;/p&gt;
+          &lt;/div&gt; 
+ 
+        &lt;/div&gt;&lt;!--END tertiary--&gt; 
+ 
+      &lt;/div&gt;&lt;!--END content--&gt; 
+ 
+      &lt;div id=&quot;footer&quot;&gt; 
+ 
+                &lt;div class=&quot;hr&quot;&gt;&lt;hr /&gt;&lt;/div&gt;
+                &lt;p&gt; 903-920-9514 |
+                    &lt;a href=&quot;mailto:hi@vertstudios.com&quot;&gt;hi@vertstudios.com&lt;/a&gt; |
+                    &lt;a href=&quot;http://www.twitter.com/vertstudios&quot;&gt;@vertstudios&lt;/a&gt;&lt;/p&gt; 
+ 
+      &lt;/div&gt; 
+ 
+    &lt;/div&gt;&lt;!--END wrapper--&gt; 
+ 
+      &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://www.vertstudios.com/vertlib.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://www.vertstudios.com/lib/js/jsCSS.js&quot;&gt;&lt;/script&gt; 
+ 
+        &lt;!-- Start of StatCounter Code --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var sc_project=6105522;
+var sc_invisible=1;
+var sc_security=&quot;e204ad62&quot;;
+&lt;/script&gt; 
+ 
+&lt;script type=&quot;text/javascript&quot;
+src=&quot;http://www.statcounter.com/counter/counter_xhtml.js&quot;&gt;&lt;/script&gt;&lt;noscript&gt;&lt;div
+class=&quot;statcounter&quot;&gt;&lt;a title=&quot;free web stats&quot;
+class=&quot;statcounter&quot;
+href=&quot;http://www.statcounter.com/free_web_stats.html&quot;&gt;&lt;img
+class=&quot;statcounter&quot;
+src=&quot;http://c.statcounter.com/6105522/0/e204ad62/1/&quot;
+alt=&quot;free web stats&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/noscript&gt;
+&lt;!-- End of StatCounter Code --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var gaJsHost = ((&quot;https:&quot; == document.location.protocol) ? &quot;https://ssl.&quot; : &quot;http://www.&quot;);
+    document.write(unescape(&quot;%3Cscript src='&quot; + gaJsHost + &quot;google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E&quot;));
+    &lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    try {
+    var pageTracker = _gat._getTracker(&quot;UA-12513899-1&quot;);
+    pageTracker._trackPageview();
+    } catch(err) {}
+&lt;/script&gt;
+    &lt;/body&gt; 
+ 
+&lt;/html&gt;
+</pre> 
+
+After:
+ 
+<pre class="prettyprint"> 
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;&lt;head&gt;&lt;script type=&quot;text/javascript&quot;&gt;//Credit: Doug Neiner - http://dougneiner.com/
+            document.documentElement.className += &quot; js&quot;
+        &lt;/script&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;&lt;meta name=&quot;description&quot; content=&quot;View our web design services, and learn the approach we take in creating the most effective website for your business.&quot; /&gt;&lt;meta name=&quot;google-site-verification&quot; content=&quot;36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8&quot; /&gt;&lt;meta name = &quot;viewport&quot; content = &quot;width=device-width, maximum-scale=1.0, initial-scale = 1, user-scalable = no&quot; /&gt;&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;&lt;title&gt;Services | Vert Studios&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/reset.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/js.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/text.css&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.vertstudios.com/lib/css/main.css&quot; /&gt;&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;apple-touch-icon.png&quot;/&gt;&lt;/head&gt;&lt;body id=&quot;services&quot;&gt;&lt;div id=&quot;wrapper&quot;&gt;&lt;div id=&quot;header&quot;&gt;&lt;div id=&quot;vertStudios&quot;&gt;&lt;a href=&quot;http://www.vertstudios.com/&quot;&gt;Vert Studios&lt;img src=&quot;http://www.vertstudios.com/images/vert_logo_header.png&quot; alt=&quot;Vert Logo&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;ul id=&quot;main_nav&quot;&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/about.php&quot;&gt;About&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;We're a small web design company with big ideas in Tyler, Texas.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/work.php&quot;&gt;Work&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;See what our work has to say. &lt;b&gt;WARNING&lt;/b&gt;: &lt;br /&gt;It might get loud.&lt;/p&gt;&lt;/li&gt;&lt;li class=&quot;active&quot; &gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/services.php&quot;&gt;Services&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;We design web sites that don't suck. We're quite proud of that.&lt;/p&gt;&lt;img src=&quot;images/nav_current.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/blog/&quot;&gt;Blog&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Read our articles on design, code, SEO, and the state of the web.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;h5&gt;&lt;a href=&quot;http://www.vertstudios.com/contact.php&quot;&gt;Contact&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;You've got ideas. Get in touch, and we'll put them into action.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div id=&quot;content&quot;&gt;&lt;div id=&quot;sub_page_intro&quot;&gt;&lt;h1&gt;Services&lt;/h1&gt;&lt;p&gt;We offer superior quality, functionality, and results for the following:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Web Design&lt;/li&gt;&lt;li&gt;Web Application Development&lt;/li&gt;&lt;li&gt;Mobile Web Design&lt;/li&gt;&lt;li&gt;Mobile Web Apps&lt;/li&gt;&lt;/ul&gt;&lt;img src=&quot;http://www.vertstudios.com/images/pointer.png&quot; alt=&quot;&quot; class=&quot;pointer&quot; /&gt;&lt;/div&gt;&lt;div class=&quot;sub_page_1 clearfix&quot;&gt;&lt;h2&gt;We Take a Strategic Approach&lt;/h2&gt;&lt;p&gt;&lt;em&gt;We identify your needs and provide results based on what's best for you.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;In today's fast-paced world, a lot of focus is put on efficiency and instant-gratification. While we are efficient, we believe in first taking the time to clearly define what approach will best work for you and your company.&lt;/p&gt;&lt;p&gt;We address your current website challenges, identify problems, and deliver solutions that will make your business stand out from the competition.&lt;/p&gt;&lt;h3&gt;To Combine Form &amp;amp;amp; Function&lt;/h3&gt;&lt;p&gt;&lt;em&gt;Great design is one thing.&lt;br/&gt;Elegant programing is another.&lt;br/&gt;Luckily we do both.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;There is nothing worse than losing hundreds of potential customers because of a poorly designed website. Is your layout beautiful, but lacking an engaging user experience? Is your content outstanding, but design amateurish? Our business is solving these problems to grow yours - both aesthetically and technically.&lt;/p&gt;&lt;/div&gt;&lt;div id=&quot;tertiary&quot;&gt;&lt;div id=&quot;what_now&quot;&gt;&lt;h2&gt;What Now?&lt;/h2&gt;&lt;p&gt;To see our capabilities in action, check out &lt;a href=&quot;work.php&quot;&gt;our work&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Interested in keeping up with web design or East Texas? Follow us on Twitter: &lt;a href=&quot;http://www.twitter.com/vertstudios&quot;&gt;@vertstudios&lt;/a&gt;, and subscribe to the &lt;a href=&quot;http://www.vertstudios.com/blog/&quot;&gt;Vert Studios Blog&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;!--END tertiary--&gt;&lt;/div&gt;&lt;!--END content--&gt;&lt;div id=&quot;footer&quot;&gt;&lt;div class=&quot;hr&quot;&gt;&lt;hr /&gt;&lt;/div&gt;&lt;p&gt;903-920-9514 |
+                    &lt;a href=&quot;mailto:hi@vertstudios.com&quot;&gt;hi@vertstudios.com&lt;/a&gt;|
+                    &lt;a href=&quot;http://www.twitter.com/vertstudios&quot;&gt;@vertstudios&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;!--END wrapper--&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;http://www.vertstudios.com/vertlib.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;http://www.vertstudios.com/lib/js/jsCSS.js&quot;&gt;&lt;/script&gt;&lt;!-- Start of StatCounter Code --&gt;&lt;script type=&quot;text/javascript&quot;&gt;var sc_project=6105522;
+var sc_invisible=1;
+var sc_security=&quot;e204ad62&quot;;
+&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;
+src=&quot;http://www.statcounter.com/counter/counter_xhtml.js&quot;&gt;&lt;/script&gt;&lt;noscript&gt;&lt;div
+class=&quot;statcounter&quot;&gt;&lt;a title=&quot;free web stats&quot;
+class=&quot;statcounter&quot;
+href=&quot;http://www.statcounter.com/free_web_stats.html&quot;&gt;&lt;img
+class=&quot;statcounter&quot;
+src=&quot;http://c.statcounter.com/6105522/0/e204ad62/1/&quot;
+alt=&quot;free web stats&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/noscript&gt;&lt;!-- End of StatCounter Code --&gt;&lt;script type=&quot;text/javascript&quot;&gt;var gaJsHost = ((&quot;https:&quot; == document.location.protocol) ? &quot;https://ssl.&quot; : &quot;http://www.&quot;);
+    document.write(unescape(&quot;%3Cscript src='&quot; + gaJsHost + &quot;google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E&quot;));
+    &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;try {
+    var pageTracker = _gat._getTracker(&quot;UA-12513899-1&quot;);
+    pageTracker._trackPageview();
+    } catch(err) {}
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+</pre> 
+
+<h2>A Real Life Scenario</h2>
+Interestingly enough, as I was writing this article, my crappy ISP decided to let my connection drop while I was saving the draft. I had frequently previewed the post, so the post was available in HTML form. Unfortunately, the last draft that was saved was about an hour old. Regular Expressions to the rescue!
+
+<h3>The Problem</h3>
+The HTML that Wordpress generates is difficult to read. While I could have copied and pasted the HTML of the preview directly into the Wordpress editor, every character was escaped, and every blank line was wrapped in a paragraph tag. Since this article is relatively advanced, I may need to make some revisions in the future. However, revisions would be a nightmare if I had to deal with this type of text:
+
+<pre class="prettyprint">
+&lt;p&gt;Welcome to the first article in our IDE Friday series. Today, we&amp;#8217;ll be discussing the use of Regular Expressions in your IDE of choice. If you&amp;#8217;re unfamiliar with Regular Expressions, check out our tutorial series, beginning with the &lt;a href=&quot;http://www.vertstudios.com/blog/introduction-to-regular-expressions/&quot;&gt;Introduction to Regular Expressions&lt;/a&gt;. &lt;/p&gt; 
+&lt;h2&gt;Wait, isn&amp;#8217;t RegEx just for Form Validation?&lt;/h2&gt; 
+&lt;p&gt;Many developers new to the world of Regular Expressions think that RegEx&amp;#8217;s sole purpose is for validating user input through a contact form. While of course RegEx is great for user input validation, it is in no way confined to that single task. &lt;/p&gt; 
+&lt;h2&gt;RegEx as a Text Editing Tool&lt;/h2&gt; 
+&lt;p&gt;Many IDE&amp;#8217;s and programming-oriented text editors have a Find and Replace functionality. Additionally, these Find and Replaces generally have an option for Regular Expression searches. &lt;/p&gt; 
+&lt;p&gt;Such as Notepad++&lt;br /&gt; 
+&lt;img src=&quot;http://assets.vertstudios.com/blog/images/regex-ide/notepadpp.jpg&quot; alt=&quot;Notepad++&quot; /&gt;&lt;/p&gt; 
+&lt;p&gt;And Komodo&lt;br /&gt; 
+&lt;img src=&quot;http://assets.vertstudios.com/blog/images/regex-ide/komodo.jpg&quot; alt=&quot;Komodo&quot; /&gt;&lt;/p&gt; 
+&lt;h2&gt;Conventions&lt;/h2&gt; 
+&lt;p&gt;In most IDEs/editors, special characters in the &amp;#8220;Find&amp;#8221; field need to be escaped. Characters in the &amp;#8220;Replace&amp;#8221; field do not need to be escaped except for the backslash &amp;#8216;\&amp;#8217;. This is because the backlash is used to refer to &lt;a href=&quot;http://www.vertstudios.com/blog/back-references-quantifiers-and-anchors-in-regex/&quot;&gt;back-references&lt;/a&gt;. Keep in mind the entire text file is the string being tested, so the typical anchors are not needed. &lt;/p&gt; 
+&lt;h2&gt;Find/Find and Replace Snippets&lt;/h2&gt;
+</pre>
+
+<h3>Pattern Recognition</h3>
+The first step to solving this problem was to recognize the pattern between the HTML output and what I had been typing in the Wordpress editor. Then I simply needed to make Regular Expressions that represented the patterns. 
+<table>
+<tr><th width="200">Problem</th><th>Regular Expression Solution</th></tr>
+<tr><td>New Lines in the editor came out as paragraph tags</td><td>
+<pre class="prettyprint">
+Find:&lt;/?p&gt;
+Replace: \n
+</pre>
+</td></tr>
+<tr><td>code brackets came out as a &lt;pre&gt; tag with different classes</td><td>
+<pre class="prettyprint">
+Find:&lt;(/|)pre[^&gt;]*&gt;
+Replace:[\1code]
+</pre>
+</td></tr>
+<tr><td>All my quotations had been escaped to &amp;#8220;, &amp;#8221;, or &amp;quot;</td><td>
+<pre class="prettyprint">
+Find:&amp;(quot|#822[01]);
+Replace:&quot;
+</pre>
+</td></tr>
+<tr><td>Some apostrophes had been escaped to &amp;#8216; and &amp;#8217;</td><td>
+<pre class="prettyprint">
+Find:&amp;#821[67];
+Replace:'
+</pre>
+</td></tr>
+<tr><td>HTML tags in the code snippets had been escaped. &lt; to &amp;lt;, and &gt; to &amp;gt;</td><td>
+Done using regular find and replace
+</td></tr>
+</table>
+
+So in just a few minutes, I was able to recover the text in a usable form. 
+<pre class="prettyprint">
+
+Welcome to the first article in our IDE Friday series. Today, we'll be discussing the use of Regular Expressions in your IDE of choice. If you're unfamiliar with Regular Expressions, check out our tutorial series, beginning with the &lt;a href=&quot;http://www.vertstudios.com/blog/introduction-to-regular-expressions/&quot;&gt;Introduction to Regular Expressions&lt;/a&gt;. 
+ 
+&lt;h2&gt;Wait, isn't RegEx just for Form Validation?&lt;/h2&gt; 
+
+Many developers new to the world of Regular Expressions think that RegEx's sole purpose is for validating user input through a contact form. While of course RegEx is great for user input validation, it is in no way confined to that single task. 
+ 
+&lt;h2&gt;RegEx as a Text Editing Tool&lt;/h2&gt; 
+
+Many IDE's and programming-oriented text editors have a Find and Replace functionality. Additionally, these Find and Replaces generally have an option for Regular Expression searches. 
+ 
+
+Such as Notepad++&lt;br /&gt; 
+&lt;img src=&quot;http://assets.vertstudios.com/blog/images/regex-ide/notepadpp.jpg&quot; alt=&quot;Notepad++&quot; /&gt;
+ 
+
+And Komodo&lt;br /&gt; 
+&lt;img src=&quot;http://assets.vertstudios.com/blog/images/regex-ide/komodo.jpg&quot; alt=&quot;Komodo&quot; /&gt;
+ 
+&lt;h2&gt;Conventions&lt;/h2&gt; 
+
+In most IDEs/editors, special characters in the &quot;Find&quot; field need to be escaped. Characters in the &quot;Replace&quot; field do not need to be escaped except for the backslash '\'. This is because the backlash is used to refer to &lt;a href=&quot;http://www.vertstudios.com/blog/back-references-quantifiers-and-anchors-in-regex/&quot;&gt;back-references&lt;/a&gt;. Keep in mind the entire text file is the string being tested, so the typical anchors are not needed. 
+ 
+&lt;h2&gt;Find/Find and Replace Snippets&lt;/h2&gt; 
+
+The focal point of this article is providing useful snippets of find and replace code to make life easier when making large adjustments. Some snippets involve more than one step. When we cover macros, we'll show how to combine the multi-step patterns into a single executable command.
+ 
+&lt;h3&gt;1) Clear all console.log() calls&lt;/h3&gt; 
+
+When debugging JavaScript, you may track your variables using console.log(). This RegEx eliminates the calls from the source. 
+ 
+<pre class="prettyprint"> 
+Find:\s*console.log\([^)]+\);?
+Replace:
+</pre>
+
+<h2>Use Your Judgement</h2> 
+Sometimes going through and manually deleting characters may be faster. However, I encourage you to take the time and challenge yourself to use regular expressions in your find and replace operations, solely as an exercise. Like any skill, the more you do it, the better you get. But if you're under a substantial time crunch, there's no shame in editing the old-fashioned way. Enjoy the world of RegEx!
+{% endblock post %}
+

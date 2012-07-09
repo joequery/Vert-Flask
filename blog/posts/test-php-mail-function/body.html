@@ -1,0 +1,41 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+When <a href="http://www.vertstudios.com/blog/windows-php-mail-server-installation-guide/">setting up your mail server</a>, you may want to check your <strong>php mail</strong> function with a simple script. 
+<h2>The PHP Code</h2>
+The following script was snagged from the <a href="http://php.net/manual/en/function.mail.php">php mail()</a> documentation, with a few minor adjustments explained below.
+<pre class="prettyprint">
+&lt;?php
+$to      = 'youremail@yourdomain.com';
+$subject = 'the subject';
+$message = 'hello';
+$headers = 'From: webmaster@example.com' . &quot;\r\n&quot; .
+        'Reply-To: webmaster@example.com' . &quot;\r\n&quot; .
+          'X-Mailer: PHP/' . phpversion();
+date_default_timezone_set('America/Chicago');
+ 
+$mail = mail($to, $subject, $message, $headers);
+if($mail){
+    echo &quot;YES&quot;;
+} else{
+    echo &quot;NO&quot;;
+}
+?&gt;
+</pre>
+
+<h2>The Breakdown</h2>
+While the code is pretty self explanatory, there are a few noteworthy items. 
+
+<h3>Required Time Zone</h3>
+If you do not specify a time zone, the mail() function will yell at you. Be sure to specify a time zone through <a href="http://php.net/manual/en/function.date-default-timezone-set.php">date_default_timezone_set()</a>
+
+<h3>Mail Function Boolean Value</h3>
+The mail() function returns true if mail was successfully sent, and false otherwise. You can use this characteristic to inform the user whether the message was successfully delivered.
+{% endblock post %}
+

@@ -1,0 +1,9 @@
+Flask
+PyQuery
+requests
+apscheduler
+Flask-Markdown
+Flask-WTF
+Flask-Script
+formencode
+html2text

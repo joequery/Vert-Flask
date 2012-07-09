@@ -1,0 +1,38 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Sometimes when you're getting expressive with JavaScript, you find it necessary to hide certain elements when the page loads. An example of this would be our very own <a href="http://www.vertstudios.com/work.php">work page</a>. We ensure that the user is able to see the text whether they have JavaScript enabled or disabled; it just looks a hell of a lot cooler with JavaScript enabled. 
+
+<h2>The Code</h2>
+<a href="http://dougneiner.com/">Doug Neiner</a> describes a very painless way to hide elements using JavaScript without a flicker. Add the following right after the opening &lt;head&gt; tag:
+<pre class="prettyprint">
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            //Credit: Doug Neiner - http://dougneiner.com/
+            document.documentElement.className += &quot; js&quot;
+        &lt;/script&gt;
+</pre>
+
+This adds the class "js" to the HTML element. Declare the following style in your stylesheet
+<pre class="prettyprint">
+.js .jshidden{
+display: none;
+}
+</pre>
+
+Now apply the jshidden class to the items you wish to have hidden in the even the user has JavaScript enabled.
+<pre class="prettyprint">
+&lt;img class=&quot;jshidden&quot; src=&quot;someimg.jpg&quot; /&gt;
+</pre>
+
+If JavaScript is <em>disabled</em>, then the element will not be hidden.
+
+<h2>Can't I just use jQuery.hide()?</h2>
+jQuery's <a href="http://api.jquery.com/hide/">.hide()</a> method kicks in at the very earliest on DOM load. In the event you have a significant amount of content on your page, the content you wish to hide will be loaded and THEN disappear. This looks very, very, VERY corny.
+{% endblock post %}
+

@@ -1,0 +1,65 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Anyone who keeps up with the development of CSS3 knows that CSS3 can do some cool things.
+
+<h2>Super Cool Web Design Things</h2>
+
+Cool things have been around in <a href="http://www.mcculloughdesigns.com">web design</a> ever since someone got the <strike>stupid</strike> brilliant idea of using spacer.gifs. Among the cool things that have <strike>plagued</strike> graced the internet over its lifetime are:
+<ul>
+<li>Guestbooks</li>
+<li>Blinking Text</li>
+<li>Marquee Text</li>
+<li>Background MIDI</li>
+<li>Clipart</li>
+<li>Cute animated GIFs</li>
+<li>Custom mouse cursors</li>
+</ul>
+And many, many more things that have absolutely no place on the internet today.
+
+I read an article from my friend Jeremy at <a href="http://jc-designs.net/blog/2010/06/inserting-new-elements-with-jquery-and-a-css3-tip/">JC Designs</a>, and he was really excited that <a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-pure-css-reflections/">CSS3 now supports image reflections</a>.
+
+Here are some examples of image reflections in case you aren't familiar with the term.
+
+<img src="http://officeblogs.net/powerpoint/20060630/PictureReflection.png" alt="Image Reflection" style="display: block; margin: 10px auto; border: 0px;"/>
+<img src="http://www.37signals.com/svn/images/reflection/screenshot.jpg" alt="Image Reflection" style="display: block; margin: 10px auto; border: 0px;"/>
+<img src="http://www.microsoft.com/student/office/en-us/images-new/background.jpg" alt="Image Reflection" style="display: block; margin: 10px auto; border: 0px;"/>
+
+It's a big hit these days, similar to how splash screens and flash intros were a big hit years ago. Point being? It's going to get old.
+
+<h2>The Question at Hand</h2>
+Should a standards based language that takes years to draft, years to test, and years to <strong>implement into web design browsers</strong> be trendy?
+
+<h3>Today's Trends are Tomorrow's Embarrassments</h3>
+
+What really caught my eye when reading the <a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-pure-css-reflections/">demo of the CSS image reflection</a> was a comment from someone named Michael (who I wish had listed a blog to link to).
+<blockquote>
+Very cool, but my thought/question is this: When CSS3 is finally fully supported, wont many of these cool features&#8211;which are all mostly inspired by Web UI design trends that are already many years old&#8211;be outdated? I think its ideal to be able to do all these wonderful things with CSS rather than with graphical images, but many of the CSS3 eye candy capabilities arent exactly cutting-edge anymore. By the time ALL the browser support them, well have moved on to other things (I assume).
+</blockquote>
+
+The "CSS3 eye candy" includes gradients, rounded rectangles, and many other cliche web design trends. Trends by definition come and go.
+
+So here we are in 2010, and yet the web still <a href="http://warpspire.com/features/html5-css3/">does not fully support 1997 and 2000 CSS specifications</a>. What makes us think that CSS3 will be adopted in time for these super cool trends to still be useful?
+
+There are two consequences in place here:
+A) The CSS3 dev's efforts will be wasted since the trends they are coding will be outdated
+Or, and by far the worst consequence...
+
+<h3>CSS3 Design Dictation</h3>
+If I am wrong and the current trends are still in style by the time CSS3 officially roles out, we are going to see an overall drop in creativity in the entry-level web design world. The web will become cluttered with these trends (even more so than now), because of the ease of implementing them into a design. Simply put, you use the tools you have, and if CSS3 gives you rounded rectangles, you might just use them because you can, it's easy, and it "looks cool".
+
+You simply should not design in code. It stifles the creative process like no other. Design in a sketchbook, design in photoshop, whatever you do, don't design in Dreamweaver.
+
+<h2>In conclusion...</h2>
+Implementing today's "hot trends" into CSS3 will either prove to be a waste of man hours, or worse, a devolution of the creativity that the web world is already lacking.
+
+
+<strong>What's your opinion on implementing design trends into CSS3?</strong>
+{% endblock post %}
+

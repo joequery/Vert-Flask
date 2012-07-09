@@ -1,0 +1,15 @@
+{% set first = True %}
+{% for story in stories %}
+  {% if first %}
+    <div class="post_snippet first">
+    {% set first = False %}
+  {% else %}
+    <div class="post_snippet">
+  {% endif %}
+
+  <h4><a href="{{story['url']}}">{{story['title']}}</a> - {{story['pubDate']}}</h4>
+  <p>{{story['description']}}</p>
+  <p class="read_more"><a href="{{story['url']}}">Read More </a>|
+  <a href="{{story['comments']}}">View Comments</a></p>
+  </div>                                
+{% endfor %}

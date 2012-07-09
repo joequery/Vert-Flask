@@ -1,0 +1,34 @@
+<html> 
+<head> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="equalto.jquery.js"></script>
+<title>equalTo plugin</title>
+<style type="text/css">
+body{background-color: #FFFFFF;}
+.box{width: 200px;height: 30px;border: 1px solid #000000;float: left;margin-left: 10px;text-align: center;}
+button{float: left;margin: 10px 0px 0px 10px;clear: both;}
+#result{float: left;margin-left: 10px;}
+</style>
+<script type="text/javascript">
+$(function(){
+	$("#evaluate").click(function(){
+		if($("#box1").equalTo(".box"))
+		{
+			$("#result").html("#box = .box");
+		}
+		else
+		{
+			$("#result").html("#box does not = .box");
+		}
+	});
+});
+</script>  
+</head> 
+<body> 
+	<div id="content">
+	<div class="box" id="box1">id of #box, class of .box</div>
+	</div>
+	<button type="button" id="evaluate">Evaluate</button>
+	<p id="result"></p>
+</body> 
+</html> 

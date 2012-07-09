@@ -1,0 +1,21 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+I just lost an entire afternoon's worth of work because I just could NOT get Guard to make Spork reload when the spec_helper file was changed. I thought my Guardfile was wrong, I even spent 2+ hours digging around the Guard code itself. It turns out that the OS X notification system used by default by Guard, rb-fsevent, randomly decides to have a mental breakdown on your system. There's an entire <a href="https://github.com/thibaudgg/rb-fsevent/issues/10">Github Issue thread</a> spanning the duration of 10+ minutes describing the headaches caused by rb-fsevent not sending the events.
+
+<h2>The Workaround</h2>
+The workaround is to tell Guard to not look for rb-fsevent, but to instead <a href="http://en.wikipedia.org/wiki/Polling_(computer_science)"> use polling</a>. To do so, append the <strong>--no-vendor</strong> option when starting up your Guard server.
+
+<pre class="prettyprint">
+$ bundle exec guard --no-vendor
+</pre>
+
+Polling is a more expensive operation, but hey, at least it works.
+{% endblock post %}
+

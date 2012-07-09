@@ -1,0 +1,167 @@
+/*----------------------------------------------------------------------
+//File: text.css
+//Purpose: Contains styles specific to font weights, faces, sizes, etc
+//Client: Us!!!
+//Last Updated: November 17, 2010
+//Author: Justin Edwards (@vertjustin)
+//Edited by: Joseph McCullough (@joe_query)
+/*----------------------------------------------------------------------*/
+
+/*	960 Grid System ~ Text CSS.
+	Learn more ~ http://960.gs/
+	Licensed under GPL and MIT. */
+
+
+
+/* `Basic HTML
+----------------------------------------------------------------------------------------------------*/
+	
+	body {
+		font: 15px/1.4 MuseoSans, 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+		color: #fff;
+		font-weight: normal;
+	}
+	
+	a:focus {
+		outline: 1px dotted;
+	}
+	
+	hr {
+		border: 0 #ccc solid;
+		border-top-width: 1px;
+		clear: both;
+		height: 0;
+	}
+
+
+/* Fonts
+----------------------------------------------------------------------------------------------------*/
+
+@font-face {
+	font-family: 'MuseoSlab';
+	src: url('museo_slab_500-webfont.eot');
+	src: local('Museo Slab 500'), url('http://assets.vertstudios.com/fonts/museo_slab_500-webfont.woff') format('woff'), url('http://assets.vertstudios.com/fonts/museo_slab_500-webfont.ttf') format('truetype'), url('http://assets.vertstudios.com/fonts/museo_slab_500-webfont2.svg#webfontjaVFE9Ne') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MuseoSans';
+	src: url('museosans_500-webfont.eot');
+	src: local('Museo Sans 500'), url('http://assets.vertstudios.com/fonts/museosans_500-webfont.woff') format('woff'), url('http://assets.vertstudios.com/fonts/museosans_500-webfont.ttf') format('truetype'), url('http://assets.vertstudios.com/fonts/museosans_500-webfont2.svg#webfont5JIXlOGa') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+/* `Links
+----------------------------------------------------------------------------------------------------*/
+
+	a {
+		color: #1ba0cc;
+		text-decoration: none;
+	}
+	
+	#index h1 span {
+		color: #fff;
+		font-size: 33px;
+	}
+	
+	#index h1 {
+		font-size: 25px;
+	}
+	
+	a:hover {
+		text-decoration: underline;
+	}
+	
+	a:visited {
+		color: #207390; 
+	}
+
+	a:visited:hover {
+		color: #1ba0cc;
+	}
+	
+	small {
+		font-size: 70%;
+	}
+	
+/* `Headings
+----------------------------------------------------------------------------------------------------*/
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-family: MuseoSlab, 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+		font-weight: lighter;
+		color: #1ba0cc;
+		padding-bottom: .5em;
+	}
+	
+	h1 {
+		font-size: 26px;
+	}
+	
+	/*Brought this h1 style over from the main.css file. Thought it fit better here*/
+	h1 {
+	margin: 50px 0 50px 0px;
+	width: 640px;
+	}
+	
+	h2 {
+		font-size: 24px;
+	}
+	
+	h3 {
+		font-size: 20px;
+	}
+	
+	h4 {
+		font-size: 18px;
+	}
+	
+	h5 {
+		font-size: 16px;
+	}
+	
+	h6 {
+		font-size: 12px;
+	}
+
+/* `Spacing
+----------------------------------------------------------------------------------------------------*/
+	
+	/*
+	 
+	 #main_content ol {
+		list-style: decimal;
+	}
+	
+	#main_content ul {
+		list-style: disc;
+	}
+	
+	#main_content li {
+		margin-left: 30px;
+	}
+	
+	*/
+	
+	p,
+	dl,
+	hr,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	ol,
+	ul,
+	pre,
+	table,
+	address,
+	fieldset {
+		margin-bottom: 15px;
+		font-weight: normal;
+	}

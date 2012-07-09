@@ -1,0 +1,84 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+<h2>UPDATE: March 21, 2011</h2>
+If you're willing to legally accuse the content creator (In this case Yelp) of defamation, Google has now made it easier to <a href="http://www.google.com/support/bin/request.py?contact_type=lr_courtorder">submit a court order</a> to remove particular pages from the index. For more details, see <a href="http://www.marketingpilgrim.com/2011/03/remove-negative-pages-google.html">Marketing Pilgrim</a>.
+<div class="hr"></div>
+
+<a href="http://www.yelp.com/" rel="nofollow">Yelp.com</a> is one of the most well known online business directories. Yelp has established a reputation as a consumer outlet due to the extensive number of business reviews their users provide on a daily basis. As stated on Yelp's homepage,
+<blockquote>"Yelp is the fun and easy way to find and talk about great (and not so great) local businesses"</blockquote>
+
+Consequently, Google Places has come to trust Yelp as an authority, and often implements business reviews from Yelp onto a business' <a href="http://www.vertstudios.com/blog/seo-google-local-places/">Google Places</a> page. 
+
+While I am all for freedom of speech and the power of the consumer, a portion of Yelp's monetization strategy has proven to be not only illogical, but also damaging to innocent business owners. 
+
+<h2>How Yelp makes money</h2>
+Yelp makes money in two simple manners. First, they offer featured listings in their business directory. Business that wish to appear above local competitors can pay to do so. 
+
+Secondly, and the origins of the foreshadowed mishapped, Yelp relies on high amounts of traffic to attract advertisers. Higher amounts of traffic naturally yields a higher bid between companies wishing to advertise. While there is absolutely nothing wrong with this business model, questions start to rise when you're willing to hurt the small businesses that form the very foundation of your company in order to gain more traffic. 
+
+<h2>Yelp refuses to delete closed business listings</h2>
+In order to inflate their numbers, Yelp does not remove the listings of companies that have been declared out of business. Why display the address, phone number, and reviews of a company that no longer exists? The only possible justification is to inflate the traffic statistics. Deleting a listing at all means a drop in traffic. Now multiply this by every single business that has gone under since Yelp's inception in 2004, and you're looking at a significant amount of traffic decrease. As described before, traffic directly relates to advertising revenue. It's understandable from an economic perspective as to <i>why</i> Yelp keeps these listings active. However, this approach is leading to an extremely negative consequence that Yelp does not seem to care about.
+
+<h2>Google can't determine a closed business from an open one</h2>
+Try to put yourself in the shoes of an algorithm designer. When viewing the HTML of a business website, what could possibly let you know that a business has closed? The phrase "This business is closed" easily could appear within a review planted by a competitor with the sole intent of throwing off Google's indexing of the site. Google does its best to prevent competing companies from damaging each others online presence, so this idea is a no-go.
+
+One idea is looking for the phrase "closed" in a heading or title tag, but what if the name of the business in question involved the word "Closed"? How could you differentiate that "closed" from "closed" meaning out of business? It's extremely difficult to automate the idea of determining an open business from a closed one, and so far Google has not implemented such a feature. Thus, the most consistent way to associate a review with a Google Place listing is through physical address and phone number citations.
+
+<h3>Why does this matter?</h3>
+So what, Yelp doesn't want to delete the listings of closed businesses. What's the harm in them getting a little more traffic? The answer lies in the punch line of <a href="http://www.youtube.com/watch?v=7CU-poRQPr0">Demetri Martin</a>, one of my favorite comedians: "<strong>Location, location, location</strong>". The fact that Google uses building addresses to associate a web page to a Google Place profile can cause discrepancies. 
+
+The location of a business that went under or was bought out could easily belong to a current business. 
+
+<h4>Consider the following (real life) scenario</h4>
+
+Let's say a restaurant was run by extremely incompetent management from 2005 to 2008. The users on Yelp really let the guy have it, bringing his restaurant rating down to 2 out of 5 stars (and rightfully so). Due to the poor quality of food and customer service, the business eventually went under. However, an entrepreneur decided to buy out the location of the bad restaurant and start his own restaurant. People loved the service and the food. So much, in fact, that his signature dish was featured in a national food publication. The guy really turned the place around.
+
+However, due to the fact that Yelp and similar directories choose to keep closed business listings active, Google began to associate these negative reviews to the new restaurant. While most of the reviews between 2009 and 2010 were 5/5 stars, the numerous 1 and 2 star ratings from business review sites brought the new restaurants average rating down to 2.5 stars. Whenever users conducted local searches for businesses in his niche, his company would come up with significantly lower ratings than his competitors. The entrepreneur was paying the price for someone else's incompetency. 
+
+While Google's citation standard is not perfect, it easily remains the current most consistent way to associate a website with a Google Place page. Addresses and Phone Numbers simply do not change that often. Local Search results frequently determine which companies get a searchers business, since reviews and location can be viewed right on the first search result page. Google's citation standard is extremely utilitarian. For the most part, it works fine.
+
+<h2>Yelp doesn't give a damn</h2>
+So the entrepreneur in the previous scenario came to us for help. I kindly emailed Yelp the following:
+<blockquote>
+To whom it may concern,
+
+My name is Joseph McCullough, and I am representing (new business) of (business location).
+
+(New business) now operates in the location where (old business) used to reside. As can be seen by the yelp listing, (old business) is out of business. However, the negative reviews (old business) recevied are being attributed to (new business) on Google since the addresses are the same. Since (old business) is closed and its listing is negatively affecting a respected establishment, I'm asking you to please remove the listing from your index.
+
+Thank you so much!
+
+Feel free to email me at joseph@vertstudios.com or call at 903 330 5057</blockquote>
+
+Yelp's Response:
+<blockquote>
+Joseph-
+
+Unfortunately, we cannot control what gets displayed on Google search. As such, we recommend you contact them directly regarding this issue. 
+</blockquote>
+
+<b>UPDATE*</b>
+I sent a short email in response to the Yelp representative's rebuke. 
+<blockquote>
+Yes you can [control what gets displayed on Google search], by removing an irrelevant listing for a company no longer in business. It would reflect extremely highly on yelp if you would understand this simple situation.
+</blockquote>
+
+The response from Yelp:
+<blockquote>
+Unfortunately, we don't remove listings of closed businesses from our site. This kind of information is publicly available and its use is protected under the law. However, closed business listings eventually stop appearing in our search results, over time.
+</blockquote>
+
+Essentially: "Too bad, we can do what we want" 
+<h2>Closing thoughts</h2>
+It's always disappointing to see a business fail to correct a simple issue simply because they "<i>don't have to</i>". Yelp could easily remove the address and phone number of a closed business (who needs to know how to get to a closed business anyway? Or who plans on calling a company out of business?). However, they choose to keep the citation up in order to score more traffic and woo advertisers, with the justification that "We don't determine what shows up on Google." Actually, Yelp, you do.
+
+<strong>What do you feel the best course of action should be for Yelp, Google, or the unfairly damaged business owner?</strong>
+{% endblock post %}
+

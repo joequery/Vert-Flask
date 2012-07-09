@@ -1,0 +1,88 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Sequential fade-ins, or the fading in of elements one after the other, establish a sense of professionalism for a website. Additionally, the fade-in helps guide the user's eyes to the content you find most important.
+
+Since sequential fade-ins rely extensively on proper usage of jQuery's .delay() method, I felt it would benefit you to learn the mechanics of .delay() through this practical example.
+<h2>Understanding .delay() and for loop mechanics</h2>
+The logic behind the sequential fade in is fairly straightforward: Go through each element of the wrapped set and fade it in. Simple, right?
+
+So simple that this for loop might seem correct.
+
+<pre class="prettyprint">
+for(var i=0; i&lt;$(wrapper).length; i++)
+{
+   $(wrapper[i]).delay(1000).fadeIn(500);
+}
+</pre>
+
+But the demo shows that everything comes up at once. Why is that? Two reasons.
+<ol>
+  <li>JavaScript does not pause between loop iterations</li>
+  <li>.delay() is not global</li>
+</ol>
+<h3>JavaScript does not pause between iterations</h3>
+.delay() and setTimeout do not halt or delay JavaScript from iterating code. JavaScript will iterate through a loop as many times as conditions allow it in just a few milliseconds.
+
+Assuming our $(wrapper) contains 3 elements, JavaScript sees our for loop
+
+<pre class="prettyprint">
+for(var i=0; i&lt;$(wrapper).length; i++)
+{
+   $(wrapper[i]).delay(1000).fadeIn(500);
+}
+</pre>
+
+As equal to these three separate statements.
+
+<pre class="prettyprint">
+$(wrapper[0]).delay(1000).fadeIn(500);
+$(wrapper[1]).delay(1000).fadeIn(500);
+$(wrapper[2]).delay(1000).fadeIn(500);
+</pre>
+
+JavaScript executes statements so fast that for our purposes, we can assume JavaScript executes these statements simultaneously.
+
+Loop iterations operate in direct contrast to jQuery's method "chaining". Consider the jQuery chain
+
+<pre class="prettyprint">$(wrapper).fadeIn(500).fadeOut(500);</pre>
+
+fadeOut does not attempt to happen at the same time as fadeIn. fadeOut is placed in a queue and waits for the fadeIn animation to complete.
+
+The following also causes fadeOut to happen after fadeIn, despite the fact that they are two separate statements.
+
+<pre class="prettyprint">
+$(wrapper).fadeIn(500);
+$(wrapper).fadeOut(500);
+</pre>
+
+This is because the JavaScript queue is global, and no matter where a statement is executed, it has to go through the same queue-check. Even though the fadeIn and fadeOut methods are in separate statements, JavaScript recognizes that $(wrapper) is under animation, and places fadeOut in the queue for $(wrapper) until the fadeIn animation is complete. But for best coding practices, that type of code should just be chained to one line.
+
+Here's a visual aid I use to remember the queuing differences between iterations and chains
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/javascript/jquery-fadein/queued.jpg" alt="jQuery queue" />
+
+"Horizontal" chains are queued while "vertical" iterations (vertical because the loop goes back to the top and runs down the body of the loop) are NOT queued.
+<h3>.delay() is not Global</h3>
+.delay only applies to the queue of <strong>one element</strong> at a time. Executing a delay on $(wrapper[0]) will have no effect whatsoever on $(wrapper[1]).
+
+Therefore, JavaScript sees our for loop
+
+<pre class="prettyprint">
+for(var i=0; i&lt;$(wrapper).length; i++)
+{
+   $(wrapper[i]).delay(1000).fadeIn(500);
+}
+</pre>
+
+Like this
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/javascript/jquery-fadein/image1.jpg" alt="For Loop time-line" />
+<h2>A Working Sequential Fade-In</h2>
+Now that you understand the mechanics of the .delay() method, you might be interested in seeing a working example of a Sequential fade-in effect. If you are, head over to <a href="http://jc-designs.net/blog/2010/06/more-than-one-way-to-skin-a-jquery/">The Web Machine</a> and view <a href="http://jc-designs.net/blog/2010/06/more-than-one-way-to-skin-a-jquery/">Jeremy Carlson's solution</a>.
+{% endblock post %}
+

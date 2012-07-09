@@ -1,0 +1,100 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+If you're trying to pass a pointer to a structure to a function, you may be getting the compiler error <b>request for member &#8216;SOME_PROPERTY&#8217; in something not a structure or union</b>. If you  <em>swear</em> you're passing in a pointer to the proper structure, and you're <em>certain</em>, there are no typos for the member name you're trying to access, you may just be experiencing a bit of pointer ambiguity. 
+
+<h2> The Problem! </h2>
+Consider a very simple example. 
+
+[c]
+// Example demonstrating C pointer ambiguity 
+#include&lt;stdio.h&gt;
+
+typedef struct{
+  char* job;
+  int age;
+} Person;
+
+void give_bob_a_job(Person*);
+
+int main(){
+  Person bob;
+  give_bob_a_job(&amp;bob);
+  printf(&quot;The job of bob is %s\n&quot;, bob.job);
+        return 0;
+}
+
+void give_bob_a_job(Person *bob){
+  *bob.job = &quot;Sysadmin&quot;;
+}
+[/c]
+
+We compile the file
+<pre class="prettyprint">
+~$ gcc bob.c -o bob.o
+bob.c: In function &#8216;give_bob_a_job&#8217;:
+bob.c:18:6: error: request for member &#8216;job&#8217; in something not a structure or union
+</pre>
+
+So we receive the error <b>error: request for member &#8216;job&#8217; in something not a structure or union</b>. 
+
+We run through a mental checklist:
+
+<ul>
+<li>Did I pass a pointer to the right structure?</li>
+<li>Does that structure really have a 'job' member?</li>
+<li>Did I make any typos in declaring the member or calling the member?</li>
+</ul>
+
+If all these check out, then we move on.
+
+Let's look closer at the statement on line 18.
+[c]*bob.job = &quot;Sysadmin&quot;;[/c]
+
+This actually reads 
+<blockquote>
+'Assign the string "Sysadmin" to the pointer variable of bob.job'
+</blockquote>
+
+In other words, the deference operator (<b>*</b>) is dereferencing all of <b>bob.job</b> instead of dereferencing bob and accessing its job member. In this context, <b>bob</b> is just a pointer to Person, so it's a memory address. Thus the compiler error makes sense! 
+
+Luckily, the solution is super simple.
+
+<h2> The Solution! </h2>
+
+We can be explicit about our dereferencing by using parenthesis. 
+[c](*bob).job = &quot;Sysadmin&quot;;[/c]
+
+This reads
+<blockquote>
+'Assign the string "Sysadmin" to the pointer variable of bob's job member'
+</blockquote>
+
+Replace line 18 with the correction, and the code should compile with the following output upon execution:
+
+<pre class="prettyprint">
+The job of bob is Sysadmin
+</pre>
+
+<h2>Syntax cleanup</h2>
+Dereferencing a pointer to a structure is so common, we have a shorthand for doing so.
+
+<pre class="prettyprint">(*foo).bar</pre>
+
+is equal to
+
+<pre class="prettyprint">foo-&gt;bar</pre>
+
+so 
+
+<pre class="prettyprint">bob-&gt;job = &quot;Sysadmin&quot;;</pre>
+
+would work as well.
+{% endblock post %}
+

@@ -1,0 +1,201 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Regular expressions are a mysterious, extremely useful programming tool. The syntax of Regular Expressions(RegEx) can be extremely daunting for those starting out. Additionally, I've found a lot of RegEx intro guides to be extremely vague, which personally turned me off to learning RegEx for many months. For a while, my "knowledge base" of RegEx consisted of copying and pasting Regular Expression snippets as needed. However, this guide will introduce you to the basics of Regular Expressions in a hopefully extremely accessible manner. 
+
+<h2>What are Regular Expressions Good For? </h2>
+Regular Expressions, by definitions, are symbolic patterns that describe text. Regular Expressions serve many extremely useful purposes, including:
+<ul>
+<li>Formatting text</li>
+<li>Extracting substrings from a string</li>
+<li>Finding and replacing characters that are not strictly formatted</li>
+<li>Validating form data</li>
+<li>Matching text patterns</li>
+</ul>
+
+When it comes to web development, form validation tends to be the primary reason why a developer turns to Regular Expressions. Hopefully this tutorial, and an upcoming tutorial discussing the use of Regular Expressions in your work flow, will shake off the notion that Regex == Form Validation. 
+
+<h2>Conventions in this Article</h2>
+For this tutorial, we'll use a generic syntax. Note that languages deal with escape characters and back references differently. Remember that whenever you're applying this knowledge to your language of choice. For your reference:
+<ul>
+<li><a href="http://php.net/manual/en/function.preg-replace.php">PHP Regex Syntax</a></li>
+<li><a href="http://www.regular-expressions.info/javascript.html">JavaScript Regex Syntax</a></li>
+
+Regular expression patterns will be denoted with forward slashes (//). 
+<h2>Thinking Like a RegEx Engine</h2>
+Using Regular Expression requires a great amount of abstract thinking. The most important concept to understand is how a RegEx engine works. You'll find it easier to think about Regular Expressions if you, as silly as it sounds, pretend you're a robot! 
+
+For example, "cat" to us means a furry, lovable creature. 
+<img style="display: block; margin: 0px auto;" alt="Cat" src="http://www.solarnavigator.net/animal_kingdom/animal_images/cat_yawning_canine_teeth.jpg" />
+
+But instead of seeing "cat" as a word, think of cat as the character 'c', followed immediately by the character 'a', followed immediately by the character 't'. In Regular Expressions, the position of each character is extremely important. 
+
+<h2>Regular Expression Syntax</h2>
+Now that we have the hypothetical-philosophical-BS out of the way, let's make some regular expressions! 
+
+<h3>Literal Characters</h3>
+Literal characters are simply characters without any modifications. Unless you specify otherwise, the RegEx engine will treat all characters as case-sensitive. Thus the pattern /a/ matches the last character in "Agenda", but not the first character, 'A'. 
+
+Lets say we were parsing some HTML, and we wanted to know if there was an image tag anywhere in the file. We could use the pattern /&lt;img/ since we know that there shouldn't be a space between the open bracket and the element name in HTML. 
+<a href="http://bit.ly/ihTSSu">See img tag example</a>
+
+<h4>Escaping Special Characters</h4>
+There are numerous characters set aside for special operations in Regular Expressions. These characters include:
+<ul>
+<li>[</li>
+<li>]</li>
+<li>(</li>
+<li>)</li>
+<li>?</li>
+<li>*</li>
+<li>+</li>
+<li>^</li>
+<li>$</li>
+<li>\</li>
+<li>.</li>
+<li>{</li>
+<li>}</li>
+</ul>
+If you want to express the literal version of these characters, precede the character with a backslash \. That means to represent a backslash itself, you will need two backslashes. 
+
+For example, lets say you were looking for hotwire.com in a text file. The pattern /hotwire.com/ does indeed match the string "hotwire.com", but also matches "hotwirehcom", "hotwireLcom", etc, because the . symbol un-escaped can represent ANY character. The correct pattern would be /hotwire\.com/. 
+<a href="http://bit.ly/eWJsRV">See hotwire.com example</a> 
+
+<h3>Character Classes</h3>
+Literal characters are hard-coded and stoic. Consequently, literal characters on their own usually don't provide much utility to the developer. However, the dynamic nature of character classes opens up a world of possibilities. 
+
+Character classes are characters denoted between square brackets that represent a number of options for a particular character slot. 
+
+For example, the pattern /h[ao]t/ matches "hat" and "hot". The characters 'a' and 'o' are said to be within a character class. No matter how many characters are in the character class, only one will be used. The RegEx engine iterates through every character in the character class to see if there is a potential match with the string being tested. Thus, /h[abcdefghijklmnopqrstuvxxyz]t/ will still match "hat" and "hot", but will now also match "hbt", "hct", etc. 
+
+Character classes only take up one character "slot". Thus, it's quite common to see one character class after another character class. 
+
+As another example, take the pattern /h[ao][pt]/. This pattern matches:
+<ul>
+<li>hap</li>
+<li>hat</li>
+<li>hot</li>
+<li>hop</li>
+</ul>
+<a href="http://bit.ly/hNBGn3">See example</a>
+
+<h4>Ranges in Character Classes</h4>
+Within a character class, you can define a range of characters for the RegEx engine to match using the - operator. 
+
+For example, the pattern /[a-c][0-2]/ matches: 
+<ul>
+<li>a0</li>
+<li>a2</li>
+<li>b2</li>
+<li>c1</li>
+</ul>
+And more. 
+
+Additionally, multiple ranges can be specified within one character class. It's important to remind yourself that no matter what, only one character will be matched by the character class. 
+
+The pattern /[a-zA-Z0-9]/ matches a single alphanumeric character. The pattern is equivalent to /[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]/
+
+Since - indicates a range of characters, it is a special character within character classes. There are two ways of escaping the - in the event you need to use the character as a possible match within the character class.
+<ol>
+<li>Escape the - with a backslash. (\-)</li>
+<li>Have the - at the very end. </li>
+</ol>
+
+So a pattern for simple 1 digit mathematical expressions would be /[0-9][*/+-][0-9]/
+The pattern would match
+<ul>
+<li>1+1</li>
+<li>3-5</li>
+<li>5*9</li>
+</ul>
+And more. 
+<a href="http://bit.ly/gmEsmH">See math expression example</a>
+
+<h4>Special Characters in Character Classes</h4>
+Character classes have their own distinct set of special characters, separate from the special characters listed above. The special characters for character classes are:
+<ul>
+<li>\ (escape character)</li>
+<li>^ (negation)</li>
+<li>- (range)</li>
+<li>] (character class end)</li>
+</ul>
+
+To have the character class match any of these as literal characters, they must be preceded with a backslash (\). 
+<a href="http://bit.ly/fEl9zk">See example for escaping special characters</a>
+
+<h4>Character Class Negation</h4>
+At times you may want to select all characters except a specified few. In that case, placing a caret (^) immediately after the opening bracket of the character class means the character class will match any characters except the remaining characters in the character class.
+
+For example, the pattern /hi[^a-zA-Z0-9]/ matches:
+<ul>
+<li>hi!</li>
+<li>hi$</li>
+<li>hi,</li>
+</ul>
+<a href="http://bit.ly/fHe0uk">See negated character class example</a>
+
+<h4>Predefined Character Classes</h4>
+Most languages come with many useful predefined character classes. 
+<table>
+<tr><th>Predefined character class</th><th>Matches</th></tr>
+<tr><td>\d</td><td>A digit</td></tr>
+<tr><td>\w</td><td>An alphanumeric character or underscore</td></tr>
+<tr><td>\s</td><td>A whitespace character</td></tr>
+<tr><td>\D</td><td>A non digit</td></tr>
+<tr><td>\W</td><td>A non alphanumeric character or underscore</td></tr>
+<tr><td>\S</td><td>A non whitespace character</td></tr>
+</table>
+
+<h3>Quantifiers</h3>
+So far we've discussed literals and character classes, both of which only match a single character. What if we want to have the same character class repeated? That's where quantifiers come in. 
+
+<table>
+<tr><th>Quantifier</th><th>Description</th></tr>
+<tr><td>?</td><td>0 or 1 occurrences (optional)</td></tr>
+<tr><td>*</td><td>0 or more occurrences</td></tr>
+<tr><td>+</td><td>1 or more occurrences</td></tr>
+<tr><td>{x}</td><td>Exactly x number of occurrences</td></tr>
+<tr><td>{x, y}</td><td>Between x and y number of occurrences</td></tr>
+<tr><td>{x,}</td><td>At least x number of occurrences</td></tr>
+</table>
+
+If you're wanting to quantify a group of literals, you will need to wrap them in parenthesis. 
+
+For example, the pattern /(piggy ?){3}/ matches 
+<ul>
+<li>piggy piggy piggy</li>
+<li>piggypiggypiggy</li>
+<li>piggypiggy piggy</li>
+</ul>
+The question mark indicates that the space after the y is optional. However, the pattern of a p followed by i, followed by g, followed by g, followed by y, followed by an optional space, must be repeated 3 times. 
+
+So how would we match the format of the following US phone number: <b>903-555-5555</b>? 
+We observe that the phone number is 3 digits, followed by a dash, followed by 3 digits, followed by a dash, followed by 4 digits. Thus, the pattern would be /\d{3}-\d{3}-\d{4}/
+<a href="http://bit.ly/fRMAge">See phone number example</a>
+
+<h4>Bar operator</h4>
+Additionally, if you wish to choose between different sequences of multiple characters, the bar operator (|) serves as a means to extract one of the sequences. 
+For example, the pattern /Do not (eat|hit|fight|scratch) the cat/ matches
+<ul>
+<li>Do not eat the cat</li>
+<li>Do not hit the cat</li>
+<li>Do not fight the cat</li>
+<li>Do not scratch the cat</li>
+</ul>
+<a href="http://bit.ly/gUySV4">See the cat example</a>
+
+<h2>Resources</h2>
+There are some great resources for learning regular expressions on the web. As you've seen throughout the article, I've referenced <a href="http://regexpal.com">RegexPal</a> many times. RegexPal is an invaluable tool for testing your regular expressions.
+
+As for books, I highly recommend the e-book available from <a href="http://www.regular-expressions.info/print.html">Regular-Expressions.info</a>. For only $5, you can get one of the most comprehensive publications on Regular Expressions available.
+
+<h2>Next Article</h2>
+My next article over RegEx will cover back-references and anchors, two critical concepts related to Regular Expressions. Be sure to <a href="http://www.vertstudios.com/blog/feed/">subscribe</a> so you don't miss it!
+{% endblock post %}
+

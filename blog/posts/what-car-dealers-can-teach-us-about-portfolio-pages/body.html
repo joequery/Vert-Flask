@@ -1,0 +1,45 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+I've noticed a trend on <strong>web design</strong> companies portfolio pages: They make it hard to view the work done for their clients live. Instead of letting the viewer actually visit the sites of the clients directly from the portfolio page, the page will just bring up an overlay to view a larger print screen. If you want to view the website in real time, you have to type the URL in your browser yourself!
+
+The only advantages to bringing up a larger print screen via an overlay is that you get to show off that you know how to do an overlay, and you keep them on the website longer. Big deal.
+
+The subsequent disadvantages far outweigh.
+
+<h2>Core Disadvantage: Potential Clients Feel No Ownership</h2>
+Why are car dealerships so insistent on you test driving their cars? Because they want you to <em>love</em> it.
+<img style="display: block; margin: 10px 0px 10px 10px;" src="http://blog.caranddriver.com/wp-content/uploads/2009/05/how_to_test_drive_a_car_-_feature-440x268.jpg" alt="Car Salesman" />
+Love is a packaged emotion that is a crucial selling point for car dealerships. With love comes anxiety, fear, and jealousy.
+
+When you see a car you want, you might be intrigued. However, the car dealerships recognize that curiosity may not be a strong enough emotion to lead to a sale. What emotion can be used for this sale? Love. How can love be created in this environment between a human and a machine? The answer: Ownership.
+
+Each time a prospective buyer goes for a test drive, they own that car emotionally for that short period of time. The same effect occurs when a prospective client browses through a website made by a design company. While "test driving" the website, they see <em>their</em> logo up in the corner. Those flash animations are advertising <em>their</em> products. This temporary ownership has very strong psychological effects. Showing only images of your work out of fear that prospective clients will leave your page makes it harder for them to have a test drive: It's equivalent to a car dealership saying that they don't want potential buyers to go on a test drive because they might drive by another dealership while in the car! How much sense does that make?
+
+
+Dan Ariley's book entitled <a href="http://www.amazon.com/Predictably-Irrational-Revised-Expanded-Decisions/dp/0061353248">Predictably Irrational</a> describes <a href="http://www.spring.org.uk/2008/04/6-quirks-of-ownership-how-possessions.php">6 Quirks of ownership</a>, and two of these quirks demonstrate how important it is to let a potential client really get the feel of a website.
+
+<h4>Quirk 1: Ownership increases value to us</h4>
+Just the simple fact that a person owns something causes them to perceive it as more valuable. A good example is Ariely's Ticket Scalping study. Ariley got a list of people who wanted to buy the sold out tickets, and a list of people who had tickets and were willing to sell. The people who wanted to buy on average were willing to pay $139 per ticket, which seems pricey. However, the sellers on average would not be willing to sell the tickets for any less than $2000.
+
+Ownership increases a person's perceived value of an object. Allow a prospective client to "own" a website through their emotions by letting them engage in the appearance and functionality of the sites you have already created.
+
+<h4>Quirk 2: We Tend to Focus on Losses</h4>
+The reason why car dealers give you a test drive is because they understand the anxiety you will face when the drive is over. The car drove smooth, the breaks were responsive, it looked great, so great that it actually turned a few heads.
+
+Now you have to either lose that euphoria or pay the price of the car. Most will side with the latter, because the fear of never having that experience provided by the test drive generally outweighs the cost.
+
+You have to let <em>your</em> prospective clients know what they're missing out on if they don't hire you as their web designer. Showing only an image hides all the functionality that contributes to a heightened user experience.
+
+
+In conclusion, don't let the fear that a prospective client won't come back to the site prevent you from letting them easily access your live work. Let them go for a test drive, and you'll be pleased with the results.
+
+My rule of thumb is: If the user can not directly visit a site in your portfolio by clicking on a link or a printscreen thumbnail, it's too complex.
+{% endblock post %}
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="Free online conversion tool for converting from Miles to Kilometers. Requires JavaScript." />
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+<title>Free Miles to Kilometer Conversion</title>
+<script type="text/javascript">
+
+function roundNumber(number,decimalPlaces)  //Used to round a number to a certain number of decimal places.
+{
+var placeSetter = Math.pow(10, decimalPlaces);
+number = Math.round(number * placeSetter) / placeSetter;
+return number;
+}
+
+function milestokm()  //Converts and outputs Miles to Kilometers
+{
+var h = document.conversion.miles.value;
+h = parseFloat(h);
+var newh = h + 100;
+var answer = (.000002 * Math.pow(newh, 3)) + (4 * newh) + 410 - 812;
+answer /= h;
+
+		{document.conversion.km.value = answer}
+
+}
+
+</script>
+</head>
+<body> 
+
+<div id="wrapper" style="margin: -110px auto;">
+	<div id="content">
+		<form name="conversion">
+			<label for="miles">H=</label><input type="text" name="miles" id="miles" />
+
+			<label for="km">Result:</label><input type="text" name="km" id="km" disabled="disabled"/>
+			<input class="button" type="button" value="Help Kyle Cheat!" name="convert" onclick="milestokm()">
+			</form>
+		</div>		
+	<div id="footer">
+		<a href="http://www.mcculloughdesigns.com">McCullough Designs</a>
+		</div>
+</div>
+
+<!-- Start of StatCounter Code: 
+Used for Web Stats Traffic, Not Part of the Conversion Applet -->
+<script type="text/javascript">
+var sc_project=5459949; 
+var sc_invisible=1; 
+var sc_partition=60; 
+var sc_click_stat=1; 
+var sc_security="fce09648"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div
+class="statcounter"><a title="wordpress visitors"
+class="statcounter"
+href="http://www.statcounter.com/wordpress.org/"><img
+class="statcounter"
+src="http://c.statcounter.com/5459949/0/fce09648/1/"
+alt="wordpress visitors" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+	
+</body>
+</html>

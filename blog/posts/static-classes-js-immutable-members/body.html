@@ -1,0 +1,79 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Okay, we know that JavaScript <a href="http://www.1stwebdesigner.com/design/object-oriented-basics-javascript/">doesn't actually have classes</a>. Prototypes, yada yada, life goes on. So while Static Classes in JavaScript don't exist, let's talk about them anyway! 
+
+<h2>Reminder: Static Classes</h2>
+Static classes are classes that are not instantiated. For example, the Math class in JavaScript. 
+
+<pre class="prettyprint">
+var number = Math.pow(2,3); // Math is a static class
+var john = new Person();    // Person is not a static class
+john.say_hi();              // Invoke the say_hi method
+</pre>
+
+Since the <b><i>say_hi</i></b> method is called via the Person object john, it is not static. In contrast, the <b><i>pow</i></b> method is called directly from the Math class itself. 
+
+<h3>When to use Static Classes?</h3>
+The decision to use a static class depends all on personal preference and readability. The downside to static classes is that the class name populates the global namespace. A static class can easily be converted to a non static class, so if you change your mind, it's really not a big deal.
+
+<h3>A Sample Static Class</h3>
+<pre class="prettyprint">
+// Start off with an empty object
+var Physics = {};
+
+// Begin populating with attributes or methods
+Physics.get_velocity = function(vi, a, t){
+    return vi + a * t;
+};
+
+/* Now we can use the get_velocity method without 
+ * instantiating a Physics object
+ */
+var velocity = Physics.get_velocity(5, 9.81, 10); 
+</pre>
+
+<h2>Creating Immutable Properties</h2>
+The term "immutable" in JS must be taken with a grain of salt. Few items are truly immutable. Not even the methods of the official JS Math class are protected.
+
+<pre class="prettyprint">
+/* My plot to sabotage the data of my colleagues 
+ * and win the Nobel Prize!!!
+ */
+Math.pow =  function(a,b){return a + b};
+
+Math.pow(2,3)  // 5, not 8! Bwahahah!
+</pre>
+
+But hey, an extra layer of security is better than nothing, right? By using anonymous functions, we can (better) protect the values of properties that we do not want changed. 
+
+<pre class="prettyprint">
+// Create our static class, starting with an empty object
+var Physics = {};
+
+Physics.prop = function(){
+    return {
+        g: 9.81,
+        pi: 3.14
+    };
+};
+
+Physics.constant = function(val){
+    return Physics.prop()[val];
+};
+
+Physics.constant(&quot;pi&quot;); // 3.14
+
+Physics.prop()[&quot;pi&quot;] = &quot;LOL&quot;;
+Physics.constant(&quot;pi&quot;); // 3.14
+</pre>
+
+This obviously is not a strong degree of protection, but I do honestly believe it's better than nothing. Suggestions and improvements are welcomed!
+{% endblock post %}
+

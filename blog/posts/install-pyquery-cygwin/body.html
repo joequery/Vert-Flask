@@ -1,0 +1,20 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Quick snippet for you Cygwin users out there wanting to use the awesome <a href="http://pyquery.org/">PyQuery</a> library. 
+
+If you've tried to run a pip install pyquery or easy_install pyquery, you may have been greeted with a wall of GCC error messages. If this has happened to you, don't worry, the solution is simple!
+
+<h2>Get lxml running</h2>
+The main problem comes down to lxml not being available in your current cygwin installation. Simply follow the instructions on this <a href="http://anythingsimple.blogspot.com/2010/04/install-lxml-on-cygwin.html">life-saving article</a>, and you'll have lxml up running in no time. Don't forget to follow the instructions pertaining to debugging format.
+
+<h2>You're Done!?!?!</h2>
+That's right! Now just pip install pyquery and you should be good to go.
+{% endblock post %}
+

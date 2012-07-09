@@ -1,0 +1,29 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+I often find myself doing the following:
+<pre class="prettyprint">
+vim .
+</pre>
+to open up VIM and then explore my files. Because I'm lazy, here's a way to open up VIM in file navigation mode if no files are specified when running VIM.
+
+Append the following to your .bashrc
+[bash]
+function vim(){
+    vimpath=`which vim` 
+    if [ &quot;$#&quot; -gt 0 ] 
+    then
+        $vimpath $@
+    else
+        $vimpath .
+    fi  
+}
+[/bash]
+{% endblock post %}
+

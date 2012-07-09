@@ -1,0 +1,81 @@
+<html> 
+<head> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="getindexof.jquery.js"></script>
+<title>GetIndexOf plugin</title>
+<style type="text/css">
+body{background-color: #FFFFFF;}
+
+.box{
+width: 30px;
+height: 30px;
+border: 1px solid #000000;
+float: left;
+margin-left: 10px;
+}
+
+button{
+margin-top: 20px;
+margin-left: 10px;
+float: left;
+width: 50px;
+height: 30px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	var boxes = $(".box");
+	
+	//store boxes into a variable in case user resets
+	var storage = boxes.clone();
+
+	$(boxes).each(function()
+	{
+		//Populate box with their index number
+		$(this).html($(this).index());
+	});
+	
+	$("#splice").click(function()
+	{
+		//Clear index numbers
+		boxes.each(function(){$(this).html("");});
+		
+		//Get rid of first element in jQuery boxes object
+		boxes.splice(0,1);
+		
+		$(boxes).each(function()
+		{
+			//Populate box with their index number
+			$(this).html($(this).index());
+		});
+	});
+	
+	$("#reset").click(function()
+	{
+		boxes.remove();
+		
+		//Retrieve original object
+		boxes = storage;
+		
+		$("#content").html(boxes);
+		
+		//Populate box with their index number
+		$(boxes).each(function(){$(this).html($(this).index());});
+		
+		//store boxes into a variable in case user resets
+		storage = boxes.clone();		
+	});
+});
+</script>  
+</head> 
+<body> 
+	<div id="content">
+	<div class="box" id="box1"></div>
+	<div class="box" id="box2"></div>
+	<div class="box" id="box3"></div>
+	<div class="box" id="box4"></div>
+	</div>
+	<button style="clear:both;" type="button" id="splice">Splice</button>
+	<button type="button" id="reset">Reset</button>
+</body> 
+</html> 

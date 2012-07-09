@@ -1,0 +1,104 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+While I have always been an advocate for table-less layouts with semantic HTML, designing forms with pure CSS has proven to be a complete pain in the butt. And apparently I'm only one in <a href="http://www.google.com/search?hl=en&amp;q=%22css+form+problem%22">10,000 to say so</a>.
+<h2>Are Pure CSS Forms Really Superior?</h2>
+<img src="http://assets.vertstudios.com/blog/images/mc-blog/html/css-vs-table-form/goodcode-badcode.jpg" alt="Good Code vs Bad Code" />
+
+Truly the only arguments against table-based forms are the semantics arguments and web accessibility cliches. Let's address these claims.
+<h3>Claim 1: Semantics: Tables are for Tabular Data</h3>
+Do I agree with this statement? Certainly. But is it really too much of a stretch to advocate that forms are tabular in nature? Imagine you wanted to make a form that would be printed and filled out on paper. It would make sense to use a table for that. Also note that forms can logically be integrated to spreadsheets, which are <a href="http://webdesign.about.com/od/tables/a/aa122605.htm">tabular by definition</a>. Of course it is not as semantic as the display of tabular data, but the semantic value lost is equal to that of using the br tag outside the context of a paragraph line break (which happens extremely frequently).
+
+There seems to be a perception amongst some anti-table zealots that ugly, semantic-less code is okay <em>as long as you don't use tables</em>. So the same people who decry the use of tables will improperly use br tags, will litter their form code with spans and classes, have 400 lines of CSS code for their form, and then tell us that tables are bad for the web.
+
+Hmph.
+
+This <a href="http://www.sitepoint.com/forums/showpost.php?p=3774049&amp;postcount=6">post from the sitepoint forums</a> basically sums it up the arrogance and hypocrisy of the common table-basher.
+<blockquote>I'd never use a table to lay out a form (unless the structure really is tabular). There's no need.
+
+My favourite method for creating a traditional form layout (labels on the left, fields on the right) is to use a left padding on the fieldset (or a nested DIV) with relative positioning, then absolutely positioning the labels.
+
+Using classes for the fieldset you can acommodate layouts with different length of labels, e.g.,
+CSS Code:
+.short-labels {padding-left:5em}
+.medium-labels {padding-left:8em}
+.long-labels {padding-left:16em}
+
+This method also makes it very easy to have text fields or textareas that occupy all of the available width in the right 'column'.</blockquote>
+So to adhere to egocentric standards, you have to use a relatively positioned nested div, absolutely position each label and input, and use different classes depending on the relative length of the label.
+
+Yeah, that's totally good coding practice.
+
+And this post isn't just from some random forum junky: It's from a sitepoint author.
+<h3>Claim 2: CSS Forms are More Accessible</h3>
+What are the accessibility gains of CSS over Tables? According to <a href="http://www.chromaticsites.com/blog/13-reasons-why-css-is-superior-to-tables-in-website-design/">Chromatic Sites</a>,
+<ol>
+  <li>Separating content from visual information</li>
+  <li>Universal cross-browser style declarations</li>
+  <li>Placement of interactive elements</li>
+</ol>
+These are all true. I'd also like to add that CSS can decrease load times by eliminating the bulky HTML caused by table-based layouts.
+
+However, all these accessibility gains over tables seem to apply only when the <strong>entire web design</strong> is created in tables, and when no CSS is used whatsoever. I'll address these accessibility issues individually.
+<h4>1) Separating content from visual information</h4>
+The only presentational markup necessary when dealing with tabular forms are the initial cellspacing/border values, and the aligns/valigns for the cells. This extra markup is actually less than the extra markup found in most CSS contact forms via label classes and spans.
+<h4>2) Universal cross-browser style declarations</h4>
+Anyone who's worked with forms using only CSS knows that getting form elements to behave cross browser can be extremely time consuming. Despite the fact that 90% of the pages I create validate strict, forms will behave erratically in different browsers without a lot of extra classes and markup.
+<h4>3) Placement of interactive elements</h4>
+Chromatic Sites claims that tables for layouts causes too much clutter. However, this isn't an issue since you can use <a href="http://www.w3schools.com/css/css_syntax.asp">css selectors</a> to select the td and input tags with CSS. This allows you to apply proper margin and padding and give plenty of space between the form elements.
+<h4>4) CSS decreases load times over table-based layouts</h4>
+Yes, CSS can decrease load times for websites. However, bulky CSS to accommodate form creation can lead to a slower user experience as well. Take for instance <a href="http://jeffhowden.com/code/css/forms/">Jeff Howdens</a> creation of a CSS only form. It looks nice, functions well, and the HTML is perfectly semantic, but look at how long the CSS code is. Now imagine how long that took to perfect.
+<h2>Table-based Form Best Practices</h2>
+Table-based code can still be maintainable if you do not attempt to implement presentational elements within the code. Let the CSS Take care of that. Also, avoid nesting tables at all cost. There is generally no need for it when it comes to forms.
+
+Here is an example of a simple table-based form that lets CSS do most of the work(but thanks to using tables the work is easy!).
+
+<pre class="prettyprint">&lt;table id=&#8221;contactForm&#8221; cellspacing=&#8221;0&#8243; cellpadding=&#8221;0&#8243; border=&#8221;0&#8243;&gt;
+
+&lt;tr&gt;
+&lt;td align=&#8221;right&#8221; valign=&#8221;middle&#8221;&gt;&lt;label for=&#8221;name&#8221;&gt;Name:&lt;/label&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input type=&#8221;text&#8221; class=&#8221;required&#8221; id=&#8221;name&#8221; name=&#8221;name&#8221; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#8221;right&#8221; valign=&#8221;middle&#8221;&gt;&lt;label for=&#8221;company&#8221;&gt;Company:&lt;/label&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input type=&#8221;text&#8221; class=&#8221;&quot; id=&#8221;company&#8221; name=&#8221;company&#8221; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#8221;right&#8221; valign=&#8221;middle&#8221;&gt;&lt;label for=&#8221;phone&#8221;&gt;Phone Number:&lt;/label&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input type=&#8221;text&#8221; class=&#8221;required phoneUS&#8221; id=&#8221;phone&#8221; name=&#8221;phone&#8221; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#8221;right&#8221; valign=&#8221;middle&#8221;&gt;&lt;label for=&#8221;email&#8221;&gt;Email Address:&lt;/label&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input type=&#8221;text&#8221; class=&#8221;required email&#8221; id=&#8221;email&#8221; name=&#8221;email&#8221; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#8221;right&#8221; valign=&#8221;top&#8221;&gt;&lt;label for=&#8221;details&#8221;&gt;Project Details:&lt;/label&gt;&lt;/td&gt;
+&lt;td&gt;&lt;textarea class=&#8221;&quot; id=&#8221;details&#8221; name=&#8221;details&#8221; cols=&#8221;10&#8243; rows=&#8221;6&#8243;&gt;&lt;/textarea&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;</pre>
+
+Enjoy the simple things in life :)
+<h2>In Conclusion</h2>
+We realize that Pure CSS and CSS+Tables can accomplish the same thing when it comes to forms.
+
+The issue boils down to the following questions:
+<ol>
+  <li>Will the user care about your apprehension to simple table-based solutions?</li>
+  <li>Will your client care about your successful implementation of a CSS Form when you charge them 4 hours for labor when you could have made a table-based form in 30 minutes?</li>
+</ol>
+<h3>Further Reading...</h3>
+<a href="http://softwareas.com/tables-the-secret-behind-every-simple-css-form">Tables &#8211; The Secret Behind Every Simple CSS Form</a>
+<a href="http://ajaxian.com/archives/css-and-tables-the-war-continues">CSS and Tables; The War Continues</a>
+{% endblock post %}
+

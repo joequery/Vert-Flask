@@ -1,0 +1,81 @@
+<html> 
+<head> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="arrayshift.jquery.js"></script>
+<style type="text/css">
+body{background-color: #FFFFFF;}
+.box{width: 30px;height: 30px;border: 1px solid #000000;position: absolute; top: 10px;}
+#hideToggle{margin-top: 50px;}
+button{margin-top: 10px;margin-left: 10px;clear: both;float: left;width: 150px;height: 30px;}
+#shiftIndex{clear: both;float: left;margin-left: 10px;}
+#toIndex{float: left;margin-left: 10px;}
+#box1{background-color: #FFFF00;}
+#box2{background-color: #CCCCCC;}
+#box3{background-color: #009999;}
+#box4{background-color: #FF0000;}
+</style>
+<script type="text/javascript">
+$(function(){
+	var boxes = $(".box");
+	
+	$.fn.fakeFloat.defaults = 
+	{
+		margin: 10,
+		offset: 20,
+	};
+	
+	$(boxes).each(function()
+	{
+		$(this).html($(this).index());
+	});
+	
+	$(boxes).fakeFloat();
+	
+	$("#shiftTrigger").click(function()
+	{
+		var index1 = $('input:radio[name=index1]:checked').val();
+		var index2 = $('input:radio[name=index2]:checked').val();
+		boxes = $(boxes).arrayShift(index1,index2);
+			
+		$(boxes).fakeFloat({speed: 300}).each(function()
+		{
+			$(this).html($(this).getIndexOf(boxes));
+		});
+	});
+	
+	$("#hideToggle").toggle(function()
+	{
+		$(boxes[0]).hide();
+		$("#swapTrigger").attr('disabled', 'disabled');
+	},
+	function()
+	{
+		$(boxes[0]).show();
+		$("#swapTrigger").removeAttr('disabled');
+	});
+});
+</script>  
+</head> 
+<body> 
+	<div class="box" id="box1"></div>
+	<div class="box" id="box2"></div>
+	<div class="box" id="box3"></div>
+	<div class="box" id="box4"></div>
+	<button type="button" id="hideToggle">Toggle first index</button>
+	<button type="button" id="shiftTrigger">Shift</button>
+	<div id="shiftIndex">
+	<b>Shift Index</b><br />
+	<input type="radio" name="index1" value="first" />First<br />
+	<input type="radio" name="index1" value="1" />1<br />
+	<input type="radio" name="index1" value="2" />2<br />
+	<input type="radio" name="index1" value="last" />Last<br />
+	</div>
+	<div id="toIndex">
+	<b>To Index</b><br />
+	<input type="radio" name="index2" value="first" />First<br />
+	<input type="radio" name="index2" value="1" />1<br />
+	<input type="radio" name="index2" value="2" />2<br />
+	<input type="radio" name="index2" value="last" />Last<br />
+	</div>
+</body> 
+</html> 

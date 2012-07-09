@@ -1,0 +1,45 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Between the commonly used programming languages, C++ is relatively strict on how it handles dynamic memory allocation. The trade off is that you, the programmer, have much more control over how memory is allocated. The downside is you have to follow some seemingly complex logic in order to make dynamic allocation occur correctly. While in PHP, dynamic allocation takes no thought: It just happens.
+
+<h2>Pointers and the "new" Operator</h2>
+Take a look at this declaration.
+<pre class="prettyprint">float *q;</pre>
+
+This identifies q as a <em>pointer variable</em> to a float. This means that we can store a memory address into q. A memory address is usually represented in hexadecimal form and looks something like
+<pre class="prettyprint">0x002132</pre>
+
+Rarely do you need to know the hexadecimal value of a memory address, but it is important to know that q will be holding this type of value and NOT a floating point value.
+
+Now look at the following
+<pre class="prettyprint"> q = new float; </pre>
+
+The new operator takes memory from the heap and makes it available for the program to use. Thus, q will have the value of a memory address. Once again, q does NOT hold a floating point value, it holds the value of a memory address.
+
+Also, an important distinction must be made. Declaring a pointer allocates memory at compile time, while the new operator allocates memory at run time.
+
+In order to associate a value with a memory address, we use the indirection operator *.
+
+In my opinion, The best way to understand pointers is to be able to read out the meaning of the syntax.
+
+<pre class="prettyprint">*q</pre> literally translates to
+"The value associated with the memory address assigned to q."
+
+Putting all these concepts together, we can come up with
+
+<pre class="prettyprint">
+float *q;      //Establish q as a pointer variable, enabling it to hold a memory address
+q = new float; //Dynamically allocate memory for a float and assign a memory address to q
+*q = 13.5;     //Associate the float value 13.5 with the memory address assigned to q
+</pre>
+
+Once you can audibly describe the process occurring, pointers begin to make a lot more sense.
+{% endblock post %}
+

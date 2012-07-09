@@ -1,0 +1,49 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+<h2>.frontpush(array)</h2>
+
+<strong>Description</strong>
+Places the matched set of elements at the front of an array.
+
+<a href="http://www.vertstudios.com/lib/js/blog/plugins/frontpush.zip">Download the ZIP File with Source and Demo</a>
+
+<h3>Parameters:</h3>
+<ul>
+<li>array: The array that will be manipulated</li>
+</ul>
+
+
+Due to scope issues, the JavaScript array method .unshift() sometimes fails to function properly. This is often followed by an error in FireBug stating .unshift() is not a function. Sometimes the scope issue is extremely difficult to find, and it's easier to simply use this plugin to insert jQuery objects at the front of an array. 
+
+<h2>Demos</h2>
+<pre class="prettyprint">
+&lt;html&gt; 
+&lt;head&gt; 
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;frontpush.jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(function(){
+  var boxes = $(&quot;#box1&quot;);
+  $(&quot;.box&quot;).frontpush(boxes);
+  console.log(boxes); //Outputs  [div#box2.box, div#box3.box, div#box1]
+});
+&lt;/script&gt;  
+&lt;/head&gt; 
+&lt;body&gt; 
+  &lt;div id=&quot;box1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; id=&quot;box2&quot;&gt;&lt;/div&gt; 
+  &lt;div class=&quot;box&quot; id=&quot;box3&quot;&gt;&lt;/div&gt;
+&lt;/body&gt; 
+&lt;/html&gt; 
+</pre>
+
+<a href="http://www.vertstudios.com/lib/js/blog/plugins/frontpush.zip">Download the ZIP File with Source and Demo</a>
+{% endblock post %}
+

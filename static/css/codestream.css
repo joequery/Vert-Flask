@@ -1,0 +1,286 @@
+/* codestream styles */
+
+.video {
+  background: #ccc;
+  width: 750px;
+  height: 375px;
+  text-shadow: 0px 0px 0px #1b1b1b;
+}
+.video .wrap {
+  background: #fff;
+  position: relative;
+}
+.video .chat {
+  position: absolute;
+  width: 600px;
+  background: rgba(153,153,153,0.60);
+  left: 12px;
+  bottom: 35px;
+  height: 120px;
+  display: none;
+}
+.video .chat .chat-main {
+  width: 620px;
+  height: 85px;
+  overflow-y: auto;
+}
+.video .chat .chat-main p {
+  font-size: 10px;
+  text-shadow: 0 1px 0 #000;
+  color: #fff;
+  margin: 0;
+  line-height: 15px;
+}
+.video .chat .chat-main p strong {
+  color: #ccc;
+}
+.video .chat .chat-main p span.at {
+  color: #ccc;
+  float: right;
+  position: relative;
+  right: 18px;
+}
+.video .chat .chat-input,
+.video .chat .chat-nickname {
+  position: absolute;
+  bottom: 10px;
+  margin: 0;
+}
+.video .chat .chat-input input,
+.video .chat .chat-nickname input {
+  border: none;
+  background: rgba(255,255,255,0.30);
+  padding: 5px;
+  width: 590px;
+}
+.video .chat .chat-input input:focus,
+.video .chat .chat-nickname input:focus {
+  background: rgba(255,255,255,0.60);
+  outline: none;
+}
+.video .chat .chat-input {
+  display: none;
+}
+.video .chat .chat-nickname {
+  font-size: 11px;
+}
+.video .chat .chat-nickname input {
+  width: 300px;
+}
+.video .chat .chat-nickname span.error {
+  color: #f00;
+  margin-left: 10px;
+  display: inline-block;
+}
+.video .chat-shown {
+  display: block;
+}
+.video .msg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+}
+.video .msg .error,
+.video .msg .notice,
+.video .msg .play {
+  display: inline block;
+  width: 300px;
+  text-align: center;
+  padding: 20px 10px;
+  margin-left: -150px;
+  color: #fff;
+  margin-top: -37px;
+  font-size: 11px;
+  font-weight: bold;
+  -webkit-font-smoothing: none;
+}
+.video .msg .error a,
+.video .msg .notice a,
+.video .msg .play a {
+  color: #fff;
+}
+.video .msg .error a:hover,
+.video .msg .notice a:hover,
+.video .msg .play a:hover {
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+}
+.video .msg .notice {
+  color: #000;
+}
+.video .msg .play {
+  background: rgba(0,255,255,0.80);
+  font-size: 40px;
+  width: 50px;
+  margin-left: -25px;
+  padding-bottom: 25px;
+  cursor: pointer;
+}
+.video .msg .play:hover {
+  background: #0ff;
+}
+.video .msg .error {
+  background: rgba(255,0,0,0.80);
+}
+.video .msg .notice {
+  background: rgba(204,204,204,0.80);
+}
+.video .msg .instructions {
+  margin-top: -110px;
+  width: 400px;
+  margin-left: -200px;
+  text-align: left;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-weight: normal;
+}
+.video .msg .instructions a {
+  color: #333;
+}
+.video .msg .instructions .cmd {
+  background: #fff;
+  font-weight: normal;
+  margin: 10px 0;
+  text-align: left;
+  padding: 5px 8px;
+}
+.video .msg .instructions .cmd input {
+  width: 365px;
+  border: none;
+}
+.video .msg .instructions .cmd input:focus {
+  outline: none;
+}
+.video .video-term {
+  overflow: hidden;
+  height: 365px;
+  background: #121212;
+  font-family: Menlo, monospace;
+  padding: 5px;
+}
+.video .video-term .video-term-wrap {
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+}
+.video .video-term .video-term-wrap code p {
+  margin: 0;
+  padding: 0;
+}
+.video .video-term .terminal {
+  line-height: 14px;
+}
+.video .controls {
+  height: 18px;
+  line-height: 15px;
+  padding: 3px 0 0;
+  font-size: 10px;
+}
+.video .controls table {
+  border-collapse: collapse;
+}
+.video .controls .play,
+.video .controls .time,
+.video .controls .live,
+.video .controls .url,
+.video .controls .watchers,
+.video .controls .offline,
+.video .controls .chat-icon {
+  display: inline-block;
+  padding: 1px 8px;
+  margin-right: 5px;
+}
+.video .controls table td:last-child div {
+  margin-right: 0;
+}
+.video .controls table td.td-slider,
+.video .controls table td.td-wait,
+.video .controls table td.td-pad {
+  width: 100%;
+}
+.video .controls .play {
+  background: #ccc;
+  color: #333;
+  font-size: 10px;
+  font-weight: bold;
+  width: 35px;
+  text-align: center;
+  text-shadow: 0 1px 0 #0ff;
+  cursor: pointer;
+}
+.video .controls .time {
+  color: #999;
+}
+.video .controls .live {
+  background-color: #0f0;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+}
+.video .controls .offline {
+  background-color: #999;
+  color: #eee;
+  text-shadow: 0 1px 0 #666;
+  -webkit-transition: 500ms background-color ease-out;
+  -moz-transition: 500ms background-color ease-out;
+  transition: 500ms background-color ease-out;
+}
+.video .controls .wait {
+  color: #999;
+  text-align: center;
+}
+.video .controls .url {
+  background: #ccc;
+  color: #999;
+}
+.video .controls .url em {
+  color: #333;
+  font-style: normal;
+}
+.video .controls .watchers {
+  background: #ccc url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK6wAACusBgosNWgAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAAVdEVYdENyZWF0aW9uIFRpbWUAMy8xOC8xMidGaeUAAABVSURBVBiVdc6xCYBAEETRpw2IXRlqmxeKDYjtGBmIgaDJiYucAwOf3Q+7vOmw53YKSbhy0zOsg9AGbkrCEnguCUfgM97uMWINP6yYMMAWFt9uVYbf3HFBGCjZoNtEAAAAAElFTkSuQmCC") no-repeat 5px center;
+  padding: 1px 5px 1px 18px;
+  font-weight: bold;
+}
+.video .controls .chat-icon {
+  cursor: pointer;
+}
+.video .controls .chat-icon.active,
+.video .controls .chat-icon:hover {
+  background-color: #999;
+}
+.video .controls .slider {
+  display: block;
+  margin-right: 10px;
+  -webkit-user-select: none;
+}
+.video .controls .slider .bar {
+  height: 2px;
+  margin-bottom: 3px;
+  font-size: 2px;
+  line-height: 0;
+  background: #ccc;
+  display: block;
+}
+.video .controls .slider .slider-control {
+  position: relative;
+}
+.video .controls .slider .knob {
+  display: block;
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  margin-top: -9px;
+  cursor: move;
+  background: #f0f;
+}
+.termReverse {
+  background: #fff;
+  color: #000;
+}
+.video-wait .video-term {
+  background: #999 !important;
+}
+

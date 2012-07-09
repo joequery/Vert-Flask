@@ -1,0 +1,29 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+I must start off saying that I freaking love <a rel="nofollow" href="http://www.sprinkles.com/">Sprinkes Cupcakes</a>.
+
+But come on, this is a bit silly. 
+
+&lt;meta name="Keywords" content="www.sprinkles.com,Original cupcake bakery,Sprinkles cupcakes,Sprinkles cucpcakes,Sprinkles,
+Sprinklescupcakes,Sprinklz,Sprinkels,Sprinklez,Sprnkles,sprinkls,sprinkles cakes,sprinkles bakery,sprinkles cupacakes,I love sprinkles,
+I love cupcakes,Cupcake addict,Cupcake obsessed,Obsessed with cupcakes,Eat cupcakes,Cupcake cake,Cupacake,cupcake love,
+Sex in the city,New york city cupcakes,Gourmet treat,Modern dot,Dot decoration,Sugar decoration,Real sprinkles,Chocolate sprinkles,
+Vanilla sprinkles,Gourmet,Natural,Delicious,Scrumptious,tasty,tasty treats,Fresh,Fresh baked,Freshly baked,Scratch baked,Baked from scratch,
+Sophisticated,Yummy,Cupcake,Cupcakes,Small cakes,Treat,Baked goods,Moist,sweet,Best bakery,Tantalizing,Worlds best bakery,
+World famous bakery,Rodeo Drive bakery,Hollywood bakery,Famous bakery,Bakery,Bake,Los angeles bakery,Unique,Tiny,
+Beverly hills bakery,Upscale,Celebrity,fancy cupcakes,cupcake boutique,designer cupcakes,Hollywood,Movie star,
+movie star cupcakes,hollywood cupcakes,entertainment cupcakes,Cupcake wars,Eat cake,eat cupcake,Eat cupcakes,
+Eat sprinkles,eat sprinkles cupcakes,Home baked,Homebaked,Magnolia bakery,Yummy cupcakes,Ledas bakeshop,Buttercake bakery,
+Buttercup bakeshop,Crumbs,Crumbs bakery,Frosted cupcakery,Karas cupcakes,Sibbys cupcakery,Celebrity bakery,
+Frosted cupcakery,Cupcakery,Swirlz cupcakes,Swirls cupcakes,Oprah's favorite cupcakes,Oprahs favorite things,
+Oprah's favorite cupcakes,Oprah cupcake,Oprah cake,Oprah red velvet,Barbra streisand cupcake,Barbara streisand cupcake,
+Barbra streisand sprinkles,Barbra oprah cupcake,Barbra oprah sprinkles cupcakes,billys bakery,city bakery,my little cupcake"&gt;
+{% endblock post %}
+

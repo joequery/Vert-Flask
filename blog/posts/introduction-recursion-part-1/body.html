@@ -1,0 +1,14 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Part 1 of a multipart series covering the basics of recursion. I hope you enjoy!
+
+http://www.youtube.com/watch?v=TA_qrRZ1cpI
+{% endblock post %}
+

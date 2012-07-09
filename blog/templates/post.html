@@ -1,0 +1,26 @@
+{% from "templates/blogsections" import blog_sidebar %}
+{% extends "layout.html" %}
+{% block body %}
+{{blog_sidebar(g)|safe}}
+<div id="blogPost">
+  <div class="post">
+    {% block post %}
+    {% endblock post %}
+  </div>
+<div id="author_bio">
+  <h5>About the Author:</h5>
+  <p>
+    <img 
+    alt='' 
+    src='http://www.gravatar.com/avatar/8d98b3ee0f14a8d7c5e0ab3486a5cc05?s=75' 
+    class='avatar avatar-96 photo' />
+    Joseph is the lead developer of Vert Studios, and is currently 
+    <a href="{{url_for('contact_page.contact')}}">accepting work</a>!
+    
+    Follow Joseph on Twitter: 
+    <a href="http://twitter.com/joe_query">@Joe_Query</a><br />
+    Subscribe to the blog: <a href="{{url_for('blog.rss_feed')}}">RSS</a>
+  <p>
+</div>
+</div>
+{% endblock body %}

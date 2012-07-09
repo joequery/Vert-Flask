@@ -1,0 +1,30 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+<h2>Attention All Artists</h2>
+Whether your art takes the form of web design, painting, photography, jewelry, sweater-knitting or lego stacking, you deserve to profit from the time invested in mastering your craft. Justin Edwards, lead designer of <a href="http://www.vertstudios.com/">Vert Studios</a> in Tyler, Texas, will be giving a presentation entitled "Self Promotion for Starving Artists" on <strong>Wednesday, October 6th</strong> at <strong>Tyler Junior College</strong>.
+
+<img src="http://www.vertstudios.com/images/starving_artist.jpg" alt="Self Promotion for Starving Artists provided by Vert Studios" />
+<h2>What You'll Learn</h2>
+After hearing the presentation, you'll be able to:
+<ul>
+  <li>Share your work</li>
+  <li>Network with other artists</li>
+  <li>Approach potential buyers/clients</li>
+  <li>and <strong>Sell your work online</strong></li>
+</ul>
+Justin will provide you with the tools and techniques you need to take your success as an artist to the next level.
+<h2>Event Details</h2>
+<strong>Price:</strong> FREE!
+<strong>Location:</strong> Tyler Junior College - Jenkins Art Department Lobby
+<strong>Date:</strong> Wednesday October 6th, 2010
+<strong>Time:</strong> 1:00PM - 2:00PM
+<strong>Contact Information:</strong> For more information, please call (903) 920-9514, or email <a href="mailto:hi@vertstudios.com">hi@vertstudios.com</a>
+{% endblock post %}
+

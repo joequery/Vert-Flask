@@ -1,0 +1,46 @@
+{% from "macros" import img %}
+{% from "sections" import what_now %}
+{% extends "layout.html" %}
+{% block body %}
+<div id="sub_page_intro">
+  
+  <h1>Services</h1>
+  <p>We offer superior quality, functionality, and results for the following:</p>
+  <ul>
+    <li>Web Design</li>
+    <li>Web Application Development</li>
+    <li>Mobile Web Design</li>
+    <li>Mobile Web Apps</li>
+  </ul>	
+  {{ img(g, "pointer.png", "", "pointer")|safe }}
+</div>
+
+<div class="sub_page_1 clearfix">
+
+<h2>We Take a Strategic Approach</h2>
+<p><em>We identify your needs and provide results based on what's best for you.</em></p>
+<p>
+  In today's fast-paced world, a lot of focus is put on efficiency and 
+  instant-gratification. While we are efficient, we believe in first taking 
+  the time to clearly define what approach will best work for you 
+  and your company.
+</p>
+<p>
+  We address your current website challenges, identify problems, and deliver 
+  solutions that will make your business stand out from the competition.
+</p>
+<h3>To Combine Form &amp; Function</h3>
+<p><em>Great design is one thing.<br/>Elegant programing is another.<br/>Luckily we do both.</em></p>
+<p>
+  There is nothing worse than losing hundreds of potential customers because of
+  a poorly designed website. Is your layout beautiful, but lacking an engaging
+  user experience? Is your content outstanding, but design amateurish? Our
+  business is solving these problems to grow yours - both aesthetically and 
+  technically.
+</p>
+</div>
+
+<div id="tertiary">
+{{ what_now()|safe}}
+</div>
+{% endblock body %}

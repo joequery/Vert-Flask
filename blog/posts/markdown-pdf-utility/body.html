@@ -1,0 +1,24 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+I needed to get a Markdown document in PDF format. Unable to find a good solution, I set off to make a Markdown to PDF conversion utility. About 20 lines of Python later, here we are!
+
+<h2>md2pdf: Markdown to PDF</h2>
+
+You can download <a href="https://github.com/joequery/md2pdf">md2pdf</a> on Github. Installation instructions can be found in the README. Usage is extremely simple:
+
+<pre class="prettyprint">
+$ md2pdf my-markdown-document.md
+</pre>
+
+<h2>How it was made</h2>
+This utility is actually pretty silly. It simply serves as a glue between
+<a href="http://code.google.com/p/python-markdown2/">markdown2</a>, which takes Markdown and produces HTML, and <a href="www.xhtml2pdf.com">xhtml2pdf</a>, which takes HTML and produces PDFs. The script uses a system call because the xhtml2pdf interface is non-trivial. Consequently, you're probably better off not using this on a production server.
+{% endblock post %}
+

@@ -1,0 +1,69 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+If you're looking to hire a web design company, look through these terms so you won't get confused by web design jargon. If you're a web designer, refer prospects here so they'll be able to communicate with you better. This post won't cover every web related term - only the bare minimum to get designer and client on the same page. 
+
+<style type="text/css">
+a[name]{
+font-size: 1.2em;
+margin: 20px 0px 10px 0px;
+display: block;
+text-decoration: none;
+} 
+</style>
+
+<h2>Web Design Terms</h2>
+<a name="accessibility">Accessibility</a>The practice of coding websites to be useful for people with physical impairments and older browsers. 
+
+<a name="backend">Back-end</a>Opposite of <a href="#frontend">Front-end</a>. The back-end of a website is where <a href="#server-side">server-side</a> programming takes place. Common tasks performed on the back-end include shopping carts, user account logins, <a href="#validation">validation</a>, and registration.
+
+<a name="browser">Browser</a>Software that interprets <a href="#html">HTML</a> and <a href="#server">server</a> messages, allowing the user to view a website. Common browsers include Google Chrome, FireFox, and Safari. Some people consider Internet Explorer a browser. We don't. 
+
+<a name="client-side">Client-side Programming</a>Opposite of <a href="#server-side">Server-side Programming</a>. Client side programming involves giving the client (usually a <a href="#browser">browser</a>) instructions on storing, retrieving, and outputting data. Animations and effects can be achieved using client-side programming languages such as <a href="#javascript">JavaScript</a>
+
+<a name="conversion">Conversion</a>A visitor is said to convert when they engage in a predetermined action that relates to a primary or secondary objective of the website. Common examples of conversions are purchases, subscriptions to RSS feeds, Retweets, twitter follows, Facebook likes, quote requests, etc. 
+
+<a name="conversion-rate">Conversion Rate</a>A percentage of visitors that <a href="#conversion">convert</a>. If 1 in 20 visitors convert, the website has a conversion rate of 5%. 
+
+<a name="css">CSS</a>A <a href="#client-side">client-side</a> language that is used to layout a website in the <a href="#browser">browser</a>.
+
+<a name="database">Database</a>A structure used to store potentially large amounts of data. A <a href="#server-side">server-side</a> programming language is required to display information from a database onto a web page. 
+
+<a name="domain">Domain Name</a>A virtual address for a website. Example domains include: 
+<ul>
+vertstudios.com
+wikipedia.org
+google.com
+</ul>
+
+<a name="frontend">Front-end</a>The front end of a website is where <a href="#client-side">Client-side programming</a> takes place. Creating the front-end of a website usually consists of <a href="#slice">slicing</a> a <a href="#psd">PSD</a>, coding with <a href="#html">HTML</a> and <a href="#css">CSS</a>, and touching up with some <a href="#javascript">JavaScript</a>. 
+
+<a name="html">HTML</a>Hyper Text Markup Language. It's the core language that enables <a href="#browser">browsers</a> to interpret text, images, audio, video, everything you see in a browser. 
+
+<a name="hosting">Hosting</a>Storing files on a <a href="#server">server</a>. Hosts charge for the electricity needed to keep servers running 24/7, and the cost of storage itself. 
+
+<a name="javascript">JavaScript</a>A <a href="#client-side">client-side</a> programming language responsible for many neat effects that take place in the <a href="#browser">browser</a>. Two common uses of JavaScript are animation and <a href="#validation">validation</a>. More importantly, JavaScript is the fuel for many web application interfaces, such as <a href="http://mail.google.com">Gmail</a> and <a href="http://www.rememberthemilk.com">Remember The Milk</a>. 
+
+<a name="mockup">Mock-up</a>An image preview of a website. You can not interact with mock-ups like you can a normal website, simply because they are just static images that indicate the direction of the design.
+
+<a name="psd">PSD</a>Photo Shop Document. Photo Shop is software used by many designers to create <a href="#mockup">mock-ups</a> of websites along with other illustrations. 
+
+<a name="roi">ROI</a><b>R</b>eturn <b>O</b>n <b>I</b>nvestment. The total amount of money your investment has earned you minus the cost of the investment. 
+
+<a name="server">Server</a>Not to be confused with one who brings you food at Chilis. A server is a just a computer that stores and delivers data to other computers. When your website is being stored on a server, it is said to be "<a href="#hosting">hosted</a>" on that server. 
+
+<a name="server-side">Server-side Programming</a>Opposite of <a href="#client-side">Client-side Programming</a>. Server side programming involves directly communicating with the server in order to store, retrieve, or output data. 
+
+<a name="slice">Slice</a>To code a web page to resemble a <a href="#psd">PSD</a> using <a href="#client-side">Client-side</a> languages including <a href="#html">HTML</a>, <a href="#css">CSS,</a> and <a href="#javascript">JavaScript</a>. 
+
+<a name="validation">Validation</a>Involves using <a href="#client-side">client-side</a> and <a href="#server-side">server-side</a> programming languages to make sure data received from a contact form is accurate. Serves as an effective method for decreasing spam. 
+
+<a name="wordpress">Wordpress</a>A popular blogging platform that is extremely user friendly.
+{% endblock post %}
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css" /> 
+<title>Slave Slideshow</title> 
+<script type="text/javascript" src="slaveshow.min.js"></script>
+<script type="text/javascript" src="easing.js"></script>
+<script type="text/javascript">
+
+
+$(function(){
+	var slave1 = 
+	{
+		container: $("#slave"), 
+		entrance: {animation: "fromLeft", easing: "easeOutBounce"},
+		exit: {animation: "toLeft", easing: "easeOutBounce"},
+		delay: 200
+	};
+			
+	var slave2 = 
+	{
+		container: $("#slave2"), 
+		entrance: {animation: "fromTop", easing: "easeOutQuad"},
+		exit: {animation: "toTop", easing: "easeOutQuad"},
+		delay: 400
+	};
+	
+	$("#container").slaveshow({
+	slaves: [slave1, slave2],
+	duration: 2000,
+	nav: $("#slideNav li"),
+	left: $("#left"),
+	right: $("#right")
+	});
+
+	
+});
+</script> 
+ 
+</head> 
+<body> 
+ 
+<div id="wrapper"> 
+    <div id="container" class="slideshow">   	
+		<div class="box box1"> 
+		<p>Slide 1</p>
+		</div>
+		<div class="box box2" id="box2"> 
+		<p>Slide 2</p>
+		</div> 
+		<div class="box box3" id="box3"> 
+		<p>Slide 3</p>
+		</div> 
+		<div class="box box4" id="box4"> 
+		<p>Slide 4</p>
+		</div> 
+		<div class="box box5" id="box5"> 
+		<p>Slide 5</p>
+		</div>
+    </div><!--End Content-->
+	<div id="slave" class="slideshow">
+		<div class="box box1">
+		<p>Slave 1 Slide 1</p>
+		</div>
+		<div class="box box2">
+		<p>Slave 1 Slide 2</p>
+		</div>
+		<div class="box box3">
+		<p>Slave 1 Slide 3</p>
+		</div>
+		<div class="box box4">
+		<p>Slave 1 Slide 4</p>
+		</div>
+		<div class="box box5">
+		<p>Slave 1 Slide 5</p>
+		</div>		
+	</div>
+	<div id="slave2" class="slideshow">
+		<div class="box box1">
+		<p>Slave 2 Slide 1</p>
+		</div>
+		<div class="box box2">
+		<p>Slave 2 Slide 2</p>
+		</div>
+		<div class="box box3">
+		<p>Slave 2 Slide 3</p>
+		</div>
+		<div class="box box4">
+		<p>Slave 2 Slide 4</p>
+		</div>
+		<div class="box box5">
+		<p>Slave 2 Slide 5</p>
+		</div>		
+	</div>	
+	<ul id="slideNav">
+	<li class="slideNavActive"></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	</ul>
+	
+	<div id="left">
+	LEFT</div>
+	
+	<div id="right">
+	RIGHT</div>
+</div><!--End Wrapper--> 
+	
+</body> 
+</html> 

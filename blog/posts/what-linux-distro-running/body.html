@@ -1,0 +1,21 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+{% endfilter %}
+
+Quick snippet here for you guys!  You're a dev SSHing into various VPS's and you need to know what linux distro you're running. Simply execute
+
+<pre class="prettyprint">
+cat /etc/*release
+</pre>
+
+For example, on Media Temple (dv), the following comes up
+<pre class="prettyprint">
+CentOS release 5.5 (Final)
+</pre>
+{% endblock post %}
+

@@ -62,10 +62,9 @@ def get_posts(app, numPosts, start=0):
 
   return postList
 
-# Wrap a string in a CDATA block
-def cdata(string):
-  html = string.encode('ascii','xmlcharrefreplace').strip()
-  return "<![CDATA[%s]]>" % escape(html)
+def escape_html(string):
+  html = escape(string.encode('ascii','xmlcharrefreplace').strip())
+  return html
 
 # Generate an rss feed from a list of posts. We write this to a static xml file
 # for speed. app is the application object.
@@ -78,8 +77,8 @@ def gen_rss_feed(app, postList):
   # Alter the contents of the posts to satisfy XML/RSS requirements.
   for post in posts:
     post['title'] = escape(post['title'])
-    post['description'] = cdata(post['description'])
-    post['body'] = cdata(post['body'])
+    post['description'] = escape_html(post['description'])
+    post['body'] = escape_html(post['body'])
     post['url'] = "http://vertstudios.com%s" % post['url']
     # RFC822 specifications.
     post['pubDate']=time.strftime("%a, %d %b %Y %H:%M:%S +0000",post['pubDate'])

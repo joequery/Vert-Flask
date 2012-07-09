@@ -298,8 +298,8 @@ Going Live with Nginx and uWSGI
 
 Now that my project was pretty much finished, it was time to put the files
 on my Linode VPS and show my project to the world! I decided to use Nginx with
-uWSGI, simply because that's the combination I've seen a lot of articles on.
-Flask itself [has documentation][11] on uWSGI. However, I found parts of the
+uWSGI, simply because the pair have been the subject of many tutorials. Flask
+itself [has documentation][11] on uWSGI. However, I found parts of the
 documentation inadequate.
 
 From the documentation:
@@ -327,7 +327,7 @@ daemonize = /var/log/nginx/access.log
 master = true
 chdir = /var/www/vertstudios.com
 socket = 127.0.0.1:5000
-wsgi = %(project):app 
+wsgi = %(project):variable holding app instance
 virtualenv = env/
 pidfile = /var/run/uwsgi/%(project).pid 
 touch-reload  = /var/run/uwsgi/%(project).pid  
@@ -335,10 +335,14 @@ processes = 3
 procname-prefix = %(project)
 </pre>
 
-An explanation for the parameters:  
+Now my uWSGI configuration is under version control with the rest of my project.
+
+Here's an explanation for the parameters:  
 
 * project: The module name where you call `app.run()`.  
-* daemonize: If you want to daemonize. Provide a log file path.
+* daemonize: If you want to daemonize. For some reason, you have to specify a 
+             log file path or uWSGI will just shove things down `stdin`. `true`
+             did not work for me.
 * master: Boolean indicating if you want a master process. Master processes
          make [uwsgi management][13] *much* easier.
 * chdir: Change directory. Essentially lets you keep parameters such as 
@@ -370,8 +374,12 @@ server {
 }
 </pre>
 
-TODO
-----
+Things left TODO
+----------------
+
+I felt I had done enough to merit scrapping my PHP/Wordpress site and put the
+Flask site up in its place. Despite that, there's still quite a bit of work to
+be done.
 
 * I plan on exporting my Wordpress comments to Disqus. I enjoy interacting with 
 people that read my articles, and I'd like to preserve the comments I've 
@@ -394,6 +402,15 @@ my CSS/JS files, run YUICompressor, and upload the files to S3.
 
 * I really need to implement meta description tags for my posts...but that
   would require me to actually write them.
+
+Overall Impressions
+-------------------
+
+As a whole, I'm quite pleased with Flask. For the most part, it gets out of
+your way and lets you build things how you want to build them. Consequently,
+your project structure may be sloppy (especially when first learning Flask),
+but you're guaranteed to understand how and why everything works.
+
 
 
 [0]: http://flask.pocoo.org/docs/quickstart

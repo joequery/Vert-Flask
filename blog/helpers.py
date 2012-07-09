@@ -62,9 +62,10 @@ def get_posts(app, numPosts, start=0):
 
   return postList
 
+# Escape HTML and also escape jinja functions.
 def escape_html(string):
   html = escape(string.encode('ascii','xmlcharrefreplace').strip())
-  return html
+  return "{% raw %}" + html + "{% endraw %}"
 
 # Generate an rss feed from a list of posts. We write this to a static xml file
 # for speed. app is the application object.

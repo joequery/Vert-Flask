@@ -40,17 +40,16 @@ By pure HTML, I mean there were no includes for headers, footers, etc. Thus
 the logical next step was to take these pure HTML documents and DRY up the 
 repeating areas.
 
-Growing pains...already?!
-------------------------
+Using Jinja2
+------------
 
-Coming from PHP, I was used to just `include`-ing the content I wanted and being
-done with it.  [Jinja2](http://jinja.pocoo.org/docs/), Flask's default
-templating engine, does not currently support includes. (Note: An `include` 
-function [does exist](http://jinja.pocoo.org/docs/templates/#include). However,
-I could not get the include function to return non-escaped html. Perhaps this
-function was broken in a recent build). Jinja does, however, have 
-[template inheritance][1]. To demonstrate, suppose we have a parent 
-template `layout.html` 
+**UPDATE**: Turns out I was just being dumb. The include statements 
+[work fine](https://github.com/joequery/Vert-Flask/tree/master/templates).
+<div class="hr"><hr /></div>
+
+[Jinja2](http://jinja.pocoo.org/docs/), Flask's default templating engine, 
+uses [template inheritance][1] in additon to supporting includes. To 
+demonstrate, suppose we have a parent template `layout.html` 
 
 {% raw %}
 <pre class="prettyprint">&lt;!DOCTYPE html&gt;
@@ -94,19 +93,11 @@ would get.
 &lt;/html&gt;
 </pre>
 
-I like the template inheritance pattern of Jinja, but the lack of an include
-statement can easily lead to huge parent templates. 
+The `include` statement works similarly to PHP's `include` statement in regards
+to importing files that render markup. Consider the footer for this site, 
+located in `templates/includes/footer.html`:
 
-Thankfully, I did find a sufficient workaround to the lack of an include 
-statement. Jinja lets you define [Macros][4], which are essentially functions
-used within templates to render something. I defined a macro called `nav` that
-simply returned the HTML for the navigation. I did the same thing for `header`,
-`footer`, and any other sections repeated throughout the site. Take our 
-footer, for example.
-
-{% raw %}
 <pre class="prettyprint">
-{% macro footer() %}
 &lt;div id="footer"&gt;
   &lt;div class="hr"&gt;&lt;hr /&gt;&lt;/div&gt;
   &lt;p&gt;
@@ -114,40 +105,28 @@ footer, for example.
     &lt;a href="http://www.twitter.com/vertstudios"&gt;@vertstudios&lt;/a&gt;
   &lt;/p&gt;
 &lt;/div&gt;
-{% endmacro  %}
 </pre>
-{% endraw %}
 
-Then, from `layouts.html`, I could call the footer macro. Flask requires the 
-use of the `|safe` filter if you want to render the returned string. Thus, a 
-macro `foo()` can be called from a macro `bar()` without the need to specify 
-`{{'{{'}}foo()|safe{{'}}'}}`. But since `layouts.html` is something being
-directly rendered, we need to specify `|safe` every time we call a macro.
-
-So the final `layouts.html` ended up looking like
+And `templates/layout.html`:
 
 {% raw %}
 <pre class="prettyprint">
-{% from "sections" import meta_and_css, nav, javascripts, footer %}
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
-  {{ meta_and_css(g, title)|safe }}
+  {% include "includes/meta_and_css.html" %}
   &lt;body onload="prettyPrint()" id="{{g.bodyID}}"&gt;
 &lt;div id="wrapper"&gt;
-  {{ nav(g)|safe }}
+  {% include "includes/nav.html" %}
   &lt;div id="content"&gt;
     {% block body %}{% endblock body %}
   &lt;/div&gt;&lt;!--content--&gt;
-  {{ footer()|safe }}
+  {% include "includes/footer.html" %}
 &lt;/div&gt;&lt;!--wrapper--&gt;
-{{ javascripts(g)|safe }}
+{% include "includes/javascripts.html" %}
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
 {% endraw %}
-
-This was less than ideal, but it worked; a recurring theme throughout the 
-development process that surprisingly didn't bother me so much. 
 
 Being 'Brave'
 -------------

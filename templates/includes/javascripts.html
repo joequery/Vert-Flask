@@ -2,8 +2,8 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
 
 {% if g.env == "production" %}
-  {{js(g, "vertlib")}}
-  {{js(g, "compressed.min")}}
+  {{js(g, "vertlib")|safe}}
+  {{js(g, "compressed.min")|safe}}
 {% else %}
   {% for file in 
     ["vertlib", "jsCSS", "index_init", "easing", "slaveshow.min", 

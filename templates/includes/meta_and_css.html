@@ -15,7 +15,7 @@
     <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
   {% endif %}
   {% if g.env == "production" %}
-    {{ css(g, "compressed.min") }}
+    {{ css(g, "compressed.min")|safe }}
   {% else %}
     {% for file in ["reset", "js", "text", "main", "codestream", "prettify"] %}
       {{ css(g, file)|safe }}

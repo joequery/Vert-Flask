@@ -1,0 +1,25 @@
+{% from "macros" import css %}
+<head>
+  <script type="text/javascript">
+  //Credit: Doug Neiner - http://dougneiner.com/
+  document.documentElement.className += " js"
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta name="google-site-verification" content="36dXXZZompgqJf0oUzUyoTOKJzW1wQ8uAVOJBpYimR8" />
+  {% if description %}
+    <meta name="description" content="{{description}}" />
+  {% endif %}
+  {% if title %}
+    <title>{{title}} | Vert Studios</title>
+  {% else %}
+    <title>Web Design that Doesn't Suck | Vert Studios | Tyler, Texas</title>
+  {% endif %}
+  {% if g.env == "production" %}
+    {{ css(g, "compressed.min") }}
+  {% else %}
+    {% for file in ["reset", "js", "text", "main", "codestream", "prettify"] %}
+      {{ css(g, file)|safe }}
+    {% endfor %}
+  {% endif %}
+</head>
+

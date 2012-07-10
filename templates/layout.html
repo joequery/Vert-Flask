@@ -1,15 +1,14 @@
-{% from "sections" import meta_and_css, nav, javascripts, footer %}
 <!DOCTYPE html>
 <html lang="en">
-  {{ meta_and_css(g, title, description)|safe }}
+  {% include "includes/meta_and_css.html" %}
   <body onload="prettyPrint()" id="{{g.bodyID}}">
 <div id="wrapper">
-  {{ nav(g)|safe }}
+  {% include "includes/nav.html" %}
   <div id="content">
     {% block body %}{% endblock body %}
   </div><!--content-->
-  {{ footer()|safe }}
+  {% include "includes/footer.html" %}
 </div><!--wrapper-->
-{{ javascripts(g)|safe }}
+{% include "includes/javascripts.html" %}
 </body>
 </html>

@@ -1,5 +1,4 @@
 {% from "macros" import img %}
-{% from "sections" import what_now %}
 {% extends "layout.html" %}
 {% block body %}
 <div id="sub_page_intro">
@@ -82,7 +81,7 @@
 </div>
 
 <div id="tertiary">
-{{ what_now()|safe}}
+  {% include "includes/what_now.html" %}
 </div><!--END tertiary-->
 
 {% endblock body %}

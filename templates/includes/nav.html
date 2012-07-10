@@ -1,0 +1,28 @@
+{% from "macros" import img %}
+<div id="header">				
+  <div id="vertStudios">
+    <a href="/">Vert Studios{{img(g,"vert_logo_header.png", "Vert Studios")|safe}}</a>
+  </div>
+  <ul id="main_nav">
+  <li>
+      <h5><a href="{{url_for("about")}}">About</a></h5>
+      <p>We're a small web design company with big ideas in Tyler, Texas.</p>
+  </li>
+  <li>
+      <h5><a href="{{url_for("work")}}">Work</a></h5>
+      <p>See what our work has to say. <b>WARNING</b>: <br />It might get loud.</p>
+  </li>
+  <li>
+      <h5><a href="{{url_for("services")}}">Services</a></h5>
+      <p>We design web sites that don't suck. We're quite proud of that.</p>
+  </li>
+  <li>
+      <h5><a href="{{url_for("blog.blog_index")}}">Blog</a></h5>
+      <p>Read our articles on programming, development, and software.</p>
+  </li>
+  <li>
+      <h5><a href="{{url_for('contact_page.contact')}}">Contact Us</a></h5>
+      <p>Contact us for a new website, for contract work, or just to say hi!</p>
+  </li>
+  </ul>
+</div>

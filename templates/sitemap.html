@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- static pages -->
+  <url>
+    <loc>http://vertstudios.com/</loc>
+  </url>
+  <url>
+    <loc>http://vertstudios.com/about</loc>
+  </url>
+  <url>
+    <loc>http://vertstudios.com/work</loc>
+  </url>
+  <url>
+    <loc>http://vertstudios.com/services</loc>
+  </url>
+  <url>
+    <loc>http://vertstudios.com/blog/</loc>
+  </url>
+  <url>
+    <loc>http://vertstudios.com/contact</loc>
+  </url>
+  <!-- blog posts -->
+  {% for post in posts %}
+  <url>
+    <loc>http://vertstudios.com/blog/{{post}}/</loc>
+  </url>
+  {% endfor %}
+</urlset>

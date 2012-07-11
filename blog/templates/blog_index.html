@@ -1,7 +1,6 @@
-{% from "templates/blogsections" import blog_sidebar %}
 {% extends "layout.html" %}
 {% block body %}
-{{blog_sidebar(g)|safe}}
+{% include "templates/includes/blog_sidebar.html" %}
 <div id="blogPost">
   {% set first = True %}
   {% for post in posts %}

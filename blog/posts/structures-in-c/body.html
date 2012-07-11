@@ -1,0 +1,32 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+
+This post serves as an introduction to using Structures in C! This is the first
+of many C tutorials I plan on writing.
+
+What is a Structure?
+--------------------
+
+As said by Neol Kalicharan in [Data Structures in C][0]:
+
+> "In C, a structure is a collection of one or more variables, possibly of
+different types, grouped together under a single name for convenient handling."
+
+I believe the easiest way to learn how to use structures is to see them in 
+action.
+
+<pre class="prettyprint">
+
+</pre>
+
+
+[0]: http://www.amazon.com/Data-Structures-In-Noel-Kalicharan/dp/1438253273/
+
+{% endfilter %}
+{% endblock post %}
+

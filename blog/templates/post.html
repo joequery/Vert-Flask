@@ -1,11 +1,11 @@
-{% from "templates/blogsections" import blog_sidebar %}
 {% extends "layout.html" %}
 {% block body %}
-{{blog_sidebar(g)|safe}}
+{% include "templates/includes/blog_sidebar.html" %}
 <div id="blogPost">
   <div class="post">
     {% block post %}
     {% endblock post %}
+    {{ post['date'] }}
   </div>
 <div id="author_bio">
   <h5>About the Author:</h5>

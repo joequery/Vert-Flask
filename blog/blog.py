@@ -25,8 +25,7 @@ def blog_index():
 def blog_index_page(pagenum):
   try:
     return render_template("pages/page%d.static" % pagenum)
-  #except (TemplateNotFound, IOError) as e:
-  except None as e:
+  except (TemplateNotFound, IOError) as e:
     return render_template('404.html'), 404
 
 
@@ -50,8 +49,7 @@ def blog_post(post):
       'url': "/blog/%s" % post
     }
     return render_template(bodyPath, post=postData, title=postData['title'])
-  #except (TemplateNotFound, IOError) as e:
-  except None as e:
+  except (TemplateNotFound, IOError) as e:
     return render_template('404.html'), 404
 
 @blog.route('/blog/feed/')

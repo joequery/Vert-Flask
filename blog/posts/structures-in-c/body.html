@@ -1,0 +1,241 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+
+This post serves as an introduction to using Structures in C! This is the first
+of many C tutorials I plan on writing.
+
+Reading this Tutorial
+---------------------
+
+This tutorial is not meant to be quickly glossed over, unless of course you are
+already familiar with the subject matter. Each full program (i.e. any snippets
+beginning with `#include`) should be hand-typed, compiled, and ran. I also 
+encourage you to try to type the example programs entirely from memory once you
+understand them; doing so helps me store new-found knowledge into long-term
+memory, and perhaps you'll receive the same benefits!
+
+What is a Structure?
+--------------------
+
+As said by Neol Kalicharan in [Data Structures in C][0]:
+
+> "In C, a structure is a collection of one or more variables, possibly of
+different types, grouped together under a single name for convenient handling."
+
+Structures are pretty simple to understand just by seeing an example in action.
+Compile and run the following:
+
+<pre class="prettyprint">
+// Using structures in C
+#include&lt;stdio.h&gt;
+
+// Struct declaration
+struct person{
+  char *name;
+  int age;
+  char gender;
+};
+
+void print_person(struct person);
+
+int main(){
+
+  // Declaring a variable of type `struct person`
+  struct person someguy;
+  someguy.name = "Joseph";
+  someguy.age = 21;
+  someguy.gender = 'M';
+
+  // Print person information
+  print_person(someguy);
+
+  return 0;
+}
+
+// Print a person's information
+void print_person(struct person p){
+  printf("Name: %s\n", p.name);
+  printf("Age: %d\n", p.age);
+  printf("Gender: %c\n", p.gender);
+}
+</pre>
+
+### Explanation
+
+In the Struct declaration section, we define a person type as a structure.
+We then define the **fields** of the structure: 
+
+* a pointer to char (to hold a string literal)
+* age as an integer 
+* gender as a char.
+
+Fields of the structure are accessed via the dot operator.
+
+<pre class="prettyprint">
+#include<stdio.h>
+
+struct product{
+  char *label;
+  int value;
+};
+
+int main(){
+
+  struct product cookie;
+  cookie.label = "wonderful cookie";
+  cookie.value = 1;
+
+  printf("The %s is $%d\n", cookie.label, cookie.value);
+
+  return 0;
+}
+</pre>
+
+After declaring the person structure, we can now do the same things with 
+`struct person` as we would regular data types, such as `int`. 
+
+<pre class="prettyprint">
+// Declaring a variable
+struct person someguy;
+int x;
+
+// Usage in function parameters
+void print_person(struct person p){
+  ... // Do things with p
+}
+void print_number(int num){
+  ... // Do things with int
+}
+
+// Assignment
+struct person someotherguy = someguy;
+int y = x;
+
+// Operations
+int ageDiff = someotherguy.age - someguy.age;
+int z = x - y;
+</pre>
+
+Tidying up with typedef
+-----------------------
+
+If you'd like to eliminate the verbosity of using `struct person` every time 
+you're working with a person structure, you can use `typedef`.
+
+typedef works like so:
+
+<pre class="prettyprint">
+typedef datatype newDataTypeName
+</pre>
+
+For example,
+
+<pre class="prettyprint">
+// Using typedef
+#include&lt;stdio.h&gt;
+
+typedef int WholeNumber;
+
+int main(){
+  WholeNumber x = 10;
+  printf("%d is a whole number\n", x);
+  return 0;
+}
+</pre>
+
+While this example isn't particularly useful, it lets you understand how 
+typedef works. 
+
+Note again that `struct person` behaves like any other data 
+type, so the entire structure declaration can be used as the `datatype` 
+parameter of typedef. This really cleans up structure usage.
+
+<pre class="prettyprint">
+// Using typedef
+#include&lt;stdio.h&gt;
+
+typedef struct product{
+  char *label;
+  int value;
+} product_t;
+
+int main(){
+  product_t cookie; // Was formerly struct product cookie
+  cookie.label = "wonderful cookie";
+  cookie.value = 1;
+
+  printf("The %s is $%d\n", cookie.label, cookie.value);
+  return 0;
+}
+
+</pre>
+
+Looking again at the usage of typedef (`typedef datatype newDataTypeName`), we
+see that `struct product{..}` is the datatype, and `Product` is the 
+`newDataTypeName`. We can now use `product_t` in place of `struct product`.
+This includes variable assignments, function parameters, everything. (Note
+that `product_t` is read "product type", and structures generally follow this
+naming convention.)
+
+Applying typedef
+----------------
+
+With our newfound knowledge of typedef, lets implement it into our first
+program. (This is definitely a code snippet I would attempt to type from 
+memory)
+
+<pre class="prettyprint">
+// Using structures in C
+#include&lt;stdio.h&gt;
+
+// Struct declaration
+typedef struct person{
+  char *name;
+  int age;
+  char gender;
+} person_t;
+
+void print_person(person_t);
+
+int main(){
+
+  // Declaring a variable of type `person_t`
+  person_t someguy;
+  someguy.name = "Joseph";
+  someguy.age = 21;
+  someguy.gender = 'M';
+
+  // Print person information
+  print_person(someguy);
+
+  return 0;
+}
+
+// Print a person's information
+void print_person(person_t p){
+  printf("Name: %s\n", p.name);
+  printf("Age: %d\n", p.age);
+  printf("Gender: %c\n", p.gender);
+}
+
+
+</pre>
+
+Conclusion
+----------
+
+Structures are great for representing collections of related attributes, and
+they take very little effort to use! We'll cover more involved uses of
+structures, such as arrays of structures and pointers to structures, in an
+upcoming post.
+
+[0]: http://www.amazon.com/Data-Structures-In-Noel-Kalicharan/dp/1438253273/
+
+{% endfilter %}
+{% endblock post %}
+

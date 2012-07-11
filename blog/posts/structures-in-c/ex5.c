@@ -2,18 +2,18 @@
 #include<stdio.h>
 
 // Struct declaration
-struct person{
+typedef struct person{
   char *name;
   int age;
   char gender;
-};
+} person_t;
 
-void print_person(struct person);
+void print_person(person_t);
 
 int main(){
 
-  // Declaring a variable of type `struct person`
-  struct person someguy;
+  // Declaring a variable of type `person_t`
+  person_t someguy;
   someguy.name = "Joseph";
   someguy.age = 21;
   someguy.gender = 'M';
@@ -25,8 +25,9 @@ int main(){
 }
 
 // Print a person's information
-void print_person(struct person p){
+void print_person(person_t p){
   printf("Name: %s\n", p.name);
   printf("Age: %d\n", p.age);
   printf("Gender: %c\n", p.gender);
 }
+

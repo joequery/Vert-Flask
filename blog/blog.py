@@ -48,7 +48,10 @@ def blog_post(post):
       'date' : time.strftime("%B %d, %Y", postTime), # January 15, 2012
       'url': "/blog/%s" % post
     }
-    return render_template(bodyPath, post=postData, title=postData['title'])
+    return render_template(bodyPath, 
+        post=postData, 
+        title=postData['title'],
+        description=postData['description'])
   except (TemplateNotFound, IOError) as e:
     return render_template('404.html'), 404
 

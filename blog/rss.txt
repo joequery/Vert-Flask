@@ -1,4 +1,5 @@
 how-to-read-programming-tutorial
+resize-visual-block-vim
 structures-in-c
 new-flask-site
 markdown-pdf-utility

@@ -1,0 +1,23 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+
+[{{post['title']}}]({{post['url']}})
+======================================
+
+One of the most annoying aspects of iOS is the lack of a straightforward way to
+lock your iPhone in Landscape mode. Portrait mode lock works just fine, but if
+you're like me and enjoy watching [TwitchTV](http://twitch.tv) in bed, Portrait
+mode isn't that great for watching your favorite streams. If you attempt to
+watch streams *without* a lock of some form, though, you'll find your screen
+constantly switching orientations.
+
+**However**, landscape lock does exist, it just takes a bit of work to
+activate!
+
+{{ blog_img(g, "twitchtv-landscape-lock/image1.png")|safe }}
+
+{% endfilter %}
+{% endblock post %}
+

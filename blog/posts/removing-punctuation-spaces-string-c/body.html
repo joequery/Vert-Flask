@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 There may be times in which you need to do character processing that only deals with the Alphanumeric characters of a string, not the punctuations or blank spaces.
 

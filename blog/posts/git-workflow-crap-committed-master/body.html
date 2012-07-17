@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 So you know you should pretty much <a href="http://scottchacon.com/2011/08/31/github-flow.html">never hack directly on master</a> when working with git. Instead, you should create branches and merge them later.  Beyond best practices for their own sake, some github projects really want you creating pull requests from a certain branch.   
 

@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 Unless you run a local mail server, the only ways to test a PHP contact form include echo printing and testing on a remote server. Though both of these methods work, running a local mail server allows for greater accuracy in testing, and greater efficiency in debugging. This post will guide you through setting up a local mail server for PHP to use.
 

@@ -4,6 +4,7 @@
 {% include "templates/includes/blog_sidebar.html" %}
 <div id="blogPost">
   <div class="post">
+    <h1><a href="{{post['url']}}">{{post['title']}}</a></h1>
     {% block post %}
     {% endblock post %}
     {{ post['date'] }}

@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 After dealing with jQuery for about 7 months, I've finally settled into my own style of plugin development. This article will discuss what I feel are the shortcomings of the current jQuery development pattern, and my alternative: the class based plugin development pattern.
 

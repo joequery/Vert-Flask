@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 C++ Does not have string case manipulation built in to its <a href="http://www.cplusplus.com/reference/string/string/"> standard library</a>. For this  reason, it's necessary to make your own upperCase and lowerCase functions. I'll show you how to do just that.
 <h2>The Function Code</h2>

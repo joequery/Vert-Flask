@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 Between the commonly used programming languages, C++ is relatively strict on how it handles dynamic memory allocation. The trade off is that you, the programmer, have much more control over how memory is allocated. The downside is you have to follow some seemingly complex logic in order to make dynamic allocation occur correctly. While in PHP, dynamic allocation takes no thought: It just happens.
 

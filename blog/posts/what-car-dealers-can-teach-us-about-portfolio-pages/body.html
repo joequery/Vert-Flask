@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 I've noticed a trend on <strong>web design</strong> companies portfolio pages: They make it hard to view the work done for their clients live. Instead of letting the viewer actually visit the sites of the clients directly from the portfolio page, the page will just bring up an overlay to view a larger print screen. If you want to view the website in real time, you have to type the URL in your browser yourself!
 

@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 If you're creating your own blogging or forum platform using PHP, you'll find that search engine spammers absolutely love to exploit those means of communication by spamming links to their sites. While a spam filter is a great way to combat this problem, occasionally even the best spam filters let a few spam posts through. At that point, you don't want your site authority being imparted to a spammy site (say a Viagra or Cialis reseller!). Your best bet is <a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=96569">rel=nofollow</a>. 
 

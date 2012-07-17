@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 Sometimes when you're getting expressive with JavaScript, you find it necessary to hide certain elements when the page loads. An example of this would be our very own <a href="http://www.vertstudios.com/work.php">work page</a>. We ensure that the user is able to see the text whether they have JavaScript enabled or disabled; it just looks a hell of a lot cooler with JavaScript enabled. 
 

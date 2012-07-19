@@ -1,0 +1,27 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+**Pointers aren't that hard**. You might find that hard to believe, but it's
+true!  Unfortunately, the simplicity of pointers tends to get lost in poor or
+overly-verbose explanations. This is my attempt to present pointers in a clear,
+easy, and accessible manner.
+
+This screencast answers the following question:
+
+* What is a pointer, and why are they important?
+* How do I declare a pointer?
+* What does it mean to 'dereference' a pointer?
+* How do I handle pointers inside a function?
+
+<iframe 
+  width="600" 
+  height="365" 
+  src="http://www.youtube.com/embed/8pXcAgJwAbI" 
+  frameborder="0" 
+  allowfullscreen></iframe>
+<br />
+
+{% endfilter %}
+{% endblock post %}
+

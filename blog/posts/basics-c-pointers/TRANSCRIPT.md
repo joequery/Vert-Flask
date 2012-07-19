@@ -1,12 +1,18 @@
 Basics of C Pointers (Transcript)
 =================================
 
-
 What is a pointer, and why are they important?
 ----------------------------------------------
 
 pointer == memory address
 pointer variable == variable that holds a memory address
+
+
+    int x = 10; 
+
+The value 10 is stored in memory. We need to be able to reliably retrieve that
+value, so 10 is stored at a specific address. This address is equal to &x.
+To get the value at an address, we can use *. So *(&x) == x
 
 Things pointers make easy:
 
@@ -16,6 +22,12 @@ Things pointers make easy:
 
 How do I declare a pointer variable?
 ---------------------------
+
+`int *p` means "p will hold the memory address of an integer"
+
+When using * as part of a declaration, it indicates a pointer variable. When
+using * in an expression, it gets the value at an address (dereferencing).
+
 
     int x = 10;
     int *p = &x;

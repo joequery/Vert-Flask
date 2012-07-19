@@ -35,6 +35,10 @@ def services():
 def about():
   return render_template("about.html", title="About")
 
+@app.route('/sitemap/')
+def sitemap():
+  return render_template("sitemap.static")
+
 
 if __name__ == "__main__":
 	app.run()

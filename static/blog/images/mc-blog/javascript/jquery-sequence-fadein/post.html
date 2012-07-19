@@ -1,0 +1,132 @@
+<p>Sequential fade ins (the action of fading in elements one after the other) have the ability to draw the user's attention to a certain portion of your content. They can also give a professional touch to your jQuery photo galleries. I have created a jQuery plug-in that makes the process of sequentially fading elements extremely simple. </p>
+
+<h2>Code + Documentation</h2>
+[js]
+(function(jQuery) {
+jQuery.fn.fadeInSequence = function(fadeInTime, timeBetween)
+{
+	//Default Values	
+	timeBetween = typeof(timeBetween) == 'undefined' ? 0 : timeBetween;
+	 fadeInTime = typeof(fadeInTime) == 'undefined' ? 500 : fadeInTime;
+
+	
+	//The amount of remaining time until the animation is complete. 
+	//Initially set to the value of the entire animation duration.
+	var remainingTime = jQuery(this).size() * (fadeInTime+timeBetween);
+	
+	var i=0; //Counter
+	return jQuery(this).each(function()
+	{
+		//Wait until previous element has finished fading and timeBetween has elapsed
+		jQuery(this).delay(i++*(fadeInTime+timeBetween));
+		
+		//Decrement remainingTime
+		remainingTime -= (fadeInTime+timeBetween);
+		
+		if(jQuery(this).css('display') == 'none')
+		{
+			jQuery(this).fadeIn(fadeInTime);
+		}
+		else //If hidden by other means such as opacity: 0
+		{
+			jQuery(this).animate({'opacity' : 1}, fadeInTime);
+		}
+		
+		//Delay until the animation is over to fill up the queue.
+		jQuery(this).delay(remainingTime+timeBetween);
+		
+	});	
+
+		
+};
+
+})(jQuery);
+
+[/js]
+
+<b>.fadeInSequence( [ fadeInTime ], [ timeBetween ] )</b>
+<b>fadeInTime:</b> How long each element takes to fade in (in milliseconds)
+<b>timeBetween:</b> How much time to wait before the next element fades in (in milliseconds)
+
+<p>The .fadeInSequence() method animates the opacity of the matched elements one element at a time.</p>
+
+<p>The default value for fadeInTime is 500ms, and the default value for timeBetween is 0ms. The method is overloaded, so the following are all valid function calls. </p>
+
+[js]
+$("wrapper p").fadeInSequence();             //Elements will each fade in over a duration of 500ms with no pause between each element 
+$("wrapper p").fadeInSequence(1000);       //Elements will each fade in over a duration of 1000ms with no pause between each element 
+$("wrapper p").fadeInSequence(300, 500);  //Elements will each fade in over a duration of 300ms with a 500ms pause between each element
+[/js]
+
+
+
+
+<h2>Demo</h2>
+<iframe src="fadein.html" width="400" height="250" scrolling="no">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+
+[html]
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>Sequential Fade In</title>
+<style type="text/css">
+	#fadeIn{position: absolute;top: 10px;left: 10px;}
+	#fadeInFadeOut{position: absolute;top: 10px;left: 100px;}
+
+	#wrapper{margin-top: 50px; width: 330px;
+			 height: 150px; border: 1px solid #000000;}
+
+	#wrapper > *{margin-right: 10px; width: 100px; height: 100px; 
+				float: left; display: none;}
+
+	#box1{background-color: #CCCCCC; left: 0px;}
+	#box2{background-color: #FF0000; left: 110px;}
+	#box3{background-color: #0000FF; left: 220px;}
+</style>
+
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.4.2.min.js'></script>
+<script type="text/javascript" src="fadeinsequence.js"></script>
+
+<script type='text/javascript'>
+$(function(){ 
+
+$("#fadeIn").click(function() {	
+	$("#wrapper").children().hide().fadeInSequence();
+	});
+	
+$("#fadeInFadeOut").click(function() {	
+	$("#wrapper").children().hide().fadeInSequence().fadeOut();
+	});
+	
+	
+});
+</script>
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="box1">Box1</div>
+    <div id="box2">Box2</div>
+    <div id="box3">Box3</div>
+</div>
+<button type="button" id="fadeIn">Fade In</button>
+<button type="button" id="fadeInFadeOut">Fade In+Fade Out</button>
+</body>
+</html>
+[/html]
+
+<p>The Fade In + Fade Out demonstrates that the queue is maintained for each element until the end of the entire .fadeInSequence() animation. This helps retain the "chainability" that we've grown to love with jQuery. </p>
+
+
+
+
+The plug-in was created with some simple math. In order to keep the queue equal between all animated elements, a varying delay was placed at the end of the fadeIn's. This visual representation demonstrates how the plugin operates. In this example, the fadeInTime is set to 500 and timeBetween is also set to 500. 
+<img src="image1.jpg" alt="Fade In Sequence Timeline" /><!--Image 1-->
+
+
+<strong>Questions? Comments? Bugs to Report? Give us your feedback in the comment section below.</strong>
+
+<p>Joseph McCullough is the owner of <a href="http://www.mcculloughdesigns.com/">McCullough Designs</a>, a web design company located in Tyler, Texas. His <a href="http://www.mcculloughdesigns.com/blog">blog</a> discusses web standards, programming, and general business tips. 

@@ -42,10 +42,14 @@ def get_posts(app, numPosts, start=0):
     bodyPath = os.path.join("posts", post, 'body.html')
     metaData = imp.load_source('data', metaPath)
 
+    # Old posts used a custom excerpt. Now the excerpt and description
+    # are the same, labeled under "description".
+    description = metaData.description or metaData.excerpt
+
     postTime = time.strptime(metaData.time, "%Y-%m-%d %a %H:%M %p")
     postDict = {
       'title' : metaData.title,
-      'description' : metaData.excerpt,
+      'description' : description,
       'url': "/blog/%s" % post,
       'pubDate': time.strptime(metaData.time, "%Y-%m-%d %a %H:%M %p")
     }
@@ -93,7 +97,10 @@ def gen_rss_feed(app, postList):
 
 # Credit to http://stackoverflow.com/a/250406/670823
 def get_excerpt(string, charLimit):
-  return string[:charLimit].rsplit(' ', 1)[0]+"..."
+  if len(string) <= charLimit:
+    return string
+  else:
+    return string[:charLimit].rsplit(' ', 1)[0]+"..."
 
 # Helper method for altering RSS feed content for preview purposes.  
 def _alter_rss(rssObj):

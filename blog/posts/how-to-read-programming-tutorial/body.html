@@ -1,0 +1,75 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+Many of us seek to improve ourselves beyond what's required. Many CS students
+are not content to just make good grades in class; they want to get their hands
+dirty with real-world projects. Many employees read up on the latest languages
+and frameworks well beyond office hours, simply because they want to play with
+technology while learning to build a better product. It's important, however, 
+to ensure our time spent studying new programming techniques does not go to 
+waste.
+
+
+!(confused) != knowledgeable
+---------------------------
+
+Understanding an article does not necessarily grant you the knowledge to apply
+it directly to your projects. I feel it's easy to mistake lack of confusion for
+thorough understanding. In other words, you can glaze over an article and not
+feel particularly puzzled by what you just read, yet still have no idea how to
+reproduce any examples the moment you close the browser window. I use the following
+techniques to help me determine if I've truly understood what I've read.
+
+
+### Ask Questions. Test Yourself!
+
+if you come across something that doesn't sit right in your head, don't just
+think "Hmm, okay, I guess that makes sense." Try to figure out *why*, things
+work, even if that involves moving beyond the article and searching through
+Google.  Attempt to make slight adjustments to provided examples.  Change the
+problem requirements if you're reading a book with provided exercises. The goal
+is deep, applicable understanding of the subject, and changing examples and
+problems will expose you to more edge cases, exceptions, and greatly accelerate
+your understanding. Here are some examples:
+
+* A C tutorial teaches you how to sort an array with hard-coded elements.
+Can you alter the example to read inputs from the keyboard? How would you 
+account for fewer/more inputs than the array size when sorting?
+
+* A git tutorial teaches you how to revert a commit. How could you revert
+multiple commits at the same time if needed?
+
+* A rails tutorial has you storing user passwords using a SHA variant. Can
+you alter the tutorial to implement bcrypt?
+
+Complete the examples, and then attempt to differentiate minor details from
+the core concepts. Research the core concepts, and then apply the concepts by
+changing up the minor details.
+
+### Could you recreate what you just read?
+
+I touched on this earlier, but I firmly believe one should have the ability to
+recreate examples from tutorials from memory. I would even go so far to claim
+entire projects/applications, such as the Twitter clone from Hartl's free [Rails
+book](http://ruby.railstutorial.org/ruby-on-rails-tutorial-book), should be
+recreated from memory. Understanding code after glancing through it does **not**
+in any way guarantee you can replicate it, no matter how "trivial" you think it
+is. Replicating code from memory forces you to think of the problem
+requirements, the caveats, and it effectively exposes the concepts you didn't
+even know you were unsure of.
+
+
+
+Be Thorough, Be Honest
+----------------------
+
+Reading programming tutorials effectively can be summarized in two words: 
+thoroughness and honesty. Ask questions, alter examples, and never let your ego
+pressure you to avoid topics you don't understand.
+
+
+
+{% endfilter %}
+{% endblock post %}
+

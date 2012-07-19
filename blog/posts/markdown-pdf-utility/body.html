@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 I needed to get a Markdown document in PDF format. Unable to find a good solution, I set off to make a Markdown to PDF conversion utility. About 20 lines of Python later, here we are!
 

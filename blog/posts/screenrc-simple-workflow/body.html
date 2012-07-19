@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 <a href="http://www.gnu.org/s/screen/">GNU screen</a> is a terminal application that lets you run multiple terminals within a single terminal instance. This tool, which has been around for <i>ages</i>, can greatly improve your organization and workflow.
 

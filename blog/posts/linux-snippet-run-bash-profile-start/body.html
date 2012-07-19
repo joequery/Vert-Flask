@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 If you've edited your ~/.bash_profile to include scripts you'd like executed on start up, you might be surprised when you open up your terminal and those scripts don't execute. By default, ~/.bashrc executes on session start, but ~/.bash_profile doesn't. 
 

@@ -1,3 +1,7 @@
+introduction-pointers-in-c
+twitchtv-landscape-lock
+how-to-read-programming-tutorial
+resize-visual-block-vim
 structures-in-c
 new-flask-site
 markdown-pdf-utility

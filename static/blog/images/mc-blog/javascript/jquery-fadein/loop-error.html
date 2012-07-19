@@ -1,0 +1,66 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.4.2.min.js'></script>
+<script type='text/javascript'>
+$(function(){
+
+$("#click").click(function()
+{	
+	var wrapper = $("#wrapper").children().hide();
+
+	for(var i=0; i<wrapper.length; i++)
+	{
+		$(wrapper[i]).delay(1000).fadeIn(500);
+	}
+	
+	$(this).html("Click to View Demo Again");
+
+});
+
+});//End JavaScript Document
+
+</script> 
+<title>Forloop Error</title>
+<style type="text/css">
+#click{
+position: absolute;
+top: 10px;
+left: 10px;}
+
+#wrapper{
+position: absolute;
+top: 0px;
+left: 0px;
+width: 350px;
+height: 150px;
+border: 1px solid #000000;}
+
+#wrapper > *{
+margin-left: 10px;
+width: 100px;
+height: 100px;
+position: absolute;
+top: 40px;
+text-align: center;
+display: none;}
+
+#box1{
+background-color: #CCCCCC;
+left: 0px;}
+#box2{
+background-color: #FF0000;
+left: 110px;}
+#box3{
+background-color: #0000FF;
+left: 220px;}
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="box1">Box1</div>
+    <div id="box2">Box2</div>
+    <div id="box3">Box3</div>
+</div>
+<button type="button" id="click">Click to View Demo</button>

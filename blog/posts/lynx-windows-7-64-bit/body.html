@@ -1,11 +1,5 @@
 {% extends "templates/post.html" %}
 {% block post %}
-{% filter markdown %}
-
-
-[{{post['title']}}]({{post['url']}})
-======================================
-{% endfilter %}
 
 <a href="http://lynx.browser.org/">Lynx</a> is a text-only  <a href="http://www.vertstudios.com/blog/web-design-dictionary/#browser">browser</a>  that's great for browsing content extremely fast. Sometimes you don't need fancy JavaScript interaction or beautiful images; you just want to view the text needed to solve your problems and move on with your life. That's what Lynx is for. Additionally, as a designer/developer, Lynx is a great way to make sure your website is adhering to <a href="http://www.vertstudios.com/blog/web-design-dictionary/#accessibility">accessibility</a> guidelines. 
 

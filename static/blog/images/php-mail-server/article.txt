@@ -1,0 +1,124 @@
+Title: Windows PHP Mail Server Installation Guide (With Screenshots!)
+Unless you run a local mail server, the only ways to test a PHP contact form include echo printing and testing on a remote server. Though both of these methods work, running a local mail server allows for greater accuracy in testing, and greater efficiency in debugging. This post will guide you through setting up a local mail server for PHP to use.
+
+<h2>Step by Step Guide</h2>
+We will use hMailServer to interact with PHP. This will allow local use of the <a href="http://php.net/manual/en/function.mail.php">PHP mail()</a> function, saving us time when creating/testing our forms. 
+
+<h3>Requirements</h3>
+Before we get started, we need to make sure your machine is properly configured to allow for hMailServer installation. You will need the following items installed:
+	<ul>
+		<li>PHP (<a href="http://www.vertstudios.com/blog/php-apache-installation-tutorial/">Installation Guide</a>)</li>
+		<li>Apache (<a href="http://www.vertstudios.com/blog/php-apache-installation-tutorial/">Installation Guide</a>)</li>
+		<li>MySQL (<a href="http://www.vertstudios.com/blog/mysql-installation-tutorial">Installation Guide</a>)</li>
+	</ul>
+You will also need a mail service of some form. A free option such as <a href="http://mail.google.com">gmail</a> will suffice.
+
+<h2>Installing hMailServer</h2>
+Follow these steps in relation to your installation directories.
+
+Download the <a href="http://www.hmailserver.com/index.php?page=background_download_file&downloadid=207">hMailServer exe</a>. (If that download link fails, visit the hMailServer <a href="http://www.hmailserver.com/index.php?page=download">download page</a>.)
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img1.png" />
+
+Open the installer. Accept the terms and choose your installation directory.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img2.png" />
+
+Select both Server and Administrative Tools.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img3.png" />
+
+Select to use external database engine
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img4.png" />
+
+Determine if you want a Start Menu folder. I opted out, but that's your call. 
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img5.png" />
+
+The database wizard will pop up. Press next. 
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img6.png" />
+
+Select "Create a new hMailServer database"
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img7.png" />
+
+Select "MySQL" as your database server type.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img8.png" />
+
+At this point, we are brought to a form where we need to enter our database connection information.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img9.png" />
+
+<h3>If Using 32bit MySQL</h3>
+Exit your MySQL client, and open up the directory where MySQL is installed. It will usually be C:\Program Files\MySQL\MySQL Server 5.X\. Open up the lib folder.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img11.png" />
+
+<h3>If Using 64bit MySQL</h3>
+hMailServer itself is a 32bit program, so it requires a 32bit dll from MySQL. You'll need to download <a href="http://www.vertstudios.com/blog/libmysqldll-32-bit-download/">libmysql.dll 32 bit</a> and use it in the next step.
+
+Copy the file "libmysql.dll" to the "bin" folder of your hMailServer installation. 
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img12.png" />
+
+Switch back to the database configuration form. Your "Database Server Address" and Port will be localhost and 3306 respectively unless you specified otherwise in your MySQL installation. Database Name is whatever you want the database to be called. I call mine "localmail". Your server authentication is a username/password combination that acts as the "root" account for your MySQL server. In my case, the account is the default of root.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img13.png" />
+
+From the service drop down menu, select MySQL. Make sure the MySQL service is running in the background.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img14.png" />
+
+If all goes well, you will get a message confirming that the database was created successfully. 
+
+<h2>Configuring hMailServer</h2>
+Now that we have hMailServer installed, we need to configure it so we can use it to send mail.
+
+After the Database was successfully created, hMailServer will ask you to specify a main password.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img15.png" />
+
+After you specified your main password, open hMailAdmin.exe in the Bin folder of your hMailServer installation.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img16.png" />
+
+Select the localhost - Administrator pair and press connect. (Note: Administrator is an important keyword in hMailServer. Do NOT change the username to something else.) Your password will be what you just specified as the "main password".
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img17.png" />
+
+From the welcome screen, select Settings -> Advanced -> IP Ranges -> My Computer. Make sure all boxes under "Require SMTP authentication" are UNchecked. Make sure to save.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img18.png" />
+
+Now go to Settings -> Protocols -> SMTP, and then the "Delivery of e-mail" tab.Write "localhost" as your Local host name.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img19.png" />
+
+As for the SMTP Relayer, this depends entirely on the email service you wish to use. I highly recommend creating a <a href="http://mail.google.com">free Gmail account</a> to follow along with these next few steps.
+
+Whether you're using gmail, yahoo, a web host, or an ISP, you will need the following information:
+<ul>
+	<li>Host name</li>
+	<li>Port Number</li>
+	<li>Username/Password Authentication (if required)</li>
+</ul>
+
+Google <a href="http://mail.google.com/support/bin/answer.py?answer=13287">conveniently provides</a> this information for their Gmail service. Through some searching, you can find this information for whatever mail service you use.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img20.png" />
+
+Using one of my gmail accounts as an example, here is how my configuration looks.
+<img alt="PHP Windows Local Mail Server" src="http://www.vertstudios.com/blog/images/php-mail-server/img21.png" />
+
+Save the configuration, and restart your Apache webserver. Now we're finished!
+
+<h2>Testing the Configuration</h2>
+Now we need to see if our mail server actually works. Here's a simple php script that'll test our configuration. 
+
+[php]
+<?php
+$to      = 'youremail@yourdomain.com';
+$subject = 'the subject';
+$message = 'hello';
+$headers = 'From: webmaster@example.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+date_default_timezone_set('America/Chicago');
+
+$mail = mail($to, $subject, $message, $headers);
+if($mail){
+echo "YES";
+} else{
+echo "NO";
+}
+?>
+[/php]
+
+The script will print "YES" if the email sent, and you should find that you have new mail in your inbox!
+
+<h2>Feedback</h2>
+Did you find this tutorial helpful? Did you come across any problems? Let us know in the comments below!

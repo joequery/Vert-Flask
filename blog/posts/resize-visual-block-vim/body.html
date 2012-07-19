@@ -1,0 +1,27 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+Quick VIM tip today: Resizing a Visual selection block.
+
+Suppose you have a paragraph of text in a markdown document. You want this
+paragraph to be composed of lines with a maximum width of 80. 
+
+First, set your `textwidth` to 80 via `:set tw=80`.
+
+Now you can quickly resize the paragraph by selecting it in Visual mode and
+executing `gq`.
+
+Watch the demo below!
+
+<iframe 
+  width="560" 
+  height="315" 
+  src="http://www.youtube.com/embed/oc8XDHJY_FQ" 
+  frameborder="0" 
+  allowfullscreen></iframe>
+<br />
+
+{% endfilter %}
+{% endblock post %}
+

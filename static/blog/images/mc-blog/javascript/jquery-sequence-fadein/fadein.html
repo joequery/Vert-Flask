@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>Sequential Fade In</title>
+<style type="text/css">
+	#fadeIn{position: absolute;top: 10px;left: 10px;}
+	#fadeInFadeOut{position: absolute;top: 10px;left: 100px;}
+
+	#wrapper{margin-top: 50px; width: 330px;
+			 height: 150px; border: 1px solid #000000;}
+
+	#wrapper > *{margin-right: 10px; width: 100px; height: 100px; 
+				float: left; display: none;}
+
+	#box1{background-color: #CCCCCC; left: 0px;}
+	#box2{background-color: #FF0000; left: 110px;}
+	#box3{background-color: #0000FF; left: 220px;}
+</style>
+
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.4.2.min.js'></script>
+<script type="text/javascript" src="http://www.mcculloughdesigns.com/mccullough.jquery-c.js"></script>
+
+<script type='text/javascript'>
+$(function(){ 
+
+$("#fadeIn").click(function() {	
+	$("#wrapper").children().hide().fadeInSequence();
+	});
+	
+$("#fadeInFadeOut").click(function() {	
+	$("#wrapper").children().hide().fadeInSequence().fadeOut();
+	});
+	
+	
+});
+</script>
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="box1">Box1</div>
+    <div id="box2">Box2</div>
+    <div id="box3">Box3</div>
+</div>
+<button type="button" id="fadeIn">Fade In</button>
+<button type="button" id="fadeInFadeOut">Fade In+Fade Out</button>
+</body>
+</html>

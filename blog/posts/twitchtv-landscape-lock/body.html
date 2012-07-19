@@ -1,0 +1,71 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+One of the most annoying aspects of iOS is the lack of a straightforward way to
+lock your iPhone in Landscape mode. Portrait mode lock works just fine, but if
+you're like me and enjoy watching [TwitchTV](http://twitch.tv) in bed, Portrait
+mode isn't that great for watching your favorite streams. If you attempt to
+watch streams *without* a lock of some form, though, you'll find your screen
+constantly switching orientations.
+
+**However**, landscape lock does exist, it just takes a bit of work to
+activate!
+
+Step by Step Guide
+------------------
+
+Open the Settings application. Scroll down and Press `General`. Next, scroll
+down and press `Accessibility`. 
+
+{{ blog_img(g, "twitchtv-landscape-lock/image1.png")|safe }}
+
+Scroll down again until you see the `AssitiveTouch` and `Triple-click Home`
+options. Set `AssitiveTouch` to **ON**  and `Triple-click Home` to
+**AssitiveTouch**.
+
+{{ blog_img(g, "twitchtv-landscape-lock/image2.png")|safe }}
+
+The AssitiveTouch icon should pop up on your screen. If you don't see it,
+press the Home button on the bottom of your iPhone three times in quick
+succession.  After about five seconds, the icon should appear. Pressing the
+Home button three times like this toggles the AssitiveTouch icon.
+
+{{ blog_img(g, "twitchtv-landscape-lock/image3.png")|safe }}
+
+Next, [lock your iPhone orientation][0] in Portrait mode.
+[0]: http://timeread.hubpages.com/hub/How-to-lock-the-iPod-touch-or-iPhone-screen-in-portrait-orientation
+
+Now open up the TwitchTV app, and pull up your favorite stream. Press the
+AssitiveTouch icon. A menu will pop up with the labels "Gestures", "Favorites",
+"Device", and "Home". **Press Device**.
+
+{{ blog_img(g, "twitchtv-landscape-lock/image4.png")|safe }}
+
+Another menu will come up. Choose **Rotate Screen**.
+
+{{ blog_img(g, "twitchtv-landscape-lock/image5.png")|safe }}
+
+Finally, choose either **Right** or **Left** (Left to have the iPhone volume
+buttons on top).
+
+{{ blog_img(g, "twitchtv-landscape-lock/image6.png")|safe }}
+
+Now TwitchTV is locked in Landscape mode! Press anywhere outside of the
+AssitiveTouch menu to minimize it, and feel free to toggle AssitiveTouch off
+until you need it again.
+
+A few things to remember
+------------------------
+
+* You will need to repeat this procedure any time you leave the TwitchTV App.
+
+* You are able to drag the AssitiveTouch icon around on the screen. 
+
+* For whatever reason, toggling AssitiveTouch can take a really long time. If
+AssitiveTouch fails to show up after triple-pressing the Home key, wait 10
+seconds before trying again.
+
+{% endfilter %}
+{% endblock post %}
+

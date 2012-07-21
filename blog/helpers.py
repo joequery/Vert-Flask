@@ -46,11 +46,14 @@ def get_posts(app, numPosts, start=0):
     # are the same, labeled under "description".
     description = metaData.description or metaData.excerpt
 
+    # Get url prefix of blog blueprint
+    url_prefix = app.blueprints['blog'].url_prefix
+
     postTime = time.strptime(metaData.time, "%Y-%m-%d %a %H:%M %p")
     postDict = {
       'title' : metaData.title,
       'description' : description,
-      'url': "/blog/%s" % post,
+      'url': os.path.join(url_prefix, post),
       'pubDate': time.strptime(metaData.time, "%Y-%m-%d %a %H:%M %p")
     }
     postDict['comments'] = postDict['url'] + "#comments"

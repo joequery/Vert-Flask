@@ -1,0 +1,22 @@
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+Before you proceed with this tutorial, you should have a good understanding of
+pointers. Check out my [introduction to pointers][0] screencast.
+
+The ability to manage your own memory is part of what makes C so significant.
+At the heart of memory management sits `malloc`, a function which you will know
+how to use by the end of this tutorial.
+
+As described by the [GNU][1], the `malloc` function is used to manually
+allocate a block of memory. Specifically, `malloc` returns a pointer to a newly
+allocated block of memory. This brings up the question: **What does it mean to
+return a pointer?**
+
+[0]: /blog/introduction-pointers-in-c/
+[1]: http://www.gnu.org/software/libc/manual/html_node/Basic-Allocation.html
+
+{% endfilter %}
+{% endblock post %}
+

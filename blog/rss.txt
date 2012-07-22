@@ -1,3 +1,4 @@
+malloc-functions-returning-pointers
 introduction-pointers-in-c
 twitchtv-landscape-lock
 how-to-read-programming-tutorial

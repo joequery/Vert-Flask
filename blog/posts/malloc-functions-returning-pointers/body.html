@@ -258,7 +258,7 @@ int main(){
 int* new_integer(void){
   // malloc returns a pointer, so we need a pointer to int to store the
   // returned memory address.
-  int *pointer = malloc(sizeof(int));
+  int *pointer = (int*)malloc(sizeof(int));
   return pointer;
 }
 </pre>

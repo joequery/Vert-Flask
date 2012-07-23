@@ -333,6 +333,33 @@ rec_t* new_rectangle(void){
 }
 </pre>
 
+Freeing Allocated Memory
+------------------------
+
+When you no longer need memory you've allocated with `malloc`, you can pass
+the address returned by `malloc` to the `free` function, and that memory will
+be freed up.
+
+<pre class="prettyprint">
+// Allocate memory, store the memory block address in rec
+rec_t *rec = malloc(sizeof *rec);
+
+// Do stuff with rec
+// ...
+// ...
+// ...
+
+// Free the memory block located at the memory address `rec`
+free(rec);
+</pre>
+
+What comes next?
+----------------
+
+With a basic understanding of functions that return pointers and how to use
+`malloc`, we can begin looking into data structures such as linked lists. Stay
+tuned, I'll get those tutorials out soon enough!
+
 
 [0]: /blog/introduction-pointers-in-c/
 [1]: http://www.gnu.org/software/libc/manual/html_node/Basic-Allocation.html

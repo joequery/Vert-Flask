@@ -1,23 +1,25 @@
-// Using functions returning void pointers
+// Demonstrate a simple function that returns a void pointer
 #include<stdio.h>
-#include<stdlib.h> 
 
-void* new_integer(void);
+void* return_me(int*);
 
 int main(){
-  // Get the address of an integer
-  int *p;
-  p = new_integer();
-  *p = 15;
+  int x = 5;
 
-  printf("The value at the address of p is: %d\n", *p);
+  // p holds the memory address of the integer x.
+  int *p = &x;
+  printf("p: %p\n", p);
+
+  p = return_me(p);
+  printf("p: %p\n", p);
+
   return 0;
 }
 
-void* new_integer(void){
-  // malloc returns a pointer, so we need a pointer to int to store the
-  // returned memory address.
-  int *pointer = (int*)malloc(sizeof(int));
+/*
+ * A very simple function: Just returns the pointer passed to it!
+ */
+void* return_me(int *pointer){
   return pointer;
 }
 

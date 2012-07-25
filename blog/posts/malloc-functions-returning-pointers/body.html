@@ -196,6 +196,22 @@ p: 0x7fffd3ea8dd8
 p: 0x7fffd3ea8ddc
 </pre>
 
+Furthermore, void pointers are **assignable** to any other pointer type. In
+other words, a void pointer can be assigned to any pointer variable of any
+type. To demonstrate:
+
+<pre class="prettyprint">
+// Initialize x and y
+int x = 10;
+float y = 20.0;
+
+// Declare a pointer to int, float, and a void pointer
+int *pint;
+float *pfloat;
+void *vp;
+
+</pre>
+	
 
 ### Functions returning void pointers.
 
@@ -203,34 +219,36 @@ If we can declare a variable of type `void*`, then we certainly can create a
 function returning a value of type `void*`, which is simply a pointer of any
 type.
 
-Consider a previous example where we introduced `malloc` by creating a
-`new_integer` function. The `new_integer` function returned a pointer to int,
-but it could have returned a void pointer and work the same way, as
-demonstrated below:
+Consider a previous example which simply returns the pointer to int passed to
+it. We can modify the function to return a void pointer, and the result will be
+the same.
 
 <pre class="prettyprint">
-// Using functions returning void pointers
+// Demonstrate a simple function that returns a void pointer
 #include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt; 
 
-void* new_integer(void);
+void* return_me(int*);
 
 int main(){
-  // Get the address of an integer
-  int *p;
-  p = new_integer();
-  *p = 15;
+  int x = 5;
 
-  printf("The value at the address of p is: %d\n", *p);
+  // p holds the memory address of the integer x.
+  int *p = &x;
+  printf("p: %p\n", p);
+
+  p = return_me(p);
+  printf("p: %p\n", p);
+
   return 0;
 }
 
-void* new_integer(void){
-  // malloc returns a pointer, so we need a pointer to int to store the
-  // returned memory address.
-  int *pointer = (int*)malloc(sizeof(int));
+/*
+ * A very simple function: Just returns the pointer passed to it!
+ */
+void* return_me(int *pointer){
   return pointer;
 }
+
 </pre>
 
 It's always better to be explicit when possible, though. Usually you will know
@@ -254,51 +272,51 @@ The following program will fail to compile:
 <pre class="prettyprint">
 // Attempt to dereference a void pointer: This will fail to compile!
 #include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt; 
-
-void* new_integer(void);
 
 int main(){
   // Get the address of an integer
-  void* vp = new_integer();
+  int x = 10;
+  void* vp = &x;
   *vp = 15;
 
   printf("The value at the address of vp is: %d\n", *vp);
   return 0;
 }
 
-void* new_integer(void){
-  // malloc returns a pointer, so we need a pointer to int to store the
-  // returned memory address.
-  int *pointer = (int*)malloc(sizeof(int));
-  return pointer;
-}
 </pre>
 
 My gcc compiler outputs
 
 <pre class="prettyprint">
 ex8.c: In function ‘main’:
-ex8.c:10:3: warning: dereferencing ‘void *’ pointer [enabled by default]
-ex8.c:10:3: error: invalid use of void expression
+ex8.c:10: warning: dereferencing ‘void *’ pointer
+ex8.c:10: error: invalid use of void expression
+ex8.c:12: warning: dereferencing ‘void *’ pointer
+ex8.c:12: error: invalid use of void expression
 </pre>
 
 We can, however, cast a void pointer to the proper pointer type, and then
-dereference. If we replace the `main()` above with the following, our program
-compiles and outputs the expected result of 15.
+dereference. 
 
 <pre class="prettyprint">
+// Attempt to dereference a void pointer: Casting works!
+#include&lt;stdio.h&gt;
+
 int main(){
   // Get the address of an integer
-  void* vp = new_integer();
-  *(int*)vp = 15;
+  int x = 10;
+  void* vp = &x;
 
   printf("The value at the address of vp is: %d\n", *(int*)vp);
   return 0;
 }
 </pre>
 
-We cast vp to a pointer to int, thus allowing us to dereference the pointer. 
+With the expected output of
+
+<pre class="prettyprint">
+The value at the address of vp is: 10
+</pre>
 
 ### Implicit conversion of void pointers
 
@@ -308,7 +326,7 @@ following example, and reread the previous sentence a few times until it sinks
 in)
 
 <pre class="prettyprint">
-// Attempt to dereference a void pointer: This will fail to compile!
+// Implicit conversion of void pointers
 #include&lt;stdio.h&gt;
 #include&lt;stdlib.h&gt; 
 
@@ -359,40 +377,49 @@ int?
 Indeed, this trickery will compile!
 
 <pre class="prettyprint">
-// Be evil with void pointers
+// Void pointers are assignable to any pointers
 #include&lt;stdio.h&gt;
 
 int main(){
-  // Initialize a floating point
-  float x = 10;
+	// Initialize an integer
+  int x = 10;
 
-  // Initialize a void pointer to the address of a float, which is perfectly OK
-  void *vp = &x;
+  // Declare pointers to int and float
+  int *pint;
+  float *pfloat;
 
-  // Initialize a pointer to int to the address stored in vp, which is
-  // perfectly legal since the void pointer vp is implicitly converted to a
-  // pointer to int.
-  int *p = vp;
+  // Initialize a void pointer to the memory address of the integer x
+  void* vp = &x;
 
-  printf("The address of x: %p\n", &x);
-  printf("The address of p: %p\n", p);
-  printf("The value of *p: %d\n", *p);
+  // Since void pointers are assignable to any pointer, the following are both
+  // legal (but legal doesn't always mean smart or safe!).
+  pint = vp;
+  pfloat = vp;
 
-  *p = 15;
-  printf("The value of *p after deref-assignment: %d\n", *p);
-  printf("The value of x: %.2f\n", x);
+  // This makes sense because pint is a pointer to int, and vp holds the
+  // memory address of an integer.
+  printf("*pint: %d\n", *pint);
+
+  // But this doesn't make sense because pfloat is a pointer to float, but
+  // vp holds the memory address of an integer.
+  *pfloat = 10.0;
+  printf("*pfloat: %f\n", *pfloat);
+
+  // Now our data has been corrupted. Lesson learned: Just because void
+  // pointers are legally assignable to everything doesn't mean you're safe!
+  printf("*pint: %d\n", *pint);
 
   return 0;
 }
+
+
 </pre>
 
 Output will appear similar to 
 <pre class="prettyprint">
-The address of x: 0x7fff9f168b7c
-The address of p: 0x7fff9f168b7c
-The value of *p: 1092616192
-The value of *p after deref-assignment: 15
-The value of x: 0.00
+*pint: 10
+*pfloat: 10.000000
+*pint: 1092616192
 </pre>
 
 This behavior is explained in this [StackOverflow thread][7],

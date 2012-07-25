@@ -321,55 +321,49 @@ The value at the address of vp is: 10
 ### Implicit conversion of void pointers
 
 Luckily, even though we can't dereference a void pointer, we don't have to cast
-a void pointer if it's being assigned to another pointer. (Look at the
+a void pointer if it's being assigned to another pointer. Look at the
 following example, and reread the previous sentence a few times until it sinks
-in)
+in.
 
 <pre class="prettyprint">
-// Implicit conversion of void pointers
+// Demonstrate implicit conversion of void pointers
 #include&lt;stdio.h&gt;
-#include&lt;stdlib.h&gt; 
-
-void* new_integer(void);
 
 int main(){
-  // Get the address of an integer
-  int *p = new_integer();
+  // Initialize an integer x
+  int x = 10;
 
-  // Even though new_integer() returns a void pointer, it's implicitly 
-  // converted to int* in the assignment above. p is a pointer to int,
-  // not a void pointer, so it can safely be dereferenced. 
-  *p = 15;
+  // Assign the address of x to a void pointer
+  void *vp = &x;
 
-  printf("The value at the address of p is: %d\n", *p);
+  // Initialize a pointer to int to vp, which itself is the address of x.
+  int *pint = vp;
+
+  // We're free to dereference pint: Even though vp is a void pointer, the
+  // assignment above initiated an implicit conversion of vp to a pointer to
+  // int, similar to how `float x = 10` implicitly converts 10 to its floating
+  // point form. Dereferencing vp at this point would still result in an error:
+  // it's never okay to dereference a void pointer.
+  printf("*pint: %d\n", *pint);
+
   return 0;
 }
-
-void* new_integer(void){
-  // malloc returns a pointer, so we need a pointer to int to store the
-  // returned memory address.
-  void* pointer = malloc(sizeof(int));
-  return pointer;
-}
 </pre>
-
 The output: 
 
 <pre class="prettyprint">
-The value at the address of p is: 15
+*pint: 10
 </pre>
 
-The implicit conversion of `void*` to `int*` is analogous to how the statement
-`float x = 10;` implicitly converts the integer 10 into its floating point 
-form to store in `x`. We take advantage of the implicit conversion behavior
-of assigning void pointers to "normal" pointers every time we use `malloc`, 
-which you'll see in a few minutes.
+We take advantage of the implicit conversion behavior of assigning void
+pointers to "normal" pointers every time we use `malloc`, which you'll see in a
+few minutes.
 
 ### Playing with Fire
 
-Now we know void pointers are implicitly converted to the type of pointer it's
-being assigned to. We also know we can't assign the address of a float to a
-pointer to int, but if we're feeling smug, we might think:
+We knew beforehand we can't assign the address of a float to a pointer to int.
+But now, we know void pointers are implicitly converted to the type of pointer
+it's being assigned to. If we're feeling smug, we might think:
 
 > What if I assign a void pointer holding a pointer to float to a pointer to
 int? 
@@ -430,15 +424,16 @@ warnings, have it compile fine, only to have weird unexpected behavior when you
 run the code.
 
 One thing that you will learn about C, if you haven't already, is that legal
-does not necessarily imply correct, and correct now does not necessarily
-imply correct forever! Be careful.
+does not necessarily imply correct, and correct now does not necessarily imply
+correct forever! Be careful.
 
 Allocating Memory with malloc
 -----------------------------
 
-If you look closely at the provided examples, I've only returned pointers that
-were declared in `main()` and passed to the function. What if I wanted a 
-function to return the address of a variable declared inside the function?
+If you look closely at the previous examples when functions returned pointers,
+we've only returned pointers that were declared in `main()` and passed to the
+function. What if I wanted a function to return the address of a variable
+declared inside the function?
 
 ### What not to do
 
@@ -486,7 +481,7 @@ tutorial, the explanation above will suffice.
 ### What to do - malloc!
 
 Now that we understand how *not* to allocate memory, we can discuss how you
-*should* allocate memory. For this tutorial, we will use the `malloc` function
+should allocate memory. For this tutorial, we will use the `malloc` function
 for allocating memory, although [other allocation functions exist][4].
 
 The definition of `malloc` is as follows:
@@ -501,13 +496,11 @@ or a null pointer if the block could not be allocated.
 For all intents and purposes, you can consider `size_t` (read "size type") as
 an unsigned integer. (More discussion on [size_t vs int][5])
 
-So when calling the `malloc` function, you specify how many bytes of memory
-you want allocated, and if malloc is able to allocate that memory, it returns
-the a pointer to that memory block. In other words, it returns the address of
-the alloted memory block. If that memory cannot be alloted for any reason,
-`NULL` is returned.
+So when calling the `malloc` function, you specify how many bytes of memory you
+want allocated, and if malloc is able to allocate that memory, it returns a
+void pointer to that memory block. 
 
-Let's take our previous, incorrect example and implement `malloc`.
+Let's take our incorrect example and fix it by implementing `malloc`.
 
 <pre class="prettyprint">
 // Allocating memory with malloc
@@ -527,16 +520,17 @@ int main(){
 }
 
 int* new_integer(void){
-  // malloc returns a pointer, so we need a pointer to int to store the
-  // returned memory address.
-  int *pointer = (int*)malloc(sizeof(int));
+  // Allocate the exact amount of memory needed for an integer via sizeof(int).
+  // malloc returns a void pointer, but the assignment to `int *pointer` causes
+  // an implicit conversion to type int*.
+  int *pointer = malloc(sizeof(int));
   return pointer;
 }
 </pre>
 
 Be sure to note the inclusion of the `stdlib.h` library, as well as the usage
 of the `sizeof` operator. `sizeof` tells us the number of bytes a datatype or
-variable takes up. 
+variable takes up in memory. 
 
 While this example demonstrates how to use `malloc`, it's not particularly
 useful in any real world scenario. `malloc` really begins to shine when we
@@ -567,7 +561,7 @@ int main(){
 
   // Now that ptr has the memory address of a rectangle structure, we can
   // perform operations on *ptr just like we would any other structure.
-  // In this case, assignment.
+  // In this case, assignment to another structure variable.
   rec_t rectangle = *ptr;
 
   rectangle.width = 10;
@@ -580,29 +574,36 @@ int main(){
 }
 
 rec_t* new_rectangle(void){
-  // Allocate the exact right amount of memory for a rectangle structure,
-  // calculated by sizeof(rec_t). Return the memory address to `p`.
-  rec_t *p = (rec_t *)malloc(sizeof(rec_t));
-  return p;
-}
-</pre>
-
-Let's take a closer look at the `new_rectangle` function. We want to allocate
-the exact right amount of memory for a rectangle structure, so we pass
-`sizeof(rec_t)` to ensure we get just the right amount of memory. Then we cast
-the pointer returned from malloc to be a "pointer to rec_t".
-
-This seems really verbose, right? Well, luckily, unless you plan on using a C++
-compiler, the function can be simplified to
-
-<pre class="prettyprint">
-rec_t* new_rectangle(void){
-  // Allocate the exact right amount of memory for a rectangle structure,
-  // calculated by sizeof(rec_t). Return the memory address to `p`.
+  // Allocate the exact right amount of memory for a rectangle structure.
+  // Due to how the sizeof operator works, we can use a "shortcut" and get
+  // the number of bytes needed without having to specify the rec_t type to
+  // sizeof. 
   rec_t *p = malloc(sizeof *p);
   return p;
 }
 </pre>
+
+Take a good look at the `new_rectangle` function, and take a couple minutes to
+just memorize that initialization of p. It is not necessary to specify `rec_t`,
+because the compiler knows that `*p` is of that type. It might seem strange that
+we can refer to `*p` in the initialization of `p`, but we can! This type of
+call to malloc is much more concise and accurate.
+
+In the proceeding example, where we used `malloc(sizeof(int))`, we could have
+used `malloc(sizeof *pointer)` instead.
+
+In many tutorials/discussion forums, you probably would have seen the
+`new_rectangle` function in the following form:
+
+<pre class="prettyprint">
+rec_t* new_rectangle(void){
+  rec_t *p = (rec_t*)malloc(sizeof(rec_t));
+  return p;
+}
+</pre>
+
+Earlier I claimed that "explicit is always better". The above, however, is 
+overly-verbose to the [point of being harmful][8]. Keep it simple!
 
 Freeing Allocated Memory
 ------------------------
@@ -640,6 +641,7 @@ structures, we'll be on our way to creating data structures!
 [5]: http://stackoverflow.com/questions/994288/size-t-vs-int-in-c-and-or-c
 [6]: /blog/structures-in-c/
 [7]: http://stackoverflow.com/a/99010/670823
+[8]: http://stackoverflow.com/a/605858/670823
 {% endfilter %}
 {% endblock post %}
 

@@ -165,8 +165,153 @@ identical.
 Void pointers
 -------------
 
-Implicit conversion of functions returning void pointers
---------------------------------------------------------
+We know a pointer to int must hold the address of an int, a pointer to float
+must hold the address of a float, and so on. However, there does a exist a
+special pointer type that can be assigned the memory address of any type: These
+pointers are called **void pointers**. We declare and assign void pointers just
+like any other pointer. Observe in the following example how the void pointer
+can be assigned the address of both a float and an int:
+
+<pre class="prettyprint">
+// Void pointers
+#include&lt;stdio.h&gt;
+
+int main(){
+  int x = 10;
+  float y = 20.0;
+
+  void *p = &x;
+  printf("p: %p\n", p);
+
+  p = &y;
+  printf("p: %p\n", p);
+  return 0;
+}
+</pre>
+
+With the output looking similar to
+
+<pre class="prettyprint">
+p: 0x7fffd3ea8dd8
+p: 0x7fffd3ea8ddc
+</pre>
+
+
+### Functions returning void pointers.
+
+If we can declare a variable of type `void*`, then we certain can create a
+function returning a value of type `void*`, which is simply a pointer of any
+type.
+
+Consider a previous example where we introduced `malloc` by creating a
+`new_integer` function. The `new_integer` function returned a pointer to int,
+but it could have returned a void pointer and work the same way, as
+demonstrated below:
+
+<pre class="prettyprint">
+// Using functions returning void pointers
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt; 
+
+void* new_integer(void);
+
+int main(){
+  // Get the address of an integer
+  int *p;
+  p = new_integer();
+  *p = 15;
+
+  printf("The value at the address of p is: %d\n", *p);
+  return 0;
+}
+
+void* new_integer(void){
+  // malloc returns a pointer, so we need a pointer to int to store the
+  // returned memory address.
+  int *pointer = (int*)malloc(sizeof(int));
+  return pointer;
+}
+</pre>
+
+It's always better to be explicit when possible, though. Usually you will know
+exactly what type of pointer you want returned, so for the sake of your sanity
+(and the sanity of those around you), don't make all your functions returning
+a pointer be of type `void*` just to save yourself a few keystrokes.
+
+At this point, void pointers appear to function just like, let's say, a pointer
+to int.  However, there are strict rules and pitfalls that come with void
+pointers that do not with other pointers.
+
+### Dereferencing Void Pointers - It can't be done!
+
+Although void pointers and other pointers have many things in common, the
+ability to dereference is not one of them. This is because other pointer types
+tell the compiler how much memory should be read/written when we deference
+them, but void pointers do not us with this information.
+
+The following program will fail to compile:
+
+<pre class="prettyprint">
+// Attempt to dereference a void pointer: This will fail to compile!
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt; 
+
+void* new_integer(void);
+
+int main(){
+  // Get the address of an integer
+  void* vp = new_integer();
+  *vp = 15;
+
+  printf("The value at the address of vp is: %d\n", *vp);
+  return 0;
+}
+
+void* new_integer(void){
+  // malloc returns a pointer, so we need a pointer to int to store the
+  // returned memory address.
+  int *pointer = (int*)malloc(sizeof(int));
+  return pointer;
+}
+</pre>
+
+My gcc compiler outputs
+
+<pre class="prettyprint">
+ex8.c: In function ‘main’:
+ex8.c:10:3: warning: dereferencing ‘void *’ pointer [enabled by default]
+ex8.c:10:3: error: invalid use of void expression
+</pre>
+
+We can, however, cast a void pointer to the proper pointer type, and then
+dereference. If we replace the `main()` above with the following, our program
+compiles and outputs the expected result of 15.
+
+<pre class="prettyprint">
+int main(){
+  // Get the address of an integer
+  void* vp = new_integer();
+  *(int*)vp = 15;
+
+  printf("The value at the address of vp is: %d\n", *(int*)vp);
+  return 0;
+}
+</pre>
+
+We cast vp to a pointer to int, thus allowing us to dereference the pointer. 
+
+### Implicit conversion of void pointers
+
+Luckily, even though we can't directly dereference a void pointer, we don't
+have to cast a void pointer if it's being assigned to another pointer. (Look
+at the following example, and reread the previous sentence a few times until
+it sinks in)
+
+<pre class="prettyprint">
+
+</pre>
+
+### Playing with Fire
 
 
 

@@ -1,6 +1,14 @@
+{% from "macros" import yt %}
 {% extends "templates/post.html" %}
 {% block post %}
 {% filter markdown %}
+
+{{yt("3JX6TyLOmGQ")|safe}}
+
+(**The video above is optional**, and covers no more material than what is
+covered here. If you like to read and work through things at your own pace, the
+full article text is below. If you prefer to observe and listen, feel free to
+enjoy the screencast.)
 
 Before you proceed with this tutorial, you should have a good understanding of
 pointers. Check out my [introduction to pointers][0] screencast.
@@ -201,14 +209,29 @@ other words, a void pointer can be assigned to any pointer variable of any
 type. To demonstrate:
 
 <pre class="prettyprint">
-// Initialize x and y
-int x = 10;
-float y = 20.0;
+// Void pointers are assignable to any pointer type
+#include&lt;stdio.h&gt;
 
-// Declare a pointer to int, float, and a void pointer
-int *pint;
-float *pfloat;
-void *vp;
+int main(){
+  // Initialize x and y
+  int x = 10;
+  float y = 20.0;
+
+  // Declare a pointer to int, float, and a void pointer
+  int *pint;
+  float *pfloat;
+  void *vp;
+
+  // Assign vp the memory address of x, a pointer to int.
+  vp = &x;
+  pint = vp;
+
+  // Assign vp the memory address of y, a pointer to float.
+  pfloat = vp;
+
+  return 0;
+}
+
 
 </pre>
 	

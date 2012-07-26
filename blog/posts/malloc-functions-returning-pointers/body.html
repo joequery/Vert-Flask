@@ -1,0 +1,670 @@
+{% from "macros" import yt %}
+{% extends "templates/post.html" %}
+{% block post %}
+{% filter markdown %}
+
+{{yt("3JX6TyLOmGQ")|safe}}
+
+(**The video above is optional**, and covers no more material than what is
+covered here. If you like to read and work through things at your own pace, the
+full article text is below. If you prefer to observe and listen, feel free to
+enjoy the screencast.)
+
+Before you proceed with this tutorial, you should have a good understanding of
+pointers. Check out my [introduction to pointers][0] screencast.
+
+The ability to manage your own memory is part of what makes C so significant.
+At the heart of memory management sits `malloc`, a function which you will know
+how to use by the end of this tutorial.
+
+As described by the [GNU][1], the `malloc` function is used to manually
+allocate a block of memory. Specifically, `malloc` returns a pointer to a newly
+allocated block of memory. This brings up the question: **What does it mean to
+return a pointer?**
+
+Functions returning Pointers
+----------------------------
+
+Similar to how a C function can return an `int` or `char`, functions can also
+return pointers. To demonstrate, let's use the most basic functions possible.
+First, an `int` function that just returns the integer passed to it.
+
+<pre class="prettyprint">
+// Demonstrate a simple function that returns an integer.
+#include&lt;stdio.h&gt;
+
+int return_me(int);
+
+int main(){
+  int x = 5;
+  printf("x: %d\n", x);
+
+  x = return_me(x);
+  printf("x: %d\n", x);
+
+  return 0;
+}
+
+/*
+ * A very simple function: Just returns the integer passed to it!
+ */
+int return_me(int num){
+  return num;
+}
+</pre>
+
+After compiling and running, the output is just
+
+<pre class="prettyprint">
+x: 5
+x: 5
+</pre>
+
+Now let's take this same idea, but now we'll apply it to pointers.
+
+<pre class="prettyprint">
+// Demonstrate a simple function that returns a pointer to int
+#include&lt;stdio.h&gt;
+
+int* return_me(int*);
+
+int main(){
+  int x = 5;
+
+  // p holds the memory address of the integer x.
+  int *p = &x;
+  printf("p: %p\n", p);
+
+  p = return_me(p);
+  printf("p: %p\n", p);
+
+  return 0;
+}
+
+/*
+ * A very simple function: Just returns the pointer passed to it!
+ */
+int* return_me(int *pointer){
+  return pointer;
+}
+
+</pre>
+
+The output will be similar to
+
+<pre class="prettyprint">
+p: 0x7fff678697fc
+p: 0x7fff678697fc 
+</pre>
+
+Note the function header `int* return_me(int*)`. We know the structure of a
+function is 
+
+<pre class="prettyprint">
+returnType functionName(arg1, arg2, ...){
+  // Do stuff
+  // Return something of type returnType (unless void!)
+}
+</pre>
+
+So it makes sense that if we wanted to return the memory address of an integer,
+also known as a "pointer to int", we would specify our return type as `int*`.
+
+For another example, say we have two floating point variables `x` and `y`. We
+want to create a function that returns the address of the larger variable. Here
+is how we would accomplish this:
+
+<pre class="prettyprint">
+// This program contains a simple function that returns a pointer to float.
+#include&lt;stdio.h&gt;
+
+float* return_biggest(float*, float*);
+
+int main(){
+  float x = 10.0;
+  float y = 20.0;
+
+  // Get the address of the variable with the largest value.
+  float *p = return_biggest(&x, &y);
+
+  printf("(x) addr: %p, val: %.2f \n", &x, x);
+  printf("(y) addr: %p, val: %.2f \n", &y, y);
+  printf("The address of the biggest: %p\n", p);
+  printf("The value of the biggest: %.2f\n", *p);
+  return 0;
+}
+
+/*
+ * Returns the address of the float variable with the largest value.
+ */
+float* return_biggest(float *p1, float *p2){
+  // biggest is a pointer to float: it will hold the memory address of a
+  // floating point variable.
+  float *biggest;
+  if (*p1 > *p2){
+    // biggest is assigned the memory address of the float associated with 
+    // the address p1
+    biggest = p1;
+  }
+  else{
+    // biggest is assigned the memory address of the float associated with 
+    // the address p2
+    biggest = p2;
+  }
+
+  // return the memory address of the larger float variable
+  return biggest;
+}
+
+</pre>
+
+The output will look similar to
+
+<pre class="prettyprint">
+(x) addr: 0x7fff57c94728, val: 10.00
+(y) addr: 0x7fff57c9472c, val: 20.00
+The address of the biggest: 0x7fff57c9472c
+The value of the biggest: 20.00  
+</pre>
+
+Specifically, the address of `y` and the address of the biggest should be
+identical.
+
+Void pointers
+-------------
+
+We know a pointer to int must hold the address of an int, a pointer to float
+must hold the address of a float, and so on. However, there does a exist a
+special pointer type that can be assigned the memory address of any type: These
+pointers are called **void pointers**. We declare and assign void pointers just
+like any other pointer. Observe in the following example how the void pointer
+can be assigned the address of both a float and an int:
+
+<pre class="prettyprint">
+// Void pointers
+#include&lt;stdio.h&gt;
+
+int main(){
+  int x = 10;
+  float y = 20.0;
+
+  void *p = &x;
+  printf("p: %p\n", p);
+
+  p = &y;
+  printf("p: %p\n", p);
+  return 0;
+}
+</pre>
+
+With the output looking similar to
+
+<pre class="prettyprint">
+p: 0x7fffd3ea8dd8
+p: 0x7fffd3ea8ddc
+</pre>
+
+Furthermore, void pointers are **assignable** to any other pointer type. In
+other words, a void pointer can be assigned to any pointer variable of any
+type. To demonstrate:
+
+<pre class="prettyprint">
+// Void pointers are assignable to any pointer type
+#include&lt;stdio.h&gt;
+
+int main(){
+  // Initialize x and y
+  int x = 10;
+  float y = 20.0;
+
+  // Declare a pointer to int, float, and a void pointer
+  int *pint;
+  float *pfloat;
+  void *vp;
+
+  // Assign vp the memory address of x, a pointer to int.
+  vp = &x;
+  pint = vp;
+
+  // Assign vp the memory address of y, a pointer to float.
+  pfloat = vp;
+
+  return 0;
+}
+
+
+</pre>
+	
+
+### Functions returning void pointers.
+
+If we can declare a variable of type `void*`, then we certainly can create a
+function returning a value of type `void*`, which is simply a pointer of any
+type.
+
+Consider a previous example which simply returns the pointer to int passed to
+it. We can modify the function to return a void pointer, and the result will be
+the same.
+
+<pre class="prettyprint">
+// Demonstrate a simple function that returns a void pointer
+#include&lt;stdio.h&gt;
+
+void* return_me(int*);
+
+int main(){
+  int x = 5;
+
+  // p holds the memory address of the integer x.
+  int *p = &x;
+  printf("p: %p\n", p);
+
+  p = return_me(p);
+  printf("p: %p\n", p);
+
+  return 0;
+}
+
+/*
+ * A very simple function: Just returns the pointer passed to it!
+ */
+void* return_me(int *pointer){
+  return pointer;
+}
+
+</pre>
+
+It's always better to be explicit when possible, though. Usually you will know
+exactly what type of pointer you want returned, so for the sake of your sanity
+(and the sanity of those around you), don't make all your functions returning
+a pointer be of type `void*` just to save yourself a few keystrokes.
+
+At this point, void pointers appear to function just like, let's say, a pointer
+to int.  However, there are strict rules and pitfalls that come with void
+pointers that do not with other pointers.
+
+### Dereferencing Void Pointers - It can't be done!
+
+Although void pointers and other pointers have many things in common, the
+ability to dereference is not one of them. This is because other pointer types
+tell the compiler how much memory should be read/written when we deference
+them, but void pointers do not us with this information.
+
+The following program will fail to compile:
+
+<pre class="prettyprint">
+// Attempt to dereference a void pointer: This will fail to compile!
+#include&lt;stdio.h&gt;
+
+int main(){
+  // Get the address of an integer
+  int x = 10;
+  void* vp = &x;
+  *vp = 15;
+
+  printf("The value at the address of vp is: %d\n", *vp);
+  return 0;
+}
+
+</pre>
+
+My gcc compiler outputs
+
+<pre class="prettyprint">
+ex8.c: In function ‘main’:
+ex8.c:10: warning: dereferencing ‘void *’ pointer
+ex8.c:10: error: invalid use of void expression
+ex8.c:12: warning: dereferencing ‘void *’ pointer
+ex8.c:12: error: invalid use of void expression
+</pre>
+
+We can, however, cast a void pointer to the proper pointer type, and then
+dereference. 
+
+<pre class="prettyprint">
+// Attempt to dereference a void pointer: Casting works!
+#include&lt;stdio.h&gt;
+
+int main(){
+  // Get the address of an integer
+  int x = 10;
+  void* vp = &x;
+
+  printf("The value at the address of vp is: %d\n", *(int*)vp);
+  return 0;
+}
+</pre>
+
+With the expected output of
+
+<pre class="prettyprint">
+The value at the address of vp is: 10
+</pre>
+
+### Implicit conversion of void pointers
+
+Luckily, even though we can't dereference a void pointer, we don't have to cast
+a void pointer if it's being assigned to another pointer. Look at the
+following example, and reread the previous sentence a few times until it sinks
+in.
+
+<pre class="prettyprint">
+// Demonstrate implicit conversion of void pointers
+#include&lt;stdio.h&gt;
+
+int main(){
+  // Initialize an integer x
+  int x = 10;
+
+  // Assign the address of x to a void pointer
+  void *vp = &x;
+
+  // Initialize a pointer to int to vp, which itself is the address of x.
+  int *pint = vp;
+
+  // We're free to dereference pint: Even though vp is a void pointer, the
+  // assignment above initiated an implicit conversion of vp to a pointer to
+  // int, similar to how `float x = 10` implicitly converts 10 to its floating
+  // point form. Dereferencing vp at this point would still result in an error:
+  // it's never okay to dereference a void pointer.
+  printf("*pint: %d\n", *pint);
+
+  return 0;
+}
+</pre>
+The output: 
+
+<pre class="prettyprint">
+*pint: 10
+</pre>
+
+We take advantage of the implicit conversion behavior of assigning void
+pointers to "normal" pointers every time we use `malloc`, which you'll see in a
+few minutes.
+
+### Playing with Fire
+
+We knew beforehand we can't assign the address of a float to a pointer to int.
+But now, we know void pointers are implicitly converted to the type of pointer
+it's being assigned to. If we're feeling smug, we might think:
+
+> What if I assign a void pointer holding a pointer to float to a pointer to
+int? 
+
+Indeed, this trickery will compile!
+
+<pre class="prettyprint">
+// Void pointers are assignable to any pointers
+#include&lt;stdio.h&gt;
+
+int main(){
+	// Initialize an integer
+  int x = 10;
+
+  // Declare pointers to int and float
+  int *pint;
+  float *pfloat;
+
+  // Initialize a void pointer to the memory address of the integer x
+  void* vp = &x;
+
+  // Since void pointers are assignable to any pointer, the following are both
+  // legal (but legal doesn't always mean smart or safe!).
+  pint = vp;
+  pfloat = vp;
+
+  // This makes sense because pint is a pointer to int, and vp holds the
+  // memory address of an integer.
+  printf("*pint: %d\n", *pint);
+
+  // But this doesn't make sense because pfloat is a pointer to float, but
+  // vp holds the memory address of an integer.
+  *pfloat = 10.0;
+  printf("*pfloat: %f\n", *pfloat);
+
+  // Now our data has been corrupted. Lesson learned: Just because void
+  // pointers are legally assignable to everything doesn't mean you're safe!
+  printf("*pint: %d\n", *pint);
+
+  return 0;
+}
+
+
+</pre>
+
+Output will appear similar to 
+<pre class="prettyprint">
+*pint: 10
+*pfloat: 10.000000
+*pint: 1092616192
+</pre>
+
+This behavior is explained in this [StackOverflow thread][7],
+
+> ... dereferencing a pointer that aliases another of an incompatible type is
+undefined behavior. Unfortunately you can still code this way, maybe* get some
+warnings, have it compile fine, only to have weird unexpected behavior when you
+run the code.
+
+One thing that you will learn about C, if you haven't already, is that legal
+does not necessarily imply correct, and correct now does not necessarily imply
+correct forever! Be careful.
+
+Allocating Memory with malloc
+-----------------------------
+
+If you look closely at the previous examples when functions returned pointers,
+we've only returned pointers that were declared in `main()` and passed to the
+function. What if I wanted a function to return the address of a variable
+declared inside the function?
+
+### What not to do
+
+We know that initialization statements like `int x = 10` allocate memory, and
+that allocated memory has an address. Consequently, the following example
+appears to be a sufficient way to allot memory for a variable and return its
+address.
+
+<pre class="prettyprint">
+// Example of how NOT to allocate memory!!!
+#include&lt;stdio.h&gt;
+
+int* new_integer(void);
+
+int main(){
+  // Get the address of an integer
+  int *p;
+  p = new_integer();
+
+  printf("The value at the address of p is: %d\n", *p);
+  return 0;
+}
+
+int* new_integer(void){
+  int x = 10;
+  return &x;
+}
+</pre>
+
+Returning the address of a local variable, however, is **undefined behavior**.
+It might work as "expected" for a short period of time and fail later. Why is
+that? This comment from [/r/programming][2] explains the issue very well:
+
+> Once the function [a local variable] is defined in returns, the memory used
+for storing that variable will be "freed" and almost certainly reused at some
+point in the future. Returning a pointer to a [local] variable ...  means that
+you are returning a pointer to memory that can be overwritten at any time.
+Reading or writing to that variable can cause any number of bad things to
+happen, including data corruption and crashes. Worse, it may work fine, at
+least for a while, making it very difficult to debug.
+
+It is mandatory that you understand [the heap and the stack][3], but for this
+tutorial, the explanation above will suffice.
+
+### What to do - malloc!
+
+Now that we understand how *not* to allocate memory, we can discuss how you
+should allocate memory. For this tutorial, we will use the `malloc` function
+for allocating memory, although [other allocation functions exist][4].
+
+The definition of `malloc` is as follows:
+
+<code>
+void* malloc (size_t size)
+
+This function returns a pointer to a newly allocated block size bytes long,
+or a null pointer if the block could not be allocated.  
+</code>
+
+For all intents and purposes, you can consider `size_t` (read "size type") as
+an unsigned integer. (More discussion on [size_t vs int][5])
+
+So when calling the `malloc` function, you specify how many bytes of memory you
+want allocated, and if malloc is able to allocate that memory, it returns a
+void pointer to that memory block. 
+
+Let's take our incorrect example and fix it by implementing `malloc`.
+
+<pre class="prettyprint">
+// Allocating memory with malloc
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt; // required to use malloc
+
+int* new_integer(void);
+
+int main(){
+  // Get the address of an integer
+  int *p;
+  p = new_integer();
+  *p = 15;
+
+  printf("The value at the address of p is: %d\n", *p);
+  return 0;
+}
+
+int* new_integer(void){
+  // Allocate the exact amount of memory needed for an integer via sizeof(int).
+  // malloc returns a void pointer, but the assignment to `int *pointer` causes
+  // an implicit conversion to type int*.
+  int *pointer = malloc(sizeof(int));
+  return pointer;
+}
+</pre>
+
+Be sure to note the inclusion of the `stdlib.h` library, as well as the usage
+of the `sizeof` operator. `sizeof` tells us the number of bytes a datatype or
+variable takes up in memory. 
+
+While this example demonstrates how to use `malloc`, it's not particularly
+useful in any real world scenario. `malloc` really begins to shine when we
+start creating data structures such as linked lists, stacks, queues, binary
+trees, and more. The process of creating linked lists, which will be the
+subject of my next article, frequently involves allocating memory for a
+[structure][6]. Here's an example of dynamically allocating memory for a
+structure using malloc:
+
+<pre class="prettyprint">
+// Using malloc to allocate memory for a structure
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+// Create a 'rectangle' structure.
+typedef struct{
+  int height;
+  int width;
+} rec_t;
+
+rec_t* new_rectangle(void);
+
+int main(){
+  // Declare a pointer to a rectangle structure. `ptr` will hold the memory
+  // address of a structure.
+  rec_t *ptr;
+  ptr = new_rectangle();
+
+  // Now that ptr has the memory address of a rectangle structure, we can
+  // perform operations on *ptr just like we would any other structure.
+  // In this case, assignment to another structure variable.
+  rec_t rectangle = *ptr;
+
+  rectangle.width = 10;
+  rectangle.height = 10;
+
+  // Display the dimensions.
+  printf("The height: %d\nThe width: %d\n", rectangle.width, rectangle.height);
+
+  return 0;
+}
+
+rec_t* new_rectangle(void){
+  // Allocate the exact right amount of memory for a rectangle structure.
+  // Due to how the sizeof operator works, we can use a "shortcut" and get
+  // the number of bytes needed without having to specify the rec_t type to
+  // sizeof. 
+  rec_t *p = malloc(sizeof *p);
+  return p;
+}
+</pre>
+
+Take a good look at the `new_rectangle` function, and take a couple minutes to
+just memorize that initialization of p. It is not necessary to specify `rec_t`,
+because the compiler knows that `*p` is of that type. It might seem strange that
+we can refer to `*p` in the initialization of `p`, but we can! This type of
+call to malloc is much more concise and accurate.
+
+In the proceeding example, where we used `malloc(sizeof(int))`, we could have
+used `malloc(sizeof *pointer)` instead.
+
+In many tutorials/discussion forums, you probably would have seen the
+`new_rectangle` function in the following form:
+
+<pre class="prettyprint">
+rec_t* new_rectangle(void){
+  rec_t *p = (rec_t*)malloc(sizeof(rec_t));
+  return p;
+}
+</pre>
+
+Earlier I claimed that "explicit is always better". The above, however, is 
+overly-verbose to the [point of being harmful][8]. Keep it simple!
+
+Freeing Allocated Memory
+------------------------
+
+When you no longer need memory you've allocated with `malloc`, you can pass
+the address returned by `malloc` to the `free` function, and that memory will
+be freed up.
+
+<pre class="prettyprint">
+// Allocate memory, store the memory block address in rec
+rec_t *rec = malloc(sizeof *rec);
+
+// Do stuff with rec
+// ...
+// ...
+// ...
+
+// Free the memory block located at the memory address `rec`
+free(rec);
+</pre>
+
+What comes next?
+----------------
+
+With a basic understanding of functions that return pointers and how to use
+`malloc`, and a little more knowledge of the interactions between pointers and
+structures, we'll be on our way to creating data structures!
+
+
+[0]: /blog/introduction-pointers-in-c/
+[1]: http://www.gnu.org/software/libc/manual/html_node/Basic-Allocation.html
+[2]: http://www.reddit.com/r/programming/comments/vuf6l/worst_c_tutorial_ever/c57sizf
+[3]: http://www.maxi-pedia.com/what+is+heap+and+stack
+[4]: http://www.gnu.org/software/libc/manual/html_node/Unconstrained-Allocation.html
+[5]: http://stackoverflow.com/questions/994288/size-t-vs-int-in-c-and-or-c
+[6]: /blog/structures-in-c/
+[7]: http://stackoverflow.com/a/99010/670823
+[8]: http://stackoverflow.com/a/605858/670823
+{% endfilter %}
+{% endblock post %}
+
